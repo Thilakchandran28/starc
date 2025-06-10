@@ -5,6 +5,7 @@ import {
   ArrowLeft,
   Settings,
 } from "lucide-react";
+
 interface CourseIntroProps {
   courseTitle: string;
   lessonTitle: string;
@@ -17,6 +18,7 @@ interface CourseIntroProps {
   videoSrc?: string;
   videoPoster?: string;
 }
+
 export default function CourseIntro({
   courseTitle,
   lessonTitle,
@@ -26,9 +28,17 @@ export default function CourseIntro({
   onSettings,
   about = "Lorem ipsum dolor sit amet consectetur. Sociis tempus fermentum morbi enim posuere nisi.",
   description = "Lorem ipsum dolor sit amet consectetur. Tincidunt sed enim mi proin fermentum. In ornare blandit nec tortor varius semper. Tincidunt ultrices magna ipsum una scelerisque porta ad sem eu. Scelerisque eros maecenas volutpat amet tortor proin elit mattis. Est amet et elit bibendum amet. Aliquet dolor sit pharetra at aliquam sapien nisl eget. Sit nisl metus vel fermentum sed est. Auctor nisi ullamcorper mi tellus bibendum. Donec quis in dolor vel duis dui turpis nunc id.",
-  videoSrc = "video.mp4",
+  videoSrc = "https://www.youtube.com/watch?v=thtAxtEuX6c",
   videoPoster = "https://via.placeholder.com/800x450.png?text=Course+Video+Thumbnail",
 }: CourseIntroProps) {
+  // Convert YouTube watch URL to embed URL
+  const getYouTubeEmbedUrl = (url: string) => {
+    const videoId = url.split("v=")[1]?.split("&")[0];
+    return videoId ? `https://www.youtube.com/embed/${videoId}` : url;
+  };
+
+  const embedUrl = getYouTubeEmbedUrl(videoSrc);
+
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white rounded-xl shadow-sm space-y-6">
       {/* Header */}
@@ -58,35 +68,30 @@ export default function CourseIntro({
             <span>Next</span>
             <ChevronRight className="w-4 h-4" />
           </button>
-          <button
-            onClick={onSettings}
-            className="hover:text-blue-600"
-            aria-label="Settings"
-          >
-            <Settings className="w-5 h-5" />
-          </button>
         </div>
       </div>
       {/* Video Section */}
       <div className="relative w-full overflow-hidden rounded-xl">
-        <div className="absolute top-3 right-3 z-10 bg-black/40 rounded-full p-2">
-          <Settings className="w-5 h-5 text-white" />
-        </div>
-        <video controls className="w-full rounded-xl" poster={videoPoster}>
-          <source src={videoSrc} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <iframe
+          className="w-full h-96 rounded-xl"
+          src={embedUrl}
+          title={lessonTitle}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
       </div>
       {/* About this course */}
       <section>
-        <h3 className="text-lg font-semibold text-gray-800 mb-1">
+        <h3 className="text-lg font-semibold text-gray-800 mb-3">
           About this course
         </h3>
         <p className="text-gray-600 text-sm leading-relaxed">{about}</p>
       </section>
       {/* Description */}
+      <hr />
       <section>
-        <h3 className="text-lg font-semibold text-gray-800 mb-1">Description</h3>
+        <h3 className="text-lg font-semibold text-gray-800 mb-3">Description</h3>
         <p className="text-gray-600 text-sm leading-relaxed">{description}</p>
       </section>
     </div>

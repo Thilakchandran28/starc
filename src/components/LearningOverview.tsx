@@ -3,6 +3,7 @@ import LearningModule from "./LearningModule";
 
 import PurpleBox from "./PurpleBox";
 import Footer from "./Footer";
+import Navbar from "./Navbar";
 
 const LearningOverview: React.FC = () => {
   // State to track the selected category
@@ -10,6 +11,7 @@ const LearningOverview: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
+      <Navbar/>
       {/* Category Toggle Buttons */}
       {/* <div className="flex justify-center space-x-4 p-4 bg-white shadow-md">
         <button

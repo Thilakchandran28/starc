@@ -21,7 +21,7 @@ export default function LessonViewer() {
   return (
     <div className="max-w-6xl mx-auto p-6 space-y-6 bg-white rounded-xl shadow-sm">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between h-10">
         <div className="flex items-center space-x-2">
           <ArrowLeft className="w-5 h-5 text-gray-700 cursor-pointer" />
           <div>
@@ -83,6 +83,7 @@ export default function LessonViewer() {
           Lorem ipsum dolor sit amet consectetur. Sociis tempus fermentum morbi enim posuere nisi.
         </p>
       </section>
+      <hr />
       <section>
         <h3 className="text-lg font-semibold text-gray-800 mb-1">Description</h3>
         <p className="text-gray-600 text-sm leading-relaxed">

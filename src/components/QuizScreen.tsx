@@ -1,63 +1,78 @@
 import React, { useState, useEffect } from 'react';
+
 type Option = {
   id: string;
   text: string;
 };
+
 type Question = {
   id: number;
   text: string;
   options: Option[];
 };
-const questions: Question[] = Array.from({ length: 8 }, (_, i) => ({
+
+// Update to 20 questions to match the image
+const questions: Question[] = Array.from({ length: 20 }, (_, i) => ({
   id: i + 1,
-  text: `Question ${i + 1}: Lorem ipsum dolor sit amet consectetur...`,
+  text: `Question ${i + 420}: Lorem ipsum dolor sit amet consectetur...`,
   options: [
-    { id: 'A', text: 'Option A text' },
-    { id: 'B', text: 'Option B text' },
-    { id: 'C', text: 'Option C text' },
-    { id: 'D', text: 'Option D text' },
-    { id: 'E', text: 'Option E text' },
+    { id: 'A', text: 'Lorem ipsum dolor sit amet consectetur.' },
+    { id: 'B', text: 'Lorem ipsum dolor sit amet consectetur.' },
+    { id: 'C', text: 'Lorem ipsum dolor sit amet consectetur.' },
+    { id: 'D', text: 'Lorem ipsum dolor sit amet consectetur.' },
+    { id: 'E', text: 'Lorem ipsum dolor sit amet consectetur.' },
   ],
 }));
+
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<(string | null)[]>(Array(questions.length).fill(null));
   const [visited, setVisited] = useState<boolean[]>(Array(questions.length).fill(false));
   const [secondsElapsed, setSecondsElapsed] = useState(0);
+
   useEffect(() => {
     const timer = setInterval(() => setSecondsElapsed((prev) => prev + 1), 1000);
     return () => clearInterval(timer);
   }, []);
+
   useEffect(() => {
     const updatedVisited = [...visited];
     updatedVisited[currentQuestion] = true;
     setVisited(updatedVisited);
   }, [currentQuestion]);
+
   const handleOptionSelect = (optionId: string) => {
     const updatedAnswers = [...answers];
     updatedAnswers[currentQuestion] = optionId;
     setAnswers(updatedAnswers);
   };
+
+  // Updated timer format to HH:MM:SS
   const formatTime = (secs: number) => {
-    const mins = Math.floor(secs / 60)
+    const hours = Math.floor(secs / 3600)
+      .toString()
+      .padStart(2, '0');
+    const mins = Math.floor((secs % 3600) / 60)
       .toString()
       .padStart(2, '0');
     const sec = (secs % 60).toString().padStart(2, '0');
-    return `${mins}:${sec}`;
+    return `${hours}:${mins}:${sec}`;
   };
-  const isLastQuestion = currentQuestion === questions.length - 1;
+
   const answeredCount = answers.filter((a) => a !== null).length;
   const progressPercent = (answeredCount / questions.length) * 100;
+
   const getStatusColor = (index: number) => {
     if (answers[index]) return 'bg-purple-600 text-white'; // Answered
     if (visited[index]) return 'border-purple-400 text-purple-500'; // Viewed
     return 'border-gray-300 text-gray-400'; // Not viewed
   };
+
   return (
-    <div className="min-h-screen bg-gray-100 p-4 flex flex-col md:flex-row">
+    <div className="flex flex-col md:flex-row h-full">
       {/* Quiz Content */}
-      <div className="w-full md:w-3/4 p-4">
-        <div className="bg-white rounded-xl shadow-md p-6">
+      <div className="w-full md:w-4/5 p-4">
+        <div className="bg-white rounded-xl shadow-md p-6 h-full">
           <div className="mb-4">
             <h1 className="text-2xl font-bold mb-2">UI/UX Designing Quiz</h1>
             <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
@@ -66,14 +81,15 @@ const Quiz = () => {
                 style={{ width: `${progressPercent}%` }}
               />
             </div>
-            <p className="text-sm text-gray-500">{Math.round(progressPercent)}% completed</p>
+            <p className="text-sm text-gray-500">{Math.round(progressPercent)}%</p>
           </div>
           <div className="flex justify-between items-center mb-4">
             <p className="text-lg font-semibold">
-              Question {currentQuestion + 1}/{questions.length}:
+              Question {currentQuestion + 420}:
             </p>
-            <div className="text-sm">
-              :stopwatch: Time: <span className="text-green-600 font-semibold">{formatTime(secondsElapsed)}</span>
+            <div className="text-sm flex items-center space-x-1">
+              <span>🕰️</span>
+              <span className="text-green-600 font-semibold">{formatTime(secondsElapsed)}</span>
             </div>
           </div>
           <p className="text-gray-700 mb-6">{questions[currentQuestion].text}</p>
@@ -83,7 +99,7 @@ const Quiz = () => {
                 key={opt.id}
                 className={`flex items-center space-x-4 p-4 rounded-lg border cursor-pointer ${
                   answers[currentQuestion] === opt.id
-                    ? 'bg-purple-100 border-purple-500'
+                    ? 'bg-purple-50 border-purple-300'
                     : 'bg-white border-gray-200'
                 }`}
                 onClick={() => handleOptionSelect(opt.id)}
@@ -101,37 +117,28 @@ const Quiz = () => {
               </div>
             ))}
           </div>
-          <div className="flex justify-between items-center pt-6">
+          <div className="flex justify-end gap-4 items-center pt-6">
             <button
-              className="px-6 py-2 border border-purple-500 text-purple-600 rounded-lg hover:bg-purple-50 disabled:opacity-50"
+              className="px-6 py-1 border border-purple-500 text-purple-600 rounded-lg hover:bg-purple-50 disabled:opacity-50"
               onClick={() => setCurrentQuestion((prev) => Math.max(prev - 1, 0))}
               disabled={currentQuestion === 0}
             >
               Previous
             </button>
-            {!isLastQuestion ? (
-              <button
-                className="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700"
-                onClick={() => setCurrentQuestion((prev) => Math.min(prev + 1, questions.length - 1))}
-              >
-                Next
-              </button>
-            ) : (
-              <button
-                className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
-                onClick={() => alert('Submitted!')}
-              >
-                Submit
-              </button>
-            )}
+            <button
+              className="px-6 py-1 bg-purple-600 text-white rounded-lg hover:bg-purple-700"
+              onClick={() => setCurrentQuestion((prev) => Math.min(prev + 1, questions.length - 1))}
+            >
+              Next
+            </button>
           </div>
         </div>
       </div>
       {/* Sidebar */}
-      <div className="w-full md:w-1/4 p-4">
-        <div className="bg-white rounded-xl shadow-md p-4">
+      <div className="w-full md:w-2/5 p-4">
+        <div className="bg-white rounded-xl shadow-md p-4 h-full">
           <h2 className="font-bold text-lg mb-4">Section: Question</h2>
-          <div className="flex flex-wrap gap-2 mb-4">
+          <div className="grid grid-cols-5 gap-2 mb-4">
             {questions.map((_, index) => (
               <button
                 key={index}
@@ -164,10 +171,5 @@ const Quiz = () => {
     </div>
   );
 };
+
 export default Quiz;
-
-
-
-
-
-
