@@ -27,19 +27,19 @@ const lessonData: Lesson[] = [
       {
         title: 'Introduction to UI/UX',
         videos: [
-          { title: 'Introduction to UI/UX', duration: '5:00 min', videoSrc: 'https://www.youtube.com/watch?v=_f8dMFzYRCE' },
+          { title: 'Introduction to UI/UX', duration: '5:00 min', videoSrc: 'https://www.youtube.com/watch?v=ODpB9-MCa5s' },
         ],
       },
       {
         title: 'What is UI?',
         videos: [
-          { title: 'What is UI?', duration: '5:00 min', videoSrc: 'https://www.youtube.com/watch?v=izbydia9jz4' },
+          { title: 'What is UI?', duration: '5:00 min', videoSrc: 'https://www.youtube.com/watch?v=e0IE4tK2Lvk' },
         ],
       },
       {
         title: 'What is UX?',
         videos: [
-          { title: 'What is UX?', duration: '5:00 min', videoSrc: 'https://www.youtube.com/watch?v=h1BGDHumhj4' },
+          { title: 'What is UX?', duration: '5:00 min', videoSrc: 'https://www.youtube.com/watch?v=kQ_6faxhyIw' },
         ],
       },
     ],
@@ -50,19 +50,19 @@ const lessonData: Lesson[] = [
       {
         title: 'User Research',
         videos: [
-          { title: 'User Research', duration: '5:00 min', videoSrc: 'https://www.youtube.com/watch?v=lZORMUufA_Y' },
+          { title: 'User Research', duration: '5:00 min', videoSrc: 'https://www.youtube.com/watch?v=0MLwuhpwRiE' },
         ],
       },
       {
         title: 'Methods of User Research',
         videos: [
-          { title: 'Methods of User Research', duration: '5:00 min', videoSrc: 'https://www.youtube.com/watch?v=ijiQ2vsIJqg' },
+          { title: 'Methods of User Research', duration: '5:00 min', videoSrc: 'https://www.youtube.com/watch?v=4ldPT4nbx5c' },
         ],
       },
       {
         title: 'Double Diamond Process',
         videos: [
-          { title: 'Double Diamond Process', duration: '5:00 min', videoSrc: 'https://www.youtube.com/watch?v=p7GmO8ewjmw' },
+          { title: 'Double Diamond Process', duration: '5:00 min', videoSrc: 'https://www.youtube.com/watch?v=fYOPjWWDZHk' },
         ],
       },
     ],
