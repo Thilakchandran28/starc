@@ -14,13 +14,14 @@ const DashboardCard = ({ course }) => {
                     <p className="text-gray-600 text-lg ">{course.duration}</p>
                 </div>
 
-                <div className="w-1/3 h-11  bg-purple-600 rounded-lg  flex align-center justify-center p-2 gap-0.5 mb-4">
-                    <img src={uparrow} className=" p-1.5" />
+                <div className="w-1/3 h-12  bg-purple-600 rounded-lg  flex align-center justify-center p-2  mb-4">
+                    <img src={uparrow} className=" p-1" />
                     <p className="text-2xl text-gray-500 text-white mb-4 font-bold">{course.progress}%</p>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2.5 mb-2">
                     <div className="bg-purple-600 h-2.5 rounded-full" style={{ width: `${course.progress}%` }}></div>
                 </div>
+                {/* <p className="text-xs text-grey-500 "> {course.progress}% complete</p> */}
 
             </div>
         </div>

@@ -13,7 +13,7 @@ const RightSideBarComp = () => {
     return (
         <div>
             {/* Today's Schedule */}
-            <div className="bg-white p-6 rounded-lg shadow-md col-span-1 lg:h-[80vh]">
+            <div className="bg-white p-6 rounded-[16px] shadow-md col-span-1 lg:h-[80vh] fixed  top-32 right-10">
                 <div className="flex justify-between items-center mb-4">
                     <h2 className="text-xl font-bold text-gray-900">Today's Schedule</h2>
                     <select className="border rounded-md px-2 py-1 text-sm">
