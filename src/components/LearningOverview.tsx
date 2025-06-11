@@ -10,7 +10,7 @@ const LearningOverview: React.FC = () => {
   const [category, setCategory] = useState<"Videos" | "Books">("Videos");
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-white-100">
       <Navbar/>
       {/* Category Toggle Buttons */}
       {/* <div className="flex justify-center space-x-4 p-4 bg-white shadow-md">

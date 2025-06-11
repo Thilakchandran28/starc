@@ -69,10 +69,10 @@ const Quiz = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row h-full">
+    <div className="flex flex-col md:flex-row h-full w-100%">
       {/* Quiz Content */}
       <div className="w-full md:w-4/5 p-4">
-        <div className="bg-white rounded-xl shadow-md p-6 h-full">
+        <div className="bg-white rounded-xl p-6 h-full">
           <div className="mb-4">
             <h1 className="text-2xl font-bold mb-2">UI/UX Designing Quiz</h1>
             <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
@@ -152,20 +152,28 @@ const Quiz = () => {
             ))}
           </div>
           {/* Legend */}
-          <div className="space-y-2 text-sm">
-            <div className="flex items-center space-x-2">
-              <div className="w-4 h-4 rounded-full bg-purple-600" />
-              <span>Answered</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-4 h-4 rounded-full border border-purple-400" />
-              <span>Viewed</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-4 h-4 rounded-full border border-gray-300" />
-              <span>Not Viewed</span>
-            </div>
-          </div>
+          <div className="flex items-center space-x-4">
+  <div className="flex flex-col items-center">
+    <div className="w-10 h-10 rounded-full bg-purple-600 flex items-center justify-center text-white">
+      <span>A</span>
+    </div>
+    <span className="text-sm mt-2">Answered</span>
+  </div>
+  <div className="flex flex-col items-center">
+    <div className="w-10 h-10 rounded-full border border-purple-400 flex items-center justify-center text-black">
+      <span>A</span>
+    </div>
+    <span className="text-sm mt-2">Viewed</span>
+  </div>
+  <div className="flex flex-col items-center">
+    <div className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-black">
+      <span>A</span>
+    </div>
+    <span className="text-sm mt-2 ">NotViewed</span>
+  </div>
+</div>
+
+
         </div>
       </div>
     </div>
