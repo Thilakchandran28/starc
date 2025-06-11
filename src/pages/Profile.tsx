@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import ProfileSidebar from '../components/ProfileSidebar';
 import ProfileTopNavbar from '../components/ProfileTopNavbar';
 import DashboardOverview from '../components/DashboardOverview';
+import RightSideBarComp from '@/components/RightSideBarComp';
 
 const Profile = () => {
   const [user] = useState({
@@ -37,11 +38,12 @@ const Profile = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
-      <ProfileSidebar />
-      <div className="flex-grow p-6">
-        <ProfileTopNavbar />
+    <div className=" bg-gray-50">
+      <ProfileTopNavbar />
+      <div className="flex justify-center align-top mx-20 mt-10">
+        <ProfileSidebar />
         <DashboardOverview />
+        <RightSideBarComp />
       </div>
     </div>
   );

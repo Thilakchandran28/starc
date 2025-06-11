@@ -3,12 +3,12 @@ import { Search, Bell, Heart } from 'lucide-react';
 
 const ProfileTopNavbar = () => {
   return (
-    <div className="bg-white p-4 flex items-center justify-between shadow-md rounded-lg mb-6">
+    <div className="bg-white p-4 flex items-center justify-around shadow-md rounded-lg mb-6 w-screen px-28">
       {/* Logo */}
       <div className="text-purple-600 font-bold text-2xl">LOGO</div>
 
       {/* Search Bar */}
-      <div className="relative flex-grow mx-8">
+      <div className="relative flex-grow  mx-20 ">
         <input
           type="text"
           placeholder="Search Anything here"
