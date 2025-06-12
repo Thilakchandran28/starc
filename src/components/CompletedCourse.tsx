@@ -1435,7 +1435,19 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import mentor from "../Assets/Image-60.png";
-import RightSideBar from "./RightSideBar";
+import Completed from "../Assets/icons/Completed.svg";
+import star from "../Assets/icons/Star.svg";
+import like from '../Assets/icons/Like.svg'
+import dislike from '../Assets/icons/Dislike.svg'
+import Aplus from '../Assets/icons/A-plus.svg'
+import Submitted from "../Assets/icons/Submitted.svg";
+import Assessment from "../Assets/icons/Assesment.svg";
+import Facebook from '../Assets/icons/Facebook.svg'
+import X from "../Assets/icons/X.svg"
+import youtube from "../Assets/icons/Youtube.svg"
+import Instagram from '../Assets/icons/Instagram.svg'
+import startoverAgaing from '../Assets/icons/Start-over-again.svg'
+import download from '../Assets/icons/Download.svg'
 
 
 const APlusIcon: React.FC = () => (
@@ -1472,8 +1484,8 @@ const AssessmentRow: React.FC<AssessmentRowProps> = ({ assessment }) => {
     switch (status) {
       case 'completed':
         return (
-          <span className="flex items-center text-green-600 font-medium">
-            <CheckCircleIcon className="mr-1" /> completed
+          <span className="flex items-center  font-medium">
+            <img src={Completed} className="mr-1" style={{height:'20px'}} alt="" /> completed
           </span>
         );
       case 'Submitted':
@@ -1506,17 +1518,17 @@ const AssessmentRow: React.FC<AssessmentRowProps> = ({ assessment }) => {
   };
 
   return (
-    <div className="2xl:grid grid-flow-col 2xl:w-[650px] 2xl:text-[12px]  3xl:w-[900px] 3xl:text-[15px]  py-3 border-b border-gray-100 last:border-b-0">
-      <div className="flex items-center space-x-2 pr-4 justify-items-start w-[158px]">
-        <APlusIcon />
-        <span className="text-gray-700 font-medium whitespace-nowrap ">
+    <div className="2xl:grid grid-flow-col 2xl:w-[650px] 2xl:text-[12px]  3xl:w-[900px] 3xl:text-[15px]  lg:flex lg:text-[10px] lg:w-[600px]  py-3 border-b border-gray-100 last:border-b-0">
+      <div className="flex items-center space-x-2 pr-4 justify-items-start">
+        <img src={Aplus} alt="" />
+        <span className="text-gray-700 font-medium whitespace-nowrap">
           {assessment.type} {assessment.number}
         </span>
       </div>
       <div className="text-gray-800 font-medium px-4 flex justify-items-start">{assessment.title}</div>
-      <div className="text-gray-600 text-sm px-4 whitespace-nowrap  flex justify-items-start">{assessment.score}</div>
+      <div className="text-gray-600 text-sm px-4 whitespace-nowrap  flex justify-items-start lg:text-[10px]">{assessment.score}</div>
       <div className="px-4 whitespace-nowrap  flex justify-items-start">{getStatusDisplay(assessment.status)}</div>
-      <div className="text-gray-500 text-sm pl-4 whitespace-nowrap text-right  flex justify-center">{assessment.date}</div>
+      <div className="text-gray-500 text-sm pl-4 whitespace-nowrap text-right  flex justify-center lg:text-[10px]">{assessment.date}</div>
     </div>
   );
 };
@@ -1698,11 +1710,11 @@ const ReviewCard: React.FC<{ review: Review }> = ({ review }) => {
             </div>
             <div className="flex space-x-4 text-gray-500">
               <button className="flex items-center space-x-1 hover:text-blue-500">
-                <ThumbsUpIcon />
+                <img src={like} alt="" />
                 <span>{review.likes}</span>
               </button>
               <button className="flex items-center space-x-1 hover:text-red-500">
-                <ThumbsDownIcon />
+                <img src={dislike} alt="" />
                 <span>{review.dislikes}</span>
               </button>
             </div>
@@ -1866,12 +1878,12 @@ const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
   return (
     <div className="min-h-screen bg-gray-100 font-sans text-gray-800 w-full">
       {/* Back Button */}
-      <div className="container mx-auto p-6">
+      <div className="container mx-auto p-6 w-full ">
         <button
           onClick={onBack}
           className="mb-4 text-purple-600 hover:underline"
         >
-          ← Back to Courses
+          ← Courses
         </button>
 
         {/* Top Section: Course Info (Left) and Progress/Suggested (Right) */}
@@ -1882,7 +1894,8 @@ const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
             <h1 className="text-2xl font-bold flex items-center">
               {course.title}
               <span className="text-base font-normal text-green-600 ml-1 flex items-center">
-                <CheckCircleIcon className="ml-3 text-lg" />
+                {/* <CheckCircleIcon className="ml-3 text-lg" /> */}
+                <img src={Completed} className="mr-1" alt="" />
                 {course.status === "100%" ? "Completed" : course.status}
               </span>
             </h1>
@@ -1892,41 +1905,46 @@ const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
               </span>
               <span className="mr-3">
                 By KenyWhite In Business, IT & Software,
+              </span> <span>|</span>
+              <span className="flex ml-2">
+                <img src={star} alt="" />
+                <span className="ml-1 text-gray-600">
+                4.8 (280)</span>
               </span>
-              <span className="ml-1 text-gray-600">4.8 (280)</span>
+              
             </div>
             <p className="text-gray-500 text-sm">Last Visited: Sept 12, 2024</p>
-            <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
+            <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
               <button
-                className="px-4 py-2 rounded-md border border-blue-600 text-white bg-violet-500 text-sm flex items-center justify-center 0 transition-colors"
+                className="lg:text-[10px] lg:w-36 lg:text-[10px] lg:w-36  px-4 py-2 rounded-md border border-blue-600 text-white bg-violet-500 text-sm flex items-center justify-center transition-colors"
                 onClick={() => {
                   navigate("/learningoverview");
                   window.scrollTo(0, 0);
                 }}
               >
-                <RestartIcon/>
+                <img src={startoverAgaing} alt="" className="mr-2" />
                 Start Over Again
               </button>
-              <button className="px-4 py-2 rounded-md border border-blue-600 text-blue-600 text-sm flex items-center justify-center transition-colors">
-                <DownloadIcon />
+              <button className="lg:w-40 lg:text-[10px]  px-4 py-2 rounded-md border border-blue-600 text-blue-600 text-sm flex items-center justify-center transition-colors">
+                <img src={download} alt="" className="mr-1" />
                 Download Certificate
               </button>
               <button
-                className="px-4 py-2 rounded-md border border-gray-300 text-gray-700 text-sm flex items-center justify-center hover:bg-gray-50 transition-colors"
+                className="lg:w-44 lg:text-[10px] px-4 py-2 rounded-md border border-gray-300 text-gray-700 text-sm flex items-center justify-center hover:bg-gray-50 transition-colors"
                 onClick={handleToggleAssessments}
               >
-                <ClipboardIcon />
+                <img src={Assessment} alt="" className="mr-1" />
                 Assessments & Projects
               </button>
             </div>
 
             {/* overview section */}
-            <section className=" p-1 rounded-lg w-full">
+            <section className=" p-1 rounded-lg w-full border ">
             {showAssessments && (
               <section className=" p-1 rounded-lg mb-5">
                 <h2 className="text-2xl font-semibold mb-4">Assessments & Projects</h2>
-                <div className="">
-                  <div className="2xl:w-[650px]">
+                <div className="lg:overflow-x-auto">
+                  <div className="2xl:w-[650px] lg:w-[450px]">
                     {initialAssessments.map((assessment) => (
                       <AssessmentRow key={assessment.id} assessment={assessment} />
                     ))}
@@ -1964,18 +1982,10 @@ const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
                     Pensive-Tesla
                   </h3>
                   <div className="flex space-x-3 text-gray-500 text-sm mt-1">
-                    <a href="#" className="hover:text-blue-600">
-                      Facebook
-                    </a>
-                    <a href="#" className="hover:text-blue-600">
-                      X (Twitter)
-                    </a>
-                    <a href="#" className="hover:text-blue-600">
-                      Email
-                    </a>
-                    <a href="#" className="hover:text-blue-600">
-                      Website
-                    </a>
+                    <img src={Facebook} alt="" />
+                      <img src={X} alt="" />
+                      <img src={Instagram} alt="" />
+                      <img src={youtube} alt="" />
                   </div>
                   <p className="text-gray-700 text-sm mt-2 max-w-lg">
                     Expert mentor for {course.title}, with extensive experience
@@ -2075,17 +2085,20 @@ const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
         </div>
 
         {/* Bottom Section: Overview, Mentor, Reviews */}
-        <div className="space-y-8 mt-8">
+       <div className="space-y-8 mt-8">
           {/* Reviews Section */}
           <section className="rounded-lg  w-full">
-            <div className="bg-white p-6  shadow-md mb-5">
+            <div className="p-0  mb-5 border">
               <h2 className="text-2xl font-semibold mb-4">Reviews</h2>
-              <div className="flex flex-col sm:flex-row justify-between items-center mb-6">
-                <div className="flex items-end mb-4 sm:mb-0">
-                  <span className="text-6xl font-bold text-gray-900">
+              <div className="bg-white p-4 shadow-md rounded-md items-center">
+                <div className="flex  justify-between items-center mb-1 w-full  ">
+
+                {/*Rating */}
+                <div className="flex flex-col mr-5 mb-4 sm:mb-0">
+                  <span className="ml-1 text-2xl font-bold text-gray-900">
                     {averageRating}
                   </span>
-                  <div className="ml-3">
+                  <div className="ml-1 ">
                     <StarRating
                       rating={Math.round(parseFloat(averageRating))}
                       size="medium"
@@ -2095,25 +2108,21 @@ const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
                     </span>
                   </div>
                 </div>
-                <button className="px-6 py-2 rounded-md border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors">
-                  Write A Review
-                </button>
-              </div>
-              <div className="mb-8">
+                 <div className="mb-0 w-4/6 p-4  ">
                 {Object.entries(reviewCounts)
                   .sort(
                     ([ratingA], [ratingB]) =>
                       parseInt(ratingB) - parseInt(ratingA)
                   )
                   .map(([rating, count]) => (
-                    <div key={rating} className="flex items-center mb-2">
+                    <div key={rating} className="flex items-center mb-2 ">
                       <span className="text-gray-700 w-8 font-medium">
                         {rating}
                       </span>
                       <StarRating rating={1} size="small" />
                       <div className="flex-grow bg-gray-200 h-2 rounded-full mx-3">
                         <div
-                          className="bg-yellow-500 h-full rounded-full"
+                          className="bg-violet-500 h-full rounded-full"
                           style={{
                             width: `${
                               (count /
@@ -2128,6 +2137,14 @@ const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
                     </div>
                   ))}
               </div>
+              <button className="px-6 py-2 ml-4 rounded-md border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors">
+                  Write A Review
+                </button>
+                
+                 </div>
+              
+              </div>
+              
             </div>
 
             <div className="p-6">

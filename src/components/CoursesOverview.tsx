@@ -313,7 +313,7 @@ const CoursesOverview: React.FC <childProps> = ({sendMessage}) => {
   }
   // Course List View
   return (
-    <div className="min-h-screen bg-gray-100 font-sans text-gray-800 w-full">
+    <div className="min-h-screen bg-gray-100 font-sans text-gray-800 border w-full ">
       <h1 className="text-2xl font-bold mb-6">My Courses ({courses.length})</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {courses.map((course) => (

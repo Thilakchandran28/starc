@@ -634,7 +634,6 @@
 //             </section>
 //           </div>
 
-        
 //         </div>
 
 //         {/* Bottom Section: Overview, Mentor, Reviews */}
@@ -717,13 +716,29 @@
 
 // export default OngoingCourseDashboardPage;
 
-
 // Responsiveness
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import mentor from "../Assets/Image-60.png";
 import RightSideBar from "./RightSideBar";
 import RightSideBarComp from "./RightSideBarComp";
+import Completed from "../Assets/icons/Completed.svg";
+import InProgress from "../Assets/icons/In-progress.svg";
+import Submitted from "../Assets/icons/Submitted.svg";
+import Continue from "../Assets/icons/Play.svg";
+import locked from "../Assets/icons/locked.svg";
+import star from "../Assets/icons/Star.svg";
+import Assessment from "../Assets/icons/Assesment.svg";
+import Resume from '../Assets/icons/Resume.svg'
+import like from '../Assets/icons/Like.svg'
+import dislike from '../Assets/icons/Dislike.svg'
+import Aplus from '../Assets/icons/A-plus.svg'
+import Retest from '../Assets/icons/Re-test.svg'
+import Upcoming from '../Assets/icons/Upcoming.svg'
+import Facebook from '../Assets/icons/Facebook.svg'
+import X from "../Assets/icons/X.svg"
+import youtube from "../Assets/icons/Youtube.svg"
+import Instagram from '../Assets/icons/Instagram.svg'
 
 const APlusIcon: React.FC = () => (
   <svg
@@ -773,7 +788,7 @@ const ContinueIcon: React.FC = () => (
 );
 
 // Assessment and Projects Components
-type AssessmentStatus = "completed" | "Submitted" | "Failed" | "In Progress";
+type AssessmentStatus = "completed" | "Submitted" | "Re-test" | "Upcoming";
 
 interface Assessment {
   id: number;
@@ -794,54 +809,26 @@ const AssessmentRow: React.FC<AssessmentRowProps> = ({ assessment }) => {
     switch (status) {
       case "completed":
         return (
-          <span className="flex items-center text-green-600 font-medium">
-            <CheckCircleIcon className="mr-1" /> completed
+          <span className="flex items-center  font-medium">
+           <img src={Completed} className="mr-1" style={{height:'20px'}} alt=""/> completed
           </span>
         );
       case "Submitted":
         return (
-          <span className="flex items-center text-blue-600 font-medium">
-            <FileTextIcon className="mr-1" /> Submitted
+          <span className="flex items-center  font-medium">
+            <img src={Submitted} className="mr-1" style={{height:'20px'}} alt="" /> Submitted
           </span>
         );
-      case "Failed":
+      case "Re-test":
         return (
-          <span className="flex items-center text-red-600 font-medium">
-            <svg
-              className="w-5 h-5 mr-1"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-            Failed
+          <span className="flex items-center  font-medium">
+            <img src={Retest} className="mr-1" style={{height:'20px'}} alt="" /> Re-Test
           </span>
         );
-      case "In Progress":
+      case "Upcoming":
         return (
-          <span className="flex items-center text-yellow-600 font-medium">
-            <svg
-              className="w-5 h-5 mr-1"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-            In Progress
+          <span className="flex items-center  font-medium">
+            <img src={Upcoming} className="mr-1" style={{height:'20px'}} alt="" /> Upcoming
           </span>
         );
       default:
@@ -852,12 +839,14 @@ const AssessmentRow: React.FC<AssessmentRowProps> = ({ assessment }) => {
   return (
     <div className="2xl:grid grid-flow-col 2xl:w-[650px] 2xl:text-[12px]  3xl:w-[900px] 3xl:text-[15px]  lg:flex lg:text-[10px] lg:w-[600px]  py-3 border-b border-gray-100 last:border-b-0">
       <div className="flex items-center space-x-2 pr-4 justify-items-start ">
-        <APlusIcon />
+        <img src={Aplus} alt="" />
         <span className="text-gray-700 font-medium whitespace-nowrap ">
           {assessment.type} {assessment.number}
         </span>
       </div>
-      <div className="text-gray-800 font-medium px-4 flex justify-items-start">{assessment.title}</div>
+      <div className="text-gray-800 font-medium px-4 flex justify-items-start">
+        {assessment.title}
+      </div>
       <div className="text-gray-600 text-sm px-4 whitespace-nowrap  flex justify-items-start lg:text-[10px]">
         {assessment.score}
       </div>
@@ -1057,11 +1046,11 @@ const ReviewCard: React.FC<{ review: Review }> = ({ review }) => {
             </div>
             <div className="flex space-x-4 text-gray-500">
               <button className="flex items-center space-x-1 hover:text-blue-500">
-                <ThumbsUpIcon />
+                <img src={like} alt="" />
                 <span>{review.likes}</span>
               </button>
               <button className="flex items-center space-x-1 hover:text-red-500">
-                <ThumbsDownIcon />
+                <img src={dislike} alt="" />
                 <span>{review.dislikes}</span>
               </button>
             </div>
@@ -1154,7 +1143,7 @@ const OngoingCourseDashboardPage: React.FC<{
       number: 2,
       title: "Core AWS Services",
       score: "(80/100)",
-      status: "completed",
+      status: "Re-test",
       date: "May 7, 2025 11:00 AM",
     },
     {
@@ -1163,7 +1152,7 @@ const OngoingCourseDashboardPage: React.FC<{
       number: 3,
       title: "Storage Solutions",
       score: "(80/100)",
-      status: "completed",
+      status: "Upcoming",
       date: "May 7, 2025 11:00 AM",
     },
     {
@@ -1181,7 +1170,7 @@ const OngoingCourseDashboardPage: React.FC<{
       number: 4,
       title: "Cost Optimization",
       score: "(80/100)",
-      status: "completed",
+      status: "Upcoming",
       date: "May 7, 2025 11:00 AM",
     },
   ];
@@ -1237,9 +1226,9 @@ const OngoingCourseDashboardPage: React.FC<{
           <div className="lg:col-span-3 space-y-6 w-full">
             <h1 className="text-2xl font-bold flex items-center">
               {course.title}
-              <span className="text-base font-normal text-green-600 ml-1 flex items-center">
-                <CheckCircleIcon className="ml-3 text-lg" />
-                {course.status === "100%" ? "Completed" : course.status}
+              <span className="text-base font-normal  ml-1 flex items-center">
+                <img src={InProgress} className="ml-3 mr-2 text-lg" />
+                In-Progress
               </span>
             </h1>
             <div className="flex flex-col sm:flex-row sm:items-center text-gray-700 text-sm">
@@ -1251,40 +1240,49 @@ const OngoingCourseDashboardPage: React.FC<{
               </span>
               <span className="ml-1 text-gray-600">4.8 (280)</span>
             </div>
-            <p className="text-gray-500 text-sm">Last Visited: Sept 12, 2024</p>
-            <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
+            <div className="flex">
+              <img src={star} alt="" />
+              <img src={star} alt="" />
+              <img src={star} alt="" />
+              <img src={star} alt="" />
+              <img src={star} alt="" />
+              <p className="text-gray-500 text-sm">
+              <span className="mr-4"><b>4.8</b> (280)</span> <span>|</span> <span className="ml-4">Last Visited: Sept 12, 2024</span>
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
               <button
-                className="px-4 py-2 rounded-2xl border border-blue-600 text-white bg-violet-500 text-sm flex items-center justify-center transition-colors"
+                className="lg:text-[10px] lg:w-36 lg:text-[10px] lg:w-36  px-2 py-2 rounded-md border border-blue-600 text-white bg-violet-500 text-sm flex items-center justify-center transition-colors"
                 onClick={() => {
                   navigate("/learningoverview");
                   window.scrollTo(0, 0);
                 }}
               >
-                <ContinueIcon />
+                <img src={Continue} alt="" />
                 Continue Now
               </button>
-              <button className="px-4 py-2 rounded-2xl bg-gray-400  text-white text-sm flex items-center justify-center transition-colors">
-                <LockIcon/>
+              <button className="lg:w-40 lg:text-[10px]  px-2 py-2 rounded-md border bg-gray-400 text-white text-sm flex items-center justify-center transition-colors" disabled>
+                <img src={locked} className="pr-2" alt="" />
                 Download Certificate
               </button>
               <button
-                className="px-4 py-2 rounded-2xl border border-gray-300 text-gray-700 text-sm flex items-center justify-center hover:bg-gray-50 transition-colors"
+                className="lg:w-48 lg:text-[10px] px-2 py-2 rounded-md border border-gray-300 text-gray-700 text-sm flex items-center justify-center hover:bg-gray-50 transition-colors"
                 onClick={handleToggleAssessments}
               >
-                <ClipboardIcon />
+                <img src={Assessment} className="pr-2" alt="" />
                 Assessments & Projects
               </button>
             </div>
 
             {/* overview section */}
-            <section className=" p-1 rounded-lg w-full">
+            <section className=" p-1 rounded-lg w-full border">
               {showAssessments && (
                 <section className="p-1 rounded-lg mb-5">
                   <h2 className="text-2xl font-semibold mb-4">
                     Assessments & Projects
                   </h2>
                   <div className="lg:overflow-x-auto ">
-                    <div className="2xl:w-[650px] lg:w-[500px] lg:border border-blue-500">
+                    <div className="2xl:w-[650px] lg:w-[500px] ">
                       {initialAssessments.map((assessment) => (
                         <AssessmentRow
                           key={assessment.id}
@@ -1296,14 +1294,15 @@ const OngoingCourseDashboardPage: React.FC<{
                 </section>
               )}
 
-              <h3>Resume Now</h3>
-              <div className="bg-white w-1/2 h-20 gap-3 mb-3 flex items-center p-4 rounded-md   ">
-                <PlayIcon />
-                <div className="flex justify-between w-full">
+            {!showAssessments && (<>
+            <h3>Resume Now</h3>
+              <div className="bg-white w-1/2 h-20 gap-3 mb-3 flex items-center p-4 rounded-[12px] border border-b-violet-500  ">
+              <img src={Resume} alt="" />
+                <div className="flex justify-between w-full ">
                   <h4>What is UI</h4>
                   <p className="text-gray-400">5:00 min</p>
                 </div>
-              </div>
+              </div></>)}
 
               <section>
                 <h2 className="text-2xl font-semibold mb-4">Overview</h2>
@@ -1333,18 +1332,10 @@ const OngoingCourseDashboardPage: React.FC<{
                     Pensive-Tesla
                   </h3>
                   <div className="flex space-x-3 text-gray-500 text-sm mt-1">
-                    <a href="#" className="hover:text-blue-600">
-                      Facebook
-                    </a>
-                    <a href="#" className="hover:text-blue-600">
-                      X (Twitter)
-                    </a>
-                    <a href="#" className="hover:text-blue-600">
-                      Email
-                    </a>
-                    <a href="#" className="hover:text-blue-600">
-                      Website
-                    </a>
+                      <img src={Facebook} alt="" />
+                      <img src={X} alt="" />
+                      <img src={Instagram} alt="" />
+                      <img src={youtube} alt="" />
                   </div>
                   <p className="text-gray-700 text-sm mt-2 max-w-lg">
                     Expert mentor for {course.title}, with extensive experience
@@ -1354,22 +1345,23 @@ const OngoingCourseDashboardPage: React.FC<{
               </div>
             </section>
           </div>
-
-        
         </div>
 
         {/* Bottom Section: Overview, Mentor, Reviews */}
         <div className="space-y-8 mt-8">
           {/* Reviews Section */}
           <section className="rounded-lg  w-full">
-            <div className="bg-white p-6  shadow-md mb-5">
+            <div className="p-0  mb-5 border">
               <h2 className="text-2xl font-semibold mb-4">Reviews</h2>
-              <div className="flex flex-col sm:flex-row justify-between items-center mb-6">
-                <div className="flex items-end mb-4 sm:mb-0">
-                  <span className="text-6xl font-bold text-gray-900">
+              <div className="bg-white p-4 shadow-md rounded-md items-center">
+                <div className="flex  justify-between items-center mb-1 w-full  ">
+
+                {/*Rating */}
+                <div className="flex flex-col mr-5 mb-4 sm:mb-0">
+                  <span className="ml-1 text-2xl font-bold text-gray-900">
                     {averageRating}
                   </span>
-                  <div className="ml-3">
+                  <div className="ml-1 ">
                     <StarRating
                       rating={Math.round(parseFloat(averageRating))}
                       size="medium"
@@ -1379,25 +1371,21 @@ const OngoingCourseDashboardPage: React.FC<{
                     </span>
                   </div>
                 </div>
-                <button className="px-6 py-2 rounded-md border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors">
-                  Write A Review
-                </button>
-              </div>
-              <div className="mb-8">
+                 <div className="mb-0 w-4/6 p-4  ">
                 {Object.entries(reviewCounts)
                   .sort(
                     ([ratingA], [ratingB]) =>
                       parseInt(ratingB) - parseInt(ratingA)
                   )
                   .map(([rating, count]) => (
-                    <div key={rating} className="flex items-center mb-2">
+                    <div key={rating} className="flex items-center mb-2 ">
                       <span className="text-gray-700 w-8 font-medium">
                         {rating}
                       </span>
                       <StarRating rating={1} size="small" />
                       <div className="flex-grow bg-gray-200 h-2 rounded-full mx-3">
                         <div
-                          className="bg-yellow-500 h-full rounded-full"
+                          className="bg-violet-500 h-full rounded-full"
                           style={{
                             width: `${
                               (count /
@@ -1412,6 +1400,14 @@ const OngoingCourseDashboardPage: React.FC<{
                     </div>
                   ))}
               </div>
+              <button className="px-6 py-2 ml-4 rounded-md border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors">
+                  Write A Review
+                </button>
+                
+                 </div>
+              
+              </div>
+              
             </div>
 
             <div className="p-6">
