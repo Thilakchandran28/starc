@@ -11,7 +11,8 @@ import {
   SkipForward,
 } from "lucide-react";
 
-import figma from "../Assets/video/Master Figma UI Design in 15 Minutes _ This Tutorial Is For You!.mp4"
+import figma from "../Assets/video/Master Figma UI Design in 15 Minutes _ This Tutorial Is For You!.mp4";
+
 interface CourseIntroProps {
   courseTitle: string;
   lessonTitle: string;
@@ -34,7 +35,7 @@ export default function CourseIntro({
   onSettings,
   about = "Lorem ipsum dolor sit amet consectetur. Sociis tempus fermentum morbi enim posuere nisi.",
   description = "Lorem ipsum dolor sit amet consectetur. Tincidunt sed enim mi proin fermentum. In ornare blandit nec tortor varius semper. Tincidunt ultrices magna ipsum una scelerisque porta ad sem eu. Scelerisque eros maecenas volutpat amet tortor proin elit mattis. Est amet et elit bibendum amet. Aliquet dolor sit pharetra at aliquam sapien nisl eget. Sit nisl metus vel fermentum sed est. Auctor nisi ullamcorper mi tellus bibendum. Donec quis in dolor vel duis dui turpis nunc id.",
-  videoSrc = {figma},
+  videoSrc = figma,
   videoPoster = "",
 }: CourseIntroProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -42,6 +43,9 @@ export default function CourseIntro({
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [progress, setProgress] = useState(0);
+  const [isMuted, setIsMuted] = useState(false);
+  // Add state for volume level
+  const [volume, setVolume] = useState(1); // Volume range: 0 to 1
 
   // Check if the videoSrc is a YouTube URL
   const isYouTubeVideo = videoSrc.includes("youtube.com");
@@ -51,6 +55,39 @@ export default function CourseIntro({
     const videoIdMatch = url.match(/(?:v=)([^&]+)/);
     const videoId = videoIdMatch ? videoIdMatch[1] : null;
     return videoId ? `https://www.youtube.com/embed/${videoId}?autoplay=0` : url;
+  };
+
+  // Volume adjustment function
+  const adjustVolume = (newVolume: number) => {
+    if (videoRef.current) {
+      // Clamp volume between 0 and 1
+      const clampedVolume = Math.max(0, Math.min(1, newVolume));
+      videoRef.current.volume = clampedVolume;
+      setVolume(clampedVolume);
+      setIsMuted(clampedVolume === 0);
+    }
+  };
+
+  // Handle volume button click (to toggle volume levels)
+  const handleVolumeClick = () => {
+    if (videoRef.current) {
+      if (volume === 0) {
+        adjustVolume(0.5);
+      } else if (volume === 0.5) {
+        adjustVolume(1);
+      } else {
+        adjustVolume(0);
+      }
+    }
+  };
+
+  // Settings action
+  const handleSettingsClick = () => {
+    if (onSettings) {
+      onSettings();
+    } else {
+      console.log("Settings clicked: Customize playback speed, quality, etc.");
+    }
   };
 
   const formatTime = (time: number) => {
@@ -67,6 +104,13 @@ export default function CourseIntro({
         videoRef.current.play();
       }
       setIsPlaying(!isPlaying);
+    }
+  };
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(videoRef.current.muted);
     }
   };
 
@@ -89,8 +133,7 @@ export default function CourseIntro({
     if (videoRef.current) {
       const rect = e.currentTarget.getBoundingClientRect();
       const clickPosition = e.clientX - rect.left;
-      const newTime =
-        (clickPosition / rect.width) * videoRef.current.duration;
+      const newTime = (clickPosition / rect.width) * videoRef.current.duration;
       videoRef.current.currentTime = newTime;
       setCurrentTime(newTime);
       setProgress((newTime / videoRef.current.duration) * 100);
@@ -106,6 +149,14 @@ export default function CourseIntro({
       }
     }
   };
+
+  // Sync volume on mount
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.volume = volume;
+      setIsMuted(videoRef.current.muted);
+    }
+  }, [volume]);
 
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white rounded-xl shadow-sm space-y-6">
@@ -206,11 +257,14 @@ export default function CourseIntro({
               >
                 <SkipForward className="w-5 h-5" />
               </button>
-              <button className="text-white hover:text-gray-300">
+              <button
+                onClick={handleVolumeClick}
+                className={`text-white hover:text-gray-300 ${isMuted ? 'opacity-50' : ''}`}
+              >
                 <Volume2 className="w-5 h-5" />
               </button>
               <button
-                onClick={onSettings}
+                onClick={handleSettingsClick}
                 className="text-white hover:text-gray-300"
               >
                 <Settings className="w-5 h-5" />
@@ -226,7 +280,7 @@ export default function CourseIntro({
         )}
       </div>
 
-      {/* About */}
+      {/*---- About ---- */}
       <section>
         <h3 className="text-lg font-semibold text-gray-800 mb-3">
           About this course

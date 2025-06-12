@@ -11,10 +11,10 @@ type Question = {
   options: Option[];
 };
 
-// Update to 20 questions to match the image
+// 20 questions to match the image
 const questions: Question[] = Array.from({ length: 20 }, (_, i) => ({
   id: i + 1,
-  text: `Question ${i + 420}: Lorem ipsum dolor sit amet consectetur...`,
+  text: `Question ${i + 420}: Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur... Lorem ipsum dolor sit amet consectetur...Lorem ipsum dolor sit amet consectetur... Lorem ipsum dolor sit amet consectetur ?`,
   options: [
     { id: 'A', text: 'Lorem ipsum dolor sit amet consectetur.' },
     { id: 'B', text: 'Lorem ipsum dolor sit amet consectetur.' },
@@ -47,7 +47,7 @@ const Quiz = () => {
     setAnswers(updatedAnswers);
   };
 
-  // Updated timer format to HH:MM:SS
+  // Timer format to HH:MM:SS
   const formatTime = (secs: number) => {
     const hours = Math.floor(secs / 3600)
       .toString()
@@ -63,15 +63,15 @@ const Quiz = () => {
   const progressPercent = (answeredCount / questions.length) * 100;
 
   const getStatusColor = (index: number) => {
-    if (answers[index]) return 'bg-purple-600 text-white'; // Answered
-    if (visited[index]) return 'border-purple-400 text-purple-500'; // Viewed
-    return 'border-gray-300 text-gray-400'; // Not viewed
+    if (answers[index]) return 'bg-purple-600 border-purple-600 text-black'; // Answered: purple background, black text
+    if (visited[index]) return 'border-purple-400 text-black'; // Viewed: purple border, black text
+    return 'bg-gray-300 text-black'; // Not attended: gray background, black text
   };
 
   return (
     <div className="flex flex-col md:flex-row h-full w-100%">
       {/* Quiz Content */}
-      <div className="w-full md:w-4/5 p-4">
+      <div className="w-full md:w-4/6 p-4">
         <div className="bg-white rounded-xl p-6 h-full">
           <div className="mb-4">
             <h1 className="text-2xl font-bold mb-2">UI/UX Designing Quiz</h1>
@@ -135,10 +135,10 @@ const Quiz = () => {
         </div>
       </div>
       {/* Sidebar */}
-      <div className="w-full md:w-2/5 p-4">
-        <div className="bg-white rounded-xl shadow-md p-4 h-full">
+      <div className="w-full md:w-2/5 p-6">
+        <div className="bg-white rounded-xl shadow-md p-7 h-full">
           <h2 className="font-bold text-lg mb-4">Section: Question</h2>
-          <div className="grid grid-cols-5 gap-2 mb-4">
+          <div className="grid grid-cols-5 gap-5 mb-4">
             {questions.map((_, index) => (
               <button
                 key={index}
@@ -152,28 +152,26 @@ const Quiz = () => {
             ))}
           </div>
           {/* Legend */}
-          <div className="flex items-center space-x-4">
-  <div className="flex flex-col items-center">
-    <div className="w-10 h-10 rounded-full bg-purple-600 flex items-center justify-center text-white">
-      <span>A</span>
-    </div>
-    <span className="text-sm mt-2">Answered</span>
-  </div>
-  <div className="flex flex-col items-center">
-    <div className="w-10 h-10 rounded-full border border-purple-400 flex items-center justify-center text-black">
-      <span>A</span>
-    </div>
-    <span className="text-sm mt-2">Viewed</span>
-  </div>
-  <div className="flex flex-col items-center">
-    <div className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-black">
-      <span>A</span>
-    </div>
-    <span className="text-sm mt-2 ">NotViewed</span>
-  </div>
-</div>
-
-
+          <div className="flex items-center space-x-7">
+            <div className="flex flex-col items-center">
+              <div className="w-10 h-10 rounded-full bg-purple-600 flex items-center justify-center text-black border border-purple-600">
+                <span>A</span>
+              </div>
+              <span className="text-sm mt-2">Answered</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-10 h-10 rounded-full border border-purple-400 flex items-center justify-center text-black">
+                <span>A</span>
+              </div>
+              <span className="text-sm mt-2">Viewed</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center text-black">
+                <span>A</span>
+              </div>
+              <span className="text-sm mt-2">NotViewed</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

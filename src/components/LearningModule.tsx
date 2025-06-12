@@ -186,8 +186,8 @@ const LearningModule: React.FC = () => {
   return (
     <div className="flex min-h-screen bg-white p-4">
       {/* Left Sidebar - Learning Box */}
-      <div className="Left Sidebar bg-white rounded-2xl border border-violet-300 shadow-md m-4 w-96">
-        <div className="flex justify-between items-center p-6">
+      <div className="Left Sidebar bg-white rounded-2xl border border-violet-300 shadow-md ml-4 mt-4 mr-0 w-96">
+        <div className="flex justify-between items-center p-5">
           <h2 className="learing text-xl font-semibold text-gray-800">Learning</h2>
           <button className="text-gray-500 hover:text-gray-700">
             <svg
@@ -428,7 +428,7 @@ const LearningModule: React.FC = () => {
       </div>
 
       {/* Right Side Content */}
-      <div className="Right Side Content flex-1 p-4 m-4 bg-white rounded-2xl border border-gray-200 shadow-md flex items-center justify-center min-h-[calc(100vh-2rem)]">
+      <div className="Right Side Content flex-1 p-4 m-4 bg-white rounded-2xl border border-gray-200  shadow-md flex items-center justify-center min-h-[calc(100vh-2rem)]">
         {isQuizActive ? (
           <div className="quiz-com w-full h-full">
             <Quiz />

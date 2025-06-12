@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   ArrowLeft,
   ChevronLeft,
@@ -13,6 +13,7 @@ import {
 
 export default function LessonViewer({ config = {} }) {
   const [zoom, setZoom] = useState(100);
+  const pdfContainerRef = useRef<HTMLDivElement>(null); // Added ref for full-screen
 
   // Configuration object with unique keys
   const lessonConfig = {
@@ -26,6 +27,19 @@ export default function LessonViewer({ config = {} }) {
     courseDescription: config.courseDescription || "Lorem ipsum dolor sit amet consectetur. Tincidunt sed enim mi proin fermentum. In ornare blandit nec tortor varius semper. Tincidunt ultrices magna ipsum una scelerisque porta ad sem eu. Scelerisque eros maecenas volutpat amet tortor proin elit mattis. Est amet et elit bibendum amet. Aliquet dolor sit pharetra at aliquam sapien nisl eget. Sit nisl metus vel fermentum sit sed. Auctor nisi ullamcorper mi tellus bibendum. Donec quis in dolor vel duis dui turpis nunc id.",
     documentWidth: config.documentWidth || "600px",
     documentMinHeight: config.documentMinHeight || "800px",
+  };
+
+  // Toggle full-screen mode
+  const toggleFullscreen = () => {
+    if (pdfContainerRef.current) {
+      if (!document.fullscreenElement) {
+        pdfContainerRef.current.requestFullscreen().catch((err) => {
+          console.error(`Error attempting to enable full-screen mode: ${err.message}`);
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    }
   };
 
   const zoomOut = () => {
@@ -77,7 +91,7 @@ export default function LessonViewer({ config = {} }) {
           </div>
         </div>
         {/* Document Viewer */}
-        <div className="bg-gray-300 p-4 flex justify-center relative">
+        <div ref={pdfContainerRef} className="bg-gray-300 p-4 flex justify-center relative">
           {lessonConfig.bookSrc ? (
             <iframe
               src={pdfUrl}
@@ -92,7 +106,7 @@ export default function LessonViewer({ config = {} }) {
           )}
           {/* Fullscreen */}
           <div className="absolute bottom-4 right-4 bg-purple-600 text-white p-2 rounded-full shadow-lg cursor-pointer">
-            <Maximize2 className="w-4 h-4" />
+            <Maximize2 className="w-4 h-4" onClick={toggleFullscreen} />
           </div>
         </div>
       </div>
