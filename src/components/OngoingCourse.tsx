@@ -1217,7 +1217,7 @@ const OngoingCourseDashboardPage: React.FC<{
           onClick={onBack}
           className="mb-4 text-purple-600 hover:underline"
         >
-          ← Back to Courses
+          ← Courses
         </button>
 
         {/* Top Section: Course Info (Left) and Progress/Suggested (Right) */}
