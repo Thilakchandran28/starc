@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   ChevronLeft,
   ChevronRight,
   ArrowLeft,
   Settings,
+  Volume2,
+  Maximize,
+  Play,
+  Pause,
+  SkipForward,
 } from "lucide-react";
 
+import figma from "../Assets/video/Master Figma UI Design in 15 Minutes _ This Tutorial Is For You!.mp4"
 interface CourseIntroProps {
   courseTitle: string;
   lessonTitle: string;
@@ -28,66 +34,206 @@ export default function CourseIntro({
   onSettings,
   about = "Lorem ipsum dolor sit amet consectetur. Sociis tempus fermentum morbi enim posuere nisi.",
   description = "Lorem ipsum dolor sit amet consectetur. Tincidunt sed enim mi proin fermentum. In ornare blandit nec tortor varius semper. Tincidunt ultrices magna ipsum una scelerisque porta ad sem eu. Scelerisque eros maecenas volutpat amet tortor proin elit mattis. Est amet et elit bibendum amet. Aliquet dolor sit pharetra at aliquam sapien nisl eget. Sit nisl metus vel fermentum sed est. Auctor nisi ullamcorper mi tellus bibendum. Donec quis in dolor vel duis dui turpis nunc id.",
-  videoSrc = "https://www.youtube.com/watch?v=thtAxtEuX6c",
-  videoPoster = "https://via.placeholder.com/800x450.png?text=Course+Video+Thumbnail",
+  videoSrc = {figma},
+  videoPoster = "",
 }: CourseIntroProps) {
-  // Convert YouTube watch URL to embed URL
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [progress, setProgress] = useState(0);
+
+  // Check if the videoSrc is a YouTube URL
+  const isYouTubeVideo = videoSrc.includes("youtube.com");
+
+  // Convert YouTube URL to embed URL
   const getYouTubeEmbedUrl = (url: string) => {
-    const videoId = url.split("v=")[1]?.split("&")[0];
-    return videoId ? `https://www.youtube.com/embed/${videoId}` : url;
+    const videoIdMatch = url.match(/(?:v=)([^&]+)/);
+    const videoId = videoIdMatch ? videoIdMatch[1] : null;
+    return videoId ? `https://www.youtube.com/embed/${videoId}?autoplay=0` : url;
   };
 
-  const embedUrl = getYouTubeEmbedUrl(videoSrc);
+  const formatTime = (time: number) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+  };
+
+  const togglePlayPause = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  const handleTimeUpdate = () => {
+    if (videoRef.current) {
+      setCurrentTime(videoRef.current.currentTime);
+      setProgress(
+        (videoRef.current.currentTime / videoRef.current.duration) * 100
+      );
+    }
+  };
+
+  const handleLoadedMetadata = () => {
+    if (videoRef.current) {
+      setDuration(videoRef.current.duration);
+    }
+  };
+
+  const handleProgressClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (videoRef.current) {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const clickPosition = e.clientX - rect.left;
+      const newTime =
+        (clickPosition / rect.width) * videoRef.current.duration;
+      videoRef.current.currentTime = newTime;
+      setCurrentTime(newTime);
+      setProgress((newTime / videoRef.current.duration) * 100);
+    }
+  };
+
+  const toggleFullscreen = () => {
+    if (videoRef.current) {
+      if (!document.fullscreenElement) {
+        videoRef.current.requestFullscreen();
+      } else {
+        document.exitFullscreen();
+      }
+    }
+  };
 
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white rounded-xl shadow-sm space-y-6">
       {/* Header */}
       <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-3">
           <button onClick={onBack} aria-label="Back">
             <ArrowLeft className="w-5 h-5 text-gray-700 cursor-pointer" />
           </button>
           <div>
             <h2 className="text-sm text-gray-500">{courseTitle}</h2>
-            <h1 className="text-base font-semibold text-gray-900">{lessonTitle}</h1>
+            <h1 className="text-base font-semibold text-gray-900">
+              {lessonTitle}
+            </h1>
           </div>
         </div>
-        {/* Navigation */}
         <div className="flex items-center space-x-4 text-sm text-gray-700">
           <button
             onClick={onPrevious}
-            className="flex items-center space-x-1 cursor-pointer hover:text-blue-600"
+            className={`flex items-center space-x-1 ${onPrevious ? 'cursor-pointer hover:text-blue-600' : 'opacity-50 cursor-not-allowed'}`}
+            disabled={!onPrevious}
           >
             <ChevronLeft className="w-4 h-4" />
             <span>Previous</span>
           </button>
           <button
             onClick={onNext}
-            className="flex items-center space-x-1 cursor-pointer hover:text-blue-600"
+            className={`flex items-center space-x-1 ${onNext ? 'cursor-pointer hover:text-blue-600' : 'opacity-50 cursor-not-allowed'}`}
+            disabled={!onNext}
           >
             <span>Next</span>
             <ChevronRight className="w-4 h-4" />
           </button>
         </div>
       </div>
+
       {/* Video Section */}
       <div className="relative w-full overflow-hidden rounded-xl">
-        <iframe
-          className="w-full h-96 rounded-xl"
-          src={embedUrl}
-          title={lessonTitle}
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
+        {isYouTubeVideo ? (
+          <iframe
+            className="w-full h-[420px] rounded-xl"
+            src={getYouTubeEmbedUrl(videoSrc)}
+            title={lessonTitle}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        ) : (
+          <>
+            <video
+              ref={videoRef}
+              className="w-full h-[420px] rounded-xl object-cover"
+              src={videoSrc}
+              poster={videoPoster}
+              onTimeUpdate={handleTimeUpdate}
+              onLoadedMetadata={handleLoadedMetadata}
+            ></video>
+
+            {/* Custom Video Controls */}
+            <div className="absolute bottom-6 inset-x-6 bg-gray-800/60 rounded-full px-5 py-3 flex items-center gap-4">
+              {/* Play/Pause */}
+              <button
+                onClick={togglePlayPause}
+                className="bg-white border border-gray-300 rounded-full p-1 text-gray-700 hover:text-gray-800"
+              >
+                {isPlaying ? (
+                  <Pause className="w-6 h-6" />
+                ) : (
+                  <Play className="w-6 h-6" />
+                )}
+              </button>
+
+              {/* Current Time */}
+              <span className="text-white text-sm w-[42px] text-center">
+                {formatTime(currentTime)}
+              </span>
+
+              {/* Progress Bar */}
+              <div
+                className="flex-1 h-2 bg-white/30 rounded-full cursor-pointer overflow-hidden"
+                onClick={handleProgressClick}
+              >
+                <div
+                  className="h-full bg-white rounded-full"
+                  style={{ width: `${progress}%` }}
+                ></div>
+              </div>
+
+              {/* Duration */}
+              <span className="text-white text-sm w-[42px] text-center">
+                {formatTime(duration)}
+              </span>
+
+              {/* Icons */}
+              <button
+                onClick={onNext}
+                className="text-white hover:text-gray-300"
+              >
+                <SkipForward className="w-5 h-5" />
+              </button>
+              <button className="text-white hover:text-gray-300">
+                <Volume2 className="w-5 h-5" />
+              </button>
+              <button
+                onClick={onSettings}
+                className="text-white hover:text-gray-300"
+              >
+                <Settings className="w-5 h-5" />
+              </button>
+              <button
+                onClick={toggleFullscreen}
+                className="text-white hover:text-gray-300"
+              >
+                <Maximize className="w-5 h-5" />
+              </button>
+            </div>
+          </>
+        )}
       </div>
-      {/* About this course */}
+
+      {/* About */}
       <section>
         <h3 className="text-lg font-semibold text-gray-800 mb-3">
           About this course
         </h3>
         <p className="text-gray-600 text-sm leading-relaxed">{about}</p>
       </section>
+
       {/* Description */}
       <hr />
       <section>
