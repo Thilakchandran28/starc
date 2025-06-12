@@ -1,49 +1,44 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin } from "lucide-react";
-
+import { Mail, Phone, MapPin } from "lucide-react"; // Removed Check as it's not used in the form
+import heros from "../assests/hero.png";
+import PurpleBox from "@/components/PurpleBox";
 const Contact = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-white overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] flex items-center justify-center pointer-events-none opacity-20">
-          <svg width="500" height="300" viewBox="0 0 500 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 290 C 100 200, 400 200, 490 290" stroke="#A78BFA" strokeWidth="2" fill="none"/>
-            <path d="M20 280 C 110 190, 410 190, 480 280" stroke="#A78BFA" strokeWidth="2" fill="none"/>
-            <path d="M30 270 C 120 180, 420 180, 470 270" stroke="#A78BFA" strokeWidth="2" fill="none"/>
-            <path d="M40 260 C 130 170, 430 170, 460 260" stroke="#A78BFA" strokeWidth="2" fill="none"/>
-            <path d="M50 250 C 140 160, 440 160, 450 250" stroke="#A78BFA" strokeWidth="2" fill="none"/>
-            <path d="M60 240 C 150 150, 450 150, 440 240" stroke="#A78BFA" strokeWidth="2" fill="none"/>
-            <path d="M70 230 C 160 140, 460 140, 430 230" stroke="#A78BFA" strokeWidth="2" fill="none"/>
-            <path d="M80 220 C 170 130, 470 130, 420 220" stroke="#A78BFA" strokeWidth="2" fill="none"/>
-            <path d="M90 210 C 180 120, 480 120, 410 210" stroke="#A78BFA" strokeWidth="2" fill="none"/>
-            <path d="M100 200 C 190 110, 490 110, 400 200" stroke="#A78BFA" strokeWidth="2" fill="none"/>
-          </svg>
+      <section className="relative py-20 from-purple-50 to-white overflow-hidden">
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          {/* Optional: Subtle noise texture or pattern */}
+          <div className="w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgeT0iMSIgcj0iMSIgZmlsbD0iIzAwMDAwMDMzIi8+PC9zdmc+')] bg-repeat"></div>
         </div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <span className="inline-block bg-purple-200 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full mb-4">
-            STARC COURSE
-          </span>
-          <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            Contact Us
-          </h1>
-          <p className="text-lg text-gray-600 leading-relaxed">
-            Lorem ipsum dolor sit amet consectetur. Arcu a sit commodo tempor nulla blandit.
-            <br />
-            Posuere vel netus auctor phasellus fermentum.
-          </p>
+        <div className="relative z-10">
+          <div className="flex justify-center mb-12">
+            <img src={heros} alt="Hero" className="w-[75%] absolute top-[10px]" />
+          </div>
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span className="inline-block bg-purple-100 text-white text-xs font-semibold px-3 py-1 rounded-full mb-2">
+              STARC COURSE
+            </span>
+            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+              Contact Us
+            </h1>
+            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+              Lorem ipsum dolor sit amet consectetur. Arcu a sit commodo tempor nulla blandit.
+              <br />
+              Posuere vel netus auctor phasellus fermentum.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-white">
+      <section className="py-10 bg-white ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left: Contact Info */}
           <div>
@@ -52,19 +47,22 @@ const Contact = () => {
               Lorem ipsum dolor sit amet consectetur. Elementum massa gravida ante iaculis diam nibh.
             </p>
 
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">How we can help</h3>
+            <h3 className="text-2xl font-mont text-gray-900 mb-4">How we can help</h3>
             <ul className="space-y-4 text-gray-700 text-lg">
-              <li className="flex items-center">
-                <span className="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
-                Lorem ipsum dolor sit amet consectetur.
+              <li className="flex items-center gap-2">
+<span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#8A63FF]">
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                </span>                Lorem ipsum dolor sit amet consectetur.
               </li>
-              <li className="flex items-center">
-                <span className="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
-                Lorem ipsum dolor sit amet consectetur.
+              <li className="flex items-center gap-2">
+<span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#8A63FF]">
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                </span>                Lorem ipsum dolor sit amet consectetur.
               </li>
-              <li className="flex items-center">
-                <span className="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
-                Lorem ipsum dolor sit amet consectetur.
+              <li className="flex items-center gap-2">
+<span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#8A63FF]">
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                </span>                Lorem ipsum dolor sit amet consectetur.
               </li>
             </ul>
 
@@ -77,19 +75,42 @@ const Contact = () => {
           </div>
 
           {/* Right: Contact Form */}
-          <div className="bg-gray-50 p-8 rounded-xl shadow-lg">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Access the Start Template</h3>
+          <div className="bg-white p-8 rounded-xl shadow-md"> {/* Changed bg-gray-50 to bg-white */}
+            <h3 className="text-2xl font-mont text-gray-900 mb-6">Access the Starc Template:</h3> {/* Updated title */}
             <form className="space-y-6">
-              <Input type="text" placeholder="Name" className="w-full p-3 border border-gray-300 rounded-md" />
-              <Input type="email" placeholder="Email" className="w-full p-3 border border-gray-300 rounded-md" />
-              <Textarea placeholder="Message" rows={5} className="w-full p-3 border border-gray-300 rounded-md"></Textarea>
-              <Button type="submit" className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-md text-lg font-semibold">
-                Submit
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4"> {/* Added grid for side-by-side inputs */}
+                <div>
+                  <Input
+                    type="text"
+                    placeholder="Name"
+                    className="w-full p-3  bg-[#F7F8FA] font-mont rounded-md focus:ring-2 focus:ring-purple-600 "
+                  />
+                  {/* Removed Check icon */}
+                </div>
+                <div>
+                  <Input
+                    type="email"
+                    placeholder="Email"
+                    className="w-full p-3 border font-mont bg-[#F7F8FA] rounded-md focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                  />
+                  {/* Removed Check icon */}
+                </div>
+              </div>
+              <Textarea
+                placeholder="Message" // Placeholder in image looks like a general message or larger input area
+                rows={5}
+                className="w-full p-3 border font-mont bg-[#F7F8FA] rounded-md focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+              ></Textarea>
+              <Button
+                type="submit"
+                className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-md text-lg font-mont"
+              >
+                Sign Up
               </Button>
+              <p className="text-sm font-mont text-gray-500 mt-4 text-center">
+                Section can be added here (description or information) {/* Updated text */}
+              </p>
             </form>
-            <p className="text-sm text-gray-500 mt-4 text-center">
-              Lorem ipsum dolor sit amet consectetur.
-            </p>
           </div>
         </div>
       </section>
@@ -124,7 +145,7 @@ const Contact = () => {
       {/* Wall of Love Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-gray-900 text-center mb-12">Wall of love</h2>
+          <h2 className="text-4xl font-bold text-gray-900 text-center mb-12">Wall of Love</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Testimonial Card 1 */}
             <div className="bg-gray-50 p-6 rounded-xl shadow-sm border border-gray-200">
@@ -251,25 +272,8 @@ const Contact = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-purple-600 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-4">
-            Join ambitious professionals and
-            <br />
-            unlock your dream career today
-          </h2>
-          <p className="text-lg opacity-90 mb-8">
-            Lorem ipsum dolor sit amet consectetur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Input type="email" placeholder="Enter your email" className="w-full sm:w-auto bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-white" />
-            <Button className="bg-white text-purple-600 px-6 py-3 rounded-md text-lg font-semibold hover:bg-gray-100">
-              Join Us
-            </Button>
-          </div>
-        </div>
-      </section>
-
+     
+      <PurpleBox/>
       <Footer />
     </div>
   );

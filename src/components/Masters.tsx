@@ -156,7 +156,7 @@ const Masters = () => {
       : allMasters.filter((master) => master.category === activeCategory);
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Navigation Links */}
         <div className="flex justify-center gap-6 border-b border-gray-200 mb-12 flex-wrap">

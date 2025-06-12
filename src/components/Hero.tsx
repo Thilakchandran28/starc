@@ -62,7 +62,7 @@ const Hero: React.FC = () => {
         <img
           src={heroImage}
           alt="Background Vector"
-          className="w-[75%] h-auto absolute left-[150px] top-[10px]"
+          className="w-[75%] h-auto absolute left-[200px] top-[10px] "
           onError={(e) => {
             console.error("Error loading hero image:", e);
             e.currentTarget.style.display = "none"; // Hide image if it fails to load
@@ -70,18 +70,18 @@ const Hero: React.FC = () => {
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-36">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center pt-64 ">
         <div
-          className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-6 text-white"
+          className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-6 text-white font-mont"
           style={{ backgroundColor: "#A855F7" }}
         >
           SUPERVISED COURSES
         </div>
 
         {/* Fixed height container for sliding content */}
-        <div className="overflow-hidden h-[220px] flex items-center justify-center">
+        <div className="overflow-hidden h-[300px] flex items-center justify-center">
           <div key={currentSlide} className="w-full">
-            <h1 className="text-5xl lg:text-[350%] font-bold text-gray-800 mb-6 animate-pop-slide">
+            <h1 className="text- lg:text-[450%] font-bold text-gray-800 mb-6 animate-pop-slide font-mont">
               {slides[currentSlide].title.split(" ").map((word, index) => (
                 <span key={index}>
                   {word}{" "}
@@ -95,13 +95,13 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 ">
           {currentSlide === 0 ? (
             <>
               <button
                 type="button"
                 className="bg-purple-500 text-white px-6 py-3 text-lg font-medium rounded-lg shadow-md"
-                style={{ backgroundColor: "#A855F7" }}
+                style={{ backgroundColor: "#A855F7", boxShadow:'0px 10px 12px 0px rgba(0, 0, 0, 0.2)' }}
               >
                 Explore More Now
               </button>
@@ -123,7 +123,7 @@ const Hero: React.FC = () => {
             <button
               type="button"
               className="bg-purple-500 text-white px-6 py-3 text-lg font-medium rounded-lg shadow-md"
-              style={{ backgroundColor: "#A855F7" }}
+              style={{ backgroundColor: "#A855F7" , boxShadow:'0px 10px 12px 0px rgba(0, 0, 0, 0.2)' }}
             >
               Express Your Interest Now
             </button>
@@ -132,7 +132,7 @@ const Hero: React.FC = () => {
               <button
                 type="button"
                 className="bg-purple-500 text-white px-6 py-3 text-lg font-medium rounded-lg shadow-md"
-                style={{ backgroundColor: "#A855F7" }}
+                style={{ backgroundColor: "#A855F7" , boxShadow:'0px 10px 12px 0px rgba(0, 0, 0, 0.2)'}}
               >
                 Explore Courses Now
               </button>

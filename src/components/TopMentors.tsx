@@ -19,6 +19,7 @@ interface FaqItem {
 }
 
 // --- Mentor Section Data ---
+
 const mentors: Mentor[] = [
   {
     id: 1,
@@ -27,7 +28,7 @@ const mentors: Mentor[] = [
     experience: "10 Years",
     rating: 5,
     reviews: 200,
-    image: "https://i.ibb.co/L9hV1nB/mentor1.jpg" // Placeholder image URLs
+    image: ""
   },
   {
     id: 2,
@@ -36,7 +37,7 @@ const mentors: Mentor[] = [
     experience: "7 Years",
     rating: 5,
     reviews: 200,
-    image: "https://i.ibb.co/h7gJj49/mentor2.jpg" // Placeholder image URLs
+    image: ""
   },
   {
     id: 3,
@@ -45,7 +46,7 @@ const mentors: Mentor[] = [
     experience: "5 Years",
     rating: 5,
     reviews: 200,
-    image: "https://i.ibb.co/VMyh4Fh/mentor3.jpg" // Placeholder image URLs
+    image: ""
   }
 ];
 
@@ -79,11 +80,10 @@ const faqs: FaqItem[] = [
 ];
 
 // --- Helper Component: StarRating (for Mentors) ---
-// Simplified to match the 5 full stars shown in the UI
 const StarRating: React.FC = () => {
   return (
     <div className="flex items-center space-x-0.5 text-yellow-400">
-      {[...Array(5)].map((_, i) => ( // Always render 5 full stars
+      {[...Array(5)].map((_, i) => (
         <Star key={i} className="w-4 h-4 fill-yellow-400 stroke-yellow-400" />
       ))}
     </div>
@@ -100,18 +100,17 @@ const CombinedSections: React.FC = () => {
   };
 
   return (
-    <div className="bg-gray-50 font-sans"> {/* Overall background and font */}
-
+    <div className="font-sans">
       {/* --- Top Mentors Section --- */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Header Section */}
           <div className="mb-12">
-            <h2 className="text-4xl font-extrabold text-gray-800 mb-4">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Our Top Mentor At Starc
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            <p className="text-base text-gray-500 max-w-3xl mx-auto leading-relaxed">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
           </div>
 
@@ -120,29 +119,24 @@ const CombinedSections: React.FC = () => {
             {mentors.map((mentor) => (
               <div
                 key={mentor.id}
-                className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300 ease-in-out"
+                className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
               >
-                {/* Image block */}
-                <div className="mb-4">
-                  <img
-                    src={mentor.image}
-                    alt={mentor.name}
-                    className="w-32 h-32 rounded-full object-cover ring-4 ring-blue-100 ring-opacity-60"
-                  />
-                </div>
-
-                {/* Text content */}
-                <h3 className="text-xl font-semibold text-gray-800">{mentor.name}</h3>
-                <p className="text-md text-gray-600 mb-4">{mentor.specialization}</p>
-
-                <div className="flex items-center gap-2 text-gray-700 text-sm mb-2">
-                  <Clock className="w-4 h-4 text-gray-500" />
-                  <span>{mentor.experience}</span>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <StarRating />
-                  <span className="text-sm text-gray-600">({mentor.reviews})</span>
+                <img
+                  src={mentor.image}
+                  alt={mentor.name}
+                  className="w-full h-64 object-contain rounded-t-xl bg-white"
+                />
+                <div className="p-6 text-center">
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">{mentor.name}</h3>
+                  <p className="text-sm text-gray-500 ">{mentor.specialization}</p>
+                  <div className="flex items-center justify-center gap-2 text-gray-600 text-sm mb-3">
+                    <Clock className="w-4 h-4 text-gray-500" />
+                    <span>{mentor.experience}</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2">
+                    <StarRating />
+                    <span className="text-sm text-gray-500">({mentor.reviews})</span>
+                  </div>
                 </div>
               </div>
             ))}
@@ -153,8 +147,7 @@ const CombinedSections: React.FC = () => {
       {/* Spacer or separator if needed */}
       <div className="py-8"></div>
 
-      {/* --- FAQ Section --- */}
-    
+      {/* --- FAQ Section (placeholder for future addition) --- */}
     </div>
   );
 };

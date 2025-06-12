@@ -1,7 +1,8 @@
+import React from "react";
 import { GraduationCap, BookOpen, Globe, MessageSquare } from "lucide-react";
-import star from "../assests/stargirl.jpg";
+import star from "../assests/stargirl.jpg"; // Ensure the path is correct
 
-const WhyChoose = () => {
+const WhyChoose: React.FC = () => {
   const features = [
     {
       icon: GraduationCap,
@@ -32,7 +33,7 @@ const WhyChoose = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -42,19 +43,17 @@ const WhyChoose = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center relative ">
-          {/* <div className="absolute inset-0">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center relative">
+          {/* Concentric Circles */}
+          
+          { <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="relative w-[50%] aspect-square">
+              <div className="absolute inset-0 rounded-full" style={{backgroundColor:"#9539E50A"}} ></div>
+              <div className="absolute inset-[10%] rounded-full" style={{ backgroundColor: "#0066FF0D"}}></div>
+              <div className="absolute inset-[20%] rounded-full" style={{ backgroundColor: "#9539E54A"}}></div>
+            </div>
+          </div> }
 
-             <div className="width-[100px]  aspect-square bg-purple-200 rounded-full flex items-center justify-center z-5"></div>
-          </div> */}
-          <div className=" absolute inset-0  flex justify-center">
-            <div className="w-[50%] rounded-full bg-red-50"></div>
-          </div>
-           <div className=" absolute inset-0  flex justify-center">
-            <div className="w-[40%] rounded-full bg-amber-50"></div>
-          </div>   <div className=" absolute inset-0  flex justify-center">
-            <div className="w-[30%] rounded-full bg-blue-50"></div>
-          </div>
           {/* Left Cards */}
           <div className="flex flex-col gap-6 relative z-10">
             {/* Courses Card */}
@@ -82,16 +81,20 @@ const WhyChoose = () => {
           </div>
 
           {/* Center Video Container with Gradient Background */}
-          <div className="relative ">
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-300 to-blue-300 rounded-3xl transform scale-110 opacity-50 -z-10"></div>
+          <div className="relative">
+            <div className="absolute inset-0 bg-[#852dd20a] from-purple-300 to-blue-300 rounded-3xl transform scale-110 opacity-50 -z-10"></div>
             <div className="relative mx-auto w-[360px] h-[480px] rounded-3xl overflow-hidden shadow-lg">
-              <img
+             {/* <img
                 src={star}
                 alt="Video presenter"
-                className="w-full h-full object-cover "
-              />
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  console.error("Error loading image:", e);
+                  e.currentTarget.src = "https://via.placeholder.com/360x480"; // Fallback image
+                }}
+              /> */}
               <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white px-4 py-2 rounded-lg shadow-md">
-                <span className="text-gray-900 font-semibold">Video</span>
+                {/* <span className="text-gray-900 font-semibold">Video</span> */}
               </div>
             </div>
           </div>
