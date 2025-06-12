@@ -3,7 +3,7 @@ import { LayoutDashboard, BookOpen, Book, Calendar, Settings } from 'lucide-reac
 
 const ProfileSidebar = () => {
   return (
-    <div className="w-72 bg-white rounded-[16px] shadow-md p-4 lg:h-[80vh] fixed top-32 left-10">
+    <div className="w-[18%] bg-white rounded-[16px] shadow-md p-4 lg:h-[90vh] fixed top-32 left-10">
       {/* User Profile Section */}
       <div className="flex items-center mb-6">
         <div className="w-16 h-16 rounded-full overflow-hidden mr-4">

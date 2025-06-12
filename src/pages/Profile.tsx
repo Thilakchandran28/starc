@@ -38,12 +38,12 @@ const Profile = () => {
   ];
 
   return (
-    <div className=" relative  bg-gray-50">
+    <div className=" relative ">
       <div className='sticky top-0 z-50'>
         <ProfileTopNavbar />
       </div>
       
-      <div className="flex justify-center items-center mx-20 mt-30 relative ">
+      <div className="flex justify-center items-center mx-20 mt-30 relative  ">
         <ProfileSidebar />
         <DashboardOverview />
         <RightSideBarComp />

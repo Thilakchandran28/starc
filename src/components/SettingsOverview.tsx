@@ -12,7 +12,7 @@ const SettingsOverview = () => {
         </p>
       </div> */}
 
-      <div className='flex justify-center w-[100vw]  '>
+      <div className='flex justify-around w-[100vw]  '>
         <SettingsTabs />
         {/* <RightSideBar /> */}
       </div>

@@ -5,7 +5,7 @@ import clock from "../Assets/clock.svg"
 
 const DashboardCard = ({ course }) => {
     return (
-        <div className="bg-white rounded-[20px] shadow-md overflow-hidden ">
+        <div className="bg-white rounded-[20px] shadow-md overflow-hidden border border-purple-600 w-[100%] h-[100%] ">
             <img src={course.image} alt={course.title} className="w-full h-60 rounded-[40px] p-5" />
             <div className="p-5">
                 <h3 className="font-semibold text-lg text-gray-900 mb-2">{course.title}</h3>

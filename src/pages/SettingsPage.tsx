@@ -4,6 +4,8 @@ import ProfileTopNavbar from '../components/ProfileTopNavbar';
 import SettingsOverview from '../components/SettingsOverview';
 import RightSideBar from '../components/RightSideBar';
 
+import SettingsTabs from '../components/SettingsTab';
+
 const SettingsPage = () => {
   return (
     // <div className="min-h-screen bg-gray-50 flex">
@@ -14,14 +16,16 @@ const SettingsPage = () => {
     //   </div>
     // </div>
 
-    <div className=" relative  bg-gray-50">
+    <div className=" relative  bg-[#F3F3F3]">
       <div className='sticky top-0 z-50'>
         <ProfileTopNavbar />
       </div>
 
-      <div className="flex justify-center items-center mx-10 mt-30 pt-28 relative ">
+      <div className="flex justify-center items-center  mx-10 mt-30 pt-32 relative ">
         <ProfileSidebar />
-        <SettingsOverview />
+        {/* <SettingsOverview /> */}
+        <SettingsTabs />
+        <RightSideBar />
         {/* <div className='w-[20vw] h-[80vh] '>
           <RightSideBar /> 
         </div> */}

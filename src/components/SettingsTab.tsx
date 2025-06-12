@@ -147,7 +147,7 @@ const SettingsTabs = () => {
         return (
           <div className="space-y-8">
             <form onSubmit={handleAccountSubmit} className="space-y-5">
-              <div>
+              <div  className="space-y-4">
                 <label
                   htmlFor="currentPassword"
                   className="block text-sm font-medium text-gray-700"
@@ -164,7 +164,7 @@ const SettingsTabs = () => {
                   }
                 />
               </div>
-              <div>
+              <div  className="space-y-4">
                 <label htmlFor="newPassword" className="block text-sm font-medium text-gray-700">
                   New Password
                 </label>
@@ -178,7 +178,7 @@ const SettingsTabs = () => {
                   }
                 />
               </div>
-              <div>
+              <div  className="space-y-4">
                 <label
                   htmlFor="confirmPassword"
                   className="block text-sm font-medium text-gray-700"
@@ -196,7 +196,7 @@ const SettingsTabs = () => {
                 />
               </div>
               <button
-                className="px-4 py-2 bg-purple-600 text-white rounded[30px] hover:bg-purple-700"
+                className="px-4 py-2 bg-purple-600 text-white rounded-[30px] hover:bg-purple-700"
               >
                 Save Changes
               </button>
@@ -208,13 +208,13 @@ const SettingsTabs = () => {
               <input
                 id="username"
                 type="text"
-                className="mt-1 block w-[30%] rounded-[30px] bg-gray-100 text-gray-300 px-3 py-2 "
+                className="mt-1 block w-[40%] rounded-[30px] bg-gray-100 text-gray-300 px-3 py-2 "
                 placeholder="Username"
                 value={accountForm.username}
                 onChange={(e) => setAccountForm({ ...accountForm, username: e.target.value })}
               />
               <button
-                className="mt-2 px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700"
+                className="mt-2 px-4 py-2 bg-purple-600 text-white rounded-[30px] hover:bg-purple-700"
                 onClick={() => console.log('Username Updated:', accountForm.username)}
               >
                 Save Username
@@ -234,7 +234,7 @@ const SettingsTabs = () => {
                 <option value="English, US">English (US)</option>
               </select>
               <button
-                className="mt-2 px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700"
+                className="mt-2 px-4 py-2 bg-purple-600 text-white rounded-[30px] hover:bg-purple-700"
                 onClick={() => console.log('Language Updated:', accountForm.language)}
               >
                 Save Language
@@ -250,7 +250,7 @@ const SettingsTabs = () => {
                 <span className="text-sm">Confirm Delete your account</span>
               </label>
               <button
-                className="mt-2 px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700"
+                className="mt-2 px-4 py-2 bg-purple-600 text-white rounded-[30px] hover:bg-purple-700"
                 onClick={() => console.log('Account Deletion Requested')}
               >
                 Delete My Account
@@ -381,7 +381,7 @@ const SettingsTabs = () => {
             </div>
             <button
               type="submit"
-              className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700"
+              className="px-4 py-2 bg-purple-600 text-white rounded-[30px] hover:bg-purple-700"
             >
               Save Changes
             </button>
@@ -393,8 +393,8 @@ const SettingsTabs = () => {
   };
 
   return (
-    <div className="p-6 w-full min-h-screen">
-      <div className="max-w-4xl mx-auto bg-white rounded-[40px] shadow-md">
+    <div className="px-10 min-h-screen w-[60vw]  top-32">
+      <div className="w-full mx-auto bg-white rounded-[40px] shadow-md">
         {/* Tabs */}
         <div className="flex border-b px-6 pt-4">
           {tabs.map((tab) => (
