@@ -188,9 +188,9 @@ const PwdRstSentpage: React.FC = () => {
           <div className="pb-[70%] pl-11">
             <img src={Vector} alt="" className="absolute z-0 pl-24" style={{ width: "screen", height: "auto" }} />
           </div>
-          <div className="relative z-10 text-center flex flex-col justify-center pl-36 pt-36">
-            <div className="pl-5 pr-6 pt-16">
-              <div className="inline-flex items-center bg-[#8A63FF] text-white text-[60%] px-4 py-2 w-[30%] rounded-full text-sm font-medium font-mont">
+          <div className="relative z-10 text-center flex flex-col justify-center pl-36 pt-40 ">
+            <div className="pl-10 pr-6 pt-24">
+              <div className="pl-3 inline-flex items-center bg-[#8A63FF] text-white text-[50%] px-5 py-2 w-[26%] rounded-full text-sm font-medium font-mont ">
                 SUPERVISED COURSES
               </div>
             </div>
