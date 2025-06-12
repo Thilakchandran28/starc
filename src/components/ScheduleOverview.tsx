@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { LuArrowRightToLine } from "react-icons/lu";
+import { CiFilter,FaGreaterThan  } from "react-icons/ci";
 
 const ScheduleOverview = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -19,35 +21,35 @@ const ScheduleOverview = () => {
       dueDate: '20/12/2023',
       time: '15:00',
       description: "Lorem Ipsum has been the industry's standard andard dummystandard dummy",
-      color: 'bg-blue-100 border-blue-400'
+      color: 'bg-blue-100 border-l-blue-400'
     },
     {
       title: 'Former Survey',
       dueDate: '20/12/2023',
       time: '16:00',
       description: "Lorem Ipsum has been the industry's standard andard dummystandard dummy",
-      color: 'bg-orange-100 border-orange-400'
+      color: 'bg-orange-100 border-l-orange-400'
     },
     {
       title: 'Former Survey',
       dueDate: '29/12/2023',
       time: '17:00',
       description: "Lorem Ipsum has been the industry's standard andard dummystandard dummy",
-      color: 'bg-green-100 border-green-400'
+      color: 'bg-green-100 border-l-green-400'
     },
     {
       title: 'Former Survey',
       dueDate: '29/12/2023',
       time: '18:00',
       description: "Lorem Ipsum has been the industry's standard andard dummystandard dummy",
-      color: 'bg-purple-100 border-purple-400'
+      color: 'bg-purple-100 border-l-purple-400'
     },
     {
       title: 'Former Survey',
       dueDate: '28/12/2023',
       time: '19:00',
       description: "Lorem Ipsum has been the industry's standard andard dummystandard dummy",
-      color: 'bg-red-100 border-red-400'
+      color: 'bg-red-100 border-l-red-400'
     },
   ];
 
@@ -56,7 +58,7 @@ const ScheduleOverview = () => {
 
   const renderWeek = () => {
     const startOfWeek = new Date(currentDate);
-    startOfWeek.setDate(currentDate.getDate() - currentDate.getDay() + (currentDate.getDay() === 0 ? -6 : 1)); // Adjust to make Monday the first day
+    startOfWeek.setDate(currentDate.getDate() - currentDate.getDay() + (currentDate.getDay() === 0 ? -6 : 1));
 
     const weekDays = Array.from({ length: 7 }).map((_, i) => {
       const day = new Date(startOfWeek);
@@ -65,60 +67,36 @@ const ScheduleOverview = () => {
     });
 
     const getDayClass = (day) => {
-      let classes = 'p-2 rounded-full';
+      let classes = 'p-27 rounded-full';
       const today = new Date();
-
-      // Highlight today's date
       if (day.getDate() === today.getDate() && day.getMonth() === today.getMonth() && day.getFullYear() === today.getFullYear()) {
         classes += ' bg-blue-600 text-white';
       }
-
-      // Highlight dates with activities
-      const hasActivity = activityItems.some(item => {
-        const [dayStr, monthStr, yearStr] = item.dueDate.split('/');
-        const itemDate = new Date(parseInt(yearStr), parseInt(monthStr) - 1, parseInt(dayStr));
-        return itemDate.getDate() === day.getDate() &&
-               itemDate.getMonth() === day.getMonth() &&
-               itemDate.getFullYear() === day.getFullYear();
-      });
-      if (hasActivity) {
-        classes += ' border border-purple-600 text-purple-600';
-      }
-
       return classes;
     };
 
     return (
-      <div className="bg-white rounded-lg p-4 shadow-md col-span-4">
-        <div className="grid grid-cols-7 text-center text-sm font-medium text-gray-500 mb-1">
-          {daysOfWeek.map((day, i) => <div key={i}>{day}</div>)}
-        </div>
-        <div className="grid grid-cols-8 text-center text-sm">
-          <div className="col-span-1"></div> {/* Empty corner for time labels */}
+      <div className="bg-white rounded-lg p-2 shadow-sm col-span-4">
+        <div className="grid grid-cols-8 text-center text-[10px] font-medium text-gray-500 mb-1">
+          <div className="col-span-1"></div>
           {weekDays.map((day, i) => (
-            <div key={`week-day-header-${i}`} className="p-2">
-              <div className="text-xs font-semibold text-gray-700">{day.toLocaleDateString('en-US', { weekday: 'short' })}</div>
-              <div className="text-xs text-gray-500">{day.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</div>
+            <div key={`week-day-header-${i}`} className="p-1">
+              <div className="text-[10px] font-semibold text-gray-700">{day.toLocaleDateString('en-US', { weekday: 'short' })}</div>
+              <div className="text-[10px] text-gray-500">{day.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</div>
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-8 text-center text-sm">
-          <div className="col-span-1 flex flex-col justify-around text-right pr-2">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <div key={`time-label-${i}`} className="text-xs text-gray-500">
-                {`${(i + 3) % 12 === 0 ? 12 : (i + 3) % 12}${i + 3 < 12 ? 'PM' : 'PM'}`}
-              </div>
+        <div className="grid grid-cols-8 text-center text-[10px]">
+          <div className="col-span-1 flex flex-col justify-around text-right pr-1">
+            {['15:00', '16:00', '17:00', '18:00', '19:00'].map((time, i) => (
+              <div key={`time-label-${i}`} className="text-[10px] text-gray-500">{time}</div>
             ))}
           </div>
           {weekDays.map((day, i) => (
-            <div
-              key={`week-day-${i}`}
-              className={getDayClass(day)}
-            >
-              {/* Time slots and activities for the day */}
-              <div className="relative h-48 border-t border-gray-200">
-                {Array.from({ length: 8 }).map((_, hourIndex) => (
-                  <div key={hourIndex} className="absolute w-full border-b border-gray-200" style={{ top: `${hourIndex * 12.5}%`, height: '12.5%' }}></div>
+            <div key={`week-day-${i}`} className={getDayClass(day)}>
+              <div className="relative h-32 border-t border-gray-200">
+                {Array.from({ length: 5 }).map((_, hourIndex) => (
+                  <div key={hourIndex} className="absolute w-full border-b border-gray-200" style={{ top: `${hourIndex * 20}%`, height: '20%' }}></div>
                 ))}
                 {activityItems.filter(item => {
                   const [itemDay, itemMonth, itemYear] = item.dueDate.split('/').map(Number);
@@ -126,15 +104,14 @@ const ScheduleOverview = () => {
                   return itemDate.toDateString() === day.toDateString();
                 }).map((activity, index) => {
                   const [hour, minute] = activity.time.split(':').map(Number);
-                  const topPosition = (hour - 15 + minute / 60) * (100 / 8); // Assuming 3 PM to 8 PM range
+                  const topPosition = (hour - 15 + minute / 60) * (100 / 5); // 15:00 to 19:00 range
                   return (
                     <div
                       key={index}
-                      className={`${activity.color} p-1 rounded-lg border text-xs absolute w-full`}
-                      style={{ top: `${topPosition}%`, height: 'auto' }}
+                      className={`${activity.color} p-1 rounded-md text-[10px] absolute w-full`}
+                      style={{ top: `${topPosition}%`, height: '15%' }}
                     >
                       <h4 className="font-semibold">{activity.title}</h4>
-                      <p className="text-xs text-gray-600">{activity.time} - {activity.dueDate}</p>
                     </div>
                   );
                 })}
@@ -148,7 +125,6 @@ const ScheduleOverview = () => {
 
   const renderDaily = () => {
     const today = currentDate;
-
     const activitiesForDay = activityItems.filter(item => {
       const [dayStr, monthStr, yearStr] = item.dueDate.split('/');
       const itemDate = new Date(parseInt(yearStr), parseInt(monthStr) - 1, parseInt(dayStr));
@@ -158,40 +134,37 @@ const ScheduleOverview = () => {
     });
 
     return (
-      <div className="bg-white rounded-lg p-4 shadow-md col-span-4">
-        <div className="text-center text-sm font-medium text-gray-500 mb-1">
-          <div className="text-xl font-semibold text-gray-700">{currentDate.toLocaleDateString('en-US', { day: 'numeric' })}</div>
-          <div className="text-sm text-gray-500">{currentDate.toLocaleDateString('en-US', { weekday: 'long' })}</div>
+      <div className="bg-white rounded-lg p-2 shadow-sm col-span-4">
+        <div className="text-center text-[10px] font-medium text-gray-500 mb-1">
+          <div className="text-base font-semibold text-gray-700">{currentDate.toLocaleDateString('en-US', { day: 'numeric' })}</div>
+          <div className="text-[10px] text-gray-500">{currentDate.toLocaleDateString('en-US', { weekday: 'long' })}</div>
         </div>
-        <div className="grid grid-cols-8 text-center text-sm">
-          <div className="col-span-1 flex flex-col justify-around text-right pr-2">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <div key={`time-label-${i}`} className="text-xs text-gray-500">
-                {`${(i + 3) % 12 === 0 ? 12 : (i + 3) % 12}${i + 3 < 12 ? 'PM' : 'PM'}`}
-              </div>
+        <div className="grid grid-cols-8 text-center text-[10px]">
+          <div className="col-span-1 flex flex-col justify-around text-right pr-1">
+            {['15:00', '16:00', '17:00', '18:00', '19:00'].map((time, i) => (
+              <div key={`time-label-${i}`} className="text-[10px] text-gray-500">{time}</div>
             ))}
           </div>
-          <div className="col-span-7 relative h-48 border-t border-gray-200">
-            {Array.from({ length: 8 }).map((_, hourIndex) => (
-              <div key={hourIndex} className="absolute w-full border-b border-gray-200" style={{ top: `${hourIndex * 12.5}%`, height: '12.5%' }}></div>
+          <div className="col-span-7 relative h-32 border-t border-gray-200">
+            {Array.from({ length: 5 }).map((_, hourIndex) => (
+              <div key={hourIndex} className="absolute w-full border-b border-gray-200" style={{ top: `${hourIndex * 20}%`, height: '20%' }}></div>
             ))}
             {activitiesForDay.length > 0 ? (
               activitiesForDay.map((activity, index) => {
                 const [hour, minute] = activity.time.split(':').map(Number);
-                const topPosition = (hour - 15 + minute / 60) * (100 / 8); // Assuming 3 PM to 8 PM range
+                const topPosition = (hour - 15 + minute / 60) * (100 / 5); // 15:00 to 19:00 range
                 return (
                   <div
                     key={index}
-                    className={`${activity.color} p-1 rounded-lg border text-xs absolute w-full`}
-                    style={{ top: `${topPosition}%`, height: 'auto' }}
+                    className={`${activity.color} p-1 rounded-md text-[10px] absolute w-full`}
+                    style={{ top: `${topPosition}%`, height: '15%' }}
                   >
                     <h4 className="font-semibold">{activity.title}</h4>
-                    <p className="text-xs text-gray-600">{activity.time} - {activity.dueDate}</p>
                   </div>
                 );
               })
             ) : (
-              <p className="text-center text-gray-500">No activities for this day.</p>
+              <p className="text-center text-gray-500 text-[10px] mt-4">No activities for this day.</p>
             )}
           </div>
         </div>
@@ -205,16 +178,12 @@ const ScheduleOverview = () => {
     const startDayOffset = (getStartDayOfMonth(currentYear, monthIndex) + 6) % 7; // Adjust to make Monday the first day (0-indexed)
 
     const today = new Date();
-    const isCurrentMonth = today.getFullYear() === currentYear && today.getMonth() === monthIndex;
-
     const days = [];
 
-    // Add empty cells for days before the start of the month
     for (let i = 0; i < startDayOffset; i++) {
       days.push(null);
     }
 
-    // Add days from the current month
     for (let i = 1; i <= daysInMonth; i++) {
       days.push({
         date: i,
@@ -224,31 +193,39 @@ const ScheduleOverview = () => {
       });
     }
 
-    // Add empty cells for days after the end of the month to fill the grid
-    const remainingCells = 42 - days.length; // Assuming a maximum of 6 weeks (42 cells)
+    const remainingCells = 42 - days.length;
     for (let i = 0; i < remainingCells; i++) {
-        days.push(null);
+      days.push(null);
     }
 
     const getDayClass = (dayObj) => {
-      let classes = 'p-1 text-center text-xs';
+      let classes = 'p-1 text-center text-[10px]';
       if (dayObj) {
         const fullDate = new Date(dayObj.year, dayObj.month, dayObj.date);
-        // Highlight today's date
         if (fullDate.getDate() === today.getDate() && fullDate.getMonth() === today.getMonth() && fullDate.getFullYear() === today.getFullYear()) {
           classes += ' bg-blue-600 text-white rounded-full';
+        }
+        const hasActivity = activityItems.some(item => {
+          const [dayStr, monthStr, yearStr] = item.dueDate.split('/');
+          const itemDate = new Date(parseInt(yearStr), parseInt(monthStr) - 1, parseInt(dayStr));
+          return itemDate.getDate() === dayObj.date &&
+                 itemDate.getMonth() === dayObj.month &&
+                 itemDate.getFullYear() === dayObj.year;
+        });
+        if (hasActivity) {
+          classes += ' border border-purple-600 text-purple-600 rounded-full';
         }
       }
       return classes;
     };
 
     return (
-      <div className="bg-white rounded-lg p-4 shadow-md">
-        <h3 className="text-sm font-semibold mb-2 text-center text-gray-700">{monthName}</h3>
-        <div className="grid grid-cols-7 text-center text-xs font-medium text-gray-500 mb-1">
+      <div className="bg-white rounded-lg p-2 shadow-sm">
+        <h3 className="text-xs font-semibold mb-1 text-center text-gray-700">{monthName}</h3>
+        <div className="grid grid-cols-7 text-center text-[10px] font-medium text-gray-500 mb-1">
           {['M', 'T', 'W', 'T', 'F', 'S', 'S'].map((day, i) => <div key={i}>{day}</div>)}
         </div>
-        <div className="grid grid-cols-7 text-center text-xs">
+        <div className="grid grid-cols-7 text-center text-[10px]">
           {days.map((dayObj, index) => (
             <div
               key={`${monthName}-${index}`}
@@ -266,20 +243,12 @@ const ScheduleOverview = () => {
     setCurrentDate(new Date());
   };
 
-  const handlePrevYear = () => {
-    setCurrentDate(prevDate => new Date(prevDate.getFullYear() - 1, prevDate.getMonth(), prevDate.getDate()));
-  };
-
-  const handleNextYear = () => {
-    setCurrentDate(prevDate => new Date(prevDate.getFullYear() + 1, prevDate.getMonth(), prevDate.getDate()));
-  };
-
   const handlePrev = () => {
     setCurrentDate(prevDate => {
       if (currentView === 'year') {
         return new Date(prevDate.getFullYear() - 1, prevDate.getMonth(), prevDate.getDate());
       } else if (currentView === 'month') {
-        return new Date(prevDate.getFullYear(), prevDate.getMonth() - 1, 1); // Set day to 1 to avoid issues with months having fewer days
+        return new Date(prevDate.getFullYear(), prevDate.getMonth() - 1, 1);
       } else if (currentView === 'week') {
         return new Date(prevDate.getFullYear(), prevDate.getMonth(), prevDate.getDate() - 7);
       } else if (currentView === 'daily') {
@@ -294,7 +263,7 @@ const ScheduleOverview = () => {
       if (currentView === 'year') {
         return new Date(prevDate.getFullYear() + 1, prevDate.getMonth(), prevDate.getDate());
       } else if (currentView === 'month') {
-        return new Date(prevDate.getFullYear(), prevDate.getMonth() + 1, 1); // Set day to 1 to avoid issues with months having fewer days
+        return new Date(prevDate.getFullYear(), prevDate.getMonth() + 1, 1);
       } else if (currentView === 'week') {
         return new Date(prevDate.getFullYear(), prevDate.getMonth(), prevDate.getDate() + 7);
       } else if (currentView === 'daily') {
@@ -302,11 +271,6 @@ const ScheduleOverview = () => {
       }
       return prevDate;
     });
-  };
-
-  const handleYearChange = (event) => {
-    const year = parseInt(event.target.value);
-    setCurrentDate(prevDate => new Date(year, prevDate.getMonth(), prevDate.getDate()));
   };
 
   const handleViewChange = (event) => {
@@ -317,14 +281,14 @@ const ScheduleOverview = () => {
   const currentDay = currentDate.getDate();
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen flex space-x-6">
-      <div className="flex-grow">
-        <div className="flex justify-between items-center mb-6">
-          <div className="flex items-center space-x-4">
-            <button className="px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold" onClick={handleTodayClick}>Today</button>
-            <button className="text-gray-600 hover:text-gray-900" onClick={handlePrev}>&lt;</button>
-            <button className="text-gray-600 hover:text-gray-900" onClick={handleNext}>&gt;</button>
-            <span className="text-xl font-bold">
+    <div className="p-4 bg-gray min-h-screen flex space-x-4">
+      <div className="flex-grow bg-white rounded-lg shadow-sm p-4">
+        <div className="flex justify-between items-center mb-4">
+          <div className="flex items-center space-x-2">
+            <button className="px-3 py-1 bg-blue-600 text-white rounded-md font-medium text-sm" onClick={handleTodayClick}>Today</button>
+            <button className= " pb-2 text-gray-600 hover:text-gray-900 text-3xl" onClick={handlePrev}>{"<"} </button>
+            <button className=" pb-2 text-gray-600 hover:text-gray-900 text-3xl" onClick={handleNext}>{">"}</button>
+            <span className="text-lg font-semibold">
               {currentView === 'year' && currentYear}
               {currentView === 'month' && `${months[currentDate.getMonth()]} ${currentYear}`}
               {currentView === 'week' && `Week of ${currentDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`}
@@ -332,34 +296,22 @@ const ScheduleOverview = () => {
             </span>
           </div>
           <div className="flex items-center space-x-4">
-            <select className="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500" value={currentView} onChange={handleViewChange}>
+            <select className="px-3 py-1 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm" value={currentView} onChange={handleViewChange}>
               <option value="year">Year</option>
               <option value="month">Month</option>
               <option value="week">Week</option>
               <option value="daily">Daily</option>
             </select>
-            <button className="flex items-center px-4 py-2 rounded-lg border border-gray-300 bg-white text-gray-700 hover:bg-gray-50">
-              <svg
-                className="w-5 h-5 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M3 4h13M3 8h9m-9 4h9m5-4a2 2 0 11-4 0 2 2 0 014 0z"
-                ></path>
-              </svg>
+            <button className="flex items-center px-3 py-1 rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 text-sm">
+             <span><CiFilter  size={20} strokeWidth={1} /></span>
               Filter
             </button>
-            <button className="text-gray-600 hover:text-gray-900">&#8594;</button>
+            <button className="text-gray-500 hover:text-gray-900 text-lg"><LuArrowRightToLine size={24} strokeWidth={2} />
+            </button>
           </div>
         </div>
 
-        <div className="grid grid-cols-4 gap-6">
+        <div className="grid grid-cols-4 gap-3">
           {currentView === 'year' && Array.from({ length: 12 }, (_, i) => renderMonth(i))}
           {currentView === 'month' && <div className="col-span-4">{renderMonth(currentDate.getMonth())}</div>}
           {currentView === 'week' && renderWeek()}
@@ -367,16 +319,16 @@ const ScheduleOverview = () => {
         </div>
       </div>
 
-      <div className="w-80 flex-shrink-0 space-y-6">
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <div className="flex justify-between items-center mb-4">
-            <h2 className="text-xl font-bold text-gray-800">Schedule</h2>
-            <select className="px-3 py-1 rounded-lg border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500">
+      <div className="w-72 flex-shrink-0 space-y-4">
+        <div className="bg-white rounded-lg shadow-sm p-4">
+          <div className="flex justify-between items-center mb-3">
+            <h2 className="text-lg font-semibold text-gray-800">Schedule</h2>
+            <select className="px-2 py-1 rounded-md border border-gray-300 text-xs focus:outline-none focus:ring-2 focus:ring-purple-500">
               <option>Monthly</option>
             </select>
           </div>
-          <p className="text-sm text-gray-500 mb-4">{currentMonthName}, {currentYear}</p>
-          <div className="grid grid-cols-7 text-center text-sm font-medium text-gray-500 mb-2">
+          <p className="text-xs text-gray-500 mb-3">{currentMonthName}, {currentYear}</p>
+          <div className="grid grid-cols-7 text-center text-xs font-medium text-gray-500 mb-1">
             <div>Mo</div>
             <div>Tu</div>
             <div>We</div>
@@ -385,14 +337,13 @@ const ScheduleOverview = () => {
             <div>Sa</div>
             <div>Su</div>
           </div>
-          <div className="grid grid-cols-7 text-center text-sm">
+          <div className="grid grid-cols-7 text-center text-xs">
             {[...Array(getDaysInMonth(currentYear, currentDate.getMonth())).keys()].map(day => (
               <div
                 key={`small-cal-${day + 1}`}
-                className={`p-2 rounded-full ${day + 1 === currentDate.getDate() && currentDate.getMonth() === new Date().getMonth() && currentDate.getFullYear() === new Date().getFullYear() ? 'bg-purple-600 text-white' : ''} ${activityItems.some(item => {
+                className={`p-1 rounded-full ${day + 1 === currentDate.getDate() && currentDate.getMonth() === new Date().getMonth() && currentDate.getFullYear() === new Date().getFullYear() ? 'bg-purple-600 text-white' : ''} ${activityItems.some(item => {
                   const [dayStr, monthStr, yearStr] = item.dueDate.split('/');
                   const itemDate = new Date(parseInt(yearStr), parseInt(monthStr) - 1, parseInt(dayStr));
-
                   return itemDate.getDate() === day + 1 &&
                          itemDate.getMonth() === currentDate.getMonth() &&
                          itemDate.getFullYear() === currentDate.getFullYear();
@@ -404,19 +355,19 @@ const ScheduleOverview = () => {
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <div className="flex justify-between items-center mb-4">
-            <h2 className="text-xl font-bold text-gray-800">Today's Activity</h2>
-            <span className="text-gray-500">(20)</span>
+        <div className="bg-white rounded-lg shadow-sm p-4">
+          <div className="flex justify-between items-center mb-3">
+            <h2 className="text-lg font-semibold text-gray-800">Today's Activity</h2>
+            <span className="text-gray-500 text-xs">(20)</span>
           </div>
-          <div className="space-y-4">
+          <div className="space-y-3">
             {activityItems.map((activity, index) => (
-              <div key={index} className={`border-l-4 ${activity.color} p-4 rounded-r-md`}>
+              <div key={index} className={`border-l-4 ${activity.color} p-3 rounded-r-md`}>
                 <div className="flex justify-between items-center mb-1">
-                  <h3 className="font-semibold text-gray-800">{activity.title}</h3>
-                  <span className="text-xs text-gray-600">Due date : {activity.dueDate}</span>
+                  <h3 className="font-medium text-sm text-gray-800">{activity.title}</h3>
+                  <span className="text-xs text-gray-600">Due date: {activity.dueDate}</span>
                 </div>
-                <p className="text-sm text-gray-600">{activity.description}</p>
+                <p className="text-xs text-gray-600">{activity.description}</p>
               </div>
             ))}
           </div>
