@@ -71,13 +71,13 @@ const DashboardOverview = () => {
   // ];
 
   return (
-    <div className="px-10 bg-gray-50 min-h-screen">
+    <div className="px-10 min-h-screen w-[60vw] absolute top-32 ">
       <h1 className="text-3xl font-bold text-gray-900 mb-6">Hello {user.name} 👋</h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mb-6">
         {/* Achieve with purpose card */}
-        <div className="bg-purple-600 text-white p-6 rounded-lg shadow-md flex flex-col justify-between col-span-1">
-          <div className='bg-[url(/Assets/card-award.png)]'>
+        {/* <div className=" text-white p-6 rounded-lg shadow-md flex flex-col justify-between col-span-1 bg-[url('../Assets/card-award.png')]">
+          <div className=''>
             <h2 className="text-xl font-bold mb-2">Achieve with purpose</h2>
             <p className="text-purple-200 text-sm mb-4">Achieve with purpose Achieve with purposeAchieve with purpose.</p>
           </div>
@@ -86,13 +86,27 @@ const DashboardOverview = () => {
             <img src={trophy} alt="Trophy" className="h-16 w-16" />
           </div>
           <button className="mt-4 bg-white text-purple-600 px-1 py-2 rounded-full font-semibold hover:bg-gray-100 w-[10vw]">Start Now</button>
+        </div> */}
+        {/* Achieve with purpose card */}
+        <div className="bg-purple-600 text-white p-6 rounded-lg shadow-md flex flex-col justify-between col-span-1 bg-[url('../Assets/cardaward.png')] bg-cover bg-center">
+          <div>
+            <h2 className="text-xl font-bold mb-2">Achieve with purpose</h2>
+            <p className="text-purple-200 text-sm mb-4">Achieve with purpose Achieve with purpose Achieve with purpose.</p>
+          </div>
+          <div className="flex items-center justify-between">
+            <div className="text-3xl font-bold">02/10</div>
+            <img src={trophy} alt="Trophy" className="h-16 w-16" />
+          </div>
+          <button className="mt-4 bg-white text-purple-600 px-4 py-2 rounded-full font-semibold hover:bg-gray-100 w-[10vw]">
+            Start Now
+          </button>
         </div>
 
         {/* Learning Stats */}
         <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
           <div className="bg-white p-6 rounded-lg shadow-md flex items-center space-x-4">
             <div className="py-4 px-5  bg-gradient-to-b from-[#868CFF] to-[#8A63FF] rounded-full">
-              <img src= {hour}/>
+              <img src={hour} />
             </div>
             <div>
               <p className="text-gray-600 text-sm">Learning Hour</p>
@@ -136,7 +150,7 @@ const DashboardOverview = () => {
         </div>
 
         <div>
-           <div className="bg-white p-6 rounded-lg shadow-md flex items-center justify-center col-span-2 h-[25vh]">
+          <div className="bg-white p-6 rounded-lg shadow-md flex items-center justify-center col-span-2 h-[25vh]">
             <div className="relative w-24 h-24">
               <svg className="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
                 <circle cx="18" cy="18" r="16" fill="none" className="stroke-current text-purple-100" strokeWidth="2"></circle>
@@ -150,7 +164,7 @@ const DashboardOverview = () => {
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
                 <p className="text-xl font-bold text-gray-900">{user.coursesEnrolled}</p>
                 <p className="text-sm text-gray-500">Courses Enrolled</p>
-              </div>  
+              </div>
             </div>
             <div className="ml-4">
               <div className="flex items-center text-sm text-gray-600 mb-1">
@@ -210,7 +224,7 @@ const DashboardOverview = () => {
                 <p className="text-xs text-gray-500">{course.progress}% Complete</p>
               </div> */}
 
-              <DashboardCard  course={course}/>
+              <DashboardCard course={course} />
             </div>
           ))}
         </div>
