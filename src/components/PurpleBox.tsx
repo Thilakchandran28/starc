@@ -14,8 +14,8 @@ const PurpleBox: React.FC = () => {
 
   }}>
       <div className="max-w-4xl mx-auto px-4">
-
-
+       
+        
         {/* Heading and Subtext */}
         <h2 className="text-4xl font-bold mb-4 leading-tight">
           Join ambitious professionals and unlock your dream career today

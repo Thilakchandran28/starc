@@ -23,7 +23,8 @@ const Index = () => {
       <Masters />
       <HowItWorks />
       <TopMentors />
-      <FAQ />
+      {/* <div className="bg-red-500">jhghj</div> */}
+      <FAQ/>
       <WallOfLove />
       <PurpleBox />
       <Footer />

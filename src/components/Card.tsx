@@ -23,9 +23,9 @@ interface CardProps {
 const Recard: React.FC<CardProps> = ({ course }) => {
   const navigate = useNavigate();
 
-  // const handleClick = () => {
-  //   navigate('/carddetail', { state: { course } });
-  // };
+   const handleClick = () => {
+   navigate('/carddetail', { state: { course } });
+   };
 
   return (
     <div
