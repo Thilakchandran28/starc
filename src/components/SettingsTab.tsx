@@ -1,15 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { User, Lock, Bell } from 'lucide-react';
+import camera from "../Assets/Camera.svg";
 
 const SettingsTabs = () => {
   const [activeTab, setActiveTab] = useState('edit');
+  const [selectedImage, setSelectedImage] = useState(null); 
+  const fileInputRef = useRef(null); 
 
   // State for Edit Profile form
   const [profileForm, setProfileForm] = useState({
     fullName: 'John Doe',
     email: 'john@example.com',
     location: 'Tamilnadu, Chennai',
-    dateOfBirth: '2003-12-17', // Corrected format for date input
+    dateOfBirth: '2003-12-17',
     phone: '+1 234 567 890',
   });
 
@@ -38,25 +41,36 @@ const SettingsTabs = () => {
     { id: 'notification', label: 'Notification', icon: <Bell className="w-4 h-4 mr-1" /> },
   ];
 
+  // Handle image selection
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const imageUrl = URL.createObjectURL(file); 
+      setSelectedImage(imageUrl); 
+    }
+  };
+
+  // Handle camera icon click to trigger file input
+  const handleCameraClick = () => {
+    fileInputRef.current.click();
+  };
+
   // Handle form submission for Edit Profile
   const handleProfileSubmit = (e) => {
     e.preventDefault();
     console.log('Profile Updated:', profileForm);
-    // Add API call or other logic to save profile changes
   };
 
   // Handle form submission for Account
   const handleAccountSubmit = (e) => {
     e.preventDefault();
     console.log('Account Updated:', accountForm);
-    // Add API call or other logic to save account changes
   };
 
   // Handle form submission for Notification
   const handleNotificationSubmit = (e) => {
     e.preventDefault();
     console.log('Notification Settings Updated:', notificationForm);
-    // Add API call or other logic to save notification settings
   };
 
   const renderContent = () => {
@@ -65,13 +79,32 @@ const SettingsTabs = () => {
         return (
           <form className="space-y-8" onSubmit={handleProfileSubmit}>
             <div className="flex items-center mb-6">
-              <div className="w-24 h-24 rounded-full overflow-hidden mr-4">
-                <img src="/placeholder.svg" alt="User Avatar" className="w-full h-full object-cover" />
+              <div className="w-24 h-24 rounded-full overflow-hidden mr-4 relative">
+                <img
+                  src={selectedImage || "/placeholder.svg"}
+                  alt="User Avatar"
+                  className="w-full h-full object-cover"
+                />
+                <img
+                  src={camera}
+                  alt="Camera Icon"
+                  className="w-[50%] h-[50%] absolute bottom-6 left-1/2 transform -translate-x-1/2 cursor-pointer"
+                  onClick={handleCameraClick}
+                />
+                <input
+                  type="file"
+                  accept="image/*"
+                  ref={fileInputRef}
+                  className="hidden"
+                  onChange={handleImageChange}
+                />
               </div>
               <div>
                 <p className="text-gray-900 text-sm">Upload Photo</p>
-                <p className="text-sm  text-gray-400">1000 x 1000</p>
-                <p className="text-sm  text-gray-400">Image size should be under 1MB and image ration needs to be 1:1</p>
+                <p className="text-sm text-gray-400">1000 x 1000</p>
+                <p className="text-sm text-gray-400">
+                  Image size should be under 1MB and image ratio needs to be 1:1
+                </p>
               </div>
             </div>
             <div className="space-y-4">
@@ -86,7 +119,6 @@ const SettingsTabs = () => {
                 onChange={(e) => setProfileForm({ ...profileForm, fullName: e.target.value })}
               />
             </div>
-
             <div className="space-y-4">
               <label htmlFor="location" className="block text-sm font-medium text-gray-700">
                 Location
@@ -94,7 +126,7 @@ const SettingsTabs = () => {
               <input
                 id="location"
                 type="text"
-                className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-400   focus:ring-purple-500 focus:border-purple-500"
+                className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-400 focus:ring-purple-500 focus:border-purple-500"
                 value={profileForm.location}
                 onChange={(e) => setProfileForm({ ...profileForm, location: e.target.value })}
               />
@@ -106,7 +138,7 @@ const SettingsTabs = () => {
               <input
                 id="dateOfBirth"
                 type="date"
-                className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-400    focus:ring-purple-500 focus:border-purple-500"
+                className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-400 focus:ring-purple-500 focus:border-purple-500"
                 value={profileForm.dateOfBirth}
                 onChange={(e) => setProfileForm({ ...profileForm, dateOfBirth: e.target.value })}
               />
@@ -118,7 +150,7 @@ const SettingsTabs = () => {
               <input
                 id="phone"
                 type="tel"
-                className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-400   focus:ring-purple-500 focus:border-purple-500"
+                className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-400 focus:ring-purple-500 focus:border-purple-500"
                 value={profileForm.phone}
                 onChange={(e) => setProfileForm({ ...profileForm, phone: e.target.value })}
               />
@@ -130,7 +162,7 @@ const SettingsTabs = () => {
               <input
                 id="email"
                 type="email"
-                className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-400   focus:ring-purple-500 focus:border-purple-500"
+                className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-400 focus:ring-purple-500 focus:border-purple-500"
                 value={profileForm.email}
                 onChange={(e) => setProfileForm({ ...profileForm, email: e.target.value })}
               />
@@ -147,7 +179,7 @@ const SettingsTabs = () => {
         return (
           <div className="space-y-8">
             <form onSubmit={handleAccountSubmit} className="space-y-5">
-              <div  className="space-y-4">
+              <div className="space-y-4">
                 <label
                   htmlFor="currentPassword"
                   className="block text-sm font-medium text-gray-700"
@@ -157,28 +189,28 @@ const SettingsTabs = () => {
                 <input
                   id="currentPassword"
                   type="password"
-                  className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-400  "
+                  className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-400"
                   value={accountForm.currentPassword}
                   onChange={(e) =>
                     setAccountForm({ ...accountForm, currentPassword: e.target.value })
                   }
                 />
               </div>
-              <div  className="space-y-4">
+              <div className="space-y-4">
                 <label htmlFor="newPassword" className="block text-sm font-medium text-gray-700">
                   New Password
                 </label>
                 <input
                   id="newPassword"
                   type="password"
-                  className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-400  "
+                  className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-400"
                   value={accountForm.newPassword}
                   onChange={(e) =>
                     setAccountForm({ ...accountForm, newPassword: e.target.value })
                   }
                 />
               </div>
-              <div  className="space-y-4">
+              <div className="space-y-4">
                 <label
                   htmlFor="confirmPassword"
                   className="block text-sm font-medium text-gray-700"
@@ -188,7 +220,7 @@ const SettingsTabs = () => {
                 <input
                   id="confirmPassword"
                   type="password"
-                  className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-400  "
+                  className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-400"
                   value={accountForm.confirmPassword}
                   onChange={(e) =>
                     setAccountForm({ ...accountForm, confirmPassword: e.target.value })
@@ -208,7 +240,7 @@ const SettingsTabs = () => {
               <input
                 id="username"
                 type="text"
-                className="mt-1 block w-[40%] rounded-[30px] bg-gray-100 text-gray-300 px-3 py-2 "
+                className="mt-1 block w-[40%] rounded-[30px] bg-gray-100 text-gray-300 px-3 py-2"
                 placeholder="Username"
                 value={accountForm.username}
                 onChange={(e) => setAccountForm({ ...accountForm, username: e.target.value })}
@@ -226,7 +258,7 @@ const SettingsTabs = () => {
               </label>
               <select
                 id="language"
-                className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-400 "
+                className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-400"
                 value={accountForm.language}
                 onChange={(e) => setAccountForm({ ...accountForm, language: e.target.value })}
               >
@@ -270,7 +302,7 @@ const SettingsTabs = () => {
               </label>
               <select
                 id="pushNotification"
-                className="mt-1 block w-full text-grey-700 rounded-lg px-3 py-2 border border-gray-300 "
+                className="mt-1 block w-full text-grey-700 rounded-lg px-3 py-2 border border-gray-300"
                 value={notificationForm.pushNotification}
                 onChange={(e) =>
                   setNotificationForm({ ...notificationForm, pushNotification: e.target.value })
@@ -393,7 +425,9 @@ const SettingsTabs = () => {
   };
 
   return (
-    <div className="px-10 min-h-screen w-[60vw]  top-32">
+    <div className="px-10 min-h-screen w-[60vw] top-32">
+      {/* Avatar Preview Above Tabs */}
+      
       <div className="w-full mx-auto bg-white rounded-[40px] shadow-md">
         {/* Tabs */}
         <div className="flex border-b px-6 pt-4">
@@ -402,8 +436,8 @@ const SettingsTabs = () => {
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`flex items-center px-4 py-2 mr-4 text-sm font-medium ${activeTab === tab.id
-                ? 'border-b-2 border-purple-600 text-purple-600'
-                : 'text-gray-500 hover:text-purple-600'
+                  ? 'border-b-2 border-purple-600 text-purple-600'
+                  : 'text-gray-500 hover:text-purple-600'
                 }`}
             >
               {tab.icon}
