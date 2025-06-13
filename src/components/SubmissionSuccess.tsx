@@ -4,7 +4,7 @@ import tick from '../Assets/tick.png';
 
 const SubmissionSuccess: React.FC = () => {
   return (
-    <div className="bg-white p-8 rounded-lg shadow-md max-w-sm mx-auto my-10 text-center flex flex-col items-center justify-center min-h-[800px]">
+    <div className="bg-white p-8 rounded-lg shadow-md max-w-sm mx-auto my-10 text-center flex flex-col items-center justify-center min-h-[500px]">
       <div className="relative w-40 h-40 mb-6">
         {/* Outer circle (light purple) */}
         <div className="absolute inset-2 bg-[#8A63FF4D] rounded-full flex items-center justify-center animate-pop-out" style={{ animationDelay: '0s' }}></div>
