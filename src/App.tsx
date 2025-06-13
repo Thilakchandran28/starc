@@ -23,6 +23,7 @@ import LearningOverview from "./components/LearningOverview";
 import SubmissionSuccess from "./components/SubmissionSuccess";
 import ForgotPassword from "./pages/ForgotPassword";
 import PwdRstSentpage from "./pages/PwdRstSentpage";
+import Notifications from "./pages/Notifications";
 
 const queryClient = new QueryClient();
 
@@ -55,6 +56,8 @@ const App = () => (
           <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
           <Route path="/signup" element={<PublicRoute><Signup /></PublicRoute>} />
           <Route path="/Password-Reset" element={<PublicRoute><PwdRstSentpage/></PublicRoute>} />
+          <Route path="/notifications" element={<Notifications />} />
+          
           
           {/* Protected Routes */}
           <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
