@@ -31,7 +31,7 @@ const DashboardCard = ({ course }) => {
           <div>
             <div className="w-16 h-10  bg-purple-600 rounded-lg  flex align-center justify-center p-2  mb-4">
               <img src={uparrow} className=" p-1" />
-              <p className="text-lg text-gray-500 text-white mb-4 font-bold">
+              <p className="text-lg text-gray-500 mb-4 font-bold">
                 {course.progress}%
               </p>
             </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import trophy from '../Assets/trophy.svg';
+import awardbg from '../Assets/card-award.png';
 import DashboardCard from './DashboardCard';
 function RightSideBar() {
 
@@ -52,6 +53,7 @@ function RightSideBar() {
           </div>
         </div>
       </div>
+    // </div> 
 
     // </div>
 
