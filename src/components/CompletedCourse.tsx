@@ -84,17 +84,25 @@ const AssessmentRow: React.FC<AssessmentRowProps> = ({ assessment }) => {
   };
 
   return (
-    <div className="2xl:grid grid-flow-col 2xl:w-[650px] 2xl:text-[12px]  3xl:w-[900px] 3xl:text-[15px]  lg:flex lg:text-[10px] lg:w-[600px]  py-3 border-b border-gray-100 last:border-b-0">
-      <div className="flex items-center space-x-2 pr-4 justify-items-start">
+    <div className="lg:flex lg:py-1 lg:text-[10px] lg:w-[445px] xl:flex xl:py-1 xl:w-[570px]  2xl:flex  2xl:w-[750px] 2xl:text-[12px] 3xl:flex 3xl:py-2 justify-between 3xl:w-[800px] 3xl:text-[15px] border-b border-gray-300 flex  last:border-b-0">
+      <div className="flex items-center space-x-2 pr-4 justify-items-start lg:w-24  xl:w-28 2xl:w-36 3xl:w-36">
         <img src={Aplus} alt="" />
-        <span className="text-gray-700 font-medium whitespace-nowrap">
+        <span className="text-gray-700 font-medium whitespace-nowrap lg:text-[9px]  xl:text-[11px] 2xl:text-[15px]  3xl:text-[16px] 3xl:w-36 ">
           {assessment.type} {assessment.number}
         </span>
       </div>
-      <div className="text-gray-800 font-medium px-4 flex justify-items-start">{assessment.title}</div>
-      <div className="text-gray-600 text-sm px-4 whitespace-nowrap  flex justify-items-start lg:text-[10px]">{assessment.score}</div>
-      <div className="px-4 whitespace-nowrap  flex justify-items-start">{getStatusDisplay(assessment.status)}</div>
-      <div className="text-gray-500 text-sm pl-4 whitespace-nowrap text-right  flex justify-center lg:text-[10px]">{assessment.date}</div>
+      <div className="text-gray-700 font-medium flex justify-center items-center lg:text-[9px] lg:w-24  xl:text-[11px] xl:w-28  2xl:text-[14px] 2xl:w-36  3xl:text-[15px]  3xl:w-36">
+        {assessment.title}
+      </div>
+      <div className="text-gray-600 flex justify-center items-center lg:text-[9px] lg:w-12 xl:text-[11px] xl:w-16 2xl:text-[14px]  2xl:w-24  3xl:text-[15px] 3xl:w-24 ">
+        {assessment.score}
+      </div>
+      <div className="flex justify-start lg:text-[9px]  lg:w-20 xl:text-[11px] 2xl:text-[14px] xl:w-28  2xl:w-32 3xl:text-[15px]  3xl:w-36">
+        {getStatusDisplay(assessment.status)}
+      </div>
+      <div className="text-gray-500 flex justify-start items-center lg:text-[9px] xl:text-[11px] 2xl:text-[13px] 3xl:text-[15px]  3xl:w-40">
+        {assessment.date}
+      </div>
     </div>
   );
 };
@@ -447,7 +455,7 @@ const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
       <div className="container mx-auto p-6 w-full ">
         <button
           onClick={onBack}
-          className="mb-4 text-purple-600 hover:underline"
+          className="mb-4 text-purple-600 hover:underline xl:text-lg 2xl:text-xl 3xl:text-2xl"
         >
           ← Courses
         </button>
@@ -482,7 +490,7 @@ const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
             <p className="text-gray-500 text-sm">Last Visited: Sept 12, 2024</p>
             <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
               <button
-                className="lg:text-[10px] lg:w-36 px-4 py-2 rounded-md border border-blue-600 text-white bg-violet-500 text-sm flex items-center justify-center transition-colors"
+                className="lg:w-36 lg:text-[10px]  xl:w-42 xl:text-[12px] 2xl:w-48 2xl:text-[16px] 3xl:w-60 3xl:text-[18px] px-4 py-2 rounded-md border border-blue-600 text-white bg-violet-500 text-sm flex items-center justify-center transition-colors"
                 onClick={() => {
                   navigate("/learningoverview");
                   window.scrollTo(0, 0);
@@ -491,17 +499,16 @@ const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
                 <img src={startoverAgaing} alt="" className="mr-2" />
                 Start Over Again
               </button>
-              <button className="lg:w-40 lg:text-[10px]  px-4 py-2 rounded-md border border-blue-600 text-blue-600 text-sm flex items-center justify-center transition-colors">
+              <button className="lg:w-40 lg:text-[10px] xl:w-48 xl:text-[12px] 2xl:w-52 2xl:text-[16px] 3xl:w-56 3xl:text-[18px]  px-4 py-2 rounded-md border border-blue-600 text-blue-600 text-sm flex items-center justify-center transition-colors">
                 <img src={download} alt="" className="mr-1" />
                 Download Certificate
               </button>
               <button
-                className="lg:w-44 lg:text-[10px] px-4 py-2 rounded-md border border-gray-300 text-gray-700 text-sm flex items-center justify-center hover:bg-gray-50 transition-colors"
+                className="lg:w-44 lg:text-[10px] xl:w-42 xl:text-[12px] 2xl:w-60 2xl:text-[16px] 3xl:w-64 3xl:text-[18px] px-4 py-2 rounded-md border border-gray-300 text-gray-700 text-sm flex items-center justify-center hover:bg-gray-50 transition-colors"
                 onClick={handleToggleAssessments}
               >
                 <img src={Assessment} alt="" className="mr-1" />
-                Assessments & Projects
-              </button>
+                Assessments & Projects</button>
             </div>
 
             {/* overview section */}
