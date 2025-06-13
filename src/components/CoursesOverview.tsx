@@ -257,6 +257,7 @@ import SideSchedule from './Schedulebar';
 import LearningOverview from './LearningOverview';
 import CourseDashboardPage from './CompletedCourse';
 import OngoingCourseDashboardPage from './OngoingCourse';
+import DashboardCard from './DashboardCard';
 
 type Course = {
   id: string;
@@ -274,8 +275,6 @@ interface childProps {
 const CoursesOverview: React.FC <childProps> = ({sendMessage}) => {
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
 
-
-
   const courses: Course[] = [
     { id: '1', image: 'https://via.placeholder.com/150', title: 'AWS Solutions Architect', progress: 50, duration: '1 Month', status: '50%' },
     { id: '2', image: 'https://via.placeholder.com/150', title: 'Azure Fundamentals', progress: 100, duration: '1 Month', status: 'Completed' },
@@ -286,59 +285,34 @@ const CoursesOverview: React.FC <childProps> = ({sendMessage}) => {
   ];
 
   if (selectedCourse) {
-    // Conditional rendering based on course status
     if (selectedCourse.status === 'Completed') {
       return <CourseDashboardPage course={selectedCourse} onBack={() => setSelectedCourse(null)} />;
-    }else{
-      return <OngoingCourseDashboardPage course={selectedCourse} onBack={()=>setSelectedCourse(null)}/>
+    } else {
+      return <OngoingCourseDashboardPage course={selectedCourse} onBack={() => setSelectedCourse(null)} />;
     }
-    // Course Details View for non-completed courses
-    // return (
-    //   <div className="p-6 bg-gray-100 min-h-screen">
-    //     <button
-    //       onClick={() => setSelectedCourse(null)}
-    //       className="mb-4 text-purple-600 hover:underline"
-    //     >
-    //       ← Back to Courses
-    //     </button>
-    //     <OngoingCourseDashboardPage course={selectedCourse} />
-    //     <CoursePageLayout />
-    //   </div>
-    // );
   }
 
-  const handleSelectedCourse=(course:Course)=>{
+  const handleSelectedCourse = (course: Course) => {
     setSelectedCourse(course);
-    sendMessage(course)
-  }
-  // Course List View
+    sendMessage(course);
+  };
+
   return (
-    <div className="min-h-screen bg-gray-100 font-sans text-gray-800 border w-full ">
+    <div className="min-h-screen bg-gray-100 font-sans text-gray-800 w-full pr-8">
       <h1 className="text-2xl font-bold mb-6">My Courses ({courses.length})</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {courses.map((course) => (
           <div
             key={course.id}
             onClick={() => handleSelectedCourse(course)}
-            className="cursor-pointer bg-white rounded-lg shadow-md p-4 flex flex-col items-center text-center hover:shadow-lg transition"
+            className="cursor-pointer"
           >
-            <img src={course.image} alt={course.title} className="w-full h-32 object-cover rounded-md mb-4" />
-            <h3 className="text-lg font-semibold mb-2">{course.title}</h3>
-            <div className="w-full bg-gray-200 rounded-full h-2.5 mb-2">
-              <div
-                className="bg-purple-600 h-2.5 rounded-full"
-                style={{ width: `${course.progress}%` }}
-              ></div>
-            </div>
-            <p className="text-sm text-gray-600 mb-2">{course.duration}</p> 
-            <p className="text-sm text-gray-600">{course.status}</p>
+            <DashboardCard course={course} />
           </div>
         ))}
       </div>
-      {/* <SideSchedule /> */}
-      {/* <LearningOverview /> */}
     </div>
   );
 };
 
-export default CoursesOverview
+export default CoursesOverview;

@@ -23,9 +23,9 @@ const CoursesPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex justify-center">
+    <div className="min-h-screen bg-gray-100 flex justify-center">
       <ProfileTopNavbar />
-      <div className="items-center align-top mx-20 mt-24 border lg:w-1/2 2xl:w-1/2 3xl:w-1/2">
+      <div className="items-center align-top mx-20 mt-24 lg:w-1/2 2xl:w-[850px] 3xl:w-1/2">
         <ProfileSidebar  />
         <CoursesOverview sendMessage={handleChildMessage} />
         <div className="w-1/4 min-w-[300px] max-w-[350px]">
