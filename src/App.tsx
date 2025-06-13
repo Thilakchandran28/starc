@@ -24,6 +24,7 @@ import ForgotPassword from "./pages/ForgotPassword";
 import PwdRstSentpage from "./pages/PwdRstSentpage";
 import Notifications from "./pages/Notifications";
 import WishlistPage from "./pages/WishlistPage";
+import CardDetail from "./components/CardDetail";
 
 const queryClient = new QueryClient();
 
@@ -68,6 +69,7 @@ const App = () => (
           <Route path="/schedule" element={<ProtectedRoute><SchedulePage /></ProtectedRoute>} />
           <Route path="/settings" element={<ProtectedRoute><SettingsPage /></ProtectedRoute>} />
           <Route path="/submissionSuccess" element ={<SubmissionSuccess/>}/>
+          <Route path="/carddetail" element ={<CardDetail/>}/>
 
           {/* Catch-all Route */}
           <Route path="*" element={<NotFound />} />
