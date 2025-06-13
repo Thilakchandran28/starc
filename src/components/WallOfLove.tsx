@@ -14,35 +14,35 @@ const testimonials: TestimonialCardProps[] = [
     name: 'Esther Howard',
     content:
       'Pharetra pharetra massa massa ultricies. Accumsan sit amet nulla facilisi morbi. Integer eget aliquet nibh praesent tristique magna sit amet.',
-
+   
   },
   {
     id: 2,
     name: 'Leslie Alexander',
     content:
       'Magna fermentum iaculis eu non diam phasellus. Arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc.',
-
+  
   },
   {
     id: 3,
     name: 'Wade Warren',
     content:
       'Porttitor rhoncus dolor purus non. Varius duis at consectetur leo a diam sollicitudin tempor id.',
-
+  
   },
   {
     id: 4,
     name: 'Jacob Jones',
     content:
       'Aliquam faucibus purus in massa tempor. Habitasse platea dictumst vestibulum rhoncus est pellentesque elit.',
-
+   
   },
   {
     id: 5,
     name: 'Courtney Henry',
     content:
       'Nunc sed velit dignissim sodales ut eu sem integer. Scelerisque varius morbi enim nunc faucibus. Mi sit amet mauris commodo quis.',
-
+  
   },
   {
     id: 6,
@@ -86,7 +86,7 @@ const WallOfLove: React.FC = () => {
                 {/* <img  src={vector}/> */}
               </div>
               <p className="text-black font-mont font-medium leading-relaxed flex-grow mb-4">{testimonial.content}</p>
-
+              
             </div>
           ))}
         </div>

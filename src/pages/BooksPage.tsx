@@ -8,6 +8,8 @@ import WallOfLove from "../components/WallOfLove";
 import { useNavigate } from "react-router-dom";
 import heroimage from '../Assets/Vector.png'
 import Recard from "@/components/Card";
+import PurpleBox from "@/components/PurpleBox";
+import ScrollableCourse from "@/components/ScrollableCourse";
 
 const BooksPage = () => {
   const navigate = useNavigate();
@@ -182,7 +184,7 @@ const BooksPage = () => {
             top:"90px"
           }}/></div>
           <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            Discover Our Starc Courses
+            Discover Our Books
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             Discover thousands of courses taught by expert instructors. Start learning today and advance your career.
@@ -193,93 +195,15 @@ const BooksPage = () => {
       <section className="bg-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center mb-6">
-            <div className="flex items-center gap-4">
-              <button className="bg-purple-600 text-white px-4 py-2 rounded-full">Supervised</button>
-              <button className="bg-gray-200 text-gray-600 px-4 py-2 rounded-full">Unsupervised</button>
-            </div>
-            <span className="text-sm text-gray-500">Scheduled live Google Meet classes with calendar/email alerts, seasonal batches, and fixed enrollment deadlines.</span>
+            
           </div>
           </div>
-          <div className="p-6">
-      <h2 className="text-2xl font-semibold mb-6">Courses (957)</h2>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
-        {/* Search */}
-        <div>
-          <label htmlFor="search" className="block text-sm font-medium mb-1">
-            Search:
-          </label>
-          <div className="relative">
-            <input
-              type="text"
-              id="search"
-              placeholder="Search in your courses..."
-              className="w-full rounded-full border border-gray-300 px-4 py-2 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <span className="absolute left-3 top-2.5 text-gray-400">
-              🔍
-            </span>
-          </div>
-        </div>
-
-        {/* Sort by */}
-        <div>
-          <label htmlFor="sort" className="block text-sm font-medium mb-1">
-            Sort by:
-          </label>
-          <select
-            id="sort"
-            className="w-full rounded-full border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <option>Latest</option>
-            <option>Electronics</option>
-            <option>Placeholder</option>
-            <option>Placeholder text</option>
-                      <option>Lorem</option>
-</select>
-        </div>
-
-        {/* Status */}
-        <div>
-          <label htmlFor="status" className="block text-sm font-medium mb-1">
-            Status:
-          </label>
-          <select
-            id="status"
-            className="w-full rounded-full border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <option>All Courses</option>
-            <option>Electronics</option>
-            <option>Placeholder</option>
-            <option>Placeholder text</option>
-            <option>Lorem</option>
-
-          </select>
-        </div>
-
-        {/* Teacher */}
-        <div>
-          <label htmlFor="teacher" className="block text-sm font-medium mb-1">
-            Teacher:
-          </label>
-          <select
-            id="teacher"
-            className="w-full rounded-full border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <option>All Teachers</option>
-            <option>Electronics</option>
-            <option>Placeholder</option>
-            <option>Placeholder text</option>
-            <option>Lorem</option>
-
-          </select>
-        </div>
-      </div>
-    </div>
+          
       </section>
       {/* Category and Card Design Section */}
       <section className="flex">
         <div className="w-1/4 py-8">
-          <div className="max-w-xs mx-auto px-4 sm:px-6 lg:px-8">
+          {/* <div className="max-w-xs mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl font-bold mb-4">Categories</h2>
             <ul className="space-y-2 h-96 overflow-y-auto">
               <li className={`cursor-pointer ${selectedCategory === 'all' ? 'text-purple-600' : 'text-black'}`} onClick={() => filterCards('all')}>All Categories</li>
@@ -289,7 +213,8 @@ const BooksPage = () => {
               <li className={`cursor-pointer ${selectedCategory === 'business' ? 'text-purple-600' : 'text-black'}`} onClick={() => filterCards('business')}>Business</li>
               <li className={`cursor-pointer ${selectedCategory === 'photography' ? 'text-purple-600' : 'text-black'}`} onClick={() => filterCards('photography')}>Photography</li>
             </ul>
-          </div>
+          </div> */}
+          <ScrollableCourse/>
         </div>
         <div className="w-3/4 py-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -388,22 +313,16 @@ const BooksPage = () => {
                         <span>{course.lessons} lessons</span>
                       </div>
                     </div>
-                  </CardContent>
-                  <CardFooter className="p-4 bg-gray-50 flex justify-between items-center">
-                    <div className="text-lg font-bold text-purple-600">${course.price}</div>
-                    <div className="text-sm text-gray-500 line-through">${course.originalPrice}</div>
-                    <Button className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md">
-                      Enroll Now
-                    </Button>
                   </CardFooter>
                 </Card>
               </div>
             ))} */}
           </div>
+          <Card/>
         </div>
       </section>
       {/* New Section from Image */}
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-purple-500 rounded-xl p-10 text-center shadow-lg mb-20">
             <h2 className="text-4xl font-bold text-white mb-4">Join ambitious professionals and unlock your dream career today</h2>
@@ -456,10 +375,11 @@ const BooksPage = () => {
               <p className="text-gray-700 leading-relaxed">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
-            </div>
-          </div>
+            </div> */}
+          {/* </div>
         </div>
-      </section>
+      </section> */}
+      <PurpleBox/>
       <WallOfLove />
       <Footer />
     </div>
