@@ -1,66 +1,82 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { LuArrowRightToLine } from "react-icons/lu";
 import { CiFilter } from "react-icons/ci";
-import ScheduleMonth from './ScheduleMonth';
-import ScheduleWeek from './ScheduleWeek';
-import ScheduleDaily from './ScheduleDaily'; // New import for daily view
+import ScheduleMonth from "./ScheduleMonth";
+import ScheduleWeek from "./ScheduleWeek";
+import ScheduleDaily from "./ScheduleDaily"; // New import for daily view
 
 const ScheduleOverview = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
-  const [currentView, setCurrentView] = useState('year'); // 'year', 'month', 'week', 'daily'
+  const [currentView, setCurrentView] = useState("year"); // 'year', 'month', 'week', 'daily'
   const currentYear = currentDate.getFullYear();
 
   const months = [
-    'January', 'February', 'March', 'April',
-    'May', 'June', 'July', 'August',
-    'September', 'October', 'November', 'December'
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
   ];
 
   const activityItems = [
     {
-      title: 'Former Survey',
-      dueDate: '20/12/2023',
-      time: '08:00', // Adjusted time to match the image
-      description: "Lorem Ipsum has been the industry's standard andard dummystandard dummy",
-      color: 'bg-blue-100 border-l-blue-400'
+      title: "Former Survey",
+      dueDate: "20/12/2023",
+      time: "08:00", // Adjusted time to match the image
+      description:
+        "Lorem Ipsum has been the industry's standard andard dummystandard dummy",
+      color: "bg-blue-100 border-l-blue-400",
     },
     {
-      title: 'Former Survey',
-      dueDate: '20/12/2023',
-      time: '11:00',
-      description: "Lorem Ipsum has been the industry's standard andard dummystandard dummy",
-      color: 'bg-orange-100 border-l-orange-400'
+      title: "Former Survey",
+      dueDate: "20/12/2023",
+      time: "11:00",
+      description:
+        "Lorem Ipsum has been the industry's standard andard dummystandard dummy",
+      color: "bg-orange-100 border-l-orange-400",
     },
     {
-      title: 'Former Survey',
-      dueDate: '20/12/2023',
-      time: '14:00',
-      description: "Lorem Ipsum has been the industry's standard andard dummystandard dummy",
-      color: 'bg-purple-100 border-l-purple-400'
+      title: "Former Survey",
+      dueDate: "20/12/2023",
+      time: "14:00",
+      description:
+        "Lorem Ipsum has been the industry's standard andard dummystandard dummy",
+      color: "bg-purple-100 border-l-purple-400",
     },
     {
-      title: 'Former Survey',
-      dueDate: '29/12/2023',
-      time: '17:00',
-      description: "Lorem Ipsum has been the industry's standard andard dummystandard dummy",
-      color: 'bg-green-100 border-l-green-400'
+      title: "Former Survey",
+      dueDate: "29/12/2023",
+      time: "17:00",
+      description:
+        "Lorem Ipsum has been the industry's standard andard dummystandard dummy",
+      color: "bg-green-100 border-l-green-400",
     },
     {
-      title: 'Former Survey',
-      dueDate: '28/12/2023',
-      time: '19:00',
-      description: "Lorem Ipsum has been the industry's standard andard dummystandard dummy",
-      color: 'bg-red-100 border-l-red-400'
+      title: "Former Survey",
+      dueDate: "28/12/2023",
+      time: "19:00",
+      description:
+        "Lorem Ipsum has been the industry's standard andard dummystandard dummy",
+      color: "bg-red-100 border-l-red-400",
     },
   ];
 
-  const getDaysInMonth = (year, month) => new Date(year, month + 1, 0).getDate();
+  const getDaysInMonth = (year, month) =>
+    new Date(year, month + 1, 0).getDate();
   const getStartDayOfMonth = (year, month) => new Date(year, month, 1).getDay(); // 0 for Sunday, 1 for Monday
 
   const renderYearMonth = (monthIndex) => {
     const monthName = months[monthIndex];
     const daysInMonth = getDaysInMonth(currentYear, monthIndex);
-    const startDayOffset = (getStartDayOfMonth(currentYear, monthIndex) + 6) % 7; // Adjust to make Monday the first day (0-indexed)
+    const startDayOffset =
+      (getStartDayOfMonth(currentYear, monthIndex) + 6) % 7; // Adjust to make Monday the first day (0-indexed)
 
     const today = new Date();
     const days = [];
@@ -84,21 +100,31 @@ const ScheduleOverview = () => {
     }
 
     const getDayClass = (dayObj) => {
-      let classes = 'p-1 text-center text-[10px]';
+      let classes = "p-1 text-center text-[10px]";
       if (dayObj) {
         const fullDate = new Date(dayObj.year, dayObj.month, dayObj.date);
-        if (fullDate.getDate() === today.getDate() && fullDate.getMonth() === today.getMonth() && fullDate.getFullYear() === today.getFullYear()) {
-          classes += ' bg-blue-600 text-white rounded-full';
+        if (
+          fullDate.getDate() === today.getDate() &&
+          fullDate.getMonth() === today.getMonth() &&
+          fullDate.getFullYear() === today.getFullYear()
+        ) {
+          classes += " bg-blue-600 text-white rounded-full";
         }
-        const hasActivity = activityItems.some(item => {
-          const [dayStr, monthStr, yearStr] = item.dueDate.split('/');
-          const itemDate = new Date(parseInt(yearStr), parseInt(monthStr) - 1, parseInt(dayStr));
-          return itemDate.getDate() === dayObj.date &&
-                 itemDate.getMonth() === dayObj.month &&
-                 itemDate.getFullYear() === dayObj.year;
+        const hasActivity = activityItems.some((item) => {
+          const [dayStr, monthStr, yearStr] = item.dueDate.split("/");
+          const itemDate = new Date(
+            parseInt(yearStr),
+            parseInt(monthStr) - 1,
+            parseInt(dayStr)
+          );
+          return (
+            itemDate.getDate() === dayObj.date &&
+            itemDate.getMonth() === dayObj.month &&
+            itemDate.getFullYear() === dayObj.year
+          );
         });
         if (hasActivity) {
-          classes += ' border border-purple-600 text-purple-600 rounded-full';
+          classes += " border border-purple-600 text-purple-600 rounded-full";
         }
       }
       return classes;
@@ -106,17 +132,18 @@ const ScheduleOverview = () => {
 
     return (
       <div className="bg-white rounded-lg p-2 shadow-sm">
-        <h3 className="text-xs font-semibold mb-1 text-center text-gray-700">{monthName}</h3>
+        <h3 className="text-xs font-semibold mb-1 text-center text-gray-700">
+          {monthName}
+        </h3>
         <div className="grid grid-cols-7 text-center text-[10px] font-medium text-gray-500 mb-1">
-          {['M', 'T', 'W', 'T', 'F', 'S', 'S'].map((day, i) => <div key={i}>{day}</div>)}
+          {["M", "T", "W", "T", "F", "S", "S"].map((day, i) => (
+            <div key={i}>{day}</div>
+          ))}
         </div>
         <div className="grid grid-cols-7 text-center text-[10px]">
           {days.map((dayObj, index) => (
-            <div
-              key={`${monthName}-${index}`}
-              className={getDayClass(dayObj)}
-            >
-              {dayObj ? dayObj.date : ''}
+            <div key={`${monthName}-${index}`} className={getDayClass(dayObj)}>
+              {dayObj ? dayObj.date : ""}
             </div>
           ))}
         </div>
@@ -129,30 +156,54 @@ const ScheduleOverview = () => {
   };
 
   const handlePrev = () => {
-    setCurrentDate(prevDate => {
-      if (currentView === 'year') {
-        return new Date(prevDate.getFullYear() - 1, prevDate.getMonth(), prevDate.getDate());
-      } else if (currentView === 'month') {
+    setCurrentDate((prevDate) => {
+      if (currentView === "year") {
+        return new Date(
+          prevDate.getFullYear() - 1,
+          prevDate.getMonth(),
+          prevDate.getDate()
+        );
+      } else if (currentView === "month") {
         return new Date(prevDate.getFullYear(), prevDate.getMonth() - 1, 1);
-      } else if (currentView === 'week') {
-        return new Date(prevDate.getFullYear(), prevDate.getMonth(), prevDate.getDate() - 7);
-      } else if (currentView === 'daily') {
-        return new Date(prevDate.getFullYear(), prevDate.getMonth(), prevDate.getDate() - 1);
+      } else if (currentView === "week") {
+        return new Date(
+          prevDate.getFullYear(),
+          prevDate.getMonth(),
+          prevDate.getDate() - 7
+        );
+      } else if (currentView === "daily") {
+        return new Date(
+          prevDate.getFullYear(),
+          prevDate.getMonth(),
+          prevDate.getDate() - 1
+        );
       }
       return prevDate;
     });
   };
 
   const handleNext = () => {
-    setCurrentDate(prevDate => {
-      if (currentView === 'year') {
-        return new Date(prevDate.getFullYear() + 1, prevDate.getMonth(), prevDate.getDate());
-      } else if (currentView === 'month') {
+    setCurrentDate((prevDate) => {
+      if (currentView === "year") {
+        return new Date(
+          prevDate.getFullYear() + 1,
+          prevDate.getMonth(),
+          prevDate.getDate()
+        );
+      } else if (currentView === "month") {
         return new Date(prevDate.getFullYear(), prevDate.getMonth() + 1, 1);
-      } else if (currentView === 'week') {
-        return new Date(prevDate.getFullYear(), prevDate.getMonth(), prevDate.getDate() + 7);
-      } else if (currentView === 'daily') {
-        return new Date(prevDate.getFullYear(), prevDate.getMonth(), prevDate.getDate() + 1);
+      } else if (currentView === "week") {
+        return new Date(
+          prevDate.getFullYear(),
+          prevDate.getMonth(),
+          prevDate.getDate() + 7
+        );
+      } else if (currentView === "daily") {
+        return new Date(
+          prevDate.getFullYear(),
+          prevDate.getMonth(),
+          prevDate.getDate() + 1
+        );
       }
       return prevDate;
     });
@@ -162,6 +213,14 @@ const ScheduleOverview = () => {
     setCurrentView(event.target.value);
   };
 
+  // Function to cycle through views when the icon is clicked
+  const handleIconClick = () => {
+    const views = ["year", "month", "week", "daily"];
+    const currentIndex = views.indexOf(currentView);
+    const nextIndex = (currentIndex + 1) % views.length; // Cycle through views
+    setCurrentView(views[nextIndex]);
+  };
+
   const currentMonthName = months[currentDate.getMonth()];
 
   return (
@@ -169,14 +228,41 @@ const ScheduleOverview = () => {
       <div className="flex-grow bg-white rounded-ls shadow-sm p-4">
         <div className="flex justify-between items-center mb-4">
           <div className="flex items-center space-x-2">
-            <button className="px-3 py-1 bg-blue-600 text-white rounded-md font-medium text-sm" onClick={handleTodayClick}>Today</button>
-            <button className="pb-2 text-gray-600 hover:text-gray-900 text-3xl" onClick={handlePrev}>{"<"}</button>
-            <button className="pb-2 text-gray-600 hover:text-gray-900 text-3xl" onClick={handleNext}>{">"}</button>
+            <button
+              className="px-3 py-1 bg-blue-600 text-white rounded-md font-medium text-sm"
+              onClick={handleTodayClick}
+            >
+              Today
+            </button>
+            <button
+              className="pb-2 text-gray-600 hover:text-gray-900 text-3xl"
+              onClick={handlePrev}
+            >
+              {"<"}
+            </button>
+            <button
+              className="pb-2 text-gray-600 hover:text-gray-900 text-3xl"
+              onClick={handleNext}
+            >
+              {">"}
+            </button>
             <span className="text-lg font-semibold">
-              {currentView === 'year' && currentYear}
-              {currentView === 'month' && `${months[currentDate.getMonth()]} ${currentYear}`}
-              {currentView === 'week' && `Week of ${currentDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`}
-              {currentView === 'daily' && currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+              {currentView === "year" && currentYear}
+              {currentView === "month" &&
+                `${months[currentDate.getMonth()]} ${currentYear}`}
+              {currentView === "week" &&
+                `Week of ${currentDate.toLocaleDateString("en-US", {
+                  month: "short",
+                  day: "numeric",
+                  year: "numeric",
+                })}`}
+              {currentView === "daily" &&
+                currentDate.toLocaleDateString("en-US", {
+                  weekday: "long",
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
             </span>
           </div>
           <div className="flex items-center space-x-4">
@@ -191,31 +277,46 @@ const ScheduleOverview = () => {
               <option value="daily">Daily</option>
             </select>
             <button className="flex items-center px-3 py-1 rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 text-sm">
-              <span><CiFilter size={20} strokeWidth={1} /></span>
+              <span>
+                <CiFilter size={20} strokeWidth={1} />
+              </span>
               Filter
             </button>
-            <button className="text-gray-500 hover:text-gray-900 text-lg">
+            <button
+              className="text-gray-500 hover:text-gray-900 text-lg"
+              onClick={handleIconClick}
+            >
               <LuArrowRightToLine size={24} strokeWidth={2} />
             </button>
           </div>
         </div>
 
         <div className="grid grid-cols-4 gap-3">
-          {currentView === 'year' && Array.from({ length: 12 }, (_, i) => renderYearMonth(i))}
-          {currentView === 'month' && (
-            <ScheduleMonth currentDate={currentDate} activityItems={activityItems} />
+          {currentView === "year" &&
+            Array.from({ length: 12 }, (_, i) => renderYearMonth(i))}
+          {currentView === "month" && (
+            <ScheduleMonth
+              currentDate={currentDate}
+              activityItems={activityItems}
+            />
           )}
-          {currentView === 'week' && (
-            <ScheduleWeek currentDate={currentDate} activityItems={activityItems} />
+          {currentView === "week" && (
+            <ScheduleWeek
+              currentDate={currentDate}
+              activityItems={activityItems}
+            />
           )}
-          {currentView === 'daily' && (
-            <ScheduleDaily currentDate={currentDate} activityItems={activityItems} />
+          {currentView === "daily" && (
+            <ScheduleDaily
+              currentDate={currentDate}
+              activityItems={activityItems}
+            />
           )}
         </div>
       </div>
 
       {/* Hide sidebar when in daily view */}
-      {currentView !== 'daily' && (
+      {currentView !== "daily" && (
         <div className="w-72 flex-shrink-0 space-y-4">
           <div className="bg-white rounded-lg shadow-sm p-4">
             <div className="flex justify-between items-center mb-3">
@@ -224,7 +325,9 @@ const ScheduleOverview = () => {
                 <option>Monthly</option>
               </select>
             </div>
-            <p className="text-xs text-gray-500 mb-3">{currentMonthName}, {currentYear}</p>
+            <p className="text-xs text-gray-500 mb-3">
+              {currentMonthName}, {currentYear}
+            </p>
             <div className="grid grid-cols-7 text-center text-xs font-medium text-gray-500 mb-1">
               <div>Mo</div>
               <div>Tu</div>
@@ -235,16 +338,37 @@ const ScheduleOverview = () => {
               <div>Su</div>
             </div>
             <div className="grid grid-cols-7 text-center text-xs">
-              {[...Array(getDaysInMonth(currentYear, currentDate.getMonth())).keys()].map(day => (
+              {[
+                ...Array(
+                  getDaysInMonth(currentYear, currentDate.getMonth())
+                ).keys(),
+              ].map((day) => (
                 <div
                   key={`small-cal-${day + 1}`}
-                  className={`p-1 rounded-full ${day + 1 === currentDate.getDate() && currentDate.getMonth() === new Date().getMonth() && currentDate.getFullYear() === new Date().getFullYear() ? 'bg-purple-600 text-white' : ''} ${activityItems.some(item => {
-                    const [dayStr, monthStr, yearStr] = item.dueDate.split('/');
-                    const itemDate = new Date(parseInt(yearStr), parseInt(monthStr) - 1, parseInt(dayStr));
-                    return itemDate.getDate() === day + 1 &&
-                           itemDate.getMonth() === currentDate.getMonth() &&
-                           itemDate.getFullYear() === currentDate.getFullYear();
-                  }) ? 'border border-purple-600 text-purple-600' : ''}`}
+                  className={`p-1 rounded-full ${
+                    day + 1 === currentDate.getDate() &&
+                    currentDate.getMonth() === new Date().getMonth() &&
+                    currentDate.getFullYear() === new Date().getFullYear()
+                      ? "bg-purple-600 text-white"
+                      : ""
+                  } ${
+                    activityItems.some((item) => {
+                      const [dayStr, monthStr, yearStr] =
+                        item.dueDate.split("/");
+                      const itemDate = new Date(
+                        parseInt(yearStr),
+                        parseInt(monthStr) - 1,
+                        parseInt(dayStr)
+                      );
+                      return (
+                        itemDate.getDate() === day + 1 &&
+                        itemDate.getMonth() === currentDate.getMonth() &&
+                        itemDate.getFullYear() === currentDate.getFullYear()
+                      );
+                    })
+                      ? "border border-purple-600 text-purple-600"
+                      : ""
+                  }`}
                 >
                   {day + 1}
                 </div>
@@ -254,17 +378,28 @@ const ScheduleOverview = () => {
 
           <div className="bg-white rounded-lg shadow-sm p-4">
             <div className="flex justify-between items-center mb-3">
-              <h2 className="text-lg font-semibold text-gray-800">Today's Activity</h2>
+              <h2 className="text-lg font-semibold text-gray-800">
+                Today's Activity
+              </h2>
               <span className="text-gray-500 text-xs">(20)</span>
             </div>
             <div className="space-y-3">
               {activityItems.map((activity, index) => (
-                <div key={index} className={`border-l-4 ${activity.color} p-3 rounded-r-md`}>
+                <div
+                  key={index}
+                  className={`border-l-4 ${activity.color} p-3 rounded-r-md`}
+                >
                   <div className="flex justify-between items-center mb-1">
-                    <h3 className="font-medium text-sm text-gray-800">{activity.title}</h3>
-                    <span className="text-xs text-gray-600">Due date: {activity.dueDate}</span>
+                    <h3 className="font-medium text-sm text-gray-800">
+                      {activity.title}
+                    </h3>
+                    <span className="text-xs text-gray-600">
+                      Due date: {activity.dueDate}
+                    </span>
                   </div>
-                  <p className="text-xs text-gray-600">{activity.description}</p>
+                  <p className="text-xs text-gray-600">
+                    {activity.description}
+                  </p>
                 </div>
               ))}
             </div>

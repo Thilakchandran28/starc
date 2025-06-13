@@ -3,9 +3,9 @@ import React from "react";
 interface ActivityItem {
   title: string;
   dueDate: string;
-  time: string; // format: "15:00-17:00"
+  time: string; 
   description: string;
-  color: string; // Tailwind color class like "bg-blue-100"
+  color: string; 
 }
 
 interface ScheduleDailyProps {
@@ -21,6 +21,7 @@ const ScheduleDaily: React.FC<ScheduleDailyProps> = ({
   const timeSlots = ["3 PM", "4 PM", "5 PM", "6 PM", "7 PM", "8 PM"];
 
   // Filter today's activities
+  
   const activitiesForDay = activityItems.filter((item) => {
     const [dayStr, monthStr, yearStr] = item.dueDate.split("/");
     const itemDate = new Date(
@@ -40,7 +41,10 @@ const ScheduleDaily: React.FC<ScheduleDailyProps> = ({
   const totalHours = endHour - startHour;
 
   return (
-    <div className="w-[1060px] bg-white p-2 overflow-auto  " style={{ scrollbarWidth: "none" }}>
+    <div
+      className="w-[1060px] flex-1 bg-white p-2 overflow-auto"
+      style={{ scrollbarWidth: "none" }}
+    >
       {/* Header---------- */}
       <div className="flex items-center justify-between  ml-14 border border-b-0   ">
         <div>
@@ -56,10 +60,7 @@ const ScheduleDaily: React.FC<ScheduleDailyProps> = ({
       </div>
 
       {/* Schedule Grid */}
-      <div
-        className="relative rounded-lg h-[600px] "
-        
-      >
+      <div className="relative rounded-lg h-[600px] ">
         {/* Time Labels */}
         <div className="absolute left-0 w-14 text-right pr-2 z-10  ">
           {timeSlots.map((time, i) => (
