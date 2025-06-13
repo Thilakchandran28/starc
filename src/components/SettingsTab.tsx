@@ -451,5 +451,4 @@ const SettingsTabs = () => {
     </div>
   );
 };
-
 export default SettingsTabs;

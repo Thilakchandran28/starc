@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Eye, EyeOff } from "lucide-react";
 import Vector from '../Assets/Vector-3.png';
 import Star from '../Assets/star.png';
+import Books from '../Assets/Books.png';
 import { LoginSocialGoogle } from 'reactjs-social-login';
 
 interface Slide {
@@ -43,56 +44,16 @@ const LoginForm: React.FC<LoginFormProps> = ({
     <div className="w-screen h-screen pl-24 pb-6 flex items-center justify-center">
       <div className="w-full h-screen p-6 flex items-center justify-center">
         <div className="w-full max-w-xs">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 font-mont">Welcome Back 👋</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-2 font-mont">Reset Link Sent</h2>
           <form className="space-y-4" onSubmit={handleLogin}>
             <div>
-              <p className="text-sm text-gray-600 mb-2 pb-6 font-mont">
-                Sign Up Now-Discover 500+ Courses are <br />Waiting for your Learning
+              <p className="text-sm text-gray-600 mb-2 pb-2 font-mont">
+                A password reset link has been sent to your <br /> registered email.
               </p>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1 font-mont">
-                Email address/Phone number*
-              </label>
-              <Input
-                id="email"
-                type="text"
-                placeholder="john@gmail.com"
-                value={email}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
-                className={`h-10 px-3 rounded-lg border ${isEmailValid ? 'border-gray-300' : 'border-red-500'} focus:ring-purple-500 focus:border-purple-500 text-sm`}
-              />
-              {!isEmailValid && (
-                <p className="text-red-500 text-xs mt-1 font-mont">Please enter a valid email address</p>
-              )}
             </div>
-            <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1 font-mont">Password*</label>
-              <div className="relative">
-                <Input
-                  id="password"
-                  type={showPassword ? "text" : "password"}
-                  placeholder="Enter password"
-                  value={password}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
-                  className={`h-10 px-3 rounded-lg border ${isPasswordValid ? 'border-gray-300' : 'border-red-500'} focus:ring-purple-500 focus:border-purple-500 pr-10 text-sm`}
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
-                >
-                  {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-                </button>
-              </div>
-              {!isPasswordValid && <p className="text-red-500 text-xs mt-1 font-mont">Incorrect Password</p>}
-              <div className="text-right mt-1">
-                <Link to="/forgot-password" className="text-xs text-black font-medium font-mont">
-                  Forget password
-                </Link>
-              </div>
+            <div className="">
+              <img src={Books} alt="" className="" style={{ width: "screen", height: "auto" }} />
             </div>
-            <Button style={{ backgroundColor: '#8A63FF' }} className="w-full h-10 text-white rounded-lg text-sm font-mont font-semibold">
-              Login
-            </Button>
             <div className="flex items-center justify-center my-2">
               <div className="flex-1 h-px bg-gray-200 max-w-[140px]"></div>
               <span className="text-gray-300 text-xs mx-1.5 font-mont">Or</span>
@@ -158,8 +119,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
   );
 };
 
-// Rest of the Login component remains unchanged
-const Login: React.FC = () => {
+const PwdRstSentpage: React.FC = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -197,8 +157,7 @@ const Login: React.FC = () => {
         return (prevSlide + 1) % slides.length;
       });
     }, interval);
-
-    return () => clearInterval(slideTimer); // Cleanup interval on unmount
+    return () => clearInterval(slideTimer);
   }, [slides.length]);
 
   const handleBarClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -233,18 +192,13 @@ const Login: React.FC = () => {
       <div className="absolute top-4 left-4 flex items-center bg-white rounded-full px-3 py-1 z-10 pt-7 pl-5">
         <img src={Star} alt="" className="w-4" />
         <div className="pl-3 leading-3">
-          <span className="text-xs font-medium text-gray-600 font-mont">Discover More, Learn <br/>More - 500+ Courses <br/>Inside</span>
+          <span className="text-xs font-medium text-gray-600 font-mont">Discover More, Learn <br />More - 500+ Courses <br />Inside</span>
         </div>
       </div>
       <div className="relative flex w-full bg-white shadow-lg rounded-lg overflow-hidden">
         <div className="bg-white flex items-center justify-center relative w-full">
-          <div className="pb-[70%] pl-11 large-screen:pb-[60%] large-screen:pl-14">
-            <img
-              src={Vector}
-              alt=""
-              className="absolute z-0 pl-24 large-screen:pl-32 vector"
-              style={{ width: "100%", height: "auto", maxWidth: "800px" }}
-            />
+          <div className="pb-[70%] pl-11">
+            <img src={Vector} alt="" className="absolute z-0 pl-24" style={{ width: "screen", height: "auto" }} />
           </div>
           <div className="relative z-10 text-center flex flex-col justify-center pl-36 pt-40">
             <div className="pl-10 pr-6 pt-24">
@@ -297,14 +251,14 @@ const Login: React.FC = () => {
                     Explore Courses Now
                   </Button>
                   <div className="flex items-center gap-1 text-sm text-gray-600 font-mont">
-                    <span>📚</span>
+                    <span>:books:</span>
                     <span>300+ Modules & 30+ Courses</span>
                   </div>
                 </div>
               )}
             </div>
             <div className="flex justify-center">
-              <div className="w-64 h-1 bg-gray-200 rounded-full overflow-hidden cursor-pointer">
+              <div className="w-64 h-1 bg-gray-200 rounded-full overflow-hidden cursor-pointer" onClick={handleBarClick}>
                 <div
                   className="h-full bg-purple-600 rounded-full"
                   style={{
@@ -330,21 +284,6 @@ const Login: React.FC = () => {
                 .animate-pop-slide {
                   animation: popSlide 0.5s ease-in-out forwards;
                 }
-
-                @media (min-width: 1920px) {
-                  .large-screen\\:pb-\\[60\\%\\] {
-                    padding-bottom: 60%;
-                  }
-                  .large-screen\\:pl-14 {
-                    padding-left: 3.5rem;
-                  }
-                  .large-screen\\:pl-32 {
-                    padding-left: 8rem;
-                  }
-                  .vector {
-                    max-width: 1000px !important;
-                  }
-                }
               `}
             </style>
           </div>
@@ -367,4 +306,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+export default PwdRstSentpage;
