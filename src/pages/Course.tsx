@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -7,20 +6,17 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Star, Clock, Users, BookOpen, Filter } from "lucide-react";
 import WallOfLove from "../components/WallOfLove";
 import { useNavigate } from "react-router-dom";
+import heroimage from '../Assets/Vector.png'
+import Recard from "@/components/Card";
 
 const Course = () => {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedLevel, setSelectedLevel] = useState("all");
-
   const categories = [
-   
   ];
-
   const levels = [
-    
   ];
-
   const courses = [
     {
       title: "Complete React Development Course",
@@ -163,35 +159,36 @@ const Course = () => {
       badge: "Top Rated"
     }
   ];
-
   const filterCards = (category) => {
     setSelectedCategory(category);
   };
-
   const filteredCourses = courses.filter(course => {
     if (selectedCategory === 'all') {
       return true;
     }
     return course.category === selectedCategory;
   });
-
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-purple-50 to-indigo-50 py-20">
+      <section className="bg-gradient-to-br from-purple-60 to-indigo-50 py-19">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div><img src={heroimage} alt="" style={{
+            width: "500px",
+            height: "auto",
+            position: "relative",
+            left: "350px",
+            top: "90px"
+          }} /></div>
           <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            Explore Our
-            <span className="text-purple-600"> Courses</span>
+            Discover Our Starc Courses
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             Discover thousands of courses taught by expert instructors. Start learning today and advance your career.
           </p>
         </div>
       </section>
-
       {/* New Design Section */}
       <section className="bg-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -202,24 +199,83 @@ const Course = () => {
             </div>
             <span className="text-sm text-gray-500">Scheduled live Google Meet classes with calendar/email alerts, seasonal batches, and fixed enrollment deadlines.</span>
           </div>
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-bold">Courses (957)</h2>
-            <div className="flex items-center gap-4">
-              <input type="text" placeholder="Search in your courses..." className="border border-gray-300 rounded-full px-4 py-2" />
-              <select className="border border-gray-300 rounded-full px-4 py-2">
+        </div>
+        <div className="p-6">
+          <h2 className="text-2xl font-semibold mb-6">Courses (957)</h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
+            {/* Search */}
+            <div>
+              <label htmlFor="search" className="block text-sm font-medium mb-1">
+                Search:
+              </label>
+              <div className="relative">
+                <input
+                  type="text"
+                  id="search"
+                  placeholder="Search in your courses..."
+                  className="w-full rounded-full border border-gray-300 px-4 py-2 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <span className="absolute left-3 top-2.5 text-gray-400">
+                  🔍
+                </span>
+              </div>
+            </div>
+
+            {/* Sort by */}
+            <div>
+              <label htmlFor="sort" className="block text-sm font-medium mb-1">
+                Sort by:
+              </label>
+              <select
+                id="sort"
+                className="w-full rounded-full border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
                 <option>Latest</option>
+                <option>Electronics</option>
+                <option>Placeholder</option>
+                <option>Placeholder text</option>
+                <option>Lorem</option>
               </select>
-              <select className="border border-gray-300 rounded-full px-4 py-2">
+            </div>
+
+            {/* Status */}
+            <div>
+              <label htmlFor="status" className="block text-sm font-medium mb-1">
+                Status:
+              </label>
+              <select
+                id="status"
+                className="w-full rounded-full border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
                 <option>All Courses</option>
+                <option>Electronics</option>
+                <option>Placeholder</option>
+                <option>Placeholder text</option>
+                <option>Lorem</option>
+
               </select>
-              <select className="border border-gray-300 rounded-full px-4 py-2">
+            </div>
+
+            {/* Teacher */}
+            <div>
+              <label htmlFor="teacher" className="block text-sm font-medium mb-1">
+                Teacher:
+              </label>
+              <select
+                id="teacher"
+                className="w-full rounded-full border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
                 <option>All Teachers</option>
+                <option>Electronics</option>
+                <option>Placeholder</option>
+                <option>Placeholder text</option>
+                <option>Lorem</option>
+
               </select>
             </div>
           </div>
         </div>
       </section>
-
       {/* Category and Card Design Section */}
       <section className="flex">
         <div className="w-1/4 py-8">
@@ -251,9 +307,9 @@ const Course = () => {
                   </div>
                 </div>
               ))} */}
-                {filteredCourses.map((course, index) => (
-              <div key={index} onClick={() => navigate('/book', { state: { course } })} className="cursor-pointer">
-                <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg">
+              {filteredCourses.map((course, index) => (
+                <div key={index} onClick={() => navigate('/book', { state: { course } })} className="cursor-pointer">
+                  {/* <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg">
                   <div className="relative">
                     <img
                       src={course.image}
@@ -287,18 +343,15 @@ const Course = () => {
                   <CardFooter className="p-4 bg-gray-50 flex justify-between items-center">
                     <div className="text-lg font-bold text-purple-600">${course.price}</div>
                     <div className="text-sm text-gray-500 line-through">${course.originalPrice}</div>
-                    <Button className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md">
-                      Enroll Now
-                    </Button>
                   </CardFooter>
-                </Card>
-              </div>
-            ))}
+                </Card> */}
+                  <Recard course={course} key={index} />
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
-
       {/* Course Grid */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -349,11 +402,10 @@ const Course = () => {
           </div>
         </div>
       </section>
-
       {/* New Section from Image */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-purple-600 rounded-xl p-10 text-center shadow-lg mb-20">
+          <div className="bg-purple-500 rounded-xl p-10 text-center shadow-lg mb-20">
             <h2 className="text-4xl font-bold text-white mb-4">Join ambitious professionals and unlock your dream career today</h2>
             <p className="text-purple-100 mb-8 max-w-2xl mx-auto">Unlock your true potential and discover a world of opportunities that align with your skills, interests, and aspirations</p>
             <div className="flex justify-center items-center gap-4">
@@ -381,7 +433,6 @@ const Course = () => {
               <button className="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">Join Us</button>
             </div>
           </div>
-
           <div className="flex flex-col lg:flex-row justify-between items-start gap-10">
             <div className="lg:w-1/2">
               <h2 className="text-5xl font-bold text-gray-800 mb-6 leading-tight">"Learn today, lead tomorrow"</h2>
@@ -409,13 +460,9 @@ const Course = () => {
           </div>
         </div>
       </section>
-
       <WallOfLove />
-
       <Footer />
     </div>
   );
 };
-
 export default Course;
-

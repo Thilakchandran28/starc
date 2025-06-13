@@ -2,13 +2,21 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { CardContent } from "@/components/ui/card";
 import { Star, Download, Eye, Calendar } from "lucide-react";
-import { useLocation } from "react-router-dom";
-
+import { useLocation, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import SubmissionSuccess from "@/components/SubmissionSuccess";
+import Card from "@/components/Card";
 const Book = () => {
   const location = useLocation();
+  const navigate = useNavigate()
   const { course } = location.state || {};
+   const [formSubmitted, setFormSubmitted] = useState(false);
+
+     const handleFormSubmitSuccess = () => {
+    setFormSubmitted(true);
+  };
 
   if (!course) {
     return (
@@ -22,6 +30,8 @@ const Book = () => {
       </div>
     );
   }
+
+
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -133,7 +143,7 @@ const Book = () => {
           </div>
 
           {/* Right Column: Enrollment Form */}
-          <div className="lg:w-1/3">
+       { !formSubmitted?  <div className="lg:w-1/3">
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Enroll my Interest ({course.title})</h2>
               <form className="space-y-4">
@@ -162,10 +172,14 @@ const Book = () => {
                     <span className="text-sm text-gray-500">Supported Format PDF, Word</span>
                   </div>
                 </div>
-                <Button type="submit" className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-md font-semibold">Submit Now</Button>
+                <div>
+                <Button type="submit" className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-md font-semibold"
+                 onClick={()=>{setFormSubmitted(true) }} 
+                 >Submit Now</Button>
+                </div>
               </form>
             </div>
-          </div>
+          </div>:<div><SubmissionSuccess /></div>}
         </div>
       </main>
 
@@ -257,10 +271,10 @@ const Book = () => {
       </section>
 
       {/* Join Us Section */}
-      <section className="py-12 bg-purple-700 text-white">
+      <section className="py-12 bg-purple-600 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-4">Join ambitious professionals and unlock your dream career today</h2>
-          <p className="text-lg mb-8">Unlock your true potential and discover a world of opportunities that align with your skills, interests, and aspirations</p>
+          <p className="text-lg mb-9">Unlock your true potential and discover a world of opportunities that align with your skills, interests, and aspirations</p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
             <div className="relative">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-mail absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.93 1.93 0 0 1-2.06 0L2 7"/></svg>
@@ -268,10 +282,10 @@ const Book = () => {
             </div>
             <Button className="bg-white text-purple-700 hover:bg-gray-100 px-6 py-3 rounded-md font-semibold">Join Us</Button>
           </div>
-        </div>
+            </div>
       </section>
-
       <Footer />
+      <Card course={undefined}/>
     </div>
   );
 };

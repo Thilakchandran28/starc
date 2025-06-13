@@ -1,175 +1,331 @@
-
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Eye, EyeOff, Mail, Lock, User } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Eye, EyeOff } from "lucide-react";
+import Vector from '../Assets/Vector-3.png';
+import Star from '../Assets/star.png';
 
-const Signup = () => {
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+interface Slide {
+  title: string;
+  description: string;
+}
 
+interface LoginFormProps {
+  email: string;
+  setEmail: (value: string) => void;
+  password: string;
+  setPassword: (value: string) => void;
+  confirmPassword: string;
+  setConfirmPassword: (value: string) => void;
+  isEmailValid: boolean;
+  setIsEmailValid: (value: boolean) => void;
+  isPasswordValid: boolean;
+  setIsPasswordValid: (value: boolean) => void;
+  doPasswordsMatch: boolean;
+  showPassword: boolean;
+  setShowPassword: (value: boolean) => void;
+  handleLogin: (e: React.FormEvent<HTMLFormElement>) => void;
+}
+
+const LoginForm: React.FC<LoginFormProps> = ({
+  email,
+  setEmail,
+  password,
+  setPassword,
+  confirmPassword,
+  setConfirmPassword,
+  isEmailValid,
+  setIsEmailValid,
+  isPasswordValid,
+  setIsPasswordValid,
+  doPasswordsMatch,
+  showPassword,
+  setShowPassword,
+  handleLogin,
+}) => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50 flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
-        {/* Logo */}
-        <div className="text-center mb-8">
-          <Link to="/" className="text-3xl font-bold">
-            <span className="text-purple-600">Nex</span>
-            <span className="text-gray-900">ora</span>
-          </Link>
-          <p className="text-gray-600 mt-2">Create your account and start learning today!</p>
-        </div>
-
-        <Card className="border-0 shadow-2xl">
-          <CardHeader className="text-center pb-6">
-            <h1 className="text-2xl font-bold text-gray-900">Create Account</h1>
-          </CardHeader>
-          
-          <CardContent className="p-8 pt-0">
-            <form className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    First Name
-                  </label>
-                  <div className="relative">
-                    <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                    <input
-                      type="text"
-                      className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                      placeholder="First name"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Last Name
-                  </label>
-                  <div className="relative">
-                    <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                    <input
-                      type="text"
-                      className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                      placeholder="Last name"
-                    />
-                  </div>
-                </div>
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Email Address
-                </label>
-                <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                  <input
-                    type="email"
-                    className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                    placeholder="Enter your email"
-                  />
-                </div>
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Password
-                </label>
-                <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                  <input
-                    type={showPassword ? "text" : "password"}
-                    className="w-full pl-12 pr-12 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                    placeholder="Create a password"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
-                  >
-                    {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
-                  </button>
-                </div>
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Confirm Password
-                </label>
-                <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                  <input
-                    type={showConfirmPassword ? "text" : "password"}
-                    className="w-full pl-12 pr-12 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                    placeholder="Confirm your password"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
-                  >
-                    {showConfirmPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
-                  </button>
-                </div>
-              </div>
-              
-              <div className="flex items-center">
-                <input
-                  type="checkbox"
-                  className="w-4 h-4 text-purple-600 border-gray-300 rounded focus:ring-purple-500"
-                />
-                <label className="ml-2 text-sm text-gray-600">
-                  I agree to the{" "}
-                  <Link to="/terms" className="text-purple-600 hover:text-purple-700">
-                    Terms of Service
-                  </Link>{" "}
-                  and{" "}
-                  <Link to="/privacy" className="text-purple-600 hover:text-purple-700">
-                    Privacy Policy
-                  </Link>
-                </label>
-              </div>
-              
-              <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 text-lg font-semibold rounded-xl">
-                Create Account
-              </Button>
-            </form>
-            
-            <div className="mt-6 text-center">
-              <p className="text-gray-600">
-                Already have an account?{" "}
-                <Link to="/login" className="text-purple-600 hover:text-purple-700 font-semibold">
-                  Sign in
-                </Link>
+    <div className="w-screen h-screen pl-24 pb-6 flex items-center justify-center">
+      <div className="w-full h-screen p-6 flex items-center justify-center">
+        <div className="w-full max-w-xs">
+          <h2 className="text-2xl font-bold text-gray-900 mb-11 font-mont">Hey There 👋</h2>
+          <form className="space-y-4" onSubmit={handleLogin}>
+            <div>
+              <p className="text-sm text-gray-600 mb-2 pb-6 font-mont">
+                Sign Up Now-Discover 500+ Books
               </p>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1 font-mont">
+                Email address/Phone number*
+              </label>
+              <Input
+                id="email"
+                type="text"
+                placeholder="john@gmail.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className={`h-10 px-3 rounded-lg border ${isEmailValid ? 'border-gray-300' : 'border-red-500'} focus:ring-purple-500 focus:border-purple-500 text-sm`}
+              />
+              {!isEmailValid && (
+                <p className="text-red-500 text-xs mt-1 font-mont">Please enter a valid email address</p>
+              )}
             </div>
-            
-            <div className="mt-6">
+            <div>
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1 font-mont">Password*</label>
               <div className="relative">
-                <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-gray-300" />
-                </div>
-                <div className="relative flex justify-center text-sm">
-                  <span className="px-2 bg-white text-gray-500">Or continue with</span>
-                </div>
+                <Input
+                  id="password"
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Enter password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className={`h-10 px-3 rounded-lg border ${isPasswordValid ? 'border-gray-300' : 'border-red-500'} focus:ring-purple-500 focus:border-purple-500 pr-10 text-sm`}
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                >
+                  {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                </button>
               </div>
-              
-              <div className="mt-6 grid grid-cols-2 gap-3">
-                <Button variant="outline" className="border-gray-300 rounded-xl">
-                  <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google" className="w-5 h-5 mr-2" />
-                  Google
-                </Button>
-                <Button variant="outline" className="border-gray-300 rounded-xl">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" className="w-5 h-5 mr-2" />
-                  Facebook
-                </Button>
-              </div>
+              {!isPasswordValid && (
+                <p className="text-red-500 text-xs mt-1 font-mont">Enter a valid password</p>
+              )}
             </div>
-          </CardContent>
-        </Card>
+            <div>
+              <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-1 font-mont">Rewrite Password*</label>
+              <div className="relative">
+                <Input
+                  id="confirmPassword"
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Re-enter password"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  className={`h-10 px-3 rounded-lg border ${doPasswordsMatch ? 'border-gray-300' : 'border-red-500'} focus:ring-purple-500 focus:border-purple-500 pr-10 text-sm`}
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                >
+                  {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                </button>
+              </div>
+              {!doPasswordsMatch && (
+                <p className="text-red-500 text-xs mt-1 font-mont">Passwords do not match</p>
+              )}
+            </div>
+            <Button style={{ backgroundColor: '#8A63FF' }} className="w-full h-10 text-white rounded-lg text-sm font-mont font-semibold">
+              Submit
+            </Button>
+          </form>
+          <div className="mt-8 text-left">
+            <p className="text-black text-sm font-bold font-mont pt-3">
+              Already have an account?{" "}
+              <Link to="/login" className="text-black underline font-bold">
+                Log-In
+              </Link>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Signup;
+const Login: React.FC = () => {
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [confirmPassword, setConfirmPassword] = useState<string>("");
+  const [isEmailValid, setIsEmailValid] = useState<boolean>(true);
+  const [isPasswordValid, setIsPasswordValid] = useState<boolean>(true);
+  const [doPasswordsMatch, setDoPasswordsMatch] = useState<boolean>(true);
+  const navigate = useNavigate();
+
+  const slides: Slide[] = [
+    {
+      title: "Lorem ipsum dolor sit amet consectetur.",
+      description: "Lorem ipsum dolor sit amet consectetur. Arcu a sit commodo tempor nulla blandit. Posuere vel netus auctor phasellus fermentum."
+    },
+    {
+      title: "Discover New Learning Paths Today",
+      description: "Unlock your potential with our curated courses. Learn at your own pace with expert guidance and support."
+    },
+    {
+      title: "Master Skills with Expert Mentors",
+      description: "Join thousands of learners and gain skills that matter. Start your journey with hands-on projects."
+    }
+  ];
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [skipTransition, setSkipTransition] = useState(false);
+
+  useEffect(() => {
+    const interval = 3000; // 3 seconds per slide
+    const slideTimer = setInterval(() => {
+      setCurrentSlide((prevSlide) => {
+        if (prevSlide === slides.length - 1) {
+          setSkipTransition(true); // Disable sliding for reset
+          setTimeout(() => setSkipTransition(false), 0); // Re-enable transition
+          return 0; // Jump to first slide
+        }
+        return (prevSlide + 1) % slides.length;
+      });
+    }, interval);
+
+    return () => clearInterval(slideTimer); // Cleanup interval on unmount
+  }, [slides.length]);
+
+  const handleBarClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const bar = e.currentTarget.getBoundingClientRect();
+    const clickX = e.clientX - bar.left;
+    const barWidth = bar.width;
+    const sectionWidth = barWidth / slides.length;
+    const clickedSection = Math.floor(clickX / sectionWidth);
+    setCurrentSlide(clickedSection);
+    setSkipTransition(false); // Ensure normal transition on click
+  };
+
+  const emailRegex: RegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const passwordRegex: RegExp = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+  const handleLogin = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+    const validEmail = emailRegex.test(email);
+    const validPassword = passwordRegex.test(password);
+    const passwordsMatch = password === confirmPassword;
+
+    setIsEmailValid(validEmail);
+    setIsPasswordValid(validPassword);
+    setDoPasswordsMatch(passwordsMatch);
+
+    if (validEmail && validPassword && passwordsMatch) {
+      localStorage.setItem("isAuthenticated", "true");
+      navigate("/");
+    }
+  };
+
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-white">
+      <div className="absolute top-4 left-4 flex items-center bg-white rounded-full px-3 py-1 z-10 pt-7 pl-5">
+        <img src={Star} alt="" className="w-4" />
+        <div className="pl-3 leading-3">
+          <span className="text-xs font-medium text-gray-600 font-mont">Discover More, Learn <br />More - 500+ Courses <br />Inside</span>
+        </div>
+      </div>
+      <div className="relative flex w-full bg-white shadow-lg rounded-lg overflow-hidden">
+        <div className="bg-white flex items-center justify-center relative w-full">
+          <div className="pb-[70%] pl-11">
+            <img src={Vector} alt="" className="absolute z-0 pl-24" style={{ width: "screen", height: "auto" }} />
+          </div>
+          <div className="relative z-10 text-center flex flex-col justify-center pl-36 pt-40 ">
+            <div className="pl-10 pr-6 pt-24">
+              <div className="pl-3 inline-flex items-center bg-[#8A63FF] text-white text-[50%] px-5 py-2 w-[26%] rounded-full text-sm font-medium font-mont ">
+                SUPERVISED COURSES
+              </div>
+            </div>
+            <div className="overflow-hidden h-[220px] flex items-center justify-center">
+              <div key={currentSlide} className="w-full">
+                <h1 className="text-4xl font-bold text-gray-900 mb-4 leading-tight font-mont w-50 animate-pop-slide">
+                  {slides[currentSlide].title.split(' ').map((word, index) => (
+                    <span key={index}>
+                      {word}{' '}
+                      {index === 4 && <br />}
+                    </span>
+                  ))}
+                </h1>
+                <p className="text-base text-gray-600 mb-8 leading-relaxed font-mont max-w-2xl mx-auto animate-pop-slide">
+                  {slides[currentSlide].description}
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+              {currentSlide === 0 ? (
+                <>
+                  <Button style={{ backgroundColor: '#8A63FF', boxShadow:'0px 10px 16px 0px rgba(0, 0, 0, 0.2)' }} className="bg-purple-600 hover:bg-purple-700 text-white rounded-sm px-6 py-2 text-sm font-mont">
+                    Start learning Now
+                  </Button>
+                  <div className="flex items-center gap-2">
+                    <div className="flex -space-x-2">
+                      {[1, 2, 3, 4].map((i) => (
+                        <img
+                          key={i}
+                          className="w-8 h-8 rounded-full border-2 border-white"
+                          src={`https://i.pravatar.cc/32?img=${i}`}
+                          alt={`Student ${i}`}
+                        />
+                      ))}
+                    </div>
+                    <span className="text-sm text-gray-600 font-mont">1k+ students</span>
+                  </div>
+                </>
+              ) : currentSlide === 1 ? (
+                <Button style={{ backgroundColor: '#8A63FF', boxShadow:'0px 10px 16px 0px rgba(0, 0, 0, 0.2)' }} className="bg-purple-600 hover:bg-purple-700 text-white rounded-sm px-6 py-2 text-sm font-mont">
+                  Express Your Interest Now
+                </Button>
+              ) : (
+                <div className="flex items-center gap-4">
+                  <Button style={{ backgroundColor: '#8A63FF', boxShadow:'0px 10px 16px 0px rgba(0, 0, 0, 0.2)' }} className="bg-purple-600 hover:bg-purple-700 text-white rounded-sm px-6 py-2 text-sm font-mont">
+                    Explore Courses Now
+                  </Button>
+                  <div className="flex items-center gap-1 text-sm text-gray-600 font-mont">
+                    <span>📚</span>
+                    <span>300+ Modules & 30+ Courses</span>
+                  </div>
+                </div>
+              )}
+            </div>
+            <div className="flex justify-center">
+              <div className="w-64 h-1 bg-gray-200 rounded-full overflow-hidden cursor-pointer" onClick={handleBarClick}>
+                <div
+                  className="h-full bg-purple-600 rounded-full"
+                  style={{
+                    width: `${100 / slides.length}%`,
+                    transform: `translateX(${currentSlide * 100}%)`,
+                    transition: skipTransition ? "none" : "transform 0.5s ease-in-out",
+                  }}
+                />
+              </div>
+            </div>
+            <style>
+              {`
+                @keyframes popSlide {
+                  from {
+                    opacity: 0;
+                    transform: translateY(10px) scale(0.95);
+                  }
+                  to {
+                    opacity: 1;
+                    transform: translateY(0) scale(1);
+                  }
+                }
+                .animate-pop-slide {
+                  animation: popSlide 0.5s ease-in-out forwards;
+                }
+              `}
+            </style>
+          </div>
+        </div>
+        <LoginForm
+          email={email}
+          setEmail={setEmail}
+          password={password}
+          setPassword={setPassword}
+          confirmPassword={confirmPassword}
+          setConfirmPassword={setConfirmPassword}
+          isEmailValid={isEmailValid}
+          setIsEmailValid={setIsEmailValid}
+          isPasswordValid={isPasswordValid}
+          setIsPasswordValid={setIsPasswordValid}
+          doPasswordsMatch={doPasswordsMatch}
+          showPassword={showPassword}
+          setShowPassword={setShowPassword}
+          handleLogin={handleLogin}
+        />
+      </div>
+    </div>
+  );
+};
+
+export default Login;
