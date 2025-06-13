@@ -73,13 +73,13 @@ const About = () => {
             </p>
             <ul className="space-y-4">
               <li className="flex items-center gap-3">
-                <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#8A63FF]">
+                <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#8A63FF]">
                   <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
                 </span>
                 <span className="font-mont text-black">Add your feature details here</span>
               </li>
               <li className="flex items-center gap-3">
-                <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#8A63FF]">
+                <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#8A63FF]">
                   <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
                 </span>
                 <span className="font-mont text-black">Inform your customers about your features</span>
@@ -181,15 +181,15 @@ const About = () => {
      
 
       {/* Stats Section */}
-      <section className="py-20 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 bg-white p-6 border border-gray">
+          <div className="flex justify-center lg:grid-cols-4 gap-10 bg-white p-6 border border-gray ">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center ">
-                <div className="text-4xl lg:text-5xl font-mont font-bold  text-center pl-4 text-purple-600 mb-2">
+              <div key={index} className="text-center  w-1/3 ">
+                <div className="text-4xl lg:text-5xl font-mont font-medium  text-center pl-6 text-[#6E51E0] mb-2">
                   {stat.number}
                 </div>
-                <div className="text-gray-600 text-center font-mont">
+                <div className="text-gray-600 text-center text-wrap font-mont">
                   {stat.label}
                 </div>
               </div>
@@ -203,11 +203,10 @@ const About = () => {
       <section className=" bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-mont font-medium pr-[86%] text-gray-900 mb-3">Our Goals
+            <h2 className="text-3xl font-mont font-semibold pr-[86%] text-gray-900 mb-3">Our Goals
             </h2>
-            <p className="text-xl text-gray-600 pr-[70%]max-w-3xl mx-auto">
-              At SkillBridge, our goal is to empower individuals from all backgrounds to thrive in the world of design and development. We believe that education should be accessible and transformative, enabling learners to pursue their passions and make a meaningful impact.
-              
+            <p className="text-xl font-mont text-gray-600 pr-[70%]max-w-3xl mx-auto">
+              At SkillBridge, our goal is to empower individuals from all backgrounds to thrive in the world of design and development. We believe that education should be accessible and transformative, enabling learners to pursue their passions.
             </p>
           </div>
 
