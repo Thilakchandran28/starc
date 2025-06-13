@@ -21,6 +21,7 @@ import SettingsPage from "./pages/SettingsPage";
 import LearningModule from "./components/LearningModule";
 import LearningOverview from "./components/LearningOverview";
 import SubmissionSuccess from "./components/SubmissionSuccess";
+import WishlistPage from "./pages/WishlistPage";
 
 const queryClient = new QueryClient();
 
@@ -49,6 +50,7 @@ const App = () => (
           <Route path="/book" element={<BooksPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/wishlist" element={<WishlistPage />} />
           <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
           <Route path="/signup" element={<PublicRoute><Signup /></PublicRoute>} />
           
