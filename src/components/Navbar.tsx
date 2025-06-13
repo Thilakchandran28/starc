@@ -61,6 +61,7 @@ const Navbar = () => {
                   <Bell className="h-6 w-6" />
                 </button>
                 </Link>
+                {/* whishlist */}
                 <Link to="/wishlist">
                   <button className="text-purple-600 hover:text-purple-800">
                     <Heart className="h-6 w-6" />
