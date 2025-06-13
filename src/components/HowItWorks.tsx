@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowLeft, Upload, BadgeCheck, Code2, Users, Sparkle } from 'lucide-react'; // Ensure all icons are imported
+import Purplegradient from "../Assets/Purplegradient.png"
 
 // Assuming these paths are correct relative to your project structure
 // and that your bundler (e.g., Vite, Create React App, Next.js) handles them.
@@ -74,6 +75,8 @@ const HowItWorks = () => {
         <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
           {/* Left Side Steps Container */}
           <div className="w-full lg:w-1/2 relative">
+           <img src={Purplegradient}
+              className='inset-0 absolute'/>
             {/* Scrollable container for steps */}
             <div
               className="space-y-20 h-[500px] w-[700px] lg:h-[600px] overflow-y-auto pr-11 pl-4 your-scrollable-div::-webkit-scrollbar-thumb {
@@ -85,7 +88,9 @@ const HowItWorks = () => {
                 msOverflowStyle: 'none', // Hide scrollbar for IE/Edge
                 scrollbarWidth: 'none', // Hide scrollbar for Firefox
               }}
+            
             >
+            
               {/* Webkit specific scrollbar styles (can be added to a global CSS file for cleaner separation) */}
               <style>{` 
                 div::-webkit-scrollbar {
@@ -126,6 +131,7 @@ const HowItWorks = () => {
                       opacity: 1,
                     }}
                   >
+                     
                     {step.number}
                   </div>
 

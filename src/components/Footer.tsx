@@ -1,9 +1,6 @@
 import icon from "../assests/Starcs.png"
-import Instas from "../assests/insta.jpg";
-import Shares from "../assests/Share.png";
-import Musics from "../assests/music.jpg";
-import yt from "../assests/youtube.png";
-import { Youtube } from "lucide-react";
+
+
 const Footer = () => {
   return (
     <footer className="bg-white py-12">
@@ -49,12 +46,7 @@ const Footer = () => {
         </div>
         <div className="border-t border-gray-200 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between text-gray-600">
           <p>&copy; 2024 All rights reserved</p>
-          <div className="flex space-x-4 mt-4 md:mt-0">
-            <a href="#" className="text-gray-600 hover:text-gray-900"><img src={Instas} alt="Instagram" className="h-6 w-6" /></a>
-            <a href="#" className="text-gray-600 hover:text-gray-900"><img src={Shares}alt="Telegram" className="h-6 w-6" /></a>
-            <a href="#" className="text-gray-600 hover:text-gray-900"><img src={Musics} alt="TikTok" className="h-6 w-6" /></a>
-            <a href="#" className="text-gray-600 hover:text-gray-900"><img src={yt} alt="YouTube" className="h-6 w-6" /></a>
-          </div>
+         
         </div>
       </div>
     </footer>

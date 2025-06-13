@@ -6,6 +6,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin } from "lucide-react"; // Removed Check as it's not used in the form
 import heros from "../assests/hero.png";
 import PurpleBox from "@/components/PurpleBox";
+
+import WallOfLove from "../components/WallOfLove";
 const Contact = () => {
   return (
     <div className="min-h-screen bg-white">
@@ -17,18 +19,18 @@ const Contact = () => {
           {/* Optional: Subtle noise texture or pattern */}
           <div className="w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgeT0iMSIgcj0iMSIgZmlsbD0iIzAwMDAwMDMzIi8+PC9zdmc+')] bg-repeat"></div>
         </div>
-        <div className="relative z-10">
+        <div className="relative z-10 pt-80">
           <div className="flex justify-center mb-12">
             <img src={heros} alt="Hero" className="w-[75%] absolute top-[10px]" />
           </div>
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span className="inline-block bg-purple-100 text-white text-xs font-semibold px-3 py-1 rounded-full mb-2">
+            <span className="inline-block bg-purple-600 text-white text-xs font-semibold px-3 py-1 rounded-full mb-2">
               STARC COURSE
             </span>
             <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
               Contact Us
             </h1>
-            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto pb-36">
               Lorem ipsum dolor sit amet consectetur. Arcu a sit commodo tempor nulla blandit.
               <br />
               Posuere vel netus auctor phasellus fermentum.
@@ -142,138 +144,11 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Wall of Love Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-gray-900 text-center mb-12">Wall of Love</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Testimonial Card 1 */}
-            <div className="bg-gray-50 p-6 rounded-xl shadow-sm border border-gray-200">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center">
-                  <img src="https://images.unsplash.com/photo-1494790108755-2616b669ad00?w=60&h=60&fit=crop" alt="Avatar" className="w-10 h-10 rounded-full mr-3" />
-                  <div>
-                    <p className="font-semibold text-gray-900">Esther Howard</p>
-                    <p className="text-sm text-gray-500">@estherhoward</p>
-                  </div>
-                </div>
-                <svg className="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.37-.83.49-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.4 7.5 3.53 4.76c-.36.62-.56 1.35-.56 2.12 0 1.48.75 2.79 1.91 3.56-.7-.02-1.37-.21-1.95-.5v.03c0 2.08 1.48 3.81 3.44 4.2-1.8.49-2.76.07-3.16-.16.54 1.7 2.11 2.93 3.97 2.96C9.59 19.4 7.6 20 5.4 20c-.36 0-.7-.02-1.04-.06 2.05 1.32 4.48 2.08 7.08 2.08 8.49 0 13.13-7.03 13.13-13.17 0-.2-.01-.4-.02-.6.9-.63 1.68-1.42 2.3-2.32z"/></svg>
-              </div>
-              <p className="text-gray-700 mb-4">
-                Pharetra commodo massa in vitae ultricies. Elementum sit amet nulla facilisi morbi. Images eget aliquam enim aenean
-                venenatis magna diam.
-              </p>
-              <p className="text-sm text-gray-500">May 15, 2023</p>
-            </div>
-
-            {/* Testimonial Card 2 */}
-            <div className="bg-gray-50 p-6 rounded-xl shadow-sm border border-gray-200">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center">
-                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop" alt="Avatar" className="w-10 h-10 rounded-full mr-3" />
-                  <div>
-                    <p className="font-semibold text-gray-900">Leslie Alexander</p>
-                    <p className="text-sm text-gray-500">@lesliealexander</p>
-                  </div>
-                </div>
-                <svg className="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.37-.83.49-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.4 7.5 3.53 4.76c-.36.62-.56 1.35-.56 2.12 0 1.48.75 2.79 1.91 3.56-.7-.02-1.37-.21-1.95-.5v.03c0 2.08 1.48 3.81 3.44 4.2-1.8.49-2.76.07-3.16-.16.54 1.7 2.11 2.93 3.97 2.96C9.59 19.4 7.6 20 5.4 20c-.36 0-.7-.02-1.04-.06 2.05 1.32 4.48 2.08 7.08 2.08 8.49 0 13.13-7.03 13.13-13.17 0-.2-.01-.4-.02-.6.9-.63 1.68-1.42 2.3-2.32z"/></svg>
-              </div>
-              <p className="text-gray-700 mb-4">
-                Magna fermentum iaculis eu non diam phasellus. Vitae cursus euismod quis.
-                Viverra nibh ma pulvinar mattis nunc.
-              </p>
-              <p className="text-sm text-gray-500">May 15, 2023</p>
-            </div>
-
-            {/* Testimonial Card 3 */}
-            <div className="bg-gray-50 p-6 rounded-xl shadow-sm border border-gray-200">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center">
-                  <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop" alt="Avatar" className="w-10 h-10 rounded-full mr-3" />
-                  <div>
-                    <p className="font-semibold text-gray-900">Kristin Watson</p>
-                    <p className="text-sm text-gray-500">@kristinwatson</p>
-                  </div>
-                </div>
-                <svg className="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.37-.83.49-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.4 7.5 3.53 4.76c-.36.62-.56 1.35-.56 2.12 0 1.48.75 2.79 1.91 3.56-.7-.02-1.37-.21-1.95-.5v.03c0 2.08 1.48 3.81 3.44 4.2-1.8.49-2.76.07-3.16-.16.54 1.7 2.11 2.93 3.97 2.96C9.59 19.4 7.6 20 5.4 20c-.36 0-.7-.02-1.04-.06 2.05 1.32 4.48 2.08 7.08 2.08 8.49 0 13.13-7.03 13.13-13.17 0-.2-.01-.4-.02-.6.9-.63 1.68-1.42 2.3-2.32z"/></svg>
-              </div>
-              <p className="text-gray-700 mb-4">
-                Dictumst commodo quisque. Aliquam
-                varius et amet a pharetra. Maecenas
-                dictum, imperdiet rhoncus, orci lorem
-                ullamcorper.
-              </p>
-              <p className="text-sm text-gray-500">May 15, 2023</p>
-            </div>
-
-            {/* Testimonial Card 4 */}
-            <div className="bg-gray-50 p-6 rounded-xl shadow-sm border border-gray-200">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center">
-                  <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop" alt="Avatar" className="w-10 h-10 rounded-full mr-3" />
-                  <div>
-                    <p className="font-semibold text-gray-900">Guy Hawkins</p>
-                    <p className="text-sm text-gray-500">@guyhawkins</p>
-                  </div>
-                </div>
-                <svg className="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.37-.83.49-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.4 7.5 3.53 4.76c-.36.62-.56 1.35-.56 2.12 0 1.48.75 2.79 1.91 3.56-.7-.02-1.37-.21-1.95-.5v.03c0 2.08 1.48 3.81 3.44 4.2-1.8.49-2.76.07-3.16-.16.54 1.7 2.11 2.93 3.97 2.96C9.59 19.4 7.6 20 5.4 20c-.36 0-.7-.02-1.04-.06 2.05 1.32 4.48 2.08 7.08 2.08 8.49 0 13.13-7.03 13.13-13.17 0-.2-.01-.4-.02-.6.9-.63 1.68-1.42 2.3-2.32z"/></svg>
-              </div>
-              <p className="text-gray-700 mb-4">
-                Risus pharetra tincidunt purus in massa
-                tempus. Habitasse ultricies dolor sit amet
-                vestibulum rhoncus est pellentesque elit.
-              </p>
-              <p className="text-sm text-gray-500">May 15, 2023</p>
-            </div>
-
-            {/* Testimonial Card 5 */}
-            <div className="bg-gray-50 p-6 rounded-xl shadow-sm border border-gray-200">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center">
-                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop" alt="Avatar" className="w-10 h-10 rounded-full mr-3" />
-                  <div>
-                    <p className="font-semibold text-gray-900">Savannah Henry</p>
-                    <p className="text-sm text-gray-500">@savannahhenry</p>
-                  </div>
-                </div>
-                <svg className="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.37-.83.49-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.4 7.5 3.53 4.76c-.36.62-.56 1.35-.56 2.12 0 1.48.75 2.79 1.91 3.56-.7-.02-1.37-.21-1.95-.5v.03c0 2.08 1.48 3.81 3.44 4.2-1.8.49-2.76.07-3.16-.16.54 1.7 2.11 2.93 3.97 2.96C9.59 19.4 7.6 20 5.4 20c-.36 0-.7-.02-1.04-.06 2.05 1.32 4.48 2.08 7.08 2.08 8.49 0 13.13-7.03 13.13-13.17 0-.2-.01-.4-.02-.6.9-.63 1.68-1.42 2.3-2.32z"/></svg>
-              </div>
-              <p className="text-gray-700 mb-4">
-                Morbi nisl velit big ipsum sodales ut ac
-                eget integer. Scelerisque netus morbi
-                viverra nunc faucibus. Mi et, amet neque
-                commodo quis.
-              </p>
-              <p className="text-sm text-gray-500">May 15, 2023</p>
-            </div>
-
-            {/* Testimonial Card 6 */}
-            <div className="bg-gray-50 p-6 rounded-xl shadow-sm border border-gray-200">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center">
-                  <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop" alt="Avatar" className="w-10 h-10 rounded-full mr-3" />
-                  <div>
-                    <p className="font-semibold text-gray-900">Darrell Steward</p>
-                    <p className="text-sm text-gray-500">@darrellsteward</p>
-                  </div>
-                </div>
-                <svg className="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.37-.83.49-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.4 7.5 3.53 4.76c-.36.62-.56 1.35-.56 2.12 0 1.48.75 2.79 1.91 3.56-.7-.02-1.37-.21-1.95-.5v.03c0 2.08 1.48 3.81 3.44 4.2-1.8.49-2.76.07-3.16-.16.54 1.7 2.11 2.93 3.97 2.96C9.59 19.4 7.6 20 5.4 20c-.36 0-.7-.02-1.04-.06 2.05 1.32 4.48 2.08 7.08 2.08 8.49 0 13.13-7.03 13.13-13.17 0-.2-.01-.4-.02-.6.9-.63 1.68-1.42 2.3-2.32z"/></svg>
-              </div>
-              <p className="text-gray-700 mb-4">
-                Dictumst commodo quisque. Aliquam
-                varius et amet a pharetra. Maecenas
-                dictum, imperdiet rhoncus, orci lorem
-                ullamcorper.
-              </p>
-              <p className="text-sm text-gray-500">May 15, 2023</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
+   
       {/* CTA Section */}
      
       <PurpleBox/>
+      <WallOfLove/>
       <Footer />
     </div>
   );
