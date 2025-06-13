@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import CoursesSection from "@/components/CoursesSection";
+import CoursesSection from "@/components/coursessection";
 import PurpleBox from "@/components/PurpleBox";
 import WhyChoose from "@/components/WhyChoose";
 import Masters from "@/components/Masters";
