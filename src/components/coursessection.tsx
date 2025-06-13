@@ -10,8 +10,11 @@ import {
   PlayCircle,
   ArrowUp,
   Layout,
+  BookOpen,
+  Clock,
 } from "lucide-react";
 import { cn } from "@/lib/utils"; // Adjust based on your setup (e.g., clsx or tailwind-merge)
+import { Link } from "react-router-dom";
 
 // Dummy category data
 const categories = [
@@ -590,92 +593,118 @@ export default function CategoryTabsPage() {
       ? courses["marketing"] // Show all marketing courses when View All is clicked
       : filteredCourses.slice(0, 4); // Otherwise, apply learning mode filter and limit to 4
 
-  return (
-    <div className="max-w-7xl mx-auto p-6">
-      {/* Supervised/Unsupervised Toggle */}
-      <div className="flex justify-end mb-6">
-        <div className="relative flex w-[200px] h-10 bg-white borde rounded-full overflow-hidden shadow-sm">
-          <div
-            className={cn(
-              "absolute top-1 bottom-1 w-1/2 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full transition-transform duration-300 ease-in-out",
-              learningMode === "supervised" ? "translate-x-0.5" : "translate-x-[calc(100%-0.25rem)]"
-            )}
-          />
-          <button
-            onClick={() => setLearningMode("supervised")}
-            className="relative flex-1 flex items-center justify-center text-sm font-medium py-2 z-10"
-          >
-            <span
-              className={cn(
-                learningMode === "supervised" ? "text-white" : "text-purple-600"
-              )}
-            >
-              Supervised
-            </span>
-          </button>
-          <button
-            onClick={() => setLearningMode("unsupervised")}
-            className="relative flex-1 flex items-center justify-center text-sm font-medium py-2 z-10"
-          >
-            <span
-              className={cn(
-                learningMode === "unsupervised" ? "text-white" : "text-purple-600"
-              )}
-            >
-              Unsupervised
-            </span>
-          </button>
-        </div>
-      </div>
+      
 
-      {/* Tabs */}
-      <div className="flex items-center justify-center mb-8">
-        <div className="flex items-center space-x-6">
-          {categories.map((category) => (
-            <button
-              key={category.id}
-              onClick={() => setSelected(category.id)}
-              className={cn(
-                "relative flex items-center space-x-2 text-sm font-medium pt-4 pb-2 px-4 transition-colors",
-                selected === category.id
-                  ? "text-purple-600"
-                  : "text-gray-500 hover:text-purple-600"
-              )}
-            >
-              {selected === category.id && (
-                <span className="absolute inset-0 -top-2 z-0 bg-gradient-to-t from-purple-200 to-transparent rounded-md" />
-              )}
-              <span className="relative z-10">{category.icon}</span>
-              <span className="relative z-10">{category.label}</span>
-            </button>
-          ))}
+  return (
+    <div className="font-sans">
+      {/* Navigation and Top Mentors Section */}
+      <section className="py-0">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+          {/* Top Mentors Section */}
+          <div className="mb-12">
+            <h2 className="text-5xl font-mont font-medium  text-gray-900 mb-4 text-center">
+              Discover<br/> Our Nexora Courses
+            </h2>
+          <br></br>  
+            <p className="text-xl text-center text-gray-600 max-w-3xl mx-auto mb-8">
+              Lorum ipsum dolor sit amet consectetur.Ut sed<br></br>non elit adipiscing bibendum.
+            </p>
+          </div>
+
+          {/* Supervised/Unsupervised Toggle */}
+          <div className="flex justify-end mb-6">
+            <div className="relative flex w-48 h-10 bg-white border rounded-full overflow-hidden shadow-sm">
+              <div
+                className={`absolute top-0.5 bottom-0.5 w-1/2 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full transition-transform duration-300 ease-in-out ${
+                  learningMode === "supervised" ? "translate-x-0.5" : "translate-x-[calc(100%-0.25rem)]"
+                }`}
+              />
+              <button
+                onClick={() => setLearningMode("supervised")}
+                className="relative flex-1 flex items-center justify-center text-sm font-medium py-2 z-10 pr-2 pl-2"
+              >
+                <span
+                  className={`${
+                    learningMode === "supervised" ? "text-white" : "text-purple-600 "
+                  }`}
+                >
+                  Supervised
+                </span>
+              </button>
+              <button
+                onClick={() => setLearningMode("unsupervised")}
+                className="relative flex-1 flex items-center justify-center text-sm font-medium py-2 z-10 pr-2 pl-2"
+              >
+                <span
+                  className={`${
+                    learningMode === "unsupervised" ? "text-white" : "text-purple-600 "
+                  }`}
+                >
+                  Unsupervised
+                </span>
+              </button>
+            </div>
+          </div>
+
+          {/* Our Courses Title and Tabs */}
+          <div className="mb-8">
+            <h1 className="text-3xl font-bold text-gray-800 mb-4">Our Courses</h1>
+            <div className="flex items-center justify-start space-x-6 border-b border-gray-200">
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  onClick={() => setSelected(category.id)}
+                  className={`relative flex  items-center space-x-2 text-sm font-medium  pr- py-2 px-4 transition-colors ${
+                    selected === category.id
+                      ? "text-purple-600"
+                      : "text-gray-500 hover:text-purple-600"
+                  }`}
+                >
+                  <span>{category.icon}</span>
+                  <span>{category.label}</span>
+                  <span
+                    className={`absolute bottom-0 left-0 w-full h-0.5 transition-all duration-300 ${
+                      selected === category.id
+                        ? "bg-gradient-to-r from-purple-400 to-purple-600"
+                        : "bg-transparent"
+                    }`}
+                  />
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* Content */}
-      <div className="mt-10">
+      <div className="max-w-7xl mx-auto px-4 pb-10 sm:px-6 lg:px-8 mt-10">
         <div className="flex items-center justify-between mb-8">
-          <h1 className="text-3xl font-bold">{selectedLabel} Courses</h1>
+          {/* <h1 className="text-3xl font-bold text-gray-800">{selectedLabel} Courses</h1> */}
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {displayedCourses.length > 0 ? (
             displayedCourses.map((course, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
+                className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden cursor-pointer w-[280px]"
               >
                 <img
                   src={course.image}
                   alt={course.title}
-                  className="w-full h-40 object-cover rounded-t-xl"
+                  className="w-full h-[180px] object-cover rounded-3xl px-4 py-4 pl-4 pr-4"
                 />
-                <div className="p-4">
-                  <div className="flex justify-between items-center mb-2 text-sm text-gray-600">
+                <div className="px-4 py-3">
+                  <div className="flex justify-between items-center mb-1 text-sm text-gray-400">
                     <div className="flex items-center space-x-1">
-                      <Layout className="w-4 h-4" />
-                      <span>{course.category}</span>
-                    </div>
+                      {/* <BookOpen className="w-4 h-4"/> */}
+                      <span className="text-gray-600">{course.category}</span>
+                    </div >
+                    <div className="flex items-center gap-1">
+                      <Clock className='w-4 h-4'/>
+
+                    
                     <span>{course.duration}</span>
+                    </div>
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">{course.title}</h3>
                   <p className="text-gray-600 text-sm mb-4 line-clamp-2">{course.description}</p>
@@ -697,11 +726,11 @@ export default function CategoryTabsPage() {
                       <span className="text-lg font-bold text-purple-600">${course.price}</span>
                     </div>
                   </div>
-                  {course.badge && (
+                  {/* {course.badge && (
                     <span className="inline-block mt-3 px-2 py-1 text-xs font-semibold text-white bg-purple-600 rounded">
                       {course.badge}
                     </span>
-                  )}
+                  )} */}
                 </div>
               </div>
             ))
@@ -713,7 +742,7 @@ export default function CategoryTabsPage() {
         </div>
 
         {/* View All Button (only for marketing category) */}
-        {selected === "marketing" && filteredCourses.length > 0 && (
+        {/* {selected === "marketing" && filteredCourses.length > 0 && (
           <div className="flex justify-end mt-8">
             <button
               onClick={() => setShowAllMarketing(!showAllMarketing)}
@@ -722,20 +751,24 @@ export default function CategoryTabsPage() {
             >
               <span className="px-4 py-2 text-black">{showAllMarketing ? "View Less" : "View All"}</span>
               <span
-                className="px-2 py-2 rounded-r-full"
-                style={{ backgroundColor: "#8B5CF6" }}
-              >
-                <ArrowUp
-                  className={cn(
-                    "w-5 h-5 text-white transition-transform duration-300",
-                    showAllMarketing && "rotate-180"
-                  )}
-                />
-              </span>
+                className="px-2 py-2 rounded-r-full bg-purple-600"
+              > */}
+                 <div className="flex justify-end mt-12 ">
+                          <Link
+                            to="#" // Replace with your actual "View All" route
+                            className="flex items-center px-6 py-3  bg-white text-[#8A63FF] border border-[#8A63FF] rounded-full hover:bg-[#8A63FF] hover:text-white transition-colors duration-300 shadow-md"
+                          >
+                            View All
+                            <span className="ml-2 flex items-center justify-center w-6 h-6 bg-[#8A63FF] rounded-full">
+                              <ArrowUp className="w-4 h-4 text-white transform rotate-45" />
+                            </span>
+                          </Link>
+                        </div>
+              {/* </span>
             </button>
-          </div>
-        )}
+          </div> */}
+        
       </div>
     </div>
   );
-}
+};

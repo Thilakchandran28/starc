@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import faqicons from "../assests/faqicon.png"
 
 interface FAQItem {
   question: string;
@@ -52,7 +53,7 @@ const FAQ: React.FC = () => {
           onClick={toggleFAQSection}
           className="flex items-center justify-center space-x-2 w-32 h-12 bg-purple-500 rounded-2xl text-white text-sm font-semibold hover:bg-purple-600 transition-colors mb-4"
         >
-          <span className="text-lg">?</span>
+          <img src={faqicons} style={{width:"18px",height:"18px"}}/>
           <span>FAQS</span>
         </button>
         <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">

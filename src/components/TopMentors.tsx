@@ -46,7 +46,7 @@ const mentors: Mentor[] = [
     experience: "5 Years",
     rating: 5,
     reviews: 200,
-    image: ""
+    image: "https://images.unsplash.com/photo-1517841903202-8c31b3217a2b?w=300&h=300&fit=crop"
   }
 ];
 
@@ -100,7 +100,7 @@ const CombinedSections: React.FC = () => {
   };
 
   return (
-    <div className="font-sans">
+    <div className=" font-sans">
       {/* --- Top Mentors Section --- */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -124,16 +124,16 @@ const CombinedSections: React.FC = () => {
                 <img
                   src={mentor.image}
                   alt={mentor.name}
-                  className="w-full h-64 object-contain rounded-t-xl bg-white"
+                  className="w-full h-64 object-contain rounded-t-xl bg-black"
                 />
                 <div className="p-6 text-center">
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">{mentor.name}</h3>
-                  <p className="text-sm text-gray-500 ">{mentor.specialization}</p>
-                  <div className="flex items-center justify-center gap-2 text-gray-600 text-sm mb-3">
+                  <h3 className="text-xl font-mont font-bold text-gray-900 mb-1">{mentor.name}</h3>
+                  <p className="text-sm text-gray-500 mb-2  ">{mentor.specialization}</p>
+                  <div className=" gap-2 text-gray-600 text-sm mb-3">
                     <Clock className="w-4 h-4 text-gray-500" />
                     <span>{mentor.experience}</span>
                   </div>
-                  <div className="flex items-center justify-center gap-2">
+                  <div className=" gap-2">
                     <StarRating />
                     <span className="text-sm text-gray-500">({mentor.reviews})</span>
                   </div>
