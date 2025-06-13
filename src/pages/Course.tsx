@@ -174,13 +174,13 @@ const Course = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-purple-60 to-indigo-50 py-19">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div><img src={heroimage} alt=""  style={{
-            width:"500px",
-            height:"auto",
-            position:"relative",
-            left:"350px",
-            top:"90px"
-          }}/></div>
+          <div><img src={heroimage} alt="" style={{
+            width: "500px",
+            height: "auto",
+            position: "relative",
+            left: "350px",
+            top: "90px"
+          }} /></div>
           <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
             Discover Our Starc Courses
           </h1>
@@ -199,82 +199,82 @@ const Course = () => {
             </div>
             <span className="text-sm text-gray-500">Scheduled live Google Meet classes with calendar/email alerts, seasonal batches, and fixed enrollment deadlines.</span>
           </div>
+        </div>
+        <div className="p-6">
+          <h2 className="text-2xl font-semibold mb-6">Courses (957)</h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
+            {/* Search */}
+            <div>
+              <label htmlFor="search" className="block text-sm font-medium mb-1">
+                Search:
+              </label>
+              <div className="relative">
+                <input
+                  type="text"
+                  id="search"
+                  placeholder="Search in your courses..."
+                  className="w-full rounded-full border border-gray-300 px-4 py-2 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <span className="absolute left-3 top-2.5 text-gray-400">
+                  🔍
+                </span>
+              </div>
+            </div>
+
+            {/* Sort by */}
+            <div>
+              <label htmlFor="sort" className="block text-sm font-medium mb-1">
+                Sort by:
+              </label>
+              <select
+                id="sort"
+                className="w-full rounded-full border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option>Latest</option>
+                <option>Electronics</option>
+                <option>Placeholder</option>
+                <option>Placeholder text</option>
+                <option>Lorem</option>
+              </select>
+            </div>
+
+            {/* Status */}
+            <div>
+              <label htmlFor="status" className="block text-sm font-medium mb-1">
+                Status:
+              </label>
+              <select
+                id="status"
+                className="w-full rounded-full border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option>All Courses</option>
+                <option>Electronics</option>
+                <option>Placeholder</option>
+                <option>Placeholder text</option>
+                <option>Lorem</option>
+
+              </select>
+            </div>
+
+            {/* Teacher */}
+            <div>
+              <label htmlFor="teacher" className="block text-sm font-medium mb-1">
+                Teacher:
+              </label>
+              <select
+                id="teacher"
+                className="w-full rounded-full border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option>All Teachers</option>
+                <option>Electronics</option>
+                <option>Placeholder</option>
+                <option>Placeholder text</option>
+                <option>Lorem</option>
+
+              </select>
+            </div>
           </div>
-          <div className="p-6">
-      <h2 className="text-2xl font-semibold mb-6">Courses (957)</h2>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
-        {/* Search */}
-        <div>
-          <label htmlFor="search" className="block text-sm font-medium mb-1">
-            Search:
-          </label>
-          <div className="relative">
-            <input
-              type="text"
-              id="search"
-              placeholder="Search in your courses..."
-              className="w-full rounded-full border border-gray-300 px-4 py-2 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <span className="absolute left-3 top-2.5 text-gray-400">
-              🔍
-            </span>
-          </div>
         </div>
-
-        {/* Sort by */}
-        <div>
-          <label htmlFor="sort" className="block text-sm font-medium mb-1">
-            Sort by:
-          </label>
-          <select
-            id="sort"
-            className="w-full rounded-full border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <option>Latest</option>
-            <option>Electronics</option>
-            <option>Placeholder</option>
-            <option>Placeholder text</option>
-                      <option>Lorem</option>
-</select>
-        </div>
-
-        {/* Status */}
-        <div>
-          <label htmlFor="status" className="block text-sm font-medium mb-1">
-            Status:
-          </label>
-          <select
-            id="status"
-            className="w-full rounded-full border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <option>All Courses</option>
-            <option>Electronics</option>
-            <option>Placeholder</option>
-            <option>Placeholder text</option>
-            <option>Lorem</option>
-
-          </select>
-        </div>
-
-        {/* Teacher */}
-        <div>
-          <label htmlFor="teacher" className="block text-sm font-medium mb-1">
-            Teacher:
-          </label>
-          <select
-            id="teacher"
-            className="w-full rounded-full border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <option>All Teachers</option>
-            <option>Electronics</option>
-            <option>Placeholder</option>
-            <option>Placeholder text</option>
-            <option>Lorem</option>
-
-          </select>
-        </div>
-      </div>
-    </div>
       </section>
       {/* Category and Card Design Section */}
       <section className="flex">
@@ -307,9 +307,9 @@ const Course = () => {
                   </div>
                 </div>
               ))} */}
-                {filteredCourses.map((course, index) => (
-              <div key={index} onClick={() => navigate('/book', { state: { course } })} className="cursor-pointer">
-                {/* <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg">
+              {filteredCourses.map((course, index) => (
+                <div key={index} onClick={() => navigate('/book', { state: { course } })} className="cursor-pointer">
+                  {/* <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg">
                   <div className="relative">
                     <img
                       src={course.image}
@@ -345,9 +345,9 @@ const Course = () => {
                     <div className="text-sm text-gray-500 line-through">${course.originalPrice}</div>
                   </CardFooter>
                 </Card> */}
-                <Recard course={course} key={index} />
-              </div>
-            ))}
+                  <Recard course={course} key={index} />
+                </div>
+              ))}
             </div>
           </div>
         </div>

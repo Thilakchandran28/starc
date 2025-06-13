@@ -24,6 +24,7 @@ import SubmissionSuccess from "./components/SubmissionSuccess";
 import ForgotPassword from "./pages/ForgotPassword";
 import PwdRstSentpage from "./pages/PwdRstSentpage";
 import Notifications from "./pages/Notifications";
+import WishlistPage from "./pages/WishlistPage";
 
 const queryClient = new QueryClient();
 
@@ -53,6 +54,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/wishlist" element={<WishlistPage />} />
           <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
           <Route path="/signup" element={<PublicRoute><Signup /></PublicRoute>} />
           <Route path="/Password-Reset" element={<PublicRoute><PwdRstSentpage/></PublicRoute>} />

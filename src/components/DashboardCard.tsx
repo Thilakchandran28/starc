@@ -5,7 +5,7 @@ import clock from "../Assets/clock.svg"
 
 const DashboardCard = ({ course }) => {
     return (
-        <div className="bg-white rounded-[20px] shadow-md overflow-hidden border border-purple-600 w-[100%] h-[100%] ">
+        <div className="bg-white rounded-[20px] shadow-md overflow-hidden  w-[100%] h-[100%] ">
             <img src={course.image} alt={course.title} className="w-full h-60 rounded-[40px] p-5" />
             <div className="p-5">
                 <h3 className="font-semibold text-lg text-gray-900 mb-2">{course.title}</h3>
@@ -16,7 +16,7 @@ const DashboardCard = ({ course }) => {
 
                 <div className="w-1/3 h-12  bg-purple-600 rounded-lg  flex align-center justify-center p-2  mb-4">
                     <img src={uparrow} className=" p-1" />
-                    <p className="text-2xl text-gray-500 text-white mb-4 font-bold">{course.progress}%</p>
+                    <p className="text-2xl  text-white mb-4 font-bold">{course.progress}%</p>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2.5 mb-2">
                     <div className="bg-purple-600 h-2.5 rounded-full" style={{ width: `${course.progress}%` }}></div>

@@ -62,22 +62,22 @@ const Navbar = () => {
                 </button>
                 </Link>
                 <Link to="/wishlist">
-                <button className="text-purple-600 hover:text-purple-800">
-                  <Heart className="h-6 w-6" />
-                </button>
+                  <button className="text-purple-600 hover:text-purple-800">
+                    <Heart className="h-6 w-6" />
+                  </button>
                 </Link>
                 <Link to="/profile">
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     className="text-purple-600 border-purple-600 hover:bg-purple-50 hover:text-purple-700 font-medium rounded-full flex items-center"
                   >
                     <User className="mr-2 h-4 w-4" />
                     View Profile
                   </Button>
                 </Link>
-                <Button 
+                <Button
                   onClick={handleLogout}
-                  variant="outline" 
+                  variant="outline"
                   className="text-purple-600 border-purple-600 hover:bg-purple-50 hover:text-purple-700 font-medium rounded-full flex items-center"
                 >
                   <LogOut className="mr-2 h-4 w-4" />
