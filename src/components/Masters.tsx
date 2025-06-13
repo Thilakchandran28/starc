@@ -1,130 +1,258 @@
-
-import { Star, Award, Users } from "lucide-react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  Star,
+  Code2,
+  Layout,
+  Wrench,
+  Sparkle,
+  Calculator,
+  Users,
+  Megaphone,
+  ArrowUp,
+} from "lucide-react";
 
 const Masters = () => {
-  const masters = [
-    {
-      name: "Dr. Sarah Johnson",
-      expertise: "Data Science & AI",
-      experience: "15+ years",
-      rating: 4.9,
-      students: 25000,
-      courses: 12,
-      image: "https://images.unsplash.com/photo-1494790108755-2616b669ad00?w=300&h=300&fit=crop&crop=face",
-      specialties: ["Machine Learning", "Deep Learning", "Python"],
-      company: "Former Google AI"
-    },
-    {
-      name: "Michael Chen",
-      expertise: "Full Stack Development",
-      experience: "12+ years", 
-      rating: 4.8,
-      students: 32000,
-      courses: 8,
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
-      specialties: ["React", "Node.js", "DevOps"],
-      company: "Ex-Facebook Engineer"
-    },
-    {
-      name: "Emily Rodriguez",
-      expertise: "UX/UI Design",
-      experience: "10+ years",
-      rating: 4.9,
-      students: 18000,
-      courses: 15,
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face",
-      specialties: ["Design Systems", "Figma", "User Research"],
-      company: "Former Apple Designer"
-    },
-    {
-      name: "David Kim",
-      expertise: "Digital Marketing",
-      experience: "8+ years",
-      rating: 4.7,
-      students: 22000,
-      courses: 10,
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
-      specialties: ["SEO", "Social Media", "Analytics"],
-      company: "Ex-Marketing Director"
-    }
+  const [activeCategory, setActiveCategory] = useState<string>("UI Designer");
+
+  const categories = [
+    { name: "Developer", icon: Code2 },
+    { name: "UI Designer", icon: Layout },
+    { name: "Mechanical", icon: Wrench },
+    { name: "Designer", icon: Sparkle },
+    { name: "Accountant", icon: Calculator },
+    { name: "Human Resource", icon: Users },
+    { name: "Marketing", icon: Megaphone },
   ];
 
+  const allMasters = [
+    {
+      id: 1,
+      name: "Zrand Hobs",
+      role: "Developer",
+      category: "Developer",
+      rating: 4.8,
+      reviews: 16,
+      skills: ["Gimp", "Wordpress"],
+      image: "https://images.unsplash.com/photo-1494790108755-2616b669ad00?w=300&h=300&fit=crop&crop=face",
+    },
+    {
+      id: 2,
+      name: "Dorothy Wood",
+      role: "Teacher",
+      category: "UI Designer",
+      rating: 4.8,
+      reviews: 16,
+      skills: ["Elementor", "Wix", "Illustrator"],
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face",
+    },
+    {
+      id: 3,
+      name: "Timothy Baker",
+      role: "Teacher",
+      category: "UI Designer",
+      rating: 4.8,
+      reviews: 16,
+      skills: ["Figma", "Elementor", "Wordpress"],
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
+    },
+    {
+      id: 4,
+      name: "Shane Pratt",
+      role: "Developer",
+      category: "Developer",
+      rating: 4.8,
+      reviews: 16,
+      skills: ["Figma", "Wordpress", "Gimp"],
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
+    },
+    {
+      id: 5,
+      name: "Frances Washington",
+      role: "Developer",
+      category: "Developer",
+      rating: 4.8,
+      reviews: 16,
+      skills: ["Wordpress", "Wix", "Illustrator"],
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop&crop=face",
+    },
+    {
+      id: 6,
+      name: "Jason Bell",
+      role: "Web Designer",
+      category: "UI Designer",
+      rating: 4.8,
+      reviews: 16,
+      skills: ["Elementor", "Wordpress"],
+      image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=300&h=300&fit=crop&crop=face",
+    },
+    {
+      id: 7,
+      name: "Kathryn Sanchez",
+      role: "Teacher",
+      category: "UI Designer",
+      rating: 4.8,
+      reviews: 16,
+      skills: ["Framer", "Webflow", "Wix"],
+      image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=300&h=300&fit=crop&crop=face",
+    },
+    {
+      id: 8,
+      name: "Jaime Strickland",
+      role: "Web Designer",
+      category: "UI Designer",
+      rating: 4.8,
+      reviews: 16,
+      skills: ["Gimp", "Figma", "Webflow"],
+      image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=300&h=300&fit=crop&crop=face",
+    },
+    // Additional dummy data for other categories
+    {
+      id: 9,
+      name: "Eva Carter",
+      role: "Mechanical Engineer",
+      category: "Mechanical",
+      rating: 4.7,
+      reviews: 10,
+      skills: ["AutoCAD", "SolidWorks"],
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&h=300&fit=crop&crop=face",
+    },
+    {
+      id: 10,
+      name: "Robert Miles",
+      role: "Graphic Designer",
+      category: "Designer",
+      rating: 4.9,
+      reviews: 25,
+      skills: ["Photoshop", "Illustrator"],
+      image: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=300&h=300&fit=crop&crop=face",
+    },
+    {
+      id: 11,
+      name: "Sarah Boone",
+      role: "Accountant",
+      category: "Accountant",
+      rating: 4.8,
+      reviews: 13,
+      skills: ["Tally", "Excel"],
+      image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=300&h=300&fit=crop&crop=face",
+    },
+    {
+      id: 12,
+      name: "David Gray",
+      role: "HR Manager",
+      category: "Human Resource",
+      rating: 4.6,
+      reviews: 19,
+      skills: ["Recruitment", "Communication"],
+      image: "https://images.unsplash.com/photo-1546525848-3ce03ca516f6?w=300&h=300&fit=crop&crop=face",
+    },
+    {
+      id: 13,
+      name: "Lily Adams",
+      role: "Marketing Lead",
+      category: "Marketing",
+      rating: 4.9,
+      reviews: 22,
+      skills: ["SEO", "Campaigns"],
+      image: "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=300&h=300&fit=crop&crop=face",
+    },
+  ];
+
+  const handleCategoryClick = (category: string) => {
+    setActiveCategory(category);
+  };
+
+  const filteredMasters =
+    activeCategory === "All"
+      ? allMasters
+      : allMasters.filter((master) => master.category === activeCategory);
+
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-purple-50">
+    <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <Award className="w-4 h-4 mr-2" />
-            Our Masters
-          </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Discover</h2>
-          <h3 className="text-4xl lg:text-5xl font-bold text-purple-600 mb-6">Our Starc Masters</h3>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Learn from industry leaders who have shaped the future of technology and business
-          </p>
+        {/* Navigation Links */}
+        <div className="flex justify-center gap-6 border-b border-gray-200 mb-12 flex-wrap">
+          {categories.map((category, index) => {
+            const isActive = activeCategory === category.name;
+            const Icon = category.icon;
+
+            return (
+              <button
+                key={index}
+                onClick={() => handleCategoryClick(category.name)}
+                className={`relative flex items-center gap-2 px-3 py-2 text-sm font-medium transition-colors duration-300
+                 ${isActive ? "text-blue-600" : "text-gray-500 hover:text-blue-500"}`}
+              >
+                <Icon className={`w-5 h-5 ${isActive ? "text-blue-600" : "text-gray-500"}`} />
+                {category.name}
+                {isActive && (
+                  <span className="absolute left-0 -bottom-[1px] h-[2px] w-full bg-blue-600 rounded-full shadow-[0_2px_6px_rgba(0,115,255,0.4)]" />
+                )}
+              </button>
+            );
+          })}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {masters.map((master, index) => (
-            <div 
-              key={index} 
-              className="group bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-purple-200 hover:-translate-y-2"
+       {/* Masters Grid */}
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+  {filteredMasters.map((master) => (
+    // Individual Master Card
+    <div
+      key={master.id}
+      className={`
+        group // Enable group-hover utilities for child elements
+        bg-white rounded-xl p-6 transition-all duration-300 ease-in-out
+        transform-gpu cursor-pointer
+        hover:bg-[#8A63FF1A]              // Purple filling on hover
+        hover:shadow-xl hover:shadow-purple-100 // Shadow on hover
+        hover:border-purple-500 hover:border-2 // Purple border on hover
+      `}
+    >
+      {/* Content within the card */}
+      <div className="flex flex-col items-center text-center">
+        <img
+          src={master.image}
+          alt={master.name}
+          className="w-20 h-20 rounded-full object-cover mb-2 shadow-md"
+        />
+        {/* Star rating moved after the image */}
+        <div className="flex items-center mb-4">
+          <Star className="w-4 h-4 text-yellow-400 fill-yellow-400 mr-1 group-hover:fill-yellow-400" />
+          <span className="text-gray-600 text-sm">
+            {master.rating} ({master.reviews})
+          </span>
+        </div>
+        <div className="mb-4"> {/* Group name and role */}
+          <h3 className="font-semibold text-lg text-gray-900">{master.name}</h3>
+          <p className="text-sm text-gray-500">{master.role}</p>
+        </div>
+        <div className="flex flex-wrap justify-center gap-2">
+          {master.skills.map((skill, skillIndex) => (
+            <span
+              key={skillIndex}
+              className="px-3 py-1 bg-gray-100 text-gray-600 text-xs rounded-full font-medium transition-all duration-300 ease-in-out group-hover:bg-[#8A63FF1A] group-hover:border-purple-500 group-hover:border-2"
             >
-              <div className="relative mb-6">
-                <div className="w-24 h-24 mx-auto rounded-full overflow-hidden ring-4 ring-purple-100 group-hover:ring-purple-300 transition-all">
-                  <img
-                    src={master.image}
-                    alt={master.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
-                  {master.company}
-                </div>
-              </div>
-              
-              <h3 className="text-xl font-bold mb-2 text-gray-900 group-hover:text-purple-600 transition-colors">
-                {master.name}
-              </h3>
-              
-              <p className="text-purple-600 font-semibold mb-2">{master.expertise}</p>
-              <p className="text-gray-500 text-sm mb-4">{master.experience}</p>
-              
-              <div className="flex flex-wrap justify-center gap-2 mb-4">
-                {master.specialties.map((specialty, idx) => (
-                  <span 
-                    key={idx}
-                    className="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs font-medium"
-                  >
-                    {specialty}
-                  </span>
-                ))}
-              </div>
-              
-              <div className="border-t border-gray-100 pt-4 space-y-2">
-                <div className="flex items-center justify-center gap-1 text-sm">
-                  <Star className="w-4 h-4 text-yellow-500 fill-current" />
-                  <span className="font-semibold text-gray-900">{master.rating}</span>
-                  <span className="text-gray-500">rating</span>
-                </div>
-                
-                <div className="flex items-center justify-center gap-1 text-sm text-gray-600">
-                  <Users className="w-4 h-4" />
-                  <span>{master.students.toLocaleString()} students</span>
-                </div>
-                
-                <div className="text-sm text-gray-600">
-                  {master.courses} courses
-                </div>
-              </div>
-            </div>
+              {skill}
+            </span>
           ))}
         </div>
-        
-        <div className="text-center mt-12">
-          <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-xl font-semibold transition-all hover:shadow-lg">
-            View All Masters
-          </button>
+      </div>
+    </div>
+  ))}
+</div>
+
+        {/* View All Button */}
+        <div className="flex justify-center mt-12">
+          <Link
+            to="#" // Replace with your actual "View All" route
+            className="flex items-center px-6 py-3 bg-white text-[#8A63FF] border border-[#8A63FF] rounded-full hover:bg-[#8A63FF] hover:text-white transition-colors duration-300 shadow-md"
+          >
+            View All
+            <span className="ml-2 flex items-center justify-center w-6 h-6 bg-[#8A63FF] rounded-full">
+              <ArrowUp className="w-4 h-4 text-white transform rotate-45" />
+            </span>
+          </Link>
         </div>
       </div>
     </section>

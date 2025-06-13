@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
-
 type Option = {
   id: string;
   text: string;
 };
-
 type Question = {
   id: number;
   text: string;
@@ -29,18 +27,15 @@ const Quiz = () => {
   const [answers, setAnswers] = useState<(string | null)[]>(Array(questions.length).fill(null));
   const [visited, setVisited] = useState<boolean[]>(Array(questions.length).fill(false));
   const [secondsElapsed, setSecondsElapsed] = useState(0);
-
   useEffect(() => {
     const timer = setInterval(() => setSecondsElapsed((prev) => prev + 1), 1000);
     return () => clearInterval(timer);
   }, []);
-
   useEffect(() => {
     const updatedVisited = [...visited];
     updatedVisited[currentQuestion] = true;
     setVisited(updatedVisited);
   }, [currentQuestion]);
-
   const handleOptionSelect = (optionId: string) => {
     const updatedAnswers = [...answers];
     updatedAnswers[currentQuestion] = optionId;

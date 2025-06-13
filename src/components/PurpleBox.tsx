@@ -7,14 +7,15 @@ const PurpleBox: React.FC = () => {
     <section className="py-20 text-white text-center relative overflow-hidden purple-box"  style={{
     height: "400px",
     width: "1000px",
-    marginLeft: "10%",
+    marginLeft: "20%",
     backgroundColor: "#8A63FF",
     borderRadius:"25px",
-    boxShadow: "4px 4px gray",
+    boxShadow: "0 4px 8px rgba(138, 99, 255, 0.4)"
+
   }}>
       <div className="max-w-4xl mx-auto px-4">
-
-
+       
+        
         {/* Heading and Subtext */}
         <h2 className="text-4xl font-bold mb-4 leading-tight">
           Join ambitious professionals and unlock your dream career today

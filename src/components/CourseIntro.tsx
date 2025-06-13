@@ -25,7 +25,6 @@ interface CourseIntroProps {
   videoSrc?: string;
   videoPoster?: string;
 }
-
 export default function CourseIntro({
   courseTitle,
   lessonTitle,

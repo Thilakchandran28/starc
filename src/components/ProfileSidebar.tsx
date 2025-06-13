@@ -3,7 +3,7 @@ import { LayoutDashboard, BookOpen, Book, Calendar, Settings } from 'lucide-reac
 
 const ProfileSidebar = () => {
   return (
-    <div className="w-64 bg-white rounded-lg shadow-md p-6">
+    <div className="w-[18%] bg-white rounded-[16px] shadow-md p-4 lg:h-[90vh] fixed top-32 left-10">
       {/* User Profile Section */}
       <div className="flex items-center mb-6">
         <div className="w-16 h-16 rounded-full overflow-hidden mr-4">
@@ -23,7 +23,7 @@ const ProfileSidebar = () => {
           to="/profile"
           className={({ isActive }) =>
             `flex items-center p-3 rounded-lg transition-colors duration-200 ${isActive
-              ? 'bg-purple-600 text-white'
+              ? ' text-purple-600'
               : 'text-gray-700 hover:bg-gray-200'}`
           }
         >
@@ -34,7 +34,7 @@ const ProfileSidebar = () => {
           to="/courses"
           className={({ isActive }) =>
             `flex items-center p-3 rounded-lg transition-colors duration-200 ${isActive
-              ? 'bg-purple-600 text-white'
+              ? ' text-purple-600'
               : 'text-gray-700 hover:bg-gray-200'}`
           }
         >
@@ -45,7 +45,7 @@ const ProfileSidebar = () => {
           to="/books"
           className={({ isActive }) =>
             `flex items-center p-3 rounded-lg transition-colors duration-200 ${isActive
-              ? 'bg-purple-600 text-white'
+              ? ' text-purple-600'
               : 'text-gray-700 hover:bg-gray-200'}`
           }
         >
@@ -56,7 +56,7 @@ const ProfileSidebar = () => {
           to="/schedule"
           className={({ isActive }) =>
             `flex items-center p-3 rounded-lg transition-colors duration-200 ${isActive
-              ? 'bg-purple-600 text-white'
+              ? 'text-purple-600'
               : 'text-gray-700 hover:bg-gray-200'}`
           }
         >
@@ -67,7 +67,7 @@ const ProfileSidebar = () => {
           to="/settings"
           className={({ isActive }) =>
             `flex items-center p-3 rounded-lg transition-colors duration-200 ${isActive
-              ? 'bg-purple-600 text-white'
+              ? 'text-purple-600'
               : 'text-gray-700 hover:bg-gray-200'}`
           }
         >
