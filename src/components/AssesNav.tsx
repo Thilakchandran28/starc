@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import LearningModule from './LearningModule'; // Stub for LearningModule (replace with actual implementation if available)
 import { useNavigate } from 'react-router-dom';
 
@@ -103,8 +103,20 @@ const AssessmentRow: React.FC<AssessmentRowProps> = ({ assessment }) => {
 };
 
 // Main DashboardPage Component
-const DashboardPage: React.FC = () => {
+type Course = {
+  image: string;
+  title: string;
+  progress: number;
+  duration: string;
+  status: string;
+};
+
+type Props = {
+  selectedCourse: Course;
+};
+const DashboardPage: React.FC<Props> = ({selectedCourse}) => {
   const [showAssessments, setShowAssessments] = useState(false);
+  const [completed,setCompleted] = useState(false)
 
   const initialAssessments: Assessment[] = [
     { id: 1, type: 'Assessment', number: 1, title: 'Foundation of AWS', score: '(80/100)', status: 'completed', date: 'May 7, 2025 11:00 AM' },
@@ -118,7 +130,14 @@ const DashboardPage: React.FC = () => {
     setShowAssessments((prevState) => !prevState);
   };
 
- 
+useEffect(()=>{
+   if(selectedCourse.status ==="100%"){
+  setCompleted(true)
+ }else{
+  setCompleted(false)
+ }
+},[selectedCourse])
+
 const navigate = useNavigate();
 
   return (
@@ -153,15 +172,16 @@ const navigate = useNavigate();
           </button>
         </div>
       </div>
+        
 
       <div className="container mx-auto p-6 md:p-10 lg:p-12">
         {/* Course Header */}
         <div className="bg-white p-6 rounded-lg shadow-md mb-8">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2">
             <h1 className="text-2xl font-bold text-gray-900 flex items-center">
-              AWS Certified Solutions Architect
+              {selectedCourse.title}
               <CheckCircleIcon className="ml-3 text-lg" />
-              <span className="text-base font-normal text-green-600 ml-1">completed</span>
+              <span className="text-base font-normal text-green-600 ml-1">{selectedCourse.status ==="100%"?"Completed":selectedCourse.status}</span>
             </h1>
           </div>
           <div className="flex flex-col sm:flex-row sm:items-center text-gray-700 text-sm">

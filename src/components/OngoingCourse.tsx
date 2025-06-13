@@ -1,39 +1,80 @@
+// Responsiveness
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import mentor from "../Assets/Image-60.png";
+import RightSideBar from "./RightSideBar";
+import RightSideBarComp from "./RightSideBarComp";
 import Completed from "../Assets/icons/Completed.svg";
+import InProgress from "../Assets/icons/In-progress.svg";
+import Submitted from "../Assets/icons/Submitted.svg";
+import Continue from "../Assets/icons/Play.svg";
+import locked from "../Assets/icons/locked.svg";
 import star from "../Assets/icons/Star.svg";
+import Assessment from "../Assets/icons/Assesment.svg";
+import Resume from '../Assets/icons/Resume.svg'
 import like from '../Assets/icons/Like.svg'
 import dislike from '../Assets/icons/Dislike.svg'
 import Aplus from '../Assets/icons/A-plus.svg'
-import Submitted from "../Assets/icons/Submitted.svg";
-import Assessment from "../Assets/icons/Assesment.svg";
+import Retest from '../Assets/icons/Re-test.svg'
+import Upcoming from '../Assets/icons/Upcoming.svg'
 import Facebook from '../Assets/icons/Facebook.svg'
 import X from "../Assets/icons/X.svg"
 import youtube from "../Assets/icons/Youtube.svg"
 import Instagram from '../Assets/icons/Instagram.svg'
-import startoverAgaing from '../Assets/icons/Start-over-again.svg'
-import download from '../Assets/icons/Download.svg'
-
 
 const APlusIcon: React.FC = () => (
-  <svg className="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    className="w-5 h-5 text-gray-500"
+    fill="currentColor"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
   </svg>
 );
 
-const FileTextIcon: React.FC<{ className?: string }> = ({ className = '' }) => (
-  <svg className={`w-5 h-5 text-blue-500 ${className}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+const LockIcon: React.FC = () => (
+  <svg
+    className="w-5 h-5 fill-current text-white"
+    viewBox="0 0 512 512"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M400 192h-24v-72C376 53.31 322.7 0 256 0S136 53.31 136 120v72H112c-17.67 0-32 14.33-32 32v256c0 17.7 14.33 32 32 32h288c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zm-72 0H184v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z" />
+  </svg>
+);
+
+const FileTextIcon: React.FC<{ className?: string }> = ({ className = "" }) => (
+  <svg
+    className={`w-5 h-5 text-blue-500 ${className}`}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+    ></path>
+  </svg>
+);
+const ContinueIcon: React.FC = () => (
+  <svg
+    className="w-5 h-5 fill-current text-white"
+    viewBox="0 0 512 512"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M96 52v408l320-204L96 52z" />
   </svg>
 );
 
 // Assessment and Projects Components
-type AssessmentStatus = 'completed' | 'Submitted' | 'Failed' | 'In Progress';
+type AssessmentStatus = "completed" | "Submitted" | "Re-test" | "Upcoming";
 
 interface Assessment {
   id: number;
-  type: 'Assessment' | 'Project';
+  type: "Assessment" | "Project";
   number: number;
   title: string;
   score: string;
@@ -48,34 +89,28 @@ interface AssessmentRowProps {
 const AssessmentRow: React.FC<AssessmentRowProps> = ({ assessment }) => {
   const getStatusDisplay = (status: AssessmentStatus) => {
     switch (status) {
-      case 'completed':
+      case "completed":
         return (
           <span className="flex items-center  font-medium">
-            <img src={Completed} className="mr-1" style={{height:'20px'}} alt="" /> completed
+           <img src={Completed} className="mr-1" style={{height:'20px'}} alt=""/> completed
           </span>
         );
-      case 'Submitted':
+      case "Submitted":
         return (
-          <span className="flex items-center text-blue-600 font-medium">
-            <FileTextIcon className="mr-1" /> Submitted
+          <span className="flex items-center  font-medium">
+            <img src={Submitted} className="mr-1" style={{height:'20px'}} alt="" /> Submitted
           </span>
         );
-      case 'Failed':
+      case "Re-test":
         return (
-          <span className="flex items-center text-red-600 font-medium">
-            <svg className="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-            Failed
+          <span className="flex items-center  font-medium">
+            <img src={Retest} className="mr-1" style={{height:'20px'}} alt="" /> Re-Test
           </span>
         );
-      case 'In Progress':
+      case "Upcoming":
         return (
-          <span className="flex items-center text-yellow-600 font-medium">
-            <svg className="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            In Progress
+          <span className="flex items-center  font-medium">
+            <img src={Upcoming} className="mr-1" style={{height:'20px'}} alt="" /> Upcoming
           </span>
         );
       default:
@@ -94,7 +129,7 @@ const AssessmentRow: React.FC<AssessmentRowProps> = ({ assessment }) => {
       <div className="text-gray-700 font-medium flex justify-center items-center lg:text-[9px] lg:w-24  xl:text-[11px] xl:w-28  2xl:text-[14px] 2xl:w-36  3xl:text-[15px]  3xl:w-36">
         {assessment.title}
       </div>
-      <div className="text-gray-600 flex justify-center items-center lg:text-[9px] lg:w-12 xl:text-[11px] xl:w-16 2xl:text-[14px]  2xl:w-24  3xl:text-[15px] 3xl:w-24 ">
+      <div className="text-gray-600 flex justify-center items-center lg:text-[9px]  lg:w-12 xl:text-[11px] xl:w-16   2xl:text-[14px]  2xl:w-24  3xl:text-[15px] 3xl:w-24 ">
         {assessment.score}
       </div>
       <div className="flex justify-start lg:text-[9px]  lg:w-20 xl:text-[11px] 2xl:text-[14px] xl:w-28  2xl:w-32 3xl:text-[15px]  3xl:w-36">
@@ -133,6 +168,16 @@ const DownloadIcon: React.FC = () => (
     ></path>
   </svg>
 );
+const PlayIcon: React.FC = () => (
+  <svg
+    className="w-6 h-6 text-black"
+    fill="currentColor"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z" />
+  </svg>
+);
 
 const RestartIcon: React.FC = () => (
   <svg
@@ -150,7 +195,6 @@ const RestartIcon: React.FC = () => (
     />
   </svg>
 );
-
 
 const ClipboardIcon: React.FC = () => (
   <svg
@@ -284,11 +328,11 @@ const ReviewCard: React.FC<{ review: Review }> = ({ review }) => {
             </div>
             <div className="flex space-x-4 text-gray-500">
               <button className="flex items-center space-x-1 hover:text-blue-500">
-                <img src={like} alt="" className="hover:bg-blue-500" />
+                <img src={like} alt="" />
                 <span>{review.likes}</span>
               </button>
               <button className="flex items-center space-x-1 hover:text-red-500">
-                <img src={dislike} alt="" className="hover:bg-red-600" />
+                <img src={dislike} alt="" />
                 <span>{review.dislikes}</span>
               </button>
             </div>
@@ -301,12 +345,11 @@ const ReviewCard: React.FC<{ review: Review }> = ({ review }) => {
   );
 };
 
-
 // --- Main CourseDashboardPage Component ---
-const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
-  course,
-  onBack,
-}) => {
+const OngoingCourseDashboardPage: React.FC<{
+  course: Course;
+  onBack: () => void;
+}> = ({ course, onBack }) => {
   const [showAssessments, setShowAssessments] = useState(false);
 
   const initialReviews: Review[] = [
@@ -382,7 +425,7 @@ const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
       number: 2,
       title: "Core AWS Services",
       score: "(80/100)",
-      status: "completed",
+      status: "Re-test",
       date: "May 7, 2025 11:00 AM",
     },
     {
@@ -391,16 +434,16 @@ const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
       number: 3,
       title: "Storage Solutions",
       score: "(80/100)",
-      status: "completed",
+      status: "Upcoming",
       date: "May 7, 2025 11:00 AM",
     },
     {
       id: 4,
-      type: "Assessment",
+      type: "Project",
       number: 1,
       title: "Databases in AWS",
       score: "Reviewed",
-      status: "completed",
+      status: "Submitted",
       date: "May 7, 2025 11:00 AM",
     },
     {
@@ -409,11 +452,10 @@ const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
       number: 4,
       title: "Cost Optimization",
       score: "(80/100)",
-      status: "completed",
+      status: "Upcoming",
       date: "May 7, 2025 11:00 AM",
     },
   ];
-
   const handleToggleAssessments = () => {
     setShowAssessments((prevState) => !prevState);
   };
@@ -450,27 +492,25 @@ const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
       : "0.0";
 
   return (
-    <div className="min-h-screen bg-gray-100 font-sans text-gray-800 w-full">
+    <div className="min-h-screen bg-gray-100 font-sans text-gray-800 w-full border">
       {/* Back Button */}
       <div className="container mx-auto p-6 w-full ">
         <button
-          onClick={onBack}
+          onClick={onBack} 
           className="mb-4 text-purple-600 hover:underline xl:text-lg 2xl:text-xl 3xl:text-2xl"
         >
-          ← Courses
+          ← Courses 
         </button>
 
         {/* Top Section: Course Info (Left) and Progress/Suggested (Right) */}
-        <div className="flex space-x-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full">
           {/* Left: Course Info and Actions */}
-         <div className="flex-grow">
-           <div className="space-y-6">
+          <div className="lg:col-span-3 space-y-6 w-full">
             <h1 className="text-2xl font-bold flex items-center">
               {course.title}
-              <span className="text-base font-normal text-green-600 ml-1 flex items-center">
-                {/* <CheckCircleIcon className="ml-3 text-lg" /> */}
-                <img src={Completed} className="mr-1" alt="" />
-                {course.status === "100%" ? "Completed" : course.status}
+              <span className="text-base font-normal  ml-1 flex items-center">
+                <img src={InProgress} className="ml-3 mr-2 text-lg" />
+                In-Progress
               </span>
             </h1>
             <div className="flex flex-col sm:flex-row sm:items-center text-gray-700 text-sm">
@@ -479,66 +519,84 @@ const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
               </span>
               <span className="mr-3">
                 By KenyWhite In Business, IT & Software,
-              </span> <span>|</span>
-              <span className="flex ml-2">
-                <img src={star} alt="" />
-                <span className="ml-1 text-gray-600">
-                4.8 (280)</span>
               </span>
-              
+              {/* <span className="ml-1 text-gray-600">4.8 (280)</span> */}
             </div>
-            <p className="text-gray-500 text-sm">Last Visited: Sept 12, 2024</p>
+            <div className="flex">
+              <img src={star} alt="" />
+              <img src={star} alt="" />
+              <img src={star} alt="" />
+              <img src={star} alt="" />
+              <img src={star} alt="" />
+              <p className="text-gray-500 text-sm">
+              <span className="mr-4"><b>4.8</b> (280)</span> <span>|</span> <span className="ml-4">Last Visited: Sept 12, 2024</span>
+              </p>
+            </div>
             <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
               <button
-                className="lg:w-36 lg:text-[10px]  xl:w-42 xl:text-[12px] 2xl:w-48 2xl:text-[16px] 3xl:w-60 3xl:text-[18px] px-4 py-2 rounded-md border border-blue-600 text-white bg-violet-500 text-sm flex items-center justify-center transition-colors"
+                className="lg:w-36 lg:text-[10px]  xl:w-42 xl:text-[12px] 2xl:w-48 2xl:text-[16px] 3xl:w-60 3xl:text-[18px]  px-2 py-2 rounded-md border border-blue-600 text-white bg-violet-500 text-sm flex items-center justify-center transition-colors"
                 onClick={() => {
                   navigate("/learningoverview");
                   window.scrollTo(0, 0);
                 }}
               >
-                <img src={startoverAgaing} alt="" className="mr-2" />
-                Start Over Again
+                <img src={Continue} alt="" />
+                Continue Now
               </button>
-              <button className="lg:w-40 lg:text-[10px] xl:w-48 xl:text-[12px] 2xl:w-52 2xl:text-[16px] 3xl:w-56 3xl:text-[18px]  px-4 py-2 rounded-md border border-blue-600 text-blue-600 text-sm flex items-center justify-center transition-colors">
-                <img src={download} alt="" className="mr-1" />
+              <button className="lg:w-40 lg:text-[10px] xl:w-42 xl:text-[12px] 2xl:w-48 2xl:text-[16px] 3xl:w-56 3xl:text-[18px] px-2 py-2 rounded-md border bg-gray-400 text-white text-sm flex items-center justify-center transition-colors" disabled>
+                <img src={locked} className="pr-2" alt="" />
                 Download Certificate
               </button>
-              <button
-                className="lg:w-44 lg:text-[10px] xl:w-42 xl:text-[12px] 2xl:w-60 2xl:text-[16px] 3xl:w-64 3xl:text-[18px] px-4 py-2 rounded-md border border-gray-300 text-gray-700 text-sm flex items-center justify-center hover:bg-gray-50 transition-colors"
+              <button className="lg:w-48 lg:text-[10px] xl:w-42 xl:text-[12px] 2xl:w-56 2xl:text-[16px] 3xl:w-60 3xl:text-[18px] px-2 py-2 rounded-md border border-gray-300 text-gray-700 text-sm flex items-center justify-center hover:bg-gray-50 transition-colors"
                 onClick={handleToggleAssessments}
               >
-                <img src={Assessment} alt="" className="mr-1" />
-                Assessments & Projects</button>
+                <img src={Assessment} className="pr-2" alt="" />
+                Assessments & Projects
+              </button>
             </div>
 
             {/* overview section */}
-            <section className=" p-1 rounded-lg w-full border ">
-            {showAssessments && (
-              <section className=" p-1 rounded-lg mb-5">
-                <h2 className="text-2xl font-semibold mb-4">Assessments & Projects</h2>
-                <div className="lg:overflow-x-auto">
-                  <div className="2xl:w-[650px] lg:w-[450px]">
-                    {initialAssessments.map((assessment) => (
-                      <AssessmentRow key={assessment.id} assessment={assessment} />
-                    ))}
+            <section className=" p-1 rounded-lg w-full border">
+              {showAssessments && (
+                <section className="p-1 rounded-lg mb-5">
+                  <h2 className="text-2xl font-semibold mb-4">
+                    Assessments & Projects
+                  </h2>
+                  <div className="lg:overflow-x-auto ">
+                    <div className="2xl:w-[650px] lg:w-[500px] ">
+                      {initialAssessments.map((assessment) => (
+                        <AssessmentRow
+                          key={assessment.id}
+                          assessment={assessment}
+                        />
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </section>
-            )}
-            <section>
-                <h2 className="text-2xl font-semibold mb-4">Overview</h2>
-              <p
-                className="text-gray-700 leading-relaxed mb-4">
-                {course.title} is a comprehensive course designed to provide
-                in-depth knowledge and practical skills. This program covers
-                essential concepts, hands-on projects, and real-world
-                applications to ensure you are well-prepared for your career.
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                Duration: {course.duration}. Status: {course.status}.
-              </p>
-              </section>         
+                </section>
+              )}
 
+            {!showAssessments && (<>
+            <h3>Resume Now</h3>
+              <div className="bg-white w-1/2 h-20 gap-3 mb-3 flex items-center p-4 rounded-[12px] border border-b-violet-500  ">
+              <img src={Resume} alt="" />
+                <div className="flex justify-between w-full ">
+                  <h4>What is UI</h4>
+                  <p className="text-gray-400">5:00 min</p>
+                </div>
+              </div></>)}
+
+              <section>
+                <h2 className="text-2xl font-semibold mb-4">Overview</h2>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  {course.title} is a comprehensive course designed to provide
+                  in-depth knowledge and practical skills. This program covers
+                  essential concepts, hands-on projects, and real-world
+                  applications to ensure you are well-prepared for your career.
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  Duration: {course.duration}. Status: {course.status}.
+                </p>
+              </section>
             </section>
 
             {/* Mentor section */}
@@ -555,7 +613,7 @@ const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
                     Pensive-Tesla
                   </h3>
                   <div className="flex space-x-3 text-gray-500 text-sm mt-1">
-                    <img src={Facebook} alt="" />
+                      <img src={Facebook} alt="" />
                       <img src={X} alt="" />
                       <img src={Instagram} alt="" />
                       <img src={youtube} alt="" />
@@ -568,97 +626,10 @@ const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
               </div>
             </section>
           </div>
-         
-         </div>
-
-
-          {/* Right: Course Progress and Suggested Next */}
-          {/* <div className="lg:col-span-1 space-y-8">
-            <div className="relative p-6 bg-gradient-to-br from-purple-600 to-indigo-700 rounded-lg shadow-lg text-white overflow-hidden">
-              <div
-                className="absolute inset-0 opacity-10"
-                style={{
-                  backgroundImage:
-                    "url(https://www.transparenttextures.com/patterns/hexagons.png)",
-                  backgroundSize: "100px",
-                }}
-              ></div>
-              <div className="relative z-10">
-                <h2 className="text-xl font-semibold mb-2">
-                  Course Completed!
-                </h2>
-                <p className="text-sm text-purple-200 mb-4">{course.title}</p>
-                <p className="text-4xl font-bold mb-4">100%</p>
-                <div className="w-full bg-purple-400 h-2 rounded-full mb-6">
-                  <div
-                    className="bg-white h-full rounded-full"
-                    style={{ width: "100%" }}
-                  ></div>
-                </div>
-                <button className="px-6 py-2 bg-white text-purple-700 rounded-md font-semibold hover:bg-gray-100 transition-colors">
-                  View Certificate
-                </button>
-                <img
-                  src="https://i.imgur.com/8Q9P7Lg.png"
-                  alt="Trophy"
-                  className="absolute bottom-0 right-0 w-32 h-32 opacity-80"
-                />
-                <img
-                  src="https://i.imgur.com/Q2y2c6M.png"
-                  alt="Trophy"
-                  className="absolute bottom-0 right-16 w-24 h-24 opacity-80"
-                />
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                Suggested Next
-              </h3>
-              <div className="bg-white p-4 rounded-lg shadow-md border border-gray-200">
-                <img
-                  src="https://via.placeholder.com/400x200/333333/ff0000?text=Hexagon+Pattern"
-                  alt="AWS Certified Solutions Architect"
-                  className="w-full h-40 object-cover rounded-md mb-4"
-                />
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                  AWS Certified Solutions Architect
-                </h4>
-                <div className="flex items-center text-gray-500 text-sm mb-3">
-                  <svg
-                    className="w-4 h-4 mr-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                    ></path>
-                  </svg>
-                  <span>3 Month</span>
-                </div>
-                <div className="flex items-center mb-2">
-                  <span className="text-green-500 font-bold text-sm mr-2">
-                    ↑ 50%
-                  </span>
-                  <div className="flex-grow bg-gray-200 h-2 rounded-full">
-                    <div
-                      className="bg-purple-600 h-full rounded-full"
-                      style={{ width: "50%" }}
-                    ></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> */}
         </div>
 
         {/* Bottom Section: Overview, Mentor, Reviews */}
-       <div className="space-y-8 mt-8">
+        <div className="space-y-8 mt-8">
           {/* Reviews Section */}
           <section className="rounded-lg  w-full">
             <div className="p-0  mb-5 border">
@@ -742,4 +713,4 @@ const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
   );
 };
 
-export default CourseDashboardPage;
+export default OngoingCourseDashboardPage;

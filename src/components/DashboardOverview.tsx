@@ -34,49 +34,13 @@ const DashboardOverview: React.FC = () => {
     progress: 50,
   };
 
-  const courses: Course[] = [
-    {
-      id: 1,
-      title: 'AWS Certified Solutions Architect',
-      duration: '3 Month',
-      progress: 50,
-      image: '/placeholder.svg',
-    },
-    {
-      id: 2,
-      title: 'AWS Certified Solutions Architect',
-      duration: '3 Month',
-      progress: 50,
-      image: '/placeholder.svg',
-    },
-    {
-      id: 3,
-      title: 'AWS Certified Solutions Architect',
-      duration: '3 Month',
-      progress: 50,
-      image: '/placeholder.svg',
-    },
-    {
-      id: 4,
-      title: 'AWS Certified Solutions Architect',
-      duration: '3 Month',
-      progress: 50,
-      image: '/placeholder.svg',
-    },
-    {
-      id: 5,
-      title: 'AWS Certified Solutions Architect',
-      duration: '3 Month',
-      progress: 50,
-      image: '/placeholder.svg',
-    },
-    {
-      id: 6,
-      title: 'AWS Certified Solutions Architect',
-      duration: '3 Month',
-      progress: 50,
-      image: '/placeholder.svg',
-    },
+  const courses = [
+    { id: '1', image: 'https://via.placeholder.com/150', title: 'AWS Solutions Architect', progress: 50, duration: '1 Month', status: '50%' },
+    { id: '2', image: 'https://via.placeholder.com/150', title: 'Azure Fundamentals', progress: 100, duration: '1 Month', status: 'Completed' },
+    { id: '3', image: 'https://via.placeholder.com/150', title: 'Google Cloud Basics', progress: 75, duration: '1 Month', status: '75%' },
+    { id: '4', image: 'https://via.placeholder.com/150', title: 'Google Cloud Advanced', progress: 75, duration: '1 Month', status: '75%' },
+    { id: '5', image: 'https://via.placeholder.com/150', title: 'DevOps Essentials', progress: 75, duration: '1 Month', status: '75%' },
+    { id: '6', image: 'https://via.placeholder.com/150', title: 'Kubernetes Basics', progress: 75, duration: '1 Month', status: '75%' },
   ];
 
   const progressPercentage = (user.progress / user.coursesEnrolled) * 100;
