@@ -526,7 +526,7 @@ const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
               </section>
             )}
             <section>
-                <h2 className="text-2xl font-semibold mb-4">Overview</h2>
+                <h2 className="text-2xl font-semibold mb-4 lg:text-red-400 xl:text-blue-400">Overview</h2>
               <p
                 className="text-gray-700 leading-relaxed mb-4">
                 {course.title} is a comprehensive course designed to provide

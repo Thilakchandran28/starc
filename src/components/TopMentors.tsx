@@ -100,13 +100,13 @@ const CombinedSections: React.FC = () => {
   };
 
   return (
-    <div className=" font-sans">
+    <div className=" font-mont 2">
       {/* --- Top Mentors Section --- */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Header Section */}
           <div className="mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-semibold text-gray-900 mb-4">
               Our Top Mentor At Starc
             </h2>
             <p className="text-base text-gray-500 max-w-3xl mx-auto leading-relaxed">
@@ -126,7 +126,7 @@ const CombinedSections: React.FC = () => {
                   alt={mentor.name}
                   className="w-full h-64 object-contain rounded-t-xl bg-black"
                 />
-                <div className="p-6 text-center">
+                <div className="p-6 text-start">
                   <h3 className="text-xl font-mont font-bold text-gray-900 mb-1">{mentor.name}</h3>
                   <p className="text-sm text-gray-500 mb-2  ">{mentor.specialization}</p>
                   <div className=" gap-2 text-gray-600 text-sm mb-3">

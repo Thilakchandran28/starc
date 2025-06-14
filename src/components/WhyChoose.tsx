@@ -1,10 +1,10 @@
 import React from "react";
 import { GraduationCap, BookOpen, Globe, MessageSquare } from "lucide-react";
-import star from "../assests/stargirl.jpg"; // Ensure the path is correct
-import opp from "../assests/opicon.png";
+import star from "../Assets/stargirl.jpg"; // Ensure the path is correct
+import opp from "../Assets/opicon.png";
 import learning from "../assests/learn.png";
-import glo from "../assests/global.png";
-import course from "../assests/courses.png"
+import glo from "../Assets/global.png";
+import course from "../Assets/courses.png"
 
 const WhyChoose: React.FC = () => {
   return (

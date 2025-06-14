@@ -18,7 +18,10 @@ const Index = () => {
       <Navbar />
       <Hero />
       <CoursesSection />
+      <div className="flex justify-center">
       <PurpleBox />
+
+      </div>
       <WhyChoose />
       <Masters />
       <HowItWorks />
