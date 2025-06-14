@@ -40,6 +40,8 @@ const ScheduleWeek: React.FC<ScheduleWeekProps> = ({ currentDate, activityItems 
     const dayIndex = (itemDate.getDay() + 6) % 7;
 
     // Calculate the top position based on time (8 AM to 7 PM range)
+
+
     const startHour = 8; // 8 AM
     const endHour = 19; // 7 PM
     const totalHours = endHour - startHour;

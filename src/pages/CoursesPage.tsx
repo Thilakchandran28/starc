@@ -27,7 +27,7 @@ const CoursesPage = () => {
       <ProfileTopNavbar />
       <div className="items-center align-top mx-20 mt-24 lg:w-1/2 2xl:w-[850px] 3xl:w-1/2">
         <ProfileSidebar  />
-        <CoursesOverview sendMessage={handleChildMessage} />
+        <CoursesOverview sendMessage={handleChildMessage}/>
         <div className="w-1/4 min-w-[300px] max-w-[350px]">
           {messageFromChild?.status === "Completed" ? (
             <RightSideBar />
@@ -88,3 +88,4 @@ export default CoursesPage;
 // };
 
 // export default CoursesPage;
+ 
