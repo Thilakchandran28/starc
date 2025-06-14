@@ -10,7 +10,7 @@ import DoubleDiamondPdf from '../Assets/pdfs/UI_UX_Basics.pdf';
 import UiDesignPdf from '../Assets/pdfs/UI_UX_Basics.pdf';
 import ResearchMethodsPdf from '../Assets/pdfs/UI_UX_Basics.pdf';
 import figma from "../Assets/video/Master Figma UI Design in 15 Minutes _ This Tutorial Is For You!.mp4";
-import "../Styles/LearningModule.cssa";
+import "../Styles/LearningModule.css";
 import frontend from "../Assets/video/Frontend web development - a complete overview.mp4"
 import backend from "../Assets/video/Backend web development - a complete overview.mp4"
 
