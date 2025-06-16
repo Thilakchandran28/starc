@@ -88,9 +88,9 @@ const HowItWorks = () => {
                 msOverflowStyle: 'none', // Hide scrollbar for IE/Edge
                 scrollbarWidth: 'none', // Hide scrollbar for Firefox
               }}
-
+            
             >
-
+            
               {/* Webkit specific scrollbar styles (can be added to a global CSS file for cleaner separation) */}
               <style>{`
                 div::-webkit-scrollbar {
@@ -131,7 +131,7 @@ const HowItWorks = () => {
                       opacity: 1,
                     }}
                   >
-
+                     
                     {step.number}
                   </div>
 
@@ -166,7 +166,7 @@ const HowItWorks = () => {
                   alt="Student working"
                   className="object-cover w-full h-[422px] rounded-[20px]"
                 />
-
+                
               </div>
 
 

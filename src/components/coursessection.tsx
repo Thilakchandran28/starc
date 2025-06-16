@@ -612,39 +612,39 @@ export default function CategoryTabsPage() {
           </div>
 
           {/* Supervised/Unsupervised Toggle */}
-          <div className="flex justify-end mb-6">
-            <div className="relative flex w-48 h-10 bg-white border rounded-full overflow-hidden shadow-sm">
-              <div
-                className={ `flex justify-center absolute top-0.5  bottom-0.5 w-[49%] bg-gradient-to-r from-purple-500 to-purple-600 rounded-full transition-transform duration-300 ease-in-out ${
-                  learningMode === "supervised" ? "translate-x-0.5" : "translate-x-[calc(100%-0.25rem)]"
-                }`}
-              />
-              <button
-                onClick={() => setLearningMode("supervised")}
-                className="relative flex-1 flex items-center justify-center text-sm font-medium py-2 z-10 pr-2 pl-2"
-              >
-                <span
-                  className={`${
-                    learningMode === "supervised" ? "text-white" : "text-purple-600 "
-                  }`}
-                >
-                  Supervised
-                </span>
-              </button>
-              <button
-                onClick={() => setLearningMode("unsupervised")}
-                className="relative flex-1 flex items-center justify-center text-sm font-medium py-2 z-10 pr-2 pl-2"
-              >
-                <span
-                  className={`${
-                    learningMode === "unsupervised" ? "text-white" : "text-purple-600 "
-                  }`}
-                >
-                  Unsupervised
-                </span>
-              </button>
-            </div>
-          </div>
+       <div className="flex justify-end mb-6">
+  <div className="relative flex w-60 h-10 bg-gray-100 border border-gray-200 rounded-full overflow-hidden shadow-lg">
+    <div
+      className={`absolute top-0.5 bottom-0.5 w-1/2 bg-gradient-to-r from-purple-400 to-purple-500 rounded-full transition-transform duration-300 ease-in-out transform ${
+        learningMode === "supervised" ? "translate-x-0.5" : "translate-x-[calc(100%-0.25rem)]"
+      }`}
+    />
+    <button
+      onClick={() => setLearningMode("supervised")}
+      className="relative flex-1 flex items-center justify-center text-sm font-medium py-2 z-10 px-4"
+    >
+      <span
+        className={`${
+          learningMode === "supervised" ? "text-white" : "text-purple-600"
+        } transition-colors duration-300`}
+      >
+        Supervised
+      </span>
+    </button>
+    <button
+      onClick={() => setLearningMode("unsupervised")}
+      className="relative flex-1 flex items-center justify-center text-sm font-medium py-2 z-10 px-1"
+    >
+      <span
+        className={`${
+          learningMode === "unsupervised" ? "text-white" : "text-purple-600"
+        } transition-colors duration-300`}
+      >
+        Unsupervised
+      </span>
+    </button>
+  </div>
+</div>
 
           {/* Our Courses Title and Tabs */}
           <div className="mb-8">
