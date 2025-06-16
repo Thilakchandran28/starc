@@ -224,8 +224,8 @@ const ScheduleOverview = () => {
   const currentMonthName = months[currentDate.getMonth()];
 
   return (
-    <div className=" bg-gray-100 min-h-screen flex space-x-4">
-      <div className="flex-grow bg-white rounded-ls shadow-sm p-4">
+    <div className=" bg-gray-100 min-h-screen w-[80%] flex space-x-4 pt-32 mr-10  ">
+      <div className="flex-grow bg-white rounded-ls shadow-sm p-4   rounded-[16px]">
         <div className="flex justify-between items-center mb-4">
           <div className="flex items-center space-x-2">
             <button
@@ -265,7 +265,7 @@ const ScheduleOverview = () => {
                 })}
             </span>
           </div>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 ">
             <select
               className="px-3 py-1 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm"
               value={currentView}
@@ -317,8 +317,8 @@ const ScheduleOverview = () => {
 
       {/* Hide sidebar when in daily view */}
       {currentView !== "daily" && (
-        <div className="w-72 flex-shrink-0 space-y-4">
-          <div className="bg-white rounded-lg shadow-sm p-4">
+        <div className="w-72 flex-shrink-0 space-y-4 ">
+          <div className="bg-white  rounded-[16px] shadow-sm p-4">
             <div className="flex justify-between items-center mb-3">
               <h2 className="text-lg font-semibold text-gray-800">Schedule</h2>
               <select className="px-2 py-1 rounded-md border border-gray-300 text-xs focus:outline-none focus:ring-2 focus:ring-purple-500">
@@ -376,7 +376,7 @@ const ScheduleOverview = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow-sm p-4">
+          <div className="bg-white  rounded-[16px] shadow-sm p-4">
             <div className="flex justify-between items-center mb-3">
               <h2 className="text-lg font-semibold text-gray-800">
                 Today's Activity
@@ -398,12 +398,12 @@ const ScheduleOverview = () => {
                     </span>
                   </div>
                   <p className="text-xs text-gray-600">
-                    {activity.description}
+                    {activity.description}a
                   </p>
                 </div>
               ))}
             </div>
-          </div>a
+          </div>
         </div>
       )}
     </div>
