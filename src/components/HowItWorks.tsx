@@ -166,32 +166,33 @@ const HowItWorks = () => {
                   alt="Student working"
                   className="object-cover w-full h-[422px] rounded-[20px]"
                 />
-                <div className='whitebox'>
-                  <div className="bg-white/80 backdrop-blur-md rounded-xl p-4 flex items-center gap-3 shadow-md w-fit ">
+                
+              </div>
+
+
+              <div className="flex flex-col justify-between items-center lg:items-end">
+                <div className='whitebox w-fit z-10 pr-64 absolute pt-[430px]'>
+                  <div className="bg-white/90 backdrop-blur-md rounded-xl p-4 flex items-center gap-3 shadow-md w-fit ">
                     <div className="flex -space-x-2">
                       {[avatars, chicks, boyz].map((src, index) => (
                         <img
                           key={index}
                           src={src}
                           alt={`User ${index + 1}`}
-                          className="w-8 h-8 rounded-full border-2 border-white object-cover"
+                          className="w-20 h-20 rounded-full border-2 border-white object-cover "
                         />
                       ))}
                     </div>
                     <div className="text-sm font-semibold text-blue-600">
-                      10K+ <span className="text-gray-700 font-normal">Job Seekers</span>
+                      10K+<br/> <span className="text-gray-700 font-normal">Job Seekers</span>
                     </div>
                   </div>
                 </div>
 
-              </div>
-
-
-              <div className="flex flex-col justify-between items-center lg:items-end">
                 <img
                   src={girlpic} // You might want to use a different image for visual variety here
                   alt="Student 2"
-                  className="object-cover w-full h-[565px] rounded-[20px] mb-4"
+                  className="object-cover w-full h-[565px] rounded-[20px] mb-4 z-0 relative"
                 />
 
 
