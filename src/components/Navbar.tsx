@@ -40,45 +40,44 @@ const Navbar = () => {
           </div>
 
           {/* Navigation Links */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.id}
-                to={item.path}
-                className={`text-purple-600 hover:text-purple-800 px-3 py-2 text-sm font-medium ${isActive(item.path) ? 'font-bold' : ''}`}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
+         <div className="hidden md:flex items-center space-x-8">
+  {navItems.map((item) => (
+    <Link
+      key={item.id}
+      to={item.path}
+      className={`px-3 py-2 text-sm font-mont font-bold transition-colors duration-200 
+        ${isActive(item.path) 
+          ? 'text-purple-600 font-semibold' 
+          : 'text-gray-500 hover:text-purple-600'}`}
+    >
+      {item.label}
+    </Link>
+  ))}
+</div>
+
 
           {/* Auth Buttons */}
           <div className="flex items-center space-x-4">
             {isAuthenticated ? (
               <div className="flex items-center space-x-4">
-                <Link to="/notifications">
                 <button className="text-purple-600 hover:text-purple-800">
                   <Bell className="h-6 w-6" />
                 </button>
-                </Link>
-                {/* whishlist */}
-                <Link to="/wishlist">
-                  <button className="text-purple-600 hover:text-purple-800">
-                    <Heart className="h-6 w-6" />
-                  </button>
-                </Link>
+                <button className="text-purple-600 hover:text-purple-800">
+                  <Heart className="h-6 w-6" />
+                </button>
                 <Link to="/profile">
-                  <Button
-                    variant="outline"
+                  <Button 
+                    variant="outline" 
                     className="text-purple-600 border-purple-600 hover:bg-purple-50 hover:text-purple-700 font-medium rounded-full flex items-center"
                   >
                     <User className="mr-2 h-4 w-4" />
                     View Profile
                   </Button>
                 </Link>
-                <Button
+                <Button 
                   onClick={handleLogout}
-                  variant="outline"
+                  variant="outline" 
                   className="text-purple-600 border-purple-600 hover:bg-purple-50 hover:text-purple-700 font-medium rounded-full flex items-center"
                 >
                   <LogOut className="mr-2 h-4 w-4" />
@@ -88,16 +87,16 @@ const Navbar = () => {
             ) : (
               <>
                 <Link to="/login">
-                  <Button variant="outline" className="text-purple-600 border-purple-600 hover:bg-purple-50 hover:text-purple-700 font-medium rounded-full">
-                    Login
-                  </Button>
-                </Link>
-                <Link to="/signup">
-                  <Button className="bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-full px-6 py-2 flex items-center">
-                    Sign Up Now
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
+    <Button className="bg-white border-2 hover:bg-gray-300 text-[#8A63FF] font-mont font-medium rounded-full px-6 py-2 flex items-center">
+      Log In
+    </Button>
+  </Link>
+  <Link to="/signup">
+    <Button className="bg-[#8A63FF] hover:bg-[#6D28D9] text-white font-mont font-medium rounded-full px-6 py-2 flex items-center">
+      Sign Up Now
+      <ArrowRight className="ml-2 h-4 w-4" />
+    </Button>
+  </Link>
               </>
             )}
           </div>
