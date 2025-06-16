@@ -1,11 +1,12 @@
 import React from 'react';
 import { Search, Bell, Heart } from 'lucide-react';
+import { Link } from "react-router-dom";
 
 const ProfileTopNavbar = () => {
   return (
     <div className="bg-white p-4 flex items-center justify-around shadow-md rounded-lg mb-6 w-screen px-24 fixed  ">
       {/* Logo */}
-      <div className="text-purple-600 font-bold text-[36px]">LOGO</div>
+      <Link to="/" className="text-purple-600 font-bold text-[36px]">LOGO</Link>
 
       {/* Search Bar */}
       <div className="relative flex-grow  mx-60 ">
@@ -20,10 +21,10 @@ const ProfileTopNavbar = () => {
       {/* User Icons */}
       <div className="flex items-center space-x-4">
         <div className="p-2 rounded-full border border-purple-300 text-purple-600 cursor-pointer hover:bg-purple-50">
-          <Bell size={20} />
+          <Link to="/notifications"><Bell size={20} /></Link>
         </div>
         <div className="p-2 rounded-full border border-purple-300 text-purple-600 cursor-pointer hover:bg-purple-50">
-          <Heart size={20} />
+          <Link to="/wishlist"><Heart size={20} /></Link>
         </div>
         <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-purple-500 cursor-pointer">
           <img src="/placeholder.svg" alt="User Avatar" className="w-full h-full object-cover" />

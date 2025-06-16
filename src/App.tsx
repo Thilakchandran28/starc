@@ -25,6 +25,8 @@ import ForgotPassword from "./pages/ForgotPassword";
 import PwdRstSentpage from "./pages/PwdRstSentpage";
 import Notifications from "./pages/Notifications";
 import WishlistPage from "./pages/WishlistPage";
+import ScrollToTop from "./components/ScrollTop";
+
 
 const queryClient = new QueryClient();
 
@@ -46,6 +48,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           {/* Public Routes */}
           <Route path="/" element={<Index />} />
@@ -57,10 +60,10 @@ const App = () => (
           <Route path="/wishlist" element={<WishlistPage />} />
           <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
           <Route path="/signup" element={<PublicRoute><Signup /></PublicRoute>} />
-          <Route path="/Password-Reset" element={<PublicRoute><PwdRstSentpage/></PublicRoute>} />
+          <Route path="/Password-Reset" element={<PublicRoute><PwdRstSentpage /></PublicRoute>} />
           <Route path="/notifications" element={<Notifications />} />
-          
-          
+
+
           {/* Protected Routes */}
           <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
           <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
@@ -68,12 +71,12 @@ const App = () => (
           {/* <Route path="/books" element={<ProtectedRoute><BooksPage /></ProtectedRoute>} /> */}
           <Route path="/schedule" element={<ProtectedRoute><SchedulePage /></ProtectedRoute>} />
           <Route path="/settings" element={<ProtectedRoute><SettingsPage /></ProtectedRoute>} />
-          <Route path="/submissionSuccess" element ={<SubmissionSuccess/>}/>
-          
+          <Route path="/submissionSuccess" element={<SubmissionSuccess />} />
+
           {/* Catch-all Route */}
           <Route path="*" element={<NotFound />} />
 
-<Route path ='/learningoverview' element={<LearningOverview/>}/>
+          <Route path='/learningoverview' element={<LearningOverview />} />
 
         </Routes>
       </BrowserRouter>
