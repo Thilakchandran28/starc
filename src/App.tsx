@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -21,12 +20,14 @@ import SettingsPage from "./pages/SettingsPage";
 import LearningModule from "./components/LearningModule";
 import LearningOverview from "./components/LearningOverview";
 import SubmissionSuccess from "./components/SubmissionSuccess";
+import CompletedCourse from "./components/CompletedCourse"
 import ForgotPassword from "./pages/ForgotPassword";
 import PwdRstSentpage from "./pages/PwdRstSentpage";
 import Notifications from "./pages/Notifications";
 import WishlistPage from "./pages/WishlistPage";
 import ScrollToTop from "./components/ScrollTop";
 
+import CardDetail from "./components/CardDetail";
 
 const queryClient = new QueryClient();
 
@@ -68,10 +69,13 @@ const App = () => (
           <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
           <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
           <Route path="/courses" element={<ProtectedRoute><CoursesPage /></ProtectedRoute>} />
+          <Route path="/completedCourses" element={<ProtectedRoute><CompletedCourse /></ProtectedRoute>} />
+
           {/* <Route path="/books" element={<ProtectedRoute><BooksPage /></ProtectedRoute>} /> */}
           <Route path="/schedule" element={<ProtectedRoute><SchedulePage /></ProtectedRoute>} />
           <Route path="/settings" element={<ProtectedRoute><SettingsPage /></ProtectedRoute>} />
-          <Route path="/submissionSuccess" element={<SubmissionSuccess />} />
+          <Route path="/submissionSuccess" element ={<SubmissionSuccess/>}/>
+          <Route path="/carddetail" element ={<CardDetail/>}/>
 
           {/* Catch-all Route */}
           <Route path="*" element={<NotFound />} />
