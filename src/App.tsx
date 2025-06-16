@@ -20,6 +20,7 @@ import SettingsPage from "./pages/SettingsPage";
 import LearningModule from "./components/LearningModule";
 import LearningOverview from "./components/LearningOverview";
 import SubmissionSuccess from "./components/SubmissionSuccess";
+import CompletedCourse from "./components/CompletedCourse"
 import ForgotPassword from "./pages/ForgotPassword";
 import PwdRstSentpage from "./pages/PwdRstSentpage";
 import Notifications from "./pages/Notifications";
@@ -65,6 +66,8 @@ const App = () => (
           <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
           <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
           <Route path="/courses" element={<ProtectedRoute><CoursesPage /></ProtectedRoute>} />
+          <Route path="/completedCourses" element={<ProtectedRoute><CompletedCourse /></ProtectedRoute>} />
+
           {/* <Route path="/books" element={<ProtectedRoute><BooksPage /></ProtectedRoute>} /> */}
           <Route path="/schedule" element={<ProtectedRoute><SchedulePage /></ProtectedRoute>} />
           <Route path="/settings" element={<ProtectedRoute><SettingsPage /></ProtectedRoute>} />

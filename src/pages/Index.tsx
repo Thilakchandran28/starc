@@ -18,7 +18,10 @@ const Index = () => {
       <Navbar />
       <Hero />
       <CoursesSection />
+      <div className="flex justify-center">
       <PurpleBox />
+
+      </div>
       <WhyChoose />
       <Masters />
       <HowItWorks />
@@ -26,7 +29,10 @@ const Index = () => {
       {/* <div className="bg-red-500">jhghj</div> */}
       <FAQ/>
       <WallOfLove />
+      <div className="flex justify-center">
       <PurpleBox />
+
+      </div>
       <Footer />
     </div>
   );
