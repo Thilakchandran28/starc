@@ -83,7 +83,7 @@ const Quiz = () => {
               Question {currentQuestion + 420}:
             </p>
             <div className="text-sm flex items-center space-x-1">
-              <span>🕰️</span>
+              <span>:mantelpiece_clock:</span>
               <span className="text-green-600 font-semibold">{formatTime(secondsElapsed)}</span>
             </div>
           </div>

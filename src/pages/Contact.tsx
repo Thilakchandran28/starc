@@ -3,16 +3,14 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin } from "lucide-react";// Removed Check as it's not used in the form
-import heros from "../assests/hero.png";
+import { Mail, Phone, MapPin } from "lucide-react"; // Removed Check as it's not used in the form
+import heros from "../Assets/hero.png";
 import PurpleBox from "@/components/PurpleBox";
-
 import WallOfLove from "../components/WallOfLove";
 const Contact = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-
       {/* Hero Section */}
       <section className="relative py-20 from-purple-50 to-white overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
@@ -38,7 +36,6 @@ const Contact = () => {
           </div>
         </div>
       </section>
-
       {/* Contact Section */}
       <section className="py-10 bg-white ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -48,7 +45,6 @@ const Contact = () => {
             <p className="text-lg text-gray-600 mb-8">
               Lorem ipsum dolor sit amet consectetur. Elementum massa gravida ante iaculis diam nibh.
             </p>
-
             <h3 className="text-2xl font-mont text-gray-900 mb-4">How we can help</h3>
             <ul className="space-y-4 text-gray-700 text-lg">
               <li className="flex items-center gap-2">
@@ -67,7 +63,6 @@ const Contact = () => {
                 </span>                Lorem ipsum dolor sit amet consectetur.
               </li>
             </ul>
-
             <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Note</h3>
             <p className="text-gray-600 text-lg">
               Lorem ipsum dolor sit amet consectetur. Sed magna sit tortor
@@ -75,7 +70,6 @@ const Contact = () => {
               malesuada. At enim viverra morbi risus in diam non.
             </p>
           </div>
-
           {/* Right: Contact Form */}
           <div className="bg-white p-8 rounded-xl shadow-md"> {/* Changed bg-gray-50 to bg-white */}
             <h3 className="text-2xl font-mont text-gray-900 mb-6">Access the Starc Template:</h3> {/* Updated title */}
@@ -116,7 +110,6 @@ const Contact = () => {
           </div>
         </div>
       </section>
-
       {/* Contact Cards Section */}
       <section className="py-16 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -143,15 +136,14 @@ const Contact = () => {
           </div>
         </div>
       </section>
-
-   
       {/* CTA Section */}
-     
+      <div className="flex justify-center">
       <PurpleBox/>
+
+      </div>
       <WallOfLove/>
       <Footer />
     </div>
   );
 };
-
 export default Contact;

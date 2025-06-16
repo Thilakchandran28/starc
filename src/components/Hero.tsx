@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import heroImage from "../assests/hero.png"; // Ensure this path is correct
+import heroImage from "../Assets/hero.png"; // Ensure this path is correct
 
 interface Slide {
   title: string;

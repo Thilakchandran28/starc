@@ -572,7 +572,9 @@ const Course: React.FC = () => {
           </div>
         </div>
       </section> */}
+      <div className="flex justify-center"> 
       <PurpleBox/>
+      </div>
       <WallOfLove />
       <Footer />
     </div>

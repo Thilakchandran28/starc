@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
            <div>
-            <img src={icon} alt=""/><br></br> 
+            <img src={icon} alt=""/><br></br>
            </div>
             <p className="text-black-600 font-mont font-semibold">Corporate Head Office: <span className="font-normal">3787 Jerry Dove Drive, Florence, South Carolina, 29501, United States </span></p><br></br>
             <p className="text-black-600 font-mont font-semibold">Phone: <span className="font-normal">843-496-7759</span></p>

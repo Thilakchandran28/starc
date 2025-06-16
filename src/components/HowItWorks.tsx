@@ -4,10 +4,10 @@ import Purplegradient from "../Assets/Purplegradient.png"
 
 // Assuming these paths are correct relative to your project structure
 // and that your bundler (e.g., Vite, Create React App, Next.js) handles them.
-import girlpic from "../assests/girl.jpg";
-import avatars from "../assests/avatar.jpg";
-import chicks from "../assests/chick.jpg";
-import boyz from "../assests/boy.jpg";
+import girlpic from "../Assets/girl.jpg";
+import avatars from "../Assets/avatar.jpg";
+import chicks from "../Assets/chick.jpg";
+import boyz from "../Assets/boy.jpg";
 
 type Step = {
   number: string;
@@ -80,7 +80,7 @@ const HowItWorks = () => {
             {/* Scrollable container for steps */}
             <div
               className="space-y-20 h-[500px] w-[700px] lg:h-[600px] overflow-y-auto pr-11 pl-4 your-scrollable-div::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #a78bfa, #8b5cf6); /* Purple gradient */
+  background: linear-gradient(to bottom, #A78BFA, #8B5CF6); /* Purple gradient */
   border-radius: 5px; "
               style={{
                 /* Custom Scrollbar Styles for Webkit (Chrome, Safari) */
@@ -92,12 +92,12 @@ const HowItWorks = () => {
             >
             
               {/* Webkit specific scrollbar styles (can be added to a global CSS file for cleaner separation) */}
-              <style>{` 
+              <style>{`
                 div::-webkit-scrollbar {
                   width: 8px;
                 }
                 div::-webkit-scrollbar-track {
-                  background: #f0f0f0; /* Light gray track */
+                  background: #F0F0F0; /* Light gray track */
                   border-radius: 4px;
                 }
                 div::-webkit-scrollbar-thumb {

@@ -681,12 +681,12 @@ export default function CategoryTabsPage() {
         <div className="flex items-center justify-between mb-8">
           {/* <h1 className="text-3xl font-bold text-gray-800">{selectedLabel} Courses</h1> */}
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  gap-6">
           {displayedCourses.length > 0 ? (
             displayedCourses.map((course, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden cursor-pointer w-[280px]"
+                className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden cursor-pointer lg:w-[220px] xl:w-[270px] 2xl:w-[280px] 3xl:w-[290px]"
               >
                 <img
                   src={course.image}
