@@ -1,4 +1,4 @@
-import icon from "../assests/Starcs.png"
+import icon from "../Assets/Starcs.png"
 
 
 const Footer = () => {
