@@ -81,14 +81,12 @@ const ScheduleWeek: React.FC<ScheduleWeekProps> = ({ currentDate, activityItems 
             <div className="text-xs font-semibold text-gray-900 uppercase">
               {day.toLocaleDateString('en-US', { weekday: 'short' })}
             </div>
-
           </div>
         ))}
       </div>
       {/* Time slots and days grid */}
       <div className="grid grid-cols-7 text-center text-sm relative">
         {/* Time labels on the left */}
-
         {/* Days grid */}
         {weekDays.map((day, dayIndex) => (
           <div

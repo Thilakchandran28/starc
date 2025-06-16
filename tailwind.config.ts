@@ -89,6 +89,12 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
+<<<<<<< HEAD
+			}
+		}
+	},
+	plugins: [require("tailwindcss-animate")],
+=======
 			},
 			screens:{
 				"3xl":"1920px"
@@ -96,4 +102,5 @@ export default {
 		}
 	},
 	plugins: [],
+>>>>>>> 795458357dfbda0a9690d2c382d6abb7540e1ce1
 } satisfies Config;

@@ -132,9 +132,6 @@ const DashboardPage: React.FC<Props> = ({selectedCourse}) => {
 
 useEffect(()=>{
    if(selectedCourse.status ==="100%"){
-  setCompleted(true)
- }else{
-  setCompleted(false)
  }
 },[selectedCourse])
 
@@ -142,7 +139,6 @@ const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-gray-100 font-sans text-gray-800">
-      {/* Top Action Buttons */}
       <div className="bg-white p-4 flex flex-col sm:flex-row justify-between items-center border-b border-gray-200 shadow-sm">
         <div>
           <button
