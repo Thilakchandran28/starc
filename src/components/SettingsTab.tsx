@@ -92,7 +92,7 @@ const SettingsTabs = () => {
                   onClick={handleCameraClick}
                 />
                 <input
-                  type="file"
+                  type="png"
                   accept="image/*"
                   ref={fileInputRef}
                   className="hidden"
