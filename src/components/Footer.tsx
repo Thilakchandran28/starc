@@ -46,7 +46,7 @@ const Footer = () => {
         </div>
         <div className="border-t border-gray-200 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between text-gray-600">
           <p>&copy; 2024 All rights reserved</p>
-
+         
         </div>
       </div>
     </footer>
