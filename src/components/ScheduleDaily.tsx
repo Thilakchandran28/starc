@@ -3,9 +3,9 @@ import React from "react";
 interface ActivityItem {
   title: string;
   dueDate: string;
-  time: string; 
+  time: string;
   description: string;
-  color: string; 
+  color: string;
 }
 
 interface ScheduleDailyProps {
@@ -21,7 +21,6 @@ const ScheduleDaily: React.FC<ScheduleDailyProps> = ({
   const timeSlots = ["3 PM", "4 PM", "5 PM", "6 PM", "7 PM", "8 PM"];
 
   // Filter today's activities
-  
   const activitiesForDay = activityItems.filter((item) => {
     const [dayStr, monthStr, yearStr] = item.dueDate.split("/");
     const itemDate = new Date(

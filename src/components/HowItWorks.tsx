@@ -1,12 +1,13 @@
 import React from 'react';
 import { ArrowLeft, Upload, BadgeCheck, Code2, Users, Sparkle } from 'lucide-react'; // Ensure all icons are imported
+import Purplegradient from "../Assets/Purplegradient.png"
 
 // Assuming these paths are correct relative to your project structure
 // and that your bundler (e.g., Vite, Create React App, Next.js) handles them.
-import girlpic from "../assests/girl.jpg";
-import avatars from "../assests/avatar.jpg";
-import chicks from "../assests/chick.jpg";
-import boyz from "../assests/boy.jpg";
+import girlpic from "../Assets/girl.jpg";
+import avatars from "../Assets/avatar.jpg";
+import chicks from "../Assets/chick.jpg";
+import boyz from "../Assets/boy.jpg";
 
 type Step = {
   number: string;
@@ -74,10 +75,12 @@ const HowItWorks = () => {
         <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
           {/* Left Side Steps Container */}
           <div className="w-full lg:w-1/2 relative">
+           <img src={Purplegradient}
+              className='inset-0 absolute'/>
             {/* Scrollable container for steps */}
             <div
               className="space-y-20 h-[500px] w-[700px] lg:h-[600px] overflow-y-auto pr-11 pl-4 your-scrollable-div::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #a78bfa, #8b5cf6); /* Purple gradient */
+  background: linear-gradient(to bottom, #A78BFA, #8B5CF6); /* Purple gradient */
   border-radius: 5px; "
               style={{
                 /* Custom Scrollbar Styles for Webkit (Chrome, Safari) */
@@ -85,14 +88,16 @@ const HowItWorks = () => {
                 msOverflowStyle: 'none', // Hide scrollbar for IE/Edge
                 scrollbarWidth: 'none', // Hide scrollbar for Firefox
               }}
+
             >
+
               {/* Webkit specific scrollbar styles (can be added to a global CSS file for cleaner separation) */}
-              <style>{` 
+              <style>{`
                 div::-webkit-scrollbar {
                   width: 8px;
                 }
                 div::-webkit-scrollbar-track {
-                  background: #f0f0f0; /* Light gray track */
+                  background: #F0F0F0; /* Light gray track */
                   border-radius: 4px;
                 }
                 div::-webkit-scrollbar-thumb {
@@ -126,6 +131,7 @@ const HowItWorks = () => {
                       opacity: 1,
                     }}
                   >
+
                     {step.number}
                   </div>
 
@@ -160,32 +166,33 @@ const HowItWorks = () => {
                   alt="Student working"
                   className="object-cover w-full h-[422px] rounded-[20px]"
                 />
-                <div className='whitebox'>
-                  <div className="bg-white/80 backdrop-blur-md rounded-xl p-4 flex items-center gap-3 shadow-md w-fit ">
+
+              </div>
+
+
+              <div className="flex flex-col justify-between items-center lg:items-end">
+                <div className='whitebox w-fit z-10 pr-64 absolute pt-[430px]'>
+                  <div className="bg-white/90 backdrop-blur-md rounded-xl p-4 flex items-center gap-3 shadow-md w-fit ">
                     <div className="flex -space-x-2">
                       {[avatars, chicks, boyz].map((src, index) => (
                         <img
                           key={index}
                           src={src}
                           alt={`User ${index + 1}`}
-                          className="w-8 h-8 rounded-full border-2 border-white object-cover"
+                          className="w-20 h-20 rounded-full border-2 border-white object-cover "
                         />
                       ))}
                     </div>
                     <div className="text-sm font-semibold text-blue-600">
-                      10K+ <span className="text-gray-700 font-normal">Job Seekers</span>
+                      10K+<br/> <span className="text-gray-700 font-normal">Job Seekers</span>
                     </div>
                   </div>
                 </div>
 
-              </div>
-
-
-              <div className="flex flex-col justify-between items-center lg:items-end">
                 <img
                   src={girlpic} // You might want to use a different image for visual variety here
                   alt="Student 2"
-                  className="object-cover w-full h-[565px] rounded-[20px] mb-4"
+                  className="object-cover w-full h-[565px] rounded-[20px] mb-4 z-0 relative"
                 />
 
 

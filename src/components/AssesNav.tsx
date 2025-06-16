@@ -131,7 +131,10 @@ const DashboardPage: React.FC<Props> = ({selectedCourse}) => {
   };
 
 useEffect(()=>{
-   if(selectedCourse.status ==="100%"){
+   if(selectedCourse?.status ==="100%"){
+  setCompleted(true)
+ }else{
+  setCompleted(false)
  }
 },[selectedCourse])
 
@@ -139,6 +142,7 @@ const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-gray-100 font-sans text-gray-800">
+      {/* Top Action Buttons */}
       <div className="bg-white p-4 flex flex-col sm:flex-row justify-between items-center border-b border-gray-200 shadow-sm">
         <div>
           <button
@@ -175,9 +179,9 @@ const navigate = useNavigate();
         <div className="bg-white p-6 rounded-lg shadow-md mb-8">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2">
             <h1 className="text-2xl font-bold text-gray-900 flex items-center">
-              {selectedCourse.title}
+              {selectedCourse?.title}
               <CheckCircleIcon className="ml-3 text-lg" />
-              <span className="text-base font-normal text-green-600 ml-1">{selectedCourse.status ==="100%"?"Completed":selectedCourse.status}</span>
+              <span className="text-base font-normal text-green-600 ml-1">{selectedCourse?.status ==="100%"?"Completed":selectedCourse?.status}</span>
             </h1>
           </div>
           <div className="flex flex-col sm:flex-row sm:items-center text-gray-700 text-sm">
@@ -244,7 +248,7 @@ const navigate = useNavigate();
                 <div className="overflow-x-auto">
                   <div className="min-w-[600px] md:min-w-full">
                     {initialAssessments.map((assessment) => (
-                      <AssessmentRow key={assessment.id} assessment={assessment} />
+                      <AssessmentRow key={assessment?.id} assessment={assessment} />
                     ))}
                   </div>
                 </div>

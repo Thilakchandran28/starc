@@ -10,7 +10,7 @@ import DoubleDiamondPdf from '../Assets/pdfs/UI_UX_Basics.pdf';
 import UiDesignPdf from '../Assets/pdfs/UI_UX_Basics.pdf';
 import ResearchMethodsPdf from '../Assets/pdfs/UI_UX_Basics.pdf';
 import figma from "../Assets/video/Master Figma UI Design in 15 Minutes _ This Tutorial Is For You!.mp4";
-import "../styles/LearningModule.css";
+import "../Styles/LearningModule.css";
 import frontend from "../Assets/video/Frontend web development - a complete overview.mp4"
 import backend from "../Assets/video/Backend web development - a complete overview.mp4"
 
@@ -351,7 +351,7 @@ const LearningModule: React.FC = () => {
                       </ul>
                       {selectedTab === 'book' && selectedVideo && (
                         <div className="text-gray-600 mt-3 text-base">
-                          {/* <p>📖 Book resources coming soon for {lesson.title}.</p> */}
+                          {/* <p>:book: Book resources coming soon for {lesson.title}.</p> */}
                         </div>
                       )}
                     </div>
@@ -375,12 +375,12 @@ const LearningModule: React.FC = () => {
             <svg
               className="w-5 h-5"
               viewBox="0 0 24 24"
-              fill="#4c1d95"
+              fill="#4C1D95"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 d="M17 9V7a5 5 0 10-10 0v2H5v11a2 2 0 002 2h10a2 2 0 002-2V9h-2zM9 7a3 3 0 116 0v2H9V7z"
-                fill="#4c1d95"
+                fill="#4C1D95"
               />
             </svg>
           </button>
@@ -396,12 +396,12 @@ const LearningModule: React.FC = () => {
             <svg
               className="w-5 h-5"
               viewBox="0 0 24 24"
-              fill="#4c1d95"
+              fill="#4C1D95"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 d="M17 9V7a5 5 0 10-10 0v2H5v11a2 2 0 002 2h10a2 2 0 002-2V9h-2zM9 7a3 3 0 116 0v2H9V7z"
-                fill="#4c1d95"
+                fill="#4C1D95"
               />
             </svg>
           </button>

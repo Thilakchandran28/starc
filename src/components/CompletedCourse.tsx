@@ -315,7 +315,7 @@ const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
       reviewerName: "Narendra",
       rating: 5,
       title: "Excellent Content and Mentorship!",
-      content: `This ${course.title} course provided a deep dive into the subject matter. The explanations were clear, and the practical exercises were very helpful. Narendra's insights were invaluable, making complex topics easy to grasp. Highly recommend!`,
+      content: `This ${course?.title} course provided a deep dive into the subject matter. The explanations were clear, and the practical exercises were very helpful. Narendra's insights were invaluable, making complex topics easy to grasp. Highly recommend!`,
       likes: 12,
       dislikes: 0,
     },
@@ -324,7 +324,7 @@ const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
       reviewerName: "Priya S.",
       rating: 4,
       title: "Very Informative, but a bit fast-paced",
-      content: `The ${course.title} content is top-notch and covers a wide range of topics. I found some sections moved a bit quickly for a beginner, but re-watching the lectures helped. Overall, a great resource for learning.`,
+      content: `The ${course?.title} content is top-notch and covers a wide range of topics. I found some sections moved a bit quickly for a beginner, but re-watching the lectures helped. Overall, a great resource for learning.`,
       likes: 8,
       dislikes: 1,
     },
@@ -333,7 +333,7 @@ const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
       reviewerName: "Amit K.",
       rating: 5,
       title: "Revolutionary concepts taught clearly",
-      content: `I've been looking for a course like ${course.title} for a long time. The way complex concepts are broken down is fantastic. The mentor is truly an expert and makes learning enjoyable. Five stars!`,
+      content: `I've been looking for a course like ${course?.title} for a long time. The way complex concepts are broken down is fantastic. The mentor is truly an expert and makes learning enjoyable. Five stars!`,
       likes: 20,
       dislikes: 0,
     },
@@ -342,7 +342,7 @@ const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
       reviewerName: "Deepa V.",
       rating: 5,
       title: "Highly Recommended for practical knowledge",
-      content: `The practical examples and real-world applications discussed in ${course.title} are incredibly useful. It's not just theoretical; you actually learn how to implement these concepts. The mentor's experience shines through.`,
+      content: `The practical examples and real-world applications discussed in ${course?.title} are incredibly useful. It's not just theoretical; you actually learn how to implement these concepts. The mentor's experience shines through.`,
       likes: 15,
       dislikes: 0,
     },
@@ -351,7 +351,7 @@ const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
       reviewerName: "Rajesh M.",
       rating: 5,
       title: "Transformative Learning Experience",
-      content: `This ${course.title} course has transformed my understanding of the subject. The modules are well-structured, and the assignments challenge you to apply what you've learned. Kudos to the entire team!`,
+      content: `This ${course?.title} course has transformed my understanding of the subject. The modules are well-structured, and the assignments challenge you to apply what you've learned. Kudos to the entire team!`,
       likes: 10,
       dislikes: 0,
     },
@@ -360,7 +360,7 @@ const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
       reviewerName: "Sarita L.",
       rating: 5,
       title: "Best decision for my career growth",
-      content: `Enrolling in ${course.title} was one of the best decisions for my career. The skills I've gained are directly applicable to my work, and I feel much more confident. Thank you for such a valuable program!`,
+      content: `Enrolling in ${course?.title} was one of the best decisions for my career. The skills I've gained are directly applicable to my work, and I feel much more confident. Thank you for such a valuable program!`,
       likes: 18,
       dislikes: 0,
     },
@@ -466,11 +466,11 @@ const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
          <div className="flex-grow">
            <div className="space-y-6">
             <h1 className="text-2xl font-bold flex items-center">
-              {course.title}
+              {course?.title}
               <span className="text-base font-normal text-green-600 ml-1 flex items-center">
                 {/* <CheckCircleIcon className="ml-3 text-lg" /> */}
                 <img src={Completed} className="mr-1" alt="" />
-                {course.status === "100%" ? "Completed" : course.status}
+                {course?.status === "100%" ? "Completed" : course?.status}
               </span>
             </h1>
             <div className="flex flex-col sm:flex-row sm:items-center text-gray-700 text-sm">
@@ -526,16 +526,16 @@ const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
               </section>
             )}
             <section>
-                <h2 className="text-2xl font-semibold mb-4">Overview</h2>
+                <h2 className="text-2xl font-semibold mb-4 lg:text-red-400 xl:text-blue-400">Overview</h2>
               <p
                 className="text-gray-700 leading-relaxed mb-4">
-                {course.title} is a comprehensive course designed to provide
+                {course?.title} is a comprehensive course designed to provide
                 in-depth knowledge and practical skills. This program covers
                 essential concepts, hands-on projects, and real-world
                 applications to ensure you are well-prepared for your career.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                Duration: {course.duration}. Status: {course.status}.
+                Duration: {course?.duration}. Status: {course?.status}.
               </p>
               </section>         
 
@@ -561,7 +561,7 @@ const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
                       <img src={youtube} alt="" />
                   </div>
                   <p className="text-gray-700 text-sm mt-2 max-w-lg">
-                    Expert mentor for {course.title}, with extensive experience
+                    Expert mentor for {course?.title}, with extensive experience
                     in delivering practical and engaging content.
                   </p>
                 </div>

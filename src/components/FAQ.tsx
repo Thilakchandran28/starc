@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import faqicons from "../assests/faqicon.png"
+import faqicons from "../Assets/faqicon.png"
 
 interface FAQItem {
   question: string;
