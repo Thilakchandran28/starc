@@ -336,7 +336,9 @@ const About = () => {
       </section> */}
       <StarcTeam/>
       <WallOfLove/>
+      <div className="flex justify-center">
       <PurpleBox/>
+      </div>
       <Footer />
     </div>
   );
