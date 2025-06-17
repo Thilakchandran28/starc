@@ -19,7 +19,7 @@ function RightSideBar() {
   return (
     // <div className="w-full lg:w-[300px] ml-auto space-y-8 flex flex-1 justify-center">
     // <div className="  px-8 lg:h-[80vh] lg:w-[30vw] fixed top-32 right-10">
-      <div className='grid grid-cols-1  gap-10 mb-6 shadow-md bg-white w-[19%] p-6 mx-0 h-[80vh] rounded-[20px] fixed top-32 right-6 overflow-x-auto' style={{scrollbarWidth:"none"}}>
+      <div className='grid grid-cols-1  gap-10 mb-6 shadow-md bg-white  p-6 mx-0 h-[80vh] rounded-[20px] top-32 right-8 overflow-x-auto' style={{scrollbarWidth:"none"}}>
         {/* Complete Few Courses Card */}
 
       <div className='h-auto'>

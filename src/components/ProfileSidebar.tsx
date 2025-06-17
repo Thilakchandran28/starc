@@ -2,10 +2,11 @@ import { NavLink } from 'react-router-dom';
 import { LayoutDashboard, BookOpen, Book, Calendar, Settings } from 'lucide-react';
 
 const ProfileSidebar = () => {
+  // fixed top-32 left-8
   return (
-    <div className="w-[18%] bg-white rounded-[16px] shadow-md p-4 lg:h-[90vh] fixed top-32 left-10">
+    <div className=" bg-white rounded-[16px]  shadow-md p-4 lg:h-[90vh] ">
       {/* User Profile Section */}
-      <div className="flex items-center mb-6">
+      <div className="flex items-center mb-6">  
         <div className="w-16 h-16 rounded-full overflow-hidden mr-4">
           <img src="/placeholder.svg" alt="User Avatar" className="w-full h-full object-cover" />
         </div>

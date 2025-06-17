@@ -131,7 +131,7 @@ const ScheduleOverview = () => {
     };
 
     return (
-      <div className="bg-white rounded-lg p-2 shadow-sm">
+      <div className="bg-white rounded-lg p-2 shadow-sm w-full h-full ">
         <h3 className="text-xs font-semibold mb-1 text-center text-gray-700">
           {monthName}
         </h3>
@@ -224,7 +224,7 @@ const ScheduleOverview = () => {
   const currentMonthName = months[currentDate.getMonth()];
 
   return (
-    <div className=" bg-gray-100 min-h-screen flex space-x-4">
+    <div className=" bg-gray-100 min-h-screen flex space-x-4 w-full pt-4 overflow-x-auto" style={{scrollbarWidth:'none'}}>
       <div className="flex-grow bg-white rounded-ls shadow-sm p-4">
         <div className="flex justify-between items-center mb-4">
           <div className="flex items-center space-x-2">
@@ -317,7 +317,7 @@ const ScheduleOverview = () => {
 
       {/* Hide sidebar when in daily view */}
       {currentView !== "daily" && (
-        <div className="w-72 flex-shrink-0 space-y-4">
+        <div className="w-72 flex-shrink-0 space-y-4 sticky top-0 pt-4 overflow-x-auto" style={{scrollbarWidth:'none'}}>
           <div className="bg-white rounded-lg shadow-sm p-4">
             <div className="flex justify-between items-center mb-3">
               <h2 className="text-lg font-semibold text-gray-800">Schedule</h2>
@@ -403,7 +403,7 @@ const ScheduleOverview = () => {
                 </div>
               ))}
             </div>
-          </div>a
+          </div>
         </div>
       )}
     </div>
