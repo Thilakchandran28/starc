@@ -43,13 +43,13 @@ const ProfileSidebar = () => {
           Courses
         </NavLink>
         <NavLink
-          to="/books"
+          to="/book"
           className={({ isActive }) =>
-            `flex items-center p-3 rounded-lg transition-colors duration-200 ${isActive
+            `flex items-center py-3 px-1 rounded-lg transition-colors duration-200 ${isActive
               ? ' text-purple-600'
               : 'text-gray-700 hover:bg-gray-200'}`
           }
-        >
+        >``
           <Book className="w-5 h-5 mr-3" />
           Books
         </NavLink>

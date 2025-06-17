@@ -399,7 +399,7 @@ const BooksPage = () => {
         <PurpleBox />
       </div>
       <WallOfLove />
-      <Footer />
+      <Footer />a
     </div>
   );
 };
