@@ -10,6 +10,7 @@ const ScheduleOverview = () => {
   const [currentView, setCurrentView] = useState("year"); // 'year', 'month', 'week', 'daily'
   const currentYear = currentDate.getFullYear();
 
+  
   const months = [
     "January",
     "February",
