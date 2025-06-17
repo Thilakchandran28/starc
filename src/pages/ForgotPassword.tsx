@@ -223,8 +223,8 @@ const Login: React.FC = () => {
             <img src={Vector} alt="" className="absolute z-0 pl-24" style={{ width: "screen", height: "auto" }} />
           </div>
           <div className="relative z-10 text-center flex flex-col justify-center pl-36 pt-40">
-            <div className="pl-10 pr-6 pt-24">
-              <div className="pl-3 inline-flex items-center bg-[#8A63FF] text-white text-[50%] px-5 py-2 w-[26%] rounded-full text-sm font-medium font-mont">
+            <div className="pl-5 pr-6 pt-24">
+              <div className="pl-3 inline-flex items-center bg-[#8A63FF] text-white text-[52%]  w-[22%] h-6 rounded-full text-sm font-medium font-mont">
                 SUPERVISED COURSES
               </div>
             </div>
@@ -273,7 +273,7 @@ const Login: React.FC = () => {
                     Explore Courses Now
                   </Button>
                   <div className="flex items-center gap-1 text-sm text-gray-600 font-mont">
-                    <span>:books:</span>
+                    <span>📚</span>
                     <span>300+ Modules & 30+ Courses</span>
                   </div>
                 </div>
