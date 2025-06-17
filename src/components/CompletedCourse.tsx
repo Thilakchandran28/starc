@@ -441,7 +441,7 @@ const CourseDashboardPage: React.FC<{course: Course; onBack: () => void }> = ({
   });
 
   const totalRatings = initialReviews.length;
-  const averageRating =
+  const avercouageRating =
     totalRatings > 0
       ? (
           initialReviews.reduce((sum, review) => sum + review.rating, 0) /

@@ -35,7 +35,9 @@ const FilterSection: React.FC<FilterSectionProps> = ({
   description = "Scheduled live Google Meet classes with calendar/email alerts, seasonal batches, and fixed enrollment deadlines.",
   onToggle,
 }) => {
-  const [activeButton, setActiveButton] = useState<"supervised" | "unsupervised">(initialActiveButton);
+  const [activeButton, setActiveButton] = useState<
+    "supervised" | "unsupervised"
+  >(initialActiveButton);
 
   const handleToggle = (button: "supervised" | "unsupervised") => {
     setActiveButton(button);
@@ -45,47 +47,47 @@ const FilterSection: React.FC<FilterSectionProps> = ({
   };
 
   const SortDropdown: React.FC = () => {
-  const [sortOption, setSortOption] = useState('Latest');
+    const [sortOption, setSortOption] = useState("Latest");
 
-  const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSortOption(e.target.value);
-  };
-  return (
-    <div>
-      <label className="block text-gray-700 text-sm font-semibold mb-1">
-        Sort by:
-      </label>
-      <div className="relative">
-        <select
-          value={sortOption}
-          onChange={handleSortChange}
-          className="w-48 p-2.5 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 appearance-none text-gray-700"
-        >
-          <option value="Latest">Latest</option>
-          <option value="Most Popular">Most Popular</option>
-          <option value="Highest Rated">Highest Rated</option>
-          <option value="Newest">Newest</option>
-        </select>
-        {/* Custom dropdown arrow */}
-        <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-          <svg
-            className="w-4 h-4 text-gray-500"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+    const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+      setSortOption(e.target.value);
+    };
+    return (
+      <div>
+        <label className="block text-gray-700 text-sm font-semibold mb-1">
+          Sort by:
+        </label>
+        <div className="relative">
+          <select
+            value={sortOption}
+            onChange={handleSortChange}
+            className="w-48 p-2.5 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 appearance-none text-gray-700"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M19 9l-7 7-7-7"
-            />
-          </svg>
+            <option value="Latest">Latest</option>
+            <option value="Most Popular">Most Popular</option>
+            <option value="Highest Rated">Highest Rated</option>
+            <option value="Newest">Newest</option>
+          </select>
+          {/* Custom dropdown arrow */}
+          <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+            <svg
+              className="w-4 h-4 text-gray-500"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </div>
         </div>
-      </div>
-      {/* Custom dropdown styling for options */}
-      <style>{`
+        {/* Custom dropdown styling for options */}
+        <style>{`
         select option:checked {
           background-color: #8A63FF;
           color: white;
@@ -94,42 +96,44 @@ const FilterSection: React.FC<FilterSectionProps> = ({
           padding: 8px;
         }
       `}</style>
-    </div>
-  );
-};
+      </div>
+    );
+  };
 
   return (
-    <section className="bg-white py-8">
+    <section className="bg-white  ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center mb-6">
-          <div className="flex items-center gap-4">
-            <button
-              onClick={() => handleToggle("supervised")}
-              className={`px-4 py-2 rounded-full font-semibold transition-colors ${
-                activeButton === "supervised"
-                  ? "bg-[#7C3AED] text-white"
-                  : "bg-white text-gray-600"
-              }`}
-            >
-              Supervised
-            </button>
-            <button
-              onClick={() => handleToggle("unsupervised")}
-              className={`px-4 py-2 rounded-full font-semibold transition-colors ${
-                activeButton === "unsupervised"
-                  ? "bg-[#7C3AED] text-white"
-                  : "bg-white text-[#9539E5]"
-              }`}
-            >
-              Unsupervised
-            </button>
+        <div className=" flex flex-col  ">
+          <div className="flex items-center gap-4 flex-col  ">
+            <div className="flex items-center  bg-white-500 p-1   rounded-full  shadow-md">
+              <button
+                onClick={() => handleToggle("supervised")}
+                className={`px-4 py-2 rounded-full font-semibold transition-colors ${
+                  activeButton === "supervised"
+                    ? "bg-[#7C3AED] text-white"
+                    : "bg-white text-gray-600"
+                }`}
+              >
+                Supervised
+              </button>
+              <button
+                onClick={() => handleToggle("unsupervised")}
+                className={`px-4 py-2 rounded-full font-semibold transition-colors ${
+                  activeButton === "unsupervised"
+                    ? "bg-[#7C3AED] text-white"
+                    : "bg-white text-[#9539E5]"
+                }`}
+              >
+                Unsupervised
+              </button>
+            </div>
+            <span className="text-sm text-gray-500 max-w-sm  ">
+              {description}
+            </span>
           </div>
-          <span className="text-sm text-gray-500 max-w-md text-right">
-            {description}
-          </span>
         </div>
 
-        <div className="p-6">
+        <div className="p-20 ">
           <h2 className="text-2xl font-semibold mb-6">Courses (957)</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div>
@@ -172,7 +176,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({
               </label>
               <select
                 id="sort"
-                  className="w-full rounded-full border: 20px solid border border-[#00000040] px-4 py-2 pl-10 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
+                className="w-full rounded-full border: 20px solid border border-[#00000040] px-4 py-2 pl-10 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
               >
                 <option>Latest</option>
                 <option>Most Popular</option>
@@ -239,7 +243,8 @@ const Course: React.FC = () => {
       lessons: 156,
       level: "beginner",
       category: "development",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=200&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=200&fit=crop",
       badge: "Best Seller",
     },
     {
@@ -253,7 +258,8 @@ const Course: React.FC = () => {
       lessons: 145,
       level: "beginner",
       category: "design",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=300&h=200&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=300&h=200&fit=crop",
       badge: "Popular",
     },
     {
@@ -267,7 +273,8 @@ const Course: React.FC = () => {
       lessons: 110,
       level: "intermediate",
       category: "marketing",
-      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=300&h=200&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=300&h=200&fit=crop",
       badge: "New",
     },
     {
@@ -281,7 +288,8 @@ const Course: React.FC = () => {
       lessons: 130,
       level: "advanced",
       category: "business",
-      image: "https://images.unsplash.com/photo-1521737711867-ee1713320799?w=300&h=200&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1521737711867-ee1713320799?w=300&h=200&fit=crop",
       badge: "Trending",
     },
     {
@@ -295,7 +303,8 @@ const Course: React.FC = () => {
       lessons: 90,
       level: "beginner",
       category: "photography",
-      image: "https://images.unsplash.com/photo-1502943693-33f546880070?w=300&h=200&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1502943693-33f546880070?w=300&h=200&fit=crop",
       badge: "Top Rated",
     },
     {
@@ -309,7 +318,8 @@ const Course: React.FC = () => {
       lessons: 180,
       level: "advanced",
       category: "development",
-      image: "https://images.unsplash.com/photo-1550439062-cd036594bbcd?w=300&h=200&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1550439062-cd036594bbcd?w=300&h=200&fit=crop",
       badge: "Popular",
     },
     {
@@ -323,7 +333,8 @@ const Course: React.FC = () => {
       lessons: 120,
       level: "intermediate",
       category: "design",
-      image: "https://images.unsplash.com/photo-1522199755839-fd24598a6d85?w=300&h=200&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1522199755839-fd24598a6d85?w=300&h=200&fit=crop",
       badge: "New",
     },
     {
@@ -337,7 +348,8 @@ const Course: React.FC = () => {
       lessons: 100,
       level: "intermediate",
       category: "marketing",
-      image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=300&h=200&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=300&h=200&fit=crop",
       badge: "Trending",
     },
     {
@@ -351,10 +363,10 @@ const Course: React.FC = () => {
       lessons: 140,
       level: "beginner",
       category: "business",
-      image: "https://images.unsplash.com/photo-1554224155-6726b300f0f5?w=300&h=200&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1554224155-6726b300f0f5?w=300&h=200&fit=crop",
       badge: "Best Seller",
     },
-
   ];
 
   const filterCards = (category: string) => {
@@ -373,9 +385,9 @@ const Course: React.FC = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div>
+      <section className=" relative bottom-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className=" flex flex-col justify-center items-center">
             <img
               src={heroimage}
               alt="Hero Image"
@@ -385,17 +397,19 @@ const Course: React.FC = () => {
                 height: "auto",
                 position: "relative",
                 left: "0",
-                top: "40px",
+                top: "90px",
               }}
             />
+            <div className="">
+              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8">
+                Discover Our Starc Courses
+              </h1>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                Discover thousands of courses taught by expert instructors.
+                Start learning today and advance your career.
+              </p>
+            </div>
           </div>
-          <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            Discover Our Starc Courses
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Discover thousands of courses taught by expert instructors. Start
-            learning today and advance your career.
-          </p>
         </div>
       </section>
 
@@ -475,11 +489,11 @@ const Course: React.FC = () => {
                 Photography
               </li>
             </ul> */}
-          
-          <ScrollableCourse/>
+
+          <ScrollableCourse />
         </div>
 
-        <div className=" pl-28 w-50 pb-14">
+        <div className=" pl-28 w-50 pb-14 lg:p-31 ">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-14">
               {filteredCourses.map((course, index) => (
@@ -572,8 +586,8 @@ const Course: React.FC = () => {
           </div>
         </div>
       </section> */}
-      <div className="flex justify-center"> 
-      <PurpleBox/>
+      <div className="flex justify-center">
+        <PurpleBox />
       </div>
       <WallOfLove />
       <Footer />

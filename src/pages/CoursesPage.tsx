@@ -37,7 +37,7 @@ const CoursesPage = () => {
     //     </div>
     //   </div>
     // </div>
-    <div className="flex flex-col h-screen  bg-gray-100 ">
+    <div className="flex flex-col h-screen  bg-white-100 ">
       <div className=" sticky top-0 z-50  ">
         <ProfileTopNavbar />
       </div>

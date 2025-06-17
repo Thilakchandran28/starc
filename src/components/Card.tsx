@@ -30,14 +30,14 @@ const Recard: React.FC<CardProps> = ({ course }) => {
   return (
     <div
      
-      className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer w-[280px]"
+      className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer w-[280px] "
     >
       <img
         src={course.image}
         alt={course.title}
         className="w-full h-[180px] object-cover rounded-3xl px-4 py-4 pl-4 pr-4 "
       />
-      <div className="px-4 py-3">
+      <div className="px-4 py-3 ">
         <div className="flex items-center justify-between text-sm text-gray-400 mb-1">
           <div className="flex items-center gap-1">
             <BookOpen className="w-4 h-4" />
