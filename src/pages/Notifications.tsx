@@ -69,7 +69,10 @@ const Notifications = () => {
         )}
       </div>
     </div>
+    <div className='flex justify-center'>
     <PurpleBox/>
+
+    </div>
     <Footer/>
     </div>
   );
