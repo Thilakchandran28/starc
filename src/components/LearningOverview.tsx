@@ -37,12 +37,13 @@ const LearningOverview: React.FC = () => {
       </div> */}
 
       {/* Main Content */}
-      <div className="container mx-auto p-6">
+      <div className="container mx-auto p-6 ">
         <LearningModule />
-        
+
         {/* Conditional Rendering based on Category */}
-        
+        <div className="flex justify-center">
         <PurpleBox />
+        </div>
         <Footer />
       </div>
     </div>

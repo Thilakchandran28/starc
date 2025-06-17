@@ -55,22 +55,22 @@ const ScheduleWeek: React.FC<ScheduleWeekProps> = ({ currentDate, activityItems 
   };
 
   return (
-    <div className='flex col-span-7 gap-5 '>        
+    <div className='flex col-span-7 gap-5 '>
         <div className=" flex flex-col text-right pr-0 "  >
             <div className='mt-5'>
                 Time
-                </div>        
-          {timeSlots.map((time, i) => (             
+                </div>
+          {timeSlots.map((time, i) => (
             <div
               key={`time-label-${i}`}
               className="text-[10px] text-gray-500 h-12  flex items-center justify-end "
             >
               {time}
             </div>
-        
+
           ))}
-        </div>     
-        
+        </div>
+
         <div className="bg-white rounded-lg  shadow-sm col-span-3 w-full      ">
       {/* Days of the week header */}
       <div className="grid grid-cols-7 text-center font-bold text-gray-500 mb-0 pb-0">
@@ -83,14 +83,12 @@ const ScheduleWeek: React.FC<ScheduleWeekProps> = ({ currentDate, activityItems 
             <div className="text-xs font-semibold text-gray-900 uppercase">
               {day.toLocaleDateString('en-US', { weekday: 'short' })}
             </div>
-            
           </div>
         ))}
       </div>
       {/* Time slots and days grid */}
       <div className="grid grid-cols-7 text-center text-sm relative">
         {/* Time labels on the left */}
-        
         {/* Days grid */}
         {weekDays.map((day, dayIndex) => (
           <div

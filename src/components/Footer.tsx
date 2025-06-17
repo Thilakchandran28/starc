@@ -1,9 +1,6 @@
-import icon from "../assests/Starcs.png"
-import Instas from "../assests/insta.jpg";
-import Shares from "../assests/Share.png";
-import Musics from "../assests/music.jpg";
-import yt from "../assests/youtube.png";
-import { Youtube } from "lucide-react";
+import icon from "../Assets/Starcs.png"
+
+
 const Footer = () => {
   return (
     <footer className="bg-white py-12">
@@ -11,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
            <div>
-            <img src={icon} alt=""/><br></br> 
+            <img src={icon} alt=""/><br></br>
            </div>
             <p className="text-black-600 font-mont font-semibold">Corporate Head Office: <span className="font-normal">3787 Jerry Dove Drive, Florence, South Carolina, 29501, United States </span></p><br></br>
             <p className="text-black-600 font-mont font-semibold">Phone: <span className="font-normal">843-496-7759</span></p>
@@ -49,12 +46,7 @@ const Footer = () => {
         </div>
         <div className="border-t border-gray-200 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between text-gray-600">
           <p>&copy; 2024 All rights reserved</p>
-          <div className="flex space-x-4 mt-4 md:mt-0">
-            <a href="#" className="text-gray-600 hover:text-gray-900"><img src={Instas} alt="Instagram" className="h-6 w-6" /></a>
-            <a href="#" className="text-gray-600 hover:text-gray-900"><img src={Shares}alt="Telegram" className="h-6 w-6" /></a>
-            <a href="#" className="text-gray-600 hover:text-gray-900"><img src={Musics} alt="TikTok" className="h-6 w-6" /></a>
-            <a href="#" className="text-gray-600 hover:text-gray-900"><img src={yt} alt="YouTube" className="h-6 w-6" /></a>
-          </div>
+         
         </div>
       </div>
     </footer>

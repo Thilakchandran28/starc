@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
-import NavDashboardPage  from './AssesNav'
-import CoursePageLayout from './ui/CoursePageLayout'
+import NavDashboardPage from './AssesNav';
+import CoursePageLayout from './ui/CoursePageLayout';
 import SideSchedule from './Schedulebar';
-import LearningModule from './LearningModule';
 import LearningOverview from './LearningOverview';
+import CourseDashboardPage from './CompletedCourse';
+import OngoingCourseDashboardPage from './OngoingCourse';
+import DashboardCard from './DashboardCard';
+
 type Course = {
+  id: string;
   image: string;
   title: string;
   progress: number;
@@ -12,60 +16,51 @@ type Course = {
   status: string;
 };
 
-const CoursesOverview: React.FC = () => {
+interface childProps {
+  sendMessage: (course:Course)=>void;
+}
+
+const   CoursesOverview: React.FC <childProps> = ({sendMessage}) => {
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
 
   const courses: Course[] = [
-    { image: 'https://via.placeholder.com/150', title: 'AWS Solutions Architect', progress: 50, duration: '1 Month', status: '50%' },
-    { image: 'https://via.placeholder.com/150', title: 'Azure Fundamentals', progress: 100, duration: '1 Month', status: 'Completed' },
-    { image: 'https://via.placeholder.com/150', title: 'Google Cloud Basics', progress: 75, duration: '1 Month', status: '75%' },
-    { image: 'https://via.placeholder.com/150', title: 'Google Cloud Basics', progress: 75, duration: '1 Month', status: '75%' },
-    { image: 'https://via.placeholder.com/150', title: 'Google Cloud Basics', progress: 75, duration: '1 Month', status: '75%' },
-    { image: 'https://via.placeholder.com/150', title: 'Google Cloud Basics', progress: 75, duration: '1 Month', status: '75%' },
-
+    { id: '1', image: 'https://via.placeholder.com/150', title: 'AWS Solutions Architect', progress: 50, duration: '1 Month', status: '50%' },
+    { id: '2', image: 'https://via.placeholder.com/150', title: 'Azure Fundamentals', progress: 100, duration: '1 Month', status: 'Completed' },
+    { id: '3', image: 'https://via.placeholder.com/150', title: 'Google Cloud Basics', progress: 75, duration: '1 Month', status: '75%' },
+    { id: '4', image: 'https://via.placeholder.com/150', title: 'Google Cloud Advanced', progress: 75, duration: '1 Month', status: '75%' },
+    { id: '5', image: 'https://via.placeholder.com/150', title: 'DevOps Essentials', progress: 75, duration: '1 Month', status: '75%' },
+    { id: '6', image: 'https://via.placeholder.com/150', title: 'Kubernetes Basics', progress: 75, duration: '1 Month', status: '75%' },
   ];
 
   if (selectedCourse) {
-    // Course Details View
-    return (
-      <div className="p-6 bg-gray-100 min-h-screen">
-        <button
-          onClick={() => setSelectedCourse(null)}
-          className="mb-4 text-purple-600 hover:underline"
-        >
-          ← Back to Courses
-        </button>
-        <NavDashboardPage/>
-        <CoursePageLayout/>
-      </div>
-    );
+    if (selectedCourse.status === 'Completed') {
+      return <CourseDashboardPage course={selectedCourse} onBack={() => setSelectedCourse(null)} />;
+    } else {
+      return <OngoingCourseDashboardPage course={selectedCourse} onBack={() => setSelectedCourse(null)} />;
+    }
   }
 
-  // Course List View
-  return (
-    <div className="p-6 bg-gray-100 min-h-screen">
-      <h1 className="text-2xl font-bold mb-6">My Courses ({courses.length})</h1>
+  const handleSelectedCourse = (course: Course) => {
+    setSelectedCourse(course);
+    sendMessage(course);
+  };
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" style={{height:"330px",width:"920px"}}>
-        {courses.map((course, index) => (
+  return (
+    <div className="h-full bg-gray-100 font-sans text-gray-800 w-full flex flex-col justify-between items-center">
+      <h1 className="text-2xl font-bold mb-3">My Courses ({courses.length})</h1>
+      <div className="flex flex-wrap justify-center">
+        {courses.map((course) => (
           <div
-            key={index}
-            onClick={() => setSelectedCourse(course)}
-            className="cursor-pointer bg-white rounded-lg shadow-md p-4 flex flex-col items-center text-center hover:shadow-lg transition"
+            key={course.id}
+            onClick={() => handleSelectedCourse(course)}
+            className="cursor-pointer w-[30%] m-2"
           >
-            <img src={course.image} alt={course.title} className="w-full h-32 object-cover rounded-md mb-4" />
-            <h3 className="text-lg font-semibold mb-2">{course.title}</h3>
-            <div className="w-full bg-gray-200 rounded-full h-2.5 mb-2">
-              <div className="bg-purple-600 h-2.5 rounded-full" style={{ width: `${course.progress}%` }}></div>
-            </div>
-            <p className="text-sm text-gray-600 mb-2">{course.duration}</p>
-            <p className="text-sm text-gray-600">{course.status}</p>
+            <DashboardCard course={course} />
+            
           </div>
         ))}
       </div>
-      <SideSchedule/>
-      <LearningOverview/>
-     </div>
+    </div>
   );
 };
 

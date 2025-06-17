@@ -1,10 +1,10 @@
 import React from "react";
 import { GraduationCap, BookOpen, Globe, MessageSquare } from "lucide-react";
-import star from "../assests/stargirl.jpg"; // Ensure the path is correct
-import opp from "../assests/opicon.png";
+import star from "../Assets/stargirl.jpg"; // Ensure the path is correct
+import opp from "../Assets/opicon.png";
 import learning from "../assests/learn.png";
-import glo from "../assests/global.png";
-import course from "../assests/courses.png"
+import glo from "../Assets/global.png";
+import course from "../Assets/courses.png"
 
 const WhyChoose: React.FC = () => {
   return (
@@ -35,7 +35,10 @@ const WhyChoose: React.FC = () => {
             <div className="w-full max-w-[300px] grid grid-cols-1 bg-white rounded-xl p-6 shadow-lg"> {/* Added max-w for consistency */}
               <div className="p-3 rounded-lg w-fit mb-4 flex items-center justify-center">
                 {/* <GraduationCap className="w-6 h-6 text-purple-600" /> */}
-                <img src={course}></img>
+                <div className="flex items-center justify-center">
+                  <img src={course}></img>
+                </div>
+                
               </div>
               <h3 className="font-semibold text-lg text-gray-900 mb-2 text-center">Courses</h3>
               <p className="text-sm text-gray-600 mb-4 text-center">Lorem ipsum dolor sit amet<br></br> consectetur.</p>

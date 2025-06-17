@@ -6,7 +6,7 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Star, Clock, Users, BookOpen, Filter } from "lucide-react";
 import WallOfLove from "../components/WallOfLove";
 import { useNavigate } from "react-router-dom";
-import heroimage from '../Assets/Vector.png'
+import heroimage from "../Assets/Vector.png";
 import Recard from "@/components/Card";
 import PurpleBox from "@/components/PurpleBox";
 import ScrollableCourse from "@/components/ScrollableCourse";
@@ -15,10 +15,8 @@ const BooksPage = () => {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedLevel, setSelectedLevel] = useState("all");
-  const categories = [
-  ];
-  const levels = [
-  ];
+  const categories = [];
+  const levels = [];
   const courses = [
     {
       title: "Complete React Development Course",
@@ -31,8 +29,9 @@ const BooksPage = () => {
       lessons: 156,
       level: "beginner",
       category: "development",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=200&fit=crop",
-      badge: "Best Seller"
+      image:
+        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=200&fit=crop",
+      badge: "Best Seller",
     },
     {
       title: "UI/UX Design Fundamentals",
@@ -45,8 +44,9 @@ const BooksPage = () => {
       lessons: 145,
       level: "beginner",
       category: "design",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=300&h=200&fit=crop",
-      badge: "Popular"
+      image:
+        "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=300&h=200&fit=crop",
+      badge: "Popular",
     },
     {
       title: "Digital Marketing Masterclass",
@@ -59,8 +59,9 @@ const BooksPage = () => {
       lessons: 110,
       level: "intermediate",
       category: "marketing",
-      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=300&h=200&fit=crop",
-      badge: "New"
+      image:
+        "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=300&h=200&fit=crop",
+      badge: "New",
     },
     {
       title: "Business Analytics with Python",
@@ -73,8 +74,9 @@ const BooksPage = () => {
       lessons: 130,
       level: "advanced",
       category: "business",
-      image: "https://images.unsplash.com/photo-1521737711867-ee1713320799?w=300&h=200&fit=crop",
-      badge: "Trending"
+      image:
+        "https://images.unsplash.com/photo-1521737711867-ee1713320799?w=300&h=200&fit=crop",
+      badge: "Trending",
     },
     {
       title: "Photography Fundamentals",
@@ -87,8 +89,9 @@ const BooksPage = () => {
       lessons: 90,
       level: "beginner",
       category: "photography",
-      image: "https://images.unsplash.com/photo-1502943693-33f546880070?w=300&h=200&fit=crop",
-      badge: "Top Rated"
+      image:
+        "https://images.unsplash.com/photo-1502943693-33f546880070?w=300&h=200&fit=crop",
+      badge: "Top Rated",
     },
     {
       title: "Advanced JavaScript Concepts",
@@ -101,8 +104,9 @@ const BooksPage = () => {
       lessons: 180,
       level: "advanced",
       category: "development",
-      image: "https://images.unsplash.com/photo-1550439062-cd036594bbcd?w=300&h=200&fit=crop",
-      badge: "Popular"
+      image:
+        "https://images.unsplash.com/photo-1550439062-cd036594bbcd?w=300&h=200&fit=crop",
+      badge: "Popular",
     },
     {
       title: "Graphic Design with Adobe Illustrator",
@@ -115,8 +119,9 @@ const BooksPage = () => {
       lessons: 120,
       level: "intermediate",
       category: "design",
-      image: "https://images.unsplash.com/photo-1522199755839-fd24598a6d85?w=300&h=200&fit=crop",
-      badge: "New"
+      image:
+        "https://images.unsplash.com/photo-1522199755839-fd24598a6d85?w=300&h=200&fit=crop",
+      badge: "New",
     },
     {
       title: "Content Marketing Strategy",
@@ -129,8 +134,9 @@ const BooksPage = () => {
       lessons: 100,
       level: "intermediate",
       category: "marketing",
-      image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=300&h=200&fit=crop",
-      badge: "Trending"
+      image:
+        "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=300&h=200&fit=crop",
+      badge: "Trending",
     },
     {
       title: "Financial Modeling for Beginners",
@@ -143,8 +149,9 @@ const BooksPage = () => {
       lessons: 140,
       level: "beginner",
       category: "business",
-      image: "https://images.unsplash.com/photo-1554224155-6726b300f0f5?w=300&h=200&fit=crop",
-      badge: "Best Seller"
+      image:
+        "https://images.unsplash.com/photo-1554224155-6726b300f0f5?w=300&h=200&fit=crop",
+      badge: "Best Seller",
     },
     {
       title: "Portrait Photography Techniques",
@@ -157,15 +164,16 @@ const BooksPage = () => {
       lessons: 80,
       level: "intermediate",
       category: "photography",
-      image: "https://images.unsplash.com/photo-1520390138845-fd2d229dd553?w=300&h=200&fit=crop",
-      badge: "Top Rated"
-    }
+      image:
+        "https://images.unsplash.com/photo-1520390138845-fd2d229dd553?w=300&h=200&fit=crop",
+      badge: "Top Rated",
+    },
   ];
   const filterCards = (category) => {
     setSelectedCategory(category);
   };
-  const filteredCourses = courses.filter(course => {
-    if (selectedCategory === 'all') {
+  const filteredCourses = courses.filter((course) => {
+    if (selectedCategory === "all") {
       return true;
     }
     return course.category === selectedCategory;
@@ -176,29 +184,33 @@ const BooksPage = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-purple-60 to-indigo-50 py-19">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div><img src={heroimage} alt=""  style={{
-            width:"500px",
-            height:"auto",
-            position:"relative",
-            left:"350px",
-            top:"90px"
-          }}/></div>
+          <div>
+            <img
+              src={heroimage}
+              alt=""
+              style={{
+                width: "500px",
+                height: "auto",
+                position: "relative",
+                left: "350px",
+                top: "90px",
+              }}
+            />
+          </div>
           <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
             Discover Our Books
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Discover thousands of courses taught by expert instructors. Start learning today and advance your career.
+            Discover thousands of courses taught by expert instructors. Start
+            learning today and advance your career.
           </p>
         </div>
       </section>
       {/* New Design Section */}
       <section className="bg-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center mb-6">
-            
-          </div>
-          </div>
-          
+          <div className="flex justify-between items-center mb-6"></div>
+        </div>
       </section>
       {/* Category and Card Design Section */}
       <section className="flex">
@@ -214,7 +226,7 @@ const BooksPage = () => {
               <li className={`cursor-pointer ${selectedCategory === 'photography' ? 'text-purple-600' : 'text-black'}`} onClick={() => filterCards('photography')}>Photography</li>
             </ul>
           </div> */}
-          <ScrollableCourse/>
+          <ScrollableCourse />
         </div>
         <div className="w-3/4 py-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -232,9 +244,13 @@ const BooksPage = () => {
                   </div>
                 </div>
               ))} */}
-                {filteredCourses.map((course, index) => (
-              <div key={index} onClick={() => navigate('/book', { state: { course } })} className="cursor-pointer">
-                {/* <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg">
+              {filteredCourses.map((course, index) => (
+                <div
+                  key={index}
+                  onClick={() => navigate("/book", { state: { course } })}
+                  className="cursor-pointer"
+                >
+                  {/* <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg">
                   <div className="relative">
                     <img
                       src={course.image}
@@ -270,9 +286,9 @@ const BooksPage = () => {
                     <div className="text-sm text-gray-500 line-through">${course.originalPrice}</div>
                   </CardFooter>
                 </Card> */}
-                <Recard course={course} key={index} />
-              </div>
-            ))}
+                  <Recard course={course} key={index} />
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -318,7 +334,7 @@ const BooksPage = () => {
               </div>
             ))} */}
           </div>
-          <Card/>
+          <Card />
         </div>
       </section>
       {/* New Section from Image */}
@@ -376,12 +392,14 @@ const BooksPage = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
             </div> */}
-          {/* </div>
+      {/* </div>
         </div>
       </section> */}
-      <PurpleBox/>
+      <div className="flex justify-center">
+        <PurpleBox />
+      </div>
       <WallOfLove />
-      <Footer />
+      <Footer />a
     </div>
   );
 };
