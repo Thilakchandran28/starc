@@ -29,7 +29,7 @@ const Index = () => {
       {/* <div className="bg-red-500">jhghj</div> */}
       <FAQ/>
       <WallOfLove />
-      <div className="flex justify-center">
+      <div className="flex justify-center text-center">
       <PurpleBox />
 
       </div>

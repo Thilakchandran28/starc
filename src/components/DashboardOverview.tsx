@@ -45,9 +45,12 @@ const DashboardOverview: React.FC = () => {
 
   const progressPercentage = (user.progress / user.coursesEnrolled) * 100;
 
+
+  const progress = 50;
+
   return (
     // absolute top-28 bg-gray-100
-    <div className="h-screen overflow-y-auto lg:w-[550px] xl:w-[700px] 2xl:w-[90%] 3xl:w-[1000px]" style={{scrollbarWidth:"none"}} >
+    <div className="h-screen overflow-y-auto lg:w-[550px] xl:w-[700px] 2xl:w-[90%] 3xl:w-[1000px]" style={{ scrollbarWidth: "none" }} >
       <h1 className="text-3xl font-bold text-gray-900 mb-6">Hello {user.name} 👋</h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mb-6">
@@ -75,7 +78,7 @@ const DashboardOverview: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
           <div className="bg-white p-6 rounded-[30px] shadow-md flex items-center space-x-4">
             <div className="lg:py-1 lg:px-1 xl:py-2 xl:px-2 2xl:py-3 2xl:px-3 3xl:py-4 3xl:px-4 bg-gradient-to-b from-[#868CFF] to-[#8A63FF] rounded-full">
-              <img src={hour} alt="Hour Icon" className='lg:h-5 lg:w-5 xl:h-6 xl:w-6 2xl:h-8 2xl:w-8'/>
+              <img src={hour} alt="Hour Icon" className='lg:h-5 lg:w-5 xl:h-6 xl:w-6 2xl:h-8 2xl:w-8' />
             </div>
             <div>
               <p className="text-gray-600 lg:text-xs xl:text-sm 2xl:text-base">Learning Hour </p>
@@ -86,7 +89,7 @@ const DashboardOverview: React.FC = () => {
           </div>
           <div className="bg-white p-6 rounded-[30px] shadow-md flex items-center space-x-4">
             <div className="lg:py-1 lg:px-1 xl:py-2 xl:px-2 2xl:py-3 2xl:px-3 3xl:py-4 3xl:px-4   bg-gradient-to-b from-[#868CFF] to-[#8A63FF] rounded-full">
-              <img src={earned} alt="Earned Icon" className='lg:h-5 lg:w-5 xl:h-6 xl:w-6 2xl:h-8 2xl:w-8'   />
+              <img src={earned} alt="Earned Icon" className='lg:h-5 lg:w-5 xl:h-6 xl:w-6 2xl:h-8 2xl:w-8' />
             </div>
             <div>
               <p className="text-gray-600 lg:text-xs xl:text-sm 2xl:text-base">Certificates Earned</p>
@@ -96,51 +99,68 @@ const DashboardOverview: React.FC = () => {
         </div>
 
         {/* Courses Enrolled Progress */}
-        <div className="flex flex-col items-center w-full bg-white rounded-[30px] shadow-md">
-          <div className=" p-0 rounded-[50%] shadow-md flex flex-col items-center">
-            {/* Circular Progress Indicator */}
-            <div className="relative w-44 h-44">
-              <svg className="w-full h-full" viewBox="0 0 100 100">
 
-                <circle
-                  cx="50"
-                  cy="50"   
-                  r="40"
-                  strokeWidth="10"
-                  fill="none"
-                  className="stroke-gray-200"
-                />
-
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="40"
-                  strokeWidth="10"
-                  fill="none"
-                  strokeDasharray={`${25 * 2.51}, 251`} // 251 is the circumference (2 * π * 40)
-                  strokeDashoffset="0"
-                  className="stroke-purple-500 transform -rotate-90 origin-center"
-                />
-              </svg>
-              {/* Text Inside Circle */}
-              <div className="absolute inset-0 flex flex-col  items-center justify-center">
-                <span className="text-gray-500 text-sm">Courses Enrolled</span>
-                <span className="text-4xl font-bold">{user.coursesEnrolled}</span>
-              </div>
+        <div className="flex flex-col items-center justify-center p-4 sm:p-6 bg-white rounded-lg shadow-md">
+          {/* Circular Progress Bar Container */}
+          <div className="relative w-40 h-40 sm:w-48 sm:h-48 lg:w-52 lg:h-52 xl:w-[14vw] xl:h-[14vw] flex justify-center items-center">
+            {/* Background Circle (Gray for Pending) */}
+            <svg className="absolute w-full h-full" viewBox="0 0 100 100">
+              <circle
+                className="stroke-gray-300"
+                cx="50"
+                cy="50"
+                r="45"
+                strokeWidth="10"
+                fill="none"
+              />
+            </svg>
+            {/* Progress Circle (Purple for Completed) */}
+            <svg className="absolute w-full h-full" viewBox="0 0 100 100">
+              <circle
+                className="stroke-purple-500"
+                cx="50"
+                cy="50"
+                r="45"
+                strokeWidth="10"
+                fill="none"
+                strokeDasharray="283"
+                strokeDashoffset={283 * (1 - progress / 100)}
+                strokeLinecap="round"
+                transform="rotate(-90 50 50)"
+              />
+            </svg>
+            {/* Center Text */}
+            <div className="absolute flex flex-col items-center justify-center w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 xl:w-[10vw] xl:h-[10vw] bg-white rounded-full shadow-2xl border border-blue-800">
+              <span className="text-gray-500 text-xs sm:text-sm lg:text-sm xl:text-[0.9vw]">
+                Courses Enrolled
+              </span>
+              <span className="text-3xl sm:text-4xl lg:text-4xl xl:text-[2.5vw] font-bold">
+                {progress}
+              </span>
             </div>
           </div>
           {/* Legend */}
-          <div className="flex space-x-4 mt-4  ]">
-            <div className="flex items-center ">
-              <span className="lg:w-2 lg:h-2 xl:w-3 xl:h-3 2xl:h-4 2xl:w-4 rounded-full bg-purple-500 mr-2"></span>
-              <span className='lg:text-xs xl:text-base 2xl:text-base 3xl:text-xl'>Completed</span>
+          <div className="flex space-x-3 sm:space-x-4 mt-3 sm:mt-4">
+            <div className="flex items-center">
+              <div className="w-3 h-3 sm:w-4 sm:h-4 lg:w-4 lg:h-4 xl:w-[1vw] xl:h-[1vw] bg-purple-500 rounded-full mr-1 sm:mr-2"></div>
+              <span className="text-xs sm:text-sm lg:text-sm xl:text-[0.9vw]">
+                Completed
+              </span>
             </div>
             <div className="flex items-center">
-              <span className="lg:w-2 lg:h-2 xl:w-3 xl:h-3 2xl:h-4 2xl:w-4 w-4 h-4 rounded-full bg-gray-200 mr-2"></span>
-              <span className='lg:text-xs xl:text-sm 2xl:text-base 3xl:text-xl'>Pending</span>
+              <div className="w-3 h-3 sm:w-4 sm:h-4 lg:w-4 lg:h-4 xl:w-[1vw] xl:h-[1vw] bg-gray-300 rounded-full mr-1 sm:mr-2"></div>
+              <span className="text-xs sm:text-sm lg:text-sm xl:text-[0.9vw]">
+                Pending
+              </span>
             </div>
           </div>
         </div>
+
+
+
+
+
+
       </div>
 
       {/* Continue Learning Section */}
