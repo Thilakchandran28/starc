@@ -6,8 +6,10 @@ import WallOfLove from "../components/WallOfLove";
 import { useNavigate } from "react-router-dom";
 import heroimage from "../Assets/Vector.png";
 import Recard from "@/components/Card";
-import ScrollableCourse from "@/components/ScrollableCourse";
+
+// import ScrollableCourse from "@/components/ScrollableCourse";
 // Define TypeScript interface for a Course
+
 interface Course {
   title: string;
   instructor: string;
@@ -63,7 +65,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({
             onChange={handleSortChange}
             className="w-48 p-2.5 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 appearance-none text-gray-700"
           >
-            <option value="Latest">Latest</option>
+            <option value="Latest ">Latest</option>
             <option value="Most Popular">Most Popular</option>
             <option value="Highest Rated">Highest Rated</option>
             <option value="Newest">Newest</option>
@@ -102,7 +104,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({
 
   return (
     <section className="bg-white  ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4  sm:px-6 lg:px-8">
         <div className=" flex flex-col  ">
           <div className="flex items-center gap-4 flex-col  ">
             <div className="flex items-center  bg-white-500 p-1   rounded-full  shadow-md">
@@ -369,6 +371,26 @@ const Course: React.FC = () => {
     },
   ];
 
+    const [activeIndex, setActiveIndex] = useState(0); 
+  
+    const categories = [
+      "Lorem Ipsum",
+      "Electronics",
+      "Lorem",
+      "Placeholder",
+      "Placeholder text",
+      "Placeholder text",
+      "Lorem Ipsum",
+      "Electronics",
+      "Lorem",
+      "Placeholder",
+      "Placeholder text",
+      "Placeholder text",
+      "Placeholder text",
+      "Placeholder text",
+      "Placeholder text",
+    ];
+
   const filterCards = (category: string) => {
     setSelectedCategory(category);
   };
@@ -385,7 +407,7 @@ const Course: React.FC = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className=" relative bottom-20">
+      <section className=" relative bottom-20  ">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className=" flex flex-col justify-center items-center">
             <img
@@ -421,7 +443,8 @@ const Course: React.FC = () => {
       />
 
       {/* Category and Course Cards Section */}
-      <section className="flex py-8">
+      
+      <section className="flex justify-center py-8 ">
         <div className="w-1/4">
           {/* <div className="max-w-xs mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl font-bold mb-4 text-gray-900">
@@ -489,18 +512,40 @@ const Course: React.FC = () => {
                 Photography
               </li>
             </ul> */}
-
-          <ScrollableCourse />
+          <section className="flex  2xl:w-[70%] 2xl:h-[100%] 2xl:">
+            <div className="w-1/2">
+              <div className="max-w-c mx-auto px-4 sm:px-6 lg:px-10">
+                <h2 className="text-2xl font-mont font-bold mb-4 py-2 text-gray-800 text-center">
+                  Categories
+                </h2>
+                <ul className="w-64 h-96 overflow-y-auto pr-2 border-r-2 custom-scrollbar">
+                  {categories.map((category, index) => (
+                    <li
+                      key={index}
+                      onClick={() => setActiveIndex(index)}
+                      className={`py-4 px-4 text-sm cursor-pointer items-start w-[95%] border-gray-200 border-b-[0.1px] transition-all duration-200 ${
+                        index === activeIndex
+                          ? "text-[#7C3AED] font-semibold "
+                          : "text-gray-800"
+                      }`}
+                    >
+                      {category}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </section>
         </div>
 
-        <div className=" pl-28 w-50 pb-14 lg:p-31 ">
+        <div className=" w-50 py-10 lg:p-31  ">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-14">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-6 2xl:grid-cols-3 2xl:w-[100%]">
               {filteredCourses.map((course, index) => (
                 <div
                   key={index}
                   onClick={() => navigate("/carddetail", { state: { course } })}
-                  className="cursor-pointer"
+                  className="cursor-pointer "
                 >
                   <Recard course={course} key={index} />
                 </div>
@@ -511,6 +556,7 @@ const Course: React.FC = () => {
       </section>
 
       {/* Join Us Section */}
+
       {/* <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-[#8A63FF] rounded-xl p-10 text-center shadow-lg mb-20">
@@ -596,3 +642,8 @@ const Course: React.FC = () => {
 };
 
 export default Course;
+
+
+
+
+

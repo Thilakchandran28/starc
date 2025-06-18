@@ -28,10 +28,7 @@ const Recard: React.FC<CardProps> = ({ course }) => {
    };
 
   return (
-    <div
-     
-      className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer w-[280px] "
-    >
+    <div className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer w-[280px] ">
       <img
         src={course.image}
         alt={course.title}
@@ -48,11 +45,12 @@ const Recard: React.FC<CardProps> = ({ course }) => {
             <span>{course.duration}</span>
           </div>
         </div>
-        <h3 className="text-[17px] font-semibold text-gray-900 leading-tight">
+        <h3 className=" font-semibold text-gray-900 text-md h-[48px] leading-tight">
           {course.title}
         </h3>
         <p className="text-sm text-gray-500 mt-1 leading-snug">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor
         </p>
       </div>
       <div className="flex items-center justify-between px-4 py-3 border-t">
@@ -64,7 +62,7 @@ const Recard: React.FC<CardProps> = ({ course }) => {
           />
           <span className="text-sm font-medium text-gray-800">Lina</span>
         </div>
-        
+
         <div className="text-sm text-gray-400">
           <span className="line-through mr-1">${course.originalPrice}</span>
           <span className="text-[#7E74F1] font-semibold">${course.price}</span>

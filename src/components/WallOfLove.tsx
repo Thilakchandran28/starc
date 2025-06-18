@@ -55,24 +55,36 @@ const testimonials: TestimonialCardProps[] = [
 
 const WallOfLove: React.FC = () => {
   return (
-    <section className="py-16 lg:p-40 ">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-mont font-semibold text-center mb-12 text-gray-800">Wall of love</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <section className="py-16 xl:p-30  ">
+      <div className="container mx-auto px-20 xl:px-40 lg:px-50    ">
+        <h2
+          className="text-4xl font-mont-regular font-bold text-center font- mb-12 text-black"
+          style={{ fontFamily: "mont-regular" }}
+        >
+          Wall of love
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6  w-[100%] h-[100%] ">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-white border border-[#8A63FF] p-6 rounded-2xl flex flex-col justify-between"
-              style={{ minHeight: '240px', minWidth: '320px' }} // Approximate height and width based on the image
+              className="bg-white border border-[#8A63FF] p-4 rounded-2xl flex flex-col justify-between lg:p-4"
             >
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center justify-between mb-4 ">
                 <div className="flex items-center">
                   {/* You can add a profile picture here if desired */}
                   <div className="w-10 h-10 bg-blue-200 rounded-full flex items-center justify-center text-blue-800 font-semibold text-lg mr-3">
                     {testimonial.name.charAt(0)}
                   </div>
                   <div>
-                    <p className="font-semibold text-black">{testimonial.name}</p>
+                    <p
+                      className="font-semibold text-black"
+                      style={{
+                        fontFamily: "mont-regular",
+                      }}
+                    >
+                      {testimonial.name}
+                    </p>
                   </div>
                 </div>
                 {/* <svg
@@ -85,8 +97,14 @@ const WallOfLove: React.FC = () => {
                 </svg> */}
                 {/* <img  src={vector}/> */}
               </div>
-              <p className="text-black font-mont font-medium leading-relaxed flex-grow mb-4">{testimonial.content}</p>
-              
+              <p
+                className="text-black font-mont font-medium leading-relaxed flex-grow mb-4"
+                style={{
+                  fontFamily: "mont-regular",
+                }}
+              >
+                {testimonial.content}
+              </p>
             </div>
           ))}
         </div>

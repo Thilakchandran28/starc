@@ -2,6 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'mont-black';
+  src: url('../fonts/Montserrat-Black.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'mont-regular';
+  src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-BoldItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-Light.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* index.css */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #ccc;
+  /* width: 10px; */
+  
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #7C3AED; /* Tailwind's purple-600 */
+  border-radius: 8px;
+  border: 3px solid transparent;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
