@@ -130,8 +130,8 @@ const DashboardOverview: React.FC = () => {
               />
             </svg>
             {/* Center Text */}
-            <div className="absolute flex flex-col items-center justify-center w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 xl:w-[10vw] xl:h-[10vw] bg-white rounded-full shadow-2xl border border-blue-800">
-              <span className="text-gray-500 text-xs sm:text-sm lg:text-sm xl:text-[0.9vw]">
+            <div className="absolute flex flex-col items-center justify-center w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 xl:w-[10vw] xl:h-[10vw] 2xl:w-[8vw] 2xl:h-[8vw] bg-white rounded-full shadow-2xl ">
+              <span className="text-gray-500 text-xs sm:text-sm lg:text-sm xl:text-[0.9vw] 2xl:text-[0.7vw]">
                 Courses Enrolled
               </span>
               <span className="text-3xl sm:text-4xl lg:text-4xl xl:text-[2.5vw] font-bold">
