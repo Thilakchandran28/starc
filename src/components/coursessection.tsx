@@ -656,7 +656,7 @@ export default function CategoryTabsPage() {
                       : "text-gray-500 hover:text-purple-600"
                     }`}
                 >
-                  <span>{category.icon}</span>
+                  <span>{category.icon} </span>
                   <span>{category.label}</span>
                   <span
                     className={`absolute bottom-0 left-0 w-full h-0.5 transition-all duration-300 ${selected === category.id

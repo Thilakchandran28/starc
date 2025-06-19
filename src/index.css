@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -33,6 +35,7 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+    --font-montserrat: 'Montserrat', sans-serif;
 
     --sidebar-background: 0 0% 98%;
 
@@ -97,5 +100,22 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-montserrat);
   }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #ccc;
+  /* width: 10px; */
+
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #7C3AED; /* Tailwind's purple-600 */
+  border-radius: 8px;
+  border: 3px solid transparent;
 }

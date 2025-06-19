@@ -79,9 +79,9 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Fixed height container for sliding content */}
-        <div className="overflow-hidden h-[300px] flex items-center justify-center">
-          <div key={currentSlide} className="w-full">
-            <h1 className="text- lg:text-[450%] font-bold text-gray-800 mb-6 animate-pop-slide font-mont">
+        <div className="overflow-hidden h-[300px] flex items-center justify-center font-mont">
+          <div key={currentSlide} className="w-full font-mont">
+            <h1 className="lg:text-[400%] font-bold text-gray-800 mb-6 animate-pop-slide">
               {slides[currentSlide].title.split(" ").map((word, index) => (
                 <span key={index}>
                   {word}{" "}
@@ -95,12 +95,12 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 ">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 font-mont">
           {currentSlide === 0 ? (
             <>
               <button
                 type="button"
-                className="bg-purple-500 text-white px-6 py-3 text-lg font-medium rounded-lg shadow-md"
+                className="bg-purple-500 text-white px-6 py-3 text-lg font-medium rounded-lg shadow-md font-mont"
                 style={{ backgroundColor: "#A855F7", boxShadow:'0px 10px 12px 0px rgba(0, 0, 0, 0.2)' }}
               >
                 Explore More Now
@@ -122,7 +122,7 @@ const Hero: React.FC = () => {
           ) : currentSlide === 1 ? (
             <button
               type="button"
-              className="bg-purple-500 text-white px-6 py-3 text-lg font-medium rounded-lg shadow-md"
+              className="bg-purple-500 text-white px-6 py-3 text-lg font-medium rounded-lg shadow-md font-mont"
               style={{ backgroundColor: "#A855F7" , boxShadow:'0px 10px 12px 0px rgba(0, 0, 0, 0.2)' }}
             >
               Express Your Interest Now

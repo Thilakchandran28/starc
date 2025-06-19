@@ -17,6 +17,7 @@ import stay from '../Assets/stay.svg';
 import promote from '../Assets/promote.svg';
 import foster from '../Assets/foster.svg';
 import provide from '../Assets/provide.svg';
+import group from '../Assets/Group.svg'
 
 const About = () => {
  
@@ -60,54 +61,76 @@ const About = () => {
       </section> */}
 
       {/* Our Values Section (custom design) */}
-      <section className="relative py-24 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left: Text Content */}
-          <div>
-            <span className="text-sm text-[#8A63FF] font-mont font-medium mb-2 block space-y-2">Our Values</span>
-            <h2 className="text-4xl md:text-5xl font-mont font-medium text-gray-900 mb-4 leading-tight">
-              Our team shares<br />values to <span className="text-purple-500">Success</span>
-            </h2>
-            <p className="text-lg text-gray-600 mb-8">
-              Lorem ipsum dolor sit amet consectetur. Convallis ante euismod commodo facilisi.
-            </p>
-            <ul className="space-y-4">
-              <li className="flex items-center gap-3">
-                <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#8A63FF]">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
-                </span>
-                <span className="font-mont text-black">Add your feature details here</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#8A63FF]">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
-                </span>
-                <span className="font-mont text-black">Inform your customers about your features</span>
-              </li>
-            </ul>
-          </div>
-          {/* Right: Overlapping Images */}
-          <div className="relative flex justify-center items-center min-h-[400px] pt-10 lg:pt-0 xl:min-h-[320px] 2xl:min-h-[300px] 3xl:min-h-[480px] 4xl:min-h-[560px] 5xl:min-h-[640px]">
-            {/* Faint world map background */}
-            <img src={world} alt="World Map" className="absolute left-1/2 top-[90%] -translate-x-1/2 -translate-y-1/2 opacity-1" />
-            {/* Main image */}
-            <img src={woman} alt="Team" className="rounded-xl shadow-lg w-100 h-48 object-cover relative z-10 -top-10 left-10 md:left-0 lg:left-10 xl:left-20 2xl:left-40 3xl:left-60 4xl:left-80 5xl:left-100" />
-            {/* Overlapping image */}
-            <img src={woman} alt="Team 2" className="rounded-xl shadow-lg w-100 h-40 object-cover absolute -bottom-10 -right-10 md:-right-20 lg:-right-10 xl:-right-0 2xl:-right-20 3xl:-right-40 4xl:-right-60 5xl:-right-80 z-20 border-4 border-white" />
-          </div>
-        </div>
-      </section>
+     <section className="relative bg-white overflow-hidden flex lg:flex-row px-10 lg:px-20 lg:py-24">
+  {/* Left: Text Content */}
+  <div className="w-full lg:w-1/2 flex flex-col justify-center pl-0 lg:pl-12 2xl:pl-24">
+    <span className="text-[#8A63FF] text-lg lg:text-xl 2xl:text-2xl font-medium font-mont mb-4">
+      Our Values
+    </span>
+    <h2 className="text-xl lg:text-4xl 2xl:text-5xl font-mont font-semibold text-gray-900 mb-4 leading-snug">
+      Our team shares <br /> values to <span className="text-purple-500">Success</span>
+    </h2>
+    <p className="text-gray-600 text-base lg:text-lg 2xl:text-xl mb-6">
+      Lorem ipsum dolor sit amet consectetur. Convallis <br />
+      ante euismod commodo facilisi.
+    </p>
+    <ul className="space-y-4 text-base lg:text-lg 2xl:text-xl">
+      <li className="flex items-center gap-3">
+        <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#8A63FF]">
+          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        </span>
+        <span className="text-black font-mont">Add your feature details here</span>
+      </li>
+      <li className="flex items-center gap-3">
+        <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#8A63FF]">
+          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        </span>
+        <span className="text-black font-mont">Inform your customers about your features</span>
+      </li>
+    </ul>
+  </div>
+
+  {/* Right: Responsive Image Container */}
+  <div className="w-full lg:w-1/2 relative flex justify-center items-center mt-12 lg:mt-0">
+    <div className="relative w-full max-w-[640px] aspect-[16/10]">
+      {/* World Map Background */}
+      <img
+        src={world}
+        alt="World Map"
+        className="absolute top-[25%] w-full h-full object-contain  z-0"
+      />
+
+      {/* Main Image */}
+      <img
+        src={woman}
+        alt="Team"
+        className="absolute top-[14%] left-[30%] lg:w-[200px] 2xl:w-[280px] rounded-xl shadow-lg z-10"
+      />
+
+      {/* Overlapping Image */}
+      <img
+        src={woman}
+        alt="Team 2"
+        className="absolute bottom-[21%] right-[10%] lg:w-[180px] 2xl:w-[240px] rounded-xl shadow-lg border-4 border-white z-20"
+      />
+    </div>
+  </div>
+</section>
+
  {/* Learn Today, Lead Tomorrow Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="py-20 bg-white flex  justify-center ">
+        {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ml-36 border border-green-400"> */}
           {/* Left: Text Content */}
-          <div>
-            <h2 className="text-4xl md:text-5xl font-mont font-medium text-gray-900 mb-8 leading-tight">
+          <div className=" w-[40%] pt-10 pl-20">
+            <h2 className="text-4xl w-[80%] md:text-5xl font-mont font-medium text-gray-900 mb-8 leading-tight">
               "Learn today, lead tomorrow"
-            </h2>
-            
-<div className="grid grid-cols-3 gap-4 pr-24">
-    <div className="text-center">
+            </h2>            
+      <div className="flex justify-around">
+        <div className="text-center">
         <div className="text-4xl font-mont font-bold bg-gradient-to-r from-[#6E51E0] to-[#8A63FFB2] bg-clip-text text-transparent">200+</div>
         <div className="text-gray-600">People</div>
     </div>
@@ -123,26 +146,29 @@ const About = () => {
 </div>
             
           {/* Right: Description */}
-          <div>
-            <span className="text-2xl text-[#8A63FF] font-mont font-bold mb-4 block">Nexora</span>
+          <div className="w-[40%] px-10">
+            <div className="w-[203px]">
+            <span className="text-3xl text-[#8A63FF] font-mont font-bold mb-4  flex justify-between">nexora <span> <img src={group} alt="R image"/></span></span>
+
+            </div>
             <p className="text-lg text-gray-600  font-mont leading-relaxed">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
           </div>
-        </div>
+        {/* </div> */}
       </section>
       {/* Achievements Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20  bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-mont font-medium text-gray-900 pr-[78%] mb-4">Achievements</h2>
-            <p className="text-xl text-gray-600 pr-[10%] max mb-">
-              Our commitment to excellence has led us to achieve significant milestones along our journey. Here are some of our notable
+            <p className="text-l text-gray-600 pr-48">
+              Our commitment to excellence has led us to achieve significant milestones along our journey. Here are some of our notable Achievements.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="flex flex-col items-start space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 ml-12 gap-y-20">
+            <div className="flex flex-col items-start space-y-4 w-[490px]">
               <div className="w-11 h-11 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
 <img src={trust}/>              </div>
               <div>
@@ -150,7 +176,7 @@ const About = () => {
                 <p className="text-gray-600">Lorem ipsum dolor sit amet consectetur. Nibh nisl ornare blandit id eu cursus sagittis molestie.</p>
               </div>
             </div>
-            <div className="flex flex-col items-start space-y-4">
+            <div className="flex flex-col items-start space-y-4  w-[490px]">
               <div className="w-11 h-11 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
 <img src={award}/>              </div>  
               <div>
@@ -158,7 +184,7 @@ const About = () => {
                 <p className="text-gray-600">Lorem ipsum dolor sit amet consectetur. Lorem augue imperdiet ac tellus sapien.</p>
               </div>
             </div>
-            <div className="flex flex-col items-start space-y-4">
+            <div className="flex flex-col items-start space-y-4  w-[490px]">
               <div className="w-11 h-11 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
 <img src={positive}/>              </div>
               <div>
@@ -166,7 +192,7 @@ const About = () => {
                 <p className="text-gray-600">Lorem ipsum dolor sit amet consectetur. Aliquam ac vulputate duis sit orci non nec.</p>
               </div>
             </div>
-            <div className="flex flex-col items-start space-y-4">
+            <div className="flex flex-col items-start space-y-4  w-[490px]">
               <div className="w-11 h-11 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
 <img src={indus}/>              </div>
               <div>
@@ -183,7 +209,7 @@ const About = () => {
       {/* Stats Section */}
       <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
-          <div className="flex justify-center lg:grid-cols-4 gap-10 bg-white p-6 border border-gray ">
+          <div className="flex justify-center lg:grid-cols-4 gap-10 bg-white p-6 ">
             {stats.map((stat, index) => (
               <div key={index} className="text-center  w-1/3 ">
                 <div className="text-4xl lg:text-5xl font-mont font-medium  text-center pl-6 text-[#6E51E0] mb-2">

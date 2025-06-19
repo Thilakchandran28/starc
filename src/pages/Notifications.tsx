@@ -40,24 +40,27 @@ const Notifications = () => {
   };
 
   return (
-    <div className=''>
+    <div className='justify-center align-top '>
         <Navbar/>
-    <div className="m-4 p-6 pb-36 max-w-3xl mx-auto">
-      <h1 className="text-4xl font-bold font-mont mb-6 pt-7 pb-5">Notifications</h1>
+        <div className=' justify-items-center my-14'>
+          <h1 className="font-semibold 3xl:pr-[40%] 3xl:text-5xl lg:pr-[47%] lg:text-3xl ">Notifications</h1> 
+        </div>
+  <div className='justify-items-center'>
+    <div className="justify-items-center 3xl:px-28 3xl:w-[67%] lg:w-[60%]">
       <div className="space-y-4">
         {notifications.map((notification) => (
-          <div key={notification.id} className="flex items-start border-b pb-4">
+          <div key={notification.id} className="flex items-start 3xl:pb-4">
             <img
               src={user}
               alt="user"
-              className="w-12 h-12 rounded-full mr-4"
+              className="3xl:w-[75px] rounded-full mr-4 lg:w-[55px]"
             />
             <div className="flex-1">
-              <p className="text-sm text-gray-700">{notification.text}</p>
-              <p className="text-xs text-gray-500 mt-2">{notification.date}</p>
+              <p className="font-medium 3xl:text-lg text-gray-700 3xl:pb-1 lg:text-base">{notification.text}</p>
+              <p className="3xl:text-base text-gray-500 mt-2 3xl:pb-2 lg:text-[13px]">{notification.date}</p>
             </div>
             <button
-              className="text-3xl pl-4 pt-2 font-light text-gray-600 ml-4 hover:text-red-500"
+              className="font-light text-gray-600 hover:text-red-500 3xl:text-5xl pl-4 pt-2 ml-4 lg:text-3xl"
               onClick={() => handleDelete(notification.id)}
             >
               ×
@@ -65,11 +68,12 @@ const Notifications = () => {
           </div>
         ))}
         {notifications.length === 0 && (
-          <p className="text-center text-gray-400">No notifications left</p>
+          <p className="text-center text-gray-400 3xl:text-4xl">No notifications left</p>
         )}
       </div>
     </div>
-    <div className='flex justify-center'>
+    </div>
+    <div className='flex justify-center pt-10'>
     <PurpleBox/>
 
     </div>

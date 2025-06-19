@@ -28,8 +28,8 @@ const PurpleBox: React.FC = () => {
 
         {/* Input and Button */}
         <div className="flex justify-center items-center gap-4">
-          <div className="flex items-center bg-white text-purple-600 rounded-full px-4 py-2 shadow-md">
-            <Mail className="w-5 h-5 mr-2 text-purple-600" />
+          <div className="flex items-center bg-white text-gray-600 rounded-full px-4 py-2 shadow-md w-[50%]">
+            <Mail className="w-5 h-5 mr-2  " />
             <input
               type="email"
               placeholder="Your mail address"
