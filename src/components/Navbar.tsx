@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ArrowRight, LogOut, Bell, Heart, User } from "lucide-react";
@@ -88,7 +87,7 @@ const Navbar = () => {
               </div>
             ) : (
               <>
-                <Link to="/login">
+                <Link to="/signup">
     <Button className="bg-white border-2 hover:bg-gray-300 text-[#8A63FF] font-mont font-medium rounded-full px-6 py-2 flex items-center">
       Log In
     </Button>
