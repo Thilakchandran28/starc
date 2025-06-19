@@ -96,6 +96,17 @@ const WallOfLove: React.FC = () => {
                     <p className="font-semibold text-black flex flex-col">{testimonial.name} <span className='text-[#82828299] text-sm'>@totallyrealperson</span></p>
                   
                   </div>
+                
+                 </div>
+                </div>
+                {/* <svg
+                  className="w-6 h-6 text-blue-400"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.13l-6.17-8.084-4.717 8.084H1.858l7.228-8.26L1.233 2.25H4.53L9.58 9.493L13.24 2.25h4.904zM10.875 17.56L9.697 15.656l-5.617-8.73H5.85L11.5 15.424l1.178 1.906l5.617 8.73h-1.18z" />
+                </svg> */}
                 {/* <img  src={vector}/> */}
               </div>
               <p className="text-black font-mont font-medium leading-relaxed lg:text-xs xl:text-sm 2xl:text-lg 3xl:text-xl flex-grow mb-4">{testimonial.content}</p>
