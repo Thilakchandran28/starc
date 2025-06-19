@@ -646,22 +646,25 @@ export default function CategoryTabsPage() {
           {/* Our Courses Title and Tabs */}
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-gray-800 mb-4">Our Courses</h1>
-            <div className="flex items-center justify-start space-x-6 border-b border-gray-200">
+            <div className="flex items-center justify-between border-b border-gray-200">
               {categories.map((category) => (
                 <button
                   key={category.id}
                   onClick={() => setSelected(category.id)}
-                  className={`relative flex  items-center space-x-2 text-sm font-medium  pr- py-2 px-4 transition-colors ${selected === category.id
-                      ? "text-purple-600"
-                      : "text-gray-500 hover:text-purple-600"
+                  className={`relative flex  items-center space-x-[10%] lg:text-lg 2xl:text-xl font-medium   py-2 px-4 transition-colors ${selected === category.id
+                    ? "text-purple-600 bg-gradient-to-b from-transparent from-49.76% via-transparent to-[rgba(138,99,255,0.24)] "
+                    : "text-gray-500 hover:text-purple-600"
                     }`}
                 >
                   <span>{category.icon} </span>
                   <span>{category.label}</span>
                   <span
-                    className={`absolute bottom-0 left-0 w-full h-0.5 transition-all duration-300 ${selected === category.id
-                        ? "bg-gradient-to-r from-purple-400 to-purple-600"
-                        : "bg-transparent"
+
+                    // background: linear-gradient(180deg, rgba(230, 240, 255, 0) 49.76%, rgba(138, 99, 255, 0.24) 100%);
+
+                    className={`absolute bottom-0 left-[-13px] ml-0 w-full h-0.5 transition-all duration-300 ${selected === category.id
+                      ? "bg-gradient-to-r from-purple-400 to-purple-600"
+                      : "bg-transparent"
                       }`}
                   />
                 </button>

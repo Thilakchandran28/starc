@@ -74,7 +74,7 @@ const HowItWorks = () => {
 
         <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
           {/* Left Side Steps Container */}
-          <div className="w-full lg:w-1/2 relative">
+          <div className="w-full lg:w-1/2 relative bg-red-400">
             <img src={Purplegradient}
               className='inset-0 absolute' />
             {/* Scrollable container for steps */}
@@ -123,7 +123,7 @@ const HowItWorks = () => {
 
                   {/* Card Content */}
                   <div
-                    className={`flex items-center gap-4 px-6 py-6 w-[475px] min-h-[105px] rounded-[20px] border border-gray-200 bg-white shadow-lg relative z-10 transition-transform duration-300 hover:scale-[1.02] ${index % 2 === 0 ? 'translate-x-[60px]' : '-translate-x-[60px]'}`}
+                    className={`flex items-center gap-4 px-6 py-6 w-[40%] h-[20%] rounded-[20px] border border-gray-200 bg-white shadow-lg relative z-10 transition-transform duration-300 hover:scale-[1.02] ${index % 2 === 0 ? 'translate-x-[60px]' : '-translate-x-[60px]'}`}
                   >
                     <div className={`${step.bgColor} rounded-full p-2 shadow`}>
                       {step.icon}
@@ -139,50 +139,50 @@ const HowItWorks = () => {
           </div>
 
           {/* Right Side Image + Avatars */}
-          <div className="w-full lg:w-1/2 flex flex-col justify-between items-center lg:items-end p-4 lg:p-0"> {/* Added some padding for small screens */}
-            <div className="grid grid-cols-2 gap-4 w-full max-w-lg lg:max-w-none "> {/* max-w-lg lg:max-w-none Added max-w-lg for better responsiveness */}
-              <div>
-                <img
-                  src={girlpic}
-                  alt="Student working"
-                  className="object-cover w-full h-[50%] rounded-[20px]"
-                />
+          {/* <div className="w-full lg:w-1/2 flex flex-col justify-between items-center lg:items-end p-4 lg:p-0"> // Added some padding for small screens 
+          <div className="grid grid-cols-2 gap-4 w-full max-w-lg lg:max-w-none "> // max-w-lg lg:max-w-none Added max-w-lg for better responsiveness 
+            <div>
+              <img
+                src={girlpic}
+                alt="Student working"
+                className="object-cover w-full h-[50%] rounded-[20px]"
+              />
 
-              </div>
+            </div>
 
 
-              <div className="flex flex-col justify-between items-center lg:items-end">
-                <div className='whitebox w-fit z-10 pr-96 absolute pt-[430px]'>
-                  <div className="bg-white/90 backdrop-blur-md rounded-xl p-4 flex items-center gap-3 shadow-md w-fit ">
-                    <div className="flex -space-x-2">
-                      {[avatars, chicks, boyz].map((src, index) => (
-                        <img
-                          key={index}
-                          src={src}
-                          alt={`User ${index + 1}`}
-                          className="lg:w-20 lg:h-20 xl:w-20 xl:h-20 2xl:w-20 2xl:h-20 rounded-full border-2 border-white object-cover "
-                        />
-                      ))}
-                    </div>
-                    <div className="text-sm font-semibold text-blue-600">
-                      10K+<br /> <span className="text-gray-700 font-normal">Job Seekers</span>
-                    </div>
+            <div className="flex flex-col justify-between items-center lg:items-end">
+              <div className='whitebox w-fit z-10 pr-96 absolute pt-[430px]'>
+                <div className="bg-white/90 backdrop-blur-md rounded-xl p-4 flex items-center gap-3 shadow-md w-fit ">
+                  <div className="flex -space-x-2">
+                    {[avatars, chicks, boyz].map((src, index) => (
+                      <img
+                        key={index}
+                        src={src}
+                        alt={`User ${index + 1}`}
+                        className="lg:w-20 lg:h-20 xl:w-20 xl:h-20 2xl:w-20 2xl:h-20 rounded-full border-2 border-white object-cover "
+                      />
+                    ))}
+                  </div>
+                  <div className="text-sm font-semibold text-blue-600">
+                    10K+<br /> <span className="text-gray-700 font-normal">Job Seekers</span>
                   </div>
                 </div>
-
-                <img
-                  src={girlpic} // You might want to use a different image for visual variety here
-                  alt="Student 2"
-                  className="object-cover w-full h-[80%] rounded-[20px] mb-4 z-0 relative"
-                />
-
-
               </div>
+
+              <img
+                src={girlpic}
+                alt="Student 2"
+                className="object-cover w-full h-[80%] rounded-[20px] mb-4 z-0 relative"
+              />
+
+
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
-    </section>
+    </div>
+    </section >
   );
 };
 
