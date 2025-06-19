@@ -48,15 +48,15 @@ const FAQ: React.FC = () => {
 
   return (
     <div className="min-h-screen  flex items-center justify-center py-12 px-4">
-      <div className="max-w-3xl w-full flex flex-col items-center">
+      <div className=" w-[70%] flex flex-col items-center">
         <button
           onClick={toggleFAQSection}
           className="flex items-center justify-center space-x-2 w-32 h-12 bg-purple-500 rounded-2xl text-white text-sm font-semibold hover:bg-purple-600 transition-colors mb-4"
         >
-          <img src={faqicons} style={{width:"18px",height:"18px"}}/>
+          <img src={faqicons} className='lg:w-6 lg:h-6 xl:w-8 xl:h-8 2xl:w-9 2xl:h-9'/>
           <span>FAQS</span>
         </button>
-        <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">
+        <h2 className="lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-gray-900 mb-8 text-center">
           Frequently Asked Questions
         </h2>
         {isFAQVisible && (
@@ -66,15 +66,15 @@ const FAQ: React.FC = () => {
                 key={index}
                 className={`border rounded-lg overflow-hidden transition-all ${
                   openIndex === index
-                    ? 'border-purple-500 shadow-md shadow-purple-200'
+                    ? 'border-purple-500 shadow-md shadow-purple-200 '
                     : 'border-gray-200'
                 }`}
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full flex justify-between items-center px-6 py-4 text-left bg-white hover:bg-gray-50 transition-colors"
+                  className="w-full flex justify-between items-center px-6 py-2 text-left bg-white transition-colors"
                 >
-                  <span className="text-lg font-medium text-gray-900">
+                  <span className="lg:text-base xl:text-lg 2xl:text-xl font-medium text-gray-900">
                     {faq.question}
                   </span>
                   <span className="flex items-center justify-center w-8 h-8  text-[#8F8F8F] text-2xl">
@@ -82,7 +82,7 @@ const FAQ: React.FC = () => {
                   </span>
                 </button>
                 {openIndex === index && (
-                  <div className="px-6 py-4 bg-white text-gray-700">
+                  <div className="px-6 py-4 text-gray-700 lg:text-base xl:text-lg 2xl:text-xl">
                     {faq.answer}
                   </div>
                 )}

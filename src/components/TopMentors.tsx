@@ -28,7 +28,7 @@ const mentors: Mentor[] = [
     experience: "10 Years",
     rating: 5,
     reviews: 200,
-    image: ""
+    image: "https://via.placeholder.com/150"
   },
   {
     id: 2,
@@ -37,7 +37,7 @@ const mentors: Mentor[] = [
     experience: "7 Years",
     rating: 5,
     reviews: 200,
-    image: ""
+    image: "https://via.placeholder.com/150"
   },
   {
     id: 3,
@@ -46,7 +46,7 @@ const mentors: Mentor[] = [
     experience: "5 Years",
     rating: 5,
     reviews: 200,
-    image: "https://images.unsplash.com/photo-1517841903202-8c31b3217a2b?w=300&h=300&fit=crop"
+    image: "https://via.placeholder.com/150"
   }
 ];
 
@@ -102,11 +102,11 @@ const CombinedSections: React.FC = () => {
   return (
     <div className=" font-mont 2">
       {/* --- Top Mentors Section --- */}
-      <section className="py-16">
-        <div className="w-[80%] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="lg:py-10 xl:py-16 2xl:py-20 ">
+        <div className="w-[70%] h-[60vh] mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Header Section */}
-          <div className="mb-12">
-            <h2 className="text-4xl font-semibold text-gray-900 mb-4">
+          <div className="mb-12 h-[20%]">
+            <h2 className="lg:text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl font-semibold text-gray-900 mb-4">
               Our Top Mentor At Starc
             </h2>
             <p className="text-base text-gray-500 max-w-3xl mx-auto leading-relaxed">
@@ -115,19 +115,21 @@ const CombinedSections: React.FC = () => {
           </div>
 
           {/* Mentor Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
             {mentors.map((mentor) => (
               <div
                 key={mentor.id}
-                className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
+                className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden w-[100%] h-[100%] "
               >
-                <img
-                  src={mentor.image}
-                  alt={mentor.name}
-                  className="w-full h-64 object-contain rounded-t-xl bg-black"
-                />
+                <div>
+                  <img
+                    src={mentor.image}
+                    alt={mentor.name}
+                    className=" w-full lg:h-72 xl:h-80  2xl:h-72   object-contain rounded-xl bg-black"
+                  />
+                </div>
                 <div className="p-6 text-start">
-                  <h3 className="text-xl font-mont font-bold text-gray-900 mb-1">{mentor.name}</h3>
+                  <h3 className="lg:text-base xl:text-xl 2xl:text-2xl 3xl:text-4xl font-mont font-bold text-gray-900 mb-1">{mentor.name}</h3>
                   <p className="text-sm text-gray-500 mb-2  ">{mentor.specialization}</p>
                   <div className=" gap-2 text-gray-600 text-sm mb-3">
                     <Clock className="w-4 h-4 text-gray-500" />
@@ -145,7 +147,7 @@ const CombinedSections: React.FC = () => {
       </section>
 
       {/* Spacer or separator if needed */}
-      <div className="py-8"></div>
+      <div className="lg:py-8 2xl:py-0"></div>
 
       {/* --- FAQ Section (placeholder for future addition) --- */}
     </div>

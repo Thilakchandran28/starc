@@ -140,7 +140,7 @@ const HowItWorks = () => {
 
           {/* Right Side Image + Avatars */}
           <div className="w-full lg:w-1/2 flex flex-col justify-between items-center lg:items-end p-4 lg:p-0"> {/* Added some padding for small screens */}
-            <div className="grid grid-cols-2 gap-4 w-full max-w-lg lg:max-w-none"> {/* Added max-w-lg for better responsiveness */}
+            <div className="grid grid-cols-2 gap-4 w-full max-w-lg lg:max-w-none "> {/* max-w-lg lg:max-w-none Added max-w-lg for better responsiveness */}
               <div>
                 <img
                   src={girlpic}
