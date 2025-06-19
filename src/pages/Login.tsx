@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Eye, EyeOff } from "lucide-react";
 import { LoginSocialGoogle } from "reactjs-social-login";
+import ForgotPassword from "./ForgotPassword";
 
 interface LoginFormProps {
   email: string;
@@ -17,6 +18,7 @@ interface LoginFormProps {
   showPassword: boolean;
   setShowPassword: (value: boolean) => void;
   handleLogin: (e: React.FormEvent<HTMLFormElement>) => void;
+  setView: (view: "login" | "forgot") => void;
 }
 
 const LoginForm: React.FC<LoginFormProps> = ({
@@ -31,6 +33,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
   showPassword,
   setShowPassword,
   handleLogin,
+  setView,
 }) => {
   return (
     <div className="w-full h-screen flex items-center justify-center">
@@ -43,20 +46,14 @@ const LoginForm: React.FC<LoginFormProps> = ({
             <p className="text-sm text-gray-600 mb-2 pb-6 font-mont">
               Sign in to discover 500+ courses waiting for your learning
             </p>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-700 mb-1 font-mont"
-            >
+            <label className="block text-sm font-medium text-gray-700 mb-1 font-mont">
               Email address*
             </label>
             <Input
-              id="email"
               type="text"
               placeholder="john@gmail.com"
               value={email}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                setEmail(e.target.value)
-              }
+              onChange={(e) => setEmail(e.target.value)}
               className={`h-10 px-3 rounded-lg border ${
                 isEmailValid ? "border-gray-300" : "border-red-500"
               } focus:ring-purple-500 focus:border-purple-500 text-sm`}
@@ -67,22 +64,17 @@ const LoginForm: React.FC<LoginFormProps> = ({
               </p>
             )}
           </div>
+
           <div>
-            <label
-              htmlFor="password"
-              className="block text-sm font-medium text-gray-700 mb-1 font-mont"
-            >
+            <label className="block text-sm font-medium text-gray-700 mb-1 font-mont">
               Password*
             </label>
             <div className="relative">
               <Input
-                id="password"
                 type={showPassword ? "text" : "password"}
                 placeholder="Enter password"
                 value={password}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setPassword(e.target.value)
-                }
+                onChange={(e) => setPassword(e.target.value)}
                 className={`h-10 px-3 rounded-lg border ${
                   isPasswordValid ? "border-gray-300" : "border-red-500"
                 } focus:ring-purple-500 focus:border-purple-500 pr-10 text-sm`}
@@ -101,29 +93,34 @@ const LoginForm: React.FC<LoginFormProps> = ({
             </div>
             {!isPasswordValid && (
               <p className="text-red-500 text-xs mt-1 font-mont">
-                Password must be at least 8 characters with a letter and a number
+                Password must be at least 8 characters with a letter and a
+                number
               </p>
             )}
             <div className="text-right mt-1">
-              <Link
-                to="/forgot-password"
-                className="text-xs text-black font-medium font-mont"
+              <button
+                type="button"
+                onClick={() => setView("forgot")}
+                className="text-xs text-black font-medium font-mont underline"
               >
                 Forgot password?
-              </Link>
+              </button>
             </div>
           </div>
+
           <Button
             style={{ backgroundColor: "#8A63FF" }}
             className="w-full h-10 text-white rounded-lg text-sm font-mont font-semibold"
           >
             Login
           </Button>
+
           <div className="flex items-center justify-center my-2">
             <div className="flex-1 h-px bg-gray-200 max-w-[140px]"></div>
             <span className="text-gray-300 text-xs mx-1.5 font-mont">Or</span>
             <div className="flex-1 h-px bg-gray-200 max-w-[140px]"></div>
           </div>
+
           <div className="flex space-x-2">
             <LoginSocialGoogle
               client_id={
@@ -163,22 +160,20 @@ const LoginForm: React.FC<LoginFormProps> = ({
                 Sign up with Google
               </Button>
             </LoginSocialGoogle>
-            <Link to="/">
-              <Button
-                variant="outline"
-                className="w-30 h-10 border border-gray-300 text-gray-700 rounded-sm text-xs font-semibold font-mont"
-              >
-                Continue as Guest
-              </Button>
-            </Link>
+            <Button
+              variant="outline"
+              className="w-30 h-10 border border-gray-300 text-gray-700 rounded-sm text-xs font-semibold font-mont"
+            >
+              Continue as Guest
+            </Button>
           </div>
         </form>
         <div className="mt-8 text-left">
           <p className="text-black text-sm font-bold font-mont pt-3">
             Don’t have an account?{" "}
-            <Link to="/signup" className="text-black underline font-bold">
+            <span className="text-black underline font-bold cursor-pointer">
               Sign up
-            </Link>
+            </span>
           </p>
         </div>
       </div>
@@ -187,6 +182,8 @@ const LoginForm: React.FC<LoginFormProps> = ({
 };
 
 const Login: React.FC = () => {
+  const [view, setView] = useState<"login" | "forgot">("login");
+
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -211,6 +208,10 @@ const Login: React.FC = () => {
     }
   };
 
+  if (view === "forgot") {
+    return <ForgotPassword />;
+  }
+
   return (
     <LoginForm
       email={email}
@@ -224,6 +225,7 @@ const Login: React.FC = () => {
       showPassword={showPassword}
       setShowPassword={setShowPassword}
       handleLogin={handleLogin}
+      setView={setView}
     />
   );
 };

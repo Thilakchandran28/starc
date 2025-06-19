@@ -6,7 +6,7 @@ import { LoginSocialGoogle } from "reactjs-social-login";
 
 const ResetLinkSent: React.FC = () => {
   return (
-    <div className="w-screen h-screen pl-24 pb-6 flex items-center justify-center">
+    <div className="flex items-center justify-center">
       <div className="w-full h-screen p-6 flex items-center justify-center">
         <div className="w-full max-w-xs">
           <h2 className="text-2xl font-bold text-gray-900 mb-2 font-mont">

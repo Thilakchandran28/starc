@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { LoginSocialGoogle } from "reactjs-social-login";
+import ResetLinkSent from "./PwdRstSentpage";
 
 interface ForgotPasswordFormProps {
   email: string;
@@ -20,7 +21,7 @@ const ForgotPasswordForm: React.FC<ForgotPasswordFormProps> = ({
   handleSubmit,
 }) => {
   return (
-    <div className="w-screen h-screen pl-24 pb-6 flex items-center justify-center">
+    <div className="flex items-center justify-center">
       <div className="w-full h-screen p-6 flex items-center justify-center">
         <div className="w-full max-w-xs">
           <h2 className="text-2xl font-bold text-gray-900 mb-2 font-mont">
@@ -57,6 +58,7 @@ const ForgotPasswordForm: React.FC<ForgotPasswordFormProps> = ({
               )}
             </div>
             <Button
+              type="submit"
               style={{ backgroundColor: "#8A63FF" }}
               className="w-full h-10 text-white rounded-lg text-sm font-mont font-semibold"
             >
@@ -128,9 +130,10 @@ const ForgotPasswordForm: React.FC<ForgotPasswordFormProps> = ({
 };
 
 const ForgotPassword: React.FC = () => {
+  const [view, setView] = useState<"form" | "reset">("form");
+
   const [email, setEmail] = useState<string>("");
   const [isEmailValid, setIsEmailValid] = useState<boolean>(true);
-  const navigate = useNavigate();
 
   const emailRegex: RegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -140,9 +143,13 @@ const ForgotPassword: React.FC = () => {
     setIsEmailValid(validEmail);
 
     if (validEmail) {
-      navigate("/reset-link-sent");
+      setView("reset");
     }
   };
+
+  if (view === "reset") {
+    return <ResetLinkSent />;
+  }
 
   return (
     <ForgotPasswordForm
