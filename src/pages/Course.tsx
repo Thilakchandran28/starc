@@ -1028,88 +1028,23 @@ const Course: React.FC = () => {
       />
 
       {/* Category and Course Cards Section */}
-      <section className="flex justify-center py-8 ">
-        <div className="w-1/4">
-          {/* <div className="max-w-xs mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-bold mb-4 text-gray-900">
-              Categories
-            </h2>
-            <ul className="space-y-2 h-96 overflow-y-auto">
-              <li
-                className={`cursor-pointer ${
-                  selectedCategory === "all"
-                    ? "text-[#7C3AED] font-semibold"
-                    : "text-gray-900"
-                } hover:text-[#7C3AED]`}
-                onClick={() => filterCards("all")}
-              >
-                All Categories
-              </li>
-              <li
-                className={`cursor-pointer ${
-                  selectedCategory === "development"
-                    ? "text-[#7C3AED] font-semibold"
-                    : "text-gray-900"
-                } hover:text-[#7C3AED]`}
-                onClick={() => filterCards("development")}
-              >
-                Development
-              </li>
-              <li
-                className={`cursor-pointer ${
-                  selectedCategory === "design"
-                    ? "text-[#7C3AED] font-semibold"
-                    : "text-gray-900"
-                } hover:text-[#7C3AED]`}
-                onClick={() => filterCards("design")}
-              >
-                Design
-              </li>
-              <li
-                className={`cursor-pointer ${
-                  selectedCategory === "marketing"
-                    ? "text-[#7C3AED] font-semibold"
-                    : "text-gray-900"
-                } hover:text-[#7C3AED]`}
-                onClick={() => filterCards("marketing")}
-              >
-                Marketing
-              </li>
-              <li
-                className={`cursor-pointer ${
-                  selectedCategory === "business"
-                    ? "text-[#7C3AED] font-semibold"
-                    : "text-gray-900"
-                } hover:text-[#7C3AED]`}
-                onClick={() => filterCards("business")}
-              >
-                Business
-              </li>
-              <li
-                className={`cursor-pointer ${
-                  selectedCategory === "photography"
-                    ? "text-[#7C3AED] font-semibold"
-                    : "text-gray-900"
-                } hover:text-[#7C3AED]`}
-                onClick={() => filterCards("photography")}
-              >
-                Photography
-              </li>
-            </ul> */}
-          <section className="flex  2xl:w-[70%] 2xl:h-[100%] 2xl:">
-            <div className="w-1/2">
+     <div className="flex justify-center">
+       <section className="flex justify-center py-8 mb-16 h-screen lg-[90%] xl:w-[90%]">
+        {/* <div className="w-1/4">           */}
+          <section className="flex lg:w-[25%]  xl:w-[25%] 2xl:w-[25%] 3xl:w-[25%] overflow-y-auto px-2" style={{scrollbarWidth:"thin"}}>
+            <div className="w-full">
               <div className="max-w-c mx-auto px-4 sm:px-6 lg:px-10">
                 <h2 className="text-2xl font-mont font-bold mb-4 py-2 text-gray-800 text-center">
                   Categories
                 </h2>
-                <ul className="w-64 h-96 overflow-y-auto pr-2 border-r-2 custom-scrollbar">
+                <ul className="w-full h-full overflow-y-auto pr-2 border-r-2 custom-scrollbar">
                   {categories.map((category, index) => (
                     <li
                       key={index}
                       onClick={() => setActiveIndex(index)}
-                      className={`py-4 px-4 text-sm cursor-pointer items-start w-[95%] border-gray-200 border-b-[0.1px] transition-all duration-200 ${
+                      className={`py-4 px-4 lg:text-[10px] xl:text-sm 2xl:text-base 3xl:text-lg cursor-pointer items-start w-[95%] border-gray-200 border-b-[0.1px] transition-all duration-200 ${
                         index === activeIndex
-                          ? "text-[#7C3AED] font-semibold "
+                          ? "text-[#7C3AED] font-semibold"
                           : "text-gray-800"
                       }`}
                     >
@@ -1120,24 +1055,26 @@ const Course: React.FC = () => {
               </div>
             </div>
           </section>
-        </div>
-
-        <div className=" w-50 py-10 lg:p-31  ">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-6 2xl:grid-cols-3 2xl:w-[100%]">
-              {filteredCourses.map((course, index) => (
-                <div
+          <div className="flex justify-center flex-wrap lg:w-[80%]  xl:w-[85%] 2xl:w-[80%] 3xl:w-[80%] px-8 overflow-auto" style={{scrollbarWidth:'none'}}>
+              {filteredCourses.map((course, index) => ( 
+                <div  
                   key={index}
                   onClick={() => navigate("/carddetail", { state: { course } })}
-                  className="cursor-pointer "
+                  className="cursor-pointer xl:[32%] xl:w-[32%] 2xl:w-[32%] lg:mx-2 xl:mx-1 2xl:mx-1 3xl:w-[32%] 3xl:mx-2 "
                 >
                   <Recard course={course} key={index} />
                 </div>
               ))}
-            </div>
-          </div>
+            {/* </div> */}
         </div>
+
+        {/* <div className=" w-50 py-10 lg:p-31 bg-blue-400  "> */}
+          {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-yellow-500"> */}
+            
+          {/* </div> */}
+        {/* </div> */}
       </section>
+     </div>
 
       {/* Join Us Section */}
       {/* <section className="py-20 bg-white">
