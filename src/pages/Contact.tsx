@@ -15,28 +15,28 @@ const Contact = () => {
         <Navbar />
       </div>
       {/* Hero Section */}
-      <section className="relative from-purple-50 to-white overflow-hidden 2xl:h-[708px] 2xl:border border-green-500 ">
+      <section className="relative from-purple-50 to-white overflow-hidden 2xl:h-[708px]  3xl:h-[738px] ">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           {/* Optional: Subtle noise texture or pattern */}
           <div className="w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgeT0iMSIgcj0iMSIgZmlsbD0iIzAwMDAwMDMzIi8+PC9zdmc+')] bg-repeat"></div>
         </div>
-        <div className="relative z-10 flex flex-col justify-center items-center xl:pt-5 2xl:pt-16">
-          <div className="xl:w-[70%] xl:h-[500px] 2xl:w-[1028px] 2xl:h-[764px] flex flex-col justify-center border border-blue-500 ">
+        <div className="relative z-10 flex flex-col justify-center items-center lg:pt-5 xl:pt-5 2xl:pt-5 3xl:pt-10">
+          <div className="lg:w-[628px] lg:h-[424px] xl:w-[728px] xl:h-[524px] 2xl:w-[828px] 2xl:h-[664px] 3xl:w-[1028px] 3xl:h-[764px] flex flex-col justify-center border border-blue-500 ">
             <div className="flex justify-center w-full">
               <img
                 src={heros}
                 alt="Hero"
-                className="xl:w-[50%] 2xl:w-[50%] 3xl:w-[50%] absolute top-[10px]  2xl:pt-16"
+                className="lg:w-[60%] xl:w-[56%] 2xl:w-[53%] 3xl:w-[50%] absolute top-[10px] lg:pt-6 xl:pt-12  2xl:pt-10 3xl:pt-8"
               />
             </div>
-            <div className="max-w-4xl flex flex-col justify-center items-center mx-auto xl:mt-20  text-center xl:h-[160px] xl:border border-red-400 2xl:h-[223px] 2xl:w-[50%] 3xl:w-[100%] ">
-              <span className="xl:w-[100px] xl:h-[25px] 2xl:w-[123px] 2xl:h-[35px] flex justify-center items-center bg-purple-600 text-white text-xs font-semibold  rounded-full mb-2 ">
+            <div className=" flex flex-col justify-center items-center mx-auto lg:mt-32 xl:mt-36 2xl:mt-32 3xl:mt-20 text-center lg:h-[160px] xl:h-[160px]  2xl:h-[223px] xl:w-[100%] 2xl:w-[100%] 3xl:w-[100%] ">
+              <span className="lg:w-[100px] lg:h-[20px] xl:w-[115px] xl:h-[25px] 2xl:w-[120px] 2xl:h-[32px] 3xl:w-[123px] 3xl:h-[35px]  flex justify-center items-center bg-purple-600 text-white lg:text-[7px] xl:text-[8px]  2xl:text-[10px] 3xl:text-xs font-semibold  rounded-full mb-2 ">
                 STARC COURSE
               </span>
-              <h1 className="xl:text-4xl 2xl:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 ">
+              <h1 className=" xl:text-4xl 2xl:text-5xl lg:text-3xl font-bold text-gray-900 mb-4 ">
                 Contact Us
               </h1>
-              <p className="xl:text-sm 2xl:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto ">
+              <p className="lg:text-[12px] xl:text-sm 2xl:text-base 3xl:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto ">
                 Lorem ipsum dolor sit amet consectetur. Arcu a sit commodo
                 tempor nulla blandit.
                 <br />
@@ -46,24 +46,27 @@ const Contact = () => {
           </div>
         </div>
       </section>
+
       {/* Contact Section */}
-      <section className="2xl:w-full flex justify-center border border-red-500">
-        <div className="2xl:w-[80%] flex justify-between p-10 border border-amber-700 -500">
+      <section className="w-full lg:h-[598px] xl:h-[698px] 2xl:h-[798px] 3xl:h-[878px] items-center flex justify-center">
+        <div className="flex w-full justify-around">
           {/* Left: Contact Info */}
-          <div className="xl:w-[40%] xl:mx-16 2xl:w-[558px]  2xl:h-[740px] 3xl:mx-10 border border-pink-500">
-            <p className="text-[#8A63FF] mb-5 xl:text-xs 2xl:text-sm">Starc</p>
-            <h2 className="2xl:text-5xl font-normal text-black mb-6">Contact Us</h2>
-            <p className="text-lg text-gray-600 mb-8 xl:text-base 2xl:text-lg">
+          <div className="lg:w-[370px] lg:h-[550px] xl:w-[398px] xl:h-[650px] xl:mx-16 2xl:w-[458px] 2xl:h-[700px] 3xl:w-[558px] 3xl:h-[740px]  3xl:mx-10 ">
+            <span className="2xl:w-[97px] 2xl:h-[20px]" ><p className="text-[#8A63FF] mb-5 lg:text-[10px] xl:text-xs 2xl:text-sm">Starc</p></span>
+            <h2 className="lg:text-2xl xl:text-3xl 2xl:text-5xl font-normal text-black mb-6">
+              Contact Us
+            </h2>
+            <p className="text-lg text-gray-600 mb-8 lg:text-sm xl:text-sm 2xl:text-lg">
               Lorem ipsum dolor sit amet consectetur. Elementum massa gravida
               ante iaculis diam nibh.
             </p>
 
-            <h3 className="text-2xl font-mont text-gray-900 mb-4">
+            <h3 className=" lg:texl-base xl:text-lg  2xl:text-xl 3xl:text-2xl font-mont text-gray-900 mb-4">
               How we can help
             </h3>
 
-            <ul className="space-y-4 text-gray-700 text-lg">
-              <li className="flex items-center gap-2 xl:text-base 2xl:text-lg">
+            <ul className="space-y-4 text-gray-700 text-lg  pl-5">
+              <li className="flex items-center gap-2 lg:text-[13px] xl:text-sm 2xl:text-base 3xl:text-lg">
                 <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#8A63FF]">
                   <svg
                     className="w-4 h-4 text-white"
@@ -81,7 +84,7 @@ const Contact = () => {
                 </span>{" "}
                 Lorem ipsum dolor sit amet consectetur.
               </li>
-              <li className="flex items-center gap-2 xl:text-base 2xl:text-lg">
+              <li className="flex items-center gap-2 lg:text-[13px] xl:text-sm 2xl:text-base 3xl:text-lg">
                 <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#8A63FF]">
                   <svg
                     className="w-4 h-4 text-white"
@@ -99,7 +102,7 @@ const Contact = () => {
                 </span>{" "}
                 Lorem ipsum dolor sit amet consectetur.
               </li>
-              <li className="flex items-center gap-2 xl:text-base 2xl:text-lg">
+              <li className="flex items-center gap-2 lg:text-[13px] xl:text-sm 2xl:text-base 3xl:text-lg">
                 <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#8A63FF]">
                   <svg
                     className="w-4 h-4 text-white"
@@ -119,18 +122,18 @@ const Contact = () => {
               </li>
             </ul>
 
-            <div className="mt-10 flex ">
-              <img src={contactProfie} alt="" />
+            <div className=" lg:mt-8 xl:mt-16 pl-2   flex ">
+              <img src={contactProfie} alt="" className="lg:h-10 lg:w-10 xl:h-12 xl:w-12 2xl:h-14 2xl:w-14 3xl:h-16 3xl:w-16"/>
               <div className="flex flex-col w-[50%]">
-                <p>Name</p>
-                <p>
-                  CEO Founderat <span className="text-blue-500">Starc</span>
+                <p className="lg:text-[13px] xl:text-sm 2xl:text-base 3xl:text-lg ">Name</p>
+                <p className="lg:text-[13px] xl:text-sm 2xl:text-base 3xl:text-lg">
+                  CEO Founder at <span className="text-blue-500">Starc</span>
                 </p>
               </div>
             </div>
 
-            <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Note</h3>
-            <p className="text-gray-600  xl:text-base 2xl:text-lg">
+            {/* <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pl-2">Note</h3> */}
+            <p className="text-gray-600 lg:text-[13px]  xl:text-sm 2xl:text-base 3xl:text-lg mt-12">
               Lorem ipsum dolor sit amet consectetur. Sed magna sit tortor nunc
               vel viverra tempor. Risus vitae a facilisi scelerisque malesuada.
               At enim viverra morbi risus in diam non.
@@ -138,30 +141,32 @@ const Contact = () => {
           </div>
 
           {/* Right: Contact Form */}
-          <div className="bg-white p-8 rounded-xl shadow-md xl:w-[26%] xl:mx-16 xl:h-[75%] 2xl:w-[35%] 2xl:h-[60%] 3xl:mx-10 border border-purple-500 3xl:w-[35%] 3xl:h-[60%] ">
+          <div className="lg:justify-start xl:justify-center flex flex-col justify-center items-center bg-white p-4 rounded-xl shadow-md lg:h-[288px] lg:w-[288px] xl:mx-16 xl:h-[350px] xl:w-[350px] 2xl:w-[458px] 2xl:h-[420px] 3xl:mx-10  3xl:w-[558px] 3xl:h-[498px] "> 
             {" "}
             {/* Changed bg-gray-50 to bg-white */}
-            <h3 className="xl:text-lg 2xl:text-2xl font-mont text-gray-900 mb-6">
-              Access the Starc Template:
-            </h3>{" "}
+            <div className="flex justify-start  lg:h-[35px] lg:w-[255px] xl:w-[300px] 2xl:w-[400px] 3xl:w-[496px]">
+              <h3 className="lg:text-xs xl:text-sm 2xl:text-lg 3xl:text-xl font-mont text-gray-900 mb-6">
+                Access the Starc Template:
+              </h3>{" "}
+            </div>
             {/* Updated title */}
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <form className= "lg:space-y-3  xl:space-y-6  lg:h-[187px] lg:w-[255px] xl:h-[237px] xl:w-[300px] 2xl:w-[400px] 2xl:h-[287px] 3xl:h-[337px] 3xl:w-[496px] ">
+              <div className="flex justify-center lg:h-[30px] xl:h-[40px] 2xl:h-[43px] 3xl:h-[47px] w-full ">
                 {" "}
                 {/* Added grid for side-by-side inputs */}
-                <div>
+                <div className="mx-1 w-[50%] h-full  rounded-xl">
                   <Input
                     type="text"
                     placeholder="Name"
-                    className="w-full p-3 xl:text-xs 2xl:text-lg border-none outline-none bg-[#F7F8FA] font-mont rounded-md focus:ring-2 focus:ring-purple-600 "
+                    className="w-full h-full p-3 lg:text-[10px] xl:text-xs 2xl:text-sm 3xl:text-lg border-none outline-none bg-[#F7F8FA] font-mont rounded-xl focus:ring-2 focus:ring-purple-600 "
                   />
                   {/* Removed Check icon */}
                 </div>
-                <div>
+                <div className="mx-1 w-[50%] h-full  rounded-xl">
                   <Input
                     type="email"
                     placeholder="Email"
-                    className="w-full p-3 xl:text-xs 2xl:text-lg border-none outline-none font-mont bg-[#F7F8FA] rounded-md focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                    className="w-full h-full p-3 lg:text-[10px] xl:text-xs 2xl:text-sm 3xl:text-lg border-none outline-none font-mont bg-[#F7F8FA] rounded-xl focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                   />
                   {/* Removed Check icon */}
                 </div>
@@ -169,62 +174,74 @@ const Contact = () => {
               <Textarea
                 placeholder="" // Placeholder in image looks like a general message or larger input area
                 rows={5}
-                className="w-full p-3 border-none outline-none font-mont bg-[#F7F8FA] rounded-md focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                className="w-full lg:h-[105px] xl:h-[105px] 2xl:h-[125px] 3xl:h-[146px] p-3 border-none outline-none font-mont bg-[#F7F8FA] rounded-xl focus:ring-2 focus:ring-purple-600 focus:border-transparent"
               ></Textarea>
               <Button
                 type="submit"
-                className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-md text-xs font-mont"
+                className="w-full lg:h-[22px] xl:h-[32px] 2xl:h-[43px] 3xl:h-[47px] bg-[#8A63FF] hover:bg-purple-700 text-white py-3 rounded-xl text-xs font-mont"
               >
                 Sign Up
               </Button>
-              <p className="text-sm font-mont text-gray-500 mt-4 text-center">
+              <p className="lg:text-[10px] xl:text-xs 2xl:text-sm font-mont text-gray-500 lg:mt-0 xl:mt-4 text-center">
                 Section can be added here (description or information){" "}
                 {/* Updated text */}
               </p>
             </form>
+            {/* </div> */}
           </div>
         </div>
       </section>
+
       {/* Contact Cards Section */}
-      <section className="py-16 w-full xl:h-[380px] 2xl:h-[420px] flex border border-pink-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:w-[80%] 2xl:w-[80%] flex items-center justify-between border border-teal-300">
-
-          <div className="bg-white p-1 border rounded-xl h-[256px] flex justify-center items-center xl:w-[30%] xl:h-[90%] 2xl:h-[90%] 2xl:w-[30%]">
+      <section className="py-16 w-full lg:h-[350px] xl:h-[380px] 2xl:h-[420px] flex ">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:w-[80%] 2xl:w-[80%] flex items-center justify-between ">
+          <div className="bg-white p-1 border rounded-xl h-[256px] flex justify-center items-center lg:w-[30%] lg:h-[90%] xl:w-[30%] xl:h-[90%] 2xl:h-[90%] 2xl:w-[30%]">
             <div className="bg-[#F7F8FA]  p-6 rounded-xl  text-center h-full w-full flex  flex-col justify-center items-center">
-            <div className="bg-purple-100 w-fit p-4 rounded-full inline-flex items-center justify-center mb-4">
-              <Mail className="w-8 h-8 text-purple-600" />
+              <div className="bg-purple-100 w-fit p-4 rounded-full inline-flex items-center justify-center mb-4">
+                <Mail className="lg:w-5 lg:h-8 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7 3xl:w-8 3xl:h-8  text-purple-600" />
+              </div>
+              <h3 className="lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl font-medium text-gray-900 mb-2">
+                Message Us
+              </h3>
+              <p className="text-gray-600 lg:text-sm xl:text-base 2xl:text-lg  3xl:text-xl">
+                hello@example.com
+              </p>
             </div>
-            <h3 className="`xl:text-sm 2xl:text-xl` font-medium text-gray-900 mb-2">Message Us</h3>
-            <p className="text-gray-600 xl:text-sm 2xl:text-xl">hello@example.com</p>
-          </div>
           </div>
 
-         <div className="bg-white p-1 border rounded-xl h-[256px] flex justify-center items-center xl:w-[30%] xl:h-[90%] 2xl:h-[90%] 2xl:w-[30%]">
-           <div className="bg-[#F7F8FA]  p-6 rounded-xl  text-center h-full w-full flex  flex-col justify-center items-center">
-            <div className="bg-purple-100 p-4 rounded-full inline-flex items-center justify-center mb-4">
-              <Phone className="w-8 h-8 text-purple-600" />
+          <div className="bg-white p-1 border rounded-xl h-[256px] flex justify-center items-center lg:w-[30%] lg:h-[90%] xl:w-[30%] xl:h-[90%] 2xl:h-[90%] 2xl:w-[30%]">
+            <div className="bg-[#F7F8FA]  p-6 rounded-xl  text-center h-full w-full flex  flex-col justify-center items-center">
+              <div className="bg-purple-100 p-4 rounded-full inline-flex items-center justify-center mb-4">
+                <Phone className="lg:w-5 lg:h-8 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7 3xl:w-8 3xl:h-8 text-purple-600" />
+              </div>
+              <h3 className="lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl font-medium text-gray-900 mb-2">
+                Call Us!
+              </h3>
+              <p className="text-gray-600 lg:text-sm xl:text-base 2xl:text-lg  3xl:text-xl">
+                000-000-0000
+              </p>
             </div>
-            <h3 className="xl:text-sm 2xl:text-xl font-bold text-gray-900 mb-2">Call Us!</h3>
-            <p className="text-gray-600 xl:text-sm 2xl:text-xl">000-000-0000</p>
           </div>
-         </div>
 
-         <div className="bg-white p-1 border rounded-xl h-[256px] flex justify-center items-center xl:w-[30%] xl:h-[90%] 2xl:h-[90%] 2xl:w-[30%]">
-           <div className="bg-[#F7F8FA]  p-6 rounded-xl  text-center h-full w-full flex  flex-col justify-center items-center">
-            <div className="bg-purple-100 p-4 rounded-full inline-flex items-center justify-center mb-4">
-              <MapPin className="w-8 h-8 text-purple-600 xl:text-sm 2xl:text-xl" />
+          <div className="bg-white p-1 border rounded-xl h-[256px] flex justify-center items-center lg:w-[30%] lg:h-[90%] xl:w-[30%] xl:h-[90%] 2xl:h-[90%] 2xl:w-[30%]">
+            <div className="bg-[#F7F8FA]  p-6 rounded-xl  text-center h-full w-full flex  flex-col justify-center items-center">
+              <div className="bg-purple-100 p-4 rounded-full inline-flex items-center justify-center mb-4">
+                <MapPin className="lg:w-5 lg:h-8 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7 3xl:w-8 3xl:h-8 text-purple-600" />
+              </div>
+              <h3 className="lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl font-medium text-gray-900 mb-2">
+                Address
+              </h3>
+              <p className="text-gray-600 lg:text-sm xl:text-base 2xl:text-lg  3xl:text-xl">
+                2972 Westheimer Rd. Santa Ana, Illinois 85486
+              </p>
             </div>
-            <h3 className="xl:text-sm 2xl:text-xl font-bold text-gray-900 mb-2">Address</h3>
-            <p className="text-gray-600 xl:text-sm 2xl:text-xl">
-              2972 Westheimer Rd. Santa Ana, Illinois 85486
-            </p>
           </div>
-         </div>
         </div>
       </section>
+
       <WallOfLove />
       {/* CTA Section */}
-      <div className="flex justify-center mb-28 ">
+      <div className="flex justify-center items-center h-[450px] ">
         <PurpleBox />
       </div>
       <Footer />

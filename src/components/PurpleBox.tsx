@@ -4,7 +4,7 @@ import { ArrowRight, Sparkles, Mail } from "lucide-react";
 
 const PurpleBox: React.FC = () => {
   return (
-    <section className="py-20 text-white text-center relative overflow-hidden purple-box flex justify-center items-center"  style={{
+    <section className="py-20 text-white text-center relative overflow-hidden purple-box flex justify-center items-center lg:w-[661px] lg:h-[209px] xl:w-[827px] xl:h-[261px]  2xl:w-[992px] 2xl:h-[314px] 3xl:w-[1240px] 3xl:h-[392px]"  style={{
     height: "392px",
     width: "1240px",
     // marginLeft: "20%",

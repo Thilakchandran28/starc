@@ -25,11 +25,9 @@ const Footer = () => {
             <p className="text-black-600 font-mont font-semibold">
               Phone: <span className="font-normal">+91-9363034150</span>
             </p>
+          
             <p className="text-black-600 font-mont font-semibold">
-              Fax: <span className="font-normal">02-222264303</span>
-            </p>
-            <p className="text-black-600 font-mont font-semibold">
-              Email: <span className="font-normal">staciacorp.com</span>
+              Email: <span className="font-normal">contactus@staciacorp.com</span>
             </p>
           </div>
 
