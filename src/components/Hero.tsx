@@ -62,7 +62,7 @@ const Hero: React.FC = () => {
         <img
           src={heroImage}
           alt="Background Vector"
-          className="w-[75%] h-auto absolute left-[200px] top-[10px] "
+          className="w-[75%] h-auto absolute left-[235px] top-[10px] "
           onError={(e) => {
             console.error("Error loading hero image:", e);
             e.currentTarget.style.display = "none"; // Hide image if it fails to load

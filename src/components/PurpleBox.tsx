@@ -4,23 +4,25 @@ import { ArrowRight, Sparkles, Mail } from "lucide-react";
 
 const PurpleBox: React.FC = () => {
   return (
-    <section className="py-20 text-white text-center relative overflow-hidden purple-box flex justify-center items-center lg:w-[661px] lg:h-[209px] xl:w-[827px] xl:h-[261px]  2xl:w-[992px] 2xl:h-[314px] 3xl:w-[1240px] 3xl:h-[392px]"  style={{
-    height: "392px",
-    width: "1240px",
-    // marginLeft: "20%",
-    backgroundColor: "#8A63FF",
-    borderRadius:"25px",
-    boxShadow: "0 4px 8px rgba(138, 99, 255, 0.4)"
+    <section className="lg:py-10 xl:py-14 2xl:py-20 text-white text-center relative overflow-hidden purple-box bg-[#8A63FF] rounded-3xl w-[70%] shadow-2xl"  
+  //   style={{
+  //   height: "400px",
+  //   width: "1000px",
+  //   // marginLeft: "20%",
+  //   backgroundColor: "#8A63FF",
+  //   borderRadius:"25px",
+  //   boxShadow: "0 4px 8px rgba(138, 99, 255, 0.4)" 
 
-  }}>
-      <div className="max-w-4xl mx-auto px-4  w-[60%]">
+  // }}
+  >
+      <div className="w-[60%] mx-auto px-4">
        
         
         {/* Heading and Subtext */}
-        <h2 className="text-5xl font-normal mb-4 leading-tight">
+        <h2 className="lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold mb-4 leading-tight">
           Join ambitious professionals and unlock your dream career today
         </h2>
-        <p className="text-lg mb-8 leading-relaxed text-wrap">
+        <p className="lg:text-xs xl:text-sm 2xl:text-base mb-8 leading-relaxed">
           Unlock your true potential and discover a world of opportunities that align with your skills, interests, and aspirations
         </p> {/* Sparkles Icon */}
 
@@ -31,11 +33,11 @@ const PurpleBox: React.FC = () => {
             <input
               type="email"
               placeholder="Your mail address"
-              className="bg-transparent outline-none text-black  "
+              className="bg-transparent outline-none text-black placeholder-purple-600 lg:text-sm xl:text-base 2xl:text-xl lg:w-36 xl:w-48 2xl:w-56 3xl:w-72"
             />
           </div>
           <Button
-            className="bg-white w-[18%] text-[#8A63FF] font-bold px-6 py-2 rounded-full shadow-md hover:bg-gray-100 flex items-center gap-2"
+            className="bg-white text-purple-600 font-bold px-6 py-2 rounded-full shadow-md hover:bg-gray-100 flex items-center gap-2 lg:text-sm xl:text-base 2xl:text-xl"
           >
             Join Us
             {/* <ArrowRight className="w-5 h-5" /> */}
