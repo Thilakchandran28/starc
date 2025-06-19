@@ -15,13 +15,13 @@ const Contact = () => {
         <Navbar />
       </div>
       {/* Hero Section */}
-      <section className="relative from-purple-50 to-white overflow-hidden 2xl:h-[708px]  3xl:h-[738px] ">
+      <section className="relative from-purple-50 to-white overflow-hidden 2xl:h-[708px] 3xl:h-[738px] ">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           {/* Optional: Subtle noise texture or pattern */}
           <div className="w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgeT0iMSIgcj0iMSIgZmlsbD0iIzAwMDAwMDMzIi8+PC9zdmc+')] bg-repeat"></div>
         </div>
         <div className="relative z-10 flex flex-col justify-center items-center lg:pt-5 xl:pt-5 2xl:pt-5 3xl:pt-10">
-          <div className="lg:w-[628px] lg:h-[424px] xl:w-[728px] xl:h-[524px] 2xl:w-[828px] 2xl:h-[664px] 3xl:w-[1028px] 3xl:h-[764px] flex flex-col justify-center border border-blue-500 ">
+          <div className="lg:w-[628px] lg:h-[424px] xl:w-[728px] xl:h-[504px] 2xl:w-[828px] 2xl:h-[604px] 3xl:w-[1028px] 3xl:h-[694px] flex flex-col justify-center  ">
             <div className="flex justify-center w-full">
               <img
                 src={heros}
