@@ -65,7 +65,16 @@ const App = () => (
           <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
           <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
           <Route path="/courses" element={<ProtectedRoute><CoursesPage /></ProtectedRoute>} />
-          <Route path="/completedCourses" element={<ProtectedRoute><CompletedCourse /></ProtectedRoute>} />
+          <Route path="/completedCourses" element={<ProtectedRoute><CompletedCourse course={{
+            id: "",
+            image: "",
+            title: "",
+            progress: 0,
+            duration: "",
+            status: ""
+          }} onBack={function (): void {
+            throw new Error("Function not implemented.");
+          } } /></ProtectedRoute>} />
 
           {/* <Route path="/books" element={<ProtectedRoute><BooksPage /></ProtectedRoute>} /> */}
           <Route path="/schedule" element={<ProtectedRoute><SchedulePage /></ProtectedRoute>} />

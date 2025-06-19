@@ -103,3 +103,19 @@
     font-family: var(--font-montserrat);
   }
 }
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #ccc;
+  /* width: 10px; */
+
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #7C3AED; /* Tailwind's purple-600 */
+  border-radius: 8px;
+  border: 3px solid transparent;
+}

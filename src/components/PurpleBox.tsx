@@ -4,41 +4,41 @@ import { ArrowRight, Sparkles, Mail } from "lucide-react";
 
 const PurpleBox: React.FC = () => {
   return (
-    <section className="py-20 text-white text-center relative overflow-hidden purple-box"  style={{
-    height: "400px",
-    width: "1000px",
+    <section className="py-20 text-white text-center relative overflow-hidden purple-box flex justify-center items-center lg:w-[661px] lg:h-[209px] xl:w-[827px] xl:h-[261px]  2xl:w-[992px] 2xl:h-[314px] 3xl:w-[1240px] 3xl:h-[392px]"  style={{
+    height: "392px",
+    width: "1240px",
     // marginLeft: "20%",
     backgroundColor: "#8A63FF",
     borderRadius:"25px",
     boxShadow: "0 4px 8px rgba(138, 99, 255, 0.4)"
 
   }}>
-      <div className="max-w-4xl mx-auto px-4">
+      <div className="max-w-4xl mx-auto px-4  w-[60%]">
        
         
         {/* Heading and Subtext */}
-        <h2 className="text-4xl font-bold mb-4 leading-tight">
+        <h2 className="text-5xl font-normal mb-4 leading-tight">
           Join ambitious professionals and unlock your dream career today
         </h2>
-        <p className="text-lg mb-8 leading-relaxed">
+        <p className="text-lg mb-8 leading-relaxed text-wrap">
           Unlock your true potential and discover a world of opportunities that align with your skills, interests, and aspirations
         </p> {/* Sparkles Icon */}
 
         {/* Input and Button */}
         <div className="flex justify-center items-center gap-4">
-          <div className="flex items-center bg-white text-purple-600 rounded-full px-4 py-2 shadow-md">
-            <Mail className="w-5 h-5 mr-2 text-purple-600" />
+          <div className="flex items-center bg-white text-gray-600 rounded-full px-4 py-2 shadow-md w-[50%]">
+            <Mail className="w-5 h-5 mr-2  " />
             <input
               type="email"
               placeholder="Your mail address"
-              className="bg-transparent outline-none text-black placeholder-purple-600 w-40"
+              className="bg-transparent outline-none text-black  "
             />
           </div>
           <Button
-            className="bg-white text-purple-600 font-bold px-6 py-2 rounded-full shadow-md hover:bg-gray-100 flex items-center gap-2"
+            className="bg-white w-[18%] text-[#8A63FF] font-bold px-6 py-2 rounded-full shadow-md hover:bg-gray-100 flex items-center gap-2"
           >
             Join Us
-            <ArrowRight className="w-5 h-5" />
+            {/* <ArrowRight className="w-5 h-5" /> */}
           </Button>
         </div>
       </div>
