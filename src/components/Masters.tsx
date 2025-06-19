@@ -43,7 +43,7 @@ const Masters = () => {
       category: "UI Designer",
       rating: 4.8,
       reviews: 16,
-      skills: ["Elementor", "Wix", "Illustrator"],
+      skills: ["Elemento", "Wix", "Illustrator"],
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face",
     },
     {
@@ -53,7 +53,7 @@ const Masters = () => {
       category: "UI Designer",
       rating: 4.8,
       reviews: 16,
-      skills: ["Figma", "Elementor", "Wordpress"],
+      skills: ["Figma",  "Wordpress"],
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
     },
     {
@@ -170,9 +170,9 @@ const Masters = () => {
 
   return (
     <section className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-[100%] flex justify-center items-center flex-col px-4 sm:px-6 lg:px-8">
         {/* Navigation Links */}
-        <div className="flex justify-center gap-6 border-b border-gray-200 mb-12 flex-wrap">
+        <div className="flex justify-center gap-6 border-b w-[80%] border-gray-200 mb-12 flex-wrap">
           {categories.map((category, index) => {
             const isActive = activeCategory === category.name;
             const Icon = category.icon;
@@ -194,59 +194,71 @@ const Masters = () => {
           })}
         </div>
 
-       {/* Masters Grid */}
-<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-  {filteredMasters.map((master) => (
-    // Individual Master Card
-    <div
-      key={master.id}
-      className={`
-        group // Enable group-hover utilities for child elements
-        bg-white rounded-xl p-6 transition-all duration-300 ease-in-out
-        transform-gpu cursor-pointer
-        hover:bg-[#8A63FF1A]              // Purple filling on hover
-        hover:shadow-xl hover:shadow-purple-100 // Shadow on hover
-        hover:border-purple-500 hover:border-2 // Purple border on hover
-      `}
-    >
-      {/* Content within the card */}
-      <div className="flex flex-col items-center text-center">
-        <img
-          src={master.image}
-          alt={master.name}
-          className="w-20 h-20 rounded-full object-cover mb-2 shadow-md"
-        />
-        {/* Star rating moved after the image */}
-        <div className="flex items-center mb-4">
-          <Star className="w-4 h-4 text-yellow-400 fill-yellow-400 mr-1 group-hover:fill-yellow-400" />
-          <span className="text-gray-600 text-sm">
-            {master.rating} ({master.reviews})
-          </span>
-        </div>
-        <div className="mb-4"> {/* Group name and role */}
-          <h3 className="font-semibold text-lg text-gray-900">{master.name}</h3>
-          <p className="text-sm text-gray-500">{master.role}</p>
-        </div>
-        <div className="flex flex-wrap justify-center gap-2">
-          {master.skills.map((skill, skillIndex) => (
-            <span
-              key={skillIndex}
-              className="px-3 py-1 bg-gray-100 text-gray-600 text-xs rounded-full font-medium transition-all duration-300 ease-in-out group-hover:bg-[#8A63FF1A] group-hover:border-purple-500 group-hover:border-2"
-            >
-              {skill}
-            </span>
-          ))}
-        </div>
-      </div>
-    </div>
-  ))}
-</div>
+        {/* Masters Grid */}
+        <div className="w-[100%] flex justify-center items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 w-[70%]">
+            {filteredMasters.map((master) => (
+              // Individual Master Card
+              <div
+                key={master.id}
+                className={`
+       
+                
+                group 
+       
+                bg-white rounded-xl p-1 transition-all duration-300 ease-in-out
+       
+                transform-gpu cursor-pointer
+       
+                hover:bg-[#8A63FF1A]              
+        
+                hover:shadow-xl hover:shadow-purple-100 
+       
+                hover:border-purple-500 hover:border-2 
+                border-gray-300 border 
+     
+              `}
 
+              >
+                {/* Content within the card */}
+                <div className="flex flex-col items-center text-center w-[100%]   p-4  rounded-2xl ">
+                  <img
+                    src={master.image}
+                    alt={master.name}
+                    className="lg:w-14 lg:h-14 xl:w-20 xl:h-20 rounded-full object-cover mb-2 shadow-md"
+                  />
+                  {/* Star rating moved after the image */}
+                  <div className="flex items-center mb-4">
+                    <Star className="w-4 h-4 text-yellow-400 fill-yellow-400 mr-1 group-hover:fill-yellow-400" />
+                    <span className="text-gray-600 text-sm">
+                      {master.rating} ({master.reviews})
+                    </span>
+                  </div>
+                  <div className="mb-4"> {/* Group name and role */}
+                    <h3 className="font-semibold lg:text-sm xl:text-base 2xl:text-lg text-gray-900">{master.name}</h3>
+                    <p className="lg:text-xs xl:text-sm 2xl:text-base text-gray-500">{master.role}</p>
+                  </div>
+                  <div className="flex  justify-center gap-1">
+                    {master.skills.map((skill, skillIndex) => (
+                      <span
+                        key={skillIndex}
+                        className="px-2 py-1 bg-gray-100 text-gray-600 lg:text-[12px] xl:text-sm 2xl:text-base rounded-full font-medium transition-all duration-300 ease-in-out group-hover:bg-[#8A63FF1A] group-hover:border-purple-500 group-hover:border-2"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
         {/* View All Button */}
         <div className="flex justify-center mt-12">
           <Link
             to="#" // Replace with your actual "View All" route
-            className="flex items-center px-6 py-3 bg-white text-[#8A63FF] border border-[#8A63FF] rounded-full hover:bg-[#8A63FF] hover:text-white transition-colors duration-300 shadow-md"
+            className="flex items-center px-6 py-2 bg-white text-[#8A63FF] border border-[#8AB9FF] rounded-full hover:bg-[#8A63FF] hover:text-white transition-colors duration-300 shadow-md"
           >
             View All
             <span className="ml-2 flex items-center justify-center w-6 h-6 bg-[#8A63FF] rounded-full">

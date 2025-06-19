@@ -45,7 +45,7 @@ const CoursesPage = () => {
         <div className="w-1/5 sticky top-0 h-screen  pt-8">
         <ProfileSidebar />
         </div>
-        <div className="w-3/5 overflow-y-auto sticky top-0 flex justify-center pt-4 " style={{scrollbarWidth:'none'}}>
+        <div className="w-3/5 overflow-y-auto sticky top-0 flex justify-center pt-8 " style={{scrollbarWidth:'none'}}>
         <CoursesOverview sendMessage={handleChildMessage}/>
         </div>        
         <div className="w-1/5 sticky top-0 h-screen pt-8">
