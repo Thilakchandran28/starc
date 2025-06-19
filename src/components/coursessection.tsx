@@ -647,6 +647,7 @@ export default function CategoryTabsPage() {
 </div>
 
           {/* Our Courses Title and Tabs */}
+
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-gray-800 mb-4">Our Courses</h1>
             <div className="flex items-center justify-start space-x-6 border-b border-gray-200">
@@ -764,9 +765,7 @@ export default function CategoryTabsPage() {
                             </span>
                           </Link>
                         </div>
-              {/* </span>
-            </button>
-          </div> */}
+             
         
       </div>
     </div>

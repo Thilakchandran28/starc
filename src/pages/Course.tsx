@@ -172,7 +172,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({
             <div>
               <label
                 htmlFor="sort"
-                className="block text-sm font-medium mb-1 text-gray-700"
+                className="block text-sm font-medium mb-1 p text-gray-700 "
               >
                 Sort by:
               </label>
@@ -443,7 +443,7 @@ const Course: React.FC = () => {
       />
 
       {/* Category and Course Cards Section */}
-      
+
       <section className="flex justify-center py-8 ">
         <div className="w-1/4">
           {/* <div className="max-w-xs mx-auto px-4 sm:px-6 lg:px-8">
@@ -539,7 +539,7 @@ const Course: React.FC = () => {
         </div>
 
         <div className=" w-50 py-10 lg:p-31  ">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:bg-red-600">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-6 2xl:grid-cols-3 2xl:w-[100%]">
               {filteredCourses.map((course, index) => (
                 <div
