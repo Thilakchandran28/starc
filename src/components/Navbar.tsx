@@ -193,7 +193,7 @@ const Navbar = () => {
             </div>
           ) : (
             <>
-              <Link to="/login">
+              <Link to="/LoginPage">
                 <Button className="bg-white border-2  text-sm lg:text-xs xl:text-sm 2xl:text-base hover:bg-gray-300 text-[#8A63FF] font-mont font-medium rounded-full px-6 py-2 flex items-center justify-center">
                   Log In
                 </Button>
