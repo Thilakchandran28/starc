@@ -6,43 +6,47 @@ import Completed from '../Assets/icons/Completed.svg'
 
 const DashboardCard = ({ course }) => {
   return (
-    <div className="bg-white rounded-[20px] shadow-lg overflow-hidden border w-[100%] h-[100%] ">
-      <img
+    <div className="rounded-[20px] flex justify-center items-center shadow-lg overflow-hidden border 3xl:w-[309px] 3xl:h-[335px] ">
+      <div className="3xl:w-[269px] 3xl:h-[295px]">
+        <div className=" h-[182px] w-full ">
+        <img
         src={course?.image}
         alt={course?.title}
-        className="w-full h-36 rounded-[40px] p-5"
+        className=" w-full rounded-[15px]"
       />
-      <div className="p-5">
-        <h3 className="font-semibol d text-lg text-gray-900 mb-1 mt-2">
+      </div>
+      <div className=" 3xl:h-[97px] mt-4">
+        <h3 className="font-semibold d text-[14px] text-gray-900">
           {course?.title}
         </h3>
-        <div className="w-15 h-11  flex align-center justify-start pt-2 pb-2 gap-1 mb-2">
-          <img src={clock} />
-          <p className="text-gray-600 text-md ">{course?.duration}</p>
+        <div className="w-15 h-11  flex items-center  justify-start gap-x-3 ">
+          <img src={clock} className="3xl:h-[21px] 3xl:w-[19px] mr-1" />
+          <p className="text-gray-600 text-[12px] ">{course?.duration}</p>
         </div>
         {course.status === "Completed" ? (
-         <div className="flex mt-6">
-                <img src={Completed} className="mr-2" alt="" /> 
-            <p className="text-lg ext-grey-500 ">
+         <div className="flex ">
+                <img src={Completed} className="mr-2 3xl:h-[24px] 3xl:w-[24px] " alt="" /> 
+            <p className="text-[16px] ext-grey-500 "> 
                Complete
             </p>
           </div>
         ) : (
           <div>
-            <div className="w-16 h-10  bg-purple-600 rounded-lg  flex align-center justify-center p-2  mb-4">
+            <div className="3xl:w-[54px] 3xl:h-[20px]  bg-purple-600 rounded-lg  flex items-center justify-center mb-2">
               <img src={uparrow} className=" p-1" />
-              <p className="text-lg text-white mb-4 font-bold">
+              <p className="3xl:text-[13px] text-white  font-semibold">
                 {course?.progress}%
               </p>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-2.5 mb-2">
               <div
-                className="bg-purple-600 h-2.5 rounded-full"  
+                className="bg-purple-600 3xl:h-[8px] w-full rounded-full"  
                 style={{ width: `${course?.progress}%` }}
               ></div>
             </div>
           </div>
         )}
+      </div>
       </div>
     </div>
   );

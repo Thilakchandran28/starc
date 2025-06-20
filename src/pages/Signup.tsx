@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Eye, EyeOff, LogIn } from "lucide-react";
 import Vector from "../Assets/Vector-3.png";
 import Star from "../Assets/star.png";
-import Login from "./Login";
+import Login from "../components/Login";
 
 interface Slide {
   title: string;

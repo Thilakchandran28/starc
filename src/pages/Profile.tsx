@@ -60,18 +60,18 @@ const Profile = () => {
     //   </div>
     // </div>
 
-    <div className="flex flex-col h-screen  bg-gray-100 ">
-      <div className=" sticky top-0 z-50  ">
+    <div className="flex flex-col h-screen bg-gray-100 ">
+      <div className=" sticky top-0 z-50 ">
         <ProfileTopNavbar />
       </div>
-      <div className="flex flex-1 overflow-hidden  justify-between px-5 w-full h-screen " >
-        <div className="w-1/5 sticky top-0 h-screen  pt-8">
+      <div className="flex flex-1 overflow-hidden  justify-between  w-full h-screen " >
+        <div className="w-1/5 sticky top-0 h-[90vh] 2xl:pl-16 3xl:pl-20  pt-8">
         <ProfileSidebar />
         </div>
-        <div className="w-3/5 overflow-y-auto sticky top-0 flex justify-center pt-4 " style={{scrollbarWidth:'none'}}>
+        <div className="overflow-y-auto h-screen pt-8 sticky top-0 flex justify-center" style={{scrollbarWidth:'none'}}>
         <DashboardOverview />
         </div>        
-        <div className="w-1/5 sticky top-0 h-screen pt-8">
+        <div className="sticky top-0 h-screen pt-8 2xl:mr-[68px] 3xl:mr-[88px]">
         <RightSideBarComp /> 
         </div>
       </div>
