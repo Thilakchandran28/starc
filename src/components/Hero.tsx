@@ -184,7 +184,7 @@ const Hero: React.FC = () => {
     // </section>
 
 
-    <section className="relative from-purple-50 to-white overflow-hidden 2xl:h-[100vh] 3xl:h-[80vh] ">
+    <section className="relative from-purple-50 to-white overflow-hidden lg:h-[70vh] 2xl:h-[80vh] 3xl:h-[80vh] ">
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         {/* Optional: Subtle noise texture or pattern */}
         <div className="w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgeT0iMSIgcj0iMSIgZmlsbD0iIzAwMDAwMDMzIi8+PC9zdmc+')] bg-repeat"></div>
@@ -202,7 +202,7 @@ const Hero: React.FC = () => {
             <span className="lg:w-[100px] lg:h-[25px] xl:w-[115px] xl:h-[25px] 2xl:w-[150px] 2xl:h-[32px] 3xl:w-[200px] 3xl:h-[35px]  flex justify-center items-center bg-purple-600 text-white lg:text-[7px] xl:text-[8px]  2xl:text-[10px] 3xl:text-xs font-semibold  rounded-full mb-2 ">
               SUPERVISED COURSES
             </span>
-            <h1 className=" xl:text-3xl 2xl:text-4xl lg:text-2xl font-bold text-gray-900 mb-4 ">
+            <h1 className=" lg:text-4xl  xl:text-5xl 2xl:text-5xl 3xl:text-5xl font-bold text-gray-900 mb-4 ">
               {slides[currentSlide].title.split(" ").map((word, index) => (
                 <span key={index}>
                   {word}{" "}
@@ -221,7 +221,7 @@ const Hero: React.FC = () => {
               <>
                 <button
                   type="button"
-                  className="bg-purple-500 text-white px-6 py-3 text-lg font-medium rounded-lg shadow-md font-mont"
+                  className="bg-purple-500 text-white px-6 py-3 lg:text-xs xl:text-sm 2xl:text-base 3xl:text-lg font-medium rounded-lg shadow-md font-mont"
                   style={{ backgroundColor: "#A855F7", boxShadow: '0px 10px 12px 0px rgba(0, 0, 0, 0.2)' }}
                 >
                   Explore More Now
