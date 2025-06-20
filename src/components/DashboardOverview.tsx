@@ -8,6 +8,12 @@ import hour from '../Assets/hour.svg';
 import earned from '../Assets/earned.svg';
 import trophy from '../Assets/trophy.svg';
 import awardbg from '../Assets/card-award.png';
+import course1 from '../Assets/icons/course1.svg'
+import course2 from '../Assets/icons/course2.svg'
+import course3 from '../Assets/icons/course3.svg'
+import course4 from '../Assets/icons/course4.svg'
+import course5 from '../Assets/icons/course5.svg'
+import course6 from '../Assets/icons/course6.svg'
 
 interface Course {
   id: number;
@@ -35,12 +41,12 @@ const DashboardOverview: React.FC = () => {
   };
 
   const courses = [
-    { id: '1', image: 'https://via.placeholder.com/150', title: 'AWS Solutions Architect', progress: 50, duration: '1 Month', status: '50%' },
-    { id: '2', image: 'https://via.placeholder.com/150', title: 'Azure Fundamentals', progress: 100, duration: '1 Month', status: 'Completed' },
-    { id: '3', image: 'https://via.placeholder.com/150', title: 'Google Cloud Basics', progress: 75, duration: '1 Month', status: '75%' },
-    { id: '4', image: 'https://via.placeholder.com/150', title: 'Google Cloud Advanced', progress: 75, duration: '1 Month', status: '75%' },
-    { id: '5', image: 'https://via.placeholder.com/150', title: 'DevOps Essentials', progress: 75, duration: '1 Month', status: '75%' },
-    { id: '6', image: 'https://via.placeholder.com/150', title: 'Kubernetes Basics', progress: 75, duration: '1 Month', status: '75%' },
+    { id: '1', image: course1, title: 'AWS Solutions Architect', progress: 50, duration: '1 Month', status: '50%' },
+    { id: '2', image: course2, title: 'Azure Fundamentals', progress: 100, duration: '1 Month', status: 'Completed' },
+    { id: '3', image: course3, title: 'Google Cloud Basics', progress: 75, duration: '1 Month', status: '75%' },
+    { id: '4', image: course4, title: 'Google Cloud Advanced', progress: 75, duration: '1 Month', status: '75%' },
+    { id: '5', image: course5, title: 'DevOps Essentials', progress: 75, duration: '1 Month', status: '75%' },
+    { id: '6', image: course6, title: 'Kubernetes Basics', progress: 75, duration: '1 Month', status: '75%' },
   ];
 
   const progressPercentage = (user.progress / user.coursesEnrolled) * 100;
@@ -50,7 +56,7 @@ const DashboardOverview: React.FC = () => {
 
   return (
     // absolute top-28 bg-gray-100
-    <div className="h-screen overflow-y-auto lg:w-[550px] xl:w-[700px] 2xl:w-[90%] 3xl:w-[1000px]" style={{ scrollbarWidth: "none" }} >
+    <div className="h-screen overflow-y-auto lg:w-[550px] xl:w-[700px] 2xl:w-[90%] 3xl:w-[1008px] 3xl:h-[80vh]" style={{ scrollbarWidth: "none" }} >
       <h1 className="text-3xl font-bold text-gray-900 mb-6">Hello {user.name} 👋</h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mb-6">
@@ -164,7 +170,7 @@ const DashboardOverview: React.FC = () => {
       </div>
 
       {/* Continue Learning Section */}
-      <div className="w-full">
+      <div className="w-full  ">
         <h2 className="text-2xl font-bold text-gray-900 mb-6">Continue Learning</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
           {courses.map((course) => (

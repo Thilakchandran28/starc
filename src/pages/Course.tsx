@@ -992,7 +992,7 @@ const Course: React.FC = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className=" relative bottom-20  ">
+      <section className=" relative bottom-20 ">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className=" flex flex-col justify-center items-center">
             <img
@@ -1028,10 +1028,10 @@ const Course: React.FC = () => {
       />
 
       {/* Category and Course Cards Section */}
-     <div className="flex justify-center">
+     <div className="flex justify-center  mb-20">
        <section className="flex justify-center py-8 mb-16 h-screen lg-[90%] xl:w-[90%]">
         {/* <div className="w-1/4">           */}
-          <section className="flex lg:w-[25%]  xl:w-[25%] 2xl:w-[25%] 3xl:w-[25%] overflow-y-auto px-2" style={{scrollbarWidth:"thin"}}>
+          <section className="flex lg:w-[25%]  xl:w-[25%] 2xl:w-[25%] 3xl:w-[25%] overflow-y-auto px-2 " style={{scrollbarWidth:"thin"}}>
             <div className="w-full">
               <div className="max-w-c mx-auto px-4 sm:px-6 lg:px-10">
                 <h2 className="text-2xl font-mont font-bold mb-4 py-2 text-gray-800 text-center">
@@ -1055,7 +1055,7 @@ const Course: React.FC = () => {
               </div>
             </div>
           </section>
-          <div className="flex justify-center flex-wrap lg:w-[80%]  xl:w-[85%] 2xl:w-[80%] 3xl:w-[80%] px-8 overflow-auto" style={{scrollbarWidth:'none'}}>
+          <div className="flex justify-start pl-10 items-center flex-wrap lg:w-[80%]  xl:w-[85%] 2xl:w-[80%] 3xl:w-[80%] px-8 overflow-auto" style={{scrollbarWidth:'none'}}>
               {filteredCourses.map((course, index) => ( 
                 <div  
                   key={index}
