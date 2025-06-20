@@ -315,7 +315,7 @@ const courses = {
     },
     {
       title: "Social Media Marketing Pro",
-      instructor: "Anna Thompson",
+      instructor: "Anna Tson",
       duration: "2.5 Month",
       price: 119,
       originalPrice: 209,
@@ -325,7 +325,7 @@ const courses = {
       avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=50&h=50&fit=crop",
     },
     {
-      title: "SEO & Content Strategy",
+      title: "SEO & Content Strategy Pro",
       instructor: "Kevin Park",
       duration: "3 Month",
       price: 129,
@@ -651,7 +651,7 @@ export default function CategoryTabsPage() {
                 <button
                   key={category.id}
                   onClick={() => setSelected(category.id)}
-                  className={`relative flex  items-center space-x-2 text-sm font-medium  pr- py-2 px-4 transition-colors ${selected === category.id
+                  className={`relative flex  items-center space-x-2 text-sm font-medium py-2 px-4 transition-colors ${selected === category.id
                       ? "text-purple-600"
                       : "text-gray-500 hover:text-purple-600"
                     }`}
@@ -672,53 +672,53 @@ export default function CategoryTabsPage() {
       </section>
 
       {/* Content */}
-      <div className="w-[90%] mx-auto px-4 pb-10 sm:px-6 lg:px-8 mt-10">
-        <div className="flex items-center justify-between mb-8">
+      <div className="w-[90%] mx-auto px-4 pb-10 sm:px-6 lg:px-4 mt-10">
+        {/* <div className="flex items-center justify-between mb-8"> */}
           {/* <h1 className="text-3xl font-bold text-gray-800">{selectedLabel} Courses</h1> */}
-        </div>
+        {/* </div> */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  gap-6">
           {displayedCourses.length > 0 ? (
             displayedCourses.map((course, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden cursor-pointer lg:w-[220px] xl:w-[270px] 2xl:w-[280px] 3xl:w-[290px]"
+                className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer  lg:w-[215px] lg:h-[350px] xl:w-[250px] xl:h-[400px] 2xl:w-[290px] 2xl:h-[500px]  3xl:h-[617px] 3xl:w-[380px] lg:my-2 xl:my-5"
               >
                 <img
                   src={course.image}
                   alt={course.title}
-                  className="w-full h-[180px] object-cover rounded-3xl px-4 py-4 pl-4 pr-4"
+                  className="w-full lg:h-[45%] xl:h-[45%] 2xl:h-[45%] 3xl:h-[45%] object-cover rounded-[10%] px-4 py-4 pl-4 pr-4 "
                 />
                 <div className="px-4 py-3">
-                  <div className="flex justify-between items-center mb-1 text-sm text-gray-400">
+                  <div className="flex items-center justify-between text-sm text-gray-400 mb-1">
                     <div className="flex items-center space-x-1">
-                      {/* <BookOpen className="w-4 h-4"/> */}
-                      <span className="text-gray-600">{course.category}</span>
+                      <BookOpen className="lg:w-2 lg:h-2 xl:w-3 xl:h-3 2xl:w-4 2xl:h-4 3xl:w-6 3xl:h-6"/>
+                      <span className="lg:text-[10px] xl:text-xs 2xl:text-sm 3xl:text-base">{course.category}</span>
                     </div >
                     <div className="flex items-center gap-1">
-                      <Clock className='w-4 h-4' />
+                      <Clock className='lg:w-2 lg:h-2 xl:w-3 xl:h-3 2xl:w-4 2xl:h-4 3xl:w-6 3xl:h-6' />
 
 
-                      <span>{course.duration}</span>
+                      <span className="lg:text-[10px] xl:text-xs 2xl:text-sm 3xl:text-base">{course.duration}</span>
                     </div>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">{course.title}</h3>
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-2">{course.description}</p>
-                  <div className="flex items-center justify-between">
+                  <h3 className="min-h-[72px] lg:text-lg xl:text-lg 2xl:text-2xl 3xl:text-3xl xl:mt-2 2xl:mt-4 font-normal text-gray-900 leading-tight">{course.title}</h3>
+                  <p className="text-sm lg:text-[10px] xl:text-[12px] 2xl:text-sm 3xl:text-lg xl:mt-2 2xl:mt-6 text-gray-500  leading-snug">{course.description}</p>
+                  <div className="flex items-center justify-between px-0 py-3 border-t lg:mt-0.5 xl:mt-1 2xl:mt-4">
                     <div className="flex items-center space-x-2">
                       <img
                         src={course.avatar}
                         alt={course.instructor}
-                        className="w-8 h-8 rounded-full object-cover"
+                        className="lg:w-6 lg:h-6 xl:h-7 xl:w-7 2xl:w-8 2xl:h-8 3xl:w-10 3xl:h-10 rounded-full object-cover"
                       />
-                      <span className="text-sm text-gray-700">{course.instructor}</span>
+                      <span className="lg:text-xs xl:text-sm  2xl:text-sm 3xl:text-lg font-medium text-gray-800">{course.instructor}</span>
                     </div>
-                    <div className="flex items-center space-x-2">
+                    <div className="lg:text-xs xl:text-sm 2xl:text-lg 3xl:text-xl  2xl:mt-4  text-gray-400">
                       {course.originalPrice && (
-                        <span className="text-sm text-gray-400 line-through">
+                        <span className="line-through mr-2 lg:text-[10px] xl:text-[10px] 2xl:text-xs 3xl:text-sm">
                           ${course.originalPrice}
                         </span>
                       )}
-                      <span className="text-lg font-bold text-purple-600">${course.price}</span>
+                      <span className="lg:text-[15px] xl:text-sm 2xl:text-base 3xl:text-lg  font-bold text-purple-600">${course.price}</span>
                     </div>
                   </div>
                   {/* {course.badge && (

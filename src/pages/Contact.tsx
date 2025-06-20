@@ -15,7 +15,7 @@ const Contact = () => {
         <Navbar />
       </div>
       {/* Hero Section */}
-      <section className="relative from-purple-50 to-white overflow-hidden 2xl:h-[708px] 3xl:h-[738px] ">
+      <section className="relative from-purple-50 to-white overflow-hidden xl:h-[520px] 2xl:h-[630px] 3xl:h-[738px] ">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           {/* Optional: Subtle noise texture or pattern */}
           <div className="w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgeT0iMSIgcj0iMSIgZmlsbD0iIzAwMDAwMDMzIi8+PC9zdmc+')] bg-repeat"></div>
