@@ -7,26 +7,29 @@ import WallOfLove from "@/components/WallOfLove";
 import PurpleBox from "@/components/PurpleBox";
 import TeamShip from "@/components/TeamShip";
 import StarcTeam from "@/components/StarcTeam";
-import woman from '../Assets/woman.png';
-import world from '../Assets/world.png';
-import trust from '../Assets/trust.png';
-import award from '../Assets/award.png';
-import positive from '../Assets/positive.png';
-import indus from '../Assets/indus.png';
-import stay from '../Assets/stay.svg';
-import promote from '../Assets/promote.svg';
-import foster from '../Assets/foster.svg';
-import provide from '../Assets/provide.svg';
-import group from '../Assets/Group.svg'
+import woman from "../Assets/woman.png";
+import world from "../Assets/world.png";
+import trust from "../Assets/trust.png";
+import award from "../Assets/award.png";
+import positive from "../Assets/positive.png";
+import indus from "../Assets/indus.png";
+import stay from "../Assets/stay.svg";
+import promote from "../Assets/promote.svg";
+import foster from "../Assets/foster.svg";
+import provide from "../Assets/provide.svg";
+import group from "../Assets/Group.svg";
 
 const About = () => {
- 
-
   const stats = [
     { number: "500+", label: "Students" },
-    { number: "1M+", label: "A modest number to start off the metrics section " },
-    { number: "94%", label: "A modest number to start off the metrics section" },
-    
+    {
+      number: "1M+",
+      label: "A modest number to start off the metrics section ",
+    },
+    {
+      number: "94%",
+      label: "A modest number to start off the metrics section",
+    },
   ];
 
   return (
@@ -61,215 +64,241 @@ const About = () => {
       </section> */}
 
       {/* Our Values Section (custom design) */}
-      <section className="relative overflow-hidden flex justify-center px-10 lg:px-20 lg:py-24 xl:w-[90%] ">
-        {/* Left: Text Content */}
-        <div className="w-full lg:w-1/2 flex flex-col items-center justify-center pl-0 lg:pl-12 2xl:pl-24  ">
-          <span className="text-[#8A63FF] text-lg w-full 3xl:ml-40 flex  lg:text-xl 2xl:text-2xl font-medium font-mont mb-4">
-            Our Values
-          </span>
-          <h2 className="text-xl lg:text-4xl 2xl:text-5xl 3xl:mr-20 3xl:leading-relaxed font-mont font-semibold xl:py-1 text-black-900 mb-4 leading-snug ">
-            Our team shares <br /> values to{" "}
-            <span className="text-purple-500">Success</span>
-          </h2>
-          <p className="text-gray-600 text-base lg:text-lg 2xl:text-xl mb-6">
-            Lorem ipsum dolor sit amet consectetur. Convallis <br />
-            ante euismod commodo facilisi.
-          </p>
-          <ul className="space-y-4 text-base lg:text-lg 2xl:text-xl 3xl:mr-10">
-            <li className="flex items-center gap-3">
-              <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#8A63FF] ">
-                <svg
-                  className="w-4 h-4 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
+      <section className="relative overflow-hidden flex justify-center px-20 py-24 w-full   ">
+        <div className="flex  lg:w-[900px] lg:h-[475px] xl:w-[1100px] xl:h-[575px] 2xl:w-[1400px] 2xl:h-[675px] 3xl:h-[775px] 3xl:w-[1565px]">
+          {/* Left:Text Content--*/}
+          <div
+            className="w-full flex flex-col justify-start items-start lg:w-1/2  xl:w-1/2 2xl:w-1/2  3xl:h-full 3xl:w-1/2  "
+            style={{
+              fontFamily: "mont-regular",
+            }}
+          >
+            <div className="flex flex-col justify-start w-[80%]">
+              <span className="text-[#8A63FF] text-lg w-full  flex   lg:text-[10px] xl:text-[12px] 2xl:text-[12px] 3xl:text-[12px] font-medium font-mont mb-4">
+                Our Values
               </span>
-              <span className="text-black font-mont">
-                Add your feature details here
-              </span>
-            </li>
-            <li className="flex items-center gap-3">
-              <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#8A63FF]">
-                <svg
-                  className="w-4 h-4 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-              </span>
-              <span className="text-black font-mont">
-                Inform your customers about your features
-              </span>
-            </li>
-          </ul>
-        </div>
-
-        {/* Right: Responsive Image Container */}
-        <div className="w-full lg:w-1/2 relative flex justify-center items-center mt-12 lg:mt-0  ">
-          <div className="relative w-full max-w-[640px] aspect-[16/10]">
-            {/* World Map Background */}
-            <img
-              src={world}
-              alt="World Map"
-              className="absolute  top-[25%] w-full h-full object-contain  z-0"
-            />
-            <div className="">
-              {/* Main Image */}
-              <img
-                src={woman}
-                alt="Team"
-                className="absolute 3xl:w-[70%] top-[14%] left-[30%] lg:w-[200px] 2xl:w-[280px] rounded-xl shadow-lg z-10"
-              />
-
-              {/* Overlapping Image */}
-              <img
-                src={woman}
-                alt="Team 2"
-                className="absolute 3xl:top-[50%] 3xl:right-[-40px] 3xl:w-[50%]  xl:bottom-[21%] xl:right-[10%] lg:w-[180px] 2xl:w-[240px] rounded-xl shadow-lg border-4 border-white z-20"
-              />
+              <h2 className=" text-xl lg:text-xl xl:text-3xl 2xl:text-5xl 3xl:mr-20 pl-2  3xl:leading-relaxed font-mont font-semibold xl:py-1 text-black-900 mb-4 leading-snug   lg:mr-16 ">
+                Our team shares <br /> values to{" "}
+                <span className="text-purple-500">Success</span>
+              </h2>
+              <p className="text-gray-600   lg:text-sm xl:text-lg 2xl:text-xl mt-4  ">
+                Lorem ipsum dolor sit amet consectetur. Convallis ante euismod
+                commodo facilisi.
+              </p>
+              <ul className="space-y-6   lg:text-[12px] 2xl:text-xl 3xl:mr-6  lg:mr-12 pt-5  w-full  ">
+                <li className="flex items-center gap-4 ">
+                  <span className="inline-flex items-center justify-center 3xl:w-6 3xl:h-6  rounded-full bg-[#8A63FF] lg:w-4 lg:h-4  ">
+                    <svg
+                      className="w-4 h-4 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  </span>
+                  <span className="text-black font-mont ">
+                    Add your feature details here
+                  </span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="inline-flex items-center justify-center 3xl:w-6 3xl:h-6 rounded-full bg-[#8A63FF] lg:w-4 lg:h-4">
+                    <svg
+                      className="w-4 h-4 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  </span>
+                  <span className="text-black font-mont">
+                    Inform your customers about your features
+                  </span>
+                </li>
+              </ul>
             </div>
           </div>
+
+          {/*--Right: Responsive Image Container--*/}
+          <div className="w-1/2 relative flex justify-center items-center lg:mt-0 ">
+            <div className="relative w-full aspect-[16/10]">
+              {/* World Map Background */}
+
+              <div className="flex justify-start">
+                {/* Main Image */}
+                <img
+                  src={woman}
+                  alt="Team"
+                  className="lg:w-[290px] lg:h-[179px]  xl:w-[330px] xl:h-[199px] 2xl:w-[454px] 2xl:h-[284px] 3xl:top-[14%] 3xl:left-[30%] 3xl:w-[584px] 3xl:h-[364px] rounded-xl shadow-lg z-10 "
+                />
+
+                {/* Overlapping Image */}
+                <img
+                  src={woman}
+                  alt="Team 2"
+                  className="absolute lg:w-[220px] lg:h-[149px] lg:left-[25%] lg:top-[35%]  xl:w-[250px] xl:h-[160px] xl:left-[25%] xl:top-[30%] 2xl:top-[35%] 2xl:left-[25%] 2xl:h-[200px] 2xl:w-[328px] 2xl:bottom-[21%] 2xl:right-[10%] 3xl:top-[40%] 3xl:left-[28%] 3xl:h-[245px] 3xl:w-[428px] 3xl:bottom-[21%] 3xl:right-[10%] rounded-xl shadow-lg border-4 border-white z-20"
+                />
+              </div>
+            </div>
+          </div>
+          <img
+            src={world}
+            alt="World Map"
+            className="absolute lg:w-[55%] lg:left-[35%] xl:w-[60%] xl:left-[32%]  2xl:w-[60%] 2xl:top-[22%] 2xl:left-[30%] 3xl:top-[25%] 3xl:left-[30%] 3xl:w-[60%] h-full object-contain  z-0"
+          />
         </div>
       </section>
 
       {/* Learn Today, Lead Tomorrow Section */}
-      <section className="py-20 bg-white   flex  justify-center ">
-        {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ml-36 border border-green-400"> */}
-        {/* Left: Text Content */}
-        <div className=" w-[35%] pt-10 pl-20 ">
-          <h2 className="text-xl lg:text-4xl 2xl:text-5xl w-[80%]  md:text-5xl font-mont font-medium text-gray-900 mb-8 leading-tight">
-            "Learn today, lead tomorrow"
-          </h2>
-          <div className="flex  justify-between   3xl:w-[70%]">
-            <div className="text-center   3xl:">
-              <div className="text-4xl 3xl:text-5xl  font-mont font-bold bg-gradient-to-r from-[#6E51E0] to-[#8A63FFB2] bg-clip-text text-transparent">
-                200+
+      <section className="py-20 bg-white 3xl:gap-20  flex  justify-center ">
+        <div className="  lg:w-[1100px] xl:w-[1100px]  2xl:w-[1400px]  3xl:w-[1565px]    flex justify-center ">
+          {/* Left: Text Content */}
+          <div className=" lg:w-[500px]  xl:w-[600px] 2xl:w-[726px]  3xl:w-[900px] 3xl:py-20 pt-10 pl-20 ">
+            <h2 className="text-xl lg:text-4xl 2xl:text-5xl  w-[80%]  md:text-5xl font-mont font-medium text-gray-900 mb-8 leading-tight">
+              "Learn today, lead tomorrow"
+            </h2>
+            <div className="flex  justify-between lg:w-[80%] xl:w-[80%]  2xl:w-[50%]  3xl:w-[70%]">
+              <div className="text-center   ">
+                <div className="text-4xl 3xl:text-5xl  font-mont font-bold bg-gradient-to-r from-[#6E51E0] to-[#8A63FFB2] bg-clip-text text-transparent">
+                  200+
+                </div>
+                <div className="text-black font-semibold 3xl:p-2">People</div>
               </div>
-              <div className="text-gray-600">People</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl  3xl:text-5xl font-mont font-bold bg-gradient-to-r from-[#6E51E0] to-[#8A63FFB2] bg-clip-text text-transparent">
-                50+
+              <div className="text-center">
+                <div className="text-4xl  3xl:text-5xl font-mont font-bold bg-gradient-to-r from-[#6E51E0] to-[#8A63FFB2] bg-clip-text text-transparent">
+                  50+
+                </div>
+                <div className="text-black font-semibold 3xl:p-2">Courses</div>
               </div>
-              <div className="text-gray-600">Courses</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl  3xl:text-5xl font-mont font-bold bg-gradient-to-r from-[#6E51E0] to-[#8A63FFB2] bg-clip-text text-transparent">
-                20+
+              <div className="text-center">
+                <div className="text-4xl  3xl:text-5xl font-mont font-bold bg-gradient-to-r from-[#6E51E0] to-[#8A63FFB2] bg-clip-text text-transparent">
+                  20+
+                </div>
+                <div className="text-black font-semibold 3xl:p-2">
+                  Experience Staff
+                </div>
               </div>
-              <div className="text-gray-600">Experience Staff</div>
             </div>
           </div>
-        </div>
 
-        {/* Right: Description */}
-        <div className="w-[40%] px-10">
-          <div className="w-[203px]">
-            <span className="text-3xl text-[#8A63FF] font-mont font-bold mb-4  flex justify-between">
-              nexora{" "}
-              <span>
-                {" "}
-                <img src={group} alt="R image" />
+          {/* Right: Description */}
+          <div className="lg:w-[500px] lg-px-10 lg:p-2    xl:w-[600px]  2xl:w-[706px] 3xl:w-[706px]  3xl:text-[20px] px-10">
+            <div className="w-[203px]">
+              <span className="text-3xl text-[#8A63FF] font-mont font-bold mb-4  flex justify-between">
+                nexora{" "}
+                <span>
+                  {" "}
+                  <img src={group} alt="R image" />
+                </span>
               </span>
-            </span>
+            </div>
+            <p
+              className="text-lg text-gray-900  font-mont leading-relaxed"
+              style={{
+                fontFamily: "mont-regular",
+              }}
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit
+              amet, consectetur adipiscing elit. Sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit
+              amet, consectetur adipiscing elit. Sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua.
+            </p>
           </div>
-          <p className="text-lg text-gray-600  font-mont leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua.
-          </p>
         </div>
-        {/* </div> */}
       </section>
       {/* Achievements Section */}
-      <section className="py-20  bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-mont font-medium text-gray-900 pr-[78%] mb-4">
+      <section className="py-20 flex justify-center bg-white w-full  ">
+        <div className="  3xl:w-[1596px] 2xl:w-[1200px] xl:w-[1000px]">
+          <div className="text-center xl:mb-12">
+            <h2
+              className="text-4xl font-mont font-medium text-gray-900 pr-[78%] mb- 3xl:text-[40px] 2xl:text-[30px] xl:text-[30px] "
+              style={{
+                fontFamily: "mont-regular",
+              }}
+            >
               Achievements
             </h2>
-            <p className="text-l text-gray-600 pr-48">
+            <p className="text-l text-gray-600 pr-48  p-1 3xl:text-xl 2xl:text-sm xl:text-[10px] ">
               Our commitment to excellence has led us to achieve significant
               milestones along our journey. Here are some of our notable
               Achievements.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 ml-12 gap-y-20">
-            <div className="flex flex-col items-start space-y-4 w-[490px]">
-              <div className="w-11 h-11 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                <img src={trust} />{" "}
+          <div className="flex flex-wrap  3xl:p-10 2xl:p-10">
+            <div className="w-1/2 space-y-40  ">
+              <div className="flex flex-col items-start 3xl:w-[683px] 2xl:w-[400px] ">
+                <div className="w-11 h-11 bg-purple-100 rounded-xl 3xl:mb-5 flex items-center justify-center flex-shrink-0 ">
+                  <img src={trust} />{" "}
+                </div>
+                <div className=" ">
+                  <h3 className=" font-mont font-medium text-gray-900 3xl:mb-5 3xl:text-[36px] 2xl:text-[26px] ">
+                    Trusted by Thousands
+                  </h3>
+                  <p className="text-gray-600 3xl:text-[20px] 2xl:text-[16px] 3xl:w-[100%]   ">
+                    Lorem ipsum dolor sit amet consectetur. Nibh nisl ornare
+                    blandit id eu cursus sagittis molestie.
+                  </p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-2xl font-mont font-medium text-gray-900 mb-2">
-                  Trusted by Thousands
-                </h3>
-                <p className="text-gray-600">
-                  Lorem ipsum dolor sit amet consectetur. Nibh nisl ornare
-                  blandit id eu cursus sagittis molestie.
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-col items-start space-y-4  w-[490px]">
-              <div className="w-11 h-11 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                <img src={award} />{" "}
-              </div>
-              <div>
-                <h3 className="text-2xl font-mont font-medium text-gray-900 mb-2">
-                  Award-Winning Courses
-                </h3>
-                <p className="text-gray-600">
-                  Lorem ipsum dolor sit amet consectetur. Lorem augue imperdiet
-                  ac tellus sapien.
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-col items-start space-y-4  w-[490px]">
-              <div className="w-11 h-11 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                <img src={positive} />{" "}
-              </div>
-              <div>
-                <h3 className="text-2xl font-mont font-medium text-gray-900 mb-2">
-                  Positive Student Feedback
-                </h3>
-                <p className="text-gray-600">
-                  Lorem ipsum dolor sit amet consectetur. Aliquam ac vulputate
-                  duis sit orci non nec.
-                </p>
+              <div className="flex flex-col items-start space-y-4  3xl:w-[683px] 2xl:w-[400px]">
+                <div className="w-11 h-11 3xl:mb-5 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <img src={award} />{" "}
+                </div>
+                <div>
+                  <h3 className="text-2xl font-mont font-medium text-gray-900 3xl:mb-5 3xl:text-[36px] 2xl:text-[26px] ">
+                    Award-Winning Courses
+                  </h3>
+                  <p className="text-gray-600 3xl:text-[20px] 2xl:text-[16px]  ">
+                    Lorem ipsum dolor sit amet consectetur. Lorem augue
+                    imperdiet ac tellus sapien.
+                  </p>
+                </div>
               </div>
             </div>
-            <div className="flex flex-col items-start space-y-4  w-[490px]">
-              <div className="w-11 h-11 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                <img src={indus} />{" "}
+            <div className="w-1/2 space-y-40 ">
+              <div className="flex flex-col 3xl:mb-5 items-start space-y-4 3xl:w-[683px] 2xl:w-[400px]">
+                <div className="w-11 h-11 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <img src={positive} />{" "}
+                </div>
+                <div>
+                  <h3 className="text-2xl font-mont font-medium text-gray-900 3xl:mb-5  3xl:text-[36px] 2xl:text-[26px] ">
+                    Positive Student Feedback
+                  </h3>
+                  <p className="text-gray-600  3xl:text-[20px] 2xl:text-[16px]">
+                    Lorem ipsum dolor sit amet consectetur. Aliquam ac vulputate
+                    duis sit orci non nec.
+                  </p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-2xl font-mont font-medium text-gray-900 mb-2">
-                  Industry Partnerships
-                </h3>
-                <p className="text-gray-600">
-                  Lorem ipsum dolor sit amet consectetur. Lacus ipsum egestas
-                  viverra a magnis.
-                </p>
+              <div className="flex flex-col 3xl:mb-5 items-start space-y-5 3xl:w-[683px] 2xl:w-[400px]">
+                <div className="w-11 h-11 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <img src={indus} />{" "}
+                </div>
+                <div>
+                  <h3 className=" font-mont font-medium text-gray-900 3xl:mb-5  3xl:text-[36px] 2xl:text-[26px]">
+                    Industry Partnerships
+                  </h3>
+                  <p className="text-gray-600  3xl:text-[20px] 2xl:text-[16px]   ">
+                    Lorem ipsum dolor sit amet consectetur. Lacus ipsum egestas
+                    viverra a magnis.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -285,7 +314,7 @@ const About = () => {
                 <div className="text-4xl lg:text-5xl font-mont font-medium  text-center pl-6 text-[#6E51E0] mb-2">
                   {stat.number}
                 </div>
-                <div className="text-gray-600 text-center text-wrap font-mont">
+                <div className="text-gray-600 text-center text-wrap font-mont ">
                   {stat.label}
                 </div>
               </div>
