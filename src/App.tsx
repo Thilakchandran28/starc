@@ -8,7 +8,7 @@ import Course from "./pages/Course";
 import Book from "./pages/Book";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Login from "./pages/Login";
+import Login from "./components/Login";
 import Signup from "./pages/Signup";
 import NotFound from "./pages/NotFound";
 import Dashboard from "./pages/Dashboard";
@@ -26,6 +26,7 @@ import WishlistPage from "./pages/WishlistPage";
 import ScrollToTop from "./components/ScrollTop";
 
 import CardDetail from "./components/CardDetail";
+import LoginPage from "./pages/LoginPage";
 
 const queryClient = new QueryClient();
 
@@ -59,6 +60,7 @@ const App = () => (
           <Route path="/signup" element={<PublicRoute><Signup /></PublicRoute>} />
           <Route path="/notifications" element={<Notifications />} />
           <Route path="/wishlist" element={<WishlistPage />} />
+          <Route path="/LoginPage" element={<LoginPage />} />
 
 
           {/* Protected Routes */}

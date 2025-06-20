@@ -1,5 +1,6 @@
+//Login
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Eye, EyeOff } from "lucide-react";
@@ -44,10 +45,10 @@ const LoginForm: React.FC<LoginFormProps> = ({
         <form className="space-y-4" onSubmit={handleLogin}>
           <div>
             <p className="text-sm text-gray-600 mb-2 pb-6 font-mont">
-              Sign in to discover 500+ courses waiting for your learning
+              Sign Up Now—Discover 500+ Courses are<br/> waiting for your Learning
             </p>
             <label className="block text-sm font-medium text-gray-700 mb-1 font-mont">
-              Email address*
+              Email address/Phone Number*
             </label>
             <Input
               type="text"
@@ -160,12 +161,14 @@ const LoginForm: React.FC<LoginFormProps> = ({
                 Sign up with Google
               </Button>
             </LoginSocialGoogle>
+            <Link to="/">
             <Button
               variant="outline"
               className="w-30 h-10 border border-gray-300 text-gray-700 rounded-sm text-xs font-semibold font-mont"
             >
               Continue as Guest
             </Button>
+            </Link>
           </div>
         </form>
         <div className="mt-8 text-left">
