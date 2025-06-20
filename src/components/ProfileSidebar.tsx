@@ -4,15 +4,15 @@ import { LayoutDashboard, BookOpen, Book, Calendar, Settings } from 'lucide-reac
 const ProfileSidebar = () => {
   // fixed top-32 left-8
   return (
-    <div className=" bg-white rounded-[16px]  shadow-md p-4 lg:h-[90vh] 3xl:w-[274px] 3xl:h-[80vh]">
+    <div className=" bg-white rounded-[16px] h-[80vh]  shadow-md p-4 lg:w-[190px]  xl:w-[220px]  2xl:w-[250px] 3xl:w-[274px] ">
       {/* User Profile Section */}
       <div className="flex items-center mb-6">  
-        <div className="w-16 h-16 rounded-full overflow-hidden mr-4">
+        <div className="lg:w-12 lg:h-12 xl:w-16 xl:h-16 rounded-full overflow-hidden mr-4">
           <img src="/placeholder.svg" alt="User Avatar" className="w-full h-full object-cover" />
         </div>
         <div>
-          <p className="text-gray-600 text-sm">Hello!</p>
-          <h2 className="text-lg font-semibold text-gray-900">Jackson Durai</h2>
+          <p className="text-gray-600 lg:text-[9px] xl:text-[11px] 2xl:text-sm">Hello!</p>
+          <h2 className="lg:text-xs xl:text-sm 2xl:text-base 3xl:text-lg font-semibold text-gray-900">Jackson Durai</h2>
         </div>
       </div>  
 
@@ -23,7 +23,7 @@ const ProfileSidebar = () => {
         <NavLink
           to="/profile"
           className={({ isActive }) =>
-            `flex items-center p-3 rounded-lg transition-colors duration-200 ${isActive
+            `flex items-center p-3 rounded-lg lg:text-xs xl:text-sm 2xl:text-base 3xl:text-lg transition-colors duration-200 ${isActive
               ? ' text-purple-600'
               : 'text-gray-700 hover:bg-gray-200'}`
           }
@@ -34,7 +34,7 @@ const ProfileSidebar = () => {
         <NavLink
           to="/courses"
           className={({ isActive }) =>
-            `flex items-center p-3 rounded-lg transition-colors duration-200 ${isActive
+            `flex items-center p-3 rounded-lg lg:text-xs xl:text-sm 2xl:base 3xl:text-lg transition-colors duration-200 ${isActive
               ? ' text-purple-600'
               : 'text-gray-700 hover:bg-gray-200'}`
           }
@@ -45,7 +45,7 @@ const ProfileSidebar = () => {
         <NavLink
           to="/book"
           className={({ isActive }) =>
-            `flex items-center py-3 px-1 rounded-lg transition-colors duration-200 ${isActive
+            `flex items-center py-3 px-3  rounded-lg lg:text-xs xl:text-sm 2xl:base 3xl:text-lg transition-colors duration-200 ${isActive
               ? ' text-purple-600'
               : 'text-gray-700 hover:bg-gray-200'}`
           }
@@ -56,7 +56,7 @@ const ProfileSidebar = () => {
         <NavLink
           to="/schedule"
           className={({ isActive }) =>
-            `flex items-center p-3 rounded-lg transition-colors duration-200 ${isActive
+            `flex items-center p-3 rounded-lg lg:text-xs xl:text-sm 2xl:base 3xl:text-lg transition-colors duration-200 ${isActive
               ? 'text-purple-600'
               : 'text-gray-700 hover:bg-gray-200'}`
           }
@@ -67,7 +67,7 @@ const ProfileSidebar = () => {
         <NavLink
           to="/settings"
           className={({ isActive }) =>
-            `flex items-center p-3 rounded-lg transition-colors duration-200 ${isActive
+            `flex items-center p-3 rounded-lg lg:text-xs xl:text-sm 2xl:base 3xl:text-lg transition-colors duration-200 ${isActive
               ? 'text-purple-600'
               : 'text-gray-700 hover:bg-gray-200'}`
           }

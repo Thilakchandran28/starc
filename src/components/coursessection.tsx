@@ -602,7 +602,7 @@ export default function CategoryTabsPage() {
         <div className="w-[90%] mx-auto px-4 sm:px-6 lg:px-8 ">
           {/* Top Mentors Section */}
           <div className="mb-12">
-            <h2 className="text-5xl font-mont font-medium  text-gray-900 mb-4 text-center">
+            <h2 className="lg:text-4xl xl:text-5xl 3xl:text-5xl font-mont font-medium  text-gray-900 mb-4 text-center">
               Discover<br /> Our Nexora Courses
             </h2>
             <br></br>
@@ -646,22 +646,25 @@ export default function CategoryTabsPage() {
           {/* Our Courses Title and Tabs */}
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-gray-800 mb-4">Our Courses</h1>
-            <div className="flex items-center justify-start space-x-6 border-b border-gray-200">
+            <div className="flex items-center justify-between border-b border-gray-200">
               {categories.map((category) => (
                 <button
                   key={category.id}
                   onClick={() => setSelected(category.id)}
-                  className={`relative flex  items-center space-x-2 text-sm font-medium py-2 px-4 transition-colors ${selected === category.id
-                      ? "text-purple-600"
-                      : "text-gray-500 hover:text-purple-600"
+                  className={`relative flex  items-center space-x-[10%] lg:text-lg 2xl:text-xl font-medium   py-2 px-4 transition-colors ${selected === category.id
+                    ? "text-purple-600 bg-gradient-to-b from-transparent from-49.76% via-transparent to-[rgba(138,99,255,0.24)] "
+                    : "text-gray-500 hover:text-purple-600"
                     }`}
                 >
                   <span>{category.icon} </span>
                   <span>{category.label}</span>
                   <span
-                    className={`absolute bottom-0 left-0 w-full h-0.5 transition-all duration-300 ${selected === category.id
-                        ? "bg-gradient-to-r from-purple-400 to-purple-600"
-                        : "bg-transparent"
+
+                    // background: linear-gradient(180deg, rgba(230, 240, 255, 0) 49.76%, rgba(138, 99, 255, 0.24) 100%);
+
+                    className={`absolute bottom-0 left-[-13px] ml-0 w-full h-0.5 transition-all duration-300 ${selected === category.id
+                      ? "bg-gradient-to-r from-purple-400 to-purple-600"
+                      : "bg-transparent"
                       }`}
                   />
                 </button>
@@ -674,7 +677,7 @@ export default function CategoryTabsPage() {
       {/* Content */}
       <div className="w-[90%] mx-auto px-4 pb-10 sm:px-6 lg:px-4 mt-10">
         {/* <div className="flex items-center justify-between mb-8"> */}
-          {/* <h1 className="text-3xl font-bold text-gray-800">{selectedLabel} Courses</h1> */}
+        {/* <h1 className="text-3xl font-bold text-gray-800">{selectedLabel} Courses</h1> */}
         {/* </div> */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  gap-6">
           {displayedCourses.length > 0 ? (
@@ -691,7 +694,7 @@ export default function CategoryTabsPage() {
                 <div className="px-4 py-3">
                   <div className="flex items-center justify-between text-sm text-gray-400 mb-1">
                     <div className="flex items-center space-x-1">
-                      <BookOpen className="lg:w-2 lg:h-2 xl:w-3 xl:h-3 2xl:w-4 2xl:h-4 3xl:w-6 3xl:h-6"/>
+                      <BookOpen className="lg:w-2 lg:h-2 xl:w-3 xl:h-3 2xl:w-4 2xl:h-4 3xl:w-6 3xl:h-6" />
                       <span className="lg:text-[10px] xl:text-xs 2xl:text-sm 3xl:text-base">{course.category}</span>
                     </div >
                     <div className="flex items-center gap-1">

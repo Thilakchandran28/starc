@@ -56,45 +56,46 @@ const DashboardOverview: React.FC = () => {
 
   return (
     // absolute top-28 bg-gray-100
-    <div className="h-screen overflow-y-auto lg:w-[550px] xl:w-[700px] 2xl:w-[90%] 3xl:w-[1008px] 3xl:h-[80vh]" style={{ scrollbarWidth: "none" }} >
+    <div className="h-[82vh] overflow-y-auto lg:w-[550px] xl:w-[700px] 2xl:w-[775px] 3xl:w-[1008px] py-1" style={{ scrollbarWidth: "none" }} >
       <h1 className="text-3xl font-bold text-gray-900 mb-6">Hello {user.name} 👋</h1>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mb-6">
+      <div className="flex justify-between   border border-b-red-400  ">
         {/* Achieve with Purpose Card */}
         <div
-          className="bg-purple-600 text-white  p-6 rounded-[30px] shadow-md flex flex-col justify-between col-span-1 bg-cover bg-center"
-          style={{ backgroundImage: `url(${awardbg})` }}
+          className="bg-purple-600 2xl:h-[223px] 2xl:w-[372px] 3xl:h-[243px] 3xl:w-[412px] text-white border border-b-red-400  p-6 rounded-[30px] shadow-md  m-2 flex flex-col justify-between  bg-cover bg-center"
+          style={{ backgroundImage: `url(${awardbg})`}}
         >
-          <div>
-            <h2 className="text-xl font-bold mb-2">Achieve with purpose</h2>
-            <p className="text-purple-200 text-sm mb-4">
+          <div className=''>
+            <h2 className="2xl:text-xl font-bold mb-2">Achieve with purpose</h2>
+            <p className="text-purple-200 2xl:text-xs">
               Achieve with purpose Achieve with purpose Achieve with purpose.
             </p>
           </div>
-          <div className="flex items-center justify-between">
-            <div className="text-3xl font-bold lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-3xl">02/10</div>
-            <img src={trophy} alt="Trophy" className="h-20 w-20 lg:h-16 lg:w-16 xl:h-20 xl:w-20 2xl:h-24 2xl:w-24 3xl:h-28 3xl:w-28" />
+          <div className="flex items-start justify-center 2xl:h-[70px] 3xl:h-[80px] border border-black ">
+            <div className="flex justify-center text-3xl font-bold lg:text-xl xl:text-2xl  2xl:text-[24px] 2xl:w-[198px] 3xl:text-[28px] 3xl:w-[218px] 3xl:h-[45px] mt-4">02/10</div>
+            <img src={trophy} alt="Trophy" className="relative border border-black bottom-6 h-20 w-20 lg:h-16 lg:w-16 xl:h-20 xl:w-20 2xl:h-24 2xl:w-24 3xl:h-[126px] 3xl:w-[126px]" />
           </div>
-          <button className="mt-4 bg-white text-purple-600 px-4 py-2 rounded-full font-semibold hover:bg-gray-100 w-[10vw]">
+          <button className="mt-4 bg-white text-purple-600 px-4 py-2 rounded-full font-semibold  hover:bg-gray-100 2xl:text-[12px] 2xl:h-[28px] 2xl:w-[100px] 3xl:text-[14px] 3xl:h-[35px] 3xl:w-[122px]">
             Start Now
           </button>
         </div>
 
         {/* Learning Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
-          <div className="bg-white p-6 rounded-[30px] shadow-md flex items-center space-x-4">
-            <div className="lg:py-1 lg:px-1 xl:py-2 xl:px-2 2xl:py-3 2xl:px-3 3xl:py-4 3xl:px-4 bg-gradient-to-b from-[#868CFF] to-[#8A63FF] rounded-full">
-              <img src={hour} alt="Hour Icon" className='lg:h-5 lg:w-5 xl:h-6 xl:w-6 2xl:h-8 2xl:w-8' />
-            </div>
-            <div>
-              <p className="text-gray-600 lg:text-xs xl:text-sm 2xl:text-base">Learning Hour </p>
-              <p className="text-2xl font-bold">
-                {user.learningHours} <span className="text-sm text-gray-500">(This week)</span>
+        <div className="flex flex-col justify-between items-center m-2 border border-yellow-300 ">
+          <div className="bg-white 2xl:p-4 3xl:p-6 rounded-[30px] shadow-md flex items-center space-x-4 border border-blue-500 2xl:h-[100px] 2xl:w-[198px] 3xl:h-[106px] 3xl:w-[258px]">
+            <div className="lg:py-1 lg:px-1 xl:py-2 xl:px-2 2xl:py-3 2xl:px-2 3xl:py-4 3xl:px-4 bg-gradient-to-b from-[#868CFF] to-[#8A63FF] rounded-full">
+              <img src={hour} alt="Hour Icon" className='lg:h-5 lg:w-5 xl:h-6 xl:w-6 2xl:h-6 2xl:w-6 3xl:h-8 3xl:w-8' />
+            </div>  
+            <div className=''>
+              <p className="text-gray-600 lg:text-xs xl:text-sm 2xl:text-xs 3xl:text-base">Learning Hour </p>
+              <p className="2xl:text-xl 3xl:text-2xl font-bold">
+                {user.learningHours} <span className= " 2xl:text-xs 3xl:text-sm text-gray-500">(This week)</span>
               </p>
             </div>
           </div>
-          <div className="bg-white p-6 rounded-[30px] shadow-md flex items-center space-x-4">
-            <div className="lg:py-1 lg:px-1 xl:py-2 xl:px-2 2xl:py-3 2xl:px-3 3xl:py-4 3xl:px-4   bg-gradient-to-b from-[#868CFF] to-[#8A63FF] rounded-full">
+
+          <div className="bg-white p-6 rounded-[30px] shadow-md flex items-center space-x-4 border border-red-400 2xl:h-[100px] 2xl:w-[198px] 3xl:h-[106px] 3xl:w-[258px]">
+            <div className="lg:py-1 lg:px-1 xl:py-2 xl:px-2 2xl:py-3 2xl:px-2 3xl:py-4 3xl:px-4   bg-gradient-to-b from-[#868CFF] to-[#8A63FF] rounded-full">
               <img src={earned} alt="Earned Icon" className='lg:h-5 lg:w-5 xl:h-6 xl:w-6 2xl:h-8 2xl:w-8' />
             </div>
             <div>
@@ -106,11 +107,11 @@ const DashboardOverview: React.FC = () => {
 
         {/* Courses Enrolled Progress */}
 
-        <div className="flex flex-col items-center justify-center p-4 sm:p-6 bg-white rounded-lg shadow-md">
+        <div className="flex flex-col items-center justify-center m-2  p-4 bg-white rounded-lg shadow-md border border-b-red-600">
           {/* Circular Progress Bar Container */}
-          <div className="relative w-40 h-40 sm:w-48 sm:h-48 lg:w-52 lg:h-52 xl:w-[14vw] xl:h-[14vw] flex justify-center items-center">
+          <div className="relative w-40 h-40 sm:w-48 sm:h-48 lg:w-52 lg:h-52 xl:w-[14vw] xl:h-[14vw] 2xl:h-[140px] 2xl:w-[140px] 3xl:h-[166px] 3xl:w-[166px]  flex justify-center items-center bg-yellow-300">
             {/* Background Circle (Gray for Pending) */}
-            <svg className="absolute w-full h-full" viewBox="0 0 100 100">
+            <svg className="absolute w-full h-full" viewBox="0 0 100 100   ">
               <circle
                 className="stroke-gray-300"
                 cx="50"
@@ -136,11 +137,11 @@ const DashboardOverview: React.FC = () => {
               />
             </svg>
             {/* Center Text */}
-            <div className="absolute flex flex-col items-center justify-center w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 xl:w-[10vw] xl:h-[10vw] 2xl:w-[8vw] 2xl:h-[8vw] bg-white rounded-full shadow-2xl ">
-              <span className="text-gray-500 text-xs sm:text-sm lg:text-sm xl:text-[0.9vw] 2xl:text-[0.7vw]">
+            <div className="absolute flex flex-col items-center justify-center w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 xl:w-[10vw] xl:h-[10vw]  2xl:h-[98px] 2xl:w-[98px] 3xl:h-[98px] 3xl:w-[108px] bg-red-400 rounded-full shadow-2xl ">
+              <span className="text-gray-500 text-xs sm:text-sm lg:text-sm xl:text-[0.9vw] 2xl:text-[8px] 3xl:text-[9px]">
                 Courses Enrolled
               </span>
-              <span className="text-3xl sm:text-4xl lg:text-4xl xl:text-[2.5vw] font-bold">
+              <span className="text-3xl sm:text-4xl lg:text-4xl xl:text-[2.5vw] 2xl:text-[22px] 3xl:text-[26px] font-bold">
                 {progress}
               </span>
             </div>
@@ -149,13 +150,13 @@ const DashboardOverview: React.FC = () => {
           <div className="flex space-x-3 sm:space-x-4 mt-3 sm:mt-4">
             <div className="flex items-center">
               <div className="w-3 h-3 sm:w-4 sm:h-4 lg:w-4 lg:h-4 xl:w-[1vw] xl:h-[1vw] bg-purple-500 rounded-full mr-1 sm:mr-2"></div>
-              <span className="text-xs sm:text-sm lg:text-sm xl:text-[0.9vw]">
+              <span className="text-xs sm:text-sm lg:text-sm xl:text-[0.9vw] 2xl:text-[12px] 3xl:text-[13px]">
                 Completed
               </span>
             </div>
             <div className="flex items-center">
               <div className="w-3 h-3 sm:w-4 sm:h-4 lg:w-4 lg:h-4 xl:w-[1vw] xl:h-[1vw] bg-gray-300 rounded-full mr-1 sm:mr-2"></div>
-              <span className="text-xs sm:text-sm lg:text-sm xl:text-[0.9vw]">
+              <span className="text-xs sm:text-sm lg:text-sm xl:text-[0.9vw] 2xl:text-[12px] 3xl:text-[13px]">
                 Pending
               </span>
             </div>
