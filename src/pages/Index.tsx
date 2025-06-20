@@ -24,8 +24,8 @@ const Index = () => {
       </div> */}
       <div className="flex justify-center text-center flex-col   pt-[5%]">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Starc?</h2>
+        <div className="text-center mb-1">
+          <h2 className="lg:text-4xl xl:text-5xl 3xl:text-5xl font-mont font-medium text-gray-900 mb-4">Why Choose Starc?</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Lorem ipsum dolor sit amet consectetur. Neque enim et non enim egestas. Etiam nec quam velit interdum at tortor velit quis.
           </p>
@@ -35,7 +35,7 @@ const Index = () => {
       <div className="flex justify-center text-center flex-col   pt-[5%]">
         {/* Header */}
         <div className="text-center mb-1">
-          <h2 className="lg:text-2xl xl:text-4xl 2xl:text-6xl font-bold text-gray-900 mb-4">Discover Our Starc Masters</h2>
+          <h2 className="lg:text-4xl xl:text-5xl 3xl:text-5xl font-mont font-medium text-gray-900 mb-4">Discover Our Starc Masters</h2>
           <p className="text-gray-600 lg:text-sm xl:text-base 2xl:text-lg mx-auto">
             Find the best master for your company and boosts your business 10x!
           </p>

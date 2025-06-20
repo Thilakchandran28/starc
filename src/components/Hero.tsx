@@ -14,14 +14,14 @@ const Hero: React.FC = () => {
         "Lorem ipsum dolor sit amet consectetur. Arcu a sit commodo tempor nulla blandit. Posuere vel netus auctor phasellus fermentum.",
     },
     {
-      title: "Lorem ipsum dolor sit amet consectetur.",
+      title: "Discover New Learning Paths Today",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Arcu a sit commodo tempor nulla blandit. Posuere vel netus auctor phasellus fermentum.",
+        "Unlock your potential with our curated courses. Learn at your own pace with expert guidance and support.",
     },
     {
-      title: "Lorem ipsum dolor sit amet consectetur.",
+      title: "Master Skills with Expert Mentors",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Arcu a sit commodo tempor nulla blandit. Posuere vel netus auctor phasellus fermentum.",
+        "Join thousands of learners and gain skills that matter. Start your journey with hands-on projects.",
     },
   ];
 
@@ -57,31 +57,152 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative bg-white py-20 overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full">
-        <img
-          src={heroImage}
-          alt="Background Vector"
-          className="w-[75%] h-auto absolute left-[235px] top-[10px] "
-          onError={(e) => {
-            console.error("Error loading hero image:", e);
-            e.currentTarget.style.display = "none"; // Hide image if it fails to load
-          }}
-        />
+    // <section className="relative from-purple-50 to-white overflow-hidden 2xl:h-[708px] 3xl:h-[738px]">
+    //   <div className="absolute top-0 left-0 w-full h-full">
+    //     <img
+    //       src={heroImage}
+    //       alt="Background Vector"
+    //       // className="w-[75%] h-auto absolute left-[235px] top-[10px] "
+    //       className="lg:w-[60%] xl:w-[56%] 2xl:w-[53%] 3xl:w-[50%] absolute top-[10px] lg:pt-6 xl:pt-12  2xl:pt-10 3xl:pt-8"
+    //       onError={(e) => {
+    //         console.error("Error loading hero image:", e);
+    //         e.currentTarget.style.display = "none"; // Hide image if it fails to load
+    //       }}
+    //     />
+    //   </div>
+
+    //   <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center pt-64 ">
+    //     <div
+    //       className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-6 text-white font-mont"
+    //       style={{ backgroundColor: "#A855F7" }}
+    //     >
+    //       SUPERVISED COURSES
+    //     </div>
+
+    //     {/* Fixed height container for sliding content */}
+    //     <div className="overflow-hidden h-[300px] flex items-center justify-center font-mont">
+    //       <div key={currentSlide} className="w-full font-mont">
+    //         <h1 className="lg:text-[400%] font-bold text-gray-800 mb-6 animate-pop-slide">
+    //           {slides[currentSlide].title.split(" ").map((word, index) => (
+    //             <span key={index}>
+    //               {word}{" "}
+    //               {index === 4 && <br />}
+    //             </span>
+    //           ))}
+    //         </h1>
+    //         <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto animate-pop-slide">
+    //           {slides[currentSlide].description}
+    //         </p>
+    //       </div>
+    //     </div>
+
+    //     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 font-mont">
+    //       {currentSlide === 0 ? (
+    //         <>
+    //           <button
+    //             type="button"
+    //             className="bg-purple-500 text-white px-6 py-3 text-lg font-medium rounded-lg shadow-md font-mont"
+    //             style={{ backgroundColor: "#A855F7", boxShadow: '0px 10px 12px 0px rgba(0, 0, 0, 0.2)' }}
+    //           >
+    //             Explore More Now
+    //           </button>
+    //           <div className="flex items-center gap-2">
+    //             <div className="flex -space-x-2">
+    //               {[1, 2, 3, 4].map((i) => (
+    //                 <img
+    //                   key={i}
+    //                   className="w-8 h-8 rounded-full border-2 border-white"
+    //                   src={`https://i.pravatar.cc/32?img=${i}`}
+    //                   alt={`Student ${i}`}
+    //                 />
+    //               ))}
+    //             </div>
+    //             <span className="text-sm text-gray-600">1k+ students</span>
+    //           </div>
+    //         </>
+    //       ) : currentSlide === 1 ? (
+    //         <button
+    //           type="button"
+    //           className="bg-purple-500 text-white px-6 py-3 text-lg font-medium rounded-lg shadow-md font-mont"
+    //           style={{ backgroundColor: "#A855F7", boxShadow: '0px 10px 12px 0px rgba(0, 0, 0, 0.2)' }}
+    //         >
+    //           Express Your Interest Now
+    //         </button>
+    //       ) : (
+    //         <div className="flex items-center gap-4">
+    //           <button
+    //             type="button"
+    //             className="bg-purple-500 text-white px-6 py-3 text-lg font-medium rounded-lg shadow-md"
+    //             style={{ backgroundColor: "#A855F7", boxShadow: '0px 10px 12px 0px rgba(0, 0, 0, 0.2)' }}
+    //           >
+    //             Explore Courses Now
+    //           </button>
+    //           <div className="flex items-center gap-1 text-sm text-gray-600">
+    //             <span>📚</span>
+    //             <span>300+ Modules & 30+ Courses</span>
+    //           </div>
+    //         </div>
+    //       )}
+    //     </div>
+
+    //     {/* Animated progress bar */}
+    //     <div className="flex justify-center">
+    //       <div
+    //         className="w-64 h-1 bg-gray-200 rounded-full overflow-hidden cursor-pointer"
+    //         onClick={handleBarClick}
+    //       >
+    //         <div
+    //           className="h-full bg-purple-600 rounded-full"
+    //           style={{
+    //             width: `${100 / slides.length}%`,
+    //             transform: `translateX(${currentSlide * 100}%)`,
+    //             transition: skipTransition ? "none" : "transform 0.5s ease-in-out",
+    //           }}
+    //         />
+    //       </div>
+    //     </div>
+    //   </div>
+
+    //   {/* CSS for animations */}
+    //   <style>
+    //     {`
+    //       @keyframes popSlide {
+    //         from {
+    //           opacity: 0;
+    //           transform: translateY(10px) scale(0.95);
+    //         }
+    //         to {
+    //           opacity: 1;
+    //           transform: translateY(0) scale(1);
+    //         }
+    //       }
+    //       .animate-pop-slide {
+    //         animation: popSlide 0.5s ease-in-out forwards;
+    //       }
+    //     `}
+    //   </style>
+    // </section>
+
+
+    <section className="relative from-purple-50 to-white overflow-hidden lg:h-[70vh] 2xl:h-[80vh] 3xl:h-[80vh] ">
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
+        {/* Optional: Subtle noise texture or pattern */}
+        <div className="w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgeT0iMSIgcj0iMSIgZmlsbD0iIzAwMDAwMDMzIi8+PC9zdmc+')] bg-repeat"></div>
       </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center pt-64 ">
-        <div
-          className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-6 text-white font-mont"
-          style={{ backgroundColor: "#A855F7" }}
-        >
-          SUPERVISED COURSES
-        </div>
-
-        {/* Fixed height container for sliding content */}
-        <div className="overflow-hidden h-[300px] flex items-center justify-center font-mont">
-          <div key={currentSlide} className="w-full font-mont">
-            <h1 className="lg:text-[400%] font-bold text-gray-800 mb-6 animate-pop-slide">
+      <div className="relative z-10 flex flex-col justify-center items-center lg:pt-5 xl:pt-5 2xl:pt-5 3xl:pt-10">
+        <div className="lg:w-[628px] lg:h-[424px] xl:w-[728px] xl:h-[504px] 2xl:w-[828px] 2xl:h-[604px] 3xl:w-[1028px] 3xl:h-[694px] flex flex-col justify-center  ">
+          <div className="flex justify-center w-full">
+            <img
+              src={heroImage}
+              alt="Hero"
+              className="lg:w-[60%] xl:w-[56%] 2xl:w-[53%] 3xl:w-[50%] absolute top-[10px] lg:pt-6 xl:pt-12  2xl:pt-10 3xl:pt-8"
+            />
+          </div>
+          <div className=" flex flex-col justify-center items-center mx-auto lg:mt-32 xl:mt-36 2xl:mt-32 3xl:mt-20 text-center lg:h-[160px]     xl:h-[160px]  2xl:h-[223px] xl:w-[100%] 2xl:w-[100%] 3xl:w-[100%] ">
+            <span className="lg:w-[100px] lg:h-[25px] xl:w-[115px] xl:h-[25px] 2xl:w-[150px] 2xl:h-[32px] 3xl:w-[200px] 3xl:h-[35px]  flex justify-center items-center bg-purple-600 text-white lg:text-[7px] xl:text-[8px]  2xl:text-[10px] 3xl:text-xs font-semibold  rounded-full mb-2 ">
+              SUPERVISED COURSES
+            </span>
+            <h1 className=" lg:text-4xl  xl:text-5xl 2xl:text-5xl 3xl:text-5xl font-bold text-gray-900 mb-4 ">
               {slides[currentSlide].title.split(" ").map((word, index) => (
                 <span key={index}>
                   {word}{" "}
@@ -89,80 +210,83 @@ const Hero: React.FC = () => {
                 </span>
               ))}
             </h1>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto animate-pop-slide">
+            <p className="lg:text-[12px] xl:text-sm 2xl:text-base 3xl:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto ">
               {slides[currentSlide].description}
+             <br />
+               {/* Posuere vel netus auctor phasellus fermentum. */}
             </p>
           </div>
-        </div>
-
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 font-mont">
-          {currentSlide === 0 ? (
-            <>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 font-mont">
+            {currentSlide === 0 ? (
+              <>
+                <button
+                  type="button"
+                  className="bg-purple-500 text-white px-6 py-3 lg:text-xs xl:text-sm 2xl:text-base 3xl:text-lg font-medium rounded-lg shadow-md font-mont"
+                  style={{ backgroundColor: "#A855F7", boxShadow: '0px 10px 12px 0px rgba(0, 0, 0, 0.2)' }}
+                >
+                  Explore More Now
+                </button>
+                <div className="flex items-center gap-2">
+                  <div className="flex -space-x-2">
+                    {[1, 2, 3, 4].map((i) => (
+                      <img
+                        key={i}
+                        className="w-8 h-8 rounded-full border-2 border-white"
+                        src={`https://i.pravatar.cc/32?img=${i}`}
+                        alt={`Student ${i}`}
+                      />
+                    ))}
+                  </div>
+                  <span className="text-sm text-gray-600">1k+ students</span>
+                </div>
+              </>
+            ) : currentSlide === 1 ? (
               <button
                 type="button"
                 className="bg-purple-500 text-white px-6 py-3 text-lg font-medium rounded-lg shadow-md font-mont"
-                style={{ backgroundColor: "#A855F7", boxShadow:'0px 10px 12px 0px rgba(0, 0, 0, 0.2)' }}
+                style={{ backgroundColor: "#A855F7", boxShadow: '0px 10px 12px 0px rgba(0, 0, 0, 0.2)' }}
               >
-                Explore More Now
+                Express Your Interest Now
               </button>
-              <div className="flex items-center gap-2">
-                <div className="flex -space-x-2">
-                  {[1, 2, 3, 4].map((i) => (
-                    <img
-                      key={i}
-                      className="w-8 h-8 rounded-full border-2 border-white"
-                      src={`https://i.pravatar.cc/32?img=${i}`}
-                      alt={`Student ${i}`}
-                    />
-                  ))}
+            ) : (
+              <div className="flex items-center gap-4">
+                <button
+                  type="button"
+                  className="bg-purple-500 text-white px-6 py-3 text-lg font-medium rounded-lg shadow-md"
+                  style={{ backgroundColor: "#A855F7", boxShadow: '0px 10px 12px 0px rgba(0, 0, 0, 0.2)' }}
+                >
+                  Explore Courses Now
+                </button>
+                <div className="flex items-center gap-1 text-sm text-gray-600">
+                  <span>📚</span>
+                  <span>300+ Modules & 30+ Courses</span>
                 </div>
-                <span className="text-sm text-gray-600">1k+ students</span>
               </div>
-            </>
-          ) : currentSlide === 1 ? (
-            <button
-              type="button"
-              className="bg-purple-500 text-white px-6 py-3 text-lg font-medium rounded-lg shadow-md font-mont"
-              style={{ backgroundColor: "#A855F7" , boxShadow:'0px 10px 12px 0px rgba(0, 0, 0, 0.2)' }}
-            >
-              Express Your Interest Now
-            </button>
-          ) : (
-            <div className="flex items-center gap-4">
-              <button
-                type="button"
-                className="bg-purple-500 text-white px-6 py-3 text-lg font-medium rounded-lg shadow-md"
-                style={{ backgroundColor: "#A855F7" , boxShadow:'0px 10px 12px 0px rgba(0, 0, 0, 0.2)'}}
-              >
-                Explore Courses Now
-              </button>
-              <div className="flex items-center gap-1 text-sm text-gray-600">
-                <span>📚</span>
-                <span>300+ Modules & 30+ Courses</span>
-              </div>
-            </div>
-          )}
-        </div>
+            )}
+          </div>
 
-        {/* Animated progress bar */}
-        <div className="flex justify-center">
-          <div
-            className="w-64 h-1 bg-gray-200 rounded-full overflow-hidden cursor-pointer"
-            onClick={handleBarClick}
-          >
+          {/* Animated progress bar */}
+          <div className="flex justify-center">
             <div
-              className="h-full bg-purple-600 rounded-full"
-              style={{
-                width: `${100 / slides.length}%`,
-                transform: `translateX(${currentSlide * 100}%)`,
-                transition: skipTransition ? "none" : "transform 0.5s ease-in-out",
-              }}
-            />
+              className="w-64 h-1 bg-gray-200 rounded-full overflow-hidden cursor-pointer"
+              onClick={handleBarClick}
+            >
+              <div
+                className="h-full bg-purple-600 rounded-full"
+                style={{
+                  width: `${100 / slides.length}%`,
+                  transform: `translateX(${currentSlide * 100}%)`,
+                  transition: skipTransition ? "none" : "transform 0.5s ease-in-out",
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>
 
-      {/* CSS for animations */}
+
+
+
       <style>
         {`
           @keyframes popSlide {
@@ -180,7 +304,7 @@ const Hero: React.FC = () => {
           }
         `}
       </style>
-    </section>
+    </section >
   );
 };
 

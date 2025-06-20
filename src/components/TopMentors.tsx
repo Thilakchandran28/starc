@@ -106,7 +106,7 @@ const CombinedSections: React.FC = () => {
         <div className="w-[70%] h-[60vh] mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Header Section */}
           <div className="mb-12 h-[20%]">
-            <h2 className="lg:text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl font-semibold text-gray-900 mb-4">
+            <h2 className="lg:text-4xl xl:text-5xl 3xl:text-5xl font-mont font-medium text-gray-900 mb-4">
               Our Top Mentor At Starc
             </h2>
             <p className="text-base text-gray-500 max-w-3xl mx-auto leading-relaxed">
