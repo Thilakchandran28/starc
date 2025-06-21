@@ -9,9 +9,9 @@ interface Slide {
 const Hero: React.FC = () => {
   const slides: Slide[] = [
     {
-      title: "Lorem ipsum dolor sit amet consectetur.",
+      title: " Unlock Your Potential. Learn Without Limits.",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Arcu a sit commodo tempor nulla blandit. Posuere vel netus auctor phasellus fermentum.",
+        "Access a world of knowledge. Flexible learning built for your success journey",
     },
     {
       title: "Discover New Learning Paths Today",
@@ -19,9 +19,9 @@ const Hero: React.FC = () => {
         "Unlock your potential with our curated courses. Learn at your own pace with expert guidance and support.",
     },
     {
-      title: "Master Skills with Expert Mentors",
+      title: "Accelerate Your Skills. Build Your Future.",
       description:
-        "Join thousands of learners and gain skills that matter. Start your journey with hands-on projects.",
+        " Master cutting-edge topics. Gain certifications for career advancement.",
     },
   ];
 
@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
   return (
    
 
-    <section className="relative from-purple-50 to-white overflow-hidden lg:h-[70vh] 2xl:h-[80vh] 3xl:h-[80vh] ">
+    <section className="relative from-purple-50 to-white overflow-hidden lg:h-[70vh] 2xl:h-[80vh] 3xl:h-[70vh] ">
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         {/* Optional: Subtle noise texture or pattern */}
         <div className="w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgeT0iMSIgcj0iMSIgZmlsbD0iIzAwMDAwMDMzIi8+PC9zdmc+')] bg-repeat"></div>
