@@ -822,6 +822,7 @@ const Course: React.FC = () => {
     {
       title: "Complete React Development Course",
       instructor: "John Doe",
+      description:"Master modern front-end development with this comprehensive React course.",
       rating: 4.8,
       students: 1234,
       price: 99,
@@ -837,6 +838,7 @@ const Course: React.FC = () => {
     {
       title: "UI/UX Design Fundamentals",
       instructor: "Alex Chen",
+      description:"Explore the essentials of user interface and user experience design.",
       rating: 4.9,
       students: 876,
       price: 119,
@@ -852,6 +854,7 @@ const Course: React.FC = () => {
     {
       title: "Digital Marketing Masterclass",
       instructor: "Sarah Green",
+      description:"Learn everything from SEO, SEM, and social media strategies to email marketing.",
       rating: 4.7,
       students: 987,
       price: 89,
@@ -867,6 +870,7 @@ const Course: React.FC = () => {
     {
       title: "Business Analytics with Python",
       instructor: "David Lee",
+      description:"This course introduces libraries like Pandas, NumPy, and Matplotlib.",
       rating: 4.6,
       students: 654,
       price: 109,
@@ -882,6 +886,7 @@ const Course: React.FC = () => {
     {
       title: "Photography Fundamentals",
       instructor: "Emily White",
+      description:"Unleash your creativity and learn to design stunning visuals using Adobe Illustrator.",
       rating: 4.9,
       students: 1500,
       price: 79,
@@ -897,6 +902,7 @@ const Course: React.FC = () => {
     {
       title: "Advanced JavaScript Concepts",
       instructor: "Michael Brown",
+      description:"Discover how to craft compelling content that attracts, engages.",
       rating: 4.8,
       students: 1100,
       price: 129,
@@ -912,6 +918,7 @@ const Course: React.FC = () => {
     {
       title: "Graphic Design with Adobe Illustrator",
       instructor: "Olivia Davis",
+      description:"From logos and icons to detailed illustrations and layouts.",
       rating: 4.7,
       students: 750,
       price: 95,
@@ -927,6 +934,7 @@ const Course: React.FC = () => {
     {
       title: "Content Marketing Strategy",
       instructor: "Daniel Wilson",
+      description:"This course covers audience research, content planning, storytelling, bloggers.",
       rating: 4.5,
       students: 500,
       price: 85,
@@ -942,6 +950,7 @@ const Course: React.FC = () => {
     {
       title: "Financial Modeling for Beginners",
       instructor: "Sophia Miller",
+      description:"earn how to forecast revenues, analyze costs, calculate profitability, and business planning",
       rating: 4.6,
       students: 400,
       price: 115,
@@ -959,21 +968,17 @@ const Course: React.FC = () => {
     const [activeIndex, setActiveIndex] = useState(0);
 
     const categories = [
-      "Lorem Ipsum",
+      "Backend ",
+      "Web Development ",
+      "Cybersecurity",
+      "Data Science ",
+      "Artificial Intelligence ",
+      "Cloud Computing ",
+      "Mobile App Development ",
       "Electronics",
-      "Lorem",
-      "Placeholder",
-      "Placeholder text",
-      "Placeholder text",
-      "Lorem Ipsum",
-      "Electronics",
-      "Lorem",
-      "Placeholder",
-      "Placeholder text",
-      "Placeholder text",
-      "Placeholder text",
-      "Placeholder text",
-      "Placeholder text",
+      "Digital Marketing ",
+      "Graphic Design",
+      "Project Management ",
     ];
 
   const filterCards = (category: string) => {

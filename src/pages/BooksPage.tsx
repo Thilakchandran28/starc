@@ -432,6 +432,7 @@ const BooksPage = () => {
     {
       title: "Complete React Development Course",
       instructor: "John Doe",
+      description: "Master modern front-end development with this comprehensive React course.",
       rating: 4.8,
       students: 1234,
       price: 99,
@@ -447,6 +448,7 @@ const BooksPage = () => {
     {
       title: "UI/UX Design Fundamentals",
       instructor: "Alex Chen",
+      description:"Explore the essentials of user interface and user experience design.",
       rating: 4.9,
       students: 876,
       price: 119,
@@ -462,6 +464,7 @@ const BooksPage = () => {
     {
       title: "Digital Marketing Masterclass",
       instructor: "Sarah Green",
+      description:"Learn everything from SEO, SEM, and social media strategies to email marketing, content creation. ",
       rating: 4.7,
       students: 987,
       price: 89,
@@ -477,6 +480,7 @@ const BooksPage = () => {
     {
       title: "Business Analytics with Python",
       instructor: "David Lee",
+      description: "Master the art of data analysis and visualization with Python. Learn to extract insights from business",
       rating: 4.6,
       students: 654,
       price: 109,
@@ -492,7 +496,7 @@ const BooksPage = () => {
     {
       title: "Photography Fundamentals",
       instructor: "Emily White",
-      rating: 4.9,
+      description:"Unlock the art and science of photography with this beginner-friendly course.",
       students: 1500,
       price: 79,
       originalPrice: 159,
@@ -507,6 +511,7 @@ const BooksPage = () => {
     {
       title: "Advanced JavaScript Concepts",
       instructor: "Michael Brown",
+      description:"Take your JavaScript skills to the next level with this in-depth course designed for developers.",
       rating: 4.8,
       students: 1100,
       price: 129,
@@ -522,6 +527,7 @@ const BooksPage = () => {
     {
       title: "Graphic Design with Adobe Illustrator",
       instructor: "Olivia Davis",
+      description:"Unleash your creativity and learn to design stunning visuals using Adobe Illustrator.",
       rating: 4.7,
       students: 750,
       price: 95,
@@ -537,6 +543,7 @@ const BooksPage = () => {
     {
       title: "Content Marketing Strategy",
       instructor: "Daniel Wilson",
+      description:"Discover how to craft compelling content that attracts, engages, and converts your audience. ",
       rating: 4.5,
       students: 500,
       price: 85,
@@ -552,6 +559,7 @@ const BooksPage = () => {
     {
       title: "Financial Modeling for Beginners",
       instructor: "Sophia Miller",
+      description:"Build foundational knowledge in financial modeling using Excel or Google Sheets.",
       rating: 4.6,
       students: 400,
       price: 115,
@@ -567,6 +575,7 @@ const BooksPage = () => {
     {
       title: "Portrait Photography Techniques",
       instructor: "James Taylor",
+      description:"Master the art of capturing expressive and professional-quality portraits.",
       rating: 4.8,
       students: 900,
       price: 89,
@@ -583,21 +592,17 @@ const BooksPage = () => {
 
 
   const categories = [
-    "Lorem Ipsum",
-    "Electronics",
-    "Lorem",
-    "Placeholder",
-    "Placeholder text",
-    "Placeholder text",
-    "Lorem Ipsum",
-    "Electronics",
-    "Lorem",
-    "Placeholder",
-    "Placeholder text",
-    "Placeholder text",
-    "Placeholder text",
-    "Placeholder text",
-    "Placeholder text",
+   "Backend", 
+ "Web Development", 
+"Cybersecurity", 
+"Data Science", 
+"Artificial Intelligence", 
+"Cloud Computing", 
+"Mobile App Development", 
+"Digital Marketing", 
+"Graphic Design", 
+"Business Fundamentals", 
+"Project Management" 
   ];
   const filterCards = (category) => {
     setSelectedCategory(category);
