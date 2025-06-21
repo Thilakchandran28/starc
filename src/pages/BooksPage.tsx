@@ -622,10 +622,8 @@ const BooksPage = () => {
           <div>
             <img
               src={heroimage}
-              alt=""
+              alt="" className="w-[40%] h-[40%] "
               style={{
-                width: "500px",
-                height: "auto",
                 position: "relative",
                 left: "350px",
                 top: "90px",

@@ -620,7 +620,7 @@ interface FilterSectionProps {
 
 const FilterSection: React.FC<FilterSectionProps> = ({
   initialActiveButton = "supervised",
-  description = "Scheduled live Google Meet classes with calendar/email alerts, seasonal batches, and fixed enrollment deadlines.",
+  description = "Scheduled live Google Meet classes with calendar/email alerts,seasonal batches, and fixed enrollment deadlines.",
   onToggle,
 }) => {
   const [activeButton, setActiveButton] = useState<
@@ -715,13 +715,13 @@ const FilterSection: React.FC<FilterSectionProps> = ({
                 Unsupervised
               </button>
             </div>
-            <span className="text-sm text-gray-500 max-w-sm  ">
+            <span className="text-sm text-gray-500 w-[40%] items-center">
               {description}
             </span>
           </div>
         </div>
 
-        <div className="p-20 ">
+        <div className="p-10 w-[100%] h-auto ">
           <h2 className="text-2xl font-semibold mb-6">Courses (957)</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div>
@@ -764,7 +764,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({
               </label>
               <select
                 id="sort"
-                className="w-full rounded-full border: 20px solid border border-[#00000040] px-4 py-2 pl-10 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
+                className="w-full rounded-full border: 20px solid border border-[#00000040] px-4 py-2  focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
               >
                 <option>Latest</option>
                 <option>Most Popular</option>
