@@ -65,7 +65,7 @@ const Profile = () => {
         <ProfileTopNavbar />
       </div>
       <div className="flex flex-1 overflow-hidden  justify-between  w-full h-screen " >
-        <div className="w-1/5 sticky top-0 h-[90vh] lg:pl-7 xl:pl-9 2xl:pl-16 3xl:pl-20  pt-8">
+        <div className="w-1/5 sticky top-0 h-[90vh] lg:pl-7 xl:pl-9 2xl:pl-16 3xl:pl-24  pt-8">
         <ProfileSidebar />
         </div>
         <div className="overflow-y-auto h-screen pt-8 sticky top-0 flex justify-center" style={{scrollbarWidth:'none'}}>
