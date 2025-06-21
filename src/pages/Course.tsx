@@ -598,6 +598,7 @@ import Recard from "@/components/Card";
 interface Course {
   title: string;
   instructor: string;
+  description:string;
   rating: number;
   students: number;
   price: number;
