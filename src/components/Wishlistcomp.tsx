@@ -1,5 +1,6 @@
 import React from 'react';
 import bin from '../Assets/delete.svg';
+import { Link } from "react-router-dom";
 
 const Wishlist: React.FC = () => {
     const courses = [
@@ -43,11 +44,15 @@ const Wishlist: React.FC = () => {
                 />
                 <div className='space-y-4'>
                     <h2 className="text-lg font-semibold text-gray-800">Jack Jackson</h2>
-                    <p className="text-sm text-gray-500">Web Designer & Best-Selling Instructor
-                        <a href="#" className="text-sm text-purple-600 hover:underline">
+                    <p className="text-sm text-gray-500 ">Web Designer & Best-Selling Instructor
+                        {/* <a href="#" className="text-sm text-purple-600 hover:underline">
                             view profile
-                        </a>
+                        </a> */}
+                        <Link to="/profile" className="text-sm text-purple-600 hover:underline pl-2">
+                            view profile
+                        </Link>
                     </p>
+
 
                 </div>
             </div>

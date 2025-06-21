@@ -74,12 +74,12 @@ const HowItWorks = () => {
 
         <div className="flex flex-col h-[60vh] lg:flex-row justify-between items-start gap-1">
           {/* Left Side Steps Container */}
-          <div className="w-full lg:w-1/2 h-[100%]  ">
+          <div className="w-full lg:w-1/2 h-[100%] relative  ">
             <img src={Purplegradient}
               className='inset-0 absolute' />
             {/* Scrollable container for steps */}
             <div
-              className="space-y-20 h-[100%] w-[100%] overflow-y-auto pr-11 pl-4 your-scrollable-div::-webkit-scrollbar-thumb {
+              className="space-y-14 h-[100%] w-[100%] overflow-y-auto pr-11 pl-4 your-scrollable-div::-webkit-scrollbar-thumb {
               background: linear-gradient(to bottom, #A78BFA, #8B5CF6); /* Purple gradient */
               border-radius: 5px; "
               style={{
