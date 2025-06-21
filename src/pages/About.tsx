@@ -162,13 +162,14 @@ const About = () => {
 
       {/* Learn Today, Lead Tomorrow Section */}
       <section className="py-20 bg-white 3xl:gap-20  flex  justify-center ">
-        <div className="  lg:w-[1100px] xl:w-[1100px]  2xl:w-[1400px]  3xl:w-[1565px]    flex justify-center ">
+        <div className="  lg:w-[1100px] xl:w-[1000px]  2xl:w-[1400px]  3xl:w-[1565px]    flex justify-center ">
           {/* Left: Text Content */}
           <div className=" lg:w-[500px]  xl:w-[600px] 2xl:w-[726px]  3xl:w-[900px] 3xl:py-20 pt-10 pl-20 ">
             <h2 className="text-xl lg:text-4xl 2xl:text-5xl  w-[80%]  md:text-5xl font-mont font-medium text-gray-900 mb-8 leading-tight">
               "Learn today, lead tomorrow"
             </h2>
-            <div className="flex  justify-between lg:w-[80%] xl:w-[80%]  2xl:w-[50%]  3xl:w-[70%]">
+            {/* -----pk----- */}
+            <div className="flex  justify-between lg:w-[80%] xl:w-[80%]  2xl:w-[50%]  3xl:w-[90%] ">
               <div className="text-center   ">
                 <div className="text-4xl 3xl:text-5xl  font-mont font-bold bg-gradient-to-r from-[#6E51E0] to-[#8A63FFB2] bg-clip-text text-transparent">
                   200+
@@ -193,7 +194,7 @@ const About = () => {
           </div>
 
           {/* Right: Description */}
-          <div className="lg:w-[500px] lg-px-10 lg:p-2    xl:w-[600px]  2xl:w-[706px] 3xl:w-[706px]  3xl:text-[20px] px-10">
+          <div className="lg:w-[500px] lg-px-10 lg:p-2   xl:w-[300px]  2xl:w-[706px] 3xl:w-[706px]  3xl:text-[20px] px-10">
             <div className="w-[203px]">
               <span className="text-3xl text-[#8A63FF] font-mont font-bold mb-4  flex justify-between">
                 nexora{" "}
@@ -223,34 +224,35 @@ const About = () => {
       </section>
       {/* Achievements Section */}
       <section className="py-20 flex justify-center bg-white w-full  ">
-        <div className="  3xl:w-[1596px] 2xl:w-[1200px] xl:w-[1000px]">
-          <div className="text-center xl:mb-12">
+        <div className="  3xl:w-[1596px] 2xl:w-[1200px] xl:w-[1000px] lg:w-[900px]">
+          <div className="text-center lg:mb-8 xl:mb-12 ">
             <h2
-              className="text-4xl font-mont font-medium text-gray-900 pr-[78%] mb- 3xl:text-[40px] 2xl:text-[30px] xl:text-[30px] "
+              className="text-4xl font-mont font-medium text-gray-900 pr-[78%] mb- 3xl:text-[40px] 2xl:text-[30px] xl:text-[30px]  "
               style={{
                 fontFamily: "mont-regular",
               }}
             >
               Achievements
             </h2>
-            <p className="text-l text-gray-600 pr-48  p-1 3xl:text-xl 2xl:text-sm xl:text-[10px] ">
+            <p className="text-l text-gray-600 pr-48  p-1 3xl:text-xl 2xl:text-sm xl:text-[10px] lg:text-[10px] ">
               Our commitment to excellence has led us to achieve significant
               milestones along our journey. Here are some of our notable
               Achievements.
             </p>
           </div>
 
-          <div className="flex flex-wrap  3xl:p-10 2xl:p-10">
-            <div className="w-1/2 space-y-40  ">
-              <div className="flex flex-col items-start 3xl:w-[683px] 2xl:w-[400px] ">
+          <div className="flex flex-wrap  3xl:p-10 2xl:p-10   ">
+            {/* left side */}
+            <div className="w-1/2 space-y-10 mb-5">
+              <div className="flex flex-col space-y-4 items-start 3xl:w-[683px]  2xl:w-[400px]  ">
                 <div className="w-11 h-11 bg-purple-100 rounded-xl 3xl:mb-5 flex items-center justify-center flex-shrink-0 ">
                   <img src={trust} />{" "}
                 </div>
-                <div className=" ">
-                  <h3 className=" font-mont font-medium text-gray-900 3xl:mb-5 3xl:text-[36px] 2xl:text-[26px] ">
+                <div className="">
+                  <h3 className="font-mont font-medium text-gray-900 3xl:mb-5 3xl:text-[36px] 2xl:text-[26px] lg:text-[15px] ">
                     Trusted by Thousands
                   </h3>
-                  <p className="text-gray-600 3xl:text-[20px] 2xl:text-[16px] 3xl:w-[100%]   ">
+                  <p className="text-gray-600 3xl:text-[20px] 2xl:text-[16px] 3xl:w-[100%] lg:text-[15px]">
                     Lorem ipsum dolor sit amet consectetur. Nibh nisl ornare
                     blandit id eu cursus sagittis molestie.
                   </p>
@@ -261,40 +263,42 @@ const About = () => {
                   <img src={award} />{" "}
                 </div>
                 <div>
-                  <h3 className="text-2xl font-mont font-medium text-gray-900 3xl:mb-5 3xl:text-[36px] 2xl:text-[26px] ">
+                  <h3 className="font-mont font-medium text-gray-900 3xl:mb-5 3xl:text-[36px] 2xl:text-[26px] lg:text-[15px]  ">
                     Award-Winning Courses
                   </h3>
-                  <p className="text-gray-600 3xl:text-[20px] 2xl:text-[16px]  ">
+                  <p className="text-gray-600 3xl:text-[20px] 2xl:text-[16px] 3xl:w-[100%] lg:text-[15px]  ">
                     Lorem ipsum dolor sit amet consectetur. Lorem augue
                     imperdiet ac tellus sapien.
                   </p>
                 </div>
               </div>
             </div>
-            <div className="w-1/2 space-y-40 ">
-              <div className="flex flex-col 3xl:mb-5 items-start space-y-4 3xl:w-[683px] 2xl:w-[400px]">
-                <div className="w-11 h-11 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+
+            {/* right side */}
+            <div className="w-1/2 space-y-10   ">
+              <div className="flex flex-col space-y-4 items-start 3xl:w-[683px]  2xl:w-[400px] ">
+                <div className="w-11 h-11 bg-purple-100 rounded-xl 3xl:mb-5 flex items-center justify-center flex-shrink-0 ">
                   <img src={positive} />{" "}
                 </div>
-                <div>
-                  <h3 className="text-2xl font-mont font-medium text-gray-900 3xl:mb-5  3xl:text-[36px] 2xl:text-[26px] ">
+                <div className="">
+                  <h3 className=" font-mont font-medium text-gray-900 3xl:mb-5 3xl:text-[36px] 2xl:text-[26px] lg:text-[15px] ">
                     Positive Student Feedback
                   </h3>
-                  <p className="text-gray-600  3xl:text-[20px] 2xl:text-[16px]">
+                  <p className="text-gray-600 3xl:text-[20px] 2xl:text-[16px] 3xl:w-[100%] lg:text-[15px]">
                     Lorem ipsum dolor sit amet consectetur. Aliquam ac vulputate
                     duis sit orci non nec.
                   </p>
                 </div>
               </div>
-              <div className="flex flex-col 3xl:mb-5 items-start space-y-5 3xl:w-[683px] 2xl:w-[400px]">
+              <div className="flex flex-col 3xl:mb-5 items-start space-y-5 ">
                 <div className="w-11 h-11 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
                   <img src={indus} />{" "}
                 </div>
                 <div>
-                  <h3 className=" font-mont font-medium text-gray-900 3xl:mb-5  3xl:text-[36px] 2xl:text-[26px]">
+                  <h3 className="font-mont font-medium text-gray-900 3xl:mb-5 3xl:text-[36px] 2xl:text-[26px] lg:text-[15px] ">
                     Industry Partnerships
                   </h3>
-                  <p className="text-gray-600  3xl:text-[20px] 2xl:text-[16px]   ">
+                  <p className="text-gray-600 3xl:text-[20px] 2xl:text-[16px] 3xl:w-[100%] lg:text-[15px] ">
                     Lorem ipsum dolor sit amet consectetur. Lacus ipsum egestas
                     viverra a magnis.
                   </p>
@@ -325,75 +329,86 @@ const About = () => {
       </section>
 
       {/* Our Goals Section */}
-      <section className=" bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-mont font-semibold pr-[86%] text-gray-900 mb-3">
+      <section className="py-20 flex justify-center bg-white w-full  ">
+        <div className="  3xl:w-[1596px] 2xl:w-[1200px] xl:w-[1000px] lg:w-[900px]">
+          <div className="text-center lg:mb-8 xl:mb-12 ">
+            <h2
+              className="text-4xl font-mont font-medium text-gray-900 pr-[78%] mb- 3xl:text-[40px] 2xl:text-[30px] xl:text-[30px]  "
+              style={{
+                fontFamily: "mont-regular",
+              }}
+            >
               Our Goals
             </h2>
-            <p className="text-xl font-mont text-gray-600 pr-[70%]max-w-3xl mx-auto">
-              At SkillBridge, our goal is to empower individuals from all
-              backgrounds to thrive in the world of design and development. We
-              believe that education should be accessible and transformative,
-              enabling learners to pursue their passions.
+            <p className="text-l text-gray-600 pr-48  p-1 3xl:text-xl 2xl:text-sm xl:text-[10px] lg:text-[10px] ">
+              Our commitment to excellence has led us to achieve significant
+              milestones along our journey. Here are some of our notable
+              Achievements.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="flex flex-col items-start space-y-4">
-              <div className="w-11 h-11 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                <img src={provide} />{" "}
+          <div className="flex flex-wrap  3xl:p-10 2xl:p-10 ">
+            {/* left side */}
+            <div className="w-1/2 space-y-10 mb-5">
+              <div className="flex flex-col space-y-4 items-start 3xl:w-[683px]  2xl:w-[400px]  ">
+                <div className="w-11 h-11 bg-purple-100 rounded-xl 3xl:mb-5 flex items-center justify-center flex-shrink-0 ">
+                  <img src={provide} />{" "}
+                </div>
+                <div className="">
+                  <h3 className="font-mont font-medium text-gray-900 3xl:mb-5 3xl:text-[36px] 2xl:text-[26px] lg:text-[15px] ">
+                    Trusted by Thousands
+                  </h3>
+                  <p className="text-gray-600 3xl:text-[20px] 2xl:text-[16px] 3xl:w-[100%] lg:text-[15px]">
+                    Lorem ipsum dolor sit amet consectetur. Nibh nisl ornare
+                    blandit id eu cursus sagittis molestie.
+                  </p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-2xl font-mont font-medium text-gray-900 mb-2">
-                  Provide Practical Skills
-                </h3>
-                <p className="text-gray-600">
-                  Lorem ipsum dolor sit amet consectetur. Lacus ipsum egestas
-                  viverra a magnis.
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-col items-start space-y-4">
-              <div className="w-11 h-11 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                <img src={foster} />{" "}
-              </div>
-              <div>
-                <h3 className="text-2xl font-mont font-medium text-gray-900 mb-2">
-                  Foster Creative Problem-Solving
-                </h3>
-                <p className="text-gray-600">
-                  Lorem ipsum dolor sit amet consectetur. Lacus ipsum egestas
-                  viverra a magnis.
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-col items-start space-y-4">
-              <div className="w-11 h-11 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                <img src={promote} />{" "}
-              </div>
-              <div>
-                <h3 className="text-2xl font-mont font-medium text-gray-900 mb-2">
-                  Promote Collaboration and Community
-                </h3>
-                <p className="text-gray-600">
-                  Lorem ipsum dolor sit amet consectetur. Lacus ipsum egestas
-                  viverra a magnis.
-                </p>
+              <div className="flex flex-col items-start space-y-4  3xl:w-[683px] 2xl:w-[400px]">
+                <div className="w-11 h-11 3xl:mb-5 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <img src={foster} />{" "}
+                </div>
+                <div>
+                  <h3 className="font-mont font-medium text-gray-900 3xl:mb-5 3xl:text-[36px] 2xl:text-[26px] lg:text-[15px]  ">
+                    Award-Winning Courses
+                  </h3>
+                  <p className="text-gray-600 3xl:text-[20px] 2xl:text-[16px] 3xl:w-[100%] lg:text-[15px]  ">
+                    Lorem ipsum dolor sit amet consectetur. Lorem augue
+                    imperdiet ac tellus sapien.
+                  </p>
+                </div>
               </div>
             </div>
-            <div className="flex flex-col items-start space-y-4">
-              <div className="w-11 h-11 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                <img src={stay} />{" "}
+
+            {/* right side */}
+            <div className="w-1/2 space-y-10   ">
+              <div className="flex flex-col space-y-4 items-start 3xl:w-[683px]  2xl:w-[400px] ">
+                <div className="w-11 h-11 bg-purple-100 rounded-xl 3xl:mb-5 flex items-center justify-center flex-shrink-0 ">
+                  <img src={promote} />{" "}
+                </div>
+                <div className="">
+                  <h3 className=" font-mont font-medium text-gray-900 3xl:mb-5 3xl:text-[36px] 2xl:text-[26px] lg:text-[15px] ">
+                    Positive Student Feedback
+                  </h3>
+                  <p className="text-gray-600 3xl:text-[20px] 2xl:text-[16px] 3xl:w-[100%] lg:text-[15px]">
+                    Lorem ipsum dolor sit amet consectetur. Aliquam ac vulputate
+                    duis sit orci non nec.
+                  </p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-2xl font-mont font-medium text-gray-900 mb-2">
-                  Stay Ahead of the Curve
-                </h3>
-                <p className="text-gray-600">
-                  Lorem ipsum dolor sit amet consectetur. Lacus ipsum egestas
-                  viverra a magnis.
-                </p>
+              <div className="flex flex-col 3xl:mb-5 items-start space-y-5 ">
+                <div className="w-11 h-11 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <img src={promote} />{" "}
+                </div>
+                <div>
+                  <h3 className="font-mont font-medium text-gray-900 3xl:mb-5 3xl:text-[36px] 2xl:text-[26px] lg:text-[15px] ">
+                    Industry Partnerships
+                  </h3>
+                  <p className="text-gray-600 3xl:text-[20px] 2xl:text-[16px] 3xl:w-[100%] lg:text-[15px] ">
+                    Lorem ipsum dolor sit amet consectetur. Lacus ipsum egestas
+                    viverra a magnis.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
