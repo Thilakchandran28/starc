@@ -47,11 +47,12 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <div className=" h-[80vh]  flex items-center justify-center py-12 px-4">
+    <div className=" h-[5
+    0vh]  flex items-center justify-center py-12 px-4">
       <div className=" w-[60%]  flex flex-col items-center">
         <button
           onClick={toggleFAQSection}
-          className="flex items-center justify-center space-x-2 w-32 h-12 bg-purple-500 rounded-2xl text-white text-sm font-semibold hover:bg-purple-600 transition-colors mb-4"
+          className="flex items-center justify-center space-x-2 w-32 h-12 bg-[#8A63FF] rounded-2xl text-white text-sm font-semibold hover:bg-#8A63FF transition-colors mb-4"
         >
           <img src={faqicons} className='lg:w-6 lg:h-6 xl:w-8 xl:h-8 2xl:w-9 2xl:h-9'/>
           <span>FAQS</span>
