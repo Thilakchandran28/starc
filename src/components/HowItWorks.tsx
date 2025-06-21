@@ -66,31 +66,31 @@ const steps: Step[] = [
 const HowItWorks = () => {
   return (
     <section className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-1">
+      <div className="w-[80%] mx-auto px-4 sm:px-6 lg:px-1">
         {/* Main heading */}
-        <h2 className="text-4xl lg:text-5xl font-mont text-gray-900 mb-16 text-left">
+        <h2 className="lg:text-4xl xl:text-5xl 3xl:text-5xl font-mont font-medium text-gray-900 mb-16 text-left">
           How It Works
         </h2>
 
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
+        <div className="flex flex-col h-[60vh] lg:flex-row justify-between items-start gap-1">
           {/* Left Side Steps Container */}
-          <div className="w-full lg:w-1/2 relative">
-           <img src={Purplegradient}
-              className='inset-0 absolute'/>
+          <div className="w-full lg:w-1/2 h-[100%] relative  ">
+            <img src={Purplegradient}
+              className='inset-0 absolute' />
             {/* Scrollable container for steps */}
             <div
-              className="space-y-20 h-[500px] w-[700px] lg:h-[600px] overflow-y-auto pr-11 pl-4 your-scrollable-div::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #A78BFA, #8B5CF6); /* Purple gradient */
-  border-radius: 5px; "
+              className="space-y-14 h-[100%] w-[100%] overflow-y-auto pr-11 pl-4 your-scrollable-div::-webkit-scrollbar-thumb {
+              background: linear-gradient(to bottom, #A78BFA, #8B5CF6); /* Purple gradient */
+              border-radius: 5px; "
               style={{
                 /* Custom Scrollbar Styles for Webkit (Chrome, Safari) */
                 WebkitOverflowScrolling: 'touch', // Enable momentum scrolling on iOS
                 msOverflowStyle: 'none', // Hide scrollbar for IE/Edge
                 scrollbarWidth: 'none', // Hide scrollbar for Firefox
               }}
-            
+
             >
-            
+
               {/* Webkit specific scrollbar styles (can be added to a global CSS file for cleaner separation) */}
               <style>{`
                 div::-webkit-scrollbar {
@@ -111,45 +111,26 @@ const HowItWorks = () => {
 
               {steps.map((step, index) => (
                 <div
-                  key={index} className={`relative flex items-center justify-center w-full`} // Ensure this is `relative` for the number's absolute positioning
+                  key={index}
+                  className="relative flex items-center justify-center w-full"
                 >
                   {/* Step Number */}
                   <div
-                    className={`absolute font-mont text-purple-300 select-none`}
-                    style={{
-                      fontFamily: "'Qurova DEMO', sans-serif",
-                      fontSize: '108px',
-                      lineHeight: '100%',
-                      letterSpacing: '0.03em',
-                      // Positioning adjusted: now relative to the current step's div,
-                      // and slightly offset to align with the cards.
-                      // This ensures the number moves with the card as the container scrolls.
-                      [index % 2 === 0 ? 'left' : 'right']: '-15px', // Adjusted offset
-                      top: '50%', // Vertically center relative to its own container
-                      transform: `translateY(-50%)`, // Correct vertical centering
-                      zIndex: 0, // Behind the card
-                      opacity: 1,
-                    }}
+                    className={`absolute font-mont text-purple-300 select-none text-[500%] leading-[100%] tracking-[0.03em] ${index % 2 === 0 ? 'left-[-15px]' : 'right-[-15px]'} top-1/2 -translate-y-1/2 z-0 opacity-100 font-['Qurova_DEMO']`}
                   >
-                     
                     {step.number}
                   </div>
 
                   {/* Card Content */}
                   <div
-                    className={`flex items-center gap-4 px-6 py-6 w-[475px] min-h-[105px] rounded-[20px] border border-gray-200 bg-white shadow-lg relative z-10 // z-10 to ensure card is above the number
-                                transform transition-transform duration-300 hover:scale-[1.02]`}
-                    style={{
-                      // Adjusted for horizontal shift relative to the center of the step-item
-                      transform: index % 2 === 0 ? 'translateX(60px)' : 'translateX(-60px)',
-                    }}
+                    className={`flex items-center gap-4 px-6 py-6 w-[80%] h-[20%] rounded-[20px] border border-gray-200 bg-white shadow-lg relative z-10 transition-transform duration-300 hover:scale-[1.02] ${index % 2 === 0 ? 'translate-x-[60px]' : '-translate-x-[60px]'}`}
                   >
-                    <div className={`${step.bgColor} rounded-full p-2 shadow`}> {/* Use bgColor for icon background */}
+                    <div className={`${step.bgColor} rounded-full p-2 shadow`}>
                       {step.icon}
                     </div>
                     <div>
-                      <h4 className="font-semibold text-lg text-gray-800">{step.title}</h4>
-                      <p className="text-sm text-gray-600">{step.description}</p>
+                      <h4 className="font-semibold lg:text-xs xl:text-sm 2xl:text-base 3xl:text-lg text-gray-800">{step.title}</h4>
+                      <p className="lg:text-xs xl:text-sm 2xl:text-base 3xl:text-lg text-gray-600">{step.description}</p>
                     </div>
                   </div>
                 </div>
@@ -158,50 +139,83 @@ const HowItWorks = () => {
           </div>
 
           {/* Right Side Image + Avatars */}
-          <div className="w-full lg:w-1/2 flex flex-col justify-between items-center lg:items-end p-4 lg:p-0"> {/* Added some padding for small screens */}
-            <div className="grid grid-cols-2 gap-4 w-full max-w-lg lg:max-w-none"> {/* Added max-w-lg for better responsiveness */}
-              <div>
-                <img
-                  src={girlpic}
-                  alt="Student working"
-                  className="object-cover w-full h-[422px] rounded-[20px]"
-                />
-                
-              </div>
+          <div className="w-full lg:w-1/2 h-[100%]  flex flex-col justify-between items-center lg:items-end p-4 lg:p-0">
+            <div className="grid grid-cols-2 gap-4 w-full h-full ">
+              <div className=' h-[60vh] '>
+                <div className='h-[70%] flex items-end justify-end  '>
+                  <img
+                    src={girlpic}
+                    alt="Student working"
+                    className="object-cover w-[70%]  h-[100%] rounded-[20px]"
+                  />
+                </div>
 
-
-              <div className="flex flex-col justify-between items-center lg:items-end">
-                <div className='whitebox w-fit z-10 pr-64 absolute pt-[430px]'>
-                  <div className="bg-white/90 backdrop-blur-md rounded-xl p-4 flex items-center gap-3 shadow-md w-fit ">
-                    <div className="flex -space-x-2">
-                      {[avatars, chicks, boyz].map((src, index) => (
-                        <img
-                          key={index}
-                          src={src}
-                          alt={`User ${index + 1}`}
-                          className="w-20 h-20 rounded-full border-2 border-white object-cover "
-                        />
-                      ))}
-                    </div>
-                    <div className="text-sm font-semibold text-blue-600">
-                      10K+<br/> <span className="text-gray-700 font-normal">Job Seekers</span>
+                <div className="flex flex-col justify-between items-center lg:items-end">
+                  <div className='whitebox w-fit z-10  left-[55%] absolute'>
+                    <div className="bg-white/90 backdrop-blur-md rounded-xl p-4 flex items-center gap-3 shadow-md w-fit ">
+                      <div className="flex -space-x-2">
+                        {[avatars, chicks, boyz].map((src, index) => (
+                          <img
+                            key={index}
+                            src={src}
+                            alt={`User ${index + 1}`}
+                            className="lg:w-10 lg:h-10 xl:w-15 xl:h-15 2xl:w-18 2xl:h-18  3xl:w-20 3xl:h-20 rounded-full border-2 border-white object-cover "
+                          />
+                        ))}
+                      </div>
+                      <div className="text-sm font-semibold text-blue-600">
+                        10K+<br /> <span className="text-gray-700 font-normal">Job Seekers</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-
-                <img
-                  src={girlpic} // You might want to use a different image for visual variety here
-                  alt="Student 2"
-                  className="object-cover w-full h-[565px] rounded-[20px] mb-4 z-0 relative"
-                />
-
-
               </div>
+
+              <div className='h-[60vh] '>
+                <img
+                  src={girlpic}
+                  alt="Student 2"
+                  className="object-cover w-full h-[100%] rounded-[20px] "
+                />
+              </div>
+
             </div>
+
+
+
+
+            {/* <div className="flex flex-col justify-between items-center lg:items-end">
+              <div className='whitebox w-fit z-10 pr-96 absolute '>
+                <div className="bg-white/90 backdrop-blur-md rounded-xl p-4 flex items-center gap-3 shadow-md w-fit ">
+                  <div className="flex -space-x-2">
+                    {[avatars, chicks, boyz].map((src, index) => (
+                      <img
+                        key={index}
+                        src={src}
+                        alt={`User ${index + 1}`}
+                        className="lg:w-20 lg:h-20 xl:w-20 xl:h-20 2xl:w-20 2xl:h-20 rounded-full border-2 border-white object-cover "
+                      />
+                    ))}
+                  </div>
+                  <div className="text-sm font-semibold text-blue-600">
+                    10K+<br /> <span className="text-gray-700 font-normal">Job Seekers</span>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+            </div> */}
+
+
+
           </div>
+
         </div>
       </div>
-    </section>
+
+    </section >
   );
 };
 

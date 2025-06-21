@@ -4,7 +4,7 @@ import { LayoutDashboard, BookOpen, Book, Calendar, Settings } from 'lucide-reac
 const ProfileSidebar = () => {
   // fixed top-32 left-8
   return (
-    <div className=" bg-white rounded-[16px]  shadow-md p-4 lg:h-[90vh] ">
+    <div className=" bg-white rounded-[16px]  shadow-md p-4 lg:h-[90vh] 3xl:w-[274px] 3xl:h-[80vh]">
       {/* User Profile Section */}
       <div className="flex items-center mb-6">  
         <div className="w-16 h-16 rounded-full overflow-hidden mr-4">
@@ -14,7 +14,7 @@ const ProfileSidebar = () => {
           <p className="text-gray-600 text-sm">Hello!</p>
           <h2 className="text-lg font-semibold text-gray-900">Jackson Durai</h2>
         </div>
-      </div>
+      </div>  
 
       <hr className="border-gray-200 mb-6" />
 
@@ -49,7 +49,7 @@ const ProfileSidebar = () => {
               ? ' text-purple-600'
               : 'text-gray-700 hover:bg-gray-200'}`
           }
-        >``
+        >
           <Book className="w-5 h-5 mr-3" />
           Books
         </NavLink>
