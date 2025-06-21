@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 
 const ProfileTopNavbar = () => {
   return (
-    <div className="bg-white p-4 flex items-center justify-around shadow-md rounded-lg mb-6 w-screen px-24 fixed  ">
+    <div className="bg-white p-4 flex items-center justify-around shadow-md rounded-lg w-full ">
       {/* Logo */}
       <Link to="/" className="text-purple-600 font-bold text-[36px]">LOGO</Link>
 
       {/* Search Bar */}
-      <div className="relative flex-grow  mx-60 ">
+      <div className="relative flex-grow mx-60 ">
         <input
           type="text"
           placeholder="Search Anything here"

@@ -12,7 +12,7 @@ const WishlistPage = () => {
 
             <Wishlist />
 
-            <div className='flex items-center justify-center'>
+            <div className='flex  justify-center'>
                 <PurpleBox />
             </div>
 

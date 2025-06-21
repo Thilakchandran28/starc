@@ -6,14 +6,14 @@ import Completed from '../Assets/icons/Completed.svg'
 
 const DashboardCard = ({ course }) => {
   return (
-    <div className="bg-white rounded-[20px] shadow-md overflow-hidden border border-purple-600 w-[100%] h-[100%] ">
+    <div className="bg-white rounded-[20px] shadow-lg overflow-hidden border w-[100%] h-[100%] ">
       <img
         src={course?.image}
         alt={course?.title}
         className="w-full h-36 rounded-[40px] p-5"
       />
       <div className="p-5">
-        <h3 className="font-semibold text-lg text-gray-900 mb-1 mt-2">
+        <h3 className="font-semibol d text-lg text-gray-900 mb-1 mt-2">
           {course?.title}
         </h3>
         <div className="w-15 h-11  flex align-center justify-start pt-2 pb-2 gap-1 mb-2">

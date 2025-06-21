@@ -46,13 +46,14 @@ const DashboardOverview: React.FC = () => {
   const progressPercentage = (user.progress / user.coursesEnrolled) * 100;
 
   return (
-    <div className="px-10 min-h-screen w-[60vw] absolute top-32">
+    // absolute top-28 bg-gray-100
+    <div className="h-screen overflow-y-auto lg:w-[550px] xl:w-[700px] 2xl:w-[90%] 3xl:w-[1000px]" style={{scrollbarWidth:"none"}} >
       <h1 className="text-3xl font-bold text-gray-900 mb-6">Hello {user.name} 👋</h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mb-6">
         {/* Achieve with Purpose Card */}
         <div
-          className="bg-purple-600 text-white p-6 rounded-[30px] shadow-md flex flex-col justify-between col-span-1 bg-cover bg-center"
+          className="bg-purple-600 text-white  p-6 rounded-[30px] shadow-md flex flex-col justify-between col-span-1 bg-cover bg-center"
           style={{ backgroundImage: `url(${awardbg})` }}
         >
           <div>
@@ -62,8 +63,8 @@ const DashboardOverview: React.FC = () => {
             </p>
           </div>
           <div className="flex items-center justify-between">
-            <div className="text-3xl font-bold">02/10</div>
-            <img src={trophy} alt="Trophy" className="h-20 w-20" />
+            <div className="text-3xl font-bold lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-3xl">02/10</div>
+            <img src={trophy} alt="Trophy" className="h-20 w-20 lg:h-16 lg:w-16 xl:h-20 xl:w-20 2xl:h-24 2xl:w-24 3xl:h-28 3xl:w-28" />
           </div>
           <button className="mt-4 bg-white text-purple-600 px-4 py-2 rounded-full font-semibold hover:bg-gray-100 w-[10vw]">
             Start Now
@@ -73,22 +74,22 @@ const DashboardOverview: React.FC = () => {
         {/* Learning Stats */}
         <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
           <div className="bg-white p-6 rounded-[30px] shadow-md flex items-center space-x-4">
-            <div className="py-4 px-5 bg-gradient-to-b from-[#868CFF] to-[#8A63FF] rounded-full">
-              <img src={hour} alt="Hour Icon" />
+            <div className="lg:py-1 lg:px-1 xl:py-2 xl:px-2 2xl:py-3 2xl:px-3 3xl:py-4 3xl:px-4 bg-gradient-to-b from-[#868CFF] to-[#8A63FF] rounded-full">
+              <img src={hour} alt="Hour Icon" className='lg:h-5 lg:w-5 xl:h-6 xl:w-6 2xl:h-8 2xl:w-8'/>
             </div>
             <div>
-              <p className="text-gray-600 text-sm">Learning Hour</p>
+              <p className="text-gray-600 lg:text-xs xl:text-sm 2xl:text-base">Learning Hour </p>
               <p className="text-2xl font-bold">
                 {user.learningHours} <span className="text-sm text-gray-500">(This week)</span>
               </p>
             </div>
           </div>
           <div className="bg-white p-6 rounded-[30px] shadow-md flex items-center space-x-4">
-            <div className="py-4 px-5 bg-gradient-to-b from-[#868CFF] to-[#8A63FF] rounded-full">
-              <img src={earned} alt="Earned Icon" />
+            <div className="lg:py-1 lg:px-1 xl:py-2 xl:px-2 2xl:py-3 2xl:px-3 3xl:py-4 3xl:px-4   bg-gradient-to-b from-[#868CFF] to-[#8A63FF] rounded-full">
+              <img src={earned} alt="Earned Icon" className='lg:h-5 lg:w-5 xl:h-6 xl:w-6 2xl:h-8 2xl:w-8'   />
             </div>
             <div>
-              <p className="text-gray-600 text-sm">Certificates Earned</p>
+              <p className="text-gray-600 lg:text-xs xl:text-sm 2xl:text-base">Certificates Earned</p>
               <p className="text-2xl font-bold">{user.certificatesEarned}</p>
             </div>
           </div>
@@ -98,7 +99,7 @@ const DashboardOverview: React.FC = () => {
         <div className="flex flex-col items-center w-full bg-white rounded-[30px] shadow-md">
           <div className=" p-0 rounded-[50%] shadow-md flex flex-col items-center">
             {/* Circular Progress Indicator */}
-            <div className="relative w-48 h-48">
+            <div className="relative w-44 h-44">
               <svg className="w-full h-full" viewBox="0 0 100 100">
 
                 <circle
@@ -122,21 +123,21 @@ const DashboardOverview: React.FC = () => {
                 />
               </svg>
               {/* Text Inside Circle */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center">
+              <div className="absolute inset-0 flex flex-col  items-center justify-center">
                 <span className="text-gray-500 text-sm">Courses Enrolled</span>
                 <span className="text-4xl font-bold">{user.coursesEnrolled}</span>
               </div>
             </div>
           </div>
           {/* Legend */}
-          <div className="flex space-x-4 mt-4">
-            <div className="flex items-center">
-              <span className="w-4 h-4 rounded-full bg-purple-500 mr-2"></span>
-              <span>Completed</span>
+          <div className="flex space-x-4 mt-4  ]">
+            <div className="flex items-center ">
+              <span className="lg:w-2 lg:h-2 xl:w-3 xl:h-3 2xl:h-4 2xl:w-4 rounded-full bg-purple-500 mr-2"></span>
+              <span className='lg:text-xs xl:text-base 2xl:text-base 3xl:text-xl'>Completed</span>
             </div>
             <div className="flex items-center">
-              <span className="w-4 h-4 rounded-full bg-gray-200 mr-2"></span>
-              <span>Pending</span>
+              <span className="lg:w-2 lg:h-2 xl:w-3 xl:h-3 2xl:h-4 2xl:w-4 w-4 h-4 rounded-full bg-gray-200 mr-2"></span>
+              <span className='lg:text-xs xl:text-sm 2xl:text-base 3xl:text-xl'>Pending</span>
             </div>
           </div>
         </div>
@@ -145,7 +146,7 @@ const DashboardOverview: React.FC = () => {
       {/* Continue Learning Section */}
       <div className="w-full">
         <h2 className="text-2xl font-bold text-gray-900 mb-6">Continue Learning</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
           {courses.map((course) => (
             <DashboardCard key={course.id} course={course} />
           ))}

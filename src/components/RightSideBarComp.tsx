@@ -1,4 +1,3 @@
-import React from 'react';
 
 const RightSideBarComp = () => {
 
@@ -19,9 +18,11 @@ const RightSideBarComp = () => {
 
 
     return (
-        <div>
+        <div className='bg-gray-100 '>
+
+             {/* fixed  top-32  right-8 */}
             {/* Today's Schedule */}
-            <div className="bg-white p-6 rounded-[16px] shadow-md col-span-1 lg:h-[80vh] w-[20%] fixed  top-32 right-11 overflow-x-auto h-auto" style={{scrollbarWidth:'none'}}>
+            <div className="bg-white p-6 rounded-[16px] shadow-md col-span-1 lg:h-[80vh overflow-x-auto  p-4 " style={{scrollbarWidth:'none'}}>
                 <div className="flex justify-between items-center mb-4">
                     <h2 className="text-xl font-bold text-gray-900">Today's Schedule</h2>
                     <select className="border rounded-md px-2 py-1 text-sm lg:text-xs xl:text-sm 2xl:text-lg 3xl:text-xl">

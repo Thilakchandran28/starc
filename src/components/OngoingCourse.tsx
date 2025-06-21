@@ -492,7 +492,7 @@ const OngoingCourseDashboardPage: React.FC<{
       : "0.0";
 
   return (
-    <div className="min-h-screen bg-gray-100 font-sans text-gray-800 w-full border">
+    <div className="min-h-screen bg-gray-100 font-sans text-gray-800 w-full">
       {/* Back Button */}
       <div className="container mx-auto p-6 w-full ">
         <button
