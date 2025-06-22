@@ -102,7 +102,7 @@ const CombinedSections: React.FC = () => {
   return (
     <div className=" font-mont 2">
       {/* --- Top Mentors Section --- */}
-      <section className="lg:py-10 xl:py-16 2xl:py-20 ">
+      <section className="lg:py-10 xl:py-16 2xl:py-20 h-[70vh]">
         <div className="w-[70%] h-[60vh] mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Header Section */}
           <div className="mb-12 h-[20%]">
@@ -131,7 +131,7 @@ const CombinedSections: React.FC = () => {
                 <div className="p-6 text-start">
                   <h3 className="lg:text-base xl:text-xl 2xl:text-2xl 3xl:text-4xl font-mont font-bold text-gray-900 mb-1">{mentor.name}</h3>
                   <p className="text-sm text-gray-500 mb-2  ">{mentor.specialization}</p>
-                  <div className=" gap-2 text-gray-600 text-sm mb-3">
+                  <div className=" flex items-center justify-start gap-2 text-gray-600 text-sm mb-3">
                     <Clock className="w-4 h-4 text-gray-500" />
                     <span>{mentor.experience}</span>
                   </div>

@@ -685,7 +685,7 @@ export default function CategoryTabsPage() {
 
           {/* Supervised/Unsupervised Toggle */}
           <div className="flex justify-end mb-6">
-            <div className="relative flex w-[25%] h-[5%] bg-gray-100 border border-gray-200 rounded-full overflow-hidden shadow-lg">
+            <div className="relative flex w-[25%] h-[5%] bg-white border border-gray-200 rounded-full overflow-hidden shadow-lg">
               <div
                 className={`absolute top-0.5 bottom-0.5 w-1/2 bg-gradient-to-r from-purple-400 to-purple-500 rounded-full transition-transform duration-300 ease-in-out transform ${learningMode === "supervised" ? "translate-x-0.5" : "translate-x-[calc(100%-0.25rem)]"
                   }`}

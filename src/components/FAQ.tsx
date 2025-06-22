@@ -47,7 +47,7 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <div className=" h-[80vh]  flex items-center justify-center py-12 px-4">
+    <div className=" h-[70vh]  flex items-center justify-center py-12 px-4">
       <div className=" w-[60%]  flex flex-col items-center">
         <button
           onClick={toggleFAQSection}
