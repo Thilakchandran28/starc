@@ -668,7 +668,7 @@ export default function CategoryTabsPage() {
   const navigate = useNavigate();
 
   return (
-    <div className="font-sans">
+    <div className="font-mont">
       {/* Navigation and Top Mentors Section */}
       <section className="py-0">
         <div className="w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
@@ -678,8 +678,9 @@ export default function CategoryTabsPage() {
               Discover<br /> Our Nexora Courses
             </h2>
             <br />
-            <p className="text-xl text-center text-gray-600 max-w-3xl mx-auto mb-8">
-              Lorem ipsum dolor sit amet consectetur. Ut sed<br />non elit adipiscing bibendum.
+            <p className="text-xl text-center font-mont text-gray-600 max-w-3xl mx-auto mb-8">
+              Explore our diverse range of courses designed to empower your career<br />
+              growth and personal development.
             </p>
           </div>
 

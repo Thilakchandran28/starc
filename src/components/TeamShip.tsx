@@ -13,8 +13,9 @@ export default function TeamShipSection() {
   };
 
   return (
-    <section className="px-6 md:px-20 py-12 bg-white text-gray-800 ">
-      <div className="max-w-6xl mx-auto md:flex-row items-center justify-between gap-10 ">
+    <section className="px-6 md:px-20 py-12 bg-white text-gray-800 3xl:w-full
+     border border-red-500">
+      <div className="max-w-6xl mx-auto md:flex-row items-center justify-between gap-10 border border-red-500">
         {/* Text Block */}
         <div className="flex justify-center gap-10   pl-10  ">
           <h2 className="text-3xl md:text-4xl font-mont font-medium leading-tight">

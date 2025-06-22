@@ -110,7 +110,7 @@ const CombinedSections: React.FC = () => {
               Our Top Mentor At Starc
             </h2>
             <p className="text-base text-gray-500 max-w-3xl mx-auto leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+             Welcome to our platform, enhancing your skills. Welcome to our platform, enhancing your skills.
             </p>
           </div>
 
@@ -125,11 +125,11 @@ const CombinedSections: React.FC = () => {
                   <img
                     src={mentor.image}
                     alt={mentor.name}
-                    className=" w-full lg:h-72 xl:h-80  2xl:h-72   object-contain rounded-xl bg-black"
+                    className=" w-full lg:h-48 xl:h-56 3xl:h-80 2xl:h-72   object-contain rounded-xl bg-black"
                   />
                 </div>
-                <div className="p-6 text-start">
-                  <h3 className="lg:text-base xl:text-xl 2xl:text-2xl 3xl:text-4xl font-mont font-bold text-gray-900 mb-1">{mentor.name}</h3>
+                <div className="lg:p-2 xl:p-4 text-start">
+                  <h3 className="lg:text-base xl:text-xl 2xl:text-2xl 3xl:text-4xl font-mont font-semibold text-gray-900 mb-1">{mentor.name}</h3>
                   <p className="text-sm text-gray-500 mb-2  ">{mentor.specialization}</p>
                   <div className=" flex items-center justify-start gap-2 text-gray-600 text-sm mb-3">
                     <Clock className="w-4 h-4 text-gray-500" />

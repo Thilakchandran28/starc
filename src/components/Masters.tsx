@@ -198,7 +198,7 @@ const Masters = () => {
 
         {/* Masters Grid */}
         <div className="w-[100%] flex justify-center items-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 w-[70%]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 w-[70%]">
             {filteredMasters.map((master) => (
               // Individual Master Card
               <div

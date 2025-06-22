@@ -52,13 +52,19 @@ const Contact = () => {
         <div className="flex w-full justify-around">
           {/* Left: Contact Info */}
           <div className="lg:w-[370px] lg:h-[550px] xl:w-[398px] xl:h-[650px] xl:mx-16 2xl:w-[458px] 2xl:h-[700px] 3xl:w-[558px] 3xl:h-[740px]  3xl:mx-10 ">
-            <span className="2xl:w-[97px] 2xl:h-[20px]" ><p className="text-[#8A63FF] mb-5 lg:text-[10px] xl:text-xs 2xl:text-sm">Starc</p></span>
+            <span className="2xl:w-[97px] 2xl:h-[20px]">
+              <p className="text-[#8A63FF] mb-5 lg:text-[10px] xl:text-xs 2xl:text-sm">
+                Starc
+              </p>
+            </span>
             <h2 className="lg:text-2xl xl:text-3xl 2xl:text-5xl font-normal text-black mb-6">
               Contact Us
             </h2>
             <p className="text-lg text-gray-600 mb-8 lg:text-sm xl:text-sm 2xl:text-lg">
-              Lorem ipsum dolor sit amet consectetur. Elementum massa gravida
-              ante iaculis diam nibh.
+              Have questions or need assistance with our courses? We're here to
+              help you every step of the way. Reach out to us for any inquiries,
+              and our team will be glad to provide the support you need promptly
+              and efficiently.
             </p>
 
             <h3 className=" lg:texl-base xl:text-lg  2xl:text-xl 3xl:text-2xl font-mont text-gray-900 mb-4">
@@ -82,7 +88,7 @@ const Contact = () => {
                     />
                   </svg>
                 </span>{" "}
-                Lorem ipsum dolor sit amet consectetur.
+                Answer your course-related questions
               </li>
               <li className="flex items-center gap-2 lg:text-[13px] xl:text-sm 2xl:text-base 3xl:text-lg">
                 <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#8A63FF]">
@@ -100,7 +106,7 @@ const Contact = () => {
                     />
                   </svg>
                 </span>{" "}
-                Lorem ipsum dolor sit amet consectetur.
+                Provide technical support and troubleshooting
               </li>
               <li className="flex items-center gap-2 lg:text-[13px] xl:text-sm 2xl:text-base 3xl:text-lg">
                 <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#8A63FF]">
@@ -118,30 +124,37 @@ const Contact = () => {
                     />
                   </svg>
                 </span>{" "}
-                Lorem ipsum dolor sit amet consectetur.
+                Assist with enrollment and program details
               </li>
             </ul>
 
             <div className=" lg:mt-8 xl:mt-16 pl-2   flex ">
-              <img src={contactProfie} alt="" className="lg:h-10 lg:w-10 xl:h-12 xl:w-12 2xl:h-14 2xl:w-14 3xl:h-16 3xl:w-16"/>
+              <img
+                src={contactProfie}
+                alt=""
+                className="lg:h-10 lg:w-10 xl:h-12 xl:w-12 2xl:h-14 2xl:w-14 3xl:h-16 3xl:w-16"
+              />
               <div className="flex flex-col w-[50%]">
-                <p className="lg:text-[13px] xl:text-sm 2xl:text-base 3xl:text-lg ">Name</p>
+                <p className="lg:text-[13px] xl:text-sm 2xl:text-base 3xl:text-lg ">
+                  Name
+                </p>
                 <p className="lg:text-[13px] xl:text-sm 2xl:text-base 3xl:text-lg">
-                  CEO Founder at <span className="text-blue-500">Starc</span>
+                  Josh Doe, CEO at <span className="text-blue-500">Starc</span>
                 </p>
               </div>
             </div>
 
             {/* <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pl-2">Note</h3> */}
             <p className="text-gray-600 lg:text-[13px]  xl:text-sm 2xl:text-base 3xl:text-lg mt-12">
-              Lorem ipsum dolor sit amet consectetur. Sed magna sit tortor nunc
-              vel viverra tempor. Risus vitae a facilisi scelerisque malesuada.
-              At enim viverra morbi risus in diam non.
+              We are committed to ensuring your learning experience is smooth
+              and successful. Our dedicated support staff is available to
+              address all your concerns, providing timely and helpful solutions
+              to help you thrive in your journey.
             </p>
           </div>
 
           {/* Right: Contact Form */}
-          <div className="lg:justify-start xl:justify-center flex flex-col justify-center items-center bg-white p-4 rounded-xl shadow-md lg:h-[288px] lg:w-[288px] xl:mx-16 xl:h-[350px] xl:w-[350px] 2xl:w-[458px] 2xl:h-[420px] 3xl:mx-10  3xl:w-[558px] 3xl:h-[498px] "> 
+          <div className="lg:justify-start xl:justify-center flex flex-col justify-center items-center bg-white p-4 rounded-xl shadow-md lg:h-[288px] lg:w-[288px] xl:mx-16 xl:h-[350px] xl:w-[350px] 2xl:w-[458px] 2xl:h-[420px] 3xl:mx-10  3xl:w-[558px] 3xl:h-[498px] ">
             {" "}
             {/* Changed bg-gray-50 to bg-white */}
             <div className="flex justify-start  lg:h-[35px] lg:w-[255px] xl:w-[300px] 2xl:w-[400px] 3xl:w-[496px]">
@@ -150,7 +163,7 @@ const Contact = () => {
               </h3>{" "}
             </div>
             {/* Updated title */}
-            <form className= "lg:space-y-3  xl:space-y-6  lg:h-[187px] lg:w-[255px] xl:h-[237px] xl:w-[300px] 2xl:w-[400px] 2xl:h-[287px] 3xl:h-[337px] 3xl:w-[496px] ">
+            <form className="lg:space-y-3  xl:space-y-6  lg:h-[187px] lg:w-[255px] xl:h-[237px] xl:w-[300px] 2xl:w-[400px] 2xl:h-[287px] 3xl:h-[337px] 3xl:w-[496px] ">
               <div className="flex justify-center lg:h-[30px] xl:h-[40px] 2xl:h-[43px] 3xl:h-[47px] w-full ">
                 {" "}
                 {/* Added grid for side-by-side inputs */}
