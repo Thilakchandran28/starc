@@ -76,7 +76,7 @@ const CardDetail: React.FC = () => {
                 </div>
 
                 {/* Form Sidebar */}
-                <div className="w-[80%] h-[80%] bg-white p-6 shadow-lg rounded-lg border border-[#8A63FF4D]">
+                <div className="w-[90%] h-[60%] bg-white p-6 shadow-lg rounded-lg border border-[#8A63FF4D]">
                     <h2 className="text-md font-semibold text-[#8A63FF] mb-4">Enroll my interest (course name)</h2>
                     <form onSubmit={handleSubmit}>
                         <div className="grid grid-cols-2 gap-4 mb-4">
