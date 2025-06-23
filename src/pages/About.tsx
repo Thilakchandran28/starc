@@ -309,9 +309,9 @@ const About = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Stats Section--- */}
       <section className="py-10 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+        <div className="w-[100%] mx-auto px-4 sm:px-6 lg:px-8 ">
           <div className="flex justify-center lg:grid-cols-4 gap-10 bg-white p-6 ">
             {stats.map((stat, index) => (
               <div key={index} className="text-center  w-1/3 ">
