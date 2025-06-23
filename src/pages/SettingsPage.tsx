@@ -37,11 +37,11 @@ const SettingsPage = () => {
       <div className=" sticky top-0 z-50  ">
         <ProfileTopNavbar />
       </div>
-      <div className="flex flex-1 overflow-hidden  justify-between px-5 w-full h-screen " >
-        <div className="w-1/5 sticky top-0 h-screen  pt-8">
+      <div className="flex flex-1 overflow-hidden  justify-between px-16 w-full h-screen " >
+        <div className="w-0.5/5 sticky top-0 h-screen  pt-8">
         <ProfileSidebar />
         </div>
-        <div className="w-3/5 overflow-y-auto sticky top-0 flex justify-center pt-4" style={{scrollbarWidth:'none'}}>
+        <div className="w-3/5 overflow-y-auto sticky top-0 flex justify-center pt-8" style={{scrollbarWidth:'none'}}>
         <SettingsTabs />
         </div>        
         <div className="w-1/5 sticky top-0 h-screen pt-8">

@@ -53,8 +53,8 @@ const About = () => {
               </Button>
             </div>
             <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop" 
+              <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop"
                 alt="Team collaboration"
                 className="rounded-2xl shadow-2xl"
               />
@@ -82,8 +82,8 @@ const About = () => {
                 <span className="text-purple-500">Success</span>
               </h2>
               <p className="text-gray-600   lg:text-sm xl:text-lg 2xl:text-xl mt-4  ">
-                Lorem ipsum dolor sit amet consectetur. Convallis ante euismod
-                commodo facilisi.
+                At Starc, we are driven by a commitment to excellence,
+                integrity, and continuous improvement.
               </p>
               <ul className="space-y-6   lg:text-[12px] 2xl:text-xl 3xl:mr-6  lg:mr-12 pt-5  w-full  ">
                 <li className="flex items-center gap-4 ">
@@ -103,7 +103,7 @@ const About = () => {
                     </svg>
                   </span>
                   <span className="text-black font-mont ">
-                    Add your feature details here
+                    Learn today, lead tomorrow
                   </span>
                 </li>
                 <li className="flex items-center gap-3">
@@ -210,14 +210,14 @@ const About = () => {
                 fontFamily: "mont-regular",
               }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit
-              amet, consectetur adipiscing elit. Sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit
-              amet, consectetur adipiscing elit. Sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua.
+              At Starc, we empower individuals with cutting-edge knowledge and
+              practical skills. Our diverse course offerings are meticulously
+              designed to equip you for the challenges and opportunities of
+              tomorrow's landscape. We believe in fostering a dynamic learning
+              environment where innovation thrives, and every student is
+              encouraged to reach their full potential. Join our vibrant
+              community and become part of a network committed to continuous
+              growth and success.
             </p>
           </div>
         </div>
@@ -237,7 +237,7 @@ const About = () => {
             <p className="text-l text-gray-600 pr-48  p-1 3xl:text-xl 2xl:text-sm xl:text-[10px] lg:text-[10px] ">
               Our commitment to excellence has led us to achieve significant
               milestones along our journey. Here are some of our notable
-              Achievements.
+              achievements:
             </p>
           </div>
 
@@ -253,8 +253,9 @@ const About = () => {
                     Trusted by Thousands
                   </h3>
                   <p className="text-gray-600 3xl:text-[20px] 2xl:text-[16px] 3xl:w-[100%] lg:text-[15px]">
-                    Lorem ipsum dolor sit amet consectetur. Nibh nisl ornare
-                    blandit id eu cursus sagittis molestie.
+                    Our platform has earned the confidence of a vast and growing
+                    community of learners worldwide, a testament to our quality
+                    and reliability.
                   </p>
                 </div>
               </div>
@@ -267,8 +268,8 @@ const About = () => {
                     Award-Winning Courses
                   </h3>
                   <p className="text-gray-600 3xl:text-[20px] 2xl:text-[16px] 3xl:w-[100%] lg:text-[15px]  ">
-                    Lorem ipsum dolor sit amet consectetur. Lorem augue
-                    imperdiet ac tellus sapien.
+                    Recognized for their exceptional content and innovative
+                    teaching methodologies.
                   </p>
                 </div>
               </div>
@@ -285,8 +286,8 @@ const About = () => {
                     Positive Student Feedback
                   </h3>
                   <p className="text-gray-600 3xl:text-[20px] 2xl:text-[16px] 3xl:w-[100%] lg:text-[15px]">
-                    Lorem ipsum dolor sit amet consectetur. Aliquam ac vulputate
-                    duis sit orci non nec.
+                    Consistently receiving high praise, our students commend us
+                    for our effective instruction.
                   </p>
                 </div>
               </div>
@@ -299,8 +300,8 @@ const About = () => {
                     Industry Partnerships
                   </h3>
                   <p className="text-gray-600 3xl:text-[20px] 2xl:text-[16px] 3xl:w-[100%] lg:text-[15px] ">
-                    Lorem ipsum dolor sit amet consectetur. Lacus ipsum egestas
-                    viverra a magnis.
+                    We collaborate with leading companies and organizations,
+                    ensuring our curriculum remains cutting-edge.
                   </p>
                 </div>
               </div>
@@ -319,7 +320,7 @@ const About = () => {
                   {stat.number}
                 </div>
                 <div className="text-gray-600 text-center text-wrap font-mont ">
-                  {stat.label}
+                  {stat.label}  
                 </div>
               </div>
             ))}
@@ -341,9 +342,11 @@ const About = () => {
               Our Goals
             </h2>
             <p className="text-l text-gray-600 pr-48  p-1 3xl:text-xl 2xl:text-sm xl:text-[10px] lg:text-[10px] ">
-              Our commitment to excellence has led us to achieve significant
-              milestones along our journey. Here are some of our notable
-              Achievements.
+              At Skillbridge, our goal is to empower individuals from all
+              backgrounds to thrive in the world of design and development. We
+              believe that education should be accessible and transformative,
+              enabling learners to pursue their passions and make a meaningful
+              impact. Through our carefully crafted courses, we aim to:
             </p>
           </div>
 
@@ -356,11 +359,11 @@ const About = () => {
                 </div>
                 <div className="">
                   <h3 className="font-mont font-medium text-gray-900 3xl:mb-5 3xl:text-[36px] 2xl:text-[26px] lg:text-[15px] ">
-                    Trusted by Thousands
+                    Provide Practical Skills:
                   </h3>
                   <p className="text-gray-600 3xl:text-[20px] 2xl:text-[16px] 3xl:w-[100%] lg:text-[15px]">
-                    Lorem ipsum dolor sit amet consectetur. Nibh nisl ornare
-                    blandit id eu cursus sagittis molestie.
+                    Equip learners with real-world, hands-on abilities directly
+                    applicable to industry demands.
                   </p>
                 </div>
               </div>
@@ -370,11 +373,11 @@ const About = () => {
                 </div>
                 <div>
                   <h3 className="font-mont font-medium text-gray-900 3xl:mb-5 3xl:text-[36px] 2xl:text-[26px] lg:text-[15px]  ">
-                    Award-Winning Courses
+                    Foster Creative Problem-Solving:
                   </h3>
                   <p className="text-gray-600 3xl:text-[20px] 2xl:text-[16px] 3xl:w-[100%] lg:text-[15px]  ">
-                    Lorem ipsum dolor sit amet consectetur. Lorem augue
-                    imperdiet ac tellus sapien.
+                    Cultivate innovative thinking and the capacity to tackle
+                    complex challenges with unique.
                   </p>
                 </div>
               </div>
@@ -388,11 +391,11 @@ const About = () => {
                 </div>
                 <div className="">
                   <h3 className=" font-mont font-medium text-gray-900 3xl:mb-5 3xl:text-[36px] 2xl:text-[26px] lg:text-[15px] ">
-                    Positive Student Feedback
+                    Promote Collaboration and Community:
                   </h3>
                   <p className="text-gray-600 3xl:text-[20px] 2xl:text-[16px] 3xl:w-[100%] lg:text-[15px]">
-                    Lorem ipsum dolor sit amet consectetur. Aliquam ac vulputate
-                    duis sit orci non nec.
+                    Build a supportive network where learners can connect, share
+                    knowledge.
                   </p>
                 </div>
               </div>
@@ -402,11 +405,11 @@ const About = () => {
                 </div>
                 <div>
                   <h3 className="font-mont font-medium text-gray-900 3xl:mb-5 3xl:text-[36px] 2xl:text-[26px] lg:text-[15px] ">
-                    Industry Partnerships
+                    Stay Ahead of the Curve:
                   </h3>
                   <p className="text-gray-600 3xl:text-[20px] 2xl:text-[16px] 3xl:w-[100%] lg:text-[15px] ">
-                    Lorem ipsum dolor sit amet consectetur. Lacus ipsum egestas
-                    viverra a magnis.
+                    Ensure our curriculum remains cutting-edge, incorporating
+                    the latest trends to keep learners competitive.
                   </p>
                 </div>
               </div>
@@ -491,8 +494,8 @@ const About = () => {
           <p className="text-xl mb-8 opacity-90">
             Join millions of learners who are already transforming their careers with Nexora.
           </p>
-          <Button 
-            size="lg" 
+          <Button
+            size="lg"
             className="bg-white text-purple-700 hover:bg-gray-100 px-10 py-4 text-lg font-bold rounded-xl"
           >
             Get Started Today

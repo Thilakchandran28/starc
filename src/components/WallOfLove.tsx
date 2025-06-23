@@ -22,7 +22,7 @@ const testimonials: TestimonialCardProps[] = [
     id: 1,
     name: 'Esther Howard',
     content:
-      'Pharetra pharetra massa massa ultricies. Accumsan sit amet nulla facilisi morbi. Integer eget aliquet nibh praesent tristique magna sit amet.',
+      'This platform has transformed my learning experience! The courses are engaging. Highly recommend to everyone.',
     image:WOLImage1
    
   },
@@ -30,16 +30,16 @@ const testimonials: TestimonialCardProps[] = [
     id: 2,
     name: 'Leslie Alexander',
     content:
-      'Magna fermentum iaculis eu non diam phasellus. Arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc.',
+      'Absolutely brilliant! The content is so well-structured and easy tofollow. I have gained so many valuable skills in such a short time.',
     image:WOLImage2
-
+ 
   
   },
   {
     id: 3,
     name: 'Wade Warren',
     content:
-      'Porttitor rhoncus dolor purus non. Varius duis at consectetur leo a diam sollicitudin tempor id.',
+      '"Incredible community and top-notch instructors. I feel so much more confident in my career path now. A true game-changer!',
     image:WOLImage3
 
   
@@ -48,7 +48,7 @@ const testimonials: TestimonialCardProps[] = [
     id: 4,
     name: 'Jacob Jones',
     content:
-      'Aliquam faucibus purus in massa tempor. Habitasse platea dictumst vestibulum rhoncus est pellentesque elit.',
+      'The interactive lessons and practical exercises truly set this platform apart. Iam seeing real progress every single day.',
     image:WOLImage4
 
    
@@ -57,7 +57,7 @@ const testimonials: TestimonialCardProps[] = [
     id: 5,
     name: 'Courtney Henry',
     content:
-      'Nunc sed velit dignissim sodales ut eu sem integer. Scelerisque varius morbi enim nunc faucibus. Mi sit amet mauris commodo quis.',
+      'The interactive lessons and practical exercises truly set this platform apart. Iam seeing real progress every single day.',
     image:WOLImage5
 
   
@@ -66,7 +66,7 @@ const testimonials: TestimonialCardProps[] = [
     id: 6,
     name: 'Darrell Steward',
     content:
-      'Donec et scelerisque quam. Aliquam varius et sapien a pharetra. Maecenas auctor, augue finibus rhoncus, orci lorem ultricies eli.',
+      'Fantastic resources and a truly supportive environment. Ihave learned more here than I ever thought possible.',
     image:WOLImage6
 
 
@@ -77,7 +77,7 @@ const WallOfLove: React.FC = () => {
   return (
     <section className="flex justify-center items-center w-full  mt-20 lg:h-[700px] xl:h-[800px] 2xl:h-[900px] 3xl:h-[1000px] ">
       <div className="flex flex-col items-center lg:w-[90%] lg:h-[90%] xl:w-[90%] xl:h-[90%] 2xl:w-[90%] 2xl:h-[90%] 3xl:w-[90%] 3xl:h-[90%] mx-auto px-4 ">
-        <h2 className="text-6xl font-mont font-bold text-center mb-12 text-gray-800">Wall of love</h2>
+        <h2 className="text-6xl font-mont font-semibold text-center mb-12 text-gray-800">Wall of love</h2>
         <div className="flex flex-wrap justify-around lg:w-[80%] lg:h-[75%] xl:w-[80%] xl:h-[75%] 2xl:w-[80%] 2xl:h-[75%] 3xl:w-[75%] 3xl:h-[70%] ">
           {testimonials.map((testimonial) => (
             <div
@@ -111,7 +111,7 @@ const WallOfLove: React.FC = () => {
               </div>
               <p className="text-black font-mont font-medium leading-relaxed lg:text-xs xl:text-sm 2xl:text-lg 3xl:text-xl flex-grow mb-4">{testimonial.content}</p>
               
-              <p className='lg:text-[10px] xl:text-xs text-sm'>12:15 PM . May 19,2009</p>
+              <p className='lg:text-[10px] xl:text-xs text-sm text-black font-mont font-medium'>12:15 PM . May 19,2009</p>
             </div>
             
           ))}

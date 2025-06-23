@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
 
 @tailwind base;
 @tailwind components;
@@ -171,3 +171,11 @@
   border-radius: 8px;
   border: 3px solid transparent;
 }
+
+@font-face {
+  font-family: 'mont-regular';
+  src: url('../Fonts/Montserrat-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+

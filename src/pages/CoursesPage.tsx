@@ -22,33 +22,19 @@ const CoursesPage = () => {
     setMessageFromChild(course);
   };
 
-  return (
-    // <div className="min-h-screen  bg-gray-100 flex justify-center ">
-    //   <ProfileTopNavbar />
-    //   <div className="items-center align-top mx-20 mt-24 lg:w-1/2 2xl:w-[850px] 3xl:w-1/2">
-    //     <ProfileSidebar  />
-    //     <CoursesOverview sendMessage={handleChildMessage}  />
-    //     <div className="w-1/4 min-w-[300px] max-w-[350px]">
-    //       {messageFromChild?.status === "Completed" ? (
-    //         <RightSideBar />
-    //       ) : (
-    //         <RightSideBarComp />
-    //       )}
-    //     </div>
-    //   </div>
-    // </div>
-    <div className="flex flex-col h-screen  bg-white-100 ">
+  return (  
+    <div className="flex flex-col h-screen  bg-gray-100 ">
       <div className=" sticky top-0 z-50  ">
         <ProfileTopNavbar />
       </div>
       <div className="flex flex-1 overflow-hidden  justify-between px-5 w-full h-screen " >
-        <div className="w-1/5 sticky top-0 h-screen  pt-8">
+        <div className="w-1/5 sticky top-0 h-[90vh] lg:pl-1 xl:pl-4 2xl:pl-12 3xl:pl-20  pt-8">
         <ProfileSidebar />
         </div>
-        <div className="w-3/5 overflow-y-auto sticky top-0 flex justify-center pt-8 " style={{scrollbarWidth:'none'}}>
+        <div className="overflow-y-auto h-screen pt-8 sticky top-0 flex justify-center " style={{scrollbarWidth:'none'}}>
         <CoursesOverview sendMessage={handleChildMessage}/>
         </div>        
-        <div className="w-1/5 sticky top-0 h-screen pt-8">
+        <div className="sticky top-0 h-screen pt-8 lg:mr-[22px] xl:mr-[38px] 2xl:mr-[68px] 3xl:mr-[88px]">
         {messageFromChild?.status ==='Completed'?(
           <RightSideBar/>
         ):(

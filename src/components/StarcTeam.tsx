@@ -61,35 +61,34 @@ export default function StarcTeam() {
     <section className="bg-white py-16 px-6 flex flex-col justify-center items-center  ">
       <div className="text-center mb-12 lg:w-[70%] 3xl:w-[1216px] flex ">
         <div className="flex flex-col justify-start ">
-          <p className="text-purple-600  text-sm font-mont font-semibold  ">
+          <p className="text-purple-600  text-sm font-mont font-semibold ">
             Our Team
           </p>
           <h2 className="lg:text-2xl xl:text-2xl 2xl:text-3xl md:text-4xl 3xl:m-6 font-mont font-medium mt-2">
-            Starc,Team:
+            Starc, Team:
           </h2>
         </div>
       </div>
 
-      <div className="flex   justify-center w-full  h-[440px] ">
-        <div className="flex flex-wrap justify-between items-center lg:w-[70%] xl:w-[70%] 2xl:w-[70%] 3xl:w-[1216px]">
+      <div className="flex  justify-center w-full  h-[440px] ">
+        <div className="flex flex-wrap justify-between items-center lg:w-[70%] xl:w-[63%%] 2xl:w-[63%] 3xl:w-[63%]">
           {teamMembers.map((member, idx) => (
             <div
               key={idx}
               className="
-           
         bg-white
         rounded-md
         p-1
         relative
         overflow-hidden
         shadow-sm
-        lg:w-[224px] lg:h-[140px]
-        xl:w-[23%] xl:h-[174px]
+        lg:w-[31%] lg:h-[140px]
+        xl:w-[31%] xl:h-[174px]
       2xl:w-[31%] 2xl:h-[194px]
-      3xl:w-[384px] 3xl:h-[204px]"
+      3xl:w-[31%] 3xl:h-[204px]"
             >
-              <div className="  w-full h-[100%] rounded-md bg-[#F7F8FA]">
-                <div className="relative z-10  3xl:h-[70%]  3xl:p-5  ">
+              <div className="  w-full h-[100%] rounded-md bg-[#F7F8FA] ">
+                <div className="relative z-10  3xl:h-[70%]  3xl:p-5">
                   <h3 className="text-xl  text-gray-900 font-mont space-y-3 3xl:text-bold   ">
                     {member.name}
                   </h3>

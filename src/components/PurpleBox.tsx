@@ -19,7 +19,7 @@ const PurpleBox: React.FC = () => {
        
         
         {/* Heading and Subtext */}
-        <h2 className="lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold mb-4 leading-tight">
+        <h2 className="lg:text-2xl xl:text-3xl 2xl:text-4xl font-mont font-medium mb-4 leading-tight">
           Join ambitious professionals and unlock your dream career today
         </h2>
         <p className="lg:text-xs xl:text-sm 2xl:text-base mb-8 leading-relaxed">
@@ -37,7 +37,7 @@ const PurpleBox: React.FC = () => {
             />
           </div>
           <Button
-            className="bg-white text-purple-600 font-bold px-6 py-2 rounded-full shadow-md hover:bg-gray-100 flex items-center gap-2 lg:text-sm xl:text-base 2xl:text-xl"
+            className="bg-white text-purple-600 font-mont font-semibold px-6 py-2 rounded-full shadow-md hover:bg-gray-100 flex items-center gap-2 lg:text-sm xl:text-base 2xl:text-xl"
           >
             Join Us
             {/* <ArrowRight className="w-5 h-5" /> */}

@@ -3,7 +3,7 @@ import { LuArrowRightToLine } from "react-icons/lu";
 import { CiFilter } from "react-icons/ci";
 import ScheduleMonth from "./ScheduleMonth";
 import ScheduleWeek from "./ScheduleWeek";
-import ScheduleDaily from "./ScheduleDaily"; 
+import ScheduleDaily from "./ScheduleDaily";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
@@ -12,7 +12,6 @@ const ScheduleOverview = () => {
   const [currentView, setCurrentView] = useState("year"); // 'year', 'month', 'week', 'daily'
   const currentYear = currentDate.getFullYear();
 
-  
   const months = [
     "January",
     "February",
@@ -32,7 +31,7 @@ const ScheduleOverview = () => {
     {
       title: "Former Survey",
       dueDate: "20/12/2023",
-      time: "08:00", 
+      time: "08:00",
       description:
         "Lorem Ipsum has been the industry's standard andard dummystandard dummy",
       color: "bg-blue-100 border-l-blue-400",
@@ -148,7 +147,7 @@ const ScheduleOverview = () => {
             <div key={i} className="xl:text-[9px] 2xl:text-xs 3xl:text-sm">{day}</div>
           ))}
         </div>
-        <div className="flex flex-wrap justify-between   text-center text-[10px]  lg:text-[8px] xl:text-[10px] 2xl:text-xs 3xl:text-sm text-black font-semibold  3xl:h-[200px]">
+        <div className="flex flex-wrap justify-between   text-center text-[10px]  lg:text-[8px] xl:text-[10px] 2xl:text-xs 3xl:text-sm text-black 3xl:h-[200px]">
           {days.map((dayObj, index) => (
             <div key={`${monthName}-${index}`}  className={`lg:h-4 lg:w-4 2xl:h-7 xl:h-6 xl:w-6 2xl:w-7 3xl:h-8 3xl:w-8 ${getDayClass(dayObj)}`}>
               {dayObj ? dayObj.date : ""}

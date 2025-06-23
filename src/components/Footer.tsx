@@ -30,9 +30,9 @@ const Footer = () => {
             </p>
           </div>
 
-         <div className=" flex justify-between w-[55%]">
+         <div className=" flex justify-between w-[70%] xl:w-[55%] 2xl:w-[55%] 3xl:w-[55%] ">
            <div>
-            <h3 className="text-lg font-mont font-bold mb-4">Quick Links</h3>
+            <h3 className="lg:text-base xl:text-lg 2xl:text-xl 3xl-text-2xl font-mont font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-gray-600">
               <li>
                 <a
@@ -76,8 +76,8 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="md:col-span-3">
-            <h3 className="text-lg font-mont font-bold mb-4">Others</h3>
+          <div>
+            <h3 className="lg:text-base xl:text-lg 2xl:text-xl 3xl-text-2xl font-mont font-bold mb-4">Others</h3>
             <ul className="space-y-2 text-gray-600">
               <li>
                 <a
@@ -114,7 +114,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="">
-            <h3 className="text-lg font-mont font-bold mb-4">About us</h3>
+            <h3 className="lg:text-base xl:text-lg 2xl:text-xl 3xl-text-2xl font-mont font-bold mb-4">About us</h3>
             <ul className="space-y-2 text-gray-600">
               <li>
                 <a

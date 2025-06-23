@@ -14,7 +14,7 @@ export default function TeamShipSection() {
 
   return (
     <section className="px-6 md:px-20 py-12 bg-white text-gray-800 ">
-      <div className="w-[100%] items-center justify-between ">
+      <div className="w-[100%] items-center justify-between">
         {/* Text Block */}
         <div className="flex justify-between gap-10   pl-10  ">
           <h2 className="lg:text-xl xl:text-xl 3xl:text-4xl md:text-4xl font-mont font-medium leading-tight">
@@ -38,19 +38,20 @@ export default function TeamShipSection() {
         <br />
         <br />
         {/* Video Block */}
-        <div className="w-full   flex justify-center items-center ">
-          <div className="flex flex-col space-y-4 relative rounded-2xl overflow-hidden shadow-lg 3xl:h-[80%] 2xl:h-[80%]  xl:h-[400px]    ">
+        <div className="w-full flex justify-center items-center">
+          <div className="flex flex-col space-y-4 relative rounded-2xl overflow-hidden shadow-lg xl:h-[60vh] 2xl:h-[50vh] 3xl:h-[70vh] 
+          w-[80%]   ">
             {!showVideo && (
-              <div className="relative 3xl:h-[80%] 2xl:h-[80%]  xl:h-[400px]    ">
+              <div className="relative w-full h-full  flex justify-center  border border-black  ">
                 <img
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV0uO6brHoskULOyasOMXWHXxK_f83yTTCfQ&s"
                   alt="Team Thumbnail"
-                  className="object-cover rounded-xl  3xl:h-[80%] 2xl:h-[80%]  xl:h-[400px]   "
+                  className="object-cover rounded-xl w-full"
                 />
 
                 <button
                   onClick={handlePlay}
-                  className="absolute inset-0  flex items-center justify-center bg-black/40 text-white font-medium text-sm rounded-xl"
+                  className="absolute inset-0  lg:text-sm xl:text-xl 2xl:text-3xl 3xl:text-4xl flex items-center justify-center bg-black/40 text-white font-medium  rounded-xl"
                 >
                   ▶ Play Video
                 </button>
@@ -62,7 +63,7 @@ export default function TeamShipSection() {
                   ref={videoRef}
                   src={aboutvideo}
                   controls
-                  className="w-full h-67 object-cover rounded-xl"
+                  className="w-full  object-cover rounded-xl"
                 />
               </div>
             )}

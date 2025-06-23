@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -9,12 +10,83 @@ import {
   Camera,
   PlayCircle,
   ArrowUp,
-  Layout,
   BookOpen,
   Clock,
 } from "lucide-react";
 import { cn } from "@/lib/utils"; // Adjust based on your setup (e.g., clsx or tailwind-merge)
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+// Course interface with optional badge
+interface Course {
+  title: string;
+  instructor: string;
+  duration: string;
+  description: string;
+  price: number;
+  originalPrice: number;
+  category: string;
+  image: string;
+  avatar: string;
+  badge?: string;
+}
+
+// Recard component
+function Recard({ course }: { course: Course }) {
+  return (
+    <div className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer lg:w-[215px] lg:h-[350px] xl:w-[250px] xl:h-[400px] 2xl:w-[290px] 2xl:h-[500px] 3xl:h-[617px] 3xl:w-[380px] lg:my-2 xl:my-5">
+      <img
+        src={course.image}
+        alt={course.title}
+        className="w-full lg:h-[45%] xl:h-[45%] 2xl:h-[45%] 3xl:h-[45%] object-cover rounded-[10%] px-4 py-4 pl-4 pr-4"
+      />
+      <div className="px-4 py-3">
+        <div className="flex items-center justify-between text-sm text-gray-400 mb-1">
+          <div className="flex items-center space-x-1">
+            <BookOpen className="lg:w-2 lg:h-2 xl:w-3 xl:h-3 2xl:w-4 2xl:h-4 3xl:w-6 3xl:h-6" />
+            <span className="lg:text-[10px] xl:text-xs 2xl:text-sm 3xl:text-base">{course.category}</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <Clock className="lg:w-2 lg:h-2 xl:w-3 xl:h-3 2xl:w-4 2xl:h-4 3xl:w-6 3xl:h-6" />
+            <span className="lg:text-[10px] xl:text-xs 2xl:text-sm 3xl:text-base">{course.duration}</span>
+          </div>
+        </div>
+        <h3 className="min-h-[72px] lg:text-lg xl:text-lg 2xl:text-2xl 3xl:text-3xl xl:mt-2 2xl:mt-4 font-normal text-gray-900 leading-tight">
+          {course.title}
+        </h3>
+        <p className="text-sm lg:text-[10px] xl:text-[12px] 2xl:text-sm 3xl:text-lg xl:mt-2 2xl:mt-6 text-gray-500 leading-snug">
+          {course.description}
+        </p>
+        <div className="flex items-center justify-between px-0 py-3 border-t lg:mt-0.5 xl:mt-1 2xl:mt-4">
+          <div className="flex items-center space-x-2">
+            <img
+              src={course.avatar}
+              alt={course.instructor}
+              className="lg:w-6 lg:h-6 xl:h-7 xl:w-7 2xl:w-8 2xl:h-8 3xl:w-10 3xl:h-10 rounded-full object-cover"
+            />
+            <span className="lg:text-xs xl:text-sm 2xl:text-sm 3xl:text-lg font-medium text-gray-800">
+              {course.instructor}
+            </span>
+          </div>
+          <div className="lg:text-xs xl:text-sm 2xl:text-lg 3xl:text-xl 2xl:mt-4 text-gray-400">
+            {course.originalPrice && (
+              <span className="line-through mr-2 lg:text-[10px] xl:text-[10px] 2xl:text-xs 3xl:text-sm">
+                ${course.originalPrice}
+              </span>
+            )}
+            <span className="lg:text-[15px] xl:text-sm 2xl:text-base 3xl:text-lg font-bold text-purple-600">
+              ${course.price}
+            </span>
+          </div>
+        </div>
+        {course.badge && (
+          <span className="absolute top-2 right-2 bg-purple-600 text-white text-xs font-semibold px-2 py-1 rounded">
+            {course.badge}
+          </span>
+        )}
+      </div>
+    </div>
+  );
+}
 
 // Dummy category data
 const categories = [
@@ -26,8 +98,8 @@ const categories = [
   { id: "acting", label: "Acting", icon: <PlayCircle className="w-5 h-5" /> },
 ];
 
-// Updated Dummy course data with consistent fields
-const courses = {
+// Dummy course data
+const courses: { [key: string]: Course[] } = {
   development: [
     {
       title: "AWS Certified Solutions Architect",
@@ -315,7 +387,7 @@ const courses = {
     },
     {
       title: "Social Media Marketing Pro",
-      instructor: "Anna Thompson",
+      instructor: "Anna Tson",
       duration: "2.5 Month",
       price: 119,
       originalPrice: 209,
@@ -325,7 +397,7 @@ const courses = {
       avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=50&h=50&fit=crop",
     },
     {
-      title: "SEO & Content Strategy",
+      title: "SEO & Content Strategy Pro",
       instructor: "Kevin Park",
       duration: "3 Month",
       price: 129,
@@ -581,7 +653,7 @@ export default function CategoryTabsPage() {
   const selectedLabel = categories.find((c) => c.id === selected)?.label || "Category";
 
   // Simulate filtering courses based on learning mode
-  const allCourses = courses[selected as keyof typeof courses]; // Type assertion for correct indexing
+  const allCourses = courses[selected as keyof typeof courses];
   const filteredCourses =
     learningMode === "supervised"
       ? allCourses.slice(0, Math.ceil(allCourses.length / 2)) // First half for supervised
@@ -593,49 +665,48 @@ export default function CategoryTabsPage() {
       ? courses["marketing"] // Show all marketing courses when View All is clicked
       : filteredCourses.slice(0, 4); // Otherwise, apply learning mode filter and limit to 4
 
-
+  const navigate = useNavigate();
 
   return (
-    <div className="font-sans">
+    <div className="font-mont">
       {/* Navigation and Top Mentors Section */}
       <section className="py-0">
-        <div className="w-[90%] mx-auto px-4 sm:px-6 lg:px-8 ">
+        <div className="w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Top Mentors Section */}
           <div className="mb-12">
-            <h2 className="text-5xl font-mont font-medium  text-gray-900 mb-4 text-center">
+            <h2 className="lg:text-4xl xl:text-5xl 2xl:text-5xl 3xl:text-5xl  font-mont font-medium text-gray-900 mb-4 text-center">
               Discover<br /> Our Nexora Courses
             </h2>
-            <br></br>
-            <p className="text-xl text-center text-gray-600 max-w-3xl mx-auto mb-8">
-              Lorum ipsum dolor sit amet consectetur.Ut sed<br></br>non elit adipiscing bibendum.
+            <br />
+            <p className="text-xl text-center font-mont text-gray-600 max-w-3xl mx-auto mb-8">
+              Explore our diverse range of courses designed to empower your career<br />
+              growth and personal development.
             </p>
           </div>
 
           {/* Supervised/Unsupervised Toggle */}
           <div className="flex justify-end mb-6">
-            <div className="relative flex w-60 h-10 bg-gray-100 border border-gray-200 rounded-full overflow-hidden shadow-lg">
+            <div className="relative flex w-[25%] h-[5%] bg-white border border-gray-200 rounded-full overflow-hidden shadow-lg">
               <div
                 className={`absolute top-0.5 bottom-0.5 w-1/2 bg-gradient-to-r from-purple-400 to-purple-500 rounded-full transition-transform duration-300 ease-in-out transform ${learningMode === "supervised" ? "translate-x-0.5" : "translate-x-[calc(100%-0.25rem)]"
                   }`}
               />
               <button
                 onClick={() => setLearningMode("supervised")}
-                className="relative flex-1 flex items-center justify-center text-sm font-medium py-2 z-10 px-4"
+                className="relative flex-1 flex items-center justify-center lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl font-medium lg:py-2  xl:py-3 3xl:py-4 z-10 px-4"
               >
                 <span
-                  className={`${learningMode === "supervised" ? "text-white" : "text-purple-600"
-                    } transition-colors duration-300`}
+                  className={`${learningMode === "supervised" ? "text-white" : "text-purple-600"} transition-colors duration-300`}
                 >
                   Supervised
                 </span>
               </button>
               <button
                 onClick={() => setLearningMode("unsupervised")}
-                className="relative flex-1 flex items-center justify-center text-sm font-medium py-2 z-10 px-1"
+                className="relative flex-1 flex items-center justify-center lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl font-medium lg:py-2  xl:py-3 3xl:py-4 z-10 px-1"
               >
                 <span
-                  className={`${learningMode === "unsupervised" ? "text-white" : "text-purple-600"
-                    } transition-colors duration-300`}
+                  className={`${learningMode === "unsupervised" ? "text-white" : "text-purple-600"} transition-colors duration-300`}
                 >
                   Unsupervised
                 </span>
@@ -647,124 +718,65 @@ export default function CategoryTabsPage() {
 
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-gray-800 mb-4">Our Courses</h1>
-            <div className="flex items-center justify-start space-x-6 border-b border-gray-200">
-              {categories.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => setSelected(category.id)}
-                  className={`relative flex  items-center space-x-2 text-sm font-medium  pr- py-2 px-4 transition-colors ${selected === category.id
-                      ? "text-purple-600"
+            <div className="flex justify-center items-center border-b border-gray-200 ">
+              <div className="flex items-center justify-between  xl:w-[80%]">
+                {categories.map((category) => (
+                  <div
+                    key={category.id}
+                    onClick={() => setSelected(category.id)}
+                    className={`relative flex  justify-center items-center space-x-[10%] lg:text-base 2xl:text-lg 3xl:text-xl font-medium py-2 px-8 transition-colors ${selected === category.id
+                      ? "text-purple-600 bg-gradient-to-b from-transparent from-49.76% via-transparent to-[rgba(138,99,255,0.24)] border-b-2 border-purple-600"
                       : "text-gray-500 hover:text-purple-600"
-                    }`}
-                >
-                  <span>{category.icon} </span>
-                  <span>{category.label}</span>
-                  <span
-                    className={`absolute bottom-0 left-0 w-full h-0.5 transition-all duration-300 ${selected === category.id
-                        ? "bg-gradient-to-r from-purple-400 to-purple-600"
-                        : "bg-transparent"
                       }`}
-                  />
-                </button>
-              ))}
+                  >
+                    <span>{category.icon}</span>
+                    <span>{category.label}</span>
+                    {/* <span
+                      className={`absolute   w-full h-0.5 transition-all duration-300 ${selected === category.id ? "bg-gradient-to-r from-purple-400 to-purple-600" : "bg-transparent"
+                        }`}
+                    /> */}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Content */}
-      <div className="w-[90%] mx-auto px-4 pb-10 sm:px-6 lg:px-8 mt-10">
-        <div className="flex items-center justify-between mb-8">
-          {/* <h1 className="text-3xl font-bold text-gray-800">{selectedLabel} Courses</h1> */}
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  gap-6">
+      <div className="w-[90%] mx-auto px-4 pb-10 sm:px-6 lg:px-4 mt-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {displayedCourses.length > 0 ? (
             displayedCourses.map((course, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden cursor-pointer lg:w-[220px] xl:w-[270px] 2xl:w-[280px] 3xl:w-[290px]"
+                onClick={() => navigate("/carddetail", { state: { course } })}
+                className="cursor-pointer xl:w-[32%] 2xl:w-[32%] 3xl:w-[32%] lg:mx-2 xl:mx-1 2xl:mx-1 3xl:mx-2"
               >
-                <img
-                  src={course.image}
-                  alt={course.title}
-                  className="w-full h-[180px] object-cover rounded-3xl px-4 py-4 pl-4 pr-4"
-                />
-                <div className="px-4 py-3">
-                  <div className="flex justify-between items-center mb-1 text-sm text-gray-400">
-                    <div className="flex items-center space-x-1">
-                      {/* <BookOpen className="w-4 h-4"/> */}
-                      <span className="text-gray-600">{course.category}</span>
-                    </div >
-                    <div className="flex items-center gap-1">
-                      <Clock className='w-4 h-4' />
-
-
-                      <span>{course.duration}</span>
-                    </div>
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">{course.title}</h3>
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-2">{course.description}</p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-2">
-                      <img
-                        src={course.avatar}
-                        alt={course.instructor}
-                        className="w-8 h-8 rounded-full object-cover"
-                      />
-                      <span className="text-sm text-gray-700">{course.instructor}</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      {course.originalPrice && (
-                        <span className="text-sm text-gray-400 line-through">
-                          ${course.originalPrice}
-                        </span>
-                      )}
-                      <span className="text-lg font-bold text-purple-600">${course.price}</span>
-                    </div>
-                  </div>
-                  {/* {course.badge && (
-                    <span className="inline-block mt-3 px-2 py-1 text-xs font-semibold text-white bg-purple-600 rounded">
-                      {course.badge}
-                    </span>
-                  )} */}
-                </div>
+                <Recard course={course} />
               </div>
             ))
           ) : (
-            <p className="text-gray-600 text-center col-span-full">
-              No courses available for this mode.
-            </p>
+            <p className="text-gray-600 text-center col-span-full">No courses available for this mode.</p>
           )}
         </div>
 
         {/* View All Button (only for marketing category) */}
-        {/* {selected === "marketing" && filteredCourses.length > 0 && (
-          <div className="flex justify-end mt-8">
+        {selected === "marketing" && filteredCourses.length > 0 && (
+          <div className="flex justify-end mt-12">
             <button
               onClick={() => setShowAllMarketing(!showAllMarketing)}
-              className="flex items-center bg-white border border-gray-300 rounded-full text-sm font-medium"
+              className="flex items-center px-6 py-3 bg-white text-[#8A63FF] border border-[#8A63FF] rounded-full hover:bg-[#8A63FF] hover:text-white transition-colors duration-300 shadow-md"
               aria-expanded={showAllMarketing}
             >
-              <span className="px-4 py-2 text-black">{showAllMarketing ? "View Less" : "View All"}</span>
-              <span
-                className="px-2 py-2 rounded-r-full bg-purple-600"
-              > */}
-        <div className="flex justify-end mt-12 ">
-          <Link
-            to="#" // Replace with your actual "View All" route
-            className="flex items-center px-6 py-3  bg-white text-[#8A63FF] border border-[#8A63FF] rounded-full hover:bg-[#8A63FF] hover:text-white transition-colors duration-300 shadow-md"
-          >
-            View All
-            <span className="ml-2 flex items-center justify-center w-6 h-6 bg-[#8A63FF] rounded-full">
-              <ArrowUp className="w-4 h-4 text-white transform rotate-45" />
-            </span>
-          </Link>
-        </div>
-        {/* </span>
+              <span>{showAllMarketing ? "View Less" : "View All"}</span>
+              <span className="ml-2 flex items-center justify-center w-6 h-6 bg-[#8A63FF] rounded-full">
+                <ArrowUp className="w-4 h-4 text-white transform rotate-45" />
+              </span>
             </button>
-          </div> */}
-
+          </div>
+        )}
       </div>
     </div>
   );
-};
+}
