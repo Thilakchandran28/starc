@@ -35,7 +35,7 @@ const WhyChoose: React.FC = () => {
 
               </div>
               <h3 className="font-semibold lg:text-[10px] xl:text-sm 2xl:text-base text-gray-900 mb-2 text-center">Courses</h3>
-              <p className="lg:text-[8px] xl:text-sm 2xl:text-base text-gray-600 lg:mb-2 3xl:mb-4 text-center">Lorem ipsum dolor sit amet<br></br> consectetur.</p>
+              <p className="lg:text-[8px] xl:text-sm 2xl:text-base text-gray-600 lg:mb-2 3xl:mb-4 text-center">Access a wide array of meticulously crafted  <br></br>courses.</p>
               <div className="flex items-center justify-center">
                 <button className="bg-purple-600 flex items-center align-center text-white px-4 py-2 rounded-3xl  lg:text-[8px] xl:text-sm 2xl:text-base hover:bg-purple-700">
                   Courses
@@ -46,13 +46,13 @@ const WhyChoose: React.FC = () => {
             {/* 100K+ Card - Positioned below and slightly shifted based on image */}
             <div className="w-[70%] bg-white rounded-3xl p-1 shadow-2xl  mt-6"> {/* self-start for alignment, mt-6 for vertical spacing */}
               <div className="flex items-center  gap-1 p-1 ">
-                <div className="p-3  rounded-lg w-fit">
+                <div className="  rounded-lg w-fit">
                   {/* <Globe className="w-6 h-6 text-blue-600" /> */}
-                  <img src={global} className="lg:w-7 h-7" />
+                  <img src={global} className="lg:w-7 h-7 xl:w-9 " />
                 </div>
                 <div >
                   <span className="lg:text-[10px] xl:text-sm 2xl:text-base font-semibold text-gray-900 text-left">100K+</span>
-                  <p className="lg:text-[8px] xl:text-sm 2xl:text-base text-gray-600">Lorem ipsum dolor sit amet <br></br> consectetur.</p>
+                  <p className="lg:text-[8px] xl:text-sm 2xl:text-base text-gray-600">Join 100,000+ learners globally.<br></br></p>
                 </div>
               </div>
             </div>
@@ -103,7 +103,7 @@ const WhyChoose: React.FC = () => {
               </div>
 
               <h3 className="font-semibold  text-gray-900 mb-2 text-center lg:text-[10px] xl:text-sm 2xl:text-base">Learning</h3>
-              <p className=" text-gray-600 text-center lg:text-[8px] xl:text-sm 2xl:text-base">Lorem ipsum dolor sit amet<br></br>consectetur.</p>
+              <p className=" text-gray-600 text-center lg:text-[8px] xl:text-sm 2xl:text-base">Engage with interactive content,<br></br>expert instructors.</p>
 
             </div>
           </div>

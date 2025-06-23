@@ -22,21 +22,21 @@ const steps: Step[] = [
     number: '01',
     icon: <ArrowLeft className="text-blue-500 w-5 h-5" />,
     title: 'Sign Up and create Account',
-    description: 'Lorem ipsum dolor sit amet consectetur.',
+    description: 'Register quickly and customize your profile',
     bgColor: 'bg-blue-50',
   },
   {
     number: '02',
     icon: <Upload className="text-orange-500 w-5 h-5" />,
     title: 'Expression of interest',
-    description: 'Lorem ipsum dolor sit amet consectr.',
+    description: 'Explore courses and mark interest.',
     bgColor: 'bg-orange-50',
   },
   {
     number: '03',
     icon: <BadgeCheck className="text-purple-500 w-5 h-5" />,
     title: 'Get Discovered',
-    description: 'Lorem ipsum dolor sit amet consectr.',
+    description: 'Highlight your skills and progress in our network.',
     bgColor: 'bg-purple-50',
   },
   // Added more steps to make the scroll effect noticeable
@@ -74,12 +74,12 @@ const HowItWorks = () => {
 
         <div className="flex flex-col h-[60vh] lg:flex-row justify-between items-start gap-1">
           {/* Left Side Steps Container */}
-          <div className="w-full lg:w-1/2 h-[100%]  ">
+          <div className="w-full lg:w-1/2 h-[100%] relative  ">
             <img src={Purplegradient}
               className='inset-0 absolute' />
             {/* Scrollable container for steps */}
             <div
-              className="space-y-20 h-[100%] w-[100%] overflow-y-auto pr-11 pl-4 your-scrollable-div::-webkit-scrollbar-thumb {
+              className="space-y-14 h-[100%] w-[100%] overflow-y-auto pr-11 pl-4 your-scrollable-div::-webkit-scrollbar-thumb {
               background: linear-gradient(to bottom, #A78BFA, #8B5CF6); /* Purple gradient */
               border-radius: 5px; "
               style={{
@@ -116,7 +116,7 @@ const HowItWorks = () => {
                 >
                   {/* Step Number */}
                   <div
-                    className={`absolute font-mont text-purple-300 select-none text-[500%] leading-[100%] tracking-[0.03em] ${index % 2 === 0 ? 'left-[-15px]' : 'right-[-15px]'} top-1/2 -translate-y-1/2 z-0 opacity-100 font-['Qurova_DEMO']`}
+                    className={`absolute font-mont text-purple-300 select-none text-[500%] leading-[100%] tracking-[0.03em] ${index % 2 === 0 ? 'left-[-15px]' : 'right-[-15px]'} top-1/2 -translate-y-1/2 z-0 opacity-100 `}
                   >
                     {step.number}
                   </div>
