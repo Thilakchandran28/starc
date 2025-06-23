@@ -115,7 +115,7 @@ const CombinedSections: React.FC = () => {
           </div>
 
           {/* Mentor Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 3xl:gap-12 ">
             {mentors.map((mentor) => (
               <div
                 key={mentor.id}
@@ -129,9 +129,9 @@ const CombinedSections: React.FC = () => {
                   />
                 </div>
                 <div className="lg:p-2 xl:p-4 text-start">
-                  <div className="lg:text-base xl:text-xl 2xl:text-2xl 3xl:text-[30px] font-mont font-medium text-gray-900 mb-1">{mentor.name}</div>
-                  <p className="text-[1.15rem] text-gray-500 mb-2  ">{mentor.specialization}</p>
-                  <div className=" flex items-center justify-start gap-2 text-gray-600 text-sm mb-3 ">
+                  <div className="lg:text-base xl:text-xl 2xl:text-2xl 3xl:text-[30px] font-mont font-medium text-gray-900 mb-2">{mentor.name}</div>
+                  <p className="text-[1.15rem] text-gray-500 mb-3  ">{mentor.specialization}</p>
+                  <div className=" flex items-center justify-start gap-2 text-gray-600 text-sm mb-4 ">
                     <Clock className="w-4 h-4 text-gray-500" />
                     <span>{mentor.experience}</span>
                   </div> 

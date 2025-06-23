@@ -61,10 +61,10 @@ export default function StarcTeam() {
     <section className="bg-white py-16 px-6 flex flex-col justify-center items-center  ">
       <div className="text-center mb-12 lg:w-[70%] 3xl:w-[1216px] flex ">
         <div className="flex flex-col justify-start ">
-          <p className="text-purple-600  text-sm font-mont font-semibold ">
+          <p className="text-purple-600  text-sm text-left  font-mont font-semibold ">
             Our Team
           </p>
-          <h2 className="lg:text-2xl xl:text-2xl 2xl:text-3xl md:text-4xl 3xl:m-6 font-mont font-medium mt-2">
+          <h2 className="lg:text-2xl xl:text-2xl 2xl:text-3xl md:text-4xl 3xl:m-6 text-left font-mont font-medium mt-2">
             Starc, Team:
           </h2>
         </div>

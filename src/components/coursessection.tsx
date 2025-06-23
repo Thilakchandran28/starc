@@ -33,13 +33,13 @@ interface Course {
 // Recard component
 function Recard({ course }: { course: Course }) {
   return (
-    <div className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer lg:w-[215px] lg:h-[350px] xl:w-[250px] xl:h-[400px] 2xl:w-[290px] 2xl:h-[500px] 3xl:h-[617px] 3xl:w-[380px] lg:my-2 xl:my-5">
+    <div className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer lg:w-[215px] lg:h-[350px] xl:w-[250px] xl:h-[400px] 2xl:w-[290px] 2xl:h-[500px] 3xl:h-[500px] 3xl:w-[380px] lg:my-2 xl:my-5">
       <img
         src={course.image}
         alt={course.title}
         className="w-full lg:h-[45%] xl:h-[45%] 2xl:h-[45%] 3xl:h-[45%] object-cover rounded-[10%] px-4 py-4 pl-4 pr-4"
       />
-      <div className="px-4 py-3">
+      <div className="px-4 py-[1rem]">
         <div className="flex items-center justify-between text-sm text-gray-400 mb-1">
           <div className="flex items-center space-x-1">
             <BookOpen className="lg:w-2 lg:h-2 xl:w-3 xl:h-3 2xl:w-4 2xl:h-4 3xl:w-6 3xl:h-6" />
@@ -50,13 +50,13 @@ function Recard({ course }: { course: Course }) {
             <span className="lg:text-[10px] xl:text-xs 2xl:text-sm 3xl:text-base">{course.duration}</span>
           </div>
         </div>
-        <div className="min-h-[72px] lg:text-lg xl:text-[22px] 2xl:text-[24px] 3xl:text-[24px] xl:mt-2 2xl:mt-4 font-normal text-gray-900 leading-tight">
+        <div className="min-h-[3rem] lg:text-lg xl:text-[22px] 2xl:text-[24px] 3xl:text-[24px] xl:mt-2 2xl:mt-4 font-medium text-gray-900 leading-tight">
           {course.title}
         </div>
-        <p className="text-sm lg:text-[10px] xl:text-[12px] 2xl:text-sm 3xl:text-lg xl:mt-2 2xl:mt-6 text-gray-500 leading-snug">
+        <p className="text-sm lg:text-[10px] xl:text-[12px] 2xl:text-sm 3xl:text-[1rem] xl:mt-2 2xl:mt-6 text-[#696984] leading-snug">
           {course.description}
         </p>
-        <div className="flex items-center justify-between px-0 py-3 border-t lg:mt-0.5 xl:mt-1 2xl:mt-4">
+        <div className="flex items-center justify-between px-0 py-1  lg:mt-0.5 xl:mt-1 2xl:mt-4">
           <div className="flex items-center space-x-2">
             <img
               src={course.avatar}
@@ -678,7 +678,7 @@ export default function CategoryTabsPage() {
               Discover<br /> Our Nexora Courses
             </h2>
             <br />
-            <p className="text-xl text-center font-mont text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-xl 3xl:text-[1rem] text-center font-mont text-gray-600 max-w-3xl mx-auto mb-8">
               Explore our diverse range of courses designed to empower your career<br />
               growth and personal development.
             </p>
@@ -686,14 +686,14 @@ export default function CategoryTabsPage() {
 
           {/* Supervised/Unsupervised Toggle */}
           <div className="flex justify-end mb-6">
-            <div className="relative flex w-[25%] h-[5%] bg-white border border-gray-200 rounded-full overflow-hidden shadow-lg">
+            <div className="relative flex w-[20%] h-[2%] bg-white border border-gray-200 rounded-full overflow-hidden shadow-lg">
               <div
-                className={`absolute top-0.5 bottom-0.5 w-1/2 bg-gradient-to-r from-purple-400 to-purple-500 rounded-full transition-transform duration-300 ease-in-out transform ${learningMode === "supervised" ? "translate-x-0.5" : "translate-x-[calc(100%-0.25rem)]"
+                className={`absolute top-0.5 bottom-0.5 w-1/2 bg-[#8A63FF] rounded-full transition-transform duration-300 ease-in-out transform ${learningMode === "supervised" ? "translate-x-0.5" : "translate-x-[calc(100%-0.25rem)]"
                   }`}
               />
               <button
                 onClick={() => setLearningMode("supervised")}
-                className="relative flex-1 flex items-center justify-center lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl font-medium lg:py-2  xl:py-3 3xl:py-4 z-10 px-4"
+                className="relative flex-1 flex items-center justify-center lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl font-medium lg:py-2  xl:py-3 3xl:py-3 z-10 px-1"
               >
                 <span
                   className={`${learningMode === "supervised" ? "text-white" : "text-[#8A63FF]"} transition-colors duration-300`}
@@ -703,7 +703,7 @@ export default function CategoryTabsPage() {
               </button>
               <button
                 onClick={() => setLearningMode("unsupervised")}
-                className="relative flex-1 flex items-center justify-center lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl font-medium lg:py-2  xl:py-3 3xl:py-4 z-10 px-1"
+                className="relative flex-1 flex items-center justify-center lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl font-medium lg:py-2  xl:py-3 3xl:py-3 z-10 px-1"
               >
                 <span
                   className={`${learningMode === "unsupervised" ? "text-white" : "text-[#8A63FF]"} transition-colors duration-300`}
@@ -717,14 +717,14 @@ export default function CategoryTabsPage() {
           {/* Our Courses Title and Tabs */}
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-gray-800 mb-4">Our Courses</h1>
-            <div className="flex justify-center items-center border-b border-gray-200 ">
-              <div className="flex items-center justify-between  xl:w-[80%]">
+            <div className="flex justify-center items-center border-b  3xl:w-[80%] m-auto border-gray-200 ">
+              <div className="flex items-center justify-between  xl:w-[80%] cursor-pointer">
                 {categories.map((category) => (
                   <div
                     key={category.id}
                     onClick={() => setSelected(category.id)}
-                    className={`relative flex  justify-center items-center space-x-[10%] lg:text-base 2xl:text-lg 3xl:text-xl font-medium py-2 px-8 transition-colors ${selected === category.id
-                      ? "text-[#8A63FF] bg-gradient-to-b from-transparent from-49.76% via-transparent to-[rgba(138,99,255,0.24)] border-b-2 border-purple-600"
+                    className={`relative flex  justify-center items-center space-x-[10%] lg:text-base 2xl:text-lg 3xl:text-[1rem] font-medium py-2 px-8 transition-colors ${selected === category.id
+                      ? "text-[#8A63FF] bg-gradient-to-b from-transparent from-49.76% via-transparent to-[rgba(138,99,255,0.24)] border-b-2 border-[#8A63FF]"
                       : "text-gray-500 hover:text-[#8A63FF]"
                       }`}
                   >

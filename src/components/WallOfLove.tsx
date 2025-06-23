@@ -82,7 +82,7 @@ const WallOfLove: React.FC = () => {
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="flex flex-col justify-between bg-white lg:h-[45%] lg:w-[32%] xl:h-[45%] xl:w-[32%]  2xl:h-[45%] 2xl:w-[32%] 3xl:h-[45%] 3xl:w-[32%] border border-[#8A63FF] p-6 rounded-2xl"
+              className="flex flex-col justify-between 3xl:gap-4 bg-white lg:h-[45%] lg:w-[32%] xl:h-[45%] xl:w-[32%]  2xl:h-[45%] 2xl:w-[32%] 3xl:h-[45%] 3xl:w-[32%] border border-[#8A63FF] p-6 rounded-2xl"
               // Approximate height and width based on the image
             >
               <div className="flex items-center justify-between mb-4">
@@ -109,7 +109,7 @@ const WallOfLove: React.FC = () => {
                 </svg> */}
                 {/* <img  src={vector}/> */}
               </div>
-              <p className="text-black font-mont font-medium leading-relaxed lg:text-xs xl:text-sm 2xl:text-[18px] 3xl:text-[18px] flex-grow mb-4">{testimonial.content}</p>
+              <p className="text-black font-mont font-medium leading-relaxed lg:text-xs xl:text-sm 2xl:text-[16px] 3xl:text-[16px] flex-grow mb-4">{testimonial.content}</p>
               
               <p className='lg:text-[10px] xl:text-xs text-sm text-black font-mont font-medium'>12:15 PM . May 19,2009</p>
             </div>

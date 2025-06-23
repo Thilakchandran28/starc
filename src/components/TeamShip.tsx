@@ -13,10 +13,10 @@ export default function TeamShipSection() {
   };
 
   return (
-    <section className="px-6 md:px-20 py-12 bg-white text-gray-800 ">
-      <div className="w-[100%] items-center justify-between">
+    <section className="px-6 md:px-20 py-16 bg-white text-gray-800 ">
+      <div className="w-[100%] items-center justify-center ">
         {/* Text Block */}
-        <div className="flex justify-between gap-10   pl-10  ">
+        <div className="flex justify-between gap-10  m-auto w-[80%]  ">
           <h2 className="lg:text-xl xl:text-xl 3xl:text-4xl md:text-4xl font-mont font-medium leading-tight">
             The best software <br></br>teams ship quickly and often.
           </h2>
