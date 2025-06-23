@@ -102,7 +102,7 @@ const CombinedSections: React.FC = () => {
   return (
     <div className=" font-mont 2">
       {/* --- Top Mentors Section --- */}
-      <section className="lg:py-10 xl:py-16 2xl:py-20 h-[100vh] 3xl:h-[70vh]">
+      <section className="lg:py-10 xl:py-16 2xl:py-20 h-[80vh] 2xl:h-[80vh] 3xl:h-[80vh]">
         <div className="w-[70%] h-[60vh] mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Header Section */}
           <div className="mb-12 h-[20%]">
