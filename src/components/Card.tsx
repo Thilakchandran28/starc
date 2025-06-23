@@ -7,6 +7,7 @@ export interface Course {
   image: string;
   title: string;
   instructor: string;
+  discription: string;
   rating: number;
   students: number;
   duration: string;
@@ -15,7 +16,6 @@ export interface Course {
   originalPrice: number;
   badge?: string;
 }
-
 interface CardProps {
   course: Course;
 }
@@ -26,7 +26,6 @@ const Recard: React.FC<CardProps> = ({ course }) => {
    const handleClick = () => {
    navigate('/carddetail', { state: { course } });
    };
-
   return (
     <div
      
@@ -37,7 +36,7 @@ const Recard: React.FC<CardProps> = ({ course }) => {
         alt={course.title}
         className="w-full lg:h-[45%] xl:h-[45%] 2xl:h-[45%] 3xl:h-[45%] object-cover rounded-[10%] px-4 py-4 pl-4 pr-4 "
       />
-      <div className="px-4 py-3">
+      <div className="px-4 py-3 lg:width[400px] ">
         <div className="flex items-center justify-between text-sm text-gray-400 mb-1">
           <div className="flex items-center gap-1">
             <BookOpen className=" lg:w-2 lg:h-2 xl:w-3 xl:h-3 2xl:w-4 2xl:h-4 3xl:w-6 3xl:h-6" />
@@ -52,7 +51,9 @@ const Recard: React.FC<CardProps> = ({ course }) => {
           {course.title}
         </h3>
         <p className="text-sm lg:text-[10px] xl:text-[12px] 2xl:text-sm 3xl:text-lg lg:mt-2 xl:mt-4 2x:mt-6 text-gray-500  leading-snug">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          {/* Master modern front-end development with this comprehensive React course. You'll learn to build dynamic web applications using components, hooks, routing, and state management tools like Redux. */}
+
+          {course.description}
         </p>
       </div>
       <div className="flex items-center justify-between px-4 py-3 border-t lg:mt-0.5 xl:mt-1 2xl:mt-4 ">
