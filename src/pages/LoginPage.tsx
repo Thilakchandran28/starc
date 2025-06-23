@@ -309,7 +309,7 @@ const Signup: React.FC = () => {
               </div>
               <div className="overflow-hidden h-[220px] flex items-center justify-center">
                 <div key={currentSlide} className="w-full">
-                  <h1 className="text-4xl font-bold text-gray-900 mb-4 leading-tight font-mont w-50 animate-pop-slide">
+                  <h1 className="lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-gray-900 mb-4 leading-tight font-mont w-50 animate-pop-slide">
                     {slides[currentSlide].title
                       .split(" ")
                       .map((word, index) => (

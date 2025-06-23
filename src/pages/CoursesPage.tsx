@@ -22,21 +22,7 @@ const CoursesPage = () => {
     setMessageFromChild(course);
   };
 
-  return (
-    // <div className="min-h-screen  bg-gray-100 flex justify-center ">
-    //   <ProfileTopNavbar />
-    //   <div className="items-center align-top mx-20 mt-24 lg:w-1/2 2xl:w-[850px] 3xl:w-1/2">
-    //     <ProfileSidebar  />
-    //     <CoursesOverview sendMessage={handleChildMessage}  />
-    //     <div className="w-1/4 min-w-[300px] max-w-[350px]">
-    //       {messageFromChild?.status === "Completed" ? (
-    //         <RightSideBar />
-    //       ) : (
-    //         <RightSideBarComp />
-    //       )}
-    //     </div>
-    //   </div>
-    // </div>
+  return (  
     <div className="flex flex-col h-screen  bg-gray-100 ">
       <div className=" sticky top-0 z-50  ">
         <ProfileTopNavbar />
