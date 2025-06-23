@@ -217,7 +217,7 @@ const SettingsTabs = () => {
             </div>
             <button
               type="submit"
-              className="px-4 py-2 bg-purple-600 text-white rounded-[30px] hover:bg-purple-700"
+              className="px-4 py-2 bg-[#8A63FF] text-white rounded-[30px] hover:bg-purple-700"
             >
               Save Changes
             </button>
@@ -287,7 +287,7 @@ const SettingsTabs = () => {
                   }
                 />
               </div>
-              <button className="px-4 py-2 bg-purple-600 text-white rounded-[30px] hover:bg-purple-700">
+              <button className="px-4 py-2 bg-[#8A63FF] text-white rounded-[30px] hover:bg-purple-700">
                 Save Changes
               </button>
             </form>
@@ -309,7 +309,7 @@ const SettingsTabs = () => {
                 }
               />
               <button
-                className="mt-2 px-4 py-2 bg-purple-600 text-white rounded-[30px] hover:bg-purple-700"
+                className="mt-2 px-4 py-2 bg-[#8A63FF] text-white rounded-[30px] hover:bg-purple-700"
                 onClick={() =>
                   console.log("Username Updated:", accountForm.username)
                 }
@@ -336,7 +336,7 @@ const SettingsTabs = () => {
                 <option value="English, US">English (US)</option>
               </select>
               <button
-                className="mt-2 px-4 py-2 bg-purple-600 text-white rounded-[30px] hover:bg-purple-700"
+                className="mt-2 px-4 py-2 bg-[#8A63FF] text-white rounded-[30px] hover:bg-purple-700"
                 onClick={() =>
                   console.log("Language Updated:", accountForm.language)
                 }
@@ -351,12 +351,12 @@ const SettingsTabs = () => {
               <label className="flex items-center mt-2 space-x-2">
                 <input
                   type="checkbox"
-                  className="h-4 w-4 text-purple-600 focus:ring-purple-500"
+                  className="h-4 w-4 text-[#8A63FF] focus:ring-purple-500"
                 />
                 <span className="text-sm">Confirm Delete your account</span>
               </label>
               <button
-                className="mt-2 px-4 py-2 bg-purple-600 text-white rounded-[30px] hover:bg-purple-700"
+                className="mt-2 px-4 py-2 bg-[#8A63FF] text-white rounded-[30px] hover:bg-purple-700"
                 onClick={() => console.log("Account Deletion Requested")}
               >
                 Delete My Account
@@ -405,7 +405,7 @@ const SettingsTabs = () => {
                 <input
                   type="radio"
                   name="emailNotify"
-                  className="text-purple-600"
+                  className="text-[#8A63FF]"
                   value="Send me email notifications"
                   checked={
                     notificationForm.emailNotification ===
@@ -424,7 +424,7 @@ const SettingsTabs = () => {
                 <input
                   type="radio"
                   name="emailNotify"
-                  className="text-purple-600"
+                  className="text-[#8A63FF]"
                   value="Once an hour at most"
                   checked={
                     notificationForm.emailNotification ===
@@ -443,7 +443,7 @@ const SettingsTabs = () => {
                 <input
                   type="radio"
                   name="emailNotify"
-                  className="text-purple-600"
+                  className="text-[#8A63FF]"
                   value="Never"
                   checked={notificationForm.emailNotification === "Never"}
                   onChange={(e) =>
@@ -466,7 +466,7 @@ const SettingsTabs = () => {
               <label className="flex items-center mt-2 space-x-2">
                 <input
                   type="checkbox"
-                  className="h-4 w-4 text-purple-600"
+                  className="h-4 w-4 text-[#8A63FF]"
                   checked={notificationForm.morePreferences.option1}
                   onChange={(e) =>
                     setNotificationForm({
@@ -483,7 +483,7 @@ const SettingsTabs = () => {
               <label className="flex items-center mt-2 space-x-2">
                 <input
                   type="checkbox"
-                  className="h-4 w-4 text-purple-600"
+                  className="h-4 w-4 text-[#8A63FF]"
                   checked={notificationForm.morePreferences.option2}
                   onChange={(e) =>
                     setNotificationForm({
@@ -500,7 +500,7 @@ const SettingsTabs = () => {
             </div>
             <button
               type="submit"
-              className="px-4 py-2 bg-purple-600 text-white rounded-[30px] hover:bg-purple-700"
+              className="px-4 py-2 bg-[#8A63FF] text-white rounded-[30px] hover:bg-purple-700"
             >
               Save Changes
             </button>
@@ -524,8 +524,8 @@ const SettingsTabs = () => {
               onClick={() => setActiveTab(tab.id)}
               className={`flex items-center px-4 py-2 mr-4 text-sm font-medium ${
                 activeTab === tab.id
-                  ? "border-b-2 border-purple-600 text-purple-600"
-                  : "text-gray-500 hover:text-purple-600"
+                  ? "border-b-2 border-[#8A63FF] text-[#8A63FF]"
+                  : "text-gray-500 hover:text-[#8A63FF]"
               }`}
             >
               {tab.icon}

@@ -109,7 +109,7 @@ const WallOfLove: React.FC = () => {
                 </svg> */}
                 {/* <img  src={vector}/> */}
               </div>
-              <p className="text-black font-mont font-medium leading-relaxed lg:text-xs xl:text-sm 2xl:text-lg 3xl:text-xl flex-grow mb-4">{testimonial.content}</p>
+              <p className="text-black font-mont font-medium leading-relaxed lg:text-xs xl:text-sm 2xl:text-[18px] 3xl:text-[18px] flex-grow mb-4">{testimonial.content}</p>
               
               <p className='lg:text-[10px] xl:text-xs text-sm text-black font-mont font-medium'>12:15 PM . May 19,2009</p>
             </div>

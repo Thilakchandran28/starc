@@ -50,9 +50,9 @@ function Recard({ course }: { course: Course }) {
             <span className="lg:text-[10px] xl:text-xs 2xl:text-sm 3xl:text-base">{course.duration}</span>
           </div>
         </div>
-        <h3 className="min-h-[72px] lg:text-lg xl:text-lg 2xl:text-2xl 3xl:text-3xl xl:mt-2 2xl:mt-4 font-normal text-gray-900 leading-tight">
+        <div className="min-h-[72px] lg:text-lg xl:text-[22px] 2xl:text-[24px] 3xl:text-[24px] xl:mt-2 2xl:mt-4 font-normal text-gray-900 leading-tight">
           {course.title}
-        </h3>
+        </div>
         <p className="text-sm lg:text-[10px] xl:text-[12px] 2xl:text-sm 3xl:text-lg xl:mt-2 2xl:mt-6 text-gray-500 leading-snug">
           {course.description}
         </p>
@@ -696,7 +696,7 @@ export default function CategoryTabsPage() {
                 className="relative flex-1 flex items-center justify-center lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl font-medium lg:py-2  xl:py-3 3xl:py-4 z-10 px-4"
               >
                 <span
-                  className={`${learningMode === "supervised" ? "text-white" : "text-purple-600"} transition-colors duration-300`}
+                  className={`${learningMode === "supervised" ? "text-white" : "text-[#8A63FF]"} transition-colors duration-300`}
                 >
                   Supervised
                 </span>
@@ -706,7 +706,7 @@ export default function CategoryTabsPage() {
                 className="relative flex-1 flex items-center justify-center lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl font-medium lg:py-2  xl:py-3 3xl:py-4 z-10 px-1"
               >
                 <span
-                  className={`${learningMode === "unsupervised" ? "text-white" : "text-purple-600"} transition-colors duration-300`}
+                  className={`${learningMode === "unsupervised" ? "text-white" : "text-[#8A63FF]"} transition-colors duration-300`}
                 >
                   Unsupervised
                 </span>
@@ -724,8 +724,8 @@ export default function CategoryTabsPage() {
                     key={category.id}
                     onClick={() => setSelected(category.id)}
                     className={`relative flex  justify-center items-center space-x-[10%] lg:text-base 2xl:text-lg 3xl:text-xl font-medium py-2 px-8 transition-colors ${selected === category.id
-                      ? "text-purple-600 bg-gradient-to-b from-transparent from-49.76% via-transparent to-[rgba(138,99,255,0.24)] border-b-2 border-purple-600"
-                      : "text-gray-500 hover:text-purple-600"
+                      ? "text-[#8A63FF] bg-gradient-to-b from-transparent from-49.76% via-transparent to-[rgba(138,99,255,0.24)] border-b-2 border-purple-600"
+                      : "text-gray-500 hover:text-[#8A63FF]"
                       }`}
                   >
                     <span>{category.icon}</span>

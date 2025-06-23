@@ -96,7 +96,7 @@ const Hero: React.FC = () => {
               <>
                 <button
                   type="button"
-                  className="bg-purple-500 text-white px-6 py-3 lg:text-xs xl:text-sm 2xl:text-base 3xl:text-lg font-medium rounded-lg shadow-md font-mont"
+                  className="bg-[#8A63FF] text-white px-6 py-3 lg:text-xs xl:text-sm 2xl:text-base 3xl:text-lg font-medium rounded-lg shadow-md font-mont"
                   style={{ backgroundColor: "#A855F7", boxShadow: '0px 10px 12px 0px rgba(0, 0, 0, 0.2)' }}
                 >
                   Explore More Now
@@ -118,7 +118,7 @@ const Hero: React.FC = () => {
             ) : currentSlide === 1 ? (
               <button
                 type="button"
-                className="bg-purple-500 text-white px-6 py-3 text-lg font-medium rounded-lg shadow-md font-mont"
+                className="bg-[#8A63FF] text-white px-6 py-3 text-lg font-medium rounded-lg shadow-md font-mont"
                 style={{ backgroundColor: "#A855F7", boxShadow: '0px 10px 12px 0px rgba(0, 0, 0, 0.2)' }}
               >
                 Express Your Interest Now
@@ -127,7 +127,7 @@ const Hero: React.FC = () => {
               <div className="flex items-center gap-4">
                 <button
                   type="button"
-                  className="bg-purple-500 text-white px-6 py-3 text-lg font-medium rounded-lg shadow-md"
+                  className="bg-[#8A63FF] text-white px-6 py-3 text-lg font-medium rounded-lg shadow-md"
                   style={{ backgroundColor: "#A855F7", boxShadow: '0px 10px 12px 0px rgba(0, 0, 0, 0.2)' }}
                 >
                   Explore Courses Now
@@ -147,7 +147,7 @@ const Hero: React.FC = () => {
               onClick={handleBarClick}
             >
               <div
-                className="h-full bg-purple-600 rounded-full"
+                className="h-full bg-[#8A63FF] rounded-full"
                 style={{
                   width: `${100 / slides.length}%`,
                   transform: `translateX(${currentSlide * 100}%)`,

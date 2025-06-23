@@ -4,62 +4,55 @@ import ProfileSidebar from "../components/ProfileSidebar";
 import ProfileTopNavbar from "../components/ProfileTopNavbar";
 import DashboardOverview from "../components/DashboardOverview";
 import RightSideBarComp from "@/components/RightSideBarComp";
+import RightSideBar from "@/components/RightSideBar";
 
 const Profile = () => {
-  const [user] = useState({
-    name: "Jackson Durai",
-    learningHours: 22,
-    certificatesEarned: 7,
-    progress: 50,
-  });
+  // const [user] = useState({
+  //   name: "Jackson Durai",
+  //   learningHours: 22,
+  //   certificatesEarned: 7,
+  //   progress: 50,
+  // });
 
-  const courses = [
-    {
-      id: 1,
-      title: "AWS Certified Solutions Architect",
-      progress: 35,
-      duration: "3 Month",
-      image: "/placeholder.svg",
-    },
-    {
-      id: 2,
-      title: "AWS Certified Solutions Architect",
-      progress: 50,
-      duration: "3 Month",
-      image: "/placeholder.svg",
-    },
-    {
-      id: 3,
-      title: "AWS Certified Solutions Architect",
-      progress: 80,
-      duration: "3 Month",
-      image: "/placeholder.svg",
-    },
-  ];
-
+    type Course = {
+    id: string;
+    image: string;
+    title: string;
+    progress: number;
+    duration: string;
+    status: string;
+  };
+  
+  // const courses = [
+  //   {
+  //     id: 1,
+  //     title: "AWS Certified Solutions Architect",
+  //     progress: 35,
+  //     duration: "3 Month",
+  //     image: "/placeholder.svg",
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "AWS Certified Solutions Architect",
+  //     progress: 50,
+  //     duration: "3 Month",
+  //     image: "/placeholder.svg",
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "AWS Certified Solutions Architect",
+  //     progress: 80,
+  //     duration: "3 Month",
+  //     image: "/placeholder.svg",
+  //   },
+  // ];
+  const [messageFromChild, setMessageFromChild] = useState<Course | null>(null);
+  
+  const handleChildMessage = (course: Course) => {
+    setMessageFromChild(course);
+  };
+  
   return (
-    // <div className=" h-full w-full flex justify-center relative border border-blue-500 bg-red-400">
-    //   <div className="absolute z-10 flex justify-center">
-    //     <ProfileTopNavbar />
-    //   </div>
-    //   <div className="pt-20 flex justify-center items-center ">
-    //     <ProfileSidebar />
-    //     <DashboardOverview />
-    //     <RightSideBarComp />
-    //   </div>
-    // </div>
-    //   <div className="border border-blue-500 bg-green-400 justify-center ">
-    //     <div className="sticky  z-50  ">
-    //       <ProfileTopNavbar />
-    //     </div>
-
-    //     <div className="flex justify-center items-center border absolute inset-0 bg-red-500 border-red-500 p-20 min-h-full ">
-    //         <ProfileSidebar />
-    //         <DashboardOverview />
-    //         <RightSideBarComp />
-    //   </div>
-    // </div>
-
     <div className="flex flex-col h-screen bg-gray-100 ">
       <div className=" sticky top-0 z-50 ">
         <ProfileTopNavbar />
@@ -69,10 +62,15 @@ const Profile = () => {
         <ProfileSidebar />
         </div>
         <div className="overflow-y-auto h-screen pt-8 sticky top-0 flex justify-center" style={{scrollbarWidth:'none'}}>
-        <DashboardOverview />
+        <DashboardOverview  sendMessage={handleChildMessage}/>
         </div>        
-        <div className="sticky top-0 h-screen pt-8 lg:mr-[28px] xl:mr-[38px] 2xl:mr-[68px] 3xl:mr-[88px]">
-        <RightSideBarComp /> 
+        <div className="sticky top-0 h-screen pt-8 lg:mr-[22px] xl:mr-[38px] 2xl:mr-[68px] 3xl:mr-[88px]">
+        {messageFromChild?.status ==='Completed'?(
+          <RightSideBar/>
+        ):(
+          <RightSideBarComp /> 
+          
+        )}
         </div>
       </div>
     </div>

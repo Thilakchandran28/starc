@@ -29,14 +29,14 @@ const Recard: React.FC<CardProps> = ({ course }) => {
   return (
     <div
      
-      className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer  lg:w-[220px] lg:h-[350px] xl:w-[250px] xl:h-[400px] 2xl:w-[290px] 2xl:h-[500px]  3xl:h-[617px] 3xl:w-[380px] my-5" 
+      className="bg-white rounded-2xl flex flex-col shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer  lg:w-[220px] lg:h-[350px] xl:w-[250px] xl:h-[400px] 2xl:w-[290px] 2xl:h-[500px]  3xl:h-[617px] 3xl:w-[380px] my-5" 
     > 
       <img
         src={course.image}
         alt={course.title}
         className="w-full lg:h-[45%] xl:h-[45%] 2xl:h-[45%] 3xl:h-[45%] object-cover rounded-[10%] px-4 py-4 pl-4 pr-4 "
       />
-      <div className="px-4 py-3 lg:width[400px] ">
+      <div className="px-4 py-3 lg:width[400px] flex-1">
         <div className="flex items-center justify-between text-sm text-gray-400 mb-1">
           <div className="flex items-center gap-1">
             <BookOpen className=" lg:w-2 lg:h-2 xl:w-3 xl:h-3 2xl:w-4 2xl:h-4 3xl:w-6 3xl:h-6" />
@@ -47,9 +47,9 @@ const Recard: React.FC<CardProps> = ({ course }) => {
             <span className="lg:text-[10px] xl:text-xs 2xl:text-sm 3xl:text-base">{course.duration}</span>
           </div>
         </div>
-        <h3 className="text-[17px]  lg:text-sm xl:text-lg 2xl:text-2xl 3xl:text-3xl xl:mt-2 2xl:mt-4 font-normal text-gray-900 leading-tight">
+        <div className="text-[17px]  lg:text-[20px] xl:text-[22px] 2xl:text-[24px] 3xl:text-[24px] xl:mt-2 2xl:mt-4 font-medium text-black leading-tight">
           {course.title}
-        </h3>
+        </div>
         <p className="text-sm lg:text-[10px] xl:text-[12px] 2xl:text-sm 3xl:text-lg lg:mt-2 xl:mt-4 2x:mt-6 text-gray-500  leading-snug">
           {/* Master modern front-end development with this comprehensive React course. You'll learn to build dynamic web applications using components, hooks, routing, and state management tools like Redux. */}
 

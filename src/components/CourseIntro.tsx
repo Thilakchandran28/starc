@@ -32,8 +32,8 @@ export default function CourseIntro({
   onPrevious,
   onNext,
   onSettings,
-  about = "Lorem ipsum dolor sit amet consectetur. Sociis tempus fermentum morbi enim posuere nisi.",
-  description = "Lorem ipsum dolor sit amet consectetur. Tincidunt sed enim mi proin fermentum. In ornare blandit nec tortor varius semper. Tincidunt ultrices magna ipsum una scelerisque porta ad sem eu. Scelerisque eros maecenas volutpat amet tortor proin elit mattis. Est amet et elit bibendum amet. Aliquet dolor sit pharetra at aliquam sapien nisl eget. Sit nisl metus vel fermentum sed est. Auctor nisi ullamcorper mi tellus bibendum. Donec quis in dolor vel duis dui turpis nunc id.",
+  about = "This comprehensive course will guide you through the fundamental principles of UI/UX design. Learn to create intuitive and engaging user experiences from ideation to implementation, preparing you for a successful career in product design..",
+  description = "Delve deep into the world of User Interface (UI) and User Experience (UX) design. This course covers essential topics such as user research, wireframing, prototyping, usability testing, and visual design principles. Through practical exercises and real-world case studies, you'll develop the skills to design user-centered products that are both aesthetically pleasing and highly functional. Whether you're a beginner looking to enter the field or a professional aiming to enhance your skills, this course provides the knowledge and tools you need to excel",
   videoSrc = figma,
   videoPoster = "",
 }: CourseIntroProps) {
