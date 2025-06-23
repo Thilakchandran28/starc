@@ -183,7 +183,7 @@ const Masters = () => {
                 onClick={() => handleCategoryClick(category.name)}
                 className={`relative flex items-center gap-2 px-3 py-2 text-sm font-medium transition-colors duration-300
                  ${isActive 
-                 ? "text-blue-600 g-gradient-to-b from-transparent from-49.76% to-[#E6F0FF]" 
+                 ? "text-blue-600 g-gradient-to-b from-transparent from-49.76% via-transparent to-[#E6F0FF]" 
                  : "text-gray-500 hover:text-blue-500"}`}
               >
                 <Icon className={`w-5 h-5 ${isActive ? "text-blue-600" : "text-gray-500"}`} />
@@ -216,7 +216,7 @@ const Masters = () => {
         
                 hover:shadow-xl hover:shadow-purple-100 
        
-                hover:border-purple-500 hover:border-2 
+                hover:border-[#8A63FF] hover:border-2 
                 border-gray-100 border 
      
               `}

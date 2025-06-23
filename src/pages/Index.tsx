@@ -26,9 +26,9 @@ const Index = () => {
         {/* Header */}
         <div className="text-center mb-1">
           <h2 className="lg:text-4xl xl:text-5xl 3xl:text-5xl font-mont font-medium text-gray-900 mb-4">Why Choose Starc?</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto items-center">
             At Starc, we're dedicated to providing an unparalleled learning
-experience that equips you for success in today's dynamic world.
+            experience that equips you for success in today's dynamic world.
           </p>
         </div>
         <WhyChoose />

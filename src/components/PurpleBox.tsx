@@ -33,11 +33,11 @@ const PurpleBox: React.FC = () => {
             <input
               type="email"
               placeholder="Your mail address"
-              className="bg-transparent outline-none text-black placeholder-purple-600 lg:text-sm xl:text-base 2xl:text-xl lg:w-36 xl:w-48 2xl:w-56 3xl:w-72"
+              className="bg-transparent outline-none text-black placeholder-[#8A63FF] lg:text-sm xl:text-base 2xl:text-xl lg:w-36 xl:w-48 2xl:w-56 3xl:w-72"
             />
           </div>
           <Button
-            className="bg-white text-purple-600 font-mont font-semibold px-6 py-2 rounded-full shadow-md hover:bg-gray-100 flex items-center gap-2 lg:text-sm xl:text-base 2xl:text-xl"
+            className="bg-white text-[#8A63FF] font-mont font-semibold px-6 py-2 rounded-full shadow-md hover:bg-gray-100 flex items-center gap-2 lg:text-sm xl:text-base 2xl:text-xl"
           >
             Join Us
             {/* <ArrowRight className="w-5 h-5" /> */}

@@ -208,7 +208,7 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:w-[80%] 2xl:w-[80%] flex items-center justify-between ">
           <div className="bg-white p-1 border rounded-xl h-[256px] flex justify-center items-center lg:w-[30%] lg:h-[90%] xl:w-[30%] xl:h-[90%] 2xl:h-[90%] 2xl:w-[30%]">
             <div className="bg-[#F7F8FA]  p-6 rounded-xl  text-center h-full w-full flex  flex-col justify-center items-center">
-              <div className="bg-purple-100 w-fit p-4 rounded-full inline-flex items-center justify-center mb-4">
+              <div className="bg-white w-fit p-4 rounded-full inline-flex items-center justify-center mb-4">
                 <Mail className="lg:w-5 lg:h-8 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7 3xl:w-8 3xl:h-8  text-purple-600" />
               </div>
               <h3 className="lg:text-base xl:text-lg 2xl:text-[21px]  font-medium text-gray-900 mb-2">
@@ -222,7 +222,7 @@ const Contact = () => {
 
           <div className="bg-white p-1 border rounded-xl h-[256px] flex justify-center items-center lg:w-[30%] lg:h-[90%] xl:w-[30%] xl:h-[90%] 2xl:h-[90%] 2xl:w-[30%]">
             <div className="bg-[#F7F8FA]  p-6 rounded-xl  text-center h-full w-full flex  flex-col justify-center items-center">
-              <div className="bg-purple-100 p-4 rounded-full inline-flex items-center justify-center mb-4">
+              <div className="bg-white p-4 rounded-full inline-flex items-center justify-center mb-4">
                 <Phone className="lg:w-5 lg:h-8 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7 3xl:w-8 3xl:h-8 text-purple-600" />
               </div>
               <h3 className="lg:text-base xl:text-lg 2xl:text-[21px] font-medium text-gray-900 mb-2">
@@ -236,7 +236,7 @@ const Contact = () => {
 
           <div className="bg-white p-1 border rounded-xl h-[256px] flex justify-center items-center lg:w-[30%] lg:h-[90%] xl:w-[30%] xl:h-[90%] 2xl:h-[90%] 2xl:w-[30%]">
             <div className="bg-[#F7F8FA]  p-6 rounded-xl  text-center h-full w-full flex  flex-col justify-center items-center">
-              <div className="bg-purple-100 p-4 rounded-full inline-flex items-center justify-center mb-4">
+              <div className="bg-white p-4 rounded-full inline-flex items-center justify-center mb-4">
                 <MapPin className="lg:w-5 lg:h-8 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7 3xl:w-8 3xl:h-8 text-purple-600" />
               </div>
               <h3 className="lg:text-base xl:text-lg 2xl:text-[21px] font-medium text-gray-900 mb-2">

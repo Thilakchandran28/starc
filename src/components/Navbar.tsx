@@ -157,7 +157,7 @@ const Navbar = () => {
             <Link
               key={item.id}
               to={item.path}
-              className={`lg:text-sm xl:text-sm 2xl:text-sm 3xl:text-[1rem] font-medium ${isActive(item.path) ? 'text-[#8A63FF]' : 'text-gray-500 hover:text-[#8A63FF]'}`}
+              className={`lg:text-sm xl:text-sm 2xl:text-sm 3xl:text-[1rem] font-medium ${isActive(item.path) ? 'text-[#8A63FF]' : 'text-[#474747] hover:text-[#8A63FF]'}`}
             >
               {item.label}
             </Link>
@@ -169,23 +169,23 @@ const Navbar = () => {
           {isAuthenticated ? (
             <div className="flex items-center space-x-4">
               <Link to="/notifications">
-                <Button variant="ghost" size="icon" className="text-[#8A63FF]  border rounded-[50%] border-purple-600 hover:text-white hover:bg-purple-600">
+                <Button variant="ghost" size="icon" className="text-[#8A63FF]  border rounded-[50%] border-[#8A63FF] hover:text-white hover:bg-[#8A63FF]">
                   <Bell className="h-5 w-5" />
                 </Button>
               </Link>
               <Link to="/wishlist">
-                <Button variant="ghost" size="icon" className="text-[#8A63FF]  border rounded-[50%] border-purple-600 hover:bg-purple-600 hover:text-white">
+                <Button variant="ghost" size="icon" className="text-[#8A63FF]  border rounded-[50%] border-[#8A63FF] hover:bg-[#8A63FF] hover:text-white">
                   <Heart className="h-5 w-5" />
                 </Button>
               </Link>
               <Link to="/profile">
-                <Button variant="outline" className="text-[#8A63FF] border-purple-600 hover:bg-purple-600 hover:text-white rounded-full flex items-center">
+                <Button variant="outline" className="text-[#8A63FF] border-[#8A63FF] hover:bg-[#8A63FF] font-mont font-medium hover:text-white rounded-full flex items-center">
                   <User className="h-4 w-4 mr-2" />
                   View Profile
                 </Button>
               </Link>
 
-              <Button onClick={handleLogout} variant="outline" className="text-[#8A63FF] border-purple-600 hover:bg-purple-600 hover:text-white rounded-full flex items-center">
+              <Button onClick={handleLogout} variant="outline" className="text-[#8A63FF] border-[#8A63FF] hover:bg-[#8A63FF]font-mont font-medium hover:text-white rounded-full flex items-center">
                 <LogOut className="h-4 w-4 mr-2" />
                 Logout
               </Button>
@@ -194,12 +194,12 @@ const Navbar = () => {
           ) : (
             <>
               <Link to="/LoginPage">
-                <Button className="bg-white border-2  text-sm lg:text-xs xl:text-sm 2xl:text-base hover:bg-gray-300 text-[#8A63FF] font-mont font-medium rounded-full px-6 py-2 flex items-center justify-center">
+                <Button className="bg-white border-2  text-sm lg:text-xs xl:text-sm 2xl:text-base hover:bg-gray-300   text-[#8A63FF] font-mont font-medium rounded-full px-6 py-2 flex items-center justify-center">
                   Log In
                 </Button>
               </Link>
               <Link to="/signup">
-                <Button className="bg-[#8A63FF]  text-sm lg:text-xs xl:text-sm 2xl:text-base hover:bg-[#6D28D9] text-white font-mont font-medium rounded-full px-6 py-2 flex items-center justify-center">
+                <Button className="bg-[#8A63FF]  text-sm lg:text-xs xl:text-sm 2xl:text-base hover:bg-[#6D28D9]  text-white font-mont font-medium rounded-full px-6 py-2 flex items-center justify-center">
                   Sign Up Now
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>

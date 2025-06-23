@@ -312,21 +312,21 @@ const About = () => {
 
       {/* Stats Section--- */}
       <section className="py-10 bg-white">
-        <div className="w-[100%] mx-auto px-4 sm:px-6 lg:px-8 ">
-          <div className="flex justify-center lg:grid-cols-4 gap-10 bg-white p-6 ">
+        <div className="w-[70%] mx-auto px-4 sm:px-6 lg:px-8 ">
+          <div className="flex justify-center lg:grid-cols-4 gap-10  bg-white p-6 ">
             {stats.map((stat, index) => (
               <div key={index} className="text-center  w-1/3 ">
                 <div className="text-4xl lg:text-5xl font-mont font-medium  text-center pl-6 text-[#6E51E0] mb-2">
                   {stat.number}
                 </div>
                 <div className="text-gray-600 text-center text-wrap font-mont ">
-                  {stat.label}  
+                  {stat.label}
                 </div>
               </div>
             ))}
           </div>
-          <TeamShip />
         </div>
+        <TeamShip />
       </section>
 
       {/* Our Goals Section */}
@@ -334,14 +334,14 @@ const About = () => {
         <div className="  3xl:w-[1596px] 2xl:w-[1200px] xl:w-[1000px] lg:w-[900px]">
           <div className="text-center lg:mb-8 xl:mb-12 ">
             <h2
-              className="text-4xl font-mont font-medium text-gray-900 pr-[78%] mb- 3xl:text-[40px] 2xl:text-[30px] xl:text-[30px]  "
+              className="text-4xl font-mont font-bold text-gray-900 text-left mb-[1rem] 3xl:text-[40px] 2xl:text-[30px] xl:text-[30px]  "
               style={{
                 fontFamily: "mont-regular",
               }}
             >
               Our Goals
             </h2>
-            <p className="text-l text-gray-600 pr-48  p-1 3xl:text-xl 2xl:text-sm xl:text-[10px] lg:text-[10px] ">
+            <p className="text-l text-gray-600 pr-40 text-left p-1 3xl:text-xl 2xl:text-sm xl:text-[10px] lg:text-[10px] ">
               At Skillbridge, our goal is to empower individuals from all
               backgrounds to thrive in the world of design and development. We
               believe that education should be accessible and transformative,
