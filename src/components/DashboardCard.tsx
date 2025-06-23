@@ -15,8 +15,8 @@ const DashboardCard = ({ course }) => {
         className=" w-full rounded-[15px] h-fit"
       />
       </div>
-      <div className="lg:h-[50px] xl:h-[70px] 2xl:h-[80px] 3xl:h-[97px] mt-4 border">
-        <h3 className="font-semibold h-[40px] border lg:text-[13px] xl:text-[14px] text-gray-900">
+      <div className="lg:h-[50px] xl:h-[70px] 2xl:h-[80px] 3xl:h-[97px] mt-4 ">
+        <h3 className="font-semibold h-[40px]  lg:text-[13px] xl:text-[14px] text-gray-900">
           {course?.title}
         </h3>
         <div className="w-15 h-11  flex items-center  justify-start gap-x-3 ">

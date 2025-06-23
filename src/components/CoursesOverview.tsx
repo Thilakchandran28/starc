@@ -198,6 +198,12 @@ import LearningOverview from "./LearningOverview";
 import CourseDashboardPage from "./CompletedCourse";
 import OngoingCourseDashboardPage from "./OngoingCourse";
 import DashboardCard from "./DashboardCard";
+import course1 from '../Assets/icons/course1.svg'
+import course2 from '../Assets/icons/course2.svg'
+import course3 from '../Assets/icons/course3.svg'
+import course4 from '../Assets/icons/course4.svg'
+import course5 from '../Assets/icons/course5.svg'
+import course6 from '../Assets/icons/course6.svg'
 
 type Course = {
   id: string;
@@ -243,7 +249,7 @@ const CoursesOverview: React.FC<childProps> = ({ sendMessage }) => {
   const courses: Course[] = [
     {
       id: "1",
-      image: "https://via.placeholder.com/150",
+      image: course1,
       title: "AWS Solutions Architect",
       progress: 50,
       duration: "1 Month",
@@ -251,7 +257,7 @@ const CoursesOverview: React.FC<childProps> = ({ sendMessage }) => {
     },
     {
       id: "2",
-      image: "https://via.placeholder.com/150",
+      image: course2,
       title: "Azure Fundamentals",
       progress: 100,
       duration: "1 Month",
@@ -259,7 +265,7 @@ const CoursesOverview: React.FC<childProps> = ({ sendMessage }) => {
     },
     {
       id: "3",
-      image: "https://via.placeholder.com/150",
+      image: course3,
       title: "Google Cloud Basics",
       progress: 75,
       duration: "1 Month",
@@ -267,7 +273,7 @@ const CoursesOverview: React.FC<childProps> = ({ sendMessage }) => {
     },
     {
       id: "4",
-      image: "https://via.placeholder.com/150",
+      image: course4,
       title: "Google Cloud Advanced",
       progress: 75,
       duration: "1 Month",
@@ -275,7 +281,7 @@ const CoursesOverview: React.FC<childProps> = ({ sendMessage }) => {
     },
     {
       id: "5",
-      image: "https://via.placeholder.com/150",
+      image: course5,
       title: "DevOps Essentials",
       progress: 75,
       duration: "1 Month",
@@ -283,7 +289,7 @@ const CoursesOverview: React.FC<childProps> = ({ sendMessage }) => {
     },
     {
       id: "6",
-      image: "https://via.placeholder.com/150",
+      image: course6,
       title: "Kubernetes Basics",
       progress: 75,
       duration: "1 Month",
@@ -402,18 +408,18 @@ const CoursesOverview: React.FC<childProps> = ({ sendMessage }) => {
               onClick={() => setSelectedCategory(category.id)}
               className={`relative flex items-center space-x-2 text-sm font-medium py-2 px-4 transition-colors ${
                 selectedCategory === category.id
-                  ? "text-[#8A63FF] font-bold"
+                  ? "text-[#8A63FF] bg-gradient-to-b from-transparent from-49.76% via-transparent to-[rgba(138,99,255,0.24)] border-b-2 border-[#8A63FF] font-bold"
                   : "text-gray-500 hover:text-[#8A63FF]"
               }`}
             >
               <span>{category.label}</span>
-              <span
+              {/* <span
                 className={`absolute bottom-0 left-0 w-full h-1 rounded-t-lg transition-all duration-300 ${
                   selectedCategory === category.id
                     ? "bg-gradient-to-r from-[#E5E1FF] to-[#C8BFFF]"
                     : "bg-transparent"
                 }`}
-              />
+              /> */}
             </button>
           ))}
         </div>
