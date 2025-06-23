@@ -211,11 +211,11 @@ const Contact = () => {
               <div className="bg-purple-100 w-fit p-4 rounded-full inline-flex items-center justify-center mb-4">
                 <Mail className="lg:w-5 lg:h-8 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7 3xl:w-8 3xl:h-8  text-purple-600" />
               </div>
-              <h3 className="lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl font-medium text-gray-900 mb-2">
+              <h3 className="lg:text-base xl:text-lg 2xl:text-[21px]  font-medium text-gray-900 mb-2">
                 Message Us
               </h3>
-              <p className="text-gray-600 lg:text-sm xl:text-base 2xl:text-lg  3xl:text-xl">
-                hello@example.com
+              <p className="text-gray-600 lg:text-sm xl:text-base 2xl:text-[16px]   3xl:text-xl">
+                contactus@staciacorp.com
               </p>
             </div>
           </div>
@@ -225,11 +225,11 @@ const Contact = () => {
               <div className="bg-purple-100 p-4 rounded-full inline-flex items-center justify-center mb-4">
                 <Phone className="lg:w-5 lg:h-8 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7 3xl:w-8 3xl:h-8 text-purple-600" />
               </div>
-              <h3 className="lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl font-medium text-gray-900 mb-2">
+              <h3 className="lg:text-base xl:text-lg 2xl:text-[21px] font-medium text-gray-900 mb-2">
                 Call Us!
               </h3>
-              <p className="text-gray-600 lg:text-sm xl:text-base 2xl:text-lg  3xl:text-xl">
-                000-000-0000
+              <p className="text-gray-600 lg:text-sm xl:text-base 2xl:text-[16px]  3xl:text-xl">
+                9363034150
               </p>
             </div>
           </div>
@@ -239,11 +239,11 @@ const Contact = () => {
               <div className="bg-purple-100 p-4 rounded-full inline-flex items-center justify-center mb-4">
                 <MapPin className="lg:w-5 lg:h-8 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7 3xl:w-8 3xl:h-8 text-purple-600" />
               </div>
-              <h3 className="lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl font-medium text-gray-900 mb-2">
+              <h3 className="lg:text-base xl:text-lg 2xl:text-[21px] font-medium text-gray-900 mb-2">
                 Address
               </h3>
-              <p className="text-gray-600 lg:text-sm xl:text-base 2xl:text-lg  3xl:text-xl">
-                2972 Westheimer Rd. Santa Ana, Illinois 85486
+              <p className="text-gray-600 lg:text-sm xl:text-base 2xl:text-[16px]   3xl:text-xl">
+                Ground Floor, C-53, Guindy Industrial Estate, Chennai
               </p>
             </div>
           </div>
