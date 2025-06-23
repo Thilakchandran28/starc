@@ -226,7 +226,10 @@ const CardDetail: React.FC = () => {
 
       {/* Other Components */}
       <WallOfLove />
+      <div className='flex justify-center'>
+
       <PurpleBox />
+      </div>
       <Footer />
     </div>
   );
