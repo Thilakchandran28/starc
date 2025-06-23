@@ -46,9 +46,9 @@ const WhyChoose: React.FC = () => {
             {/* 100K+ Card - Positioned below and slightly shifted based on image */}
             <div className="w-[70%] bg-white rounded-3xl p-1 shadow-2xl  mt-6"> {/* self-start for alignment, mt-6 for vertical spacing */}
               <div className="flex items-center  gap-1 p-1 ">
-                <div className="p-3  rounded-lg w-fit">
+                <div className="  rounded-lg w-fit">
                   {/* <Globe className="w-6 h-6 text-blue-600" /> */}
-                  <img src={global} className="lg:w-7 h-7" />
+                  <img src={global} className="lg:w-7 h-7 xl:w-9 " />
                 </div>
                 <div >
                   <span className="lg:text-[10px] xl:text-sm 2xl:text-base font-semibold text-gray-900 text-left">100K+</span>
