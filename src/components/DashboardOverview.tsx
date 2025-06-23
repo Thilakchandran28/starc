@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Search, Bell, Heart, LayoutDashboard, Award, TrendingUp } from 'lucide-react';
 import DashboardCard from './DashboardCard';
 
@@ -14,13 +14,16 @@ import course3 from '../Assets/icons/course3.svg'
 import course4 from '../Assets/icons/course4.svg'
 import course5 from '../Assets/icons/course5.svg'
 import course6 from '../Assets/icons/course6.svg'
+import OngoingCourseDashboardPage from './OngoingCourse';
+import CourseDashboardPage from './CompletedCourse';
 
 interface Course {
-  id: number;
+  id: string;
   title: string;
   duration: string;
   progress: number;
   image: string;
+  status: string;
 }
 
 interface User {
@@ -31,7 +34,11 @@ interface User {
   progress: number;
 }
 
-const DashboardOverview: React.FC = () => {
+interface childProps {
+  sendMessage: (course: Course) => void;
+}
+
+const DashboardOverview: React.FC<childProps> = ({ sendMessage }) => {
   const user: User = {
     name: 'Jack',
     learningHours: 22,
@@ -39,20 +46,88 @@ const DashboardOverview: React.FC = () => {
     coursesEnrolled: 50,
     progress: 50,
   };
+    const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
+  
 
-  const courses = [
-    { id: '1', image: course1, title: 'AWS Solutions Architect', progress: 50, duration: '1 Month', status: '50%' },
-    { id: '2', image: course2, title: 'Azure Fundamentals', progress: 100, duration: '1 Month', status: 'Completed' },
-    { id: '3', image: course3, title: 'Google Cloud Basics', progress: 75, duration: '1 Month', status: '75%' },
-    { id: '4', image: course4, title: 'Google Cloud Advanced', progress: 75, duration: '1 Month', status: '75%' },
-    { id: '5', image: course5, title: 'DevOps Essentials', progress: 75, duration: '1 Month', status: '75%' },
-    { id: '6', image: course6, title: 'Kubernetes Basics', progress: 75, duration: '1 Month', status: '75%' },
+  const courses: Course[] = [
+    {
+      id: "1",
+      image: course1,
+      title: "AWS Solutions Architect",
+      progress: 50,
+      duration: "1 Month",
+      status: "50%",
+    },
+    {
+      id: "2",
+      image: course2,
+      title: "Azure Fundamentals",
+      progress: 100,
+      duration: "1 Month",
+      status: "Completed",
+    },
+    {
+      id: "3",
+      image: course3,
+      title: "Google Cloud Basics",
+      progress: 75,
+      duration: "1 Month",
+      status: "75%",
+    },
+    {
+      id: "4",
+      image: course4,
+      title: "Google Cloud Advanced",
+      progress: 75,
+      duration: "1 Month",
+      status: "75%",
+    },
+    {
+      id: "5",
+      image: course5,
+      title: "DevOps Essentials",
+      progress: 75,
+      duration: "1 Month",
+      status: "75%",
+    },
+    {
+      id: "6",
+      image: course6,
+      title: "Kubernetes Basics",
+      progress: 75,
+      duration: "1 Month",
+      status: "75%",
+    },
   ];
 
   const progressPercentage = (user.progress / user.coursesEnrolled) * 100;
 
 
   const progress = 50;
+
+  const filteredCourses = courses    
+
+  if (selectedCourse) {
+    if (selectedCourse.status === "Completed") {
+      return (
+        <CourseDashboardPage
+          course={selectedCourse}
+          onBack={() => setSelectedCourse(null)}
+        />
+      );
+    } else {
+      return (
+        <OngoingCourseDashboardPage
+          course={selectedCourse}
+          onBack={() => setSelectedCourse(null)}
+        />
+      );
+    }}
+
+  const handleSelectedCourse = (course: Course) => {
+    setSelectedCourse(course);
+    sendMessage(course);
+  };
 
   return (
     // absolute top-28 bg-gray-100
@@ -170,9 +245,12 @@ const DashboardOverview: React.FC = () => {
       {/* Continue Learning Section */}
       <div className="w-full">
         <h2 className="text-2xl font-bold text-gray-900 mb-4">Continue Learning</h2>
-        <div className="flex flex-wrap justify-between p-1 ">
-          {courses.map((course) => (
+        <div className="flex flex-wrap justify-between p-1 " >
+          {filteredCourses.map((course) => (
+            <div onClick={() => handleSelectedCourse(course)}>
+
             <DashboardCard key={course.id} course={course} />
+            </div>
           ))}
         </div>
       </div>
