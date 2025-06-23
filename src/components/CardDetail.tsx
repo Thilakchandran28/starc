@@ -225,7 +225,10 @@ strategies to become a skilled cloud architect, ready for real-world scenarios.
 
       {/* Other Components */}
       <WallOfLove />
+      <div className='flex justify-center'>
+
       <PurpleBox />
+      </div>
       <Footer />
     </div>
   );
