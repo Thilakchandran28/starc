@@ -106,7 +106,7 @@ const CombinedSections: React.FC = () => {
         <div className="w-[70%] h-[60vh] mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Header Section */}
           <div className="mb-12 h-[20%]">
-            <h2 className="lg:text-4xl xl:text-5xl 3xl:text-5xl font-mont font-medium text-gray-900 mb-4">
+            <h2 className="lg:text-4xl xl:text-[56px] font-mont font-medium text-gray-900 mb-4">
               Our Top Mentor At Starc
             </h2>
             <p className="text-base text-gray-500 max-w-3xl mx-auto leading-relaxed">
@@ -129,13 +129,13 @@ const CombinedSections: React.FC = () => {
                   />
                 </div>
                 <div className="lg:p-2 xl:p-4 text-start">
-                  <h3 className="lg:text-base xl:text-xl 2xl:text-2xl 3xl:text-4xl font-mont font-semibold text-gray-900 mb-1">{mentor.name}</h3>
-                  <p className="text-sm text-gray-500 mb-2  ">{mentor.specialization}</p>
-                  <div className=" flex items-center justify-start gap-2 text-gray-600 text-sm mb-3">
+                  <div className="lg:text-base xl:text-xl 2xl:text-2xl 3xl:text-[30px] font-mont font-medium text-gray-900 mb-1">{mentor.name}</div>
+                  <p className="text-[1.15rem] text-gray-500 mb-2  ">{mentor.specialization}</p>
+                  <div className=" flex items-center justify-start gap-2 text-gray-600 text-sm mb-3 ">
                     <Clock className="w-4 h-4 text-gray-500" />
                     <span>{mentor.experience}</span>
-                  </div>
-                  <div className=" gap-2">
+                  </div> 
+                  <div className="flex gap-2 ">
                     <StarRating />
                     <span className="text-sm text-gray-500">({mentor.reviews})</span>
                   </div>

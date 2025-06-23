@@ -148,7 +148,7 @@ const Navbar = () => {
       <div className="w-[90%] mx-auto flex items-center justify-between h-16">
         {/* Logo */}
         <div className="flex-shrink-0">
-          <Link to="/" className="lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-purple-600">LOGO</Link>
+          <Link to="/" className="lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-[#8A63FF]">LOGO</Link>
         </div>
 
         {/* Navigation Links */}
@@ -157,7 +157,7 @@ const Navbar = () => {
             <Link
               key={item.id}
               to={item.path}
-              className={`lg:text-sm xl:text-sm 2xl:text-sm 3xl:text-xl font-medium ${isActive(item.path) ? 'text-purple-600' : 'text-gray-500 hover:text-purple-600'}`}
+              className={`lg:text-sm xl:text-sm 2xl:text-sm 3xl:text-[1rem] font-medium ${isActive(item.path) ? 'text-[#8A63FF]' : 'text-gray-500 hover:text-[#8A63FF]'}`}
             >
               {item.label}
             </Link>
@@ -169,23 +169,23 @@ const Navbar = () => {
           {isAuthenticated ? (
             <div className="flex items-center space-x-4">
               <Link to="/notifications">
-                <Button variant="ghost" size="icon" className="text-purple-600  border rounded-[50%] border-purple-600 hover:text-white hover:bg-purple-600">
+                <Button variant="ghost" size="icon" className="text-[#8A63FF]  border rounded-[50%] border-purple-600 hover:text-white hover:bg-purple-600">
                   <Bell className="h-5 w-5" />
                 </Button>
               </Link>
               <Link to="/wishlist">
-                <Button variant="ghost" size="icon" className="text-purple-600  border rounded-[50%] border-purple-600 hover:bg-purple-600 hover:text-white">
+                <Button variant="ghost" size="icon" className="text-[#8A63FF]  border rounded-[50%] border-purple-600 hover:bg-purple-600 hover:text-white">
                   <Heart className="h-5 w-5" />
                 </Button>
               </Link>
               <Link to="/profile">
-                <Button variant="outline" className="text-purple-600 border-purple-600 hover:bg-purple-600 hover:text-white rounded-full flex items-center">
+                <Button variant="outline" className="text-[#8A63FF] border-purple-600 hover:bg-purple-600 hover:text-white rounded-full flex items-center">
                   <User className="h-4 w-4 mr-2" />
                   View Profile
                 </Button>
               </Link>
 
-              <Button onClick={handleLogout} variant="outline" className="text-purple-600 border-purple-600 hover:bg-purple-600 hover:text-white rounded-full flex items-center">
+              <Button onClick={handleLogout} variant="outline" className="text-[#8A63FF] border-purple-600 hover:bg-purple-600 hover:text-white rounded-full flex items-center">
                 <LogOut className="h-4 w-4 mr-2" />
                 Logout
               </Button>

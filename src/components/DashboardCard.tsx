@@ -33,7 +33,7 @@ const DashboardCard = ({ course }) => {
           </div>  
         ) : (
           <div>
-            <div className="lg:w-[40px] lg:h-[14px] xl:w-[44px] xl:h-[16px] 2xl:w-[48px] 2xl:h-[18px] 3xl:w-[54px] 3xl:h-[20px]  bg-purple-600 rounded-lg  flex items-center justify-center mb-2">
+            <div className="lg:w-[40px] lg:h-[14px] xl:w-[44px] xl:h-[16px] 2xl:w-[48px] 2xl:h-[18px] 3xl:w-[54px] 3xl:h-[20px]  bg-[#8A63FF] rounded-lg  flex items-center justify-center mb-2">
               <img src={uparrow} className=" p-1" />
               <p className="lg:text-[10px] xl:text-[11px] 2xl:text-[12px] 3xl:text-[13px] text-white  font-semibold">
                 {course?.progress}%
@@ -41,7 +41,7 @@ const DashboardCard = ({ course }) => {
             </div>
             <div className="w-full bg-gray-200 rounded-full h-2.5 mb-2">
               <div
-                className="bg-purple-600 lg:h-[6px] xl:h-[7px] 2xl:h-[7px] 3xl:h-[8px] w-full rounded-full"  
+                className="bg-[#8A63FF] lg:h-[6px] xl:h-[7px] 2xl:h-[7px] 3xl:h-[8px] w-full rounded-full"  
                 style={{ width: `${course?.progress}%`}}
               ></div>
             </div>

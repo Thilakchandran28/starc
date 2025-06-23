@@ -24,7 +24,7 @@ const ProfileSidebar = () => {
           to="/profile"
           className={({ isActive }) =>
             `flex items-center p-3 rounded-lg lg:text-xs xl:text-sm 2xl:text-base 3xl:text-lg transition-colors duration-200 ${isActive
-              ? ' text-purple-600'
+              ? ' text-[#8A63FF]'
               : 'text-gray-700 hover:bg-gray-200'}`
           }
         >
@@ -35,7 +35,7 @@ const ProfileSidebar = () => {
           to="/courses"
           className={({ isActive }) =>
             `flex items-center p-3 rounded-lg lg:text-xs xl:text-sm 2xl:base 3xl:text-lg transition-colors duration-200 ${isActive
-              ? ' text-purple-600'
+              ? ' text-[#8A63FF]'
               : 'text-gray-700 hover:bg-gray-200'}`
           }
         >
@@ -46,7 +46,7 @@ const ProfileSidebar = () => {
           to="/book"
           className={({ isActive }) =>
             `flex items-center py-3 px-3  rounded-lg lg:text-xs xl:text-sm 2xl:base 3xl:text-lg transition-colors duration-200 ${isActive
-              ? ' text-purple-600'
+              ? ' text-[#8A63FF]'
               : 'text-gray-700 hover:bg-gray-200'}`
           }
         >
@@ -68,7 +68,7 @@ const ProfileSidebar = () => {
           to="/settings"
           className={({ isActive }) =>
             `flex items-center p-3 rounded-lg lg:text-xs xl:text-sm 2xl:base 3xl:text-lg transition-colors duration-200 ${isActive
-              ? 'text-purple-600'
+              ? 'text-[#8A63FF]'
               : 'text-gray-700 hover:bg-gray-200'}`
           }
         >

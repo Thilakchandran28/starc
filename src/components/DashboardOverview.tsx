@@ -132,7 +132,7 @@ const DashboardOverview: React.FC<childProps> = ({ sendMessage }) => {
   return (
     // absolute top-28 bg-gray-100
     <div className="h-[80vh] lg:ml-3 xl:ml-0 overflow-y-auto lg:w-[530px] xl:w-[700px] 2xl:w-[775px] 3xl:w-[1008px]  py-1" style={{ scrollbarWidth: "none" }} >
-      <h1 className="text-3xl font-bold text-gray-900 lg:mb-3 xl:mb-6">Hello {user.name} 👋</h1>
+      <h1 className="text-3xl font-bold text-[#8A63FF] lg:mb-3 xl:mb-6">Hello {user.name} 👋</h1>
 
       <div className="flex justify-between  ">
         {/* Achieve with Purpose Card */}
@@ -150,7 +150,7 @@ const DashboardOverview: React.FC<childProps> = ({ sendMessage }) => {
             <div className="flex justify-center text-3xl font-bold lg:text-[20px] xl:text-[22px] xl:w-[148px]  2xl:text-[28px] 2xl:w-[198px] 3xl:text-[32px] 3xl:w-[218px] 3xl:h-[45px] lg:mt-2 xl:mt-4">02/10</div>
             <img src={trophy} alt="Trophy" className="relative lg:left-9 lg:bottom-3  xl:left-4 xl:bottom-7 2xl:left-4 2xl:bottom-6 3xl:left-2 3xl:bottom-8 lg:h-16 lg:w-16 xl:h-[106px] xl:w-[106px] 2xl:h-[126px] 2xl:w-[126px] 3xl:h-[146px] 3xl:w-[146px]" />
           </div>
-          <button className="lg:mt-2 xl:mt-2 bg-white text-purple-600 lg:px-2 xl:px-4 xl:py-1 2xl:py-2 rounded-full font-semibold  hover:bg-gray-100 lg:text-[8px] lg:h-[22px] lg:w-[70px] xl:text-[10px] xl:h-[24px] xl:w-[90px]  2xl:text-[12px] 2xl:h-[28px] 2xl:w-[100px] 3xl:text-[14px] 3xl:h-[35px] 3xl:w-[122px]">
+          <button className="lg:mt-2 xl:mt-2 bg-white text-[#8A63FF] lg:px-2 xl:px-4 xl:py-1 2xl:py-2 rounded-full font-semibold  hover:bg-gray-100 lg:text-[8px] lg:h-[22px] lg:w-[70px] xl:text-[10px] xl:h-[24px] xl:w-[90px]  2xl:text-[12px] 2xl:h-[28px] 2xl:w-[100px] 3xl:text-[14px] 3xl:h-[35px] 3xl:w-[122px]">
             Start Now
           </button>
         </div>
@@ -199,7 +199,7 @@ const DashboardOverview: React.FC<childProps> = ({ sendMessage }) => {
             {/* Progress Circle (Purple for Completed) */}
             <svg className="absolute w-full h-full" viewBox="0 0 100 100">
               <circle
-                className="stroke-purple-500"
+                className="stroke-[#8A63FF]"
                 cx="50"
                 cy="50"
                 r="45"
@@ -224,7 +224,7 @@ const DashboardOverview: React.FC<childProps> = ({ sendMessage }) => {
           {/* Legend */}
           <div className="flex space-x-3  mt-3 px-2 ">
             <div className="flex items-center">
-              <div className=" lg:w-3 lg:h-3 xl:w-4 xl:h-4 2xl:w-6 2xl:h-6 3xl:w-6 3xl:h-6 bg-purple-500 rounded-full mr-1 "></div>
+              <div className=" lg:w-3 lg:h-3 xl:w-4 xl:h-4 2xl:w-6 2xl:h-6 3xl:w-6 3xl:h-6 bg-[#8A63FF] rounded-full mr-1 "></div>
               <span className=" lg:text-[9px] xl:text-[11px] 2xl:text-[12px] 3xl:text-[13px]">
                 Completed
               </span>
