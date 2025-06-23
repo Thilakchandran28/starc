@@ -145,7 +145,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-full bg-white border-b border-gray-100 sticky top-0 z-50">
-      <div className="w-[90%] mx-auto flex items-center justify-between h-16">
+      <div className="w-[90%] mx-auto flex items-center justify-between h-20">
         {/* Logo */}
         <div className="flex-shrink-0">
           <Link to="/" className="lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-purple-600">LOGO</Link>

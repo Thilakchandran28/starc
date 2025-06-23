@@ -35,7 +35,7 @@ const WhyChoose: React.FC = () => {
 
               </div>
               <h3 className="font-semibold lg:text-[10px] xl:text-sm 2xl:text-base text-gray-900 mb-2 text-center">Courses</h3>
-              <p className="lg:text-[8px] xl:text-sm 2xl:text-base text-gray-600 lg:mb-2 3xl:mb-4 text-center">Access a wide array of meticulously crafted  <br></br>courses.</p>
+              <p className="lg:text-[8px] xl:text-sm text-gray-600 lg:mb-2 3xl:mb-4 text-center">Access a wide array of meticulously crafted courses.</p>
               <div className="flex items-center justify-center">
                 <button className="bg-purple-600 flex items-center align-center text-white px-4 py-2 rounded-3xl  lg:text-[8px] xl:text-sm 2xl:text-base hover:bg-purple-700">
                   Courses
@@ -103,7 +103,7 @@ const WhyChoose: React.FC = () => {
               </div>
 
               <h3 className="font-semibold  text-gray-900 mb-2 text-center lg:text-[10px] xl:text-sm 2xl:text-base">Learning</h3>
-              <p className=" text-gray-600 text-center lg:text-[8px] xl:text-sm 2xl:text-base">Engage with interactive content,<br></br>expert instructors.</p>
+              <p className=" text-gray-600 text-center lg:text-[8px] xl:text-sm 2xl:text-base">Engage with interactive content,expert instructors.</p>
 
             </div>
           </div>

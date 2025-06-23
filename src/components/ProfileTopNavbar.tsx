@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const ProfileTopNavbar = () => {
   return (
-    <div className="bg-white p-4 px-16 flex items-center justify-around shadow-md rounded-lg w-full ">
+    <div className="bg-white p-1 px-16 flex items-center justify-around shadow-md rounded-lg w-full h-20 ">
       {/* Logo */}
       <Link to="/" className="text-purple-600 font-bold text-[36px]">LOGO</Link>
 
