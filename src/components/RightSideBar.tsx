@@ -50,9 +50,9 @@ function RightSideBar() {
 
         {/* Suggested Next Section */}
 
-        <div className='h-[] mt-6 w-full '>
+        <div className=' mt-6 w-full '>
           <h3 className="text-[16px] font-semibold text-gray-800 mb-4">Suggested Next</h3>
-          <div className="flex flex-col-1 justify-center overflow-x-auto space-x-4 pb-4 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 ">
+          <div className="flex a justify-center overflow-x-auto space-x-4 pb-0 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 ">
             {/* Mapping over the data array */}
             {suggestedItems.map((course) => (
               <div key={course.id}>

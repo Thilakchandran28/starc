@@ -715,7 +715,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({
                 Unsupervised
               </button>
             </div>
-            <span className="text-sm text-gray-500 w-[40%] items-center">
+            <span className="text-sm text-gray-500 lg:w-[50%] xl:w-[40%] flex text-center">
               {description}
             </span>
           </div>
@@ -1043,7 +1043,7 @@ const Course: React.FC = () => {
                 <h2 className="text-2xl font-mont font-bold mb-4 py-2 text-gray-800 text-center">
                   Categories
                 </h2>
-                <ul className="w-full h-full overflow-y-auto pr-2 border-r-2 custom-scrollbar">
+                <ul className="w-full h-full overflow-y-auto pr-2 custom-scrollbar">
                   {categories.map((category, index) => (
                     <li
                       key={index}

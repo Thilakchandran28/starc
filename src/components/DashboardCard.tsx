@@ -3,16 +3,17 @@ import React, { useState } from "react";
 import uparrow from "../Assets/uparrow.svg";
 import clock from "../Assets/clock.svg";
 import Completed from '../Assets/icons/Completed.svg'
+import course1 from '../Assets/icons/course1.svg'
 
 const DashboardCard = ({ course }) => {
   return (
     <div className="rounded-[20px] lg:mb-4 xl:mb-4 2xl:mb-4 3xl:mb-5 flex justify-center items-center shadow-lg overflow-hidden  lg:h-[255px] lg:w-[160px]  xl:h-[295px] xl:w-[213px] 2xl:h-[305px] 2xl:w-[240px]  3xl:w-[309px] 3xl:h-[335px] ">
-      <div className="lg:w-[155px] lg:h-[245px] xl:w-[195px] xl:h-[275px] 2xl:w-[219px] 2xl:h-[285px] 3xl:w-[269px] 3xl:h-[295px]">
-        <div className="  lg:h-[105px] xl:h-[130px] 2xl:h-[150px] 3xl:h-[168px] w-full">
+      <div className="lg:w-[155px] lg:h-[245px] xl:w-[195px] xl:h-[275px] 2xl:w-[219px] 2xl:h-[285px] 3xl:w-[269px] 3xl:h-[295px] ">
+        <div className="overflow-y-hidden lg:h-[105px] xl:h-[130px] 2xl:h-[150px] 3xl:h-[50%]  w-full">
         <img
         src={course?.image}
         alt={course?.title}
-        className=" w-full rounded-[15px] h-fit"
+        className=" object-cover w-full h-full rounded-lg "
       />
       </div>
       <div className="lg:h-[50px] xl:h-[70px] 2xl:h-[80px] 3xl:h-[97px] mt-4 ">

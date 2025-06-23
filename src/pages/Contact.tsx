@@ -37,10 +37,8 @@ const Contact = () => {
                 Contact Us
               </h1>
               <p className="lg:text-[12px] xl:text-sm 2xl:text-base 3xl:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto ">
-                Lorem ipsum dolor sit amet consectetur. Arcu a sit commodo
-                tempor nulla blandit.
-                <br />
-                Posuere vel netus auctor phasellus fermentum.
+                Connect with the Starc team for personalized assistance. Whether
+                you have questions about our programs, need technical support.
               </p>
             </div>
           </div>

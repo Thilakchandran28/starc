@@ -294,16 +294,16 @@ const Signup: React.FC = () => {
             </span>
           </div>
         </div>
-        <div className="relative flex justify-center w-full bg-white overflow-hidden">
-          <div className="bg-white flex place-items-center items-center relative">
+        <div className="relative flex justify-center w-full bg-white overflow-hidden ">
+          <div className="bg-white flex justify-center items-center relative   lg:w-[80%] xl:w-[70%] 2xl:w-[70%]  3xl:w-[70%]">
             <img
               src={Vector}
               alt=""
-              className="absolute z-0 3xl:w-[1000px]"
+              className="absolute lg:top-10 xl:top-10 2xl:top-9 3xl:top-2 z-0 h-full 3xl:h-full 3xl:w-full"
             />
-            <div className="relative z-10 text-center flex flex-col justify-center mt-64 w-[100%]">
-              <div className="flex justify-center">
-                <div className="flex justify-center items-center 2xl:text-[10px] 2xl:w-[150px] 3xl:w-[150px] 3xl:text-[12px] bg-[#8A63FF] text-white text-[52%] w-[22%] h-6 rounded-full text-sm font-medium font-mont">
+            <div className="relative z-10 text-center flex flex-col justify-center mt-64 w-[100%] ">
+              <div className="flex justify-center ">
+                <div className="flex justify-center  items-center lg:text-[7px] xl:text-[9px] 2xl:text-[10px] 2xl:w-[150px] 3xl:w-[150px]   bg-[#8A63FF] text-white text-[52%] w-[22%] h-6 rounded-full text-sm font-medium font-mont">
                   SUPERVISED COURSES
                 </div>
               </div>

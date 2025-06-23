@@ -7,7 +7,7 @@ export interface Course {
   image: string;
   title: string;
   instructor: string;
-  discription: string;
+  description: string;
   rating: number;
   students: number;
   duration: string;

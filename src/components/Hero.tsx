@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
   return (
    
 
-    <section className="relative from-purple-50 to-white overflow-hidden lg:h-[70vh] 2xl:h-[80vh] 3xl:h-[70vh] ">
+    <section className="relative from-purple-50 to-white overflow-hidden lg:h-[90vh] xl:h-[90vh] 2xl:h-[90vh] 3xl:h-[100vh] ">
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         {/* Optional: Subtle noise texture or pattern */}
         <div className="w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgeT0iMSIgcj0iMSIgZmlsbD0iIzAwMDAwMDMzIi8+PC9zdmc+')] bg-repeat"></div>
@@ -77,7 +77,7 @@ const Hero: React.FC = () => {
             <span className="lg:w-[100px] lg:h-[25px] xl:w-[115px] xl:h-[25px] 2xl:w-[150px] 2xl:h-[32px] 3xl:w-[200px] 3xl:h-[35px]  flex justify-center items-center bg-purple-600 text-white lg:text-[7px] xl:text-[8px]  2xl:text-[10px] 3xl:text-xs font-semibold  rounded-full mb-2 ">
               SUPERVISED COURSES
             </span>
-            <h1 className=" lg:text-4xl  xl:text-5xl 2xl:text-5xl 3xl:text-5xl font-bold text-gray-700 mb-4 ">
+            <h1 className=" lg:text-4xl  xl:text-4xl 2xl:text-5xl 3xl:text-5xl font-bold text-gray-700 mb-4 ">
               {slides[currentSlide].title.split(" ").map((word, index) => (
                 <span key={index}>
                   {word}{" "}
