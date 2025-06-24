@@ -121,7 +121,7 @@ const AssessmentRow: React.FC<AssessmentRowProps> = ({ assessment }) => {
   return (
     <div className="flex  justify-between  lg:text-[10px] lg:w-[445px] xl:py-1 xl:w-[570px]  2xl:w-[700px] 2xl:text-[12px] 3xl:flex 3xl:py-2 3xl:w-[800px] 3xl:text-[15px] border-b border-black border">
       <div className="flex items-center space-x-2 pr-4 xl:justify-end 2xl:justify-items-start lg:w-24  xl:w-36 2xl:w-36 3xl:w-40 border border-red-500">
-        <img src={Aplus} alt="" className="lg:h-5 lg:w-5 2xl:h-10 2xl:w-8"/>
+        <img src={Aplus} alt="" className="lg:h-5 lg:w-5 "/>
         <span className="text-gray-700 font-medium whitespace-nowrap lg:text-[9px]  xl:text-[11px] 2xl:text-[14px] lg:w-20   xl:w-28  3xl:text-[16px] 3xl:w-36 border border-black ">
           {assessment.type} {assessment.number}
         </span>
