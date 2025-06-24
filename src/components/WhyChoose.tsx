@@ -5,9 +5,11 @@ import opp from "../Assets/opicon.png";
 import learning from "../assests/learn.png";
 import global from "../Assets/global.png";
 import course from "../Assets/courses.png";
-import learn from "../Assets/learning.svg"
+import learn from "../Assets/learning.svg";
+import { useNavigate } from "react-router-dom";
 
 const WhyChoose: React.FC = () => {
+   const toNavigation =useNavigate();
   return (
     <section className="py-10 bg-white overflow-hidden relative"> {/* Added relative and overflow-hidden for circles */}
       {/* Concentric Circles Background */}
@@ -38,7 +40,8 @@ const WhyChoose: React.FC = () => {
               <h3 className="font-semibold lg:text-[10px] xl:text-sm 2xl:text-base text-gray-900 mb-2 text-center">Courses</h3>
               <p className="lg:text-[8px] xl:text-sm text-gray-600 lg:mb-2 3xl:mb-4 text-center">Access a wide array of meticulously crafted courses.</p>
               <div className="flex items-center justify-center">
-                <button className="bg-[#8A63FF] flex items-center align-center text-white px-4 py-2 rounded-3xl  lg:text-[8px] xl:text-sm 2xl:text-base hover:bg-purple-700">
+                <button className="bg-[#8A63FF] flex items-center align-center text-white px-4 py-2 rounded-3xl  lg:text-[8px] xl:text-sm 2xl:text-base hover:bg-opacity-85"
+                onClick={()=>toNavigation('/course')}>
                   Courses
                 </button>
               </div>

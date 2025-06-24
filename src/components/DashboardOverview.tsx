@@ -46,8 +46,8 @@ const DashboardOverview: React.FC<childProps> = ({ sendMessage }) => {
     coursesEnrolled: 50,
     progress: 50,
   };
-    const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
-  
+  const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
+
 
   const courses: Course[] = [
     {
@@ -105,7 +105,7 @@ const DashboardOverview: React.FC<childProps> = ({ sendMessage }) => {
 
   const progress = 50;
 
-  const filteredCourses = courses    
+  const filteredCourses = courses
 
   if (selectedCourse) {
     if (selectedCourse.status === "Completed") {
@@ -122,7 +122,8 @@ const DashboardOverview: React.FC<childProps> = ({ sendMessage }) => {
           onBack={() => setSelectedCourse(null)}
         />
       );
-    }}
+    }
+  }
 
   const handleSelectedCourse = (course: Course) => {
     setSelectedCourse(course);
@@ -138,7 +139,7 @@ const DashboardOverview: React.FC<childProps> = ({ sendMessage }) => {
         {/* Achieve with Purpose Card */}
         <div
           className="bg-black lg:h-[150px] lg:w-[322px] xl:h-[185px] xl:w-[300px] 2xl:h-[223px] 2xl:w-[372px] 3xl:h-[243px] 3xl:w-[412px] text-white lg:p-3 xl:p-3 2xl:p-4 rounded-[30px] shadow-md  lg:m-1 xl:m-2  flex flex-col justify-between  bg-cover bg-center"
-          style={{ backgroundImage: `url(${awardbg})`}}
+          style={{ backgroundImage: `url(${awardbg})` }}
         >
           <div className=''>
             <h2 className="lg:text-sm xl:text-lg 2xl:text-xl font-bold mb-2">Achieve with purpose</h2>
@@ -147,8 +148,15 @@ const DashboardOverview: React.FC<childProps> = ({ sendMessage }) => {
             </p>
           </div>
           <div className="flex items-start justify-center lg:h-[50px] xl:h-[60px] 2xl:h-[70px] 3xl:h-[80px]  ">
-            <div className="flex justify-center text-3xl font-bold lg:text-[20px] xl:text-[22px] xl:w-[148px]  2xl:text-[28px] 2xl:w-[198px] 3xl:text-[32px] 3xl:w-[218px] 3xl:h-[45px] lg:mt-2 xl:mt-4">02/10</div>
+            <div className="flex justify-start text-3xl font-bold lg:text-[20px] xl:text-[22px] xl:w-[148px]  2xl:text-[28px] 2xl:w-[198px] 3xl:text-[32px] 3xl:w-[218px] 3xl:h-[45px] lg:mt-2 xl:mt-4">02/10</div>
+
             <img src={trophy} alt="Trophy" className="relative lg:left-9 lg:bottom-3  xl:left-4 xl:bottom-7 2xl:left-4 2xl:bottom-6 3xl:left-2 3xl:bottom-8 lg:h-16 lg:w-16 xl:h-[106px] xl:w-[106px] 2xl:h-[126px] 2xl:w-[126px] 3xl:h-[146px] 3xl:w-[146px]" />
+          </div>
+          <div className="w-[50%] bg-gray-300 rounded-full h-2 mb-2">
+            <div
+              className="bg-white lg:h-[6px] xl:h-[7px] 2xl:h-[7px] 3xl:h-[8px] w-full rounded-full"
+              style={{ width: `${20}%` }}
+            ></div>
           </div>
           <button className="lg:mt-2 xl:mt-2 bg-white text-[#8A63FF] lg:px-2 xl:px-4 xl:py-1 2xl:py-2 rounded-full font-semibold  hover:bg-gray-100 lg:text-[8px] lg:h-[22px] lg:w-[70px] xl:text-[10px] xl:h-[24px] xl:w-[90px]  2xl:text-[12px] 2xl:h-[28px] 2xl:w-[100px] 3xl:text-[14px] 3xl:h-[35px] 3xl:w-[122px]">
             Start Now
@@ -160,11 +168,11 @@ const DashboardOverview: React.FC<childProps> = ({ sendMessage }) => {
           <div className="bg-white 2xl:p-4 3xl:p-4 rounded-[30px] shadow-md flex items-center justify-center space-x-4 border border- lg:h-[65px] lg:w-[150px] xl:h-[80px] xl:w-[188px] 2xl:h-[90px] 2xl:w-[198px] 3xl:h-[106px] 3xl:w-[258px] ">
             <div className="lg:py-1 lg:px-1 xl:py-2 xl:px-2 2xl:py-3 2xl:px-2 3xl:py-4 3xl:px-4  bg-gradient-to-b from-[#868CFF] to-[#8A63FF] rounded-full ">
               <img src={hour} alt="Hour Icon" className='lg:h-4 lg:w-4 xl:h-5 xl:w-5 2xl:h-5 2xl:w-5 3xl:h-6 3xl:w-6' />
-            </div>  
+            </div>
             <div className='flex flex-col justify-center lg:w-[50%] xl:w-[50%]  2xl:w-[60%]  3xl:w-[60%] '>
               <p className="text-gray-600 lg:text-[10px] xl:text-[12px] 2xl:text-xs 3xl:text-base">Learning Hour </p>
               <p className="lg:text-sm xl:text-lg 2xl:text-xl 3xl:text-2xl font-bold">
-                {user.learningHours} <span className= "lg:text-[8px] xl:text-[10px] 2xl:text-[10px] 3xl:text-sm text-gray-500">(This week)</span>
+                {user.learningHours} <span className="lg:text-[8px] xl:text-[10px] 2xl:text-[10px] 3xl:text-sm text-gray-500">(This week)</span>
               </p>
             </div>
           </div>
@@ -249,7 +257,7 @@ const DashboardOverview: React.FC<childProps> = ({ sendMessage }) => {
           {filteredCourses.map((course) => (
             <div onClick={() => handleSelectedCourse(course)}>
 
-            <DashboardCard key={course.id} course={course} />
+              <DashboardCard key={course.id} course={course} />
             </div>
           ))}
         </div>

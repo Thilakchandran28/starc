@@ -40,10 +40,10 @@ const DashboardCard = ({ course }) => {
               </p>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-2.5 mb-2">
-              <div
+              {/* <div
                 className="bg-[#8A63FF] lg:h-[6px] xl:h-[7px] 2xl:h-[7px] 3xl:h-[8px] w-full rounded-full"  
                 style={{ width: `${course?.progress}%`}}
-              ></div>
+              ></div> */}
             </div>
           </div>
         )}

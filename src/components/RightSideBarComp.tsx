@@ -70,7 +70,7 @@ const RightSideBarComp = () => {
               <div className="border-t border-gray-400 ml-4 py-1  mt-2 lg:h-[54px] xl:h-[63px] 2xl:h-[73px] 3xl:h-[83px]  w-[85%]   ">
                 <div
                 className={`${
-                  item.description ? "border  border-purple-300" : ""
+                  item.description ? "border  border-[#8A63FF]" : ""
                 } rounded-[20px] lg:h-full lg:w-[140px] xl:h-full xl:w-[180px] 2xl:h-full 2xl:w-[200px] 3xl:h-full 3xl:w-[223px] xl:py-2 px-4 3xl:ml-6`}
               >
                 <h3 className="font-semibold text-black  lg:text-[7px] xl:text-[8px] 2xl:text-[10px] 3xl:text-[11px]">
