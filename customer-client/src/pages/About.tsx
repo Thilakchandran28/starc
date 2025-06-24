@@ -197,10 +197,10 @@ const About = () => {
           <div className="lg:w-[500px] lg-px-10 lg:p-2   xl:w-[300px]  2xl:w-[706px] 3xl:w-[706px]  3xl:text-[20px] px-10">
             <div className="w-[203px]">
               <span className="text-3xl text-[#8A63FF] font-mont font-bold mb-4  flex justify-between">
-                nexora{" "}
+                Edifai{" "}
                 <span>
                   {" "}
-                  <img src={group} alt="R image" />
+                  {/* <img src={group} alt="R image" /> */}
                 </span>
               </span>
             </div>
