@@ -117,6 +117,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Bell, Heart, User, ArrowRight, LogOut } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import logo from "../Assets/EDIFAI.svg"
 
 const Navbar = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -147,12 +148,12 @@ const Navbar = () => {
     <nav className="w-full bg-white border-b border-gray-100 sticky top-0 z-50">
       <div className="w-[90%] mx-auto flex items-center justify-between h-20">
         {/* Logo */}
-        <div className="flex-shrink-0">
-          <Link to="/" className="lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-[#8A63FF]">LOGO</Link>
+        <div className="flex-shrink-0 w-[33%]">
+          <Link to="/" className="lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-[#8A63FF]"><img  src={logo} className="w-[8rem] " /></Link>
         </div>
 
         {/* Navigation Links */}
-        <div className="flex justify-end items-end lg:gap-8 xl:gap-10 2xl:gap-12 3xl:gap-14 3xl:w-[50%] ">
+        <div className="flex justify-center items-center lg:gap-8 xl:gap-10 2xl:gap-12 3xl:gap-14  ">
           {navItems.map((item) => (
             <Link
               key={item.id}
@@ -165,7 +166,7 @@ const Navbar = () => {
         </div>
 
         {/* Auth Buttons */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-end justify-end space-x-4 w-[33%]">
           {isAuthenticated ? (
             <div className="flex items-center space-x-4">
               <Link to="/notifications">

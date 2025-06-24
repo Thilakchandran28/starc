@@ -13,7 +13,7 @@ import video from "../Assets/about-video/Backend web development - a complete ov
 const WhyChoose: React.FC = () => {
   const toNavigation = useNavigate();
   return (
-    <section className="py-10 h-[70vh] bg-white overflow-hidden relative"> {/* Added relative and overflow-hidden for circles */}
+    <section className="py-10 h-[80vh] bg-white overflow-hidden relative"> {/* Added relative and overflow-hidden for circles */}
       {/* Concentric Circles Background */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 ">
         <div className="relative w-[38%]  aspect-square"> {/* Adjust w and max-w for size */}
@@ -77,8 +77,8 @@ const WhyChoose: React.FC = () => {
                 }}
               /> */}
               <video
-                className="w-full h-[55vh] object-fill"
-                
+                className="w-[80%] h-[65%] object-fill"
+                loop
                 onError={(e) => {
                   console.error("Error loading video:", e);
                   e.currentTarget.poster = "https://via.placeholder.com/320x480";

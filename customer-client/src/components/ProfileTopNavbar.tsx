@@ -2,12 +2,13 @@ import React from 'react';
 import { Search, Bell, Heart, User } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import logo from "../Assets/EDIFAI.svg"
 
 const ProfileTopNavbar = () => {
   return (
     <div className="bg-white p-1 px-16 flex items-center justify-around shadow-md rounded-lg w-full h-20 ">
       {/* Logo */}
-      <Link to="/" className="text-[#8A63FF] font-bold text-[36px]">LOGO</Link>
+      <Link to="/" className="text-[#8A63FF] font-bold text-[36px]"><img  src={logo} className="w-[8rem] " /></Link>
 
       {/* Search Bar */}
       <div className="relative flex-grow mx-[25%] ">
