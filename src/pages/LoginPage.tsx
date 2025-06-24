@@ -51,11 +51,10 @@ const LoginForm: React.FC<LoginFormProps> = ({
         <form className="space-y-4" onSubmit={handleLogin}>
           <div>
             <p className="text-sm text-gray-600 mb-2 pb-6 font-mont">
-              Sign Up Now—Discover 500+ Courses are<br/> waiting for your Learning
+              Sign Up Now—Discover 500+ Courses are
+              <br /> waiting for your Learning
             </p>
-            <label
-              className="block text-sm font-medium text-gray-700 mb-1 font-mont"
-            >
+            <label className="block text-sm font-medium text-gray-700 mb-1 font-mont">
               Email address/Phone Number*
             </label>
             <Input
@@ -76,9 +75,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
             )}
           </div>
           <div>
-            <label
-              className="block text-sm font-medium text-gray-700 mb-1 font-mont"
-            >
+            <label className="block text-sm font-medium text-gray-700 mb-1 font-mont">
               Password*
             </label>
             <div className="relative">
@@ -107,7 +104,8 @@ const LoginForm: React.FC<LoginFormProps> = ({
             </div>
             {!isPasswordValid && (
               <p className="text-red-500 text-xs mt-1 font-mont">
-                Password must be at least 8 characters with a letter and a number
+                Password must be at least 8 characters with a letter and a
+                number
               </p>
             )}
             <div className="text-right mt-1">
@@ -171,12 +169,12 @@ const LoginForm: React.FC<LoginFormProps> = ({
               </Button>
             </LoginSocialGoogle>
             <Link to="/">
-            <Button
-              variant="outline"
-              className="w-30 h-10 border border-gray-300 text-gray-700 rounded-sm text-xs font-semibold font-mont"
-            >
-              Continue as Guest
-            </Button>
+              <Button
+                variant="outline"
+                className="w-30 h-10 border border-gray-300 text-gray-700 rounded-sm text-xs font-semibold font-mont"
+              >
+                Continue as Guest
+              </Button>
             </Link>
           </div>
         </form>
@@ -184,9 +182,9 @@ const LoginForm: React.FC<LoginFormProps> = ({
           <p className="text-black text-sm font-bold font-mont pt-3">
             Don’t have an account?{" "}
             <Link to="/signup">
-            <span className="text-black underline font-bold cursor-pointer">
-              Sign up
-            </span>
+              <span className="text-black underline font-bold cursor-pointer">
+                Sign up
+              </span>
             </Link>
           </p>
         </div>
@@ -246,11 +244,6 @@ const Login: React.FC = () => {
 const Signup: React.FC = () => {
   const slides: Slide[] = [
     {
-      title: "Lorem ipsum dolor sit amet consectetur.",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Arcu a sit commodo tempor nulla blandit. Posuere vel netus auctor phasellus fermentum.",
-    },
-    {
       title: "Discover New Learning Paths Today",
       description:
         "Unlock your potential with our curated courses. Learn at your own pace with expert guidance and support.",
@@ -295,35 +288,44 @@ const Signup: React.FC = () => {
           </div>
         </div>
         <div className="relative flex justify-center w-full bg-white overflow-hidden ">
-          <div className="bg-white flex justify-center items-center relative   lg:w-[80%] xl:w-[70%] 2xl:w-[70%]  3xl:w-[70%]">
+          <div className="bg-white flex justify-center items-center relative   lg:w-[80%] xl:w-[70%] 2xl:w-[80%]  3xl:w-[56%]">
             <img
               src={Vector}
               alt=""
-              className="absolute lg:top-10 xl:top-10 2xl:top-9 3xl:top-2 z-0 h-full 3xl:h-full 3xl:w-full"
-            />
-            <div className="relative z-10 text-center flex flex-col justify-center mt-64 w-[100%] ">
-              <div className="flex justify-center ">
-                <div className="flex justify-center  items-center lg:text-[7px] xl:text-[9px] 2xl:text-[10px] 2xl:w-[150px] 3xl:w-[150px]   bg-[#8A63FF] text-white text-[52%] w-[22%] h-6 rounded-full text-sm font-medium font-mont">
+              className="absolute lg:top-16 xl:top-14 2xl:top-11 3xl:top-2 z-0 h-full 3xl:h-full 3xl:w-full"
+            /> 
+            <div className="relative z-10 text-center flex flex-col justify-center mt-64 lg:w-[482px] xl:w-[682px] ">
+
+              <div className="overflow-hidden lg:h-[180px] xl:h-[233px] w-full flex flex-col items-center justify-center   ">
+                <div className="flex justify-center  items-center lg:text-[6px] lg:h-[22px] lg:w-[105px]  xl:text-[7px] xl:h-[25px] xl:w-[115px]  2xl:text-[8px] 2xl:h-[28px] 2xl:w-[125px] mb-3  bg-[#8A63FF] text-white rounded-full  font-medium font-mont">
                   SUPERVISED COURSES
                 </div>
-              </div>
-              <div className="overflow-hidden h-[220px] flex items-center justify-center">
-                <div key={currentSlide} className="w-full">
-                  <h1 className="lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl font-bold text-gray-900 mb-4 leading-tight font-mont w-50 animate-pop-slide">
-                    {slides[currentSlide].title
-                      .split(" ")
-                      .map((word, index) => (
-                        <span key={index}>
-                          {word} {index === 4 && <br />}
-                        </span>
-                      ))}
-                  </h1>
-                  <p className="text-base text-gray-600 mb-8 leading-relaxed font-mont max-w-2xl mx-auto animate-pop-slide">
+
+                {/* changing slides */}
+                  <div
+                    key={currentSlide}
+                    className="lg:h-[125px] lg:w-[470px]  xl:w-[534px] 2xl:h-[155px] 2xl:w-[594px] 3xl:h-[305px] 3xl:w-[684px]  flex flex-col items-center justify-center  "
+                  >
+                    <div className="w-full lg:text-[32px] lg:h-[74px] xl:text-[40px] xl:h-[94px] 2xl:text-[48px] 2xl:h-[104px] 3xl:text-[53px] 3xl:h-[114px]  font-bold text-gray-900 mb-4 font-mont animate-pop-slide " style={{lineHeight:"1"}}>
+                      {slides[currentSlide].title
+                        .split(" ")
+                        .map((word, index) => (
+                          <span key={index}>
+                            {word} {index === 4 && <br />}
+                          </span>
+                        ))}
+                    </div>
+
+                    <p className=" w-full lg:text-[10px] lg:h-[36px] xl:text-[12px] xl:h-[42px] 2xl:text-[14px] 2xl:h-[52px] 3xl:text-[16px] 3xl:h-[62px] text-gray-600  leading-relaxed font-mont flex items-center animate-pop-slide  ">
                     {slides[currentSlide].description}
                   </p>
-                </div>
+                  </div>
+                  {/* Description */}
+                  
               </div>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+
+              {/* horizontal purple bar */}
+              <div className="flex  items-center justify-center gap-4 lg:mt-4 lg:mb-5 xl:mt-2 xl:mb-8 2xl:mt-6 2xl:mb-10  ">
                 {currentSlide === 0 ? (
                   <>
                     <Button
@@ -331,12 +333,12 @@ const Signup: React.FC = () => {
                         backgroundColor: "#8A63FF",
                         boxShadow: "0px 10px 16px 0px rgba(0, 0, 0, 0.2)",
                       }}
-                      className="bg-purple-600 hover:bg-purple-700 text-white rounded-sm px-6 py-2 text-sm font-mont"
+                      className="bg-purple-600 hover:bg-purple-700 text-white rounded-sm px-6 py-2 lg:text-[10px] lg:h-[30px] lg:w-[155px] xl:text-[11px] xl:h-[40px] xl:w-[175px] 2xl:text-[12px] 2xl:h-[44px] 2xl:w-[175px] font-mont"
                     >
                       Start learning Now
                     </Button>
-                    <div className="flex items-center gap-2">
-                      <div className="flex -space-x-2">
+                    <div className="flex items-center gap-2 ">
+                      <div className="flex space-x-2 ">
                         {[1, 2, 3, 4].map((i) => (
                           <img
                             key={i}
@@ -346,7 +348,7 @@ const Signup: React.FC = () => {
                           />
                         ))}
                       </div>
-                      <span className="text-sm text-gray-600 font-mont">
+                      <span className="lg:text-[9px] xl:text-[9px] 2xl:text-[10px] text-gray-600 font-mont">
                         1k+ students
                       </span>
                     </div>
@@ -357,7 +359,7 @@ const Signup: React.FC = () => {
                       backgroundColor: "#8A63FF",
                       boxShadow: "0px 10px 16px 0px rgba(0, 0, 0, 0.2)",
                     }}
-                    className="bg-purple-600 hover:bg-purple-700 text-white rounded-sm px-6 py-2 text-sm font-mont"
+                    className="bg-purple-600 hover:bg-purple-700 text-white rounded-sm px-6 py-2 lg:text-[10px] lg:h-[30px] lg:w-[155px] xl:text-[11px] xl:h-[40px] xl:w-[175px] 2xl:text-[12px] 2xl:h-[44px] 2xl:w-[175px]  font-mont"
                   >
                     Express Your Interest Now
                   </Button>
@@ -380,9 +382,9 @@ const Signup: React.FC = () => {
                 )}
               </div>
               <div className="flex justify-center">
-                <div className="w-64 h-1 bg-gray-200 rounded-full overflow-hidden cursor-pointer">
+                <div className="lg:w-[115px] lg:h-[4px] xl:w-[125px] 2xl:w-[145px] xl:h-[5px] bg-gray-200 rounded-full overflow-hidden cursor-pointer">
                   <div
-                    className="h-full bg-purple-600 rounded-full"
+                    className="h-full  bg-purple-600 rounded-full"
                     style={{
                       width: `${100 / slides.length}%`,
                       transform: `translateX(${currentSlide * 100}%)`,
