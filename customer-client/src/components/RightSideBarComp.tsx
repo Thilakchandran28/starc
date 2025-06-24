@@ -44,11 +44,11 @@ const RightSideBarComp = () => {
         <p className="text-gray-500 text-sm mb-4 lg:text-[10px] xl:text-[12px] 2xl:text-[13px] 3xl:text-[14px]">
           14 - May - 2025
         </p>
-        <div className="flex space-x-2 mb-6 bg-[#F3F3F3]  2xl:w-fit p-2 rounded-md"> 
+        <div className="flex space-x-1 mb-6 bg-[#F3F3F3] font-mont 2xl:w-full p-2 rounded-md"> 
           {["S", "M", "T", "W", "T", "F", "SA"].map((day, index) => (
             <div
               key={index}
-              className={`lg:w-4 lg:h-4 xl:w-6 xl:h-6 2xl:w-8 2xl:h-8 flex items-center lg:text-[12px] xl:text-[14px] 2xl:text-[16px] 3xl:text-[18px]  justify-center rounded-sm ${
+              className={`lg:w-4 lg:h-4 xl:w-6 xl:h-6 2xl:w-8 2xl:h-8 flex items-center lg:text-[12px] xl:text-[14px] 2xl:text-[16px] 3xl:text-[20px] p-5  justify-center rounded-sm ${
                 day === "S" ? "bg-[#8A63FF] text-white" : "text-black"
               }`}   
             >

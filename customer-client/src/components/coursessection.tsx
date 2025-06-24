@@ -675,7 +675,7 @@ export default function CategoryTabsPage() {
           {/* Top Mentors Section */}
           <div className="mb-12">
             <h2 className="lg:text-4xl xl:text-5xl 2xl:text-5xl 3xl:text-5xl  font-mont font-medium text-gray-900 mb-4 text-center">
-              Discover<br /> Our Nexora Courses
+              Discover<br /> Our Edifai Courses
             </h2>
             <br />
             <p className="text-xl 3xl:text-[1rem] text-center font-mont text-gray-600 max-w-3xl mx-auto mb-8">

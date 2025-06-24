@@ -8,10 +8,12 @@ import course from "../Assets/courses.png";
 import learn from "../Assets/learning.svg";
 import { useNavigate } from "react-router-dom";
 
+import video from "../Assets/about-video/Backend web development - a complete overview.mp4";
+
 const WhyChoose: React.FC = () => {
-   const toNavigation =useNavigate();
+  const toNavigation = useNavigate();
   return (
-    <section className="py-10 bg-white overflow-hidden relative"> {/* Added relative and overflow-hidden for circles */}
+    <section className="py-10 h-[70vh] bg-white overflow-hidden relative"> {/* Added relative and overflow-hidden for circles */}
       {/* Concentric Circles Background */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 ">
         <div className="relative w-[38%]  aspect-square"> {/* Adjust w and max-w for size */}
@@ -41,7 +43,7 @@ const WhyChoose: React.FC = () => {
               <p className="lg:text-[8px] xl:text-sm text-gray-600 lg:mb-2 3xl:mb-4 text-center">Access a wide array of meticulously crafted courses.</p>
               <div className="flex items-center justify-center">
                 <button className="bg-[#8A63FF] flex items-center align-center text-white px-4 py-2 rounded-3xl  lg:text-[8px] xl:text-sm 2xl:text-base hover:bg-opacity-85"
-                onClick={()=>toNavigation('/course')}>
+                  onClick={() => toNavigation('/course')}>
                   Courses
                 </button>
               </div>
@@ -64,8 +66,8 @@ const WhyChoose: React.FC = () => {
 
           {/* Center Video Container */}
           <div className="flex justify-center items-center">
-            {<div className="relative mx-auto w-[100%] h-[100%] rounded-3xl overflow-hidden shadow-2xl">
-              <img
+            {<div className=" mx-auto w-[100%] h-[100%] rounded-3xl overflow-hidden shadow-2xl">
+              {/* <img
                 src={star}
                 alt="Video presenter"
                 className="w-full h-full object-cover"
@@ -73,10 +75,19 @@ const WhyChoose: React.FC = () => {
                   console.error("Error loading image:", e);
                   e.currentTarget.src = "https://via.placeholder.com/320x480";
                 }}
-              />
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 lg:text-lg xl:text-xl 2xl:text-2xl text-white px-4 py-2 rounded-lg shadow-md">
-                {/* <span className="text-white font-semibold">Video</span> */}
-              </div>
+              /> */}
+              <video
+                className="w-full h-[55vh] object-fill"
+                
+                onError={(e) => {
+                  console.error("Error loading video:", e);
+                  e.currentTarget.poster = "https://via.placeholder.com/320x480";
+                }}
+              >
+                <source src={video} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+             
             </div>}
           </div>
 
