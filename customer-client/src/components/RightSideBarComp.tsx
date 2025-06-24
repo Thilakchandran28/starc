@@ -44,11 +44,11 @@ const RightSideBarComp = () => {
         <p className="text-gray-500 text-sm mb-4 lg:text-[10px] xl:text-[12px] 2xl:text-[13px] 3xl:text-[14px]">
           14 - May - 2025
         </p>
-        <div className="flex space-x-2 mb-6 bg-[#F3F3F3]  2xl:w-fit p-2 rounded-md"> 
+        <div className="flex space-x-1 mb-6 bg-[#F3F3F3] font-mont 2xl:w-full p-2 rounded-md"> 
           {["S", "M", "T", "W", "T", "F", "SA"].map((day, index) => (
             <div
               key={index}
-              className={`lg:w-4 lg:h-4 xl:w-6 xl:h-6 2xl:w-8 2xl:h-8 flex items-center lg:text-[12px] xl:text-[14px] 2xl:text-[16px] 3xl:text-[18px]  justify-center rounded-sm ${
+              className={`lg:w-4 lg:h-4 xl:w-6 xl:h-6 2xl:w-8 2xl:h-8 flex items-center lg:text-[12px] xl:text-[14px] 2xl:text-[16px] 3xl:text-[20px] p-5  justify-center rounded-sm ${
                 day === "S" ? "bg-[#8A63FF] text-white" : "text-black"
               }`}   
             >
@@ -70,7 +70,7 @@ const RightSideBarComp = () => {
               <div className="border-t border-gray-400 ml-4 py-1  mt-2 lg:h-[54px] xl:h-[63px] 2xl:h-[73px] 3xl:h-[83px]  w-[85%]   ">
                 <div
                 className={`${
-                  item.description ? "border  border-purple-300" : ""
+                  item.description ? "border  border-[#8A63FF]" : ""
                 } rounded-[20px] lg:h-full lg:w-[140px] xl:h-full xl:w-[180px] 2xl:h-full 2xl:w-[200px] 3xl:h-full 3xl:w-[223px] xl:py-2 px-4 3xl:ml-6`}
               >
                 <h3 className="font-semibold text-black  lg:text-[7px] xl:text-[8px] 2xl:text-[10px] 3xl:text-[11px]">

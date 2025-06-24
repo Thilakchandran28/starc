@@ -13,6 +13,8 @@ import WOLtwitterLogo from '../Assets/icons/WOLtwitterLogo.svg'
 interface TestimonialCardProps {
    id: number;
   name: string;
+  role: string;
+  date: string;
   content: string;
   image:string;
 }
@@ -21,6 +23,8 @@ const testimonials: TestimonialCardProps[] = [
  {
     id: 1,
     name: 'Esther Howard',
+    role:"Developer",
+    date:" 12:15 PM . May 19,2024",
     content:
       'This platform has transformed my learning experience! The courses are engaging. Highly recommend to everyone.',
     image:WOLImage1
@@ -29,6 +33,8 @@ const testimonials: TestimonialCardProps[] = [
   {
     id: 2,
     name: 'Leslie Alexander',
+     role:"UI/UX Designer",
+     date:" 10:02 AM . June 15,2024",
     content:
       'Absolutely brilliant! The content is so well-structured and easy tofollow. I have gained so many valuable skills in such a short time.',
     image:WOLImage2
@@ -38,6 +44,8 @@ const testimonials: TestimonialCardProps[] = [
   {
     id: 3,
     name: 'Wade Warren',
+     role:"Developer",
+     date:" 1:15 PM . June 15,2024",
     content:
       '"Incredible community and top-notch instructors. I feel so much more confident in my career path now. A true game-changer!',
     image:WOLImage3
@@ -47,6 +55,8 @@ const testimonials: TestimonialCardProps[] = [
   {
     id: 4,
     name: 'Jacob Jones',
+     role:"Mechanical",
+     date:" 12:18 PM . September 10,2024",
     content:
       'The interactive lessons and practical exercises truly set this platform apart. Iam seeing real progress every single day.',
     image:WOLImage4
@@ -56,6 +66,8 @@ const testimonials: TestimonialCardProps[] = [
   {
     id: 5,
     name: 'Courtney Henry',
+     role:"Human Resource",
+     date:" 2:15 PM . November 24,2024",
     content:
       'The interactive lessons and practical exercises truly set this platform apart. Iam seeing real progress every single day.',
     image:WOLImage5
@@ -65,6 +77,8 @@ const testimonials: TestimonialCardProps[] = [
   {
     id: 6,
     name: 'Darrell Steward',
+     role:"Designer",
+     date:" 03:55 PM . December 10,2024",
     content:
       'Fantastic resources and a truly supportive environment. Ihave learned more here than I ever thought possible.',
     image:WOLImage6
@@ -93,7 +107,7 @@ const WallOfLove: React.FC = () => {
                   </div>
                  <div className="flex justify-between w-[350px] ">
                    <div>
-                    <p className="font-semibold text-black flex flex-col">{testimonial.name} <span className='text-[#82828299] text-sm'>@totallyrealperson</span></p>
+                    <p className="font-semibold text-black flex flex-col">{testimonial.name} <span className='text-[#82828299] text-sm'>{testimonial.role}</span></p>
                   
                   </div>
                 
@@ -111,7 +125,7 @@ const WallOfLove: React.FC = () => {
               </div>
               <p className="text-black font-mont font-medium leading-relaxed lg:text-xs xl:text-sm 2xl:text-[16px] 3xl:text-[16px] flex-grow mb-4">{testimonial.content}</p>
               
-              <p className='lg:text-[10px] xl:text-xs text-sm text-black font-mont font-medium'>12:15 PM . May 19,2009</p>
+              <p className='lg:text-[10px] xl:text-xs text-sm text-black font-mont font-medium'>{testimonial.date}</p>
             </div>
             
           ))}

@@ -50,7 +50,7 @@ const FAQ: React.FC = () => {
     <div className="  lg:has-[60vh]:xl:h-[70vh] 2xl:h-[80vh] 3xl:h-[70vh] flex items-center justify-center py-12 px-4">
       <div className=" w-[60%]  flex flex-col items-center">
         <button
-          onClick={toggleFAQSection}
+          // onClick={toggleFAQSection}
           className="flex items-center justify-center space-x-2 w-32 h-12 bg-[#8A63FF] rounded-2xl text-white text-sm font-semibold hover:bg-#8A63FF transition-colors mb-4"
         >
           <img src={faqicons} className='lg:w-6 lg:h-6 xl:w-8 xl:h-8 2xl:w-9 2xl:h-9'/>

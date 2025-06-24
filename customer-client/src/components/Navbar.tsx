@@ -152,7 +152,7 @@ const Navbar = () => {
         </div>
 
         {/* Navigation Links */}
-        <div className="flex lg:gap-8 xl:gap-10 2xl:gap-12 3xl:gap-14 ">
+        <div className="flex justify-end items-end lg:gap-8 xl:gap-10 2xl:gap-12 3xl:gap-14 3xl:w-[50%] ">
           {navItems.map((item) => (
             <Link
               key={item.id}
@@ -185,7 +185,7 @@ const Navbar = () => {
                 </Button>
               </Link>
 
-              <Button onClick={handleLogout} variant="outline" className="text-[#8A63FF] border-[#8A63FF] hover:bg-[#8A63FF]font-mont font-medium hover:text-white rounded-full flex items-center">
+              <Button onClick={handleLogout} variant="outline" className="text-[#8A63FF] border-[#8A63FF] hover:bg-[#8A63FF] font-mont font-medium hover:text-white rounded-full flex items-center">
                 <LogOut className="h-4 w-4 mr-2" />
                 Logout
               </Button>
