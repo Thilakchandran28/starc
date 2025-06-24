@@ -134,7 +134,7 @@ const DashboardOverview: React.FC<childProps> = ({ sendMessage }) => {
     <div className="h-[80vh] lg:ml-3 xl:ml-0 overflow-y-auto lg:w-[530px] xl:w-[700px] 2xl:w-[775px] 3xl:w-[1008px]  py-1" style={{ scrollbarWidth: "none" }} >
       <h1 className="text-3xl font-bold text-[#8A63FF] lg:mb-3 xl:mb-6">Hello {user.name} 👋</h1>
 
-      <div className="flex justify-between  ">
+      <div className="flex justify-between">
         {/* Achieve with Purpose Card */}
         <div
           className="bg-black lg:h-[150px] lg:w-[322px] xl:h-[185px] xl:w-[300px] 2xl:h-[223px] 2xl:w-[372px] 3xl:h-[243px] 3xl:w-[412px] text-white lg:p-3 xl:p-3 2xl:p-4 rounded-[30px] shadow-md  lg:m-1 xl:m-2  flex flex-col justify-between  bg-cover bg-center"

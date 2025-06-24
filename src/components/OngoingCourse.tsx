@@ -119,23 +119,23 @@ const AssessmentRow: React.FC<AssessmentRowProps> = ({ assessment }) => {
   };
 
   return (
-    <div className="lg:flex lg:py-1 lg:text-[10px] lg:w-[445px] xl:flex xl:py-1 xl:w-[570px]  2xl:flex  2xl:w-[750px] 2xl:text-[12px] 3xl:flex 3xl:py-2 justify-between 3xl:w-[800px] 3xl:text-[15px] border-b border-gray-300 flex  last:border-b-0">
-      <div className="flex items-center space-x-2 pr-4 justify-items-start lg:w-24  xl:w-28 2xl:w-36 3xl:w-36">
-        <img src={Aplus} alt="" />
-        <span className="text-gray-700 font-medium whitespace-nowrap lg:text-[9px]  xl:text-[11px] 2xl:text-[15px]  3xl:text-[16px] 3xl:w-36 ">
+    <div className="flex  justify-between  lg:text-[10px] lg:w-[445px] xl:py-1 xl:w-[570px]  2xl:w-[700px] 2xl:text-[12px] 3xl:flex 3xl:py-2 3xl:w-[800px] 3xl:text-[15px] border-b border-black border">
+      <div className="flex items-center space-x-2 pr-4 xl:justify-end 2xl:justify-items-start lg:w-24  xl:w-36 2xl:w-36 3xl:w-40 border border-red-500">
+        <img src={Aplus} alt="" className="lg:h-5 lg:w-5 2xl:h-10 2xl:w-8"/>
+        <span className="text-gray-700 font-medium whitespace-nowrap lg:text-[9px]  xl:text-[11px] 2xl:text-[14px] lg:w-20   xl:w-28  3xl:text-[16px] 3xl:w-36 border border-black ">
           {assessment.type} {assessment.number}
         </span>
       </div>
-      <div className="text-gray-700 font-medium flex justify-center items-center lg:text-[9px] lg:w-24  xl:text-[11px] xl:w-28  2xl:text-[14px] 2xl:w-36  3xl:text-[15px]  3xl:w-36">
+      <div className="text-gray-700 font-medium flex justify-center items-center lg:text-[9px] lg:w-24  xl:text-[11px] xl:w-28  2xl:text-[14px] 2xl:w-36  3xl:text-[15px]  3xl:w-36 border border-blue-500">
         {assessment.title}
       </div>
-      <div className="text-gray-600 flex justify-center items-center lg:text-[9px]  lg:w-12 xl:text-[11px] xl:w-16   2xl:text-[14px]  2xl:w-24  3xl:text-[15px] 3xl:w-24 ">
+      <div className="text-gray-600 flex justify-center items-center lg:text-[9px]  lg:w-12 xl:text-[11px] xl:w-16   2xl:text-[14px]  2xl:w-24  3xl:text-[15px] 3xl:w-24 border border-red-500 ">
         {assessment.score}
       </div>
-      <div className="flex justify-start lg:text-[9px]  lg:w-20 xl:text-[11px] 2xl:text-[14px] xl:w-28  2xl:w-32 3xl:text-[15px]  3xl:w-36">
+      <div className="flex justify-start lg:text-[9px]  lg:w-20 xl:text-[11px] 2xl:text-[14px] xl:w-22  2xl:w-28 3xl:text-[15px]  3xl:w-36 border border-blue-500">
         {getStatusDisplay(assessment.status)}
       </div>
-      <div className="text-gray-500 flex justify-start items-center lg:text-[9px] xl:text-[11px] 2xl:text-[13px] 3xl:text-[15px]  3xl:w-40">
+      <div className="text-gray-500 flex justify-center items-center lg:text-[9px] xl:text-[10px] 2xl:text-[13px] 3xl:text-[15px]  3xl:w-40 border border-red-500">
         {assessment.date}
       </div>
     </div>
@@ -559,11 +559,11 @@ const OngoingCourseDashboardPage: React.FC<{
             <section className=" p-1 rounded-lg w-full border">
               {showAssessments && (
                 <section className="p-1 rounded-lg mb-5">
-                  <h2 className="text-2xl font-semibold mb-4">
+                  <h2 className="lg:text-[12px] 2xl:text-[14px] font-semibold mb-4">
                     Assessments & Projects
                   </h2>
                   <div className="lg:overflow-x-auto ">
-                    <div className="2xl:w-[650px] lg:w-[500px] ">
+                    <div className="lg:w-[440px] xl:w-[570px] 2xl:w-[700px] 3xl:w-[901px] flex flex-col justify-center items-center border border-red-500">
                       {initialAssessments.map((assessment) => (
                         <AssessmentRow
                           key={assessment.id}

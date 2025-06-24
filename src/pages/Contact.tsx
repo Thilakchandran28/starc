@@ -8,6 +8,10 @@ import heros from "../Assets/hero.png";
 import PurpleBox from "@/components/PurpleBox";
 import WallOfLove from "../components/WallOfLove";
 import contactProfie from "../Assets/icons/Contact-profile.svg";
+import MessagUs from '../Assets/icons/Message-us.svg';
+import CallUs from "../Assets/icons/Call-us.svg";
+import Address from '../Assets/icons/Address.svg';
+
 const Contact = () => {
   return (
     <div className="2xl:h-sreen w-full bg-white">
@@ -152,7 +156,7 @@ const Contact = () => {
           </div>
 
           {/* Right: Contact Form */}
-          <div className="lg:justify-start xl:justify-center flex flex-col justify-center items-center bg-white p-4 rounded-xl shadow-md lg:h-[288px] lg:w-[288px] xl:mx-16 xl:h-[350px] xl:w-[350px] 2xl:w-[458px] 2xl:h-[420px] 3xl:mx-10  3xl:w-[558px] 3xl:h-[498px] ">
+          <div className="lg:justify-start xl:justify-center flex flex-col justify-center items-center bg-white p-4 rounded-xl shadow-2xl lg:h-[288px] lg:w-[288px] xl:mx-16 xl:h-[350px] xl:w-[350px] 2xl:w-[458px] 2xl:h-[420px] 3xl:mx-10  3xl:w-[558px] 3xl:h-[498px] ">
             {" "}
             {/* Changed bg-gray-50 to bg-white */}
             <div className="flex justify-start  lg:h-[35px] lg:w-[255px] xl:w-[300px] 2xl:w-[400px] 3xl:w-[496px]">
@@ -204,45 +208,46 @@ const Contact = () => {
       </section>
 
       {/* Contact Cards Section */}
-      <section className="py-16 w-full lg:h-[350px] xl:h-[380px] 2xl:h-[420px] flex ">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:w-[80%] 2xl:w-[80%] flex items-center justify-between ">
-          <div className="bg-white p-1 border rounded-xl h-[256px] flex justify-center items-center lg:w-[30%] lg:h-[90%] xl:w-[30%] xl:h-[90%] 2xl:h-[90%] 2xl:w-[30%]">
-            <div className="bg-[#F7F8FA]  p-6 rounded-xl  text-center h-full w-full flex  flex-col justify-center items-center">
+      <section className="py-16 w-full lg:h-[350px] xl:h-[380px] 2xl:h-[420px] flex justify-center ">
+        <div className=" px-4 sm:px-6 lg:px-8 xl:w-[80%] 2xl:w-[80%] flex items-center justify-between  ">
+
+          <div className="bg-white p-1 border rounded-[12px]  flex justify-center items-center lg:w-[30%] lg:h-[90%] xl:w-[30%] xl:h-[90%] 2xl:h-[90%] 2xl:w-[30%]">
+            <div className="bg-[#F7F8FA]  p-6 rounded-[12px]  text-center h-full w-full flex  flex-col justify-center items-center ">
               <div className="bg-white w-fit p-4 rounded-full inline-flex items-center justify-center mb-4">
-                <Mail className="lg:w-5 lg:h-8 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7 3xl:w-8 3xl:h-8  text-purple-600" />
+                <img src={MessagUs} className="lg:w-5 lg:h-8 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7 3xl:w-8 3xl:h-8  " />
               </div>
-              <h3 className="lg:text-base xl:text-lg 2xl:text-[21px]  font-medium text-gray-900 mb-2">
+              <h3 className="lg:text-[1.125rem] xl:text-[1.25rem] 2xl:text-[1.375rem]  font-medium text-[#060B13] mb-2">
                 Message Us
               </h3>
-              <p className="text-gray-600 lg:text-sm xl:text-base 2xl:text-[16px]   3xl:text-xl">
+              <p className="text-[#363D4F] lg:text-[0.75rem] xl:text-[0.875rem] 2xl:text-[1rem]  h-[31px]">
                 contactus@staciacorp.com
               </p>
             </div>
           </div>
 
-          <div className="bg-white p-1 border rounded-xl h-[256px] flex justify-center items-center lg:w-[30%] lg:h-[90%] xl:w-[30%] xl:h-[90%] 2xl:h-[90%] 2xl:w-[30%]">
-            <div className="bg-[#F7F8FA]  p-6 rounded-xl  text-center h-full w-full flex  flex-col justify-center items-center">
+          <div className="bg-white p-1 border rounded-[12px] h-[256px] flex justify-center items-center lg:w-[30%] lg:h-[90%] xl:w-[30%] xl:h-[90%] 2xl:h-[90%] 2xl:w-[30%]">
+            <div className="bg-[#F7F8FA]  p-6 rounded-[12px]  text-center h-full w-full flex  flex-col justify-center items-center">
               <div className="bg-white p-4 rounded-full inline-flex items-center justify-center mb-4">
-                <Phone className="lg:w-5 lg:h-8 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7 3xl:w-8 3xl:h-8 text-purple-600" />
+                <img src={CallUs} className="lg:w-5 lg:h-8 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7 3xl:w-8 3xl:h-8 text-purple-600" />
               </div>
-              <h3 className="lg:text-base xl:text-lg 2xl:text-[21px] font-medium text-gray-900 mb-2">
+              <h3 className="lg:text-[1.125rem] xl:text-[1.25rem] 2xl:text-[1.375rem] font-medium text-[#060B13] mb-2">
                 Call Us!
               </h3>
-              <p className="text-gray-600 lg:text-sm xl:text-base 2xl:text-[16px]  3xl:text-xl">
+              <p className="text-[#363D4F] lg:text-[0.75rem] xl:text-[0.875rem] 2xl:text-[1rem]  h-[31px]">
                 9363034150
               </p>
             </div>
           </div>
 
-          <div className="bg-white p-1 border rounded-xl h-[256px] flex justify-center items-center lg:w-[30%] lg:h-[90%] xl:w-[30%] xl:h-[90%] 2xl:h-[90%] 2xl:w-[30%]">
-            <div className="bg-[#F7F8FA]  p-6 rounded-xl  text-center h-full w-full flex  flex-col justify-center items-center">
+          <div className="bg-white p-1 border rounded-[12px]  flex justify-center items-center lg:w-[30%] lg:h-[90%] xl:w-[30%] xl:h-[90%] 2xl:h-[90%] 2xl:w-[30%] ">
+            <div className="bg-[#F7F8FA]  p-6 rounded-[12px]  text-center h-full w-full flex  flex-col justify-center items-center">
               <div className="bg-white p-4 rounded-full inline-flex items-center justify-center mb-4">
-                <MapPin className="lg:w-5 lg:h-8 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7 3xl:w-8 3xl:h-8 text-purple-600" />
-              </div>
-              <h3 className="lg:text-base xl:text-lg 2xl:text-[21px] font-medium text-gray-900 mb-2">
+                <img src={Address} className="lg:w-[1.5rem] lg:h-[1.5rem] xl:w-[1.75rem] xl:h-[1.75rem] 2xl:w-[2rem] 2xl:h-[2rem] 3xl:w-[2.25rem] 3xl:h-[2.25rem] text-purple-600" />
+              </div>  
+              <h3 className="lg:text-[1.125rem] xl:text-[1.25rem] 2xl:text-[1.375rem] font-medium text-[#060B13] mb-2">
                 Address
               </h3>
-              <p className="text-gray-600 lg:text-sm xl:text-base 2xl:text-[16px]   3xl:text-xl">
+              <p className="text-[#363D4F] lg:text-[0.75rem] xl:text-[0.875rem] 2xl:text-[1rem]  h-[31px]">
                 Ground Floor, C-53, Guindy Industrial Estate, Chennai
               </p>
             </div>

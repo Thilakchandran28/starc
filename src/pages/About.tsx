@@ -169,7 +169,7 @@ const About = () => {
               "Learn today, lead tomorrow"
             </h2>
             {/* -----pk----- */}
-            <div className="flex  justify-between lg:w-[80%] xl:w-[80%]  2xl:w-[50%]  3xl:w-[90%] ">
+            <div className="flex  justify-between lg:w-[80%] xl:w-[70%]  border border-blue-500">
               <div className="text-center   ">
                 <div className="text-4xl 3xl:text-5xl  font-mont font-bold bg-gradient-to-r from-[#6E51E0] to-[#8A63FFB2] bg-clip-text text-transparent">
                   200+

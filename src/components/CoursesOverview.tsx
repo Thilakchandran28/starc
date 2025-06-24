@@ -147,7 +147,7 @@ const CoursesOverview: React.FC<childProps> = ({ sendMessage }) => {
   };
 
   return (
-    <div className="h-[80vh] overflow-y-auto  lg:w-[530px] xl:w-[700px] 2xl:w-[775px] 3xl:w-[1008px] py-1 " style={{ scrollbarWidth: "none" }}>
+    <div className="h-[80vh] overflow-y-auto  lg:w-[530px] xl:w-[700px] 2xl:w-[775px] 3xl:w-[100%] border border-red-500 py-1 " style={{ scrollbarWidth: "none" }}>
       <h1 className="text-3xl font-bold text-[#8A63FF] lg:ml-5 lg:mb-3 xl:mb-6">Hello {user.name} 👋</h1>
 
       <div className="w-full max-w-7xl mx-auto  px-2 ">
@@ -233,12 +233,12 @@ const CoursesOverview: React.FC<childProps> = ({ sendMessage }) => {
         </div>
 
        <div className="w-full">
-         <div className="flex flex-wrap justify-start lg:p-0  p-1  w-full ">          
+         <div className="flex flex-wrap justify-between lg:p-0  p-1  w-full border border-red-500 ">          
              {filteredCourses.map((course) => (
               <div
                 key={course.id}
                 onClick={() => handleSelectedCourse(course)}
-                className="lg:mx-1 xl:mx-1 3xl:mx-2"
+                className=""
               >
                 <DashboardCard course={course} />
               </div>
