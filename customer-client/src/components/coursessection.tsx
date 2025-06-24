@@ -675,7 +675,7 @@ export default function CategoryTabsPage() {
           {/* Top Mentors Section */}
           <div className="mb-12">
             <h2 className="lg:text-4xl xl:text-5xl 2xl:text-5xl 3xl:text-5xl  font-mont font-medium text-gray-900 mb-4 text-center">
-              Discover<br /> Our Nexora Courses
+              Discover<br /> Our Edifai Courses
             </h2>
             <br />
             <p className="text-xl 3xl:text-[1rem] text-center font-mont text-gray-600 max-w-3xl mx-auto mb-8">
@@ -685,15 +685,17 @@ export default function CategoryTabsPage() {
           </div>
 
           {/* Supervised/Unsupervised Toggle */}
-          <div className="flex justify-end mb-6">
-            <div className="relative flex w-[20%] h-[2%] bg-white border border-gray-200 rounded-full overflow-hidden shadow-lg">
+          {/* <div className="flex justify-end mb-6">
+            <div className="relative flex  bg-white border border-gray-200 rounded-full overflow-hidden " style={{
+              boxShadow:"0px 0px 22.4px 0px #00000040"
+            }}>
               <div
                 className={`absolute top-0.5 bottom-0.5 w-1/2 bg-[#8A63FF] rounded-full transition-transform duration-300 ease-in-out transform ${learningMode === "supervised" ? "translate-x-0.5" : "translate-x-[calc(100%-0.25rem)]"
                   }`}
               />
               <button
                 onClick={() => setLearningMode("supervised")}
-                className="relative flex-1 flex items-center justify-center lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl font-medium lg:py-2  xl:py-3 3xl:py-3 z-10 px-1"
+                className="relative flex-1 flex items-center justify-center lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl font-medium lg:py-2  xl:py-3 3xl:py-2 3xl:px-4 z-10 px-1"
               >
                 <span
                   className={`${learningMode === "supervised" ? "text-white" : "text-[#8A63FF]"} transition-colors duration-300`}
@@ -703,7 +705,7 @@ export default function CategoryTabsPage() {
               </button>
               <button
                 onClick={() => setLearningMode("unsupervised")}
-                className="relative flex-1 flex items-center justify-center lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl font-medium lg:py-2  xl:py-3 3xl:py-3 z-10 px-1"
+                className="relative flex-1 flex items-center justify-center lg:text-sm xl:text-base 2xl:text-lg 3xl:text-xl font-medium lg:py-2  xl:py-3 3xl:py-2 3xl:px-4 z-10 px-1"
               >
                 <span
                   className={`${learningMode === "unsupervised" ? "text-white" : "text-[#8A63FF]"} transition-colors duration-300`}
@@ -712,7 +714,46 @@ export default function CategoryTabsPage() {
                 </span>
               </button>
             </div>
+          </div> */}
+
+          <div className="flex justify-end mb-6">
+            <div
+              className="relative flex bg-white border border-gray-200 rounded-full overflow-hidden"
+              style={{
+                boxShadow: "0px 0px 22.4px 0px #00000040",
+                width: "250px", // you can adjust this
+                height: "50px",  // or use responsive height if needed
+              }}
+            >
+              <div
+                className={`absolute top-1 left-1 bottom-1 w-[calc(50%-4px)] bg-[#8A63FF] rounded-full transition-transform duration-300 ease-in-out transform ${learningMode === "supervised" ? "translate-x-0" : "translate-x-full"
+                  }`}
+              />
+              <button
+                onClick={() => setLearningMode("supervised")}
+                className="relative flex-1 flex items-center justify-center text-sm font-semibold z-10"
+              >
+                <span
+                  className={`transition-colors duration-300 ${learningMode === "supervised" ? "text-white" : "text-[#8A63FF]"
+                    }`}
+                >
+                  Supervised
+                </span>
+              </button>
+              <button
+                onClick={() => setLearningMode("unsupervised")}
+                className="relative flex-1 flex items-center justify-center text-sm font-semibold z-10"
+              >
+                <span
+                  className={`transition-colors duration-300 ${learningMode === "unsupervised" ? "text-white" : "text-[#8A63FF]"
+                    }`}
+                >
+                  Unsupervised
+                </span>
+              </button>
+            </div>
           </div>
+
 
           {/* Our Courses Title and Tabs */}
           <div className="mb-8">

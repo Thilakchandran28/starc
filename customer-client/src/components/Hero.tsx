@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import heroImage from "../Assets/hero.png"; // Ensure this path is correct
 
 interface Slide {
@@ -14,9 +15,9 @@ const Hero: React.FC = () => {
         "Access a world of knowledge. Flexible learning built for your success journey",
     },
     {
-      title: "Discover New Learning Paths Today",
+      title: "Advance Your Skills with Curated Learning Paths",
       description:
-        "Unlock your potential with our curated courses. Learn at your own pace with expert guidance and support.",
+        "Learn your way. Expert courses. Full support. Your pace.",
     },
     {
       title: "Accelerate Your Skills. Build Your Future.",
@@ -24,7 +25,7 @@ const Hero: React.FC = () => {
         " Master cutting-edge topics. Gain certifications for career advancement.",
     },
   ];
-
+  const toNavigation =useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [skipTransition, setSkipTransition] = useState(false);
 
@@ -60,24 +61,23 @@ const Hero: React.FC = () => {
    
 
     <section className="relative from-purple-50 to-white overflow-hidden lg:h-[90vh] xl:h-[90vh] 2xl:h-[90vh] 3xl:h-[80vh] ">
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
-        {/* Optional: Subtle noise texture or pattern */}
+      {/* <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgeT0iMSIgcj0iMSIgZmlsbD0iIzAwMDAwMDMzIi8+PC9zdmc+')] bg-repeat"></div>
-      </div>
-      <div className="relative z-10 flex flex-col justify-center items-center lg:pt-5 xl:pt-5 2xl:pt-5 3xl:pt-10">
-        <div className="lg:w-[628px] lg:h-[424px] xl:w-[728px] xl:h-[504px] 2xl:w-[828px] 2xl:h-[604px] 3xl:w-[1028px] 3xl:h-[694px] flex flex-col justify-center  ">
-          <div className="flex justify-center w-full">
+      </div> */}
+      <div className=" z-10 flex flex-col justify-center items-center lg:pt-5 xl:pt-5 2xl:pt-5 3xl:pt-10">
+        <div className="relative lg:w-[628px] lg:h-[424px] xl:w-[728px] xl:h-[504px] 2xl:w-[828px] 2xl:h-[604px] 3xl:w-[1028px] 3xl:h-[694px] flex flex-col justify-center  ">
+          {/* <div className="flex justify-center w-full"> */}
             <img
               src={heroImage}
               alt="Hero"
-              className="lg:w-[60%] xl:w-[56%] 2xl:w-[53%] 3xl:w-[50%] absolute top-[10px] lg:pt-6 xl:pt-12  2xl:pt-10 3xl:pt-8"
+              className="w-[100%]   absolute z-0 top-[0px] lg:pt-6 xl:pt-12  2xl:pt-10 3xl:pt-8"
             />
-          </div>
-          <div className=" flex flex-col justify-center items-center mx-auto lg:mt-32 xl:mt-36 2xl:mt-32 3xl:mt-20 text-center lg:h-[160px]     xl:h-[160px]  2xl:h-[223px] xl:w-[100%] 2xl:w-[100%] 3xl:w-[100%] ">
+          {/* </div> */}
+          <div className=" flex flex-col relative z-10 justify-center items-center mx-auto lg:mt-32 xl:mt-36 2xl:mt-32 3xl:mt-20 text-center lg:h-[160px]     xl:h-[160px]  2xl:h-[223px] xl:w-[100%] 2xl:w-[100%] 3xl:w-[100%] ">
             <span className="lg:w-[100px] lg:h-[25px] xl:w-[115px] xl:h-[25px] 2xl:w-[150px] 2xl:h-[32px] 3xl:w-[200px] 3xl:h-[35px]  flex justify-center items-center bg-[#8A63FF] text-white lg:text-[7px] xl:text-[8px]  2xl:text-[10px] 3xl:text-xs font-semibold  rounded-full mb-2 ">
               SUPERVISED COURSES
             </span>
-            <h1 className=" lg:text-4xl  xl:text-4xl 2xl:text-5xl 3xl:text-5xl font-bold text[#474747] mb-4 ">
+            <h1 className=" lg:text-4xl  xl:text-4xl 2xl:text-5xl 3xl:text-5xl font-bold text[#474747] h-[6rem] mb-4 ">
               {slides[currentSlide].title.split(" ").map((word, index) => (
                 <span key={index}>
                   {word}{" "}
@@ -91,13 +91,14 @@ const Hero: React.FC = () => {
                {/* Posuere vel netus auctor phasellus fermentum. */}
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 font-mont">
+          <div className="flex flex-col  relative z-10 sm:flex-row items-center justify-center gap-4 mb-12 font-mont">
             {currentSlide === 0 ? (
               <>
                 <button
                   type="button"
                   className="bg-[#8A63FF] text-white px-6 py-3 lg:text-xs xl:text-sm 2xl:text-base 3xl:text-lg font-medium rounded-lg shadow-md font-mont"
                   style={{ backgroundColor: "#8A63FF", boxShadow: '0px 10px 12px 0px rgba(0, 0, 0, 0.2)' }}
+                  onClick={()=>toNavigation('/course')}
                 >
                   Explore More Now
                 </button>
@@ -120,6 +121,8 @@ const Hero: React.FC = () => {
                 type="button"
                 className="bg-[#8A63FF] text-white px-6 py-3 text-lg font-medium rounded-lg shadow-md font-mont"
                 style={{ backgroundColor: "#8A63FF", boxShadow: '0px 10px 12px 0px rgba(0, 0, 0, 0.2)' }}
+                 onClick={()=>{toNavigation('/contact');console.log("clicked");
+                 }}
               >
                 Express Your Interest Now
               </button>
@@ -129,6 +132,7 @@ const Hero: React.FC = () => {
                   type="button"
                   className="bg-[#8A63FF] text-white px-6 py-3 text-lg font-medium rounded-lg shadow-md"
                   style={{ backgroundColor: "#8A63FF", boxShadow: '0px 10px 12px 0px rgba(0, 0, 0, 0.2)' }}
+                   onClick={()=>toNavigation('/course')}
                 >
                   Explore Courses Now
                 </button>

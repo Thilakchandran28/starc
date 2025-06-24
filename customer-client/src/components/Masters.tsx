@@ -208,7 +208,7 @@ const Masters = () => {
                 
                 group 
        
-                bg-white rounded-xl p-1 transition-all duration-300 ease-in-out
+                bg-white rounded-xl p-1 transition-all duration-100 ease-in-out
        
                 transform-gpu cursor-pointer
        
@@ -216,7 +216,7 @@ const Masters = () => {
         
                 hover:shadow-xl hover:shadow-purple-100 
        
-                hover:border-[#8A63FF] hover:border-2 
+                hover:border-[#8A63FF]  
                 border-gray-100 border 
      
               `}
@@ -241,14 +241,14 @@ const Masters = () => {
                     <p className="lg:text-xs xl:text-sm 2xl:text-base text-gray-500">{master.role}</p>
                   </div>
                   <div className="flex  justify-center gap-1">
-                    {master.skills.map((skill, skillIndex) => (
+                    {/* {master.skills.map((skill, skillIndex) => (
                       <span
                         key={skillIndex}
-                        className="px-2 py-1 bg-gray-100 text-gray-600 lg:text-[12px] xl:text-sm 2xl:text-base rounded-full font-medium transition-all duration-300 ease-in-out group-hover:bg-[#8A63FF1A] group-hover:border-purple-500 group-hover:border-2"
+                        className="px-2 py-1 bg-gray-100 text-gray-600 lg:text-[12px] xl:text-sm 2xl:text-base rounded-full font-medium transition-all duration-100 ease-in-out group-hover:bg-[#8A63FF1A] group-hover:border-purple-500 group-hover:border"
                       >
                         {skill}
                       </span>
-                    ))}
+                    ))} */}
                   </div>
                 </div>
               </div>

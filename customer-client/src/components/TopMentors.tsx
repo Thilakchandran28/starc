@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Star, Clock, HelpCircle, Plus, Minus } from 'lucide-react'; // All icons from lucide-react
+import img1 from "../Assets/vickram1.png";
 
 // --- Data Interfaces ---
 interface Mentor {
@@ -28,7 +29,7 @@ const mentors: Mentor[] = [
     experience: "10 Years",
     rating: 5,
     reviews: 200,
-    image: "https://via.placeholder.com/150"
+    image: img1
   },
   {
     id: 2,
@@ -107,10 +108,10 @@ const CombinedSections: React.FC = () => {
           {/* Header Section */}
           <div className="mb-12 h-[20%]">
             <h2 className="lg:text-4xl xl:text-[56px] font-mont font-medium text-gray-900 mb-4">
-              Our Top Mentor At Starc
+              Our Top Mentors At Edifai
             </h2>
             <p className="text-base text-gray-500 max-w-3xl mx-auto leading-relaxed">
-             Welcome to our platform, enhancing your skills. Welcome to our platform, enhancing your skills.
+              Welcome to our platform, enhancing your skills. Welcome to our platform, enhancing your skills.
             </p>
           </div>
 
@@ -125,7 +126,7 @@ const CombinedSections: React.FC = () => {
                   <img
                     src={mentor.image}
                     alt={mentor.name}
-                    className=" w-full lg:h-48 xl:h-56 3xl:h-80 2xl:h-72   object-contain rounded-xl bg-black"
+                    className=" w-full lg:h-48 xl:h-56 3xl:h-80 2xl:h-72   object-fill rounded-xl bg-black"
                   />
                 </div>
                 <div className="lg:p-2 xl:p-4 text-start">
@@ -134,7 +135,7 @@ const CombinedSections: React.FC = () => {
                   <div className=" flex items-center justify-start gap-2 text-gray-600 text-sm mb-4 ">
                     <Clock className="w-4 h-4 text-gray-500" />
                     <span>{mentor.experience}</span>
-                  </div> 
+                  </div>
                   <div className="flex gap-2 ">
                     <StarRating />
                     <span className="text-sm text-gray-500">({mentor.reviews})</span>
