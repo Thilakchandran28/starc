@@ -698,7 +698,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({
                 onClick={() => handleToggle("supervised")}
                 className={`px-4 py-2 rounded-full font-semibold transition-colors ${
                   activeButton === "supervised"
-                    ? "bg-[#7C3AED] text-white"
+                    ? "bg-[#8A63FF] text-white"
                     : "bg-white text-gray-600"
                 }`}
               >
@@ -708,14 +708,14 @@ const FilterSection: React.FC<FilterSectionProps> = ({
                 onClick={() => handleToggle("unsupervised")}
                 className={`px-4 py-2 rounded-full font-semibold transition-colors ${
                   activeButton === "unsupervised"
-                    ? "bg-[#7C3AED] text-white"
-                    : "bg-white text-[#9539E5]"
+                    ? "bg-[#8A63FF] text-white"
+                    : "bg-white text-[#8A63FF]"
                 }`}
               >
                 Unsupervised
               </button>
             </div>
-            <span className="text-sm text-gray-500 lg:w-[50%] xl:w-[40%] flex text-center">
+            <span className="text-sm text-[#8A63FF] lg:w-[50%] xl:w-[40%] flex text-center">
               {description}
             </span>
           </div>
@@ -1017,7 +1017,7 @@ const Course: React.FC = () => {
               <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8">
                 Discover Our Starc Courses
               </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              <p className="text-[14px] text-gray-600 max-w-3xl mx-auto mb-8">
                 Discover thousands of courses taught by expert instructors.
                 Start learning today and advance your career.
               </p>
@@ -1050,7 +1050,7 @@ const Course: React.FC = () => {
                       onClick={() => setActiveIndex(index)}
                       className={`py-4 px-4 lg:text-[10px] xl:text-sm 2xl:text-base 3xl:text-lg cursor-pointer items-start w-[95%] border-gray-200 border-b-[0.1px] transition-all duration-200 ${
                         index === activeIndex
-                          ? "text-[#7C3AED] font-semibold"
+                          ? "text-[#8A63FF] font-semibold"
                           : "text-gray-800"
                       }`}
                     >

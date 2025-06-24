@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
   return (
    
 
-    <section className="relative from-purple-50 to-white overflow-hidden lg:h-[90vh] xl:h-[90vh] 2xl:h-[90vh] 3xl:h-[100vh] ">
+    <section className="relative from-purple-50 to-white overflow-hidden lg:h-[90vh] xl:h-[90vh] 2xl:h-[90vh] 3xl:h-[80vh] ">
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         {/* Optional: Subtle noise texture or pattern */}
         <div className="w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgeT0iMSIgcj0iMSIgZmlsbD0iIzAwMDAwMDMzIi8+PC9zdmc+')] bg-repeat"></div>
@@ -74,10 +74,10 @@ const Hero: React.FC = () => {
             />
           </div>
           <div className=" flex flex-col justify-center items-center mx-auto lg:mt-32 xl:mt-36 2xl:mt-32 3xl:mt-20 text-center lg:h-[160px]     xl:h-[160px]  2xl:h-[223px] xl:w-[100%] 2xl:w-[100%] 3xl:w-[100%] ">
-            <span className="lg:w-[100px] lg:h-[25px] xl:w-[115px] xl:h-[25px] 2xl:w-[150px] 2xl:h-[32px] 3xl:w-[200px] 3xl:h-[35px]  flex justify-center items-center bg-purple-600 text-white lg:text-[7px] xl:text-[8px]  2xl:text-[10px] 3xl:text-xs font-semibold  rounded-full mb-2 ">
+            <span className="lg:w-[100px] lg:h-[25px] xl:w-[115px] xl:h-[25px] 2xl:w-[150px] 2xl:h-[32px] 3xl:w-[200px] 3xl:h-[35px]  flex justify-center items-center bg-[#8A63FF] text-white lg:text-[7px] xl:text-[8px]  2xl:text-[10px] 3xl:text-xs font-semibold  rounded-full mb-2 ">
               SUPERVISED COURSES
             </span>
-            <h1 className=" lg:text-4xl  xl:text-4xl 2xl:text-5xl 3xl:text-5xl font-bold text-gray-700 mb-4 ">
+            <h1 className=" lg:text-4xl  xl:text-4xl 2xl:text-5xl 3xl:text-5xl font-bold text[#474747] mb-4 ">
               {slides[currentSlide].title.split(" ").map((word, index) => (
                 <span key={index}>
                   {word}{" "}
@@ -85,7 +85,7 @@ const Hero: React.FC = () => {
                 </span>
               ))}
             </h1>
-            <p className="lg:text-[12px] xl:text-sm 2xl:text-base 3xl:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto ">
+            <p className="lg:text-[12px] xl:text-sm 2xl:text-base 3xl:text-[1rem] text-[#474747] leading-relaxed max-w-2xl mx-auto ">
               {slides[currentSlide].description}
              <br />
                {/* Posuere vel netus auctor phasellus fermentum. */}
@@ -97,7 +97,7 @@ const Hero: React.FC = () => {
                 <button
                   type="button"
                   className="bg-[#8A63FF] text-white px-6 py-3 lg:text-xs xl:text-sm 2xl:text-base 3xl:text-lg font-medium rounded-lg shadow-md font-mont"
-                  style={{ backgroundColor: "#A855F7", boxShadow: '0px 10px 12px 0px rgba(0, 0, 0, 0.2)' }}
+                  style={{ backgroundColor: "#8A63FF", boxShadow: '0px 10px 12px 0px rgba(0, 0, 0, 0.2)' }}
                 >
                   Explore More Now
                 </button>
@@ -119,7 +119,7 @@ const Hero: React.FC = () => {
               <button
                 type="button"
                 className="bg-[#8A63FF] text-white px-6 py-3 text-lg font-medium rounded-lg shadow-md font-mont"
-                style={{ backgroundColor: "#A855F7", boxShadow: '0px 10px 12px 0px rgba(0, 0, 0, 0.2)' }}
+                style={{ backgroundColor: "#8A63FF", boxShadow: '0px 10px 12px 0px rgba(0, 0, 0, 0.2)' }}
               >
                 Express Your Interest Now
               </button>
@@ -128,7 +128,7 @@ const Hero: React.FC = () => {
                 <button
                   type="button"
                   className="bg-[#8A63FF] text-white px-6 py-3 text-lg font-medium rounded-lg shadow-md"
-                  style={{ backgroundColor: "#A855F7", boxShadow: '0px 10px 12px 0px rgba(0, 0, 0, 0.2)' }}
+                  style={{ backgroundColor: "#8A63FF", boxShadow: '0px 10px 12px 0px rgba(0, 0, 0, 0.2)' }}
                 >
                   Explore Courses Now
                 </button>

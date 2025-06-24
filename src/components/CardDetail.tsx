@@ -12,7 +12,8 @@ import reference from '../Assets/Group 18499.png';
 import skill from '../Assets/Group 18500.png';
 import mentor from '../Assets/Group 18501.png';
 import human from '../Assets/human.png';
-import frame from '../Assets/frame.png';
+import { FaCheck } from "react-icons/fa6";
+// import frame from '../Assets/frame.png';
 import { useNavigate } from 'react-router-dom';
 import Enroll from './Enroll';
 import { IoArrowBack } from 'react-icons/io5'; // Importing the left arrow icon
@@ -26,25 +27,25 @@ const CardDetail: React.FC = () => {
   };
 
   return (
-    <div className="flex-col min-h-[800px] bg-gray-50 font-mont ">
-        <Navbar/>
+    <div className="flex-col min-h-[800px] bg-gray-50 font-mont  ">
+      <Navbar />
       {/* Flex Row for Main Content and Enroll Sidebar */}
       <div className="flex">
         {/* Main Content Area */}
         <div className="w-2/3 p-20">
           {/* Supervised Course Tag with Back Arrow */}
           <div className="mb-4 flex items-center space-x-3">
-            
+
             {/* Back Button */}
             <button
               onClick={handleGoBack}
-              className="flex items-center bg-[#8A63FF] text-white text-sm font-semibold px-4 py-1 rounded-full hover:bg-[#6D28D9] transition"
+              className="flex items-center bg-[#8A63FF] text-white text-sm font-semibold px-4 py-2 rounded-full hover:bg-[#6D28D9] transition"
             >
               <IoArrowBack className="mr-1" />
               Back
             </button>
             {/* Supervised Course Tag */}
-            <span className="inline-block bg-[#8A63FF] text-white text-sm font-semibold px-4 py-1 rounded-full">
+            <span className="inline-block bg-[#8A63FF] text-white text-sm font-semibold px-4 py-2 rounded-full">
               Supervised Course
             </span>
           </div>
@@ -54,15 +55,15 @@ const CardDetail: React.FC = () => {
 
           {/* Description */}
           <p className="text-gray-600 text-base mb-8">
-            This comprehensive course prepares you for the AWS 
-Certified Solutions Architect - Associate exam. Learn to design, deploy, and manage 
-scalable, highly available, and fault-tolerant systems on the AWS platform. Master 
-core AWS services, architectural best practices, and effective cost-optimization 
-strategies to become a skilled cloud architect, ready for real-world scenarios. 
+            This comprehensive course prepares you for the AWS
+            Certified Solutions Architect - Associate exam. Learn to design, deploy, and manage
+            scalable, highly available, and fault-tolerant systems on the AWS platform. Master
+            core AWS services, architectural best practices, and effective cost-optimization
+            strategies to become a skilled cloud architect, ready for real-world scenarios.
           </p>
 
           {/* --------------- */}
-          <div className="bg-white p-6 shadow-[0_0_10px_0_rgba(0,0,0,0.2)] rounded-lg">
+          <div className="bg-white p-16 shadow-[0_0_10px_0_rgba(0,0,0,0.2)] rounded-lg">
             {/* What You'll Learn Section */}
             <div className="mb-8">
               <div className="grid grid-cols-1 mb-4 w-full">
@@ -74,48 +75,54 @@ strategies to become a skilled cloud architect, ready for real-world scenarios.
 
               <div className="grid grid-cols-2 gap-4">
                 <ul className="space-y-5">
-                  <li className="flex items-center text-gray-600">
-                    <div className="flex items-end pl-1">
-                      <img src={frame} alt="" className="w-5 h-5" />
+                  <li className="flex items-center gap-2 text-gray-600">
+                    <div className="flex items-center justify-center   w-5 h-5 bg-green-600 rounded-full">
+                     <FaCheck className='text-white ' size={"0.75rem"} />
+                      {/* <img src={frame} alt="" className="w-5 h-5" /> */}
                     </div>
-                    Understanding Design Principles &<br/> User Psychology
+                    Understanding Design Principles &<br /> User Psychology
                   </li>
-                  <li className="flex items-center text-gray-600">
-                    <div className="flex items-end pl-1">
-                      <img src={frame} alt="" className="w-5 h-5" />
+                  <li className="flex items-center gap-2 text-gray-600">
+                    <div className="flex items-center justify-center   w-5 h-5 bg-green-600 rounded-full">
+                        <FaCheck className='text-white ' size={"0.75rem"} />
+                      {/* <img src={frame} alt="" className="w-5 h-5" /> */}
                     </div>
-                    Wireframing and <br/>Prototyping with Figma & Adobe XD
+                    Wireframing and <br />Prototyping with Figma & Adobe XD
                   </li>
-                  <li className="flex items-center text-gray-600">
-                    <div className="flex items-end pl-1">
-                      <img src={frame} alt="" className="w-5 h-5" />
+                  <li className="flex items-center gap-2 text-gray-600">
+                    <div className="flex items-center justify-center   w-5 h-5 bg-green-600 rounded-full">
+                       <FaCheck className='text-white ' size={"0.75rem"} />
+                      {/* <img src={frame} alt="" className="w-5 h-5" /> */}
                     </div>
-                    Creating High-Fidelity Designs & <br/>Interactive Mockups
+                    Creating High-Fidelity Designs & <br />Interactive Mockups
                   </li>
                 </ul>
                 <ul className="space-y-5">
-                  <li className="flex items-center text-gray-600">
-                    <div className="flex items-end pl-1">
-                      <img src={frame} alt="" className="w-5 h-5" />
+                  <li className="flex items-center gap-2 text-gray-600">
+                    <div className="flex items-center justify-center   w-5 h-5 bg-green-600 rounded-full">
+                       <FaCheck className='text-white ' size={"0.75rem"} />
+                      {/* <img src={frame} alt="" className="w-5 h-5" /> */}
                     </div>
                     User Research, Personas, and Journey Mapping
                   </li>
-                  <li className="flex items-center text-gray-600">
-                    <div className="flex items-end pl-1">
-                      <img src={frame} alt="" className="w-5 h-5" />
+                  <li className="flex items-center gap-2 text-gray-600">
+                    <div className="flex items-center justify-center   w-5 h-5 bg-green-600 rounded-full">
+                       <FaCheck className='text-white ' size={"0.75rem"} />
+                      {/* <img src={frame} alt="" className="w-5 h-5" /> */}
                     </div>
                     Responsive Design for Web & Mobile Interfaces
                   </li>
-                  <li className="flex items-center text-gray-600">
-                    <div className="flex items-end pl-1">
-                      <img src={frame} alt="" className="w-5 h-5" />
+                  <li className="flex items-center  gap-2 text-gray-600">
+                    <div className="flex items-center justify-center   w-5 h-5 bg-green-600 rounded-full">
+                        <FaCheck className='text-white ' size={"0.75rem"} />
+                      {/* <img src={frame} alt="" className="w-5 h-5" /> */}
                     </div>
                     Usability Testing and Design Iteration
                   </li>
                 </ul>
               </div>
             </div>
-<div className="border-t border-gray-200 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between text-gray-600"></div>
+            <div className="border-t border-gray-200 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between text-gray-600"></div>
             {/* Value Beyond the Classroom Section */}
             <div className="mb-8">
               <h2 className="text-xl font-semibold text-[#8A63FF] mb-4">VALUE BEYOND THE CLASSROOM</h2>
@@ -162,13 +169,13 @@ strategies to become a skilled cloud architect, ready for real-world scenarios.
                 </div>
               </div>
             </div>
-<div className="border-t border-gray-200 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between text-gray-600"></div>
+            <div className="border-t border-gray-200 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between text-gray-600"></div>
             {/* What You'll Get Section */}
             <div className="">
               <h2 className="text-xl font-semibold text-[#8A63FF] mb-4">What You'll Get</h2>
               <div className="grid grid-cols-4 gap-4">
-                <div className="text-center">
-                  <div className="flex items-center justify-center">
+                <div className="text-center space-y-3">
+                  <div className="flex items-center justify-center ">
                     <div className="flex items-end pl-0">
                       <img src={coc} alt="" className="w-12 h-12" />
                     </div>
@@ -178,7 +185,7 @@ strategies to become a skilled cloud architect, ready for real-world scenarios.
                     Receive a certificate to validate your skills and enhance your profile
                   </p>
                 </div>
-                <div className="text-center">
+                <div className="text-center space-y-3">
                   <div className=" flex items-center justify-center">
                     <div className="flex items-end pl-0">
                       <img src={reference} alt="" className="w-12 h-12" />
@@ -189,7 +196,7 @@ strategies to become a skilled cloud architect, ready for real-world scenarios.
                     Access comprehensive materials to support continued learning
                   </p>
                 </div>
-                <div className="text-center">
+                <div className="text-center space-y-3">
                   <div className=" flex items-center justify-center">
                     <div className="flex items-end pl-0">
                       <img src={skill} alt="" className="w-12 h-12" />
@@ -200,7 +207,7 @@ strategies to become a skilled cloud architect, ready for real-world scenarios.
                     Evaluate your expertise with in-depth skill assessments
                   </p>
                 </div>
-                <div className="text-center">
+                <div className="text-center space-y-3">
                   <div className=" flex items-center justify-center">
                     <div className="flex items-end pl-0">
                       <img src={mentor} alt="" className="w-12 h-12" />
@@ -227,7 +234,7 @@ strategies to become a skilled cloud architect, ready for real-world scenarios.
       <WallOfLove />
       <div className='flex justify-center'>
 
-      <PurpleBox />
+        <PurpleBox />
       </div>
       <Footer />
     </div>

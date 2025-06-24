@@ -66,7 +66,7 @@ const FAQ: React.FC = () => {
                 key={index}
                 className={`border rounded-lg overflow-hidden transition-all ${
                   openIndex === index
-                    ? 'border-purple-500 shadow-md shadow-purple-200 '
+                    ? 'border-[#8A63FF] shadow-md shadow-purple-200 '
                     : 'border-gray-200'
                 }`}
               >
@@ -82,7 +82,7 @@ const FAQ: React.FC = () => {
                   </span>
                 </button>
                 {openIndex === index && (
-                  <div className="px-6 py-4 text-gray-700 lg:text-base xl:text-lg 2xl:text-xl">
+                  <div className="px-6 py-4 text-gray-700 lg:text-base xl:text-sm 3xl:w-[60%]">
                     {faq.answer}
                   </div>
                 )}

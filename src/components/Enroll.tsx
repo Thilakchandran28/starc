@@ -54,7 +54,7 @@ const CardDetail: React.FC = () => {
             resume: formData.resume ? '' : 'Please upload a resume',
         };
         setErrors(newErrors);
-        
+
 
 
         // Check if there are any errors
@@ -90,7 +90,7 @@ const CardDetail: React.FC = () => {
                                     className="w-full p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
                                     style={{
                                         boxShadow: '0 6px 6px rgba(0, 0, 0, 0.1)',
-                                        }}
+                                    }}
                                     placeholder="First Name"
                                 />
                                 {errors.firstName && (
@@ -104,10 +104,10 @@ const CardDetail: React.FC = () => {
                                     name="lastName"
                                     value={formData.lastName}
                                     onChange={handleChange}
-className="w-full p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
+                                    className="w-full p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
                                     style={{
                                         boxShadow: '0 6px 6px rgba(0, 0, 0, 0.1)',
-                                        }}                                    placeholder="Last Name"
+                                    }} placeholder="Last Name"
                                 />
                                 {errors.lastName && (
                                     <p className="text-red-500 text-sm mt-1">{errors.lastName}</p>
@@ -121,10 +121,10 @@ className="w-full p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purp
                                 name="email"
                                 value={formData.email}
                                 onChange={handleChange}
-className="w-full p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
-                                    style={{
-                                        boxShadow: '0 6px 6px rgba(0, 0, 0, 0.1)',
-                                        }}                                placeholder="Email"
+                                className="w-full p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
+                                style={{
+                                    boxShadow: '0 6px 6px rgba(0, 0, 0, 0.1)',
+                                }} placeholder="Email"
                             />
                             {errors.email && (
                                 <p className="text-red-500 text-sm mt-1">{errors.email}</p>
@@ -137,10 +137,10 @@ className="w-full p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purp
                                 name="phoneNumber"
                                 value={formData.phoneNumber}
                                 onChange={handleChange}
-className="w-full p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
-                                    style={{
-                                        boxShadow: '0 6px 6px rgba(0, 0, 0, 0.1)',
-                                        }}                                placeholder="Phone Number"
+                                className="w-full p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
+                                style={{
+                                    boxShadow: '0 6px 6px rgba(0, 0, 0, 0.1)',
+                                }} placeholder="Phone Number"
                             />
                             {errors.phoneNumber && (
                                 <p className="text-red-500 text-sm mt-1">{errors.phoneNumber}</p>
@@ -152,7 +152,7 @@ className="w-full p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purp
                                 <button
                                     type="button"
                                     onClick={handleFileButtonClick}
-                                    className="bg-[#8A63FF] text-white px-1 w-[35%] rounded-sm mr-0"
+                                    className="bg-[#8A63FF] text-white px-1 py-2 w-[35%] rounded-sm mr-0"
                                 >
                                     Select a file
                                 </button>
@@ -173,7 +173,7 @@ className="w-full p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purp
                         </div>
                         <button
                             type="submit"
-                            className="w-full bg-[#8A63FF] text-white py-3 rounded-lg font-semibold hover:bg-[#8A63FF] transition"
+                            className="w-full bg-[#8A63FF] text-white py-3 rounded-full font-semibold hover:bg-[#8A63FF] transition"
                         >
                             Submit Now
                         </button>
@@ -181,7 +181,7 @@ className="w-full p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purp
                 </div>
             </div>) : (
                 <div>
-                <SubmissionSuccess />
+                    <SubmissionSuccess />
                 </div>
             )}
 
