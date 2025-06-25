@@ -8,6 +8,7 @@ import WallOfLove from "../components/WallOfLove";
 import { useNavigate } from "react-router-dom";
 import heroimage from "../Assets/Vector.png";
 import Recard from "@/components/Card";
+import { Scale } from "lucide-react";
 
 // import ScrollableCourse from "@/components/ScrollableCourse";
 // Define TypeScript interface for a Course
@@ -428,7 +429,7 @@ const Course: React.FC = () => {
                 position: "relative",
                 left: "0",
                 top: "90px",
-                rotate: "0deg"
+                transform:"ScaleX(-1)"
               }}
             />
             <div className="">

@@ -238,6 +238,7 @@ interface CardProps {
                 position: "relative",
                 left: "0",
                 top: "90px",
+                transform:"ScaleX(-1)"
               }}
             />
             <div className="">

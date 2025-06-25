@@ -89,7 +89,7 @@ const testimonials: TestimonialCardProps[] = [
 
 const WallOfLove: React.FC = () => {
   return (
-    <section className="flex justify-center items-center w-full  mt-20 lg:h-[700px] xl:h-[800px] 2xl:h-[900px] 3xl:h-[1000px] ">
+    <section className="flex justify-center items-center w-full  mt-5 lg:h-[700px] xl:h-[800px] 2xl:h-[900px] 3xl:h-[800px] ">
       <div className="flex flex-col items-center lg:w-[90%] lg:h-[90%] xl:w-[90%] xl:h-[90%] 2xl:w-[90%] 2xl:h-[90%] 3xl:w-[90%] 3xl:h-[90%] mx-auto px-4 ">
         <h2 className="text-6xl font-mont font-semibold text-center mb-12 text-gray-800">Wall of love</h2>
         <div className="flex flex-wrap justify-around lg:w-[80%] lg:h-[75%] xl:w-[80%] xl:h-[75%] 2xl:w-[80%] 2xl:h-[75%] 3xl:w-[75%] 3xl:h-[70%] ">

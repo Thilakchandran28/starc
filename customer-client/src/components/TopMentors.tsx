@@ -24,7 +24,7 @@ interface FaqItem {
 const mentors: Mentor[] = [
   {
     id: 1,
-    name: "Vikram Varma",
+    name: "Vikram Varma V",
     specialization: "Front-End Associate",
     experience: "2 Years",
     rating: 5,

@@ -82,7 +82,7 @@ const About = () => {
                 <span className="text-[#8A63FF]">Success</span>
               </h2>
               <p className="text-gray-600   lg:text-sm xl:text-lg 2xl:text-xl mt-4  ">
-                At Starc, we are driven by a commitment to excellence,
+                At Edifai, we are driven by a commitment to excellence,
                 integrity, and continuous improvement.
               </p>
               <ul className="space-y-6   lg:text-[12px] 2xl:text-xl 3xl:mr-6  lg:mr-12 pt-5  w-full  ">
@@ -164,26 +164,26 @@ const About = () => {
       <section className="py-20 bg-white 3xl:gap-20  flex  justify-center ">
         <div className="  lg:w-[1100px] xl:w-[1000px]  2xl:w-[1400px]  3xl:w-[1565px]    flex justify-center ">
           {/* Left: Text Content */}
-          <div className=" lg:w-[500px]  xl:w-[600px] 2xl:w-[726px]  3xl:w-[900px] 3xl:py-20 pt-10 pl-20 ">
+          <div className=" lg:w-[500px]  xl:w-[600px] 2xl:w-[726px]  3xl:w-[900px] 3xl:py-18 pt-10 pl-20 ">
             <h2 className="text-xl lg:text-4xl 2xl:text-5xl  w-[80%]  md:text-5xl font-mont font-medium text-gray-900 mb-8 leading-tight">
               "Learn today, lead tomorrow"
             </h2>
-            {/* -----pk----- */}
+            
             <div className="flex  justify-between lg:w-[80%] xl:w-[80%]  2xl:w-[50%]  3xl:w-[90%] ">
               <div className="text-center   ">
-                <div className="text-4xl 3xl:text-5xl  font-mont font-bold bg-gradient-to-r from-[#6E51E0] to-[#8A63FFB2] bg-clip-text text-transparent">
+                <div className="text-4xl 3xl:text-5xl  font-mont font-bold bg-gradient-to-b from-[#6E51E0] to-[#8A63FFB2] bg-clip-text text-transparent">
                   200+
                 </div>
                 <div className="text-black font-semibold 3xl:p-2">People</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl  3xl:text-5xl font-mont font-bold bg-gradient-to-r from-[#6E51E0] to-[#8A63FFB2] bg-clip-text text-transparent">
+                <div className="text-4xl  3xl:text-5xl font-mont font-bold bg-gradient-to-b from-[#6E51E0] to-[#8A63FFB2] bg-clip-text text-transparent">
                   50+
                 </div>
                 <div className="text-black font-semibold 3xl:p-2">Courses</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl  3xl:text-5xl font-mont font-bold bg-gradient-to-r from-[#6E51E0] to-[#8A63FFB2] bg-clip-text text-transparent">
+                <div className="text-4xl  3xl:text-5xl font-mont font-bold bg-gradient-to-b from-[#6E51E0] to-[#8A63FFB2] bg-clip-text text-transparent">
                   20+
                 </div>
                 <div className="text-black font-semibold 3xl:p-2">
@@ -194,7 +194,7 @@ const About = () => {
           </div>
 
           {/* Right: Description */}
-          <div className="lg:w-[500px] lg-px-10 lg:p-2   xl:w-[300px]  2xl:w-[706px] 3xl:w-[706px]  3xl:text-[20px] px-10">
+          <div className="lg:w-[500px] lg-px-10 lg:p-2  xl:w-[300px]  2xl:w-[706px] 3xl:w-[706px]  3xl:text-[20px] px-10">
             <div className="w-[203px]">
               <span className="text-3xl text-[#8A63FF] font-mont font-bold mb-4  flex justify-between">
                 Edifai{" "}
@@ -227,7 +227,7 @@ const About = () => {
         <div className="  3xl:w-[1596px] 2xl:w-[1200px] xl:w-[1000px] lg:w-[900px]">
           <div className="text-center lg:mb-8 xl:mb-12 ">
             <h2
-              className="text-4xl font-mont font-medium text-gray-900 pr-[78%] mb- 3xl:text-[40px] 2xl:text-[30px] xl:text-[30px]  "
+              className="text-4xl font-mont font-medium text-gray-900 pr-[80%] mb- 3xl:text-[40px] 2xl:text-[30px] xl:text-[30px]  "
               style={{
                 fontFamily: "mont-regular",
               }}
@@ -349,9 +349,9 @@ const About = () => {
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center  3xl:p-10 2xl:p-10 ">
+          <div className="grid grid-cols-2 justify-between  gap-y-[3rem] gap-x-[3rem]  3xl:p-10 2xl:p-10 ">
             {/* left side */}
-            <div className="w-1/2 space-y-10 mb-5">
+            {/* <div className=" space-y-10 mb-5"> */}
               <div className="flex flex-col space-y-4 items-start 3xl:w-[683px]  2xl:w-[400px]  ">
                 <div className="w-11 h-11 bg-purple-100 rounded-xl 3xl:mb-5 flex items-center justify-center flex-shrink-0 ">
                   <img src={provide} />{" "}
@@ -380,13 +380,13 @@ const About = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            {/* </div> */}
 
             {/* right side */}
-            <div className="w-1/2 space-y-10   ">
-              <div className="flex flex-col space-y-4 items-start 3xl:w-[683px]  2xl:w-[400px] ">
-                <div className="w-11 h-11 bg-purple-100 rounded-xl 3xl:mb-5 flex items-center justify-center flex-shrink-0 ">
-                  <img src={promote} />{" "}
+            {/* <div className=" space-y-10   "> */}
+              {/* <div className="flex flex-col space-y-4  ">
+                <div className="w-11  bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0 ">
+                  <img src={promote} />
                 </div>
                 <div className="">
                   <h3 className=" font-mont font-medium text-gray-900 3xl:mb-5 3xl:text-[36px] 2xl:text-[26px] lg:text-[15px] ">
@@ -397,8 +397,20 @@ const About = () => {
                     knowledge.
                   </p>
                 </div>
+              </div> */}
+              <div className="space-y-4  ">
+                  <img src={promote} className="w-11 " />
+                <div className="">
+                  <h3 className=" font-mont font-medium text-gray-900 3xl:text-[36px] 2xl:text-[26px] lg:text-[15px] ">
+                    Promote Collaboration and Community:
+                  </h3>
+                  <p className="text-gray-600 3xl:text-[20px] 2xl:text-[16px] 3xl:w-[100%] lg:text-[15px]">
+                    Build a supportive network where learners can connect, share
+                    knowledge.
+                  </p>
+                </div>
               </div>
-              <div className="flex flex-col 3xl:mb-5 items-start space-y-5 ">
+              <div className="flex flex-col items-start space-y-4 ">
                 <div className="w-11 h-11 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
                   <img src={promote} />{" "}
                 </div>
@@ -412,7 +424,7 @@ const About = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            {/* </div> */}
           </div>
         </div>
       </section>

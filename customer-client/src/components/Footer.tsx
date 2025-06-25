@@ -84,6 +84,7 @@ const Footer = () => {
               <li>
                 <a
                   href="https://staciacorp.com/products"
+                  target="/blank"
                   className="font-mont hover:text-gray-900 transition-colors cursor-pointer"
                 >
                   Products
@@ -92,6 +93,7 @@ const Footer = () => {
               <li>
                 <a
                   href="https://staciacorp.com/services"
+                  target="/blank"
                   className="font-mont hover:text-gray-900 transition-colors cursor-pointer"
                 >
                   Services
@@ -100,6 +102,7 @@ const Footer = () => {
               <li>
                 <a
                   href="https://staciacorp.com/project"
+                  target="/blank"
                   className="font-mont hover:text-gray-900 transition-colors cursor-pointer"
                 >
                  Projects
@@ -123,6 +126,7 @@ const Footer = () => {
               <li>
                 <a
                   href="https://staciacorp.com/article"
+                  target="/blank"
                   className="font-mont hover:text-gray-900 transition-colors cursor-pointer"
                 >
                   Article
@@ -131,6 +135,7 @@ const Footer = () => {
               <li>
                 <a
                   href="https://staciacorp.com/career"
+                  target="/blank"
                   className="font-mont hover:text-gray-900 transition-colors cursor-pointer"
                 >
                   career
@@ -139,6 +144,7 @@ const Footer = () => {
               <li>
                 <a
                   href="https://staciacorp.com/case-study"
+                  target="/blank"
                   className="font-mont hover:text-gray-900 transition-colors cursor-pointer"
                 >
                   Casestudy
