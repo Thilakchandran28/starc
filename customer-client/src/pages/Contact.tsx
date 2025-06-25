@@ -31,13 +31,13 @@ const Contact = () => {
             </div>
             <div className=" flex flex-col justify-center items-center mx-auto lg:mt-32 xl:mt-36 2xl:mt-32 3xl:mt-20 text-center lg:h-[160px] xl:h-[160px]  2xl:h-[223px] xl:w-[100%] 2xl:w-[100%] 3xl:w-[100%] ">
               <span className="lg:w-[100px] lg:h-[20px] xl:w-[115px] xl:h-[25px] 2xl:w-[120px] 2xl:h-[32px] 3xl:w-[123px] 3xl:h-[35px]  flex justify-center items-center bg-purple-600 text-white lg:text-[7px] xl:text-[8px]  2xl:text-[10px] 3xl:text-xs font-semibold  rounded-full mb-2 ">
-                STARC COURSE
+                EDIFAI COURSE
               </span>
               <h1 className=" xl:text-4xl 2xl:text-5xl lg:text-3xl font-bold text-gray-900 mb-4 ">
                 Contact Us
               </h1>
               <p className="lg:text-[12px] xl:text-sm 2xl:text-base 3xl:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto ">
-                Connect with the Starc team for personalized assistance. Whether
+                Connect with the Edifai team for personalized assistance. Whether
                 you have questions about our programs, need technical support.
               </p>
             </div>
@@ -52,7 +52,7 @@ const Contact = () => {
           <div className="lg:w-[370px] lg:h-[550px] xl:w-[398px] xl:h-[650px] xl:mx-16 2xl:w-[458px] 2xl:h-[700px] 3xl:w-[558px] 3xl:h-[740px]  3xl:mx-10 ">
             <span className="2xl:w-[97px] 2xl:h-[20px]">
               <p className="text-[#8A63FF] mb-5 lg:text-[10px] xl:text-xs 2xl:text-sm">
-                Starc
+                Edifai
               </p>
             </span>
             <h2 className="lg:text-2xl xl:text-3xl 2xl:text-5xl font-normal text-black mb-6">
@@ -137,7 +137,7 @@ const Contact = () => {
                   Name
                 </p>
                 <p className="lg:text-[13px] xl:text-sm 2xl:text-base 3xl:text-lg">
-                  Josh Doe, CEO at <span className="text-blue-500">Starc</span>
+                  Josh Doe, CEO at <span className="text-blue-500">Edifai</span>
                 </p>
               </div>
             </div>
@@ -157,7 +157,7 @@ const Contact = () => {
             {/* Changed bg-gray-50 to bg-white */}
             <div className="flex justify-start  lg:h-[35px] lg:w-[255px] xl:w-[300px] 2xl:w-[400px] 3xl:w-[496px]">
               <h3 className="lg:text-xs xl:text-sm 2xl:text-lg 3xl:text-xl font-mont text-gray-900 mb-6">
-                Access the Starc Template:
+                Access the Edifai Template:
               </h3>{" "}
             </div>
             {/* Updated title */}
@@ -229,7 +229,7 @@ const Contact = () => {
                 Call Us!
               </h3>
               <p className="text-gray-600 lg:text-sm xl:text-base 2xl:text-[16px]  3xl:text-xl">
-                9363034150
+                +91 936-303-4150
               </p>
             </div>
           </div>

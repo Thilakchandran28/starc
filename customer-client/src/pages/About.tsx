@@ -74,12 +74,12 @@ const About = () => {
             }}
           >
             <div className="flex flex-col justify-start w-[80%]">
-              <span className="text-[#8A63FF] text-lg w-full  flex   lg:text-[10px] xl:text-[12px] 2xl:text-[12px] 3xl:text-[12px] font-medium font-mont mb-4">
+              <span className="text-[#8A63FF] text-lg  w-full  flex   lg:text-[10px] xl:text-[12px] 2xl:text-[1.5rem]  font-semibold font-mont mb-4">
                 Our Values
               </span>
-              <h2 className=" text-xl lg:text-xl xl:text-3xl 2xl:text-5xl 3xl:mr-20 pl-2  3xl:leading-relaxed font-mont font-semibold xl:py-1 text-black-900 mb-4 leading-snug   lg:mr-16 ">
+              <h2 className=" text-xl lg:text-xl xl:text-3xl 2xl:text-5xl 3xl:mr-20   3xl:leading-relaxed font-mont font-semibold xl:py-1 text-black-900 mb-4 leading-snug   lg:mr-16 ">
                 Our team shares <br /> values to{" "}
-                <span className="text-purple-500">Success</span>
+                <span className="text-[#8A63FF]">Success</span>
               </h2>
               <p className="text-gray-600   lg:text-sm xl:text-lg 2xl:text-xl mt-4  ">
                 At Starc, we are driven by a commitment to excellence,
@@ -210,7 +210,7 @@ const About = () => {
                 fontFamily: "mont-regular",
               }}
             >
-              At Starc, we empower individuals with cutting-edge knowledge and
+              At Edifai, we empower individuals with cutting-edge knowledge and
               practical skills. Our diverse course offerings are meticulously
               designed to equip you for the challenges and opportunities of
               tomorrow's landscape. We believe in fostering a dynamic learning
@@ -231,8 +231,7 @@ const About = () => {
               style={{
                 fontFamily: "mont-regular",
               }}
-            >
-              Achievements
+            >Achievements
             </h2>
             <p className="text-l text-gray-600 pr-48  p-1 3xl:text-xl 2xl:text-sm xl:text-[10px] lg:text-[10px] ">
               Our commitment to excellence has led us to achieve significant
@@ -350,7 +349,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="flex flex-wrap  3xl:p-10 2xl:p-10 ">
+          <div className="flex flex-wrap items-center  3xl:p-10 2xl:p-10 ">
             {/* left side */}
             <div className="w-1/2 space-y-10 mb-5">
               <div className="flex flex-col space-y-4 items-start 3xl:w-[683px]  2xl:w-[400px]  ">

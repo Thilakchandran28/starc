@@ -30,24 +30,7 @@ const teamMembers: TeamMember[] = [
     company: "Flowbase",
     socials: { facebook: "#", instagram: "#", twitter: "#" },
   },
-  {
-    name: "Dylan",
-    role: "Full Stack",
-    company: "Flowbase",
-    socials: { facebook: "#", instagram: "#", twitter: "#" },
-  },
-  {
-    name: "Amaya ",
-    role: "UI Designer",
-    company: "Flowbase",
-    socials: { facebook: "#", instagram: "#", twitter: "#" },
-  },
-  {
-    name: "Sam Smith",
-    role: "UX Designer",
-    company: "Flowbase",
-    socials: { facebook: "#", instagram: "#", twitter: "#" },
-  },
+ 
   {
     name: "Cecilia Evans",
     role: "UI Designer",
@@ -58,19 +41,19 @@ const teamMembers: TeamMember[] = [
 
 export default function StarcTeam() {
   return (
-    <section className="bg-white py-16 px-6 flex flex-col justify-center items-center  ">
-      <div className="text-center mb-12 lg:w-[70%] 3xl:w-[1216px] flex ">
+    <section className="bg-white py-16 px-6 flex flex-col justify-start items-center  ">
+      <div className="text-center mb-12 lg:w-[70%] 3xl:w-[1200px] flex ">
         <div className="flex flex-col justify-start ">
-          <p className="text-purple-600  text-sm text-left  font-mont font-semibold ">
+          <p className="text-[#8A63FF]  text-sm text-left  font-mont font-semibold  xl:text-[1.5rem]">
             Our Team
           </p>
-          <h2 className="lg:text-2xl xl:text-2xl 2xl:text-3xl md:text-4xl 3xl:m-6 text-left font-mont font-medium mt-2">
-            Starc, Team:
+          <h2 className="lg:text-2xl xl:text-2xl 2xl:text-3xl md:text-4xl  text-left font-mont font-medium mt-8">
+            Edifai, Team:
           </h2>
         </div>
       </div>
 
-      <div className="flex  justify-center w-full  h-[440px] ">
+      <div className="flex  justify-center w-full  h-[240px] ">
         <div className="flex flex-wrap justify-between items-center lg:w-[70%] xl:w-[63%%] 2xl:w-[63%] 3xl:w-[63%]">
           {teamMembers.map((member, idx) => (
             <div
