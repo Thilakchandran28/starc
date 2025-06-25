@@ -37,7 +37,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
   setView,
 }) => {
   return (
-    <div className="w-full h-screen flex items-center justify-center">
+    <div className="w-full h-screen flex items-center justify-center  border border-green-400">
       <div className="w-full max-w-xs">
         <h2 className="text-2xl font-bold text-gray-900 mb-6 font-mont">
           Welcome Back 👋

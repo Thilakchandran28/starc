@@ -43,18 +43,18 @@ const LoginForm: React.FC<LoginFormProps> = ({
   setView,
 }) => {
   return (
-    <div className="w-full h-screen flex items-center justify-center">
-      <div className="w-full max-w-xs">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6 font-mont">
+    <div className="w-full h-screen flex items-start justify-center border border-black">
+      <div className="w-full xl:mt-20 2xl:mt-28 xl:h-[508px] xl:w-[281px] 2xl:h-[608px] 2xl:w-[337px]  3xl:h-[708px] 3xl:w-[428px] border border-blue-500">
+        <h2 className="2xl:text-[27px] 3xl:text-[30px] font-bold text-gray-900 mb-6 font-mont">
           Welcome Back! 👋
         </h2>
         <form className="space-y-4" onSubmit={handleLogin}>
           <div>
-            <p className="text-sm text-gray-600 mb-2 pb-6 font-mont">
+            <p className="xl:text-[16px] 2xl:text-[18px] text-gray-600 mb-2 pb-6 font-mont">
               Sign Up Now—Discover 500+ Courses are
               <br /> waiting for your Learning
             </p>
-            <label className="block text-sm font-medium text-gray-700 mb-1 font-mont">
+            <label className="xl:text-[14px] 2xl:text-[16px] 3xl:text-[18px] block  font-medium text-gray-700 mb-1 font-mont">
               Email address/Phone Number*
             </label>
             <Input
@@ -64,7 +64,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
               onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 setEmail(e.target.value)
               }
-              className={`h-10 px-3 rounded-lg border ${
+              className={`2xl:h-[58px] 2xl:w-[335px] 3xl:h-[64px] 3xl:w-[426px] px-3 rounded-lg border ${
                 isEmailValid ? "border-gray-300" : "border-red-500"
               } focus:ring-purple-500 focus:border-purple-500 text-sm`}
             />
@@ -75,7 +75,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
             )}
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1 font-mont">
+            <label className="xl:text-[14px] 2xl:text-[16px] block text-sm font-medium text-gray-700 mb-1 font-mont">
               Password*
             </label>
             <div className="relative">
@@ -86,7 +86,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   setPassword(e.target.value)
                 }
-                className={`h-10 px-3 rounded-lg border ${
+                className={`2xl:h-[58px] 2xl:w-[335px] 3xl:h-[64px] 3xl:w-[426px] px-3 rounded-lg border ${
                   isPasswordValid ? "border-gray-300" : "border-red-500"
                 } focus:ring-purple-500 focus:border-purple-500 pr-10 text-sm`}
               />
@@ -112,7 +112,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
               <button
                 type="button"
                 onClick={() => setView("forgot")}
-                className="text-xs text-black font-medium font-mont underline"
+                className="xl:text-[14px] 2xl:text-[16px] text-black font-medium font-mont underline"
               >
                 Forgot password?
               </button>
@@ -120,7 +120,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
           </div>
           <Button
             style={{ backgroundColor: "#8A63FF" }}
-            className="w-full h-10 text-white rounded-lg text-sm font-mont font-semibold"
+            className="w-full xl:h-[54px] 2xl:h-[60px] 3xl:h-[64px] text-white rounded-lg xl:text-[18px] 2xl:text-[20px] font-mont font-semibold"
           >
             Login
           </Button>
@@ -129,7 +129,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
             <span className="text-gray-300 text-xs mx-1.5 font-mont">Or</span>
             <div className="flex-1 h-px bg-gray-200 max-w-[140px]"></div>
           </div>
-          <div className="flex space-x-2">
+          <div className="flex space-x-2 border border-black justify-between">
             <LoginSocialGoogle
               client_id={
                 import.meta.env.VITE_GOOGLE_CLIENT_ID ||
@@ -145,9 +145,9 @@ const LoginForm: React.FC<LoginFormProps> = ({
             >
               <Button
                 variant="outline"
-                className="w-22 h-10 border border-gray-300 text-gray-700 rounded-sm text-xs font-semibold font-mont flex items-center justify-center gap-1"
+                className="xl:w-[135px] xl:h-[48px] 2xl:w-[160px] 2xl:h-[58px]  3xl:w-[203px] 3xl:h-[64px] border border-gray-300 text-gray-700 rounded-sm xl:text-[11px] 2xl:text-[13px] 3xl:text-[15px] font-semibold font-mont flex items-center justify-center gap-1"
               >
-                <svg className="w-4 h-4" viewBox="0 0 24 24">
+                <svg className="xl:w-[20px] xl:h-[20px] 2xl:w-[22px] 2xl:h-[22px] 3xl:w-[24px] 3xl:h-[24px]" viewBox="0 0 24 24">
                   <path
                     fill="#4285F4"
                     d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -171,9 +171,9 @@ const LoginForm: React.FC<LoginFormProps> = ({
             <Link to="/">
               <Button
                 variant="outline"
-                className="w-30 h-10 border border-gray-300 text-gray-700 rounded-sm text-xs font-semibold font-mont"
+                className="xl:w-[135px] xl:h-[48px] 2xl:w-[160px] 2xl:h-[58px]  3xl:w-[203px] 3xl:h-[64px] border border-gray-300 text-gray-700 rounded-sm xl:text-[11px] 2xl:text-[13px] 3xl:text-[15px] font-semibold font-mont"
               >
-                Continue as Guest
+                Continue to Home
               </Button>
             </Link>
           </div>
@@ -275,20 +275,20 @@ const Signup: React.FC = () => {
   }, [slides.length]);
 
   return (
-    <div className="w-full flex items-center justify-center 3xl:3/4">
-      <div className="w-2/3 flex flex-col">
-        <div className="flex justify-center items-center h-[80px] w-[200px] bg-white rounded-full">
+    <div className="w-full flex items-start justify-center ">
+      <div className="w-[60%] mt-28 flex flex-col border border-yellow-400">
+        <div className="flex justify-center xl:ml-10 xl:mb-4 2xl:ml-10 2xl:mb-10 items-center xl:h-[70px] xl:w-[220px] 2xl:h-[80px] 2xl:w-[258px] border border-red-500  bg-white rounded-full" style={{lineHeight:'1'}}>
           <img src={Star} alt="" className="w-4" />
-          <div className="pl-3 leading-3">
-            <span className="text-xs font-medium text-gray-600 font-mont">
+          <div className="pl-3 ">
+            <span className="xl:text-[16px]  2xl:text-[20px] font-medium text-gray-600 font-mont">
               Discover More, Learn <br />
               More - 500+ Courses <br />
               Inside
             </span>
           </div>
         </div>
-        <div className="relative flex justify-center w-full bg-white overflow-hidden ">
-          <div className="bg-white flex justify-center items-center relative   lg:w-[80%] xl:w-[70%] 2xl:w-[80%]  3xl:w-[56%]">
+        <div className="relative flex justify-center w-full  bg-white overflow-hidden border border-red-500 ">
+          <div className="bg-white flex justify-center items-center relative border border-blue-500   lg:w-[80%] xl:w-[70%] 2xl:w-[80%] 3xl:h-[640px]  3xl:w-[802px]">
             <img
               src={Vector}
               alt=""
@@ -431,7 +431,7 @@ const Signup: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="w-1/3">
+      <div className="w-[40%]">
         <Login />
       </div>
     </div>
