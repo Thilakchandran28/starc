@@ -66,7 +66,7 @@ const WhyChoose: React.FC = () => {
 
           {/* Center Video Container */}
           <div className="flex justify-center items-center">
-            {<div className=" mx-auto w-[100%] h-[100%] rounded-3xl overflow-hidden shadow-2xl">
+            {<div className=" mx-auto  rounded-3xl overflow-hidden shadow-2xl">
               {/* <img
                 src={star}
                 alt="Video presenter"
@@ -77,8 +77,9 @@ const WhyChoose: React.FC = () => {
                 }}
               /> */}
               <video
-                className="w-[80%] h-[65%] object-fill"
+                className="w-[100%] h-[65vh] object-fill"
                 loop
+                controls
                 onError={(e) => {
                   console.error("Error loading video:", e);
                   e.currentTarget.poster = "https://via.placeholder.com/320x480";

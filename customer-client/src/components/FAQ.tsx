@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import faqicons from "../Assets/faqicon.png"
+import faqicons from "../Assets/faqicon.png";
+import { FaRegQuestionCircle } from "react-icons/fa";
 
 interface FAQItem {
   question: string;
@@ -47,13 +48,14 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <div className="  lg:has-[60vh]:xl:h-[70vh] 2xl:h-[80vh] 3xl:h-[70vh] flex items-center justify-center py-12 px-4">
+    <div className="  lg:has-[60vh]:xl:h-[70vh] 2xl:h-[100vh] 3xl:h-[70vh] flex items-center justify-center py-12 px-4">
       <div className=" w-[60%]  flex flex-col items-center">
         <button
           // onClick={toggleFAQSection}
           className="flex items-center justify-center space-x-2 w-32 h-12 bg-[#8A63FF] rounded-2xl text-white text-sm font-semibold hover:bg-#8A63FF transition-colors mb-4"
         >
-          <img src={faqicons} className='lg:w-6 lg:h-6 xl:w-8 xl:h-8 2xl:w-9 2xl:h-9'/>
+          {/* <img src={faqicons} className='lg:w-6 lg:h-6 xl:w-8 xl:h-8 2xl:w-9 2xl:h-9'/> */}
+          <FaRegQuestionCircle className='lg:w-4 lg:h-4 xl:w-4 xl:h-4 2xl:w-5 2xl:h-5'/>
           <span>FAQS</span>
         </button>
         <h2 className="lg:text-4xl xl:text-5xl 3xl:text-5xl font-mont font-medium text-gray-900 mb-8 text-center">

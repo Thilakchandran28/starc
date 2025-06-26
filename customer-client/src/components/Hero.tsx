@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
         "Access a world of knowledge. Flexible learning built for your success journey",
     },
     {
-      title: "Advance Your Skills with Curated Learning Paths",
+      title: "Grow Smarter. Learn Faster.",
       description:
         "Learn your way. Expert courses. Full support. Your pace.",
     },

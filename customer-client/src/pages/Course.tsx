@@ -8,6 +8,7 @@ import WallOfLove from "../components/WallOfLove";
 import { useNavigate } from "react-router-dom";
 import heroimage from "../Assets/Vector.png";
 import Recard from "@/components/Card";
+import { Scale } from "lucide-react";
 
 // import ScrollableCourse from "@/components/ScrollableCourse";
 // Define TypeScript interface for a Course
@@ -15,7 +16,7 @@ import Recard from "@/components/Card";
 interface Course {
   title: string;
   instructor: string;
-  description:string;
+  description: string;
   rating: number;
   students: number;
   price: number;
@@ -111,25 +112,23 @@ const FilterSection: React.FC<FilterSectionProps> = ({
         <div className=" flex flex-col  ">
           <div className="flex items-center gap-4 flex-col  ">
             <div className="flex items-center  bg-white-500 p-1   rounded-full  " style={{
-              boxShadow:"0px 0px 22.4px 0px #00000040"
+              boxShadow: "0px 0px 22.4px 0px #00000040"
             }}>
               <button
                 onClick={() => handleToggle("supervised")}
-                className={`px-4 py-2 rounded-full font-semibold transition-colors ${
-                  activeButton === "supervised"
+                className={`px-4 py-2 rounded-full font-semibold transition-colors ${activeButton === "supervised"
                     ? "bg-[#8A63FF] text-white"
                     : "bg-white text-gray-600"
-                }`}
+                  }`}
               >
                 Supervised
               </button>
               <button
                 onClick={() => handleToggle("unsupervised")}
-                className={`px-4 py-2 rounded-full font-semibold transition-colors ${
-                  activeButton === "unsupervised"
+                className={`px-4 py-2 rounded-full font-semibold transition-colors ${activeButton === "unsupervised"
                     ? "bg-[#8A63FF] text-white"
                     : "bg-white text-[#8A63FF]"
-                }`}
+                  }`}
               >
                 Unsupervised
               </button>
@@ -242,7 +241,7 @@ const Course: React.FC = () => {
     {
       title: "Complete React Development Course",
       instructor: "John Doe",
-      description:"Master modern front-end development with this comprehensive React course.",
+      description: "Master modern front-end development with this comprehensive React course.",
       rating: 4.8,
       students: 1234,
       price: 99,
@@ -258,7 +257,7 @@ const Course: React.FC = () => {
     {
       title: "UI/UX Design Fundamentals",
       instructor: "Alex Chen",
-      description:"Explore the essentials of user interface and user experience design.",
+      description: "Explore the essentials of user interface and user experience design.",
       rating: 4.9,
       students: 876,
       price: 119,
@@ -274,7 +273,7 @@ const Course: React.FC = () => {
     {
       title: "Digital Marketing Masterclass",
       instructor: "Sarah Green",
-      description:"Learn everything from SEO, SEM, and social media strategies to email marketing.",
+      description: "Learn everything from SEO, SEM, and social media strategies to email marketing.",
       rating: 4.7,
       students: 987,
       price: 89,
@@ -290,7 +289,7 @@ const Course: React.FC = () => {
     {
       title: "Business Analytics with Python",
       instructor: "David Lee",
-      description:"This course introduces libraries like Pandas, NumPy, and Matplotlib.",
+      description: "This course introduces libraries like Pandas, NumPy, and Matplotlib.",
       rating: 4.6,
       students: 654,
       price: 109,
@@ -306,7 +305,7 @@ const Course: React.FC = () => {
     {
       title: "Photography Fundamentals",
       instructor: "Emily White",
-      description:"Unleash your creativity and learn to design stunning visuals using Adobe Illustrator.",
+      description: "Unleash your creativity and learn to design stunning visuals using Adobe Illustrator.",
       rating: 4.9,
       students: 1500,
       price: 79,
@@ -322,7 +321,7 @@ const Course: React.FC = () => {
     {
       title: "Advanced JavaScript Concepts",
       instructor: "Michael Brown",
-      description:"Discover how to craft compelling content that attracts, engages.",
+      description: "Discover how to craft compelling content that attracts, engages.",
       rating: 4.8,
       students: 1100,
       price: 129,
@@ -338,7 +337,7 @@ const Course: React.FC = () => {
     {
       title: "Graphic Design with Adobe Illustrator",
       instructor: "Olivia Davis",
-      description:"From logos and icons to detailed illustrations and layouts.",
+      description: "From logos and icons to detailed illustrations and layouts.",
       rating: 4.7,
       students: 750,
       price: 95,
@@ -354,7 +353,7 @@ const Course: React.FC = () => {
     {
       title: "Content Marketing Strategy",
       instructor: "Daniel Wilson",
-      description:"This course covers audience research, content planning, storytelling, bloggers.",
+      description: "This course covers audience research, content planning, storytelling, bloggers.",
       rating: 4.5,
       students: 500,
       price: 85,
@@ -370,7 +369,7 @@ const Course: React.FC = () => {
     {
       title: "Financial Modeling for Beginners",
       instructor: "Sophia Miller",
-      description:"earn how to forecast revenues, analyze costs, calculate profitability, and business planning",
+      description: "earn how to forecast revenues, analyze costs, calculate profitability, and business planning",
       rating: 4.6,
       students: 400,
       price: 115,
@@ -385,21 +384,21 @@ const Course: React.FC = () => {
     },
   ];
 
-    const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-    const categories = [
-      "Backend ",
-      "Web Development ",
-      "Cybersecurity",
-      "Data Science ",
-      "Artificial Intelligence ",
-      "Cloud Computing ",
-      "Mobile App Development ",
-      "Electronics",
-      "Digital Marketing ",
-      "Graphic Design",
-      "Project Management ",
-    ];
+  const categories = [
+    "Backend ",
+    "Web Development ",
+    "Cybersecurity",
+    "Data Science ",
+    "Artificial Intelligence ",
+    "Cloud Computing ",
+    "Mobile App Development ",
+    "Electronics",
+    "Digital Marketing ",
+    "Graphic Design",
+    "Project Management ",
+  ];
 
   const filterCards = (category: string) => {
     setSelectedCategory(category);
@@ -430,11 +429,12 @@ const Course: React.FC = () => {
                 position: "relative",
                 left: "0",
                 top: "90px",
+                transform:"ScaleX(-1)"
               }}
             />
             <div className="">
               <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8">
-                Discover Our Starc Courses
+                Discover Our Edifai Courses
               </h1>
               <p className="text-[14px] text-gray-600 max-w-3xl mx-auto mb-8">
                 Discover thousands of courses taught by expert instructors.
@@ -453,10 +453,10 @@ const Course: React.FC = () => {
       />
 
       {/* Category and Course Cards Section */}
-     <div className="flex justify-center  mb-20">
-       <section className="flex justify-center py-8 mb-16 h-screen lg-[90%] xl:w-[90%]">
-        {/* <div className="w-1/4">           */}
-          <section className="flex lg:w-[25%]  xl:w-[25%] 2xl:w-[25%] 3xl:w-[25%] overflow-y-auto px-2 " style={{scrollbarWidth:"thin"}}>
+      <div className="flex justify-center  mb-20">
+        <section className="flex relative justify-center py-8 mb-16  xl:w-[90%]">
+          {/* <div className="w-1/4">           */}
+          <section className=" sticky h-[80vh] top-[90px]  lg:w-[25%]  xl:w-[25%] 2xl:w-[25%] 3xl:w-[25%] overflow-y-auto px-2 " style={{ scrollbarWidth: "thin" }}>
             <div className="w-full">
               <div className="max-w-c mx-auto px-4 sm:px-6 lg:px-10">
                 <h2 className="text-2xl font-mont font-bold mb-4 py-2 text-gray-800 text-center">
@@ -467,11 +467,10 @@ const Course: React.FC = () => {
                     <li
                       key={index}
                       onClick={() => setActiveIndex(index)}
-                      className={`py-4 px-4 lg:text-[10px] xl:text-sm 2xl:text-base 3xl:text-lg cursor-pointer items-start w-[95%] border-gray-200 border-b-[0.1px] transition-all duration-200 ${
-                        index === activeIndex
+                      className={`py-4 px-4 lg:text-[10px] xl:text-sm 2xl:text-base 3xl:text-lg cursor-pointer items-start w-[95%] border-gray-200 border-b-[0.1px] transition-all duration-200 ${index === activeIndex
                           ? "text-[#8A63FF] font-semibold"
                           : "text-gray-800"
-                      }`}
+                        }`}
                     >
                       {category}
                     </li>
@@ -480,26 +479,26 @@ const Course: React.FC = () => {
               </div>
             </div>
           </section>
-          <div className="flex justify-start pl-10 items-center flex-wrap lg:w-[80%]  xl:w-[85%] 2xl:w-[80%] 3xl:w-[80%] px-8 overflow-auto" style={{scrollbarWidth:'none'}}>
-              {filteredCourses.map((course, index) => ( 
-                <div  
-                  key={index}
-                  onClick={() => navigate("/carddetail", { state: { course } })}
-                  className="cursor-pointer xl:[32%] xl:w-[32%] 2xl:w-[32%] lg:mx-2 xl:mx-1 2xl:mx-1 3xl:w-[32%] 3xl:mx-2 "
-                >
-                  <Recard course={course} key={index} />
-                </div>
-              ))}
+          <div className="flex justify-start pl-10 items-center flex-wrap lg:w-[80%]  xl:w-[85%] 2xl:w-[80%] 3xl:w-[80%] px-8 overflow-auto" style={{ scrollbarWidth: 'none' }}>
+            {filteredCourses.map((course, index) => (
+              <div
+                key={index}
+                onClick={() => navigate("/carddetail", { state: { course } })}
+                className="cursor-pointer xl:[32%] xl:w-[32%] 2xl:w-[32%] lg:mx-2 xl:mx-1 2xl:mx-1 3xl:w-[32%] 3xl:mx-2 "
+              >
+                <Recard course={course} key={index} />
+              </div>
+            ))}
             {/* </div> */}
-        </div>
+          </div>
 
-        {/* <div className=" w-50 py-10 lg:p-31 bg-blue-400  "> */}
+          {/* <div className=" w-50 py-10 lg:p-31 bg-blue-400  "> */}
           {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-yellow-500"> */}
-            
+
           {/* </div> */}
-        {/* </div> */}
-      </section>
-     </div>
+          {/* </div> */}
+        </section>
+      </div>
 
       {/* Join Us Section */}
       {/* <section className="py-20 bg-white">

@@ -1,18 +1,19 @@
-import icon from "../Assets/Starcs.png";
+import icon from "../Assets/EDIFAI-1.svg";
 import { IoLogoFacebook } from "react-icons/io";
 
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
-
+import { useNavigate } from "react-router-dom";
 const Footer = () => {
+  const toNavigation=useNavigate();
   return (
     <footer className="bg-white py-12  flex justify-center ">
       <div className="w-[80%] mx-20 px-4 sm:px-6 lg:px-8 w">
         <div className="flex justify-between ">
           <div className="w-[35%]">
-            <div>
-              <img src={icon} alt="" />
+            <div className="cursor-pointer">
+              <img src={icon} className="w-[8rem]" alt="" onClick={()=>toNavigation('/')} />
               <br></br>
             </div>
             <p className="text-black-600 font-mont font-semibold">
@@ -23,7 +24,7 @@ const Footer = () => {
             </p>
             <br></br>
             <p className="text-black-600 font-mont font-semibold">
-              Phone: <span className="font-normal">+91-9363034150</span>
+              Phone: <span className="font-normal">+91-936-303-4150</span>
             </p>
           
             <p className="text-black-600 font-mont font-semibold">
@@ -35,45 +36,45 @@ const Footer = () => {
            <div>
             <h3 className="lg:text-base xl:text-lg 2xl:text-xl 3xl-text-2xl font-mont font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-gray-600">
-              <li>
+              <li onClick={()=>toNavigation('/')}>
+                <p
+                  
+                  className="font-mont hover:text-gray-900 transition-colors cursor-pointer"
+                >
+                  Home
+                </p>
+              </li>
+              <li onClick={()=>toNavigation('/course')}>
                 <a
                   href="#"
-                  className="font-mont hover:text-gray-900 transition-colors"
+                  className="font-mont hover:text-gray-900 transition-colors cursor-pointer"
                 >
-                  Pricing
+                  Courses
                 </a>
               </li>
-              <li>
-                <a
-                  href="#"
-                  className="font-mont hover:text-gray-900 transition-colors"
+              <li onClick={()=>toNavigation('/book')}>
+                <p
+                  
+                  className="font-mont hover:text-gray-900 transition-colors cursor-pointer"
                 >
-                  Jobs
-                </a>
+                  Books
+                </p>
               </li>
-              <li>
-                <a
-                  href="#"
-                  className="font-mont hover:text-gray-900 transition-colors"
+              <li onClick={()=>toNavigation('/about')}>
+                <p
+              
+                  className="font-mont hover:text-gray-900 transition-colors cursor-pointer"
                 >
-                  Employer
-                </a>
+                  About Us
+                </p>
               </li>
-              <li>
-                <a
-                  href="#"
-                  className="font-mont hover:text-gray-900 transition-colors"
-                >
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="font-mont hover:text-gray-900 transition-colors"
+              <li onClick={()=>toNavigation('/contact')}>
+                <p 
+                  
+                  className="font-mont hover:text-gray-900 transition-colors cursor-pointer"
                 >
                   Contact Us
-                </a>
+                </p>
               </li>
             </ul>
           </div>
@@ -82,73 +83,75 @@ const Footer = () => {
             <ul className="space-y-2 text-gray-600">
               <li>
                 <a
-                  href="#"
-                  className="font-mont hover:text-gray-900 transition-colors"
+                  href="https://staciacorp.com/products"
+                  target="/blank"
+                  className="font-mont hover:text-gray-900 transition-colors cursor-pointer"
                 >
-                  How it works
+                  Products
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
-                  className="font-mont hover:text-gray-900 transition-colors"
+                  href="https://staciacorp.com/services"
+                  target="/blank"
+                  className="font-mont hover:text-gray-900 transition-colors cursor-pointer"
                 >
-                  Terms and condition
+                  Services
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
-                  className="font-mont hover:text-gray-900 transition-colors"
+                  href="https://staciacorp.com/project"
+                  target="/blank"
+                  className="font-mont hover:text-gray-900 transition-colors cursor-pointer"
                 >
-                  Privacy Policy
+                 Projects
                 </a>
               </li>
-              <li>
-                <a
-                  href="#"
-                  className="font-mont hover:text-gray-900 transition-colors"
-                >
-                  About Us
-                </a>
-              </li>
+              
             </ul>
           </div>
           <div className="">
-            <h3 className="lg:text-base xl:text-lg 2xl:text-xl 3xl-text-2xl font-mont font-bold mb-4">About us</h3>
+            <h3 className="lg:text-base xl:text-lg 2xl:text-xl 3xl-text-2xl font-mont font-bold mb-4">Company</h3>
             <ul className="space-y-2 text-gray-600">
+              
+              {/* <li>
+                <a
+                  href="https://staciacorp.com/about"
+                  className="font-mont hover:text-gray-900 transition-colors cursor-pointer"
+                >
+                  About
+                </a>
+              </li> */}
               <li>
                 <a
-                  href="#"
-                  className="font-mont hover:text-gray-900 transition-colors"
+                  href="https://staciacorp.com/article"
+                  target="/blank"
+                  className="font-mont hover:text-gray-900 transition-colors cursor-pointer"
                 >
-                  Company milestone
+                  Article
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://staciacorp.com/career"
+                  target="/blank"
+                  className="font-mont hover:text-gray-900 transition-colors cursor-pointer"
+                >
+                  career
                 </a>
               </li>  
               <li>
                 <a
-                  href="#"
-                  className="font-mont hover:text-gray-900 transition-colors"
+                  href="https://staciacorp.com/case-study"
+                  target="/blank"
+                  className="font-mont hover:text-gray-900 transition-colors cursor-pointer"
                 >
-                  Web mail
+                  Casestudy
                 </a>
               </li>
-              <li>
-                <a
-                  href="#"
-                  className="font-mont hover:text-gray-900 transition-colors"
-                >
-                  Board of Directors
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="font-mont hover:text-gray-900 transition-colors"
-                >
-                  Senior Management
-                </a>
-              </li>
+              
+              
             </ul>
           </div>
          </div>
