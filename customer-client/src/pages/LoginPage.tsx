@@ -110,7 +110,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
                 number
               </p>
             )}
-            <div className="text-right mt-1">
+            {/* <div className="text-right mt-1">
               <button
                 type="button"
                 onClick={() => setView("forgot")}
@@ -118,7 +118,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
               >
                 Forgot password?
               </button>
-            </div>
+            </div> */}
           </div>
           <Button
             type="submit"
@@ -135,7 +135,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
             <div className="flex-1 h-px bg-gray-200 max-w-[140px]"></div>
           </div>
           <div className="flex space-x-2  justify-between">
-            <LoginSocialGoogle
+            {/* <LoginSocialGoogle
               client_id={
                 import.meta.env.VITE_GOOGLE_CLIENT_ID ||
                 "897120726098-hjj58tfkldj1j9rhvh0nmed98hb16hbo.apps.googleusercontent.com"
@@ -172,7 +172,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
                 </svg>
                 Sign up with Google
               </Button>
-            </LoginSocialGoogle>
+            </LoginSocialGoogle> */}
             <Link to="/">
               <Button
                 variant="outline"
@@ -183,7 +183,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
             </Link>
           </div>
         </form>
-        <div className="mt-8 text-left">
+        {/* <div className="mt-8 text-left">
           <p className="text-black text-sm font-bold font-mont pt-3">
             Don’t have an account?{" "}
             <Link to="/signup">
@@ -192,7 +192,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
               </span>
             </Link>
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   );

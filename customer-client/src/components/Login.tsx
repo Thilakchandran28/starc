@@ -171,14 +171,14 @@ const LoginForm: React.FC<LoginFormProps> = ({
             </Link>
           </div>
         </form>
-        <div className="mt-8 text-left">
+        {/* <div className="mt-8 text-left">
           <p className="text-black text-sm font-bold font-mont pt-3">
             Don’t have an account?{" "}
             <span className="text-black underline font-bold cursor-pointer">
               Sign up
             </span>
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   );

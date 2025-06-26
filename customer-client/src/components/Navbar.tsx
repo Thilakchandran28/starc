@@ -199,12 +199,12 @@ const Navbar = () => {
                   Log In
                 </Button>
               </Link>
-              <Link to="/signup">
+              {/* <Link to="/signup">
                 <Button className="bg-[#8A63FF]  text-sm lg:text-xs xl:text-sm 2xl:text-base hover:bg-[#6D28D9]  text-white font-mont font-medium rounded-full px-6 py-2 flex items-center justify-center">
                   Sign Up Now
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
-              </Link>
+              </Link> */}
             </>
           )}
         </div>
