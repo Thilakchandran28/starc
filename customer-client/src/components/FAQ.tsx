@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import faqicons from "../Assets/faqicon.png"
+import faqicons from "../Assets/faqicon.png";
+import { FaRegQuestionCircle } from "react-icons/fa";
 
 interface FAQItem {
   question: string;
@@ -14,7 +15,7 @@ const FAQ: React.FC = () => {
     {
       question: "Why do I need to use a Design System?",
       answer:
-        "A Design System is a super useful tool for designers. It helps keep designs consistent and makes the user process faster. You can use pre-designed stuff over and over, and it's helpful for both new and experienced designers. In short, a Design System is like a designer's toolbox for making great-looking and user-friendly designs.",
+        "A Design System is a super useful tool for designers. It helps keep designs consistent and makes the user process faster. You can use pre-designed stuff over and over, and it’s helpful for both new and experienced designers. In short, a Design System is like a designer’s toolbox for making great-looking and user-friendly designs.",
     },
     {
       question: "Is there a preview or a free trial available?",
@@ -47,13 +48,14 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <div className="py-16 mt-16 px-4">
-      <div className="w-[60%] mx-auto flex flex-col items-center">
+    <div className="  lg:has-[60vh]:xl:h-[70vh] 2xl:h-[100vh] 3xl:h-[70vh] flex items-center justify-center py-12 px-4">
+      <div className=" w-[60%]  flex flex-col items-center">
         <button
-          onClick={toggleFAQSection}
+          // onClick={toggleFAQSection}
           className="flex items-center justify-center space-x-2 w-32 h-12 bg-[#8A63FF] rounded-2xl text-white text-sm font-semibold hover:bg-#8A63FF transition-colors mb-4"
         >
-          <img src={faqicons} className='lg:w-6 lg:h-6 xl:w-8 xl:h-8 2xl:w-9 2xl:h-9'/>
+          {/* <img src={faqicons} className='lg:w-6 lg:h-6 xl:w-8 xl:h-8 2xl:w-9 2xl:h-9'/> */}
+          <FaRegQuestionCircle className='lg:w-4 lg:h-4 xl:w-4 xl:h-4 2xl:w-5 2xl:h-5'/>
           <span>FAQS</span>
         </button>
         <h2 className="lg:text-4xl xl:text-5xl 3xl:text-5xl font-mont font-medium text-gray-900 mb-8 text-center">
@@ -66,7 +68,7 @@ const FAQ: React.FC = () => {
                 key={index}
                 className={`border rounded-lg overflow-hidden transition-all ${
                   openIndex === index
-                    ? 'border-purple-500 shadow-md shadow-purple-200 '
+                    ? 'border-[#8A63FF] shadow-md shadow-purple-200 '
                     : 'border-gray-200'
                 }`}
               >
@@ -82,7 +84,7 @@ const FAQ: React.FC = () => {
                   </span>
                 </button>
                 {openIndex === index && (
-                  <div className="px-6 py-4 text-gray-700 lg:text-base xl:text-lg 2xl:text-xl">
+                  <div className="px-6 py-4 text-gray-700 lg:text-base xl:text-sm 3xl:w-[60%]">
                     {faq.answer}
                   </div>
                 )}

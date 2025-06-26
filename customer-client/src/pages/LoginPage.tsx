@@ -47,19 +47,18 @@ const LoginForm: React.FC<LoginFormProps> = ({
   isLoading
 }) => {
   return (
-    <div className="w-full h-screen flex items-center justify-center">
-      <div className="w-full max-w-xs">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6 font-mont">
+    <div className="w-full h-screen flex items-start justify-center ">
+      <div className="w-full xl:mt-20 2xl:mt-28 xl:h-[508px] xl:w-[281px] 2xl:h-[608px] 2xl:w-[337px]  3xl:h-[708px] 3xl:w-[428px] ">
+        <h2 className="2xl:text-[27px] 3xl:text-[30px] font-bold text-gray-900 mb-6 font-mont">
           Welcome Back! 👋
         </h2>
         <form className="space-y-4" onSubmit={handleLogin}>
           <div>
-            <p className="text-sm text-gray-600 mb-2 pb-6 font-mont">
-              Sign Up Now—Discover 500+ Courses are<br/> waiting for your Learning
+           <p className="xl:text-[16px] 2xl:text-[18px] text-gray-600 mb-2 pb-6 font-mont">
+              Sign Up Now—Discover 500+ Courses are
+              <br /> waiting for your Learning
             </p>
-            <label
-              className="block text-sm font-medium text-gray-700 mb-1 font-mont"
-            >
+            <label className="xl:text-[14px] 2xl:text-[16px] 3xl:text-[18px] block  font-medium text-gray-700 mb-1 font-mont">
               Email address/Phone Number*
             </label>
             <Input
@@ -69,9 +68,8 @@ const LoginForm: React.FC<LoginFormProps> = ({
               onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 setEmail(e.target.value)
               }
-              className={`h-10 px-3 rounded-lg border ${
-                isEmailValid ? "border-gray-300" : "border-red-500"
-              } focus:ring-purple-500 focus:border-purple-500 text-sm`}
+                className={`2xl:h-[58px] 2xl:w-[335px] 3xl:h-[64px] 3xl:w-[426px] px-3 rounded-lg border ${isEmailValid ? "border-gray-300" : "border-red-500"
+                } focus:ring-purple-500 focus:border-purple-500 text-sm`}
             />
             {!isEmailValid && (
               <p className="text-red-500 text-xs mt-1 font-mont">
@@ -80,9 +78,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
             )}
           </div>
           <div>
-            <label
-              className="block text-sm font-medium text-gray-700 mb-1 font-mont"
-            >
+            <label className="xl:text-[14px] 2xl:text-[16px] block text-sm font-medium text-gray-700 mb-1 font-mont">
               Password*
             </label>
             <div className="relative">
@@ -93,9 +89,8 @@ const LoginForm: React.FC<LoginFormProps> = ({
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   setPassword(e.target.value)
                 }
-                className={`h-10 px-3 rounded-lg border ${
-                  isPasswordValid ? "border-gray-300" : "border-red-500"
-                } focus:ring-purple-500 focus:border-purple-500 pr-10 text-sm`}
+                className={`2xl:h-[58px] 2xl:w-[335px] 3xl:h-[64px] 3xl:w-[426px] px-3 rounded-lg border ${isPasswordValid ? "border-gray-300" : "border-red-500"
+                  } focus:ring-purple-500 focus:border-purple-500 pr-10 text-sm`}
               />
               <button
                 type="button"
@@ -111,14 +106,15 @@ const LoginForm: React.FC<LoginFormProps> = ({
             </div>
             {!isPasswordValid && (
               <p className="text-red-500 text-xs mt-1 font-mont">
-                Password must be at least 8 characters with a letter and a number
+                Password must be at least 8 characters with a letter and a
+                number
               </p>
             )}
             <div className="text-right mt-1">
               <button
                 type="button"
                 onClick={() => setView("forgot")}
-                className="text-xs text-black font-medium font-mont underline"
+                className="xl:text-[14px] 2xl:text-[16px] text-black font-medium font-mont underline"
               >
                 Forgot password?
               </button>
@@ -126,8 +122,9 @@ const LoginForm: React.FC<LoginFormProps> = ({
           </div>
           <Button
             type="submit"
-            style={{ backgroundColor: "#8A63FF" }}
-            className="w-full h-10 text-white rounded-lg text-sm font-mont font-semibold"
+                       style={{ backgroundColor: "#8A63FF" }}
+            className="w-full xl:h-[54px] 2xl:h-[60px] 3xl:h-[64px] text-white rounded-lg xl:text-[18px] 2xl:text-[20px] font-mont font-semibold"
+
             disabled={isLoading}
           >
             {isLoading ? "Logging in..." : "Login"}
@@ -137,7 +134,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
             <span className="text-gray-300 text-xs mx-1.5 font-mont">Or</span>
             <div className="flex-1 h-px bg-gray-200 max-w-[140px]"></div>
           </div>
-          <div className="flex space-x-2">
+          <div className="flex space-x-2  justify-between">
             <LoginSocialGoogle
               client_id={
                 import.meta.env.VITE_GOOGLE_CLIENT_ID ||
@@ -153,9 +150,9 @@ const LoginForm: React.FC<LoginFormProps> = ({
             >
               <Button
                 variant="outline"
-                className="w-22 h-10 border border-gray-300 text-gray-700 rounded-sm text-xs font-semibold font-mont flex items-center justify-center gap-1"
+                className="xl:w-[135px] xl:h-[48px] 2xl:w-[160px] 2xl:h-[58px]  3xl:w-[203px] 3xl:h-[64px] border border-gray-300 text-gray-700 rounded-sm xl:text-[11px] 2xl:text-[13px] 3xl:text-[15px] font-semibold font-mont flex items-center justify-center gap-1"
               >
-                <svg className="w-4 h-4" viewBox="0 0 24 24">
+                <svg className="xl:w-[20px] xl:h-[20px] 2xl:w-[22px] 2xl:h-[22px] 3xl:w-[24px] 3xl:h-[24px]" viewBox="0 0 24 24">
                   <path
                     fill="#4285F4"
                     d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -177,22 +174,22 @@ const LoginForm: React.FC<LoginFormProps> = ({
               </Button>
             </LoginSocialGoogle>
             <Link to="/">
-            <Button
-              variant="outline"
-              className="w-30 h-10 border border-gray-300 text-gray-700 rounded-sm text-xs font-semibold font-mont"
-            >
-              Continue as Guest
-            </Button>
+              <Button
+                variant="outline"
+                className="xl:w-[135px] xl:h-[48px] 2xl:w-[160px] 2xl:h-[58px]  3xl:w-[203px] 3xl:h-[64px] border border-gray-300 text-gray-700 rounded-sm xl:text-[11px] 2xl:text-[13px] 3xl:text-[15px] font-semibold font-mont"
+              >
+                Continue to Home
+              </Button>
             </Link>
           </div>
         </form>
         <div className="mt-8 text-left">
           <p className="text-black text-sm font-bold font-mont pt-3">
-            Don't have an account?{" "}
+            Don’t have an account?{" "}
             <Link to="/signup">
-            <span className="text-black underline font-bold cursor-pointer">
-              Sign up
-            </span>
+              <span className="text-black underline font-bold cursor-pointer">
+                Sign up
+              </span>
             </Link>
           </p>
         </div>
@@ -285,11 +282,6 @@ const Login: React.FC = () => {
 const Signup: React.FC = () => {
   const slides: Slide[] = [
     {
-      title: "Lorem ipsum dolor sit amet consectetur.",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Arcu a sit commodo tempor nulla blandit. Posuere vel netus auctor phasellus fermentum.",
-    },
-    {
       title: "Discover New Learning Paths Today",
       description:
         "Unlock your potential with our curated courses. Learn at your own pace with expert guidance and support.",
@@ -321,12 +313,12 @@ const Signup: React.FC = () => {
   }, [slides.length]);
 
   return (
-    <div className="w-full flex items-center justify-center 3xl:3/4">
-      <div className="w-2/3 flex flex-col">
-        <div className="flex justify-center items-center h-[80px] w-[200px] bg-white rounded-full">
+    <div className="w-full flex items-start justify-center ">
+      <div className="w-[60%] mt-5 flex flex-col ">
+        <div className="flex justify-center xl:ml-10 xl:mb-4 2xl:ml-10 2xl:mb-10 items-center xl:h-[70px] xl:w-[220px] 2xl:h-[80px] 2xl:w-[258px]  bg-white rounded-full" style={{ lineHeight: '1' }}>
           <img src={Star} alt="" className="w-4" />
-          <div className="pl-3 leading-3">
-            <span className="text-xs font-medium text-gray-600 font-mont">
+          <div className="pl-3 ">
+            <span className="xl:text-[16px]  2xl:text-[20px] font-medium text-gray-600 font-mont">
               Discover More, Learn <br />
               More - 500+ Courses <br />
               Inside
@@ -357,12 +349,17 @@ const Signup: React.FC = () => {
                         </span>
                       ))}
                   </h1>
-                  <p className="text-base text-gray-600 mb-8 leading-relaxed font-mont max-w-2xl mx-auto animate-pop-slide">
+
+                  <p className=" w-full lg:text-[10px] lg:h-[36px] xl:text-[12px] xl:h-[42px] 2xl:text-[14px] 2xl:h-[52px] 3xl:text-[16px] 3xl:h-[62px] text-gray-600  leading-relaxed font-mont flex items-center animate-pop-slide  ">
                     {slides[currentSlide].description}
                   </p>
                 </div>
+                {/* Description */}
+
               </div>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+
+              {/* horizontal purple bar */}
+              <div className="flex  items-center justify-center gap-4 lg:mt-4 lg:mb-5 xl:mt-2 xl:mb-8 2xl:mt-6 2xl:mb-10  ">
                 {currentSlide === 0 ? (
                   <>
                     <Button
@@ -370,10 +367,25 @@ const Signup: React.FC = () => {
                         backgroundColor: "#8A63FF",
                         boxShadow: "0px 10px 16px 0px rgba(0, 0, 0, 0.2)",
                       }}
-                      className="bg-purple-600 hover:bg-purple-700 text-white rounded-sm px-6 py-2 text-sm font-mont"
+                      className="bg-purple-600 hover:bg-purple-700 text-white rounded-sm px-6 py-2 lg:text-[10px] lg:h-[30px] lg:w-[155px] xl:text-[11px] xl:h-[40px] xl:w-[175px] 2xl:text-[12px] 2xl:h-[44px] 2xl:w-[175px] font-mont"
                     >
                       Start learning Now
                     </Button>
+                    {/* <div className="flex items-center  ">
+                      <div className="flex ">
+                        {[1, 2, 3, 4].map((i) => (
+                          <img
+                            key={i}
+                            className="w-10 h-10 rounded-full border-2 border-white"
+                            src={`https://i.pravatar.cc/32?img=${i}`}
+                            alt={`Student ${i}`}
+                          />
+                        ))}
+                      </div>
+                      <span className="lg:text-[9px] xl:text-[9px] 2xl:text-[10px] text-gray-600 font-mont">
+                        1k+ students
+                      </span>
+                    </div> */}
                     <div className="flex items-center gap-2">
                       <div className="flex -space-x-2">
                         {[1, 2, 3, 4].map((i) => (
@@ -385,9 +397,7 @@ const Signup: React.FC = () => {
                           />
                         ))}
                       </div>
-                      <span className="text-sm text-gray-600 font-mont">
-                        1k+ students
-                      </span>
+                      <span className="text-sm text-gray-600">1k+ students</span>
                     </div>
                   </>
                 ) : currentSlide === 1 ? (
@@ -396,7 +406,7 @@ const Signup: React.FC = () => {
                       backgroundColor: "#8A63FF",
                       boxShadow: "0px 10px 16px 0px rgba(0, 0, 0, 0.2)",
                     }}
-                    className="bg-purple-600 hover:bg-purple-700 text-white rounded-sm px-6 py-2 text-sm font-mont"
+                    className="bg-purple-600 hover:bg-purple-700 text-white rounded-sm px-6 py-2 lg:text-[10px] lg:h-[30px] lg:w-[155px] xl:text-[11px] xl:h-[40px] xl:w-[175px] 2xl:text-[12px] 2xl:h-[44px] 2xl:w-[175px]  font-mont"
                   >
                     Express Your Interest Now
                   </Button>
@@ -419,9 +429,9 @@ const Signup: React.FC = () => {
                 )}
               </div>
               <div className="flex justify-center">
-                <div className="w-64 h-1 bg-gray-200 rounded-full overflow-hidden cursor-pointer">
+                <div className="lg:w-[115px] lg:h-[4px] xl:w-[125px] 2xl:w-[145px] xl:h-[5px] bg-gray-200 rounded-full overflow-hidden cursor-pointer">
                   <div
-                    className="h-full bg-purple-600 rounded-full"
+                    className="h-full  bg-purple-600 rounded-full"
                     style={{
                       width: `${100 / slides.length}%`,
                       transform: `translateX(${currentSlide * 100}%)`,
@@ -468,7 +478,7 @@ const Signup: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="w-1/3">
+      <div className="w-[40%]">
         <Login />
       </div>
     </div>

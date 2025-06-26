@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Star, Clock, Users, BookOpen, Filter } from "lucide-react";
 import WallOfLove from "../components/WallOfLove";
 import { useNavigate } from "react-router-dom";
 import heroimage from "../Assets/Vector.png";
@@ -200,13 +203,12 @@ const BooksPage = () => {
   const filteredBooks = getFilteredBooks();
 
   return (
-    <div className="min-h-screen bg-white font-mont">
+    <div className="min-h-screen bg-white">
       <Navbar />
-
       {/* Hero Section */}
-      <section className="relative bottom-20">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="flex flex-col justify-center items-center">
+   <section className=" relative bottom-20 ">
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 text-center ">
+          <div className=" flex flex-col justify-center items-center">
             <img
               src={heroimage}
               alt="Hero Image"
@@ -217,6 +219,7 @@ const BooksPage = () => {
                 position: "relative",
                 left: "0",
                 top: "90px",
+                transform:"ScaleX(-1)"
               }}
             />
             <div className="">
@@ -337,14 +340,14 @@ const BooksPage = () => {
         ) : error ? (
           <div className="text-red-500 text-center py-8">{error}</div>
         ) : (
-          <section className="flex justify-center py-8 mb-16 h-screen lg-[90%] xl:w-[90%]">
-            <section className="flex lg:w-[25%] xl:w-[25%] 2xl:w-[25%] 3xl:w-[25%] overflow-y-auto px-2" style={{scrollbarWidth:"thin"}}>
+          <section className="flex relative justify-center  py-8 mb-16  lg-[90%] xl:w-[90%] ">
+          <section className=" sticky h-[80vh] top-[90px] lg:w-[25%]  xl:w-[25%] 2xl:w-[25%] 3xl:w-[25%] overflow-y-auto px-2 " style={{scrollbarWidth:"thin"}}>
             <div className="w-full">
               <div className="max-w-c mx-auto px-4 sm:px-6 lg:px-10">
                 <h2 className="text-2xl font-mont font-bold mb-4 py-2 text-gray-800 text-center">
                   Categories
                 </h2>
-                <ul className="w-full h-full overflow-y-auto pr-2 border-r-2 custom-scrollbar">
+                <ul className="w-full h-full overflow-y-auto pr-2  custom-scrollbar">
                   {categories.map((category, index) => (
                     <li
                       key={index}
@@ -366,7 +369,7 @@ const BooksPage = () => {
             </div>
           </section>
             
-            <div className="flex justify-start pl-10 items-center flex-wrap lg:w-[80%] xl:w-[85%] 2xl:w-[80%] 3xl:w-[80%] px-8 overflow-auto" style={{scrollbarWidth:'none'}}>
+            <div className="flex justify-start flex-wrap lg:w-[80%]  xl:w-[85%] 2xl:w-[80%] 3xl:w-[80%] px-8 overflow-auto" style={{scrollbarWidth:'none'}}>
               {filteredBooks.length > 0 ? (
                 filteredBooks.map((book, index) => (
                 <div  
@@ -395,5 +398,4 @@ const BooksPage = () => {
     </div>
   );
 };
-
 export default BooksPage;

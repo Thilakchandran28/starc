@@ -114,7 +114,7 @@ const CardDetail: React.FC = () => {
         <Navbar />
         <div className="flex items-center justify-center h-[calc(100vh-80px)]">
           <div className="text-center">
-            <Spinner className="mx-auto h-12 w-12 text-[#8A63FF]" />
+            <Spinner/>
             <p className="mt-4 text-gray-600">Loading course details...</p>
           </div>
         </div>
@@ -175,13 +175,13 @@ const CardDetail: React.FC = () => {
             {/* Back Button */}
             <button
               onClick={handleGoBack}
-              className="flex items-center bg-[#8A63FF] text-white text-sm font-semibold px-4 py-1 rounded-full hover:bg-[#6D28D9] transition"
+              className="flex items-center bg-[#8A63FF] text-white text-sm font-semibold px-4 py-2 rounded-full hover:bg-[#6D28D9] transition"
             >
               <IoArrowBack className="mr-1" />
               Back
             </button>
             {/* Supervised Course Tag */}
-            <span className="inline-block bg-[#8A63FF] text-white text-sm font-semibold px-4 py-1 rounded-full">
+            <span className="inline-block bg-[#8A63FF] text-white text-sm font-semibold px-4 py-2 rounded-full">
               {course.level.charAt(0).toUpperCase() + course.level.slice(1)} Level
             </span>
             {course.category && (
@@ -213,7 +213,7 @@ const CardDetail: React.FC = () => {
           </div>
 
           {/* --------------- */}
-          <div className="bg-white p-6 shadow-[0_0_10px_0_rgba(0,0,0,0.2)] rounded-lg">
+          <div className="bg-white p-16 shadow-[0_0_10px_0_rgba(0,0,0,0.2)] rounded-lg">
             {/* What You'll Learn Section */}
             <div className="mb-8">
               <div className="grid grid-cols-1 mb-4 w-full">
@@ -221,11 +221,11 @@ const CardDetail: React.FC = () => {
                 <p className=''>{course.title} Fundamentals:</p>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="flex items-end pl-60">
                 {course.lessons && course.lessons.length > 0 ? (
                   <ul className="space-y-5">
                     {course.lessons.slice(0, Math.ceil(course.lessons.length / 2)).map((lesson, index) => (
-                      <li key={index} className="flex items-center text-gray-600">
+                      <li key={index} className="flex items-center gap-2 text-gray-600">
                         <div className="flex items-end pl-1">
                           <img src={frame} alt="" className="w-5 h-5" />
                         </div>
@@ -244,6 +244,13 @@ const CardDetail: React.FC = () => {
                         <div className="flex items-end pl-1">
                           <img src={frame} alt="" className="w-5 h-5" />
                         </div>
+
+                         {/* <div className="flex items-center justify-center   w-5 h-5 bg-green-600 rounded-full">
+                     <FaCheck className='text-white ' size={"0.75rem"} />
+                      
+                    </div> */}
+
+
                         {lesson.title}
                       </li>
                     ))}
@@ -262,9 +269,9 @@ const CardDetail: React.FC = () => {
                       <img src={Behance} alt="" className="w-15 h-12" />
                     </div>
                   </div>
-                  <p className="text-gray-600 font-mont font-semibold">Portfolio Building</p>
+                  <p className="text-gray-600 font-mont font-semibold">Behance Profile</p>
                   <p className="text-gray-500 text-sm">
-                    Showcase projects, collaborate, network, showcase skills
+                    Showcase projects, collaborate, network, showcase skills, attract opportunities
                   </p>
                 </div>
                 <div className="text-center space-y-2">
@@ -303,7 +310,7 @@ const CardDetail: React.FC = () => {
             <div className="">
               <h2 className="text-xl font-semibold text-[#8A63FF] mb-4">What You'll Get</h2>
               <div className="grid grid-cols-4 gap-4">
-                <div className="text-center">
+                <div className="text-center space-y-3">
                   <div className="flex items-center justify-center">
                     <div className="flex items-end pl-0">
                       <img src={coc} alt="" className="w-12 h-12" />
@@ -314,7 +321,7 @@ const CardDetail: React.FC = () => {
                     Receive a certificate to validate your skills and enhance your profile
                   </p>
                 </div>
-                <div className="text-center">
+                <div className="text-center space-y-3">
                   <div className=" flex items-center justify-center">
                     <div className="flex items-end pl-0">
                       <img src={reference} alt="" className="w-12 h-12" />
@@ -325,7 +332,7 @@ const CardDetail: React.FC = () => {
                     Access comprehensive materials to support continued learning
                   </p>
                 </div>
-                <div className="text-center">
+                <div className="text-center space-y-3">
                   <div className=" flex items-center justify-center">
                     <div className="flex items-end pl-0">
                       <img src={skill} alt="" className="w-12 h-12" />
@@ -336,7 +343,7 @@ const CardDetail: React.FC = () => {
                     Evaluate your expertise with in-depth skill assessments
                   </p>
                 </div>
-                <div className="text-center">
+                <div className="text-center space-y-3">
                   <div className=" flex items-center justify-center">
                     <div className="flex items-end pl-0">
                       <img src={mentor} alt="" className="w-12 h-12" />
@@ -357,7 +364,8 @@ const CardDetail: React.FC = () => {
           {checkingEnrollment ? (
             <div className="w-[100%] bg-white p-6 shadow-lg rounded-lg border border-[#8A63FF4D]">
               <div className="text-center py-10">
-                <Spinner className="mx-auto h-10 w-10 text-[#8A63FF] mb-4" />
+                <Spinner />
+                {/* <Spinner className="mx-auto h-10 w-10 text-[#8A63FF] mb-4" /> */}
                 <p className="text-gray-600">Checking enrollment status...</p>
               </div>
             </div>
@@ -402,7 +410,10 @@ const CardDetail: React.FC = () => {
 
       {/* Other Components */}
       <WallOfLove />
-      <PurpleBox />
+      <div className='flex justify-center'>
+
+        <PurpleBox />
+      </div>
       <Footer />
     </div>
   );

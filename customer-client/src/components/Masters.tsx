@@ -98,7 +98,7 @@ const Masters = () => {
                 onClick={() => handleCategoryClick(category.name)}
                 className={`relative flex items-center gap-2 px-3 py-2 text-sm font-medium transition-colors duration-300
                  ${isActive 
-                 ? "text-blue-600 g-gradient-to-b from-transparent from-49.76% to-[#E6F0FF]" 
+                 ? "text-blue-600 g-gradient-to-b from-transparent from-49.76% via-transparent to-[#E6F0FF]" 
                  : "text-gray-500 hover:text-blue-500"}`}
               >
                 <Icon className={`w-5 h-5 ${isActive ? "text-blue-600" : "text-gray-500"}`} />
@@ -174,6 +174,72 @@ const Masters = () => {
             </p>
           </div>
         )}
+
+
+        //  <div className="w-[100%] flex justify-center items-center">
+        //   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 w-[70%]">
+        //     {filteredMasters.map((master) => (
+              
+        //       <div
+        //         key={master.id}
+        //         className={`
+       
+                
+        //         group 
+       
+        //         bg-white rounded-xl p-1 transition-all duration-100 ease-in-out
+       
+        //         transform-gpu cursor-pointer
+       
+        //         hover:bg-[#8A63FF1A]              
+        
+        //         hover:shadow-xl hover:shadow-purple-100 
+       
+        //         hover:border-[#8A63FF]  
+        //         border-gray-100 border 
+     
+        //       `}
+
+        //       >
+               
+        //         <div className="flex flex-col items-center text-center w-[100%]   p-4  rounded-2xl  overflow-hidden">
+        //           <img
+        //             src={master.image}
+        //             alt={master.name}
+        //             className="lg:w-14 lg:h-14 xl:w-20 xl:h-20 rounded-full object-cover mb-2 shadow-md"
+        //           />
+                  
+        //           <div className="flex items-center mb-4">
+        //             <Star className="w-4 h-4 text-yellow-400 fill-yellow-400 mr-1 group-hover:fill-yellow-400" />
+        //             <span className="text-gray-600 text-sm">
+        //               {master.rating} ({master.reviews})
+        //             </span>
+        //           </div>
+        //           <div className="mb-4"> 
+        //             <h3 className="font-semibold lg:text-sm xl:text-base 2xl:text-lg text-gray-900">{master.name}</h3>
+        //             <p className="lg:text-xs xl:text-sm 2xl:text-base text-gray-500">{master.role}</p>
+        //           </div>
+        //           <div className="flex  justify-center gap-1">
+                   
+        //           </div>
+        //         </div>
+        //       </div>
+        //     ))}
+        //   </div>
+
+        // </div>
+        
+        // <div className="flex justify-center mt-12">
+        //   <Link
+        //     to="#" 
+        //     className="flex items-center px-6 py-2 bg-white text-[#8A63FF] border border-[#8AB9FF] rounded-full hover:bg-[#8A63FF] hover:text-white transition-colors duration-300 shadow-md"
+        //   >
+        //     View All
+        //     <span className="ml-2 flex items-center justify-center w-6 h-6 bg-[#8A63FF] rounded-full">
+        //       <ArrowUp className="w-4 h-4 text-white transform rotate-45" />
+        //     </span>
+        //   </Link>
+        // </div>
       </div>
     </section>
   );

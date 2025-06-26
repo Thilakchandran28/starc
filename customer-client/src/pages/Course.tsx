@@ -7,11 +7,13 @@ import { useNavigate } from "react-router-dom";
 import heroimage from "../Assets/Vector.png";
 import Recard from "@/components/Card";
 import courseService, { ICourse } from "@/services/courseService";
+import { Scale } from "lucide-react";
 
 // Define TypeScript interface for a Course
 interface Course {
   title: string;
   instructor: string;
+  // description: string;
   rating: number;
   students: number;
   price: number;
@@ -107,35 +109,35 @@ const FilterSection: React.FC<FilterSectionProps> = ({
       <div className="max-w-7xl mx-auto px-4  sm:px-6 lg:px-8">
         <div className=" flex flex-col  ">
           <div className="flex items-center gap-4 flex-col  ">
-            <div className="flex items-center  bg-white-500 p-1   rounded-full  shadow-md">
+            <div className="flex items-center  bg-white-500 p-1   rounded-full  " style={{
+              boxShadow: "0px 0px 22.4px 0px #00000040"
+            }}>
               <button
                 onClick={() => handleToggle("supervised")}
-                className={`px-4 py-2 rounded-full font-semibold transition-colors ${
-                  activeButton === "supervised"
-                    ? "bg-[#7C3AED] text-white"
+                className={`px-4 py-2 rounded-full font-semibold transition-colors ${activeButton === "supervised"
+                    ? "bg-[#8A63FF] text-white"
                     : "bg-white text-gray-600"
-                }`}
+                  }`}
               >
                 Supervised
               </button>
               <button
                 onClick={() => handleToggle("unsupervised")}
-                className={`px-4 py-2 rounded-full font-semibold transition-colors ${
-                  activeButton === "unsupervised"
-                    ? "bg-[#7C3AED] text-white"
-                    : "bg-white text-[#9539E5]"
-                }`}
+                className={`px-4 py-2 rounded-full font-semibold transition-colors ${activeButton === "unsupervised"
+                    ? "bg-[#8A63FF] text-white"
+                    : "bg-white text-[#8A63FF]"
+                  }`}
               >
                 Unsupervised
               </button>
             </div>
-            <span className="text-sm text-gray-500 max-w-sm  ">
+            <span className="text-sm text-[#8A63FF] lg:w-[50%] xl:w-[40%] flex text-center">
               {description}
             </span>
           </div>
         </div>
 
-        <div className="p-20 ">
+        <div className="p-10 w-[100%] h-auto ">
           <h2 className="text-2xl font-semibold mb-6">Courses (957)</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div>
@@ -178,7 +180,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({
               </label>
               <select
                 id="sort"
-                className="w-full rounded-full border: 20px solid border border-[#00000040] px-4 py-2 pl-10 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
+                className="w-full rounded-full border: 20px solid border border-[#00000040] px-4 py-2  focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
               >
                 <option>Latest</option>
                 <option>Most Popular</option>
@@ -384,13 +386,14 @@ const Course: React.FC = () => {
                 position: "relative",
                 left: "0",
                 top: "90px",
+                transform:"ScaleX(-1)"
               }}
             />
             <div className="">
               <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8">
-                Discover Our Starc Courses
+                Discover Our Edifai Courses
               </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              <p className="text-[14px] text-gray-600 max-w-3xl mx-auto mb-8">
                 Discover thousands of courses taught by expert instructors.
                 Start learning today and advance your career.
               </p>
@@ -413,32 +416,30 @@ const Course: React.FC = () => {
       {/* Category and Course Cards Section */}
       <div className="flex justify-center mb-20">
         {loading ? (
-          <div className="flex justify-center items-center h-64">
-            <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-purple-500"></div>
+          <div className="flex relative justify-center py-8 mb-16  xl:w-[90%]">
+            <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#8A63FF]"></div>
           </div>
         ) : error ? (
           <div className="text-red-500 text-center py-8">{error}</div>
         ) : (
-       <section className="flex justify-center py-8 mb-16 h-screen lg-[90%] xl:w-[90%]">
-            <section className="flex lg:w-[25%] xl:w-[25%] 2xl:w-[25%] 3xl:w-[25%] overflow-y-auto px-2" style={{scrollbarWidth:"thin"}}>
+       <section className="flex relative justify-center py-8 mb-16  xl:w-[90%]">
+            <section className="sticky h-[80vh] top-[90px]  lg:w-[25%]  xl:w-[25%] 2xl:w-[25%] 3xl:w-[25%] overflow-y-auto px-2 " style={{scrollbarWidth:"thin"}}>
             <div className="w-full">
               <div className="max-w-c mx-auto px-4 sm:px-6 lg:px-10">
                 <h2 className="text-2xl font-mont font-bold mb-4 py-2 text-gray-800 text-center">
                   Categories
                 </h2>
-                <ul className="w-full h-full overflow-y-auto pr-2 border-r-2 custom-scrollbar">
+                <ul className="w-full h-full overflow-y-auto pr-2 custom-scrollbar">
                   {categories.map((category, index) => (
                     <li
                       key={index}
-                        onClick={() => {
-                          setActiveIndex(index);
-                          filterCards(index === 0 ? "all" : category.toLowerCase());
-                        }}
-                      className={`py-4 px-4 lg:text-[10px] xl:text-sm 2xl:text-base 3xl:text-lg cursor-pointer items-start w-[95%] border-gray-200 border-b-[0.1px] transition-all duration-200 ${
-                        index === activeIndex
-                          ? "text-[#7C3AED] font-semibold"
+                      onClick={() =>{ setActiveIndex(index);
+                      filterCards(index === 0 ? "all" : category.toLowerCase());
+                      }}
+                      className={`py-4 px-4 lg:text-[10px] xl:text-sm 2xl:text-base 3xl:text-lg cursor-pointer items-start w-[95%] border-gray-200 border-b-[0.1px] transition-all duration-200 ${index === activeIndex
+                          ? "text-[#8A63FF] font-semibold"
                           : "text-gray-800"
-                      }`}
+                        }`}
                     >
                       {category}
                     </li>
@@ -448,7 +449,7 @@ const Course: React.FC = () => {
             </div>
           </section>
             
-            <div className="flex justify-start pl-10 items-center flex-wrap lg:w-[80%] xl:w-[85%] 2xl:w-[80%] 3xl:w-[80%] px-8 overflow-auto" style={{scrollbarWidth:'none'}}>
+            <div className="flex justify-start pl-10 items-center flex-wrap lg:w-[80%]  xl:w-[85%] 2xl:w-[80%] 3xl:w-[80%] px-8 overflow-auto" style={{scrollbarWidth:'none'}}>
               {filteredCourses.length > 0 ? (
                 filteredCourses.map((course, index) => (
                 <div  

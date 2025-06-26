@@ -25,24 +25,24 @@ const Index = () => {
       <div className="flex justify-center text-center flex-col font-mont pt-[5%]">
         {/* Header */}
         <div className="text-center mb-1">
-          <h2 className="lg:text-4xl xl:text-5xl 3xl:text-5xl font-mont font-medium text-gray-900 mb-4">Why Choose Starc?</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            At Starc, we're dedicated to providing an unparalleled learning
-experience that equips you for success in today's dynamic world.
+          <h2 className="lg:text-4xl xl:text-5xl 3xl:text-5xl font-mont font-medium text-gray-900 mb-4">Why Choose Edifai?</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto items-center">
+            At Edifai, we're dedicated to providing an unparalleled learning
+            experience that equips you for success in today's dynamic world.
           </p>
         </div>
         <WhyChoose />
       </div>
-      <div className="flex justify-center text-center flex-col   pt-[5%]">
-        {/* Header */}
+      {/* <div className="flex justify-center text-center flex-col   pt-[5%]">
+        
         <div className="text-center mb-1">
-          <h2 className="lg:text-4xl xl:text-5xl 3xl:text-5xl font-mont font-medium text-gray-900 mb-4">Discover Our Starc Masters</h2>
+          <h2 className="lg:text-4xl xl:text-5xl 3xl:text-5xl font-mont font-medium text-gray-900 mb-4">Discover Our Edifai Mentors</h2>
           <p className="text-gray-600 lg:text-sm xl:text-base 2xl:text-lg mx-auto">
-            Find the best master for your company and boosts your business 10x!
+            Find the best courses for your company and boosts your career 10x!
           </p>
         </div>
         <Masters />
-      </div>
+      </div> */}
 
 
       <HowItWorks />

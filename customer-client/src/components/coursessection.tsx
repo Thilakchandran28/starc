@@ -38,7 +38,7 @@ function Recard({ course }: { course: ICourse }) {
 
   return (
     <div 
-      className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer lg:w-[215px] lg:h-[350px] xl:w-[250px] xl:h-[400px] 2xl:w-[290px] 2xl:h-[500px] 3xl:h-[617px] 3xl:w-[380px] lg:my-2 xl:my-5"
+      className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer lg:w-[215px] lg:h-[350px] xl:w-[250px] xl:h-[400px] 2xl:w-[290px] 2xl:h-[500px] 3xl:h-[500px] 3xl:w-[380px] lg:my-2 xl:my-5"
       onClick={() => navigate(`/course/${course._id}`)}
     >
       <img
@@ -46,7 +46,7 @@ function Recard({ course }: { course: ICourse }) {
         alt={course.title}
         className="w-full lg:h-[45%] xl:h-[45%] 2xl:h-[45%] 3xl:h-[45%] object-cover rounded-[10%] px-4 py-4 pl-4 pr-4"
       />
-      <div className="px-4 py-3">
+      <div className="px-4 py-[1rem]">
         <div className="flex items-center justify-between text-sm text-gray-400 mb-1">
           <div className="flex items-center space-x-1">
             <BookOpen className="lg:w-2 lg:h-2 xl:w-3 xl:h-3 2xl:w-4 2xl:h-4 3xl:w-6 3xl:h-6" />
@@ -57,13 +57,13 @@ function Recard({ course }: { course: ICourse }) {
             <span className="lg:text-[10px] xl:text-xs 2xl:text-sm 3xl:text-base">{formatDuration(course.duration)}</span>
           </div>
         </div>
-        <h3 className="min-h-[72px] lg:text-lg xl:text-lg 2xl:text-2xl 3xl:text-3xl xl:mt-2 2xl:mt-4 font-normal text-gray-900 leading-tight">
+        <h3 className="min-h-[3rem] lg:text-lg xl:text-[22px] 2xl:text-[24px] 3xl:text-[24px] xl:mt-2 2xl:mt-4 font-medium text-gray-900 leading-tight">
           {course.title}
         </h3>
-        <p className="text-sm lg:text-[10px] xl:text-[12px] 2xl:text-sm 3xl:text-lg xl:mt-2 2xl:mt-6 text-gray-500 leading-snug line-clamp-2">
+        <p className="text-sm lg:text-[10px] xl:text-[12px] 2xl:text-sm 3xl:text-[1rem] xl:mt-2 2xl:mt-6 text-[#696984] leading-snug">
           {course.description}
         </p>
-        <div className="flex items-center justify-between px-0 py-3 border-t lg:mt-0.5 xl:mt-1 2xl:mt-4">
+        <div className="flex items-center justify-between px-0 py-1  lg:mt-0.5 xl:mt-1 2xl:mt-4">
           <div className="flex items-center space-x-2">
             <img
               src={course.instructor?.avatar || "/placeholder-avatar.jpg"}
@@ -151,8 +151,8 @@ export default function CategoryTabsPage() {
             onClick={() => setActiveCategory(category.id)}
             className={`flex items-center gap-2 py-2 px-5 rounded-full transition-colors ${
               activeCategory === category.id
-                ? "bg-purple-600 text-white"
-                : "bg-gray-100 hover:bg-gray-200 text-gray-600"
+                ? "text-[#8A63FF] bg-gradient-to-b from-transparent from-49.76% via-transparent to-[rgba(138,99,255,0.24)] border-b-2 border-[#8A63FF]"
+                : "text-gray-500 hover:text-[#8A63FF]"
             }`}
           >
             <span className="hidden sm:inline-block">{category.icon || <Monitor className="w-5 h-5" />}</span>

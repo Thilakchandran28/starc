@@ -8,28 +8,28 @@ const initialNotifications = [
   {
     id: 1,
     text: 'Lorem ipsum dolor sit amet consectetur. Dapibus placerat ornare ornare blandit morbi eget senectus tempus iaculis. Posuere bibendum lacinia pulvinar pharetra et.',
-    date: 'March 1, 2025',
+    date: 'June 26, 2025',
   },
-  {
-    id: 2,
-    text: 'Lorem ipsum dolor sit amet consectetur. Diam eleifend erat hendrerit varius aliquet donec pulvinar. Tincidunt at malesuada viverra nibh consequat pellentesque nibh et libero.',
-    date: 'February 26, 2025',
-  },
-  {
-    id: 3,
-    text: 'Lorem ipsum dolor sit amet consectetur. Consectetur sit quam sapien hendrerit eu eu vitae eget mauris. Lectus proin a tempus turpis.',
-    date: 'April 25, 2025',
-  },
-  {
-    id: 4,
-    text: 'Lorem ipsum dolor sit amet consectetur. Id neque mattis lacus a adipiscing non. Aliquam amet venenatis eu maecenas mauris.',
-    date: 'March 6, 2025',
-  },
-  {
-    id: 5,
-    text: 'Lorem ipsum dolor sit amet consectetur. Aliquam viverra ut placerat est vitae elit maecenas nibh. In senectus fermentum integer enim lobortis at.',
-    date: 'March 1, 2025',
-  },
+  // {
+  //   id: 2,
+  //   text: 'Lorem ipsum dolor sit amet consectetur. Diam eleifend erat hendrerit varius aliquet donec pulvinar. Tincidunt at malesuada viverra nibh consequat pellentesque nibh et libero.',
+  //   date: 'February 26, 2025',
+  // },
+  // {
+  //   id: 3,
+  //   text: 'Lorem ipsum dolor sit amet consectetur. Consectetur sit quam sapien hendrerit eu eu vitae eget mauris. Lectus proin a tempus turpis.',
+  //   date: 'April 25, 2025',
+  // },
+  // {
+  //   id: 4,
+  //   text: 'Lorem ipsum dolor sit amet consectetur. Id neque mattis lacus a adipiscing non. Aliquam amet venenatis eu maecenas mauris.',
+  //   date: 'March 6, 2025',
+  // },
+  // {
+  //   id: 5,
+  //   text: 'Lorem ipsum dolor sit amet consectetur. Aliquam viverra ut placerat est vitae elit maecenas nibh. In senectus fermentum integer enim lobortis at.',
+  //   date: 'March 1, 2025',
+  // },
 ];
 
 const Notifications = () => {
@@ -56,8 +56,8 @@ const Notifications = () => {
               className="3xl:w-[75px] rounded-full mr-4 lg:w-[55px]"
             />
             <div className="flex-1">
-              <p className="font-medium 3xl:text-lg text-gray-700 3xl:pb-1 lg:text-base">{notification.text}</p>
-              <p className="3xl:text-base text-gray-500 mt-2 3xl:pb-2 lg:text-[13px]">{notification.date}</p>
+              <p className="font-medium 3xl:text-[1rem] text-gray-700 3xl:pb-1 lg:text-base">{notification.text}</p>
+              <p className="3xl:text-[1rem] text-gray-500 mt-2 3xl:pb-2 lg:text-[13px]">{notification.date}</p>
             </div>
             <button
               className="font-light text-gray-600 hover:text-red-500 3xl:text-5xl pl-4 pt-2 ml-4 lg:text-3xl"

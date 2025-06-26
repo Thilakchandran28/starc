@@ -497,7 +497,7 @@ const OngoingCourseDashboardPage: React.FC<{
       <div className="container mx-auto p-6 w-full ">
         <button
           onClick={onBack} 
-          className="mb-4 text-purple-600 hover:underline xl:text-lg 2xl:text-xl 3xl:text-2xl"
+          className="mb-4 text-[#8A63FF] hover:underline xl:text-lg 2xl:text-xl 3xl:text-2xl"
         >
           ← Courses 
         </button>
@@ -514,7 +514,7 @@ const OngoingCourseDashboardPage: React.FC<{
               </span>
             </h1>
             <div className="flex flex-col sm:flex-row sm:items-center text-gray-700 text-sm">
-              <span className="text-purple-700 font-semibold mr-1">
+              <span className="text-[#8A63FF]  font-semibold mr-1">
                 Technology:
               </span>
               <span className="mr-3">
@@ -534,7 +534,7 @@ const OngoingCourseDashboardPage: React.FC<{
             </div>
             <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
               <button
-                className="lg:w-36 lg:text-[10px]  xl:w-42 xl:text-[12px] 2xl:w-48 2xl:text-[16px] 3xl:w-60 3xl:text-[18px]  px-2 py-2 rounded-md border border-blue-600 text-white bg-violet-500 text-sm flex items-center justify-center transition-colors"
+                className="lg:w-36 lg:text-[10px]  xl:w-42 xl:text-[12px] 2xl:w-48 2xl:text-[16px] 3xl:w-60 3xl:text-[18px]  px-2 py-2 rounded-md border border-blue-600 text-white bg-[#8A63FF] text-sm flex items-center justify-center transition-colors"
                 onClick={() => {
                   navigate("/learningoverview");
                   window.scrollTo(0, 0);
@@ -666,7 +666,7 @@ const OngoingCourseDashboardPage: React.FC<{
                       <img src={star} alt="" />
                       <div className="flex-grow bg-gray-200 h-2 rounded-full mx-3">
                         <div
-                          className="bg-violet-500 h-full rounded-full"
+                          className="bg-[#8A63FF] h-full rounded-full"
                           style={{
                             width: `${
                               (count /

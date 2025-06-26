@@ -3,6 +3,7 @@ import { Star, Clock, HelpCircle, Plus, Minus } from 'lucide-react'; // All icon
 import courseService, { IMentor } from '@/services/courseService';
 import { toast } from 'sonner';
 import { useNavigate } from 'react-router-dom';
+import img1 from "../Assets/vickram-varma.png";
 
 // --- Data Interfaces ---
 interface Mentor {
@@ -26,27 +27,19 @@ interface FaqItem {
 const mentors: Mentor[] = [
   {
     id: 1,
-    name: "Lawerence",
-    specialization: "Full Stack Development",
-    experience: "10 Years",
+    name: "Vikram Varma V",
+    specialization: "Front-End Associate",
+    experience: "2 Years",
     rating: 5,
     reviews: 200,
-    image: "https://via.placeholder.com/150"
+    image: img1
   },
-  {
-    id: 2,
-    name: "Sneha Singh",
-    specialization: "UI/UX Designing",
-    experience: "7 Years",
-    rating: 5,
-    reviews: 200,
-    image: "https://via.placeholder.com/150"
-  },
+  
   {
     id: 3,
-    name: "Louis Cahya",
+    name: "Rohit Menon",
     specialization: "IOT Integration",
-    experience: "5 Years",
+    experience: "1 Years",
     rating: 5,
     reviews: 200,
     image: "https://via.placeholder.com/150"
@@ -143,17 +136,17 @@ const TopMentors: React.FC = () => {
   }, []);
 
   return (
-    <div className="font-mont">
+    <div className=" font-mont 2">
       {/* --- Top Mentors Section --- */}
-      <section className="py-16 mb-24">
-        <div className="w-[70%] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="lg:py-10 xl:py-16 2xl:py-20 h-[80vh] 2xl:h-[90vh] 3xl:h-[80vh]">
+        <div className="w-[70%] h-[60vh] mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Header Section */}
-          <div className="mb-12">
-            <h2 className="lg:text-4xl xl:text-5xl 3xl:text-5xl font-mont font-medium text-gray-900 mb-4">
-              Our Expert Mentors At Starc
+          <div className="mb-12 h-[20%]">
+            <h2 className="lg:text-4xl xl:text-[56px] font-mont font-medium text-gray-900 mb-4">
+              Our Top Mentors At Edifai
             </h2>
             <p className="text-base text-gray-500 max-w-3xl mx-auto leading-relaxed">
-              Learn from industry professionals with years of experience in their fields
+              Welcome to our platform, enhancing your skills. Welcome to our platform, enhancing your skills.
             </p>
           </div>
 
@@ -163,29 +156,29 @@ const TopMentors: React.FC = () => {
               <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
             </div>
           ) : mentors.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap- 3xl:gap-12  place-content-center w-[60%] m-auto">
               {mentors.map((mentor) => {
                 // Cast to extended type to access additional fields
                 const extendedMentor = mentor as ExtendedMentor;
                 return (
                   <div
                     key={mentor._id}
-                    className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden cursor-pointer mb-8"
+                    className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden w-[100%] h-[100%]"
                     onClick={() => navigate(`/mentor/${mentor._id}`)}
                   >
                     <div>
                       <img
                         src={mentor.avatar || "/placeholder-avatar.jpg"}
                         alt={mentor.name}
-                        className="w-full h-48 object-cover rounded-t-xl"
+                        className=" w-full lg:h-48 xl:h-56 3xl:h-80 2xl:h-72   object-fill rounded-xl "
                       />
                     </div>
-                    <div className="p-6 text-start">
-                      <h3 className="text-xl font-mont font-semibold text-gray-900 mb-1">
+                    <div className="lg:p-2 xl:p-4 text-start">
+                      <h3 className="lg:text-base xl:text-xl 2xl:text-2xl 3xl:text-[30px] font-mont font-medium text-gray-900 mb-2">
                         {mentor.name}
                       </h3>
-                      <p className="text-sm text-gray-500 mb-2">{extendedMentor.specialization || mentor.expertise?.[0] || 'Instructor'}</p>
-                      <div className="flex items-center justify-start gap-2 text-gray-600 text-sm mb-3">
+                      <p className="text-[1.15rem] text-gray-500 mb-3 ">{extendedMentor.specialization || mentor.expertise?.[0] || 'Instructor'}</p>
+                      <div className="flex items-center justify-start gap-2 text-gray-600 text-sm mb-4 ">
                         <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded-full text-xs font-medium">
                           {mentor.courseCount || 0} {(mentor.courseCount || 0) === 1 ? 'Course' : 'Courses'}
                         </span>

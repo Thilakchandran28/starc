@@ -196,9 +196,17 @@ const SettingsTabs = () => {
                   className="w-[50%] h-[50%] absolute bottom-6 left-1/2 transform -translate-x-1/2 cursor-pointer"
                   onClick={handleCameraClick}
                 />
-                <input
-                  type="file"
+                {/* <input
+                  type="png"
                   accept="image/*"
+                  ref={fileInputRef}
+                  className="hidden"
+                  onChange={handleImageChange}
+                /> */}
+
+                <input
+                  type="file" // Changed from type="png" to type="file"
+                  accept="image/png, image/jpeg" // Specify allowed image types
                   ref={fileInputRef}
                   className="hidden"
                   onChange={handleImageChange}
@@ -213,13 +221,16 @@ const SettingsTabs = () => {
               </div>
             </div>
             <div className="space-y-4">
-              <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="fullName"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Full Name
               </label>
               <input
                 id="fullName"
                 type="text"
-                className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-700 focus:ring-purple-500 focus:border-purple-500"
+                className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-400 focus:ring-[#8A63FF] focus:border-[#8A63FF]"
                 value={profileForm.fullName}
                 onChange={(e) => setProfileForm({ ...profileForm, fullName: e.target.value })}
               />
@@ -231,19 +242,24 @@ const SettingsTabs = () => {
               <input
                 id="location"
                 type="text"
-                className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-700 focus:ring-purple-500 focus:border-purple-500"
+                className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-400 focus:ring-[#8A63FF] focus:border-[#8A63FF]"
                 value={profileForm.location}
-                onChange={(e) => setProfileForm({ ...profileForm, location: e.target.value })}
+                onChange={(e) =>
+                  setProfileForm({ ...profileForm, location: e.target.value })
+                }
               />
             </div>
             <div className="space-y-4">
-              <label htmlFor="dateOfBirth" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="dateOfBirth"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Date Of Birth
               </label>
               <input
                 id="dateOfBirth"
                 type="date"
-                className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-700 focus:ring-purple-500 focus:border-purple-500"
+                className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-400 focus:ring-[#8A63FF] focus:border-[#8A63FF]"
                 value={profileForm.dateOfBirth}
                 onChange={(e) => setProfileForm({ ...profileForm, dateOfBirth: e.target.value })}
               />
@@ -255,7 +271,7 @@ const SettingsTabs = () => {
               <input
                 id="phone"
                 type="tel"
-                className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-700 focus:ring-purple-500 focus:border-purple-500"
+                className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-400 focus:ring-[#8A63FF] focus:border-[#8A63FF]"
                 value={profileForm.phone}
                 onChange={(e) => setProfileForm({ ...profileForm, phone: e.target.value })}
               />
@@ -267,7 +283,7 @@ const SettingsTabs = () => {
               <input
                 id="email"
                 type="email"
-                className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-700 focus:ring-purple-500 focus:border-purple-500"
+                className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-400 focus:ring-[#8A63FF] focus:border-[#8A63FF]"
                 value={profileForm.email}
                 onChange={(e) => setProfileForm({ ...profileForm, email: e.target.value })}
               />
@@ -275,7 +291,7 @@ const SettingsTabs = () => {
             <button
               type="submit"
               disabled={saving}
-              className="px-4 py-2 bg-purple-600 text-white rounded-[30px] hover:bg-purple-700 disabled:bg-gray-400"
+              className="px-4 py-2 bg-[#8A63FF] text-white rounded-[30px] hover:bg-purple-700 disabled:bg-gray-400"
             >
               {saving ? 'Saving...' : 'Save Changes'}
             </button>
@@ -295,7 +311,7 @@ const SettingsTabs = () => {
                 <input
                   id="currentPassword"
                   type="password"
-                  className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-700"
+                  className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-400"
                   value={accountForm.currentPassword}
                   onChange={(e) =>
                     setAccountForm({ ...accountForm, currentPassword: e.target.value })
@@ -309,7 +325,7 @@ const SettingsTabs = () => {
                 <input
                   id="newPassword"
                   type="password"
-                  className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-700"
+                  className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-400"
                   value={accountForm.newPassword}
                   onChange={(e) =>
                     setAccountForm({ ...accountForm, newPassword: e.target.value })
@@ -326,7 +342,7 @@ const SettingsTabs = () => {
                 <input
                   id="confirmPassword"
                   type="password"
-                  className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-700"
+                  className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-400"
                   value={accountForm.confirmPassword}
                   onChange={(e) =>
                     setAccountForm({ ...accountForm, confirmPassword: e.target.value })
@@ -335,7 +351,7 @@ const SettingsTabs = () => {
               </div>
               <button
                 disabled={saving}
-                className="px-4 py-2 bg-purple-600 text-white rounded-[30px] hover:bg-purple-700 disabled:bg-gray-400"
+                className="px-4 py-2 bg-[#8A63FF] text-white rounded-[30px] hover:bg-[#8A63FF] disabled:bg-gray-400"
                 type="submit"
               >
                 {saving ? 'Saving...' : 'Save Changes'}
@@ -348,13 +364,13 @@ const SettingsTabs = () => {
               <input
                 id="username"
                 type="text"
-                className="mt-1 block w-[40%] rounded-[30px] bg-gray-100 text-gray-700 px-3 py-2"
+                className="mt-1 block w-[40%] rounded-[30px] bg-gray-100 text-gray-300 px-3 py-2"
                 placeholder="Username"
                 value={accountForm.username}
                 onChange={(e) => setAccountForm({ ...accountForm, username: e.target.value })}
               />
               <button
-                className="mt-2 px-4 py-2 bg-purple-600 text-white rounded-[30px] hover:bg-purple-700 disabled:bg-gray-400"
+                className="mt-2 px-4 py-2 bg-[#8A63FF] text-white rounded-[30px] hover:bg-purple-700 disabled:bg-gray-400"
                 onClick={async () => {
                   try {
                     setSaving(true);
@@ -379,7 +395,7 @@ const SettingsTabs = () => {
               </label>
               <select
                 id="language"
-                className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-700"
+                className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-400"
                 value={accountForm.language}
                 onChange={(e) => setAccountForm({ ...accountForm, language: e.target.value })}
               >
@@ -539,6 +555,208 @@ const SettingsTabs = () => {
               className="px-4 py-2 bg-purple-600 text-white rounded-[30px] hover:bg-purple-700 disabled:bg-gray-400"
             >
               {saving ? 'Saving...' : 'Save Preferences'}
+                {/* className="mt-1 block w-[40%] rounded-[30px] bg-gray-100 text-gray-300 px-3 py-2"
+                placeholder="Username"
+                value={accountForm.username}
+                onChange={(e) =>
+                  setAccountForm({ ...accountForm, username: e.target.value })
+                }
+              />
+              <button
+                className="mt-2 px-4 py-2 bg-[#8A63FF] text-white rounded-[30px] hover:bg-purple-700"
+                onClick={() =>
+                  console.log("Username Updated:", accountForm.username)
+                }
+              >
+                Save Username
+              </button>
+            </div>
+            <div className="space-y-3">
+              <label
+                htmlFor="language"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Select Language
+              </label>
+              <select
+                id="language"
+                className="mt-1 block w-[40%] px-3 py-2 border rounded-[30px] bg-gray-100 text-gray-400"
+                value={accountForm.language}
+                onChange={(e) =>
+                  setAccountForm({ ...accountForm, language: e.target.value })
+                }
+              >
+                <option value="English, India">English (India)</option>
+                <option value="English, US">English (US)</option>
+              </select>
+              <button
+                className="mt-2 px-4 py-2 bg-[#8A63FF] text-white rounded-[30px] hover:bg-purple-700"
+                onClick={() =>
+                  console.log("Language Updated:", accountForm.language)
+                }
+              >
+                Save Language
+              </button>
+            </div>
+            <div className="pt-4 border-t space-y-3">
+              <p className="text-sm text-gray-700">
+                Delete your account permanently
+              </p>
+              <label className="flex items-center mt-2 space-x-2">
+                <input
+                  type="checkbox"
+                  className="h-4 w-4 text-[#8A63FF] focus:ring-purple-500"
+                />
+                <span className="text-sm">Confirm Delete your account</span>
+              </label>
+              <button
+                className="mt-2 px-4 py-2 bg-[#8A63FF] text-white rounded-[30px] hover:bg-purple-700"
+                onClick={() => console.log("Account Deletion Requested")}
+              >
+                Delete My Account
+              </button>
+            </div>
+          </div>
+        );
+      case "notification":
+        return (
+          <form className="space-y-10" onSubmit={handleNotificationSubmit}>
+            <div className="space-y-4">
+              <label
+                htmlFor="pushNotification"
+                className="block text-md font-medium text-gray-700"
+              >
+                Mobile push notification
+              </label>
+              <select
+                id="pushNotification"
+                className="mt-1 block w-full text-grey-700 rounded-lg px-3 py-2 border border-gray-300"
+                value={notificationForm.pushNotification}
+                onChange={(e) =>
+                  setNotificationForm({
+                    ...notificationForm,
+                    pushNotification: e.target.value,
+                  })
+                }
+              >
+                <option value="All New Messages">All New Messages</option>
+                <option value="Important Only">Important Only</option>
+              </select>
+            </div>
+            <div className="space-y-4">
+              <h3 className="text-md font-semibold text-gray-800">
+                Email Notifications
+              </h3>
+              <p className="text-sm text-gray-600 mt-1">
+                Control the types of email notifications you receive. You can choose to be notified about account activity, promotional offers, or important updates. We'll only send you relevant information based on your selections.
+              </p>
+            </div>
+            <fieldset className="space-y-4">
+              <legend className="text-md font-medium text-gray-700">
+                Send me Email Notifications
+              </legend>
+              <label className="flex items-center space-x-2">
+                <input
+                  type="radio"
+                  name="emailNotify"
+                  className="text-[#8A63FF]"
+                  value="Send me email notifications"
+                  checked={
+                    notificationForm.emailNotification ===
+                    "Send me email notifications"
+                  }
+                  onChange={(e) =>
+                    setNotificationForm({
+                      ...notificationForm,
+                      emailNotification: e.target.value,
+                    })
+                  }
+                />
+                <span className="text-sm">Send me email notifications</span>
+              </label>
+              <label className="flex items-center space-x-2">
+                <input
+                  type="radio"
+                  name="emailNotify"
+                  className="text-[#8A63FF]"
+                  value="Once an hour at most"
+                  checked={
+                    notificationForm.emailNotification ===
+                    "Once an hour at most"
+                  }
+                  onChange={(e) =>
+                    setNotificationForm({
+                      ...notificationForm,
+                      emailNotification: e.target.value,
+                    })
+                  }
+                />
+                <span className="text-sm">Once an hour at most</span>
+              </label>
+              <label className="flex items-center space-x-2">
+                <input
+                  type="radio"
+                  name="emailNotify"
+                  className="text-[#8A63FF]"
+                  value="Never"
+                  checked={notificationForm.emailNotification === "Never"}
+                  onChange={(e) =>
+                    setNotificationForm({
+                      ...notificationForm,
+                      emailNotification: e.target.value,
+                    })
+                  }
+                />
+                <span className="text-sm">Never</span>
+              </label>
+            </fieldset>
+            <div className="space-y-4">
+              <h3 className="text-md font-semibold text-gray-800">
+                More Email Preferences
+              </h3>
+              <p className="text-sm text-gray-600">
+                Further customize your email preferences. Select specific categories or types of emails you wish to receive or opt-out of. Manage your subscription to ensure you get the most out of your experience
+              </p>
+              <label className="flex items-center mt-2 space-x-2">
+                <input
+                  type="checkbox"
+                  className="h-4 w-4 text-[#8A63FF]"
+                  checked={notificationForm.morePreferences.option1}
+                  onChange={(e) =>
+                    setNotificationForm({
+                      ...notificationForm,
+                      morePreferences: {
+                        ...notificationForm.morePreferences,
+                        option1: e.target.checked,
+                      },
+                    })
+                  }
+                />
+                <span className="text-sm">Title text goes here</span>
+              </label>
+              <label className="flex items-center mt-2 space-x-2">
+                <input
+                  type="checkbox"
+                  className="h-4 w-4 text-[#8A63FF]"
+                  checked={notificationForm.morePreferences.option2}
+                  onChange={(e) =>
+                    setNotificationForm({
+                      ...notificationForm,
+                      morePreferences: {
+                        ...notificationForm.morePreferences,
+                        option2: e.target.checked,
+                      },
+                    })
+                  }
+                />
+                <span className="text-sm">Title text goes here</span>
+              </label>
+            </div>
+            <button
+              type="submit"
+              className="px-4 py-2 bg-[#8A63FF] text-white rounded-[30px] hover:bg-purple-700"
+            >
+              Save Changes */}
             </button>
           </form>
         );
@@ -548,26 +766,31 @@ const SettingsTabs = () => {
   };
 
   return (
-    <div className="p-6 bg-white rounded-xl shadow-md lg:w-[100%] xl:w-[100%] 2xl:w-[100%] 3xl:w-[100%]">
-      <div className="flex space-x-2 mb-10">
-        {tabs.map((tab) => (
-          <button
-            key={tab.id}
-            className={`flex items-center px-6 py-2 rounded-full border ${
-              activeTab === tab.id
-                ? 'bg-purple-200 text-purple-600 border-purple-300'
-                : 'text-gray-600 border-gray-300'
-            }`}
-            onClick={() => setActiveTab(tab.id)}
-          >
-            {tab.icon}
-            <span className="ml-1">{tab.label}</span>
-          </button>
-        ))}
+    <div className="px-10 min-h-screen w-[60vw] top-32">
+      {/* Avatar Preview Above Tabs */}
+
+      <div className="w-full mx-auto bg-white rounded-[40px] shadow-md">
+        {/* Tabs */}
+        <div className="flex border-b px-6 pt-4">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`flex items-center px-4 py-2 mr-4 text-sm font-medium ${
+                activeTab === tab.id
+                  ? "border-b-2 border-[#8A63FF] text-[#8A63FF]"
+                  : "text-gray-500 hover:text-[#8A63FF]"
+              }`}
+            >
+              {tab.icon}
+              {tab.label}
+            </button>
+          ))}
+        </div>
+        {/* Content */}
+        <div className="p-6">{renderContent()}</div>
       </div>
-      {renderContent()}
     </div>
   );
 };
-
 export default SettingsTabs;

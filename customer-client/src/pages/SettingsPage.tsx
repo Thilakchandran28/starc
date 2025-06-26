@@ -40,19 +40,33 @@ const SettingsPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col h-screen  bg-gray-100 ">
+    // <div className="flex flex-col h-screen  bg-gray-100 ">
+    //   <div className=" sticky top-0 z-50  ">
+    //     <ProfileTopNavbar userName={user.name} />
+    //   </div>
+    //   <div className="flex flex-1 overflow-hidden justify-between px-16 w-full h-screen " >
+    //     <div className="w-0.5/5 sticky top-0 h-screen  pt-8">
+    //       <ProfileSidebar user={user} />
+    //     </div>
+    //     <div className="w-3/5 overflow-y-auto sticky top-0 flex justify-center pt-8" style={{scrollbarWidth:'none'}}>
+    //       <SettingsTabs />
+    //     </div>        
+    //     <div className="w-1/5 sticky top-0 h-screen pt-8">
+    //       <RightSideBar /> 
+
+ <div className="flex flex-col h-screen  bg-gray-100 ">
       <div className=" sticky top-0 z-50  ">
-        <ProfileTopNavbar userName={user.name} />
+        <ProfileTopNavbar userName={user.name}/>
       </div>
-      <div className="flex flex-1 overflow-hidden justify-between px-16 w-full h-screen " >
+      <div className="flex flex-1 overflow-hidden  justify-between px-16 w-full h-screen " >
         <div className="w-0.5/5 sticky top-0 h-screen  pt-8">
-          <ProfileSidebar user={user} />
+        <ProfileSidebar user={user}/>
         </div>
         <div className="w-3/5 overflow-y-auto sticky top-0 flex justify-center pt-8" style={{scrollbarWidth:'none'}}>
-          <SettingsTabs />
+        <SettingsTabs />
         </div>        
         <div className="w-1/5 sticky top-0 h-screen pt-8">
-          <RightSideBar /> 
+        <RightSideBar /> 
         </div>
       </div>
     </div>
